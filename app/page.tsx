@@ -1,204 +1,55 @@
-"use client";
-
-import { useMemo, useState } from "react";
-
-type Drift = "attention" | "arrival" | "heat" | "alone";
-
-const DRIFT_OPTIONS: Array<{ id: Drift; number: string; title: string; body: string }> = [
-  {
-    id: "attention",
-    number: "01",
-    title: "My attention keeps leaving",
-    body: "I am beside my family, but my phone, work, or noise has the better part of me.",
-  },
-  {
-    id: "arrival",
-    number: "02",
-    title: "I do not arrive well",
-    body: "The day follows me through the door. I am there, but I am not available.",
-  },
-  {
-    id: "heat",
-    number: "03",
-    title: "I get hot or shut down",
-    body: "When pressure rises, I become sharp, distant, defensive, or hard to reach.",
-  },
-  {
-    id: "alone",
-    number: "04",
-    title: "I am carrying it alone",
-    body: "I have people around me, but no place where I am actually known or steady.",
-  },
-];
-
-const MOMENTS = ["The first hour after work", "Dinner and bedtime", "Late at night", "The weekend"];
-const WINDOWS = ["Tonight", "The next time I walk in", "The next hard conversation", "This Sunday"];
-
-const PLANS: Record<Drift, { name: string; direction: string; firstMove: string; guardrail: string; fieldNote: string }> = {
-  attention: {
-    name: "The Focus Protocol",
-    direction: "Your presence needs a protected first hour, not more willpower.",
-    firstMove: "Put the phone on charge outside the room where your family is. Give the next 20 minutes to one person, with no second screen.",
-    guardrail: "Do not make this a lifetime promise. Protect the next window only.",
-    fieldNote: "Presence is a practice of returning, not a performance of being perfect.",
-  },
-  arrival: {
-    name: "The Airlock",
-    direction: "Do not let work enter the house in your body before you do.",
-    firstMove: "Before opening the door, pause for three slow breaths. Decide the first person you will greet and the first question you will ask.",
-    guardrail: "Do not use the doorway to unload your day. Arrive first. Debrief later if it is needed.",
-    fieldNote: "The transition is small, but it changes which version of you enters the room.",
-  },
-  heat: {
-    name: "The Emotional Thermostat",
-    direction: "Regulation comes before the conversation you hope to have.",
-    firstMove: "Name your temperature before you answer: low, rising, or hot. If you are hot, take ten minutes and say when you will come back.",
-    guardrail: "A pause is not avoidance when you name it and return to the conversation.",
-    fieldNote: "You do not have to win the moment to lead it well.",
-  },
-  alone: {
-    name: "The Third Place",
-    direction: "You need one steady relationship outside work and home.",
-    firstMove: "Text one man you respect: “I have been carrying too much alone. Want to take a walk or grab coffee this week?”",
-    guardrail: "Pick one person. Do not turn finding connection into another project you never start.",
-    fieldNote: "A capable man can still need a place to be honest and known.",
-  },
-};
-
-function ChoiceButton({ selected, children, onClick }: { selected: boolean; children: React.ReactNode; onClick: () => void }) {
-  return (
-    <button className={`choice ${selected ? "selected" : ""}`} type="button" onClick={onClick}>
-      <span className="choice-mark" aria-hidden="true">{selected ? "✓" : ""}</span>
-      <span>{children}</span>
-    </button>
-  );
-}
+import Link from "next/link";
+import { Footer, Header } from "./components";
+import { SKOOL } from "./data";
 
 export default function Home() {
-  const [stage, setStage] = useState<0 | 1 | 2 | 3 | 4>(0);
-  const [drift, setDrift] = useState<Drift | null>(null);
-  const [moment, setMoment] = useState("");
-  const [window, setWindow] = useState("");
-  const [copied, setCopied] = useState(false);
-  const plan = useMemo(() => (drift ? PLANS[drift] : null), [drift]);
+  return <main className="site elevated-home"><Header />
+    <section className="elevated-hero">
+      <img className="elevated-hero-image" src="/assets/home-hero-doorway.png" alt="A man pausing at the entrance to a warmly lit room" />
+      <div className="elevated-hero-overlay" />
+      <div className="elevated-hero-content">
+        <p className="kicker">PRACTICAL WORK FOR HUSBANDS &amp; FATHERS</p>
+        <h1>Be here for<br /><em>your own life.</em></h1>
+        <p>Iron Compass gives men clear, useful tools for the moments when work, distraction, and pressure start taking more than they should.</p>
+        <div className="hero-buttons">
+          <Link className="button primary" href="/field-guide">Start with the free Compass Check <span>→</span></Link>
+          <Link className="text-link" href="/sunday-board">See The Sunday Board Meeting <span>→</span></Link>
+        </div>
+      </div>
+      <div className="elevated-hero-note"><span>IRON COMPASS INSTITUTE</span><p>Come back to the room.</p></div>
+    </section>
 
-  const reset = () => {
-    setStage(0);
-    setDrift(null);
-    setMoment("");
-    setWindow("");
-    setCopied(false);
-  };
+    <section className="entry-band" aria-label="How Iron Compass works">
+      <div><span>START FREE</span><p>Compass Check + The Sunday Board Meeting</p></div>
+      <div><span>GO DEEPER</span><p>Focus Protocol · $29 one time</p></div>
+      <div><span>THE FULL SYSTEM</span><p>Iron Compass Core · $249 one time</p></div>
+    </section>
 
-  const copyPlan = async () => {
-    if (!plan) return;
-    const message = `My Iron Compass check\n\nThe moment I want to lead differently: ${moment}.\nMy next window: ${window}.\n\nInstall: ${plan.name}\n${plan.firstMove}\n\nGuardrail: ${plan.guardrail}`;
-    try {
-      await navigator.clipboard.writeText(message);
-      setCopied(true);
-    } catch {
-      setCopied(false);
-    }
-  };
+    <section className="real-work">
+      <div className="real-work-intro"><p className="section-label">WHAT THIS IS</p><h2>Less advice.<br /><em>More practice.</em></h2></div>
+      <div className="real-work-copy"><p>Iron Compass is a private body of work for men who want a more present, steadier life at home. It is not a performance, a paid community to keep up with, or a promise that one course fixes everything.</p><p>It is a set of practical systems for the rooms where life actually gets hard: your attention, your reactions under pressure, and the relationships that can quietly get what is left over.</p><Link className="quiet-link" href="/library">See how the full work is organized <span>→</span></Link></div>
+      <div className="real-work-rooms"><article><span>01</span><h3>Attention</h3><p>Notice what keeps pulling you out of the room and make a change that holds.</p></article><article><span>02</span><h3>Pressure</h3><p>Catch the moment before it becomes the tone of the whole house.</p></article><article><span>03</span><h3>Relationship</h3><p>Put the things that matter back on the table before another week disappears.</p></article></div>
+    </section>
 
-  return (
-    <main>
-      <div className="grain" aria-hidden="true" />
-      <nav className="nav" aria-label="Primary navigation">
-        <a className="brand" href="#top" onClick={reset}>
-          <span className="brand-mark" aria-hidden="true">✦</span>
-          <span>IRON COMPASS</span>
-        </a>
-        <span className="nav-note">A better next moment.</span>
-      </nav>
+    <section className="free-showcase">
+      <div className="free-showcase-visual"><img src="/assets/sunday-board-gamma.png" alt="The Sunday Board Meeting worksheet" /></div>
+      <div className="free-showcase-copy"><p className="section-label">THE FIRST USEFUL THING</p><h2>The Sunday<br />Board <em>Meeting.</em></h2><p>It is a printable fifteen-minute check-in for couples who want a clearer house, a calmer week, and a shared plan before the calendar takes over.</p><p className="free-showcase-detail">Download the printable without an account. The recorded walkthrough Chris and Rhea made together lives in the free Iron Compass room.</p><div className="split-actions"><Link className="button dark" href="/sunday-board">See The Sunday Board Meeting <span>→</span></Link><a className="quiet-link" href={SKOOL.group} target="_blank" rel="noreferrer">Enter the free room <span>↗</span></a></div></div>
+    </section>
 
-      {stage === 0 && (
-        <section className="hero" id="top">
-          <div className="hero-copy">
-            <p className="eyebrow">FOR FATHERS WHO ARE DONE BEING HALF HERE</p>
-            <h1>Be the man your family can <em>feel.</em></h1>
-            <p className="lede">Not a diagnosis. Not a lecture. A three-minute check that gives you one clear move for the moment that matters next.</p>
-            <button className="button primary" type="button" onClick={() => setStage(1)}>Take the Compass Check <span aria-hidden="true">→</span></button>
-            <p className="microcopy">Private by design. Nothing is collected or saved.</p>
-          </div>
-          <div className="hero-orbit" aria-hidden="true">
-            <div className="orbit-line orbit-outer" />
-            <div className="orbit-line orbit-inner" />
-            <div className="compass-core"><span>N</span><strong>HERE</strong><span>S</span></div>
-            <p>ONE MAN<br />ONE SYSTEM<br />EVERY ROOM</p>
-          </div>
-          <div className="proof-strip"><span>01 &nbsp; Attention</span><span>02 &nbsp; Regulation</span><span>03 &nbsp; Identity</span></div>
-        </section>
-      )}
+    <section className="deeper-work">
+      <div className="deeper-work-heading"><p className="section-label">WHEN YOU WANT MORE THAN ONE TOOL</p><h2>The work has<br />a <em>clear path.</em></h2><p>Start small. If it helps, the next step is already there. Nothing is hidden and nothing asks you to buy a personality.</p></div>
+      <div className="deeper-work-offers">
+        <a className="deeper-offer focus-offer-home" href={SKOOL.focus} target="_blank" rel="noreferrer"><div className="offer-image"><img src="/assets/focus-manual-gamma.png" alt="The Focus Protocol Field Manual" /></div><div className="offer-copy"><span>FOCUS PROTOCOL · $29 ONE TIME</span><h3>Get your attention back.</h3><p>A focused 72-hour reset with four practical moves and the Field Manual.</p><b>Explore Focus Protocol <i>→</i></b></div></a>
+        <a className="deeper-offer core-offer-home" href={SKOOL.core} target="_blank" rel="noreferrer"><div className="core-offer-mark"><span>IRON COMPASS CORE</span><p>RETURN<br />LEAD<br />KEEP</p></div><div className="offer-copy"><span>THE COMPLETE SYSTEM · $249 ONE TIME</span><h3>Work on the whole life.</h3><p>Twelve guided modules, the Field Manual, workbook, The Sunday Board Meeting, and Mission Debrief.</p><b>Explore Iron Compass Core <i>→</i></b></div></a>
+      </div>
+    </section>
 
-      {stage > 0 && stage < 4 && (
-        <section className="check-shell" aria-labelledby="check-title">
-          <div className="check-header">
-            <button className="back" type="button" onClick={() => setStage((stage - 1) as 0 | 1 | 2 | 3)}>← Back</button>
-            <div className="progress" aria-label={`Step ${stage} of 3`}>{[1, 2, 3].map((number) => <span className={number <= stage ? "active" : ""} key={number} />)}</div>
-            <span className="step-count">0{stage} / 03</span>
-          </div>
+    <section className="founder-brief">
+      <div className="founder-monogram">IC</div>
+      <div><p className="section-label">WHY CHRIS MADE THIS</p><h2>“I was present in the technical sense. In every other sense, I was gone.”</h2><p>Iron Compass began as the work Chris Avera made for himself: tools for getting home, putting the phone away, having better Sunday conversations, and bringing a steadier self into the room. He is sharing what has helped him, not pretending to have a perfect life or a one-size-fits-all answer.</p><a className="quiet-link" href="https://chrisavera.substack.com/p/on-my-knees" target="_blank" rel="noreferrer">Read Chris’s personal writing <span>↗</span></a></div>
+    </section>
 
-          {stage === 1 && (
-            <div className="question-stage">
-              <p className="eyebrow">THE HONEST START</p>
-              <h2 id="check-title">Where are you most likely to leave the room?</h2>
-              <p className="supporting">Choose the one that feels most true this week. You can work on the rest later.</p>
-              <div className="drift-grid">
-                {DRIFT_OPTIONS.map((option) => (
-                  <button className={`drift-card ${drift === option.id ? "selected" : ""}`} type="button" key={option.id} onClick={() => setDrift(option.id)}>
-                    <span className="card-number">{option.number}</span><strong>{option.title}</strong><span>{option.body}</span>
-                  </button>
-                ))}
-              </div>
-              <button className="button primary next" type="button" disabled={!drift} onClick={() => setStage(2)}>Continue <span aria-hidden="true">→</span></button>
-            </div>
-          )}
-
-          {stage === 2 && (
-            <div className="question-stage compact">
-              <p className="eyebrow">MAKE IT REAL</p>
-              <h2 id="check-title">When does this usually show up?</h2>
-              <p className="supporting">The specific moment matters more than a general intention.</p>
-              <div className="choice-list">{MOMENTS.map((item) => <ChoiceButton key={item} selected={moment === item} onClick={() => setMoment(item)}>{item}</ChoiceButton>)}</div>
-              <button className="button primary next" type="button" disabled={!moment} onClick={() => setStage(3)}>Continue <span aria-hidden="true">→</span></button>
-            </div>
-          )}
-
-          {stage === 3 && (
-            <div className="question-stage compact">
-              <p className="eyebrow">CLAIM A WINDOW</p>
-              <h2 id="check-title">When will you make the next rep?</h2>
-              <p className="supporting">This is not a promise to become a different man overnight. It is a choice about one window.</p>
-              <div className="choice-list">{WINDOWS.map((item) => <ChoiceButton key={item} selected={window === item} onClick={() => setWindow(item)}>{item}</ChoiceButton>)}</div>
-              <button className="button primary next" type="button" disabled={!window} onClick={() => setStage(4)}>Show my next move <span aria-hidden="true">→</span></button>
-            </div>
-          )}
-        </section>
-      )}
-
-      {stage === 4 && plan && (
-        <section className="result-shell" aria-labelledby="result-title">
-          <div className="result-topline"><span>YOUR NEXT COMPASS POINT</span><button className="text-button" type="button" onClick={reset}>Start again</button></div>
-          <div className="result-main">
-            <p className="eyebrow">{window.toUpperCase()}</p>
-            <h2 id="result-title">{plan.name}</h2>
-            <p className="result-direction">{plan.direction}</p>
-            <div className="plan-grid">
-              <article><span className="plan-label">YOUR FIRST MOVE</span><p>{plan.firstMove}</p></article>
-              <article><span className="plan-label">THE GUARDRAIL</span><p>{plan.guardrail}</p></article>
-            </div>
-            <blockquote>“{plan.fieldNote}”</blockquote>
-            <div className="action-row">
-              <button className="button primary" type="button" onClick={copyPlan}>{copied ? "Copied to your notes" : "Copy my plan"}</button>
-              <a className="button secondary" href="https://www.skool.com/the-iron-compass-6783">Explore Iron Compass <span aria-hidden="true">→</span></a>
-            </div>
-          </div>
-          <p className="result-footnote">Your next moment: <strong>{moment}</strong>. You do not need a bigger plan than that today.</p>
-        </section>
-      )}
-
-      <footer><span>IRON COMPASS</span><span>For practical support and habit-building. It is not therapy, crisis support, or medical care.</span></footer>
-    </main>
-  );
+    <section className="elevated-closing"><p className="section-label">START WITH WHAT IS TRUE</p><h2>One better<br /><em>way back.</em></h2><p>Take the Compass Check or use The Sunday Board Meeting. The deeper work is there when you want it.</p><div className="hero-buttons"><Link className="button primary" href="/field-guide">Take the Compass Check <span>→</span></Link><Link className="text-link" href="/library">See the full system <span>→</span></Link></div></section>
+    <Footer />
+  </main>;
 }
