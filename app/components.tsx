@@ -10,7 +10,7 @@ export function Header() {
     <header className="topbar">
       <Link className="brand" href="/"><CompassMark /><span><strong>IRON COMPASS</strong><small>A field guide for coming home</small></span></Link>
       <nav aria-label="Main navigation"><Link href="/field-guide">Compass Check</Link><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/library">The Work</Link></nav>
-      <a className="topbar-action" href={SKOOL.group} target="_blank" rel="noreferrer">Enter free room <span>→</span></a>
+      <a className="topbar-action" href={SKOOL.sundayBoard} target="_blank" rel="noreferrer">Get the free Board <span>→</span></a>
     </header>
     <nav className="mobile-nav" aria-label="Mobile navigation"><Link href="/field-guide">Compass Check</Link><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/library">The Work</Link></nav>
   </>;
