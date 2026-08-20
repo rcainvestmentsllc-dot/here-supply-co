@@ -768,3 +768,49 @@ img { max-width:100%; }
   .elevated-closing { min-height:440px; padding-top:75px; padding-bottom:75px; }
   .elevated-closing h2 { font-size:clamp(57px,16vw,74px); }
 }
+
+/* The paid work is shown through Chris's actual sales films, not mock product cards. */
+.deeper-work { display:block; }
+.deeper-work-heading { max-width:720px; }
+.deeper-work-heading > p:last-child { max-width:530px; }
+.deeper-work-offers { max-width:none; margin-top:clamp(55px,7vw,105px); display:flex; flex-direction:column; border-top:1px solid rgba(245,240,229,.22); }
+.deeper-offer { min-height:530px; display:grid; grid-template-columns:minmax(0,1fr) minmax(310px,1fr); color:#edf0e2; border-right:0; border-bottom:1px solid rgba(245,240,229,.22); text-decoration:none; background:transparent; }
+.deeper-offer:last-child { border-right:0; }
+.deeper-offer:hover { color:#edf0e2; background:transparent; }
+.deeper-offer + .deeper-offer .offer-film { order:2; }
+.offer-film { min-height:390px; padding:16px; display:flex; flex-direction:column; justify-content:center; overflow:hidden; background:transparent; border-right:1px solid rgba(245,240,229,.22); }
+.deeper-offer + .deeper-offer .offer-film { border-right:0; border-left:1px solid rgba(245,240,229,.22); }
+.film-topline { min-height:34px; padding:0 2px 11px; display:flex; align-items:center; justify-content:space-between; gap:16px; color:#e4be74; font-size:9px; font-weight:700; letter-spacing:.15em; }
+.film-topline span:last-child { color:#b8c6ba; text-align:right; }
+.offer-film video { width:100%; height:auto; min-height:0; align-self:center; display:block; aspect-ratio:16 / 9; object-fit:contain; background:#0b1611; }
+.offer-copy { min-height:530px; padding:clamp(33px,4.25vw,68px) clamp(27px,4vw,62px); display:flex; align-items:flex-start; flex-direction:column; justify-content:center; background:linear-gradient(150deg,#1b392c,#10231a); }
+.focus-offer-home .offer-copy { background:linear-gradient(150deg,#204131,#13261c); }
+.core-offer-home .offer-copy { background:linear-gradient(150deg,#193227,#0d1e16); }
+.offer-copy > span { color:#e6bf72; }
+.offer-copy h3 { max-width:420px; margin:26px 0 17px; font-size:clamp(38px,4vw,61px); line-height:.9; }
+.offer-copy p { max-width:410px; color:#c5d0c4; font-size:15px; line-height:1.62; }
+.offer-copy .button.light { width:min(100%,335px); margin-top:33px; color:#173026; background:#e9e7d9; }
+.offer-copy .button.light:hover { color:#f4f0e6; background:#a85438; transform:translateY(-2px); }
+.offer-copy .button i { color:inherit; font-style:normal; }
+
+.elevated-closing { position:relative; isolation:isolate; overflow:hidden; }
+.closing-waves { position:absolute; z-index:-2; inset:0; width:100%; height:100%; object-fit:cover; object-position:center bottom; opacity:.26; mix-blend-mode:screen; }
+.elevated-closing::after { content:""; position:absolute; z-index:-1; inset:0; background:linear-gradient(180deg,rgba(12,29,21,.95) 0%,rgba(12,29,21,.88) 58%,rgba(12,29,21,.62) 100%); }
+.closing-content { display:grid; justify-items:center; text-align:center; }
+
+@media (max-width:900px) {
+  .deeper-offer,.deeper-offer + .deeper-offer { grid-template-columns:1fr; }
+  .deeper-offer + .deeper-offer .offer-film { order:0; border-right:0; border-left:0; }
+  .offer-film { min-height:auto; border-right:0; border-bottom:1px solid rgba(245,240,229,.22); }
+  .offer-film video { min-height:0; aspect-ratio:16 / 9; }
+  .offer-copy { min-height:0; padding:46px 26px 48px; }
+}
+
+@media (max-width:600px) {
+  .deeper-work-offers { margin-top:47px; }
+  .offer-film { padding:10px; }
+  .film-topline { min-height:29px; padding-bottom:8px; font-size:7px; letter-spacing:.12em; }
+  .offer-copy h3 { font-size:clamp(39px,12vw,58px); }
+  .offer-copy p { font-size:14px; }
+  .offer-copy .button.light { width:100%; }
+}

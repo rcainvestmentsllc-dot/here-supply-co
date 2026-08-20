@@ -4,6 +4,7 @@ export type MomentKey = "attention" | "arrival" | "pressure" | "distance";
 // a sales page that promises a checkout that does not actually exist.
 export const SKOOL = {
   group: "https://www.skool.com/the-iron-compass-6783",
+  sundayBoard: "https://www.skool.com/the-iron-compass-6783/classroom/702bd08d?md=3cd04153bebd486681c565948b0f88ae",
   focus: "https://www.skool.com/the-iron-compass-6783/classroom/ef426510",
   core: "https://www.skool.com/the-iron-compass-6783/classroom/8bb9f923",
 } as const;
