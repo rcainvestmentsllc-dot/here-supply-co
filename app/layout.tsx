@@ -14,8 +14,8 @@ export async function generateMetadata(): Promise<Metadata> {
     title,
     description,
     icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
-    openGraph: { title, description, images: [{ url: "/og-iron-compass.png", width: 1731, height: 909, alt: "Iron Compass, Be here for your own life." }] },
-    twitter: { card: "summary_large_image", title, description, images: ["/og-iron-compass.png"] },
+    openGraph: { title, description, images: [{ url: "/og-iron-compass-v2.jpg", width: 1731, height: 909, alt: "Iron Compass, Be here for your own life." }] },
+    twitter: { card: "summary_large_image", title, description, images: ["/og-iron-compass-v2.jpg"] },
   };
 }
 
