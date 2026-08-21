@@ -810,7 +810,6 @@ img { max-width:100%; }
   .offer-copy p { font-size:14px; }
   .offer-copy .button.light { width:100%; }
 }
-
 /* The public front door. This is intentionally a single composed experience, not a stack of course sections. */
 .pro-home { background:#f4f0e7; color:#192d24; }
 .pro-shell { width:min(100%,1320px); margin:0 auto; }
