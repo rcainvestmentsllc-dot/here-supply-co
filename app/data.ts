@@ -1,4 +1,4 @@
-export type MomentKey = "attention" | "arrival" | "pressure" | "distance";
+export type MomentKey = "attention" | "arrival" | "pressure" | "week" | "mind" | "distance";
 
 // These are the live delivery paths in Skool. Keeping them in one place avoids
 // a sales page that promises a checkout that does not actually exist.
@@ -9,11 +9,118 @@ export const SKOOL = {
   core: "https://www.skool.com/the-iron-compass-6783/classroom/8bb9f923",
 } as const;
 
-export const MOMENTS: Record<MomentKey, { number: string; title: string; detail: string; label: string; action: string; note: string; nextLabel: string; nextHref: string }> = {
-  attention: { number: "01", title: "My attention keeps leaving the room.", detail: "Phone, work, and noise are getting more of me than the people I love.", label: "The Focus Protocol", action: "For the next twenty minutes, put your phone on charge outside the room. Let someone else choose the topic.", note: "If you reach for it, simply return. No self-lecture needed.", nextLabel: "Go deeper with Focus Protocol · $29", nextHref: "/library#focus" },
-  arrival: { number: "02", title: "I come home, but I do not really arrive.", detail: "The day follows me through the door and sets the tone.", label: "The Airlock", action: "Before you open the door, take three slow breaths. Decide who you will greet first and the first question you will ask.", note: "Do not unload the whole day in the doorway.", nextLabel: "See the complete Core system · $249", nextHref: "/library#core" },
-  pressure: { number: "03", title: "Pressure is changing how I react.", detail: "I am sharper, quieter, or more distant than I want to be.", label: "The Emotional Thermostat", action: "Name your temperature: low, rising, or hot. If it is hot, take ten minutes and say exactly when you will come back.", note: "A named pause is not disappearing. It is taking responsibility for the moment.", nextLabel: "See the complete Core system · $249", nextHref: "/library#core" },
-  distance: { number: "04", title: "I am carrying too much by myself.", detail: "I need a real connection, not another thing to manage.", label: "The Third Place", action: "Text one man you respect: “I have been carrying too much alone. Want to take a walk or grab coffee this week?”", note: "Choose one person. Keep it simple. Actually send it.", nextLabel: "See the complete Core system · $249", nextHref: "/library#core" },
+export const CONTACT_FORM = "https://docs.google.com/forms/d/e/1FAIpQLSfw1xxS3wh6KoQHNQiNIVfIZ2Sz3aS42LoJCIxjOVb2qCEp4A/viewform";
+
+type Moment = {
+  number: string;
+  title: string;
+  detail: string;
+  label: string;
+  protocol: string;
+  summary: string;
+  steps: string[];
+  note: string;
+  nextLabel: string;
+  nextHref: string;
+};
+
+export const MOMENTS: Record<MomentKey, Moment> = {
+  attention: {
+    number: "01",
+    title: "My attention keeps leaving the room.",
+    detail: "Phone, work, and noise are getting more of me than the people I love.",
+    label: "Put your attention back in the room",
+    protocol: "THE 15-MINUTE FLOOR RULE",
+    summary: "This is a presence problem, not a phone problem.",
+    steps: [
+      "Put your phone in another room.",
+      "Choose one person. Sit at their level, or turn fully toward them.",
+      "For fifteen minutes, follow their conversation or play. Do not steer it, check something, or multitask.",
+    ],
+    note: "The point is proximity and attention. Focus Protocol is the deeper reset if the reflex keeps winning.",
+    nextLabel: "See Focus Protocol · $29",
+    nextHref: "/library#focus",
+  },
+  arrival: {
+    number: "02",
+    title: "I come home, but I do not really arrive.",
+    detail: "The day follows me through the door and sets the tone.",
+    label: "Use the door as a reset",
+    protocol: "THE AIRLOCK PROTOCOL",
+    summary: "Your vehicle can be a decompression chamber instead of a place to keep working.",
+    steps: [
+      "Park. Engine off. Phone silent.",
+      "Take a two-minute inventory. Name what you are carrying that belongs to tomorrow.",
+      "Take three deep breaths, then decide how you want to enter before opening the door.",
+    ],
+    note: "You do not need to fake a good mood. You do need to stop handing the whole day to the room.",
+    nextLabel: "See how Iron Compass Core works · $249",
+    nextHref: "/library#core",
+  },
+  pressure: {
+    number: "03",
+    title: "Pressure is changing how I react.",
+    detail: "I am sharper, quieter, or more distant than I want to be.",
+    label: "Lower the temperature before you speak",
+    protocol: "THE EMOTIONAL THERMOSTAT",
+    summary: "The people around you feel your nervous system before they hear your explanation.",
+    steps: [
+      "Before your next answer, inhale for four and exhale for six.",
+      "If you are still hot, take ten minutes and name the time you will come back.",
+      "Return when you said you would, then start with one calm sentence.",
+    ],
+    note: "A pause is not disappearing if you keep your word and return.",
+    nextLabel: "See how Iron Compass Core works · $249",
+    nextHref: "/library#core",
+  },
+  week: {
+    number: "04",
+    title: "The week keeps getting away from us.",
+    detail: "The things that matter get pushed aside by logistics and surprise.",
+    label: "Put the week on the table",
+    protocol: "THE SUNDAY BOARD MEETING",
+    summary: "A short weekly check-in keeps the house from being run by surprise.",
+    steps: [
+      "Set aside fifteen minutes on Sunday with a notebook or the Board.",
+      "Rate connection, communication, and intimacy from one to ten.",
+      "Look at the week ahead, then decide needs, money, time together, and one shared win.",
+    ],
+    note: "Nothing has to be solved at once. The point is to see the same week.",
+    nextLabel: "Open the free Sunday Board Meeting",
+    nextHref: "/sunday-board",
+  },
+  mind: {
+    number: "05",
+    title: "My head is too full to be here.",
+    detail: "I am trying to carry work, home, and every unfinished thing at once.",
+    label: "Get it out of your head",
+    protocol: "THE SANCTUARY",
+    summary: "Your mind is for processing, not for storing every open loop.",
+    steps: [
+      "Put paper in front of you, not your phone.",
+      "Write every open loop down: work, home, promises, and worries.",
+      "Keep going until the list loses its grip. Do not organize it yet.",
+    ],
+    note: "Use a Sunday night mind sweep when you can. This is a reset, not another system to manage.",
+    nextLabel: "See how Iron Compass Core works · $249",
+    nextHref: "/library#core",
+  },
+  distance: {
+    number: "06",
+    title: "I am carrying too much by myself.",
+    detail: "I need a real connection, not another thing to manage.",
+    label: "Invite one man into the week",
+    protocol: "THE FRIENDSHIP SCRIPT",
+    summary: "Real friendship is shared time, low stakes, and repetition.",
+    steps: [
+      "Pick one man you respect.",
+      "Invite him to something shoulder-to-shoulder, with a day and time.",
+      "Keep the invitation light. Repeat it next week if it needs to become a rhythm.",
+    ],
+    note: "Do not wait until isolation feels like an emergency. Invite first.",
+    nextLabel: "See how Iron Compass Core works · $249",
+    nextHref: "/library#core",
+  },
 };
 
 export const GAMMA_LINKS = [
