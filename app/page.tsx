@@ -125,7 +125,7 @@ export default function Home() {
             <details className={styles.videoReveal}>
               <summary className={styles.focusVideoSummary}>
                 <img src="/assets/focus-manual-gamma.png" alt="Focus Protocol Field Manual cover" />
-                <span>WATCH THE FOCUS OVERVIEW · 03:28</span><b>Play video <i>→</i></b>
+                <span className={styles.videoMeta}><small>FOCUS OVERVIEW · 03:28</small><strong>Watch the Focus overview <i>→</i></strong></span>
               </summary>
               <video controls playsInline preload="none" poster="/assets/focus-manual-gamma.png"><source src="/assets/focus-protocol-sales.mp4" type="video/mp4" />Your browser does not support this video.</video>
             </details>
@@ -140,7 +140,7 @@ export default function Home() {
             <details className={styles.videoReveal}>
               <summary className={styles.coreVideoSummary}>
                 <img src="/assets/core-bridge-poster.png" alt="Iron Compass Core video preview" />
-                <span>WATCH THE CORE OVERVIEW · 01:22</span><b>Play video <i>→</i></b>
+                <span className={styles.videoMeta}><small>CORE OVERVIEW · 01:22</small><strong>Watch the Core overview <i>→</i></strong></span>
               </summary>
               <video controls playsInline preload="none" poster="/assets/core-bridge-poster.png"><source src="/assets/core-bridge-sales.mp4" type="video/mp4" />Your browser does not support this video.</video>
             </details>

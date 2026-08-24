@@ -14,9 +14,9 @@ export default function FieldGuide() {
       <header className={styles.header}>
         <Link className={styles.brand} href="/" aria-label="Iron Compass home">
           <span className={styles.mark} aria-hidden="true"><i /><b /></span>
-          <span><strong>IRON COMPASS</strong><small>Tools for a steadier life at home</small></span>
+          <span><strong>IRON COMPASS</strong><small>Practical work for the rooms that matter</small></span>
         </Link>
-        <nav><Link href="/">Home</Link><Link href="/library">The work</Link><Link href="/about">About Chris</Link></nav>
+        <nav><Link href="/field-guide">Compass Check</Link><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/library">The Work</Link></nav>
         <a className={styles.headerAction} href={SKOOL.group} target="_blank" rel="noreferrer">Start free <span>→</span></a>
       </header>
 
