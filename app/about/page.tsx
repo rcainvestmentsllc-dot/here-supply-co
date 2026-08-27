@@ -12,7 +12,7 @@ export default function AboutChris() {
           <span><strong>IRON COMPASS</strong><small>Practical work for the rooms that matter</small></span>
         </Link>
         <nav><Link href="/field-guide">Compass Check</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link><Link href="/resources">Resources</Link></nav>
-        <Link className={styles.headerAction} href="/sunday-board#get-board">Get the meeting guide <span>→</span></Link>
+        <Link className={styles.headerAction} href="/sunday-board#get-board">Start free <span>→</span></Link>
       </header>
 
       <section className={styles.hero}>

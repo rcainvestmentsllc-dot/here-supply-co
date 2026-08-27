@@ -34,7 +34,8 @@ test("server-renders the finished Iron Compass homepage", async () => {
 
   assert.match(html, /<title>Iron Compass Institute \| Be Here for Your Own Life<\/title>/i);
   assert.match(html, /Be here for/);
-  assert.match(html, /less distracted, more present at home/);
+  assert.match(html, /reclaim your attention, carry pressure better, and become more present at home/);
+  assert.match(html, /Chris Avera/);
   assert.match(html, /Start the Sunday Board Meeting/);
   assert.match(html, /Take the Compass Check/);
   assert.match(html, /Phones, feeds, AI tools, and work/);

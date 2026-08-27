@@ -58,7 +58,7 @@ export default function Home() {
           <a href="#work">Programs</a>
           <Link href="/resources">Resources</Link>
         </nav>
-        <Link className={styles.headerAction} href="/sunday-board#get-board">Get the meeting guide <span>→</span></Link>
+        <Link className={styles.headerAction} href="/sunday-board#get-board">Start free <span>→</span></Link>
       </header>
 
       <nav className={styles.mobileNav} aria-label="Mobile navigation">
@@ -69,19 +69,28 @@ export default function Home() {
       </nav>
 
       <section className={styles.hero}>
-        <img className={styles.heroImage} src="/assets/home-hero-doorway.jpg" alt="A man pausing before entering a warmly lit room" width="1536" height="1024" fetchPriority="high" decoding="async" />
-        <div className={styles.heroShade} />
-        <div className={styles.heroRule} />
-        <div className={styles.heroContent}>
-          <p className={styles.eyebrow}>PRACTICAL WORK FOR HUSBANDS AND FATHERS</p>
-          <h1>Be here for<br /><em>your own life.</em></h1>
-          <p className={styles.lead}>Practical tools for husbands and fathers who want to be less distracted, more present at home, and steadier with the people they love.</p>
-          <div className={styles.heroActions}>
-            <Link className={styles.primaryButton} href="/sunday-board">Start the Sunday Board Meeting <span>→</span></Link>
-            <Link className={styles.quietLightLink} href="/field-guide">Take the Compass Check <span>→</span></Link>
+        <div className={styles.heroInner}>
+          <div className={styles.heroContent}>
+            <p className={styles.eyebrow}>PRACTICAL WORK FOR HUSBANDS AND FATHERS</p>
+            <h1>Be here for<br /><em>your own life.</em></h1>
+            <p className={styles.lead}>Iron Compass gives you short, practical ways to reclaim your attention, carry pressure better, and become more present at home.</p>
+            <div className={styles.heroActions}>
+              <Link className={styles.primaryButton} href="/sunday-board#get-board">Start free with the Sunday Board <span>→</span></Link>
+              <Link className={styles.quietLightLink} href="/field-guide">Find my starting point <span>→</span></Link>
+            </div>
+            <p className={styles.heroAssurance}>Free 15-minute meeting guide · Opens immediately</p>
           </div>
+          <figure className={styles.heroPortrait}>
+            <img src="/assets/core-bridge-poster.jpg" alt="Chris Avera speaking from his living room" width="1280" height="720" fetchPriority="high" decoding="async" />
+            <blockquote>“I built this because I needed it first.”</blockquote>
+            <figcaption><strong>Chris Avera</strong><span>Husband, father, and founder of Iron Compass</span></figcaption>
+          </figure>
         </div>
-        <div className={styles.heroFooter}><span>START FREE. USE IT THIS SUNDAY.</span><span>Attention · Regulation · Identity</span></div>
+        <div className={styles.heroFooter} aria-label="What Iron Compass includes">
+          <span><b>15 MIN</b> free weekly meeting guide</span>
+          <span><b>72 HR</b> focused attention reset</span>
+          <span><b>9</b> visual lessons in Core</span>
+        </div>
       </section>
 
       <section className={styles.orientation} aria-labelledby="orientation-title">
