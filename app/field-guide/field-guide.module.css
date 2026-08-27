@@ -14,7 +14,7 @@
 .mark i { position:absolute; inset:8px; border:1px solid #b38a42; transform:rotate(45deg); }
 .mark b { width:5px; height:5px; position:absolute; left:50%; top:50%; border-radius:50%; background:#b38a42; transform:translate(-50%,-50%); }
 .header nav { display:flex; align-items:center; gap:clamp(18px,2.25vw,32px); }
-.header nav a { color:#59695f; font-size:10px; font-weight:700; letter-spacing:.045em; text-decoration:none; }
+.header nav a { min-height:44px; display:inline-flex; align-items:center; color:#59695f; font-size:10px; font-weight:700; letter-spacing:.045em; text-decoration:none; }
 .header nav a:hover { color:var(--rust); }
 .headerAction { min-height:43px; padding:0 15px; display:inline-flex; align-items:center; gap:22px; flex:none; color:var(--ink); background:#dfcf9a; border-radius:3px; font-size:10px; font-weight:700; text-decoration:none; }
 .headerAction:hover { color:var(--paper); background:var(--rust); }

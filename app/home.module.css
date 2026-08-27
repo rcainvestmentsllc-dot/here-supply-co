@@ -4,7 +4,7 @@
   --paper: #f5f0e6;
   --sage: #e0e6cd;
   --gold: #cda45b;
-  --rust: #ad563e;
+  --rust: #a6533b;
   --muted: #5d6b61;
   width: 100%; overflow: clip; color: var(--ink); background: var(--paper); font-family: Arial, Helvetica, sans-serif;
 }
@@ -25,7 +25,7 @@
 .mark i { position:absolute; inset:8px; border:1px solid #ae8440; transform:rotate(45deg); }
 .mark b { width:5px; height:5px; position:absolute; left:50%; top:50%; border-radius:50%; background:#ae8440; transform:translate(-50%,-50%); }
 .nav { display:flex; align-items:center; gap:clamp(18px,2.2vw,31px); }
-.nav a { color:#5b6b60; font-size:10px; font-weight:700; letter-spacing:.045em; text-decoration:none; }
+.nav a { min-height:44px; display:inline-flex; align-items:center; color:#5b6b60; font-size:10px; font-weight:700; letter-spacing:.045em; text-decoration:none; }
 .nav a:hover { color:var(--rust); }
 .mobileNav { display:none; }
 .headerAction { min-height:42px; padding:0 15px; display:inline-flex; align-items:center; gap:21px; flex:none; color:var(--ink); background:#ded098; border-radius:3px; font-size:10px; font-weight:700; text-decoration:none; transition:.2s ease; }
@@ -66,9 +66,14 @@
 .movementHeader h2 { grid-column:1; margin:18px 0 0; font-size:clamp(51px,5.35vw,82px); line-height:.88; }
 .movementHeader > p:last-child { grid-column:2; grid-row:1 / span 2; align-self:end; max-width:470px; margin:0; color:#c2cdc2; font-size:16px; line-height:1.65; }
 .movementGrid { margin-top:clamp(49px,6.5vw,82px); display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid rgba(245,240,230,.22); }
-.movementCard { min-height:320px; padding:31px clamp(22px,2.7vw,42px) 32px; border-bottom:1px solid rgba(245,240,230,.22); border-right:1px solid rgba(245,240,230,.22); }
+.movementCard { min-height:440px; overflow:hidden; border-bottom:1px solid rgba(245,240,230,.22); border-right:1px solid rgba(245,240,230,.22); }
 .movementCard:last-child { border-right:0; }
-.movementCard > span { color:var(--gold); font-size:10px; font-weight:700; letter-spacing:.16em; }
+.movementPreview { position:relative; aspect-ratio:16 / 9; overflow:hidden; background:#0d2319; }
+.movementPreview img { width:100%; height:100%; display:block; object-fit:cover; filter:saturate(.82) contrast(1.04); transition:transform .45s ease; }
+.movementCard:hover .movementPreview img { transform:scale(1.018); }
+.movementPreview span { position:absolute; left:15px; bottom:13px; padding:7px 9px; color:var(--paper); background:rgba(8,22,15,.86); font-size:8px; font-weight:700; letter-spacing:.12em; }
+.movementBody { padding:27px clamp(22px,2.7vw,40px) 34px; }
+.movementBody > span { color:var(--gold); font-size:10px; font-weight:700; letter-spacing:.16em; }
 .movementCard h3 { margin:41px 0 16px; color:var(--paper); font-size:clamp(39px,3.7vw,56px); line-height:.85; }
 .movementCard strong { display:block; max-width:265px; color:#e0e7df; font-size:13px; line-height:1.42; }
 .movementCard p { max-width:280px; margin:19px 0 0; color:#b8c5b8; font-size:13px; line-height:1.62; }
@@ -128,6 +133,8 @@
 .coreOffer > a:hover { color:var(--gold); }
 .focusOffer > a b { color:var(--rust); font-size:18px; }
 .coreOffer > a b { color:var(--gold); font-size:18px; }
+.offerAssurance { margin:18px 0 0 !important; color:#7b897f !important; font-size:9px !important; font-weight:700; letter-spacing:.08em; line-height:1.6 !important; text-transform:uppercase; }
+.coreOffer .offerAssurance { color:#aebcaf !important; }
 
 .methodSection { padding:clamp(92px,10.2vw,145px) clamp(24px,7vw,110px); display:grid; grid-template-columns:minmax(170px,.3fr) minmax(280px,.9fr) minmax(250px,.72fr); column-gap:clamp(40px,6vw,100px); color:var(--paper); background:#10271d; }
 .methodSection .eyebrow { color:var(--gold); }
@@ -191,7 +198,9 @@
   .systemIntro div > p { margin-top:28px; font-size:16px; }
   .movementSection { padding-top:75px; padding-bottom:80px; }
   .movementGrid { margin-top:45px; }
-  .movementCard { padding:26px 0; }
+  .movementCard { padding:0; }
+  .movementBody { padding:26px 0 31px; }
+  .movementPreview span { left:11px; bottom:10px; }
   .movementCard h3 { font-size:clamp(44px,12vw,62px); }
   .startSection { padding-top:80px; padding-bottom:82px; }
   .startArtwork { min-height:430px; padding:20px; }

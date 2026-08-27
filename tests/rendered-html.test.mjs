@@ -1,19 +1,13 @@
 import assert from "node:assert/strict";
-import { access, readFile, readdir } from "node:fs/promises";
 import test from "node:test";
 
-const developmentPreviewMeta =
-  /<meta(?=[^>]*\bname=["']codex-preview["'])(?=[^>]*\bcontent=["']development["'])[^>]*>/i;
-const templateRoot = new URL("../", import.meta.url);
-const previewRoot = new URL("../app/_sites-preview/", import.meta.url);
+const workerUrl = new URL("../dist/server/index.js", import.meta.url);
+workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
+const { default: worker } = await import(workerUrl.href);
 
-async function render() {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
-  const { default: worker } = await import(workerUrl.href);
-
+async function render(pathname = "/") {
   return worker.fetch(
-    new Request("http://localhost/", {
+    new Request(`http://localhost${pathname}`, {
       headers: { accept: "text/html" },
     }),
     {
@@ -28,64 +22,70 @@ async function render() {
   );
 }
 
-test("server-renders the starter loading skeleton", async () => {
-  const response = await render();
+async function htmlFor(pathname) {
+  const response = await render(pathname);
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
+  return response.text();
+}
 
-  const html = await response.text();
-  assert.match(html, developmentPreviewMeta);
-  assert.match(html, /<title>Your site is taking shape<\/title>/i);
-  assert.match(html, /Building your site/);
-  assert.match(html, /Your site is taking shape/);
-  assert.match(
-    html,
-    /Your first version will appear here automatically when it’s ready\./,
-  );
-  assert.doesNotMatch(html, /Codex/);
-  assert.match(html, /react-loading-skeleton/);
-  assert.match(html, /role="status"/);
+test("server-renders the finished Iron Compass homepage", async () => {
+  const html = await htmlFor("/");
+
+  assert.match(html, /<title>Iron Compass Institute \| Be Here for Your Own Life<\/title>/i);
+  assert.match(html, /Be here for/);
+  assert.match(html, /less distracted, more present at home/);
+  assert.match(html, /Start the Sunday Board Meeting/);
+  assert.match(html, /Take the Compass Check/);
+  assert.match(html, /Phones, feeds, AI tools, and work/);
+  assert.match(html, /Skip to main content/);
+  assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
 });
 
-test("keeps the loading skeleton scoped and disposable", async () => {
-  const [preview, css, page, layout, packageJson, files] = await Promise.all([
-    readFile(new URL("SkeletonPreview.tsx", previewRoot), "utf8"),
-    readFile(new URL("preview.css", previewRoot), "utf8"),
-    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../package.json", import.meta.url), "utf8"),
-    readdir(previewRoot),
-  ]);
+test("makes the Sunday Board Meeting clear and renders a valid MailerLite mount", async () => {
+  const html = await htmlFor("/sunday-board");
 
-  assert.deepEqual(files.sort(), ["SkeletonPreview.tsx", "preview.css"]);
-  assert.match(preview, /from "react-loading-skeleton"/);
-  assert.match(preview, /baseColor="#eceae7"/);
-  assert.match(preview, /highlightColor="#f9f8f6"/);
-  assert.match(preview, /duration=\{2\.8\}/);
-  assert.match(preview, /sites-skeleton-search-placeholder/);
-  assert.match(packageJson, /"react-loading-skeleton": "3\.5\.0"/);
+  assert.match(html, /A 15-MINUTE WEEKLY MEETING FOR YOU AND YOUR WIFE/i);
+  assert.match(html, /Sit down together/);
+  assert.match(html, /Free 15-minute meeting guide/i);
+  assert.match(html, /<div class="ml-embedded" data-form="B8mkye"><\/div>/i);
+  assert.doesNotMatch(html, /Get the free Board/i);
+});
 
-  const shellIndex = preview.indexOf('className="sites-skeleton-shell"');
-  const statusIndex = preview.indexOf('className="sites-skeleton-status"');
-  assert.ok(shellIndex >= 0 && statusIndex > shellIndex);
-  assert.match(css, /position:\s*fixed/);
-  assert.match(css, /inset:\s*0/);
-  assert.match(css, /opacity:\s*0\.52/);
-  assert.match(css, /prefers-reduced-motion:\s*reduce/);
-  assert.doesNotMatch(css, /#020617|canvas|pets|progress/i);
-  assert.doesNotMatch(
-    preview,
-    /loading-spinner|status-mark|status-progress|canvas|cookie|random/i,
-  );
+test("renders the Focus offer with its live checkout and refund promise", async () => {
+  const html = await htmlFor("/focus");
 
-  assert.match(page, /export const metadata:\s*Metadata/);
-  assert.match(page, /"codex-preview": "development"/);
-  assert.match(page, /<SkeletonPreview \/>/);
-  assert.match(layout, /title:\s*"Starter Project"/);
-  assert.doesNotMatch(layout, /codex-preview|_sites-preview|themeColor|\bViewport\b/);
-  assert.doesNotMatch(css, /(^|\s)(html|body)\s*\{/m);
+  assert.match(html, /Focus Protocol \| A 72-Hour Attention Reset/);
+  assert.match(html, /https:\/\/checkout\.mailerlite\.com\/checkout\/34346/);
+  assert.match(html, /14-day refund window/i);
+  assert.match(html, /Work at your own pace/i);
+  assert.match(html, /"@type":"Product"/i);
+  assert.match(html, /"price":"29\.00"/i);
+});
 
-  await assert.rejects(
-    access(new URL("public/_sites-preview", templateRoot)),
-  );
+test("renders the Core offer with its live checkout and refund promise", async () => {
+  const html = await htmlFor("/library");
+
+  assert.match(html, /Iron Compass Core \| The Complete Curriculum/);
+  assert.match(html, /https:\/\/checkout\.mailerlite\.com\/checkout\/34347/);
+  assert.match(html, /14-day refund window/i);
+  assert.match(html, /Core Workbook included/i);
+  assert.match(html, /"price":"249\.00"/i);
+});
+
+test("keeps paid access pages out of search results", async () => {
+  const html = await htmlFor("/access/focus-7f3k9q");
+
+  assert.match(html, /<meta name="robots" content="noindex, nofollow"\/>/i);
+  assert.match(html, /PRIVATE ACCESS/);
+});
+
+test("gives every public page one clear heading and a canonical URL", async () => {
+  const routes = ["/", "/sunday-board", "/field-guide", "/focus", "/library", "/about", "/policies"];
+
+  for (const route of routes) {
+    const html = await htmlFor(route);
+    assert.equal((html.match(/<h1\b/gi) ?? []).length, 1, `${route} should have exactly one h1`);
+    assert.match(html, new RegExp(`rel="canonical" href="https://ironcompassinstitute\\.com${route === "/" ? "/?" : route}"`, "i"));
+  }
 });

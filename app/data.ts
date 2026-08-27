@@ -1,12 +1,12 @@
 export type MomentKey = "attention" | "arrival" | "pressure" | "week" | "mind" | "distance";
 
-// These are the live delivery paths in Skool. Keeping them in one place avoids
-// a sales page that promises a checkout that does not actually exist.
-export const SKOOL = {
-  group: "https://www.skool.com/the-iron-compass-6783",
-  sundayBoard: "https://www.skool.com/the-iron-compass-6783/classroom/702bd08d?md=3cd04153bebd486681c565948b0f88ae",
-  focus: "https://www.skool.com/the-iron-compass-6783/classroom/ef426510",
-  core: "https://www.skool.com/the-iron-compass-6783/classroom/8bb9f923",
+export const FREE_BOARD_PDF = "/downloads/sunday-board-meeting.pdf";
+
+// MailerLite supplies the Stripe-powered checkout URLs. Environment values can
+// override these fallbacks without changing the site code.
+export const CHECKOUT = {
+  focus: process.env.NEXT_PUBLIC_FOCUS_CHECKOUT_URL || "https://checkout.mailerlite.com/checkout/34346",
+  core: process.env.NEXT_PUBLIC_CORE_CHECKOUT_URL || "https://checkout.mailerlite.com/checkout/34347",
 } as const;
 
 export const CONTACT_FORM = "https://docs.google.com/forms/d/e/1FAIpQLSfw1xxS3wh6KoQHNQiNIVfIZ2Sz3aS42LoJCIxjOVb2qCEp4A/viewform";
@@ -39,7 +39,7 @@ export const MOMENTS: Record<MomentKey, Moment> = {
     ],
     note: "The point is proximity and attention. Focus Protocol is the deeper reset if the reflex keeps winning.",
     nextLabel: "See Focus Protocol · $29",
-    nextHref: "/library#focus",
+    nextHref: "/focus",
   },
   arrival: {
     number: "02",
@@ -86,7 +86,7 @@ export const MOMENTS: Record<MomentKey, Moment> = {
       "Look at the week ahead, then decide needs, money, time together, and one shared win.",
     ],
     note: "Nothing has to be solved at once. The point is to see the same week.",
-    nextLabel: "Open the free Sunday Board Meeting",
+    nextLabel: "Start the Sunday Board Meeting",
     nextHref: "/sunday-board",
   },
   mind: {

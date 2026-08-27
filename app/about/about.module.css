@@ -29,7 +29,7 @@
 .mark i { position: absolute; inset: 8px; border: 1px solid #b38a42; transform: rotate(45deg); }
 .mark b { width: 5px; height: 5px; position: absolute; left: 50%; top: 50%; border-radius: 50%; background: #b38a42; transform: translate(-50%, -50%); }
 .header nav { display: flex; gap: clamp(18px, 2.25vw, 32px); align-items: center; }
-.header nav a { color: #59695f; font-size: 10px; font-weight: 700; letter-spacing: .045em; text-decoration: none; }
+.header nav a { min-height: 44px; display: inline-flex; align-items: center; color: #59695f; font-size: 10px; font-weight: 700; letter-spacing: .045em; text-decoration: none; }
 .header nav a:hover { color: var(--rust); }
 .headerAction { min-height: 43px; padding: 0 15px; display: inline-flex; align-items: center; gap: 22px; flex: none; color: var(--ink); background: #dfcf9a; border-radius: 3px; font-size: 10px; font-weight: 700; text-decoration: none; }
 .headerAction:hover { color: var(--paper); background: var(--rust); }
@@ -62,14 +62,17 @@
 .beliefList h3 { margin: 42px 0 13px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(24px, 2.15vw, 32px); font-weight: 400; letter-spacing: -.055em; line-height: .95; }
 .beliefList p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
 
-.fromChris { min-height: 620px; padding: clamp(88px, 10vw, 144px) clamp(24px, 7vw, 110px); display: grid; grid-template-columns: minmax(130px, .34fr) minmax(0, 1.2fr); gap: clamp(48px, 9vw, 158px); position: relative; isolation: isolate; overflow: hidden; color: var(--paper); background: linear-gradient(119deg, #0b1d15, #173328); }
-.fromChris::before { content: ""; width: min(74vw, 1100px); height: 1px; position: absolute; z-index: -1; bottom: 19%; left: 50%; background: linear-gradient(90deg, transparent, rgba(202, 164, 93, .55), transparent); transform: translateX(-50%); }
-.fromChris .eyebrow { align-self: start; }
-.fromChris > div { max-width: 800px; }
-.fromChris h2 { max-width: 760px; margin: 18px 0 35px; font-size: clamp(52px, 5.9vw, 88px); line-height: .84; }
+.fromChris { min-height: 620px; padding: clamp(88px, 10vw, 144px) clamp(24px, 7vw, 110px); position: relative; isolation: isolate; overflow: hidden; color: var(--paper); background: linear-gradient(119deg, #0b1d15, #173328); }
+.fromChris::before { content: ""; width: min(74vw, 1100px); height: 1px; position: absolute; z-index: -1; right: -12%; top: 22%; background: linear-gradient(90deg, transparent, rgba(202, 164, 93, .42), transparent); transform: rotate(-12deg); }
+.fromChrisInner { width: min(100%, 1210px); margin: 0 auto; display: grid; grid-template-columns: minmax(145px, .28fr) minmax(0, 790px); justify-content: space-between; gap: clamp(52px, 8vw, 132px); }
+.fromChris .eyebrow { align-self: start; padding-top: 10px; }
+.letter { min-width: 0; }
+.fromChris h2 { max-width: 760px; margin: 0 0 43px; font-size: clamp(49px, 5vw, 76px); line-height: .89; }
 .fromChris h2 em { color: var(--gold); font-style: italic; }
-.fromChris div > p { max-width: 650px; margin: 0 0 20px; color: #c3cec2; font-size: clamp(16px, 1.35vw, 19px); line-height: 1.66; }
-.signature { margin-top: 20px; display: block; color: var(--gold); font-family: Georgia, "Times New Roman", serif; font-size: 30px; font-style: italic; letter-spacing: -.06em; }
+.letterBody { max-width: 630px; padding-left: clamp(21px, 2.4vw, 34px); border-left: 1px solid rgba(202, 164, 93, .48); }
+.letterBody > p { margin: 0 0 23px; color: #c9d3c8; font-size: clamp(16px, 1.2vw, 18px); line-height: 1.75; }
+.letterBody > p:last-of-type { margin-bottom: 0; }
+.signature { margin-top: 30px; display: block; color: var(--gold); font-family: Georgia, "Times New Roman", serif; font-size: 34px; font-style: italic; letter-spacing: -.06em; }
 
 .footer { min-height: 92px; padding: 0 clamp(24px, 7vw, 110px); display: flex; align-items: center; justify-content: space-between; gap: 28px; color: #9cab9f; background: #0d1e16; font-size: 10px; }
 .footer nav { display: flex; flex-wrap: wrap; gap: 21px; }
@@ -77,7 +80,9 @@
 .footer a:hover { color: var(--gold); }
 
 @media (max-width: 900px) {
-  .story, .notes, .fromChris { grid-template-columns: 1fr; gap: 38px; }
+  .story, .notes { grid-template-columns: 1fr; gap: 38px; }
+  .fromChrisInner { grid-template-columns: 1fr; gap: 31px; }
+  .fromChris .eyebrow { padding-top: 0; }
   .beliefList { grid-template-columns: 1fr; }
   .beliefList article, .beliefList article:first-child { min-height: 0; padding: 23px 0; border-left: 0; border-top: 1px solid rgba(16, 38, 28, .18); }
   .beliefList article:first-child { border-top: 0; }
@@ -98,6 +103,8 @@
   .notes { padding-top: 75px; padding-bottom: 78px; }
   .notes h2 { font-size: clamp(48px, 13.5vw, 66px); }
   .fromChris { min-height: 0; padding-top: 76px; padding-bottom: 84px; }
-  .fromChris h2 { font-size: clamp(49px, 13.6vw, 70px); }
+  .fromChris h2 { margin-bottom: 34px; font-size: clamp(46px, 12.7vw, 65px); line-height: .91; }
+  .letterBody { padding-left: 20px; }
+  .letterBody > p { font-size: 16px; line-height: 1.7; }
   .footer { min-height: 112px; padding: 24px 20px; align-items: flex-start; flex-direction: column; gap: 16px; }
 }

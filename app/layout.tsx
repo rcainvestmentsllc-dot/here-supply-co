@@ -1,24 +1,41 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import "./globals.css";
+import { JsonLd } from "./structured-data";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const requestHeaders = await headers();
-  const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
-  const protocol = host.startsWith("localhost") ? "http" : "https";
-  const title = "Iron Compass Institute | Be Here for Your Own Life";
-  const description = "Practical work for men who want their attention, home, and the way they lead to point in the same direction.";
+const title = "Iron Compass Institute | Be Here for Your Own Life";
+const description = "Practical tools for husbands and fathers who want to overcome digital distraction, be more present at home, and lead a calmer family life.";
 
-  return {
-    metadataBase: new URL(`${protocol}://${host}`),
-    title,
-    description,
-    icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
-    openGraph: { title, description, images: [{ url: "/og-iron-compass-v2.jpg", width: 1731, height: 909, alt: "Iron Compass, Be here for your own life." }] },
-    twitter: { card: "summary_large_image", title, description, images: ["/og-iron-compass-v2.jpg"] },
-  };
-}
+const siteData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ironcompassinstitute.com/#organization",
+      name: "Iron Compass Institute",
+      url: "https://ironcompassinstitute.com/",
+      founder: { "@type": "Person", name: "Chris Avera" },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ironcompassinstitute.com/#website",
+      url: "https://ironcompassinstitute.com/",
+      name: "Iron Compass Institute",
+      description,
+      publisher: { "@id": "https://ironcompassinstitute.com/#organization" },
+      inLanguage: "en-US",
+    },
+  ],
+};
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://ironcompassinstitute.com"),
+  title,
+  description,
+  icons: { icon: "/favicon-32x32.png", shortcut: "/favicon-32x32.png", apple: "/apple-touch-icon.png" },
+  openGraph: { title, description, url: "/", siteName: "Iron Compass Institute", type: "website", images: [{ url: "/og-iron-compass-v2.jpg", width: 1731, height: 909, alt: "Iron Compass, Be here for your own life." }] },
+  twitter: { card: "summary_large_image", title, description, images: ["/og-iron-compass-v2.jpg"] },
+};
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}</body></html>;
+  return <html lang="en"><body><a className="skip-link" href="#main-content">Skip to main content</a><JsonLd data={siteData} />{children}</body></html>;
 }

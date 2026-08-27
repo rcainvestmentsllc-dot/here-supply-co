@@ -1,21 +1,22 @@
 import Link from "next/link";
-import { CONTACT_FORM, SKOOL } from "../data";
+import { CONTACT_FORM } from "../data";
+import { CompassMark } from "../components";
 import styles from "./about.module.css";
 
 export default function AboutChris() {
   return (
-    <main className={styles.page}>
+    <main id="main-content" className={styles.page}>
       <header className={styles.header}>
         <Link className={styles.brand} href="/" aria-label="Iron Compass home">
-          <span className={styles.mark} aria-hidden="true"><i /><b /></span>
+          <CompassMark />
           <span><strong>IRON COMPASS</strong><small>Practical work for the rooms that matter</small></span>
         </Link>
-        <nav><Link href="/field-guide">Compass Check</Link><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/library">The Work</Link></nav>
-        <a className={styles.headerAction} href={SKOOL.group} target="_blank" rel="noreferrer">Start free <span>→</span></a>
+        <nav><Link href="/field-guide">Compass Check</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link></nav>
+        <Link className={styles.headerAction} href="/sunday-board#get-board">Get the meeting guide <span>→</span></Link>
       </header>
 
       <section className={styles.hero}>
-        <img src="/assets/home-hero-doorway.png" alt="A warmly lit room beyond an open doorway" />
+        <img src="/assets/home-hero-doorway.jpg" alt="A warmly lit room beyond an open doorway" width="1536" height="1024" fetchPriority="high" />
         <div />
         <div className={styles.heroContent}>
           <p>ABOUT CHRIS AVERA</p>
@@ -45,17 +46,21 @@ export default function AboutChris() {
         </div>
       </section>
 
-      <section className={styles.fromChris}>
-        <p className={styles.eyebrow}>FROM CHRIS</p>
-        <div>
+      <section className={styles.fromChris} id="from-chris">
+        <div className={styles.fromChrisInner}>
+          <p className={styles.eyebrow}>A NOTE FROM CHRIS</p>
+          <div className={styles.letter}>
           <h2>I made this for the part of life you cannot get <em>back.</em></h2>
-          <p>I am not standing outside of this work. I am a husband and father who knows what it is like to be physically present while my attention is somewhere else. Iron Compass came out of my own effort to come back, stay in the room, and take better care of the people I love.</p>
-          <p>Some of it began as writing about faith, family, and the quiet work of returning. The useful parts became named practices you can actually try. Nothing here asks you to become a project. It asks you to notice what matters and show up for it.</p>
-          <span className={styles.signature}>Chris</span>
+            <div className={styles.letterBody}>
+              <p>I am not standing outside of this work. I am a husband and father who knows what it is like to be physically present while my attention is somewhere else. Iron Compass came out of my own effort to come back, stay in the room, and take better care of the people I love.</p>
+              <p>Some of it began as writing about faith, family, and the quiet work of returning. The useful parts became named practices you can actually try. Nothing here asks you to become a project. It asks you to notice what matters and show up for it.</p>
+              <span className={styles.signature}>Chris</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      <footer className={styles.footer}><span>© 2026 Iron Compass Institute</span><nav><Link href="/">Home</Link><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/library">The work</Link><a href={CONTACT_FORM} target="_blank" rel="noreferrer">Contact Chris</a></nav></footer>
+      <footer className={styles.footer}><span>© 2026 Iron Compass Institute</span><nav><Link href="/">Home</Link><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link><Link href="/policies">Policies</Link><a href={CONTACT_FORM} target="_blank" rel="noreferrer">Contact Chris</a></nav></footer>
     </main>
   );
 }

@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { CONTACT_FORM, MOMENTS, SKOOL, type MomentKey } from "../data";
+import { CompassMark } from "../components";
+import { CONTACT_FORM, MOMENTS, type MomentKey } from "../data";
 import styles from "./field-guide.module.css";
 
 export default function FieldGuide() {
@@ -10,14 +11,14 @@ export default function FieldGuide() {
   const practice = selected ? MOMENTS[selected] : null;
 
   return (
-    <main className={styles.page}>
+    <main id="main-content" className={styles.page}>
       <header className={styles.header}>
         <Link className={styles.brand} href="/" aria-label="Iron Compass home">
-          <span className={styles.mark} aria-hidden="true"><i /><b /></span>
+          <CompassMark />
           <span><strong>IRON COMPASS</strong><small>Practical work for the rooms that matter</small></span>
         </Link>
-        <nav><Link href="/field-guide">Compass Check</Link><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/library">The Work</Link></nav>
-        <a className={styles.headerAction} href={SKOOL.group} target="_blank" rel="noreferrer">Start free <span>→</span></a>
+        <nav><Link href="/field-guide">Compass Check</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link></nav>
+        <Link className={styles.headerAction} href="/sunday-board#get-board">Get the meeting guide <span>→</span></Link>
       </header>
 
       <section className={styles.intro}>
@@ -61,7 +62,7 @@ export default function FieldGuide() {
             </div>
             <p className={styles.note}>{practice.note}</p>
             <Link className={styles.nextLink} href={practice.nextHref}>{practice.nextLabel} <b>→</b></Link>
-            <a className={styles.freeLink} href={SKOOL.group} target="_blank" rel="noreferrer">Or start free in Iron Compass <span>↗</span></a>
+            <Link className={styles.freeLink} href="/sunday-board">Or start the Sunday Board Meeting <span>→</span></Link>
           </div>}
         </aside>
       </section>
@@ -69,10 +70,10 @@ export default function FieldGuide() {
       <section className={styles.close}>
         <p className={styles.eyebrow}>NO PERFORMANCE REQUIRED</p>
         <h2>A clearer next step is enough to begin.</h2>
-        <a href={SKOOL.group} target="_blank" rel="noreferrer">Start free in Iron Compass <span>↗</span></a>
+        <Link href="/sunday-board">Start the Sunday Board Meeting <span>→</span></Link>
       </section>
 
-      <footer className={styles.footer}><span>© 2026 Iron Compass Institute</span><nav><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/library">The work</Link><Link href="/about">About Chris</Link><a href={CONTACT_FORM} target="_blank" rel="noreferrer">Contact Chris</a></nav></footer>
+      <footer className={styles.footer}><span>© 2026 Iron Compass Institute</span><nav><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link><Link href="/about">About Chris</Link><Link href="/policies">Policies</Link><a href={CONTACT_FORM} target="_blank" rel="noreferrer">Contact Chris</a></nav></footer>
     </main>
   );
 }
