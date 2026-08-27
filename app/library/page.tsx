@@ -68,6 +68,19 @@ export default function Library() {
 
     <section className="core-promise"><p className="section-label">THE PROMISE</p><div><h2>Not more information.<br />A way to <em>come back.</em></h2><p>When attention is gone, pressure is running the room, or the people you love are getting the leftovers, advice is not enough. Core gives the moment a name, the practice a place, and the rest of the work a direction.</p></div></section>
 
+    <section className="core-overview">
+      <div>
+        <p className="section-label">A 72-SECOND OVERVIEW</p>
+        <h2>See how the whole<br /><em>system fits together.</em></h2>
+        <p>This short public overview is here to help you decide whether Core is the right next step. The full orientation, lessons, and workbook remain inside your private access page.</p>
+      </div>
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption -- Add captions only after an exact transcript is verified. */}
+      <video controls playsInline preload="metadata" poster="/assets/core-bridge-poster.jpg" aria-label="Iron Compass Core overview video">
+        <source src="/assets/core-bridge-sales.mp4" type="video/mp4" />
+        Your browser does not support this video.
+      </video>
+    </section>
+
     <section className="included-section"><div className="included-heading"><p className="section-label">WHAT YOU ACTUALLY GET</p><h2>Watch the room.<br />Work the <em>practice.</em></h2><p>Core is a guided visual lesson library, organized around attention, steadiness at home, and the relationships worth protecting.</p></div><div className="included-list"><article><span>01</span><h3>Core orientation</h3><p>Start with one short video from Chris so you understand how Return, Lead, and Keep work together.</p></article><article><span>02</span><h3>Visual lesson decks</h3><p>Then move through clear, visual lessons and one practice at a time. No long lecture library.</p></article><article><span>03</span><h3>Core Workbook</h3><p>A companion resource included with Core. It supports the work, but it is not a lesson or a fourth movement.</p></article></div></section>
 
     <section id="curriculum" className="curriculum-section"><div className="curriculum-intro"><p className="section-label">THE CORE CURRICULUM</p><h2>Return.<br /><em>Lead.</em><br />Keep.</h2><p>Core has three movements. They are not a thirty-day challenge. They are the parts of a man’s life that need to work together.</p></div><div className="curriculum-modules">{modules.map((module) => <article className="curriculum-module" key={module.name}><div className="curriculum-preview"><img src={module.image} alt={module.alt} width="2400" height="1260" loading="lazy" decoding="async" /><span>LESSON PREVIEW</span></div><div className="module-copy"><span>{module.number} · {module.name.toUpperCase()}</span><h3>{module.line}</h3><ol>{module.lessons.map((lesson) => <li key={lesson}>{lesson}</li>)}</ol></div></article>)}</div></section>

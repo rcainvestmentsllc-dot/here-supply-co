@@ -52,29 +52,37 @@ test("makes the Sunday Board Meeting clear and renders a valid MailerLite mount"
   assert.doesNotMatch(html, /Get the free Board/i);
 });
 
-test("renders the Focus offer without exposing an unverified checkout", async () => {
+test("renders the verified Focus checkout", async () => {
   const html = await htmlFor("/focus");
 
   assert.match(html, /Focus Protocol \| A 72-Hour Attention Reset/);
-  assert.doesNotMatch(html, /checkout\.mailerlite\.com/);
-  assert.match(html, /Checkout is being connected/i);
-  assert.match(html, /Start with the free meeting guide/i);
+  assert.match(html, /https:\/\/checkout\.mailerlite\.com\/checkout\/34346/i);
+  assert.match(html, /Get Focus Protocol/i);
   assert.match(html, /14-day refund window/i);
   assert.match(html, /Work at your own pace/i);
+  assert.doesNotMatch(html, /focus-protocol-sales\.mp4/i);
   assert.match(html, /"@type":"Product"/i);
-  assert.doesNotMatch(html, /"@type":"Offer"/i);
+  assert.match(html, /"@type":"Offer"/i);
 });
 
-test("renders the Core offer without exposing an unverified checkout", async () => {
+test("renders the verified Core checkout", async () => {
   const html = await htmlFor("/library");
 
   assert.match(html, /Iron Compass Core \| The Complete Curriculum/);
-  assert.doesNotMatch(html, /checkout\.mailerlite\.com/);
-  assert.match(html, /paid checkout is not open yet/i);
-  assert.match(html, /Start free while checkout opens/i);
+  assert.match(html, /https:\/\/checkout\.mailerlite\.com\/checkout\/34347/i);
+  assert.match(html, /Get Core/i);
   assert.match(html, /14-day refund window/i);
   assert.match(html, /Core Workbook included/i);
-  assert.doesNotMatch(html, /"@type":"Offer"/i);
+  assert.match(html, /core-bridge-sales\.mp4/i);
+  assert.match(html, /"@type":"Offer"/i);
+});
+
+test("keeps paid orientation videos off the homepage", async () => {
+  const html = await htmlFor("/");
+
+  assert.doesNotMatch(html, /focus-protocol-sales\.mp4|core-bridge-sales\.mp4/i);
+  assert.match(html, /VISUAL FIELD MANUAL PREVIEW/i);
+  assert.match(html, /CORE LESSON PREVIEW/i);
 });
 
 test("keeps paid access pages out of search results", async () => {
@@ -82,6 +90,7 @@ test("keeps paid access pages out of search results", async () => {
 
   assert.match(html, /<meta name="robots" content="noindex, nofollow"\/>/i);
   assert.match(html, /PRIVATE ACCESS/);
+  assert.match(html, /focus-protocol-sales\.mp4/i);
 });
 
 test("gives every public page one clear heading and a canonical URL", async () => {

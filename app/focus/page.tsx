@@ -73,17 +73,16 @@ export default function FocusProtocol() {
         </div>
       </section>
 
-      <section className={styles.videoSection}>
+      <section className={styles.guideSection}>
         <div>
-          <p className="section-label">WATCH THE OVERVIEW</p>
-          <h2>A short introduction.<br />Then <em>do the work.</em></h2>
-          <p>This is not a long course or a lecture library. Watch the brief introduction, open the browser-based visual Field Manual, and take one move into the next 72 hours.</p>
+          <p className="section-label">HOW IT WORKS</p>
+          <h2>Open the manual.<br />Make <em>one move.</em></h2>
+          <p>After checkout, start with Chris’s brief private introduction. Then open the visual Field Manual and take one practical move into the next 72 hours. No course dashboard and no long lecture library.</p>
         </div>
-        {/* eslint-disable-next-line jsx-a11y/media-has-caption -- Add captions only after an exact transcript is verified. */}
-        <video controls playsInline preload="metadata" poster="/assets/focus-manual-gamma.png" aria-label="Focus Protocol overview video">
-          <source src="/assets/focus-protocol-sales.mp4" type="video/mp4" />
-          Your browser does not support this video.
-        </video>
+        <div className={styles.guidePreview}>
+          <img src="/assets/focus-manual-gamma.png" alt="A preview of the Focus Protocol visual Field Manual" width="2400" height="1260" loading="lazy" decoding="async" />
+          <span>THE PRIVATE INTRODUCTION OPENS AFTER CHECKOUT</span>
+        </div>
       </section>
 
       <section className={styles.inside} id="inside">

@@ -16,7 +16,7 @@ export default function AboutChris() {
       </header>
 
       <section className={styles.hero}>
-        <img src="/assets/home-hero-doorway.jpg" alt="A warmly lit room beyond an open doorway" width="1536" height="1024" fetchPriority="high" />
+        <img src="/assets/core-bridge-poster.jpg" alt="Chris Avera speaking from his living room" width="1280" height="720" fetchPriority="high" />
         <div />
         <div className={styles.heroContent}>
           <p>ABOUT CHRIS AVERA</p>

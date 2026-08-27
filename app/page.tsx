@@ -36,10 +36,10 @@ const movements = [
     title: "Identity",
     line: "Build a life that can hold what matters.",
     detail: "Protect time, friendship, marriage, family rhythms, and the parts of life that keep a good man from slowly disappearing into work.",
-    image: "/assets/third-place-gamma.png",
-    alt: "A lesson preview from The Third Place",
-    imageWidth: 2400,
-    imageHeight: 1260,
+    image: "/assets/third-place-surf-card.jpg",
+    alt: "A surfer carrying his board into the water at sunset",
+    imageWidth: 1600,
+    imageHeight: 900,
     imageLabel: "BUILD A LIFE BEYOND WORK",
   },
 ];
@@ -149,14 +149,10 @@ export default function Home() {
             <h3>Get your attention<br />back in the <em>room.</em></h3>
             <p>Focus Protocol is a guided 72-hour reset for the man who knows distraction is taking more than it should. It is not a lecture. It is four practical moves presented clearly enough to use immediately.</p>
             <div className={styles.deliveryNote}><span>DELIVERED INSIDE</span><p>A three-minute introduction and a browser-based visual Field Manual with four practical moves.</p></div>
-            <details className={styles.videoReveal}>
-              <summary className={styles.focusVideoSummary}>
-                <img src="/assets/focus-manual-gamma.png" alt="Focus Protocol presentation preview" width="2400" height="1260" loading="lazy" decoding="async" />
-                <span className={styles.videoMeta}><small>FOCUS OVERVIEW · 03:28</small><strong>Watch the Focus overview <i>→</i></strong></span>
-              </summary>
-              {/* eslint-disable-next-line jsx-a11y/media-has-caption -- Add captions only after an exact transcript is verified. */}
-              <video controls playsInline preload="none" poster="/assets/focus-manual-gamma.png" aria-label="Focus Protocol overview video"><source src="/assets/focus-protocol-sales.mp4" type="video/mp4" />Your browser does not support this video.</video>
-            </details>
+            <div className={styles.offerStill}>
+              <img src="/assets/focus-manual-gamma.png" alt="A preview of the Focus Protocol visual Field Manual" width="2400" height="1260" loading="lazy" decoding="async" />
+              <span>VISUAL FIELD MANUAL PREVIEW</span>
+            </div>
             <p className={styles.offerAssurance}>$29 one time · Immediate access · 14-day refund window</p>
             <Link href="/focus">See Focus Protocol · $29 <b>→</b></Link>
           </article>
@@ -166,14 +162,10 @@ export default function Home() {
             <h3>Build the whole<br /><em>system.</em></h3>
             <p>Core brings the full work together: attention, pressure, home, marriage, family connection, friendship, and the practices that keep a good life from slipping away.</p>
             <div className={styles.deliveryNote}><span>DELIVERED INSIDE</span><p>One short orientation video, visual teaching decks, specific practices, and the Core Workbook as a companion resource.</p></div>
-            <details className={styles.videoReveal}>
-              <summary className={styles.coreVideoSummary}>
-                <img src="/assets/core-bridge-poster.jpg" alt="Iron Compass Core video preview" width="1280" height="720" loading="lazy" decoding="async" />
-                <span className={styles.videoMeta}><small>CORE OVERVIEW · 01:22</small><strong>Watch the Core overview <i>→</i></strong></span>
-              </summary>
-              {/* eslint-disable-next-line jsx-a11y/media-has-caption -- Add captions only after an exact transcript is verified. */}
-              <video controls playsInline preload="none" poster="/assets/core-bridge-poster.jpg" aria-label="Iron Compass Core overview video"><source src="/assets/core-bridge-sales.mp4" type="video/mp4" />Your browser does not support this video.</video>
-            </details>
+            <div className={styles.offerStill}>
+              <img src="/assets/thermostat-gamma.png" alt="A preview of an Iron Compass Core visual lesson" width="2400" height="1260" loading="lazy" decoding="async" />
+              <span>CORE LESSON PREVIEW</span>
+            </div>
             <p className={styles.offerAssurance}>The deeper path. Focus Protocol is the recommended first purchase if you are unsure.</p>
             <Link href="/library#curriculum">See inside Iron Compass Core <b>→</b></Link>
           </article>
