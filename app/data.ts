@@ -2,11 +2,12 @@ export type MomentKey = "attention" | "arrival" | "pressure" | "week" | "mind" |
 
 export const FREE_BOARD_PDF = "/downloads/sunday-board-meeting.pdf";
 
-// MailerLite supplies the Stripe-powered checkout URLs. Environment values can
-// override these fallbacks without changing the site code.
+// MailerLite supplies the Stripe-powered checkout URLs. Keep these empty until
+// the real, public URLs have been verified. Production environment values can
+// turn checkout on without another source change.
 export const CHECKOUT = {
-  focus: process.env.NEXT_PUBLIC_FOCUS_CHECKOUT_URL || "https://checkout.mailerlite.com/checkout/34346",
-  core: process.env.NEXT_PUBLIC_CORE_CHECKOUT_URL || "https://checkout.mailerlite.com/checkout/34347",
+  focus: process.env.NEXT_PUBLIC_FOCUS_CHECKOUT_URL || "",
+  core: process.env.NEXT_PUBLIC_CORE_CHECKOUT_URL || "",
 } as const;
 
 export const CONTACT_FORM = "https://docs.google.com/forms/d/e/1FAIpQLSfw1xxS3wh6KoQHNQiNIVfIZ2Sz3aS42LoJCIxjOVb2qCEp4A/viewform";

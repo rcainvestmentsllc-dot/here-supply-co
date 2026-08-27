@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   twitter: { title: "Iron Compass Core | The Complete Curriculum", description: "A private, self-paced curriculum for husbands and fathers.", images: ["/assets/core-bridge-poster.jpg"] },
 };
 
+const coreCheckoutReady = Boolean(CHECKOUT.core);
+
 const coreProduct = {
   "@context": "https://schema.org",
   "@type": "Product",
@@ -20,12 +22,14 @@ const coreProduct = {
   image: "https://ironcompassinstitute.com/assets/core-bridge-poster.jpg",
   brand: { "@type": "Brand", name: "Iron Compass Institute" },
   category: "Digital educational product",
-  offers: {
-    "@type": "Offer",
-    url: "https://ironcompassinstitute.com/library",
-    priceCurrency: "USD",
-    price: "249.00",
-  },
+  ...(coreCheckoutReady ? {
+    offers: {
+      "@type": "Offer",
+      url: CHECKOUT.core,
+      priceCurrency: "USD",
+      price: "249.00",
+    },
+  } : {}),
 };
 
 const modules = [
@@ -58,7 +62,7 @@ const modules = [
 export default function Library() {
   return <main id="main-content" className="site"><JsonLd data={coreProduct} /><Header />
     <section className="core-hero">
-      <div><p className="kicker">IRON COMPASS CORE</p><h1>Be here for<br /><em>your own life.</em></h1><p>Iron Compass Core is a private, self-paced body of work for husbands and fathers who are tired of being physically home but mentally somewhere else.</p><div className="hero-buttons"><a className="button primary" href={CHECKOUT.core}>Get Core · $249 <span>→</span></a><a className="text-link" href="#curriculum">See the full curriculum <span>↓</span></a></div><small>One-time purchase. Private access. 14-day refund window.</small></div>
+      <div><p className="kicker">IRON COMPASS CORE</p><h1>Be here for<br /><em>your own life.</em></h1><p>Iron Compass Core is a private, self-paced body of work for husbands and fathers who are tired of being physically home but mentally somewhere else.</p><div className="hero-buttons">{coreCheckoutReady ? <a className="button primary" href={CHECKOUT.core}>Get Core · $249 <span>→</span></a> : <Link className="button primary" href="/sunday-board#get-board">Start free while checkout opens <span>→</span></Link>}<a className="text-link" href="#curriculum">See the full curriculum <span>↓</span></a></div><small>{coreCheckoutReady ? "One-time purchase. Private access. 14-day refund window." : "The paid checkout is not open yet. The free meeting guide is available now."}</small></div>
       <aside className="core-system-card" aria-label="The three movements inside Iron Compass Core"><p>THE COMPLETE PRIVATE SYSTEM</p><div><span>01</span><h2>Return</h2><small>Get your attention back.</small></div><div><span>02</span><h2>Lead</h2><small>Bring a steadier self home.</small></div><div><span>03</span><h2>Keep</h2><small>Protect what matters most.</small></div><footer>Three movements · Core Workbook included</footer></aside>
     </section>
 
@@ -68,7 +72,7 @@ export default function Library() {
 
     <section id="curriculum" className="curriculum-section"><div className="curriculum-intro"><p className="section-label">THE CORE CURRICULUM</p><h2>Return.<br /><em>Lead.</em><br />Keep.</h2><p>Core has three movements. They are not a thirty-day challenge. They are the parts of a man’s life that need to work together.</p></div><div className="curriculum-modules">{modules.map((module) => <article className="curriculum-module" key={module.name}><div className="curriculum-preview"><img src={module.image} alt={module.alt} width="2400" height="1260" loading="lazy" decoding="async" /><span>LESSON PREVIEW</span></div><div className="module-copy"><span>{module.number} · {module.name.toUpperCase()}</span><h3>{module.line}</h3><ol>{module.lessons.map((lesson) => <li key={lesson}>{lesson}</li>)}</ol></div></article>)}</div></section>
 
-    <section className="offer-section"><div className="offer-intro"><p className="section-label">ONE CLEAR PATH</p><h2>Start where the<br /><em>problem is real.</em></h2><p>The Sunday Board Meeting is for the week you and your wife need to see together. Focus is for attention that keeps leaving the room. Core brings the complete system together.</p></div><div className="offer-stack"><article className="offer-card free-offer"><span>01 · START FREE</span><h3>The Sunday Board Meeting</h3><p>A printable 15-minute weekly meeting guide for you and your wife.</p><Link href="/sunday-board#get-board">Start the Sunday Board Meeting <b>→</b></Link></article><article id="focus" className="offer-card focus-offer"><span>02 · $29</span><h3>Focus Protocol</h3><p>A guided 72-hour attention reset for the man who wants to be back in the room.</p><strong>$29 <small>one time</small></strong><p className="offer-note">A three-minute introduction and a browser-based visual Field Manual containing four practical moves. Immediate private access and a 14-day refund window.</p><Link href="/focus">See Focus Protocol <b>→</b></Link></article><article id="core" className="offer-card core-offer"><span>03 · $249</span><h3>Iron Compass Core</h3><p>A private visual lesson library for attention, pressure, home, marriage, family connection, friendship, and the practices that bring them together.</p><strong>$249 <small>one time</small></strong><p className="offer-note">One short orientation video, nine visual lessons, and the Core Workbook. Private access at your own pace with a 14-day refund window.</p><a href={CHECKOUT.core}>Get Iron Compass Core <b>→</b></a></article></div></section>
+    <section className="offer-section"><div className="offer-intro"><p className="section-label">ONE CLEAR PATH</p><h2>Start where the<br /><em>problem is real.</em></h2><p>The Sunday Board Meeting is for the week you and your wife need to see together. Focus is for attention that keeps leaving the room. Core brings the complete system together.</p></div><div className="offer-stack"><article className="offer-card free-offer"><span>01 · START FREE</span><h3>The Sunday Board Meeting</h3><p>A printable 15-minute weekly meeting guide for you and your wife.</p><Link href="/sunday-board#get-board">Start the Sunday Board Meeting <b>→</b></Link></article><article id="focus" className="offer-card focus-offer"><span>02 · $29</span><h3>Focus Protocol</h3><p>A guided 72-hour attention reset for the man who wants to be back in the room.</p><strong>$29 <small>one time</small></strong><p className="offer-note">A three-minute introduction and a browser-based visual Field Manual containing four practical moves. Immediate private access and a 14-day refund window.</p><Link href="/focus">See Focus Protocol <b>→</b></Link></article><article id="core" className="offer-card core-offer"><span>03 · $249</span><h3>Iron Compass Core</h3><p>A private visual lesson library for attention, pressure, home, marriage, family connection, friendship, and the practices that bring them together.</p><strong>$249 <small>one time</small></strong><p className="offer-note">One short orientation video, nine visual lessons, and the Core Workbook. Private access at your own pace with a 14-day refund window.</p>{coreCheckoutReady ? <a href={CHECKOUT.core}>Get Iron Compass Core <b>→</b></a> : <Link href="/sunday-board#get-board">Start free while checkout opens <b>→</b></Link>}</article></div></section>
 
     <section className="faq-section"><div><p className="section-label">PLAIN ANSWERS</p><h2>Know what you are<br /><em>buying.</em></h2><p>Core is deliberately simple to access and use. These are the questions that matter before checkout.</p></div><div className="faq-list"><details><summary>Should I start with Focus Protocol?<span>+</span></summary><p>If digital distraction is the clearest problem and you want a smaller first step, yes. Focus is the recommended first purchase. You can buy Core directly when you already know you want the complete system.</p></details><details><summary>How is Core delivered?<span>+</span></summary><p>After checkout, you are sent directly to an unlisted access page with the orientation, lesson links, and workbook. Save that private link.</p></details><details><summary>Is this a subscription?<span>+</span></summary><p>No. Core is a one-time purchase with private, self-paced access.</p></details><details><summary>What if it is not right for me?<span>+</span></summary><p>Request a refund within 14 calendar days of purchase. <Link href="/policies#refund">Read the refund policy.</Link></p></details></div></section>
 

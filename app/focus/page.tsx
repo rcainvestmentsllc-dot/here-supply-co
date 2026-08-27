@@ -21,6 +21,8 @@ export const metadata: Metadata = {
   },
 };
 
+const focusCheckoutReady = Boolean(CHECKOUT.focus);
+
 const focusProduct = {
   "@context": "https://schema.org",
   "@type": "Product",
@@ -29,12 +31,14 @@ const focusProduct = {
   image: "https://ironcompassinstitute.com/assets/focus-manual-gamma.png",
   brand: { "@type": "Brand", name: "Iron Compass Institute" },
   category: "Digital educational product",
-  offers: {
-    "@type": "Offer",
-    url: "https://ironcompassinstitute.com/focus",
-    priceCurrency: "USD",
-    price: "29.00",
-  },
+  ...(focusCheckoutReady ? {
+    offers: {
+      "@type": "Offer",
+      url: CHECKOUT.focus,
+      priceCurrency: "USD",
+      price: "29.00",
+    },
+  } : {}),
 };
 
 export default function FocusProtocol() {
@@ -48,10 +52,12 @@ export default function FocusProtocol() {
           <h1>Get your attention<br /><em>back in the room.</em></h1>
           <p>A practical 72-hour reset for the man who is physically home but keeps finding his attention somewhere else.</p>
           <div className="hero-buttons">
-            <a className="button primary" href={CHECKOUT.focus}>Get Focus Protocol · $29 <span>→</span></a>
+            {focusCheckoutReady
+              ? <a className="button primary" href={CHECKOUT.focus}>Get Focus Protocol · $29 <span>→</span></a>
+              : <Link className="button primary" href="/sunday-board#get-board">Start free while checkout opens <span>→</span></Link>}
             <a className="text-link" href="#inside">See what is inside <span>↓</span></a>
           </div>
-          <small>Immediate private access · No subscription · 14-day refund window</small>
+          <small>{focusCheckoutReady ? "Immediate private access · No subscription · 14-day refund window" : "The paid checkout is not open yet. The free meeting guide is available now."}</small>
         </div>
         <div className={styles.heroVisual}>
           <img src="/assets/focus-manual-gamma.png" alt="Focus Protocol presentation" width="2400" height="1260" fetchPriority="high" decoding="async" />
@@ -112,9 +118,15 @@ export default function FocusProtocol() {
           <ul><li>Immediate access</li><li>Work at your own pace</li><li>14-day refund window</li></ul>
         </div>
         <div className={styles.purchaseAction}>
-          <strong>$29 <small>one time</small></strong>
-          <a className="button primary" href={CHECKOUT.focus}>Get Focus Protocol <span>→</span></a>
-          <p>If it is not a useful fit, request a refund within 14 days of purchase. <Link href="/policies#refund">Read the policy.</Link></p>
+          {focusCheckoutReady ? <>
+            <strong>$29 <small>one time</small></strong>
+            <a className="button primary" href={CHECKOUT.focus}>Get Focus Protocol <span>→</span></a>
+            <p>If it is not a useful fit, request a refund within 14 days of purchase. <Link href="/policies#refund">Read the policy.</Link></p>
+          </> : <>
+            <strong>Checkout is being connected.</strong>
+            <Link className="button primary" href="/sunday-board#get-board">Start with the free meeting guide <span>→</span></Link>
+            <p>Focus will remain a $29 one-time purchase with a 14-day refund window when checkout opens.</p>
+          </>}
         </div>
       </section>
 

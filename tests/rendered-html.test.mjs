@@ -52,25 +52,29 @@ test("makes the Sunday Board Meeting clear and renders a valid MailerLite mount"
   assert.doesNotMatch(html, /Get the free Board/i);
 });
 
-test("renders the Focus offer with its live checkout and refund promise", async () => {
+test("renders the Focus offer without exposing an unverified checkout", async () => {
   const html = await htmlFor("/focus");
 
   assert.match(html, /Focus Protocol \| A 72-Hour Attention Reset/);
-  assert.match(html, /https:\/\/checkout\.mailerlite\.com\/checkout\/34346/);
+  assert.doesNotMatch(html, /checkout\.mailerlite\.com/);
+  assert.match(html, /Checkout is being connected/i);
+  assert.match(html, /Start with the free meeting guide/i);
   assert.match(html, /14-day refund window/i);
   assert.match(html, /Work at your own pace/i);
   assert.match(html, /"@type":"Product"/i);
-  assert.match(html, /"price":"29\.00"/i);
+  assert.doesNotMatch(html, /"@type":"Offer"/i);
 });
 
-test("renders the Core offer with its live checkout and refund promise", async () => {
+test("renders the Core offer without exposing an unverified checkout", async () => {
   const html = await htmlFor("/library");
 
   assert.match(html, /Iron Compass Core \| The Complete Curriculum/);
-  assert.match(html, /https:\/\/checkout\.mailerlite\.com\/checkout\/34347/);
+  assert.doesNotMatch(html, /checkout\.mailerlite\.com/);
+  assert.match(html, /paid checkout is not open yet/i);
+  assert.match(html, /Start free while checkout opens/i);
   assert.match(html, /14-day refund window/i);
   assert.match(html, /Core Workbook included/i);
-  assert.match(html, /"price":"249\.00"/i);
+  assert.doesNotMatch(html, /"@type":"Offer"/i);
 });
 
 test("keeps paid access pages out of search results", async () => {
