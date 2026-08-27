@@ -38,8 +38,23 @@ test("server-renders the finished Iron Compass homepage", async () => {
   assert.match(html, /Start the Sunday Board Meeting/);
   assert.match(html, /Take the Compass Check/);
   assert.match(html, /Phones, feeds, AI tools, and work/);
+  assert.match(html, /Start with the problem.*you can.*name/s);
+  assert.match(html, /compass-brass-wide\.webp/i);
+  assert.match(html, /sauna-cover\.webp/i);
   assert.match(html, /Skip to main content/);
+  assert.doesNotMatch(html, /_next\/static\/chunks\/link-/i);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
+});
+
+test("renders a grounded resource guide without implying accreditation", async () => {
+  const html = await htmlFor("/resources");
+
+  assert.match(html, /Use the right kind.*of help for the.*real problem/i);
+  assert.match(html, /American Association for Marriage and Family Therapy/i);
+  assert.match(html, /U\.S\. Substance Abuse and Mental Health Services Administration/i);
+  assert.match(html, /National Responsible Fatherhood Clearinghouse/i);
+  assert.match(html, /call or text 988/i);
+  assert.match(html, /not therapy, medical care, crisis care, a licensed clinical service, or an accredited program/i);
 });
 
 test("makes the Sunday Board Meeting clear and renders a valid MailerLite mount", async () => {
@@ -109,11 +124,30 @@ test("keeps paid access pages private and puts the Core bridge after Focus", asy
 });
 
 test("gives every public page one clear heading and a canonical URL", async () => {
-  const routes = ["/", "/sunday-board", "/field-guide", "/focus", "/library", "/about", "/policies"];
+  const routes = ["/", "/sunday-board", "/field-guide", "/focus", "/library", "/resources", "/about", "/policies"];
 
   for (const route of routes) {
     const html = await htmlFor(route);
     assert.equal((html.match(/<h1\b/gi) ?? []).length, 1, `${route} should have exactly one h1`);
     assert.match(html, new RegExp(`rel="canonical" href="https://ironcompassinstitute\\.com${route === "/" ? "/?" : route}"`, "i"));
+  }
+});
+
+test("every internal page link resolves and no public page depends on Skool", async () => {
+  const routes = ["/", "/sunday-board", "/field-guide", "/focus", "/library", "/resources", "/about", "/policies"];
+  const destinations = new Set(routes);
+
+  for (const route of routes) {
+    const html = await htmlFor(route);
+    assert.doesNotMatch(html, /skool\.com/i, `${route} should not depend on Skool`);
+    for (const [, href] of html.matchAll(/href="([^"]+)"/gi)) {
+      if (!href.startsWith("/") || href.startsWith("/_next/") || /\.[a-z0-9]{2,5}(?:[?#]|$)/i.test(href)) continue;
+      destinations.add(href.split(/[?#]/, 1)[0] || "/");
+    }
+  }
+
+  for (const destination of destinations) {
+    const response = await render(destination);
+    assert.equal(response.status, 200, `${destination} should resolve`);
   }
 });

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { PlainLink as Link } from "./plain-link";
 import type { Metadata } from "next";
 import { CONTACT_FORM } from "./data";
 import { CompassMark } from "./components";
@@ -14,10 +14,10 @@ const movements = [
     title: "Attention",
     line: "Bring your attention back under your direction.",
     detail: "Make space to think clearly, finish the work in front of you, and come through the door without making your family carry the day’s pressure.",
-    image: "/assets/compass-brass-wide.png",
+    image: "/assets/compass-brass-wide.webp",
     alt: "A brass compass resting on weathered wood",
-    imageWidth: 2048,
-    imageHeight: 1365,
+    imageWidth: 1600,
+    imageHeight: 1066,
     imageLabel: "DIRECTION BEFORE DISTRACTION",
   },
   {
@@ -25,10 +25,10 @@ const movements = [
     title: "Regulation",
     line: "Bring a steadier self into the room.",
     detail: "Pressure is real. The work is learning to pause, return, and lead a hard moment without letting it take over the house.",
-    image: "/assets/sauna-cover.png",
+    image: "/assets/sauna-cover.webp",
     alt: "A quiet wooden sauna prepared for a reset",
-    imageWidth: 2048,
-    imageHeight: 2048,
+    imageWidth: 1600,
+    imageHeight: 1600,
     imageLabel: "CREATE ROOM TO RESET",
   },
   {
@@ -56,7 +56,7 @@ export default function Home() {
           <a href="#system">The system</a>
           <a href="#start">Start free</a>
           <a href="#work">Programs</a>
-          <Link href="/about">About Chris</Link>
+          <Link href="/resources">Resources</Link>
         </nav>
         <Link className={styles.headerAction} href="/sunday-board#get-board">Get the meeting guide <span>→</span></Link>
       </header>
@@ -65,7 +65,7 @@ export default function Home() {
         <a href="#system">The system</a>
         <a href="#start">Start free</a>
         <a href="#work">Programs</a>
-        <Link href="/about">About Chris</Link>
+        <Link href="/resources">Resources</Link>
       </nav>
 
       <section className={styles.hero}>
@@ -84,11 +84,24 @@ export default function Home() {
         <div className={styles.heroFooter}><span>START FREE. USE IT THIS SUNDAY.</span><span>Attention · Regulation · Identity</span></div>
       </section>
 
+      <section className={styles.orientation} aria-labelledby="orientation-title">
+        <div className={styles.orientationIntro}>
+          <p className={styles.eyebrow}>WHY YOU MAY BE HERE</p>
+          <h2 id="orientation-title">Start with the problem<br />you can <em>name.</em></h2>
+          <p>You do not need a new identity or another life system. Pick the situation that feels most true right now.</p>
+        </div>
+        <div className={styles.orientationPaths}>
+          <Link href="/sunday-board#get-board"><span>01</span><strong>My wife and I need to get on the same page.</strong><small>Start with the free Sunday Board Meeting.</small><b>Start free →</b></Link>
+          <Link href="/focus"><span>02</span><strong>My attention keeps leaving the room.</strong><small>Start with the 72-hour Focus Protocol.</small><b>See Focus →</b></Link>
+          <Link href="/library"><span>03</span><strong>I want a steadier way to handle work, pressure, and home.</strong><small>See the complete Iron Compass Core curriculum.</small><b>See Core →</b></Link>
+        </div>
+      </section>
+
       <section className={styles.systemIntro} id="system">
         <p className={styles.eyebrow}>THE WORLD IS DESIGNED TO PULL YOU AWAY</p>
         <div>
           <h2>Your family should not get whatever the <em>algorithm</em> leaves behind.</h2>
-          <p>Phones, feeds, AI tools, and work can make life faster while making it harder to arrive anywhere fully. The answer is not to hate technology. It is to decide what gets your attention, create a clean transition home, and protect a few simple rhythms with the people you love. Iron Compass turns that work into practices you can actually use.</p>
+          <p>Phones, feeds, AI tools, and work keep pulling your attention away. Iron Compass gives you concrete ways to choose what gets your attention, come home without carrying the whole day through the door, and protect time with the people you love. Start with one free Sunday conversation, use Focus when distraction is the main problem, and choose Core when you want the whole system.</p>
         </div>
       </section>
 
@@ -189,6 +202,17 @@ export default function Home() {
         </ul>
       </section>
 
+      <section className={styles.resourceSection}>
+        <div>
+          <p className={styles.eyebrow}>INDEPENDENT AND HONEST ABOUT ITS LIMITS</p>
+          <h2>One useful resource.<br />Not the <em>only one.</em></h2>
+        </div>
+        <div className={styles.resourceCopy}>
+          <p>Iron Compass is practical educational work from one husband and father. It is not therapy, clinical treatment, or an accredited program. When you need research, a qualified professional, or immediate support, the resource guide points you toward established places to start.</p>
+          <Link className={styles.quietDarkLink} href="/resources">Use the resource guide <span>→</span></Link>
+        </div>
+      </section>
+
       <section className={styles.founderSection}>
         <div className={styles.founderMark}>CA</div>
         <div>
@@ -208,7 +232,7 @@ export default function Home() {
 
       <footer className={styles.footer}>
         <span>© 2026 Iron Compass Institute</span>
-        <nav><a href="#system">The system</a><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/field-guide">Compass Check</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link><Link href="/about">About Chris</Link><Link href="/policies">Policies</Link><a href={CONTACT_FORM} target="_blank" rel="noreferrer">Contact Chris</a></nav>
+        <nav><a href="#system">The system</a><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/field-guide">Compass Check</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link><Link href="/resources">Resources</Link><Link href="/about">About Chris</Link><Link href="/policies">Policies</Link><a href={CONTACT_FORM} target="_blank" rel="noreferrer">Contact Chris</a></nav>
       </footer>
     </main>
   );

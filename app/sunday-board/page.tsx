@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { PlainLink as Link } from "../plain-link";
 import { Footer, Header } from "../components";
 import { FREE_BOARD_PDF } from "../data";
 import { SundayBoardSignupForm } from "../mailerlite-form";

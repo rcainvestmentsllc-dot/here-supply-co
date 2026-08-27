@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { PlainLink as Link } from "../plain-link";
 import { CONTACT_FORM } from "../data";
 import { CompassMark } from "../components";
 import styles from "./about.module.css";
@@ -11,7 +11,7 @@ export default function AboutChris() {
           <CompassMark />
           <span><strong>IRON COMPASS</strong><small>Practical work for the rooms that matter</small></span>
         </Link>
-        <nav><Link href="/field-guide">Compass Check</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link></nav>
+        <nav><Link href="/field-guide">Compass Check</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link><Link href="/resources">Resources</Link></nav>
         <Link className={styles.headerAction} href="/sunday-board#get-board">Get the meeting guide <span>→</span></Link>
       </header>
 
@@ -60,7 +60,7 @@ export default function AboutChris() {
         </div>
       </section>
 
-      <footer className={styles.footer}><span>© 2026 Iron Compass Institute</span><nav><Link href="/">Home</Link><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link><Link href="/policies">Policies</Link><a href={CONTACT_FORM} target="_blank" rel="noreferrer">Contact Chris</a></nav></footer>
+      <footer className={styles.footer}><span>© 2026 Iron Compass Institute</span><nav><Link href="/">Home</Link><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link><Link href="/resources">Resources</Link><Link href="/policies">Policies</Link><a href={CONTACT_FORM} target="_blank" rel="noreferrer">Contact Chris</a></nav></footer>
     </main>
   );
 }

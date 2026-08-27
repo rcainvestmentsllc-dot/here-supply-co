@@ -1,5 +1,5 @@
 .hero { padding:120px clamp(24px,9vw,150px) 90px; color:#f3eee4; background:#10251c; }
-.hero h1 { margin:18px 0 28px; font-family:Georgia,"Times New Roman",serif; font-size:clamp(58px,8vw,112px); font-weight:400; letter-spacing:-.055em; line-height:.95; text-wrap:balance; overflow-wrap:break-word; }
+.hero h1 { margin:18px 0 32px; font-family:Georgia,"Times New Roman",serif; font-size:clamp(58px,8vw,112px); font-weight:400; letter-spacing:-.055em; line-height:1.03; text-wrap:balance; overflow-wrap:break-word; }
 .hero h1 em { color:#d6ad61; font-weight:400; }
 .hero > p:not(:first-child) { color:#bdc8bf; font-family:Georgia,"Times New Roman",serif; font-size:20px; }
 .hero small { display:block; margin-top:32px; color:#87998b; font-size:9px; font-weight:700; letter-spacing:.13em; text-transform:uppercase; }
