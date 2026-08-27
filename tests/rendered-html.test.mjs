@@ -60,7 +60,11 @@ test("renders the verified Focus checkout", async () => {
   assert.match(html, /Get Focus Protocol/i);
   assert.match(html, /14-day refund window/i);
   assert.match(html, /Work at your own pace/i);
-  assert.doesNotMatch(html, /focus-protocol-sales\.mp4/i);
+  assert.match(html, /focus-protocol-sales\.mp4/i);
+  assert.match(html, /Remove the Color/i);
+  assert.match(html, /Delete Extraction Apps/i);
+  assert.match(html, /Silence Everything/i);
+  assert.match(html, /Install the Vault/i);
   assert.match(html, /"@type":"Product"/i);
   assert.match(html, /"@type":"Offer"/i);
 });
@@ -73,24 +77,35 @@ test("renders the verified Core checkout", async () => {
   assert.match(html, /Get Core/i);
   assert.match(html, /14-day refund window/i);
   assert.match(html, /Core Workbook included/i);
-  assert.match(html, /core-bridge-sales\.mp4/i);
+  assert.doesNotMatch(html, /core-bridge-sales\.mp4/i);
+  assert.match(html, /THE FULL CORE CURRICULUM/i);
+  assert.match(html, /The Sanctuary/i);
+  assert.match(html, /The Emotional Thermostat/i);
+  assert.match(html, /Mission Debrief/i);
   assert.match(html, /"@type":"Offer"/i);
 });
 
-test("keeps paid orientation videos off the homepage", async () => {
+test("shows the public Focus overview and keeps the Core bridge private", async () => {
   const html = await htmlFor("/");
 
-  assert.doesNotMatch(html, /focus-protocol-sales\.mp4|core-bridge-sales\.mp4/i);
-  assert.match(html, /VISUAL FIELD MANUAL PREVIEW/i);
+  assert.match(html, /focus-protocol-sales\.mp4/i);
+  assert.doesNotMatch(html, /core-bridge-sales\.mp4/i);
+  assert.match(html, /FOCUS OVERVIEW/i);
   assert.match(html, /CORE LESSON PREVIEW/i);
 });
 
-test("keeps paid access pages out of search results", async () => {
-  const html = await htmlFor("/access/focus-7f3k9q");
+test("keeps paid access pages private and puts the Core bridge after Focus", async () => {
+  const focusHtml = await htmlFor("/access/focus-7f3k9q");
+  const coreHtml = await htmlFor("/access/core-4m8r2p");
 
-  assert.match(html, /<meta name="robots" content="noindex, nofollow"\/>/i);
-  assert.match(html, /PRIVATE ACCESS/);
-  assert.match(html, /focus-protocol-sales\.mp4/i);
+  assert.match(focusHtml, /<meta name="robots" content="noindex, nofollow"\/>/i);
+  assert.match(focusHtml, /PRIVATE ACCESS/);
+  assert.match(focusHtml, /core-bridge-sales\.mp4/i);
+  assert.doesNotMatch(focusHtml, /focus-protocol-sales\.mp4/i);
+  assert.match(coreHtml, /<meta name="robots" content="noindex, nofollow"\/>/i);
+  assert.doesNotMatch(coreHtml, /core-bridge-sales\.mp4/i);
+  assert.match(coreHtml, /The Core Workbook/i);
+  assert.doesNotMatch(coreHtml, /Focus Protocol Field Manual|The Sunday Board Meeting/i);
 });
 
 test("gives every public page one clear heading and a canonical URL", async () => {

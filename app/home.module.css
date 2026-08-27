@@ -117,6 +117,16 @@
 .coreOffer .offerStill { border-color:rgba(245,240,230,.2); }
 .offerStill img { width:100%; aspect-ratio:16 / 8.25; display:block; object-fit:cover; filter:saturate(.82) contrast(1.03); }
 .offerStill span { position:absolute; left:13px; bottom:12px; padding:7px 9px; color:var(--paper); background:rgba(8,22,15,.88); font-size:8px; font-weight:700; letter-spacing:.13em; }
+.videoReveal { margin-top:23px; overflow:hidden; background:#102318; border:1px solid rgba(17,39,29,.18); }
+.videoReveal summary { padding:0; display:block; list-style:none; cursor:pointer; }
+.videoReveal summary::-webkit-details-marker { display:none; }
+.videoReveal summary img { width:100%; aspect-ratio:16 / 8.25; display:block; object-fit:cover; filter:saturate(.82) contrast(1.03); }
+.videoMeta { min-height:73px; padding:14px 16px 15px; display:grid; gap:7px; color:var(--paper); background:#10271d; border-top:1px solid rgba(245,240,230,.15); }
+.videoMeta small { color:var(--gold); font-size:8px; font-weight:700; letter-spacing:.14em; }
+.videoMeta strong { display:flex; align-items:center; justify-content:space-between; gap:18px; color:var(--paper); font-family:Arial,Helvetica,sans-serif; font-size:11px; letter-spacing:0; }
+.videoMeta i { color:var(--gold); font-size:18px; font-style:normal; }
+.videoReveal[open] summary { display:none; }
+.videoReveal video { width:100%; display:block; aspect-ratio:16 / 9; object-fit:contain; background:#07140d; }
 .focusOffer > a, .coreOffer > a { margin-top:auto; padding-top:29px; display:flex; align-items:center; justify-content:space-between; gap:15px; color:var(--ink); font-size:11px; font-weight:700; text-decoration:none; }
 .coreOffer > a { color:var(--paper); }
 .focusOffer > a:hover { color:var(--rust); }
@@ -200,7 +210,7 @@
   .offerGrid { margin-top:47px; grid-template-columns:1fr; }
   .focusOffer, .coreOffer { min-height:0; padding:27px 20px 25px; }
   .focusOffer h3, .coreOffer h3 { margin-top:36px; font-size:clamp(45px,12.1vw,63px); }
-  .offerStill { margin-top:21px; }
+  .offerStill, .videoReveal { margin-top:21px; }
   .methodSection { padding-top:77px; padding-bottom:79px; }
   .methodSection h2 { font-size:clamp(45px,12vw,62px); }
   .founderSection { padding-top:75px; padding-bottom:77px; }

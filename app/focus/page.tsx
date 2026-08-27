@@ -27,7 +27,7 @@ const focusProduct = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "Focus Protocol",
-  description: "A private 72-hour attention reset with a brief introduction and a browser-based visual Field Manual built around four practical moves.",
+  description: "A private 72-hour attention reset delivered as a browser-based visual Field Manual built around four practical moves.",
   image: "https://ironcompassinstitute.com/assets/focus-manual-gamma.png",
   brand: { "@type": "Brand", name: "Iron Compass Institute" },
   category: "Digital educational product",
@@ -61,7 +61,7 @@ export default function FocusProtocol() {
         </div>
         <div className={styles.heroVisual}>
           <img src="/assets/focus-manual-gamma.png" alt="Focus Protocol presentation" width="2400" height="1260" fetchPriority="high" decoding="async" />
-          <span>3-MINUTE INTRO · BROWSER-BASED VISUAL FIELD MANUAL</span>
+          <span>FOUR PRACTICAL MOVES · BROWSER-BASED VISUAL FIELD MANUAL</span>
         </div>
       </section>
 
@@ -73,27 +73,29 @@ export default function FocusProtocol() {
         </div>
       </section>
 
-      <section className={styles.guideSection}>
+      <section className={styles.videoSection}>
         <div>
-          <p className="section-label">HOW IT WORKS</p>
-          <h2>Open the manual.<br />Make <em>one move.</em></h2>
-          <p>After checkout, start with Chris’s brief private introduction. Then open the visual Field Manual and take one practical move into the next 72 hours. No course dashboard and no long lecture library.</p>
+          <p className="section-label">WATCH BEFORE YOU BUY</p>
+          <h2>See the reset.<br />Then decide if it <em>fits.</em></h2>
+          <p>Chris explains why attention keeps leaving the room and what the next 72 hours are designed to change. The paid product is the visual Field Manual with the four moves below.</p>
         </div>
-        <div className={styles.guidePreview}>
-          <img src="/assets/focus-manual-gamma.png" alt="A preview of the Focus Protocol visual Field Manual" width="2400" height="1260" loading="lazy" decoding="async" />
-          <span>THE PRIVATE INTRODUCTION OPENS AFTER CHECKOUT</span>
-        </div>
+        {/* eslint-disable-next-line jsx-a11y/media-has-caption -- Add captions only after an exact transcript is verified. */}
+        <video controls playsInline preload="metadata" poster="/assets/focus-manual-gamma.png" aria-label="Focus Protocol overview video">
+          <source src="/assets/focus-protocol-sales.mp4" type="video/mp4" />
+          Your browser does not support this video.
+        </video>
       </section>
 
       <section className={styles.inside} id="inside">
         <div className={styles.insideHeading}>
-          <p className="section-label">WHAT YOU ACTUALLY GET</p>
-          <h2>Small enough to use.<br /><em>Clear enough to finish.</em></h2>
+          <p className="section-label">INSIDE THE 72-HOUR RESET</p>
+          <h2>Four moves.<br /><em>No filler.</em></h2>
         </div>
         <div className={styles.insideGrid}>
-          <article><span>01</span><h3>A 3-minute introduction</h3><p>Chris explains the problem, the reset, and how to use the next 72 hours.</p></article>
-          <article><span>02</span><h3>A browser-based visual Field Manual</h3><p>The main material is a guided presentation you open in your browser. It is not a separate downloadable PDF.</p></article>
-          <article><span>03</span><h3>Four practical moves</h3><p>Remove the color, delete extraction apps, silence everything, and install the Vault.</p></article>
+          <article><span>01</span><h3>Remove the Color</h3><p>Switch the phone to grayscale so feeds and icons lose some of their pull.</p></article>
+          <article><span>02</span><h3>Delete Extraction Apps</h3><p>Remove the apps built to turn every spare second into scrolling.</p></article>
+          <article><span>03</span><h3>Silence Everything</h3><p>Keep only VIP calls and texts so platforms stop choosing your next interruption.</p></article>
+          <article><span>04</span><h3>Install the Vault</h3><p>Put the phone in a drawer from your chosen Vault time until the kids are asleep.</p></article>
         </div>
       </section>
 
@@ -113,7 +115,7 @@ export default function FocusProtocol() {
         <div>
           <p className="section-label">FOCUS PROTOCOL</p>
           <h2>One private reset.<br /><em>$29 once.</em></h2>
-          <p>You will receive immediate access to the brief introduction and the browser-based visual Field Manual, including all four practical moves.</p>
+          <p>You will receive immediate private access to the browser-based visual Field Manual containing all four practical moves.</p>
           <ul><li>Immediate access</li><li>Work at your own pace</li><li>14-day refund window</li></ul>
         </div>
         <div className={styles.purchaseAction}>
@@ -132,7 +134,7 @@ export default function FocusProtocol() {
       <section className={styles.faq}>
         <p className="section-label">PLAIN ANSWERS</p>
         <div>
-          <details><summary>How is it delivered?</summary><p>After checkout, you are sent directly to an unlisted page with the three-minute introduction and the browser-based visual Field Manual. Save that link.</p></details>
+          <details><summary>How is it delivered?</summary><p>After checkout, you are sent directly to an unlisted page with the browser-based visual Field Manual. Save that link. There is no course account or app to manage.</p></details>
           <details><summary>Is this a subscription?</summary><p>No. Focus Protocol is a one-time purchase with immediate private access.</p></details>
           <details><summary>What if it is not right for me?</summary><p>Request a refund within 14 calendar days of purchase through the <a href={CONTACT_FORM} target="_blank" rel="noreferrer">contact form</a>.</p></details>
         </div>

@@ -148,11 +148,15 @@ export default function Home() {
             <div className={styles.offerTopline}><span>FOCUS PROTOCOL</span><b>$29 ONE TIME</b></div>
             <h3>Get your attention<br />back in the <em>room.</em></h3>
             <p>Focus Protocol is a guided 72-hour reset for the man who knows distraction is taking more than it should. It is not a lecture. It is four practical moves presented clearly enough to use immediately.</p>
-            <div className={styles.deliveryNote}><span>DELIVERED INSIDE</span><p>A three-minute introduction and a browser-based visual Field Manual with four practical moves.</p></div>
-            <div className={styles.offerStill}>
-              <img src="/assets/focus-manual-gamma.png" alt="A preview of the Focus Protocol visual Field Manual" width="2400" height="1260" loading="lazy" decoding="async" />
-              <span>VISUAL FIELD MANUAL PREVIEW</span>
-            </div>
+            <div className={styles.deliveryNote}><span>DELIVERED INSIDE</span><p>A browser-based visual Field Manual with four practical moves.</p></div>
+            <details className={styles.videoReveal}>
+              <summary>
+                <img src="/assets/focus-manual-gamma.png" alt="Focus Protocol video preview" width="2400" height="1260" loading="lazy" decoding="async" />
+                <span className={styles.videoMeta}><small>FOCUS OVERVIEW · 03:28</small><strong>Watch the Focus overview <i>→</i></strong></span>
+              </summary>
+              {/* eslint-disable-next-line jsx-a11y/media-has-caption -- Add captions only after an exact transcript is verified. */}
+              <video controls playsInline preload="none" poster="/assets/focus-manual-gamma.png" aria-label="Focus Protocol overview video"><source src="/assets/focus-protocol-sales.mp4" type="video/mp4" />Your browser does not support this video.</video>
+            </details>
             <p className={styles.offerAssurance}>$29 one time · Immediate access · 14-day refund window</p>
             <Link href="/focus">See Focus Protocol · $29 <b>→</b></Link>
           </article>
@@ -161,7 +165,7 @@ export default function Home() {
             <div className={styles.offerTopline}><span>IRON COMPASS CORE</span><b>$249 ONE TIME</b></div>
             <h3>Build the whole<br /><em>system.</em></h3>
             <p>Core brings the full work together: attention, pressure, home, marriage, family connection, friendship, and the practices that keep a good life from slipping away.</p>
-            <div className={styles.deliveryNote}><span>DELIVERED INSIDE</span><p>One short orientation video, visual teaching decks, specific practices, and the Core Workbook as a companion resource.</p></div>
+            <div className={styles.deliveryNote}><span>DELIVERED INSIDE</span><p>Nine visual lessons, specific practices, and the Core Workbook as a companion resource.</p></div>
             <div className={styles.offerStill}>
               <img src="/assets/thermostat-gamma.png" alt="A preview of an Iron Compass Core visual lesson" width="2400" height="1260" loading="lazy" decoding="async" />
               <span>CORE LESSON PREVIEW</span>
@@ -175,12 +179,12 @@ export default function Home() {
       <section className={styles.methodSection}>
         <p className={styles.eyebrow}>HOW THE TEACHING WORKS</p>
         <div>
-          <h2>Watch the room.<br />Work the <em>practice.</em></h2>
-          <p>The teaching is built to be used, not collected. A short video puts the work in context. A visual lesson makes it plain. Then there is one practice to carry into an ordinary day.</p>
+          <h2>See the pattern.<br />Work the <em>practice.</em></h2>
+          <p>The teaching is built to be used, not collected. Each visual lesson names a real situation, makes the pattern plain, and gives you a practice to carry into an ordinary day.</p>
         </div>
         <ul>
-          <li><span>01</span>A short orientation that explains how the three movements work together.</li>
-          <li><span>02</span>Clear visual teaching decks instead of a long lecture library.</li>
+          <li><span>01</span>Concrete names for the moments that keep repeating.</li>
+          <li><span>02</span>Clear visual lessons instead of a long lecture library.</li>
           <li><span>03</span>Practical exercises that belong in real life, not on a shelf.</li>
         </ul>
       </section>
