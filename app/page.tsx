@@ -187,7 +187,7 @@ export default function Home() {
           </article>
 
           <article className={styles.coreOffer}>
-            <div className={styles.offerTopline}><span>IRON COMPASS CORE</span><b>$249 ONE TIME</b></div>
+            <div className={styles.offerTopline}><span>IRON COMPASS CORE</span><b>$99 FOUNDING EDITION</b></div>
             <h3>Build the whole<br /><em>system.</em></h3>
             <p>Core brings the full work together: attention, pressure, home, marriage, family connection, friendship, and the practices that keep a good life from slipping away.</p>
             <div className={styles.deliveryNote}><span>DELIVERED INSIDE</span><p>Nine visual lessons, specific practices, and the Core Workbook as a companion resource.</p></div>
@@ -195,7 +195,7 @@ export default function Home() {
               <img src="/assets/thermostat-gamma.png" alt="A preview of an Iron Compass Core visual lesson" width="2400" height="1260" loading="lazy" decoding="async" />
               <span>CORE LESSON PREVIEW</span>
             </div>
-            <p className={styles.offerAssurance}>The deeper path. Focus Protocol is the recommended first purchase if you are unsure.</p>
+            <p className={styles.offerAssurance}>$99 one time · Founding-edition price · 14-day refund window</p>
             <Link href="/library#curriculum">See inside Iron Compass Core <b>→</b></Link>
           </article>
         </div>
@@ -225,9 +225,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.founderSection}>
+      <section id="founder" className={styles.founderSection}>
         <figure className={styles.founderPhoto}>
-          <img src="/assets/core-bridge-poster.jpg" alt="Chris Avera at home in North Carolina" width="1280" height="720" loading="lazy" decoding="async" />
+          <img src="/assets/chris-founder.jpg" alt="Chris Avera outdoors near the North Carolina mountains" width="600" height="800" loading="lazy" decoding="async" />
           <figcaption>Chris Avera · Husband, father, and small-business owner</figcaption>
         </figure>
         <div>
