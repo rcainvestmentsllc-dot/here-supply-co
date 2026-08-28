@@ -2,7 +2,7 @@ import { PlainLink as Link } from "./plain-link";
 import { CONTACT_FORM } from "./data";
 
 export function CompassMark() {
-  return <img className="compass-mark" src="/assets/iron-compass-wave-mark.svg" alt="" width="64" height="64" aria-hidden="true" />;
+  return <img className="compass-mark" src="/assets/iron-compass-waves.png" alt="" width="2172" height="724" aria-hidden="true" />;
 }
 
 export function Header() {
