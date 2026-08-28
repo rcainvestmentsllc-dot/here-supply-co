@@ -12,7 +12,7 @@ Do not turn Substack into another course portal or daily content machine. Publis
 - **Short description:** Notes on attention, family, work, and coming back to what matters.
 - **Website:** https://ironcompassinstitute.com
 - **Resource guide:** https://ironcompassinstitute.com/resources
-- **Publication cover:** `public/assets/iron-compass-waves.png`
+- **Publication cover:** `brand-assets/archive/iron-compass-waves.png`
 - **Profile photo:** Keep a real photo of Chris. Use the wave artwork as the publication cover, not as a substitute for the person writing.
 
 ## First relaunch post

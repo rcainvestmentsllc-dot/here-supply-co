@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://ironcompassinstitute.com"),
   title,
   description,
-  icons: { icon: "/favicon-32x32.png", shortcut: "/favicon-32x32.png", apple: "/apple-touch-icon.png" },
+  icons: { icon: "/assets/iron-compass-wave-mark-reference.png", shortcut: "/assets/iron-compass-wave-mark-reference.png", apple: "/apple-touch-icon.png" },
   openGraph: { title, description, url: "/", siteName: "Iron Compass Institute", type: "website", images: [{ url: "/og-iron-compass-v2.jpg", width: 1731, height: 909, alt: "Iron Compass, Be here for your own life." }] },
   twitter: { card: "summary_large_image", title, description, images: ["/og-iron-compass-v2.jpg"] },
 };

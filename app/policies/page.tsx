@@ -52,7 +52,7 @@ export default function Policies() {
             <p>04 · CONTACT</p>
             <h2>Questions or refund requests</h2>
             <p>Use the contact form and include the email address connected to your signup or purchase. Do not send payment-card information through the form.</p>
-            <a className="button dark" href={CONTACT_FORM} target="_blank" rel="noreferrer">Contact Chris <span>→</span></a>
+            <a className="button dark" href={CONTACT_FORM}>Contact Chris <span>→</span></a>
           </section>
         </div>
       </section>

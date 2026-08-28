@@ -2,8 +2,8 @@
 
 import { PlainLink as Link } from "../plain-link";
 import { useState } from "react";
-import { CompassMark } from "../components";
-import { CONTACT_FORM, MOMENTS, type MomentKey } from "../data";
+import { CompassMark, Footer } from "../components";
+import { MOMENTS, type MomentKey } from "../data";
 import styles from "./field-guide.module.css";
 
 export default function FieldGuide() {
@@ -73,7 +73,7 @@ export default function FieldGuide() {
         <Link href="/sunday-board">Start the Sunday Board Meeting <span>→</span></Link>
       </section>
 
-      <footer className={styles.footer}><span>© 2026 Iron Compass Institute</span><nav><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link><Link href="/resources">Resources</Link><Link href="/about">About Chris</Link><Link href="/policies">Policies</Link><a href={CONTACT_FORM} target="_blank" rel="noreferrer">Contact Chris</a></nav></footer>
+      <Footer />
     </main>
   );
 }

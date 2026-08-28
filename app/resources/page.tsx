@@ -86,6 +86,18 @@ const research = [
 
 const fieldNotes = [
   {
+    label: "PHONE HABITS",
+    title: "How to stop checking your phone at home",
+    copy: "A practical setup for changing the room and the reflex before asking willpower to do all the work.",
+    href: "/resources/how-to-stop-checking-your-phone-at-home",
+  },
+  {
+    label: "FATHERHOOD",
+    title: "How to be more present with your kids after work",
+    copy: "A five- to fifteen-minute practice for joining your child’s world without bringing the whole workday with you.",
+    href: "/resources/how-to-be-more-present-with-your-kids",
+  },
+  {
     label: "FRIENDSHIP",
     title: "Every man needs a third place",
     copy: "A real sauna conversation, and why home and work are not the only places a man needs in his life.",

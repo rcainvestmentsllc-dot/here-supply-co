@@ -14,33 +14,33 @@ const movements = [
     title: "Return",
     line: "Bring your attention back before you try to fix anything else.",
     detail: "Make space to think clearly, finish the work in front of you, and come through the door without asking your family to carry the whole day with you.",
-    image: "/assets/compass-brass-wide.webp",
-    alt: "A brass compass resting on weathered wood",
-    imageWidth: 1600,
-    imageHeight: 1066,
-    imageLabel: "DIRECTION BEFORE DISTRACTION",
+    image: "/assets/course/preview-return.png",
+    alt: "The Sanctuary lesson cover inside the Return module",
+    imageWidth: 1400,
+    imageHeight: 900,
+    imageLabel: "REAL COURSE PREVIEW",
   },
   {
     number: "02",
     title: "Lead",
     line: "Bring a steadier self into a hard moment.",
     detail: "Pressure is real. The work is learning to pause, respond without making the moment worse, and repair it when you miss.",
-    image: "/assets/sauna-cover.webp",
-    alt: "A quiet wooden sauna prepared for a reset",
-    imageWidth: 1600,
-    imageHeight: 1600,
-    imageLabel: "CREATE ROOM TO RESET",
+    image: "/assets/course/preview-lead.png",
+    alt: "The Emotional Thermostat lesson cover inside the Lead module",
+    imageWidth: 1400,
+    imageHeight: 900,
+    imageLabel: "REAL COURSE PREVIEW",
   },
   {
     number: "03",
     title: "Keep",
     line: "Keep the parts of life work cannot replace.",
     detail: "Protect time, friendship, marriage, family rhythms, and the ordinary parts of life that keep a good man from slowly disappearing into work.",
-    image: "/assets/third-place-surf-card.jpg",
-    alt: "A surfer carrying his board into the water at sunset",
-    imageWidth: 1600,
+    image: "/assets/course/preview-keep.png",
+    alt: "The Third Place lesson cover inside the Keep module",
+    imageWidth: 1400,
     imageHeight: 900,
-    imageLabel: "BUILD A LIFE BEYOND WORK",
+    imageLabel: "REAL COURSE PREVIEW",
   },
 ];
 
@@ -82,11 +82,22 @@ export default function Home() {
           </div>
           <figure className={styles.heroMaterials}>
             <div className={styles.heroMaterialsFrame}>
-              <img className={styles.heroFocusPreview} src="/assets/focus-manual-gamma.png" alt="Focus Protocol visual Field Manual" width="2400" height="1260" fetchPriority="high" decoding="async" />
-              <img className={styles.heroMeetingPreview} src="/assets/sunday-board-gamma.png" alt="Sunday Board Meeting printable guide" width="2400" height="3106" fetchPriority="high" decoding="async" />
-              <img className={styles.heroCorePreview} src="/assets/thermostat-gamma.png" alt="Iron Compass Core visual lesson" width="2400" height="1260" fetchPriority="high" decoding="async" />
+              <div className={styles.heroProductTopline}>
+                <span>INSIDE IRON COMPASS CORE</span>
+                <b>01 · RETURN</b>
+              </div>
+              <img className={styles.heroProductImage} src="/assets/course/preview-return.png" alt="The Sanctuary lesson cover inside Iron Compass Core" width="1400" height="900" fetchPriority="high" decoding="async" />
+              <div className={styles.heroProductCopy}>
+                <strong>Start with Return.</strong>
+                <span>Bring your attention back before you try to fix anything else.</span>
+              </div>
+              <div className={styles.heroProductMap} aria-label="Iron Compass offers">
+                <span><b>FREE</b> Sunday Meeting</span>
+                <span><b>$29</b> Focus Protocol</span>
+                <span><b>$99</b> Iron Compass Core</span>
+              </div>
             </div>
-            <figcaption><strong>THE ACTUAL WORK</strong><span>Printable guide, visual Field Manual, and Core lesson</span></figcaption>
+            <figcaption><strong>THE ACTUAL COURSE</strong><span>Nine lessons, real videos, specific practices, and a workbook</span></figcaption>
           </figure>
         </div>
         <div className={styles.heroFooter} aria-label="What Iron Compass includes">
@@ -176,11 +187,11 @@ export default function Home() {
             <div className={styles.deliveryNote}><span>DELIVERED INSIDE</span><p>A browser-based visual Field Manual with four practical moves.</p></div>
             <details className={styles.videoReveal}>
               <summary>
-                <img src="/assets/focus-manual-gamma.png" alt="Focus Protocol video preview" width="2400" height="1260" loading="lazy" decoding="async" />
+                <img src="/assets/focus-protocol-poster.jpg" alt="Chris introducing Focus Protocol" width="1280" height="720" loading="lazy" decoding="async" />
                 <span className={styles.videoMeta}><small>FOCUS OVERVIEW · 03:28</small><strong>Watch the Focus overview <i>→</i></strong></span>
               </summary>
               {/* eslint-disable-next-line jsx-a11y/media-has-caption -- Add captions only after an exact transcript is verified. */}
-              <video controls playsInline preload="none" poster="/assets/focus-manual-gamma.png" aria-label="Focus Protocol overview video"><source src="/assets/focus-protocol-sales.mp4" type="video/mp4" />Your browser does not support this video.</video>
+              <video controls playsInline preload="none" poster="/assets/focus-protocol-poster.jpg" aria-label="Focus Protocol overview video"><source src="/assets/focus-protocol-sales.mp4" type="video/mp4" />Your browser does not support this video.</video>
             </details>
             <p className={styles.offerAssurance}>$29 one time · Immediate access · 14-day refund window</p>
             <Link href="/focus">See Focus Protocol · $29 <b>→</b></Link>
@@ -192,8 +203,8 @@ export default function Home() {
             <p>Core brings the full work together: attention, pressure, home, marriage, family connection, friendship, and the practices that keep a good life from slipping away.</p>
             <div className={styles.deliveryNote}><span>DELIVERED INSIDE</span><p>Nine visual lessons, specific practices, and the Core Workbook as a companion resource.</p></div>
             <div className={styles.offerStill}>
-              <img src="/assets/thermostat-gamma.png" alt="A preview of an Iron Compass Core visual lesson" width="2400" height="1260" loading="lazy" decoding="async" />
-              <span>CORE LESSON PREVIEW</span>
+              <img src="/assets/course/preview-lead.png" alt="The Emotional Thermostat lesson cover inside Iron Compass Core" width="1400" height="900" loading="lazy" decoding="async" />
+              <span>REAL LEAD LESSON PREVIEW</span>
             </div>
             <p className={styles.offerAssurance}>$99 one time · Founding-edition price · 14-day refund window</p>
             <Link href="/library#curriculum">See inside Iron Compass Core <b>→</b></Link>
@@ -202,15 +213,17 @@ export default function Home() {
       </section>
 
       <section className={styles.methodSection}>
-        <p className={styles.eyebrow}>HOW THE TEACHING WORKS</p>
+        <p className={styles.eyebrow}>THE IRON COMPASS PRACTICE CYCLE</p>
         <div>
-          <h2>See the pattern.<br />Work the <em>practice.</em></h2>
-          <p>The teaching is built to be used, not collected. Each visual lesson names a real situation, makes the pattern plain, and gives you a practice to carry into an ordinary day.</p>
+          <h2>A field manual for <em>coming back.</em></h2>
+          <p>AI can give you ten ideas in ten seconds. Iron Compass is valuable only if it helps you use one practice in a real room with real people. The course translates durable ideas about choice, purpose, priority, relationships, and renewal into a cycle built for an ordinary week.</p>
         </div>
         <ul>
-          <li><span>01</span>Concrete names for the moments that keep repeating.</li>
-          <li><span>02</span>Clear visual lessons instead of a long lecture library.</li>
-          <li><span>03</span>Practical exercises that belong in real life, not on a shelf.</li>
+          <li><span>01</span><b>Choose</b> what deserves your attention.</li>
+          <li><span>02</span><b>Enter</b> the room on purpose.</li>
+          <li><span>03</span><b>Protect</b> what matters before urgency takes over.</li>
+          <li><span>04</span><b>Listen</b> before you fix, defend, or perform.</li>
+          <li><span>05</span><b>Renew</b> the life underneath the work.</li>
         </ul>
       </section>
 
@@ -236,7 +249,7 @@ export default function Home() {
           <h2>I needed the work before I ever <em>shared it.</em></h2>
           <p>I’m Chris. I’m a husband, father of three, and small-business owner in the North Carolina mountains. Iron Compass began when I noticed how often I was physically home while my attention was somewhere else. I built these practices for myself first, then shaped the useful parts into tools another man could actually use.</p>
           <p className={styles.founderPersonal}>Away from work, I lift kettlebells, ride mountain-bike trails, fish, and take my Trail 125 down the roads that get quieter as they get smaller. I am still practicing this work too.</p>
-          <Link className={styles.quietDarkLink} href="/about">Read Chris’s story <span>→</span></Link>
+          <div className={styles.founderActions}><Link className={styles.quietDarkLink} href="/about">Read Chris’s story <span>→</span></Link><Link className={styles.quietDarkLink} href="/working-session">Work with Chris <span>→</span></Link></div>
         </div>
       </section>
 
@@ -248,8 +261,8 @@ export default function Home() {
       </section>
 
       <footer className={styles.footer}>
-        <span>© 2026 Iron Compass Institute</span>
-        <nav><a href="#system">The system</a><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/field-guide">Compass Check</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link><Link href="/resources">Resources</Link><Link href="/about">About Chris</Link><a href="https://chrisavera.substack.com" target="_blank" rel="me noreferrer">Field Notes on Substack ↗</a><Link href="/policies">Policies</Link><a href={CONTACT_FORM} target="_blank" rel="noreferrer">Contact Chris</a></nav>
+        <span>Made in North Carolina · © 2026 Iron Compass Institute</span>
+        <nav><a href="#system">The system</a><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/field-guide">Compass Check</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link><Link href="/resources">Resources</Link><Link href="/about">About Chris</Link><Link href={CONTACT_FORM}>Work with Chris</Link><a href="https://chrisavera.substack.com" target="_blank" rel="me noreferrer">Field Notes on Substack ↗</a><Link href="/policies">Policies</Link></nav>
       </footer>
     </main>
   );
