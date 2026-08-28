@@ -12,7 +12,7 @@ export function Header() {
       <nav aria-label="Main navigation"><Link href="/field-guide">Compass Check</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link><Link href="/resources">Resources</Link></nav>
       <Link className="topbar-action" href="/sunday-board#get-board">Start free <span>→</span></Link>
     </header>
-    <nav className="mobile-nav" aria-label="Mobile navigation"><Link href="/sunday-board">Sunday Board</Link><Link href="/field-guide">Compass Check</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Core</Link><Link href="/resources">Resources</Link></nav>
+    <nav className="mobile-nav" aria-label="Mobile navigation"><Link href="/sunday-board">Sunday Meeting</Link><Link href="/field-guide">Compass Check</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Core</Link><Link href="/resources">Resources</Link></nav>
   </>;
 }
 

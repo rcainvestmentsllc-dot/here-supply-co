@@ -10,6 +10,8 @@
 .problem { padding:100px clamp(24px,8vw,128px); display:grid; grid-template-columns:.55fr 1.45fr; gap:70px; background:#f3eee3; }
 .problem h2,.videoSection h2,.insideHeading h2,.fit h2,.purchase h2 { margin:0 0 28px; color:#183027; font-family:Georgia,"Times New Roman",serif; font-size:clamp(42px,5vw,72px); font-weight:400; letter-spacing:-.045em; line-height:1; text-wrap:balance; overflow-wrap:break-word; }
 .problem > div > p { max-width:760px; margin:0; color:#53645b; font-size:16px; line-height:1.8; }
+.problem > div > p.drivingNote { margin-top:28px; padding:21px 0 0 24px; border-top:1px solid rgba(24,48,39,.2); border-left:3px solid #a64e37; color:#43574d; }
+.drivingNote strong { display:block; margin-bottom:6px; color:#183027; font-family:Georgia,"Times New Roman",serif; font-size:20px; font-weight:400; line-height:1.35; }
 .videoSection { padding:104px clamp(24px,7vw,110px); display:grid; grid-template-columns:.68fr 1.32fr; align-items:center; gap:clamp(50px,7vw,105px); color:#e9eee6; background:#173128; }
 .videoSection h2 { color:#f4efe4; }
 .videoSection > div:first-child > p:last-child { max-width:520px; color:#bdc9bf; line-height:1.75; }

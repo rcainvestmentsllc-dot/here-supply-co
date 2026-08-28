@@ -70,6 +70,7 @@ export default function FocusProtocol() {
         <div>
           <h2>You can be home<br />and still be <em>somewhere else.</em></h2>
           <p>Work, notifications, feeds, and the reflex to check one more thing can follow you through the door. Focus does not ask you to reject technology or rebuild your life. It gives you four concrete moves to interrupt that reflex and practice being where your feet are.</p>
+          <p className={styles.drivingNote}><strong>The reflex does not know when the stakes have changed.</strong> The same downward glance that steals a moment on the couch can follow us to a red light or a moving car. This is not about scolding people. It is about taking back the decision of where your eyes and attention go.</p>
         </div>
       </section>
 

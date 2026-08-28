@@ -48,6 +48,8 @@
 .story div { max-width: 760px; }
 .story .lead { margin: 0 0 32px; color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: clamp(31px, 3.55vw, 54px); letter-spacing: -.05em; line-height: 1.08; }
 .story div > p:not(.lead) { max-width: 650px; margin: 0; color: var(--muted); font-size: clamp(17px, 1.45vw, 20px); line-height: 1.66; }
+.story div > p:not(.lead) + p { margin-top: 24px; }
+.story div > p.personalNote { color: #7b5b3f; font-size: 15px; }
 
 .notes { padding: clamp(85px, 10vw, 140px) clamp(24px, 7vw, 110px); display: grid; grid-template-columns: minmax(130px, .34fr) minmax(0, 1.2fr); gap: clamp(48px, 9vw, 158px); color: var(--ink); background: var(--sage); }
 .sectionNumber { margin: 4px 0 0; color: var(--rust); font-size: 11px; font-weight: 700; letter-spacing: .18em; }

@@ -37,7 +37,7 @@ export default function Policies() {
           <section id="privacy">
             <p>02 · PRIVACY</p>
             <h2>The information this site uses</h2>
-            <p>When you request the Sunday Board, your email address is collected so the printable and five related follow-up emails can be delivered. MailerLite processes those subscriptions, and every marketing email includes an unsubscribe option.</p>
+            <p>When you request the Sunday Board Meeting guide, your email address is collected so the printable and five related follow-up emails can be delivered. MailerLite processes those subscriptions, and every marketing email includes an unsubscribe option.</p>
             <p>Purchases are processed through MailerLite and Stripe. Iron Compass may receive the contact and transaction details needed to deliver the product, provide support, and handle refunds. Iron Compass does not receive your full payment-card number.</p>
             <p>The contact form is provided through Google. When you use it, Google and Iron Compass receive the information you choose to submit. The site may also generate ordinary technical logs through its hosting providers. Iron Compass does not sell personal information.</p>
             <p>You may ask to review or delete the personal information Iron Compass controls by using the contact form. Some transaction records may need to be retained for accounting, fraud prevention, or legal obligations.</p>

@@ -75,15 +75,18 @@ export default function Home() {
             <h1>Be here for<br /><em>your own life.</em></h1>
             <p className={styles.lead}>Iron Compass gives you short, practical ways to reclaim your attention, carry pressure better, and become more present at home.</p>
             <div className={styles.heroActions}>
-              <Link className={styles.primaryButton} href="/sunday-board#get-board">Start free with the Sunday Board <span>→</span></Link>
+              <Link className={styles.primaryButton} href="/sunday-board#get-board">Start the Sunday Board Meeting <span>→</span></Link>
               <Link className={styles.quietLightLink} href="/field-guide">Find my starting point <span>→</span></Link>
             </div>
             <p className={styles.heroAssurance}>Free 15-minute meeting guide · Opens immediately</p>
           </div>
-          <figure className={styles.heroPortrait}>
-            <img src="/assets/core-bridge-poster.jpg" alt="Chris Avera speaking from his living room" width="1280" height="720" fetchPriority="high" decoding="async" />
-            <blockquote>“I built this because I needed it first.”</blockquote>
-            <figcaption><strong>Chris Avera</strong><span>Husband, father, and founder of Iron Compass</span></figcaption>
+          <figure className={styles.heroMaterials}>
+            <div className={styles.heroMaterialsFrame}>
+              <img className={styles.heroFocusPreview} src="/assets/focus-manual-gamma.png" alt="Focus Protocol visual Field Manual" width="2400" height="1260" fetchPriority="high" decoding="async" />
+              <img className={styles.heroMeetingPreview} src="/assets/sunday-board-gamma.png" alt="Sunday Board Meeting printable guide" width="2400" height="3106" fetchPriority="high" decoding="async" />
+              <img className={styles.heroCorePreview} src="/assets/thermostat-gamma.png" alt="Iron Compass Core visual lesson" width="2400" height="1260" fetchPriority="high" decoding="async" />
+            </div>
+            <figcaption><strong>THE ACTUAL WORK</strong><span>Printable guide, visual Field Manual, and Core lesson</span></figcaption>
           </figure>
         </div>
         <div className={styles.heroFooter} aria-label="What Iron Compass includes">
@@ -223,11 +226,15 @@ export default function Home() {
       </section>
 
       <section className={styles.founderSection}>
-        <div className={styles.founderMark}>CA</div>
+        <figure className={styles.founderPhoto}>
+          <img src="/assets/core-bridge-poster.jpg" alt="Chris Avera at home in North Carolina" width="1280" height="720" loading="lazy" decoding="async" />
+          <figcaption>Chris Avera · Husband, father, and small-business owner</figcaption>
+        </figure>
         <div>
-          <p className={styles.eyebrow}>FROM CHRIS</p>
-          <h2>I made this for the part of life you cannot get <em>back.</em></h2>
-          <p>I am not standing outside of this work. I am a husband and father who knows what it is like to be physically present while my attention is somewhere else. Iron Compass came out of my own effort to come back, stay in the room, and take better care of the people I love.</p>
+          <p className={styles.eyebrow}>WHY I MADE THIS</p>
+          <h2>I needed the work before I ever <em>shared it.</em></h2>
+          <p>I’m Chris. I’m a husband, father of three, and small-business owner in the North Carolina mountains. Iron Compass began when I noticed how often I was physically home while my attention was somewhere else. I built these practices for myself first, then shaped the useful parts into tools another man could actually use.</p>
+          <p className={styles.founderPersonal}>Away from work, I lift kettlebells, ride mountain-bike trails, fish, and take my Trail 125 down the roads that get quieter as they get smaller. I am still practicing this work too.</p>
           <Link className={styles.quietDarkLink} href="/about">Read Chris’s story <span>→</span></Link>
         </div>
       </section>
