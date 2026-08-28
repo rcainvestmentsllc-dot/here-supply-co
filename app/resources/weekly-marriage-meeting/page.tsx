@@ -37,8 +37,9 @@ export default function WeeklyMarriageMeeting() {
     <section className={styles.layout}>
       <aside className={styles.aside}><span>THE SHORT VERSION</span><p>Phones away. One notebook. Fifteen minutes. Start with something good, make the week visible, and choose one thing to protect together.</p><Link href="/sunday-board#get-board">Get the printable guide →</Link></aside>
       <article className={styles.body}>
+        <p>My wife Rhea and I sit down for about fifteen minutes with one notebook between us. Sometimes it is the back porch. Sometimes it is the kitchen table. We do not always get to it, and I am not especially polished at leading it. The practice still helps.</p>
         <p>A weekly marriage meeting does not need business language, a spreadsheet, or a performance score. It needs a small container where both people can see what the next seven days are asking of them.</p>
-        <p>My wife and I do not need another system to manage. We need a place to put the things that otherwise live in separate heads until they turn into last-minute friction.</p>
+        <p>The meeting is also a place to put the things that would otherwise live in separate heads until they turn into last-minute friction. During the week, either of us can say, “Let’s put that on the list for Sunday.” We do not have to solve it at 9 p.m. when we are both tired.</p>
         <h2>The fifteen-minute agenda</h2>
         <div className={styles.steps}>
           <section className={styles.step}><span>01</span><div><h3>Start with one good thing</h3><p>Take two minutes. Each person names one thing they appreciated about the other person or one bright spot from the week. This changes the opening from evaluation to connection.</p></div></section>

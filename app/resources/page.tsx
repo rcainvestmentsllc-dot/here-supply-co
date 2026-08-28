@@ -86,6 +86,12 @@ const research = [
 
 const fieldNotes = [
   {
+    label: "FRIENDSHIP",
+    title: "Every man needs a third place",
+    copy: "A real sauna conversation, and why home and work are not the only places a man needs in his life.",
+    href: "/resources/why-men-need-a-third-place",
+  },
+  {
     label: "MARRIAGE",
     title: "A 15-minute weekly marriage meeting agenda",
     copy: "A simple way to make the week visible without turning Sunday into a boardroom or an argument.",
