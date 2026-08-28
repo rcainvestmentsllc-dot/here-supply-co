@@ -145,6 +145,7 @@ export default function Resources() {
           <p className={styles.eyebrow}>FIELD NOTES</p>
           <h2 id="field-notes-heading">Use one practice<br />before you read <em>ten ideas.</em></h2>
           <p>These are complete starting points, not search-engine filler. Each one names a real moment and gives you something concrete to try.</p>
+          <a className={styles.substackLink} href="https://chrisavera.substack.com" target="_blank" rel="me noreferrer">Read and follow Chris’s Field Notes on Substack <span>↗</span></a>
         </div>
         <div className={styles.fieldGrid}>
           {fieldNotes.map((note, index) => (

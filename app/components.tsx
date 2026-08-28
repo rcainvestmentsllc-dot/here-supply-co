@@ -2,7 +2,7 @@ import { PlainLink as Link } from "./plain-link";
 import { CONTACT_FORM } from "./data";
 
 export function CompassMark() {
-  return <img className="compass-mark" src="/assets/iron-compass-logo.png" alt="" width="1024" height="1024" aria-hidden="true" />;
+  return <img className="compass-mark" src="/assets/iron-compass-wave-mark.svg" alt="" width="64" height="64" aria-hidden="true" />;
 }
 
 export function Header() {
@@ -17,5 +17,5 @@ export function Header() {
 }
 
 export function Footer() {
-  return <footer className="footer"><Link className="brand" href="/"><CompassMark /><span><strong>IRON COMPASS</strong><small>Practical work for the rooms that matter</small></span></Link><nav aria-label="Footer navigation"><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/field-guide">Compass Check</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link><Link href="/resources">Resources</Link><Link href="/about">About Chris</Link><Link href="/policies">Policies</Link><a href={CONTACT_FORM} target="_blank" rel="noreferrer">Contact Chris</a></nav><span>© 2026</span></footer>;
+  return <footer className="footer"><Link className="brand" href="/"><CompassMark /><span><strong>IRON COMPASS</strong><small>Practical work for the rooms that matter</small></span></Link><nav aria-label="Footer navigation"><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/field-guide">Compass Check</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link><Link href="/resources">Resources</Link><Link href="/about">About Chris</Link><a href="https://chrisavera.substack.com" target="_blank" rel="me noreferrer">Field Notes on Substack ↗</a><Link href="/policies">Policies</Link><a href={CONTACT_FORM} target="_blank" rel="noreferrer">Contact Chris</a></nav><span>© 2026</span></footer>;
 }

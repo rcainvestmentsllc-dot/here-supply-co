@@ -222,6 +222,7 @@ export default function Home() {
         <div className={styles.resourceCopy}>
           <p>Iron Compass is practical educational work from one husband and father. It is not therapy, clinical treatment, or an accredited program. When you need research, a qualified professional, or immediate support, the resource guide points you toward established places to start.</p>
           <Link className={styles.quietDarkLink} href="/resources">Use the resource guide <span>→</span></Link>
+          <a className={styles.quietDarkLink} href="https://chrisavera.substack.com" target="_blank" rel="me noreferrer">Follow Chris’s Field Notes on Substack <span>↗</span></a>
         </div>
       </section>
 
@@ -248,7 +249,7 @@ export default function Home() {
 
       <footer className={styles.footer}>
         <span>© 2026 Iron Compass Institute</span>
-        <nav><a href="#system">The system</a><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/field-guide">Compass Check</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link><Link href="/resources">Resources</Link><Link href="/about">About Chris</Link><Link href="/policies">Policies</Link><a href={CONTACT_FORM} target="_blank" rel="noreferrer">Contact Chris</a></nav>
+        <nav><a href="#system">The system</a><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/field-guide">Compass Check</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link><Link href="/resources">Resources</Link><Link href="/about">About Chris</Link><a href="https://chrisavera.substack.com" target="_blank" rel="me noreferrer">Field Notes on Substack ↗</a><Link href="/policies">Policies</Link><a href={CONTACT_FORM} target="_blank" rel="noreferrer">Contact Chris</a></nav>
       </footer>
     </main>
   );

@@ -174,6 +174,7 @@
 .resourceCopy { align-self:end; }
 .resourceCopy > p { max-width:600px; margin:0; color:var(--muted); font-size:16px; line-height:1.68; }
 .resourceCopy .quietDarkLink { margin-top:27px; }
+.resourceCopy .quietDarkLink + .quietDarkLink { margin-left:22px; }
 
 .founderSection { max-width:1320px; margin:0 auto; padding:clamp(88px,9.5vw,136px) clamp(24px,7vw,110px); display:grid; grid-template-columns:minmax(260px,.6fr) minmax(0,1fr); align-items:center; gap:clamp(48px,8vw,130px); color:var(--ink); }
 .founderPhoto { margin:0; overflow:hidden; background:#183526; box-shadow:18px 20px 0 rgba(17,39,29,.1); }
@@ -261,6 +262,7 @@
   .methodSection h2 { font-size:clamp(45px,12vw,62px); }
   .resourceSection { padding-top:74px; padding-bottom:76px; }
   .resourceSection h2 { font-size:clamp(45px,12.7vw,64px); }
+  .resourceCopy .quietDarkLink + .quietDarkLink { margin-left:0; }
   .founderSection { padding-top:75px; padding-bottom:77px; }
   .founderSection h2 { font-size:clamp(39px,11.5vw,55px); }
   .closing { min-height:490px; padding:75px 20px; }

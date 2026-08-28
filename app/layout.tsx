@@ -13,7 +13,16 @@ const siteData = {
       "@id": "https://ironcompassinstitute.com/#organization",
       name: "Iron Compass Institute",
       url: "https://ironcompassinstitute.com/",
-      founder: { "@type": "Person", name: "Chris Avera" },
+      email: "mailto:chris@ironcompassinstitute.com",
+      founder: { "@id": "https://ironcompassinstitute.com/#chris-avera" },
+      sameAs: ["https://chrisavera.substack.com"],
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ironcompassinstitute.com/#chris-avera",
+      name: "Chris Avera",
+      url: "https://ironcompassinstitute.com/about",
+      sameAs: ["https://chrisavera.substack.com"],
     },
     {
       "@type": "WebSite",
