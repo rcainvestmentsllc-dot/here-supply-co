@@ -29,6 +29,10 @@ async function htmlFor(pathname) {
   return response.text();
 }
 
+function mainMarkup(html) {
+  return html.match(/<main\b[\s\S]*?<\/main>/i)?.[0] ?? html;
+}
+
 test("server-renders the finished Iron Compass homepage", async () => {
   const html = await htmlFor("/");
 
@@ -40,8 +44,11 @@ test("server-renders the finished Iron Compass homepage", async () => {
   assert.match(html, /Take the Compass Check/);
   assert.match(html, /Phones, feeds, AI tools, and work/);
   assert.match(html, /Start with the problem.*you can.*name/s);
-  assert.match(html, /compass-brass-wide\.webp/i);
-  assert.match(html, /sauna-cover\.webp/i);
+  assert.match(html, /iron-compass-wave-mark-reference\.png/i);
+  assert.match(html, /course\/preview-return\.png/i);
+  assert.match(html, /course\/preview-lead\.png/i);
+  assert.match(html, /course\/preview-keep\.png/i);
+  assert.match(html, /REAL COURSE PREVIEW/i);
   assert.match(html, /Skip to main content/);
   assert.doesNotMatch(html, /_next\/static\/chunks\/link-/i);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
@@ -110,7 +117,7 @@ test("shows the public Focus overview and keeps the Core bridge private", async 
   assert.match(html, /focus-protocol-sales\.mp4/i);
   assert.doesNotMatch(html, /core-bridge-sales\.mp4/i);
   assert.match(html, /FOCUS OVERVIEW/i);
-  assert.match(html, /CORE LESSON PREVIEW/i);
+  assert.match(html, /INSIDE THE LEAD MODULE/i);
 });
 
 test("keeps paid access pages private and puts the Core bridge after Focus", async () => {
@@ -124,11 +131,41 @@ test("keeps paid access pages private and puts the Core bridge after Focus", asy
   assert.match(coreHtml, /<meta name="robots" content="noindex, nofollow"\/>/i);
   assert.doesNotMatch(coreHtml, /core-bridge-sales\.mp4/i);
   assert.match(coreHtml, /The Core Workbook/i);
+  assert.match(coreHtml, /module-return\.mp4/i);
+  assert.match(coreHtml, /module-lead\.mp4/i);
+  assert.match(coreHtml, /module-keep\.mp4/i);
+  assert.match(coreHtml, /THE IRON COMPASS PRACTICE CYCLE/i);
+  assert.match(coreHtml, /Useful ideas only count when they survive an ordinary Tuesday/i);
+  assert.equal((mainMarkup(coreHtml).match(/\/access\/core-4m8r2p\/lesson\//gi) ?? []).length, 9);
+  assert.doesNotMatch(coreHtml, /gamma\.app/i);
   assert.doesNotMatch(coreHtml, /Focus Protocol Field Manual|The Sunday Board Meeting/i);
 });
 
+test("gives every Core lesson a usable field kit and evidence note", async () => {
+  const lessonRoutes = [
+    "the-sanctuary",
+    "hunt-before-you-farm",
+    "the-airlock-protocol",
+    "the-emotional-thermostat",
+    "the-date-night-experiment",
+    "the-floor-general",
+    "the-third-place",
+    "the-friendship-script",
+    "mission-debrief",
+  ];
+
+  for (const slug of lessonRoutes) {
+    const html = await htmlFor(`/access/core-4m8r2p/lesson/${slug}`);
+    assert.match(html, /FIELD KIT/i);
+    assert.match(html, /WORDS TO USE/i);
+    assert.match(html, /WATCH FOR/i);
+    assert.match(html, /FIELD ASSIGNMENT/i);
+    assert.match(html, /EVIDENCE NOTE/i);
+  }
+});
+
 test("gives every public page one clear heading and a canonical URL", async () => {
-  const routes = ["/", "/sunday-board", "/field-guide", "/focus", "/library", "/resources", "/about", "/policies"];
+  const routes = ["/", "/sunday-board", "/field-guide", "/focus", "/library", "/resources", "/resources/how-to-stop-checking-your-phone-at-home", "/resources/how-to-be-more-present-with-your-kids", "/working-session", "/about", "/policies"];
 
   for (const route of routes) {
     const html = await htmlFor(route);
@@ -138,7 +175,7 @@ test("gives every public page one clear heading and a canonical URL", async () =
 });
 
 test("every internal page link resolves and no public page depends on Skool", async () => {
-  const routes = ["/", "/sunday-board", "/field-guide", "/focus", "/library", "/resources", "/about", "/policies"];
+  const routes = ["/", "/sunday-board", "/field-guide", "/focus", "/library", "/resources", "/resources/how-to-stop-checking-your-phone-at-home", "/resources/how-to-be-more-present-with-your-kids", "/working-session", "/about", "/policies"];
   const destinations = new Set(routes);
 
   for (const route of routes) {
@@ -154,4 +191,57 @@ test("every internal page link resolves and no public page depends on Skool", as
     const response = await render(destination);
     assert.equal(response.status, 200, `${destination} should resolve`);
   }
+});
+
+test("delivers the complete native Core course and workbook without Gamma", async () => {
+  const lessonHtml = await htmlFor("/access/core-4m8r2p/lesson/the-airlock-protocol");
+  const workbookHtml = await htmlFor("/access/core-4m8r2p/workbook");
+
+  assert.match(lessonHtml, /<meta name="robots" content="noindex, nofollow"\/>/i);
+  assert.match(lessonHtml, /THE ROOM/i);
+  assert.match(lessonHtml, /THE PRINCIPLE/i);
+  assert.match(lessonHtml, /THE PRACTICE/i);
+  assert.match(lessonHtml, /Mark lesson complete/i);
+  assert.match(lessonHtml, /PREVIOUS/i);
+  assert.match(lessonHtml, /NEXT/i);
+  assert.doesNotMatch(lessonHtml, /gamma\.app/i);
+  assert.match(workbookHtml, /The Workbook/i);
+  assert.equal((mainMarkup(workbookHtml).match(/class="workbook-page"/gi) ?? []).length, 9);
+  assert.doesNotMatch(workbookHtml, /gamma\.app/i);
+});
+
+test("delivers Focus natively as four concrete moves", async () => {
+  const html = await htmlFor("/access/focus-7f3k9q");
+
+  assert.match(html, /Remove the Color/i);
+  assert.match(html, /Remove the extraction apps/i);
+  assert.match(html, /Silence the machine/i);
+  assert.match(html, /Choose a Vault window/i);
+  assert.match(html, /THE 72-HOUR EXPERIMENT/i);
+  assert.doesNotMatch(html, /gamma\.app/i);
+});
+
+test("uses a focused native intake for the personal leadership working session", async () => {
+  const html = await htmlFor("/working-session");
+
+  assert.match(html, /One real problem/i);
+  assert.match(html, /Sixty minutes/i);
+  assert.match(html, /\$150/i);
+  assert.match(html, /formResponse/i);
+  assert.match(html, /entry\.862303072/i);
+  assert.match(html, /entry\.2097188110/i);
+  assert.match(html, /not therapy, marriage counseling, medical care, or crisis services/i);
+});
+
+test("publishes practical search entry points for phone habits and fatherhood", async () => {
+  const resourcesHtml = await htmlFor("/resources");
+  const phoneHtml = await htmlFor("/resources/how-to-stop-checking-your-phone-at-home");
+  const fatherHtml = await htmlFor("/resources/how-to-be-more-present-with-your-kids");
+
+  assert.match(resourcesHtml, /How to Stop Checking Your Phone at Home/i);
+  assert.match(resourcesHtml, /How to Be More Present With Your Kids/i);
+  assert.match(phoneHtml, /Choose the place before the urge/i);
+  assert.match(fatherHtml, /Let them lead/i);
+  assert.match(phoneHtml, /"@type":"Article"/i);
+  assert.match(fatherHtml, /"@type":"Article"/i);
 });

@@ -137,7 +137,7 @@ export default function FocusProtocol() {
         <div>
           <details><summary>How is it delivered?</summary><p>After checkout, you are sent directly to an unlisted page with the browser-based visual Field Manual. Save that link. There is no course account or app to manage.</p></details>
           <details><summary>Is this a subscription?</summary><p>No. Focus Protocol is a one-time purchase with immediate private access.</p></details>
-          <details><summary>What if it is not right for me?</summary><p>Request a refund within 14 calendar days of purchase through the <a href={CONTACT_FORM} target="_blank" rel="noreferrer">contact form</a>.</p></details>
+          <details><summary>What if it is not right for me?</summary><p>Request a refund within 14 calendar days of purchase through the <a href={CONTACT_FORM}>contact form</a>.</p></details>
         </div>
       </section>
 

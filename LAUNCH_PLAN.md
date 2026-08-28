@@ -1,5 +1,7 @@
 # Iron Compass Launch Plan
 
+> This is the original launch analysis. The current operating plan, offer ladder, native course-delivery model, working-session pilot, search strategy, and thirty-day action plan are maintained in `BUSINESS_PLAN.md`.
+
 ## The decision
 
 Iron Compass should be a small, useful resource business before it becomes a personality brand, a community, or a coaching company.

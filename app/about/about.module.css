@@ -5,6 +5,7 @@
   --sage: #dde2ca;
   --gold: #caa45d;
   --rust: #a6533b;
+  --ocean: #174a50;
   --muted: #5f6d64;
   min-height: 100svh;
   overflow: clip;
@@ -34,14 +35,14 @@
 .headerAction { min-height: 43px; padding: 0 15px; display: inline-flex; align-items: center; gap: 22px; flex: none; color: var(--ink); background: #dfcf9a; border-radius: 3px; font-size: 10px; font-weight: 700; text-decoration: none; }
 .headerAction:hover { color: var(--paper); background: var(--rust); }
 
-.hero { min-height: min(690px, calc(100svh - 86px)); position: relative; isolation: isolate; display: grid; align-items: end; overflow: hidden; color: var(--paper); background: var(--forest); }
-.hero > img, .hero > div:nth-child(2) { width: 100%; height: 100%; position: absolute; inset: 0; z-index: -2; }
-.hero > img { object-fit: cover; object-position: center 39%; filter: saturate(.76) contrast(1.05); }
-.hero > div:nth-child(2) { z-index: -1; background: linear-gradient(90deg, rgba(6, 18, 12, .93), rgba(7, 21, 14, .68) 55%, rgba(5, 14, 10, .3)), linear-gradient(0deg, rgba(6, 17, 11, .61), transparent 57%); }
-.heroContent { width: min(100%, 1320px); margin: 0 auto; padding: clamp(110px, 11vw, 148px) clamp(24px, 7vw, 110px) clamp(72px, 8vw, 112px); }
-.heroContent > p, .eyebrow { margin: 0; color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: .18em; line-height: 1.35; }
-.hero h1 { max-width: 840px; margin: 21px 0 0; font-size: clamp(61px, 7.4vw, 113px); line-height: 1.04; }
-.hero h1 em, .story h2 em, .notes h2 em, .letters h2 em { color: var(--gold); font-style: italic; }
+.hero { min-height: min(690px, calc(100svh - 86px)); position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(430px, .82fr) minmax(0, 1.18fr); overflow: hidden; color: var(--ink); background: radial-gradient(circle at 15% 18%, rgba(225,188,113,.38) 0 8%, transparent 8.4%), linear-gradient(125deg,#f2eadc,#e3dbc7); }
+.hero > img, .hero > div:nth-child(2), .heroContent { grid-row: 1; }
+.hero > img { width: 100%; height: 100%; min-height: min(690px, calc(100svh - 86px)); grid-column: 2; object-fit: cover; object-position: center 38%; filter: saturate(.78) contrast(1.04); }
+.hero > div:nth-child(2) { grid-column: 2; z-index: 1; pointer-events: none; background: linear-gradient(90deg, rgba(23,74,80,.16), transparent 24%), linear-gradient(0deg, rgba(23,74,80,.12), transparent 48%); }
+.heroContent { min-width: 0; grid-column: 1; z-index: 2; align-self: center; padding: clamp(88px, 9vw, 132px) clamp(34px, 6.2vw, 96px); border-right: 1px solid rgba(23,74,80,.2); }
+.heroContent > p, .eyebrow { margin: 0; color: var(--rust); font-size: 10px; font-weight: 700; letter-spacing: .18em; line-height: 1.35; }
+.hero h1 { max-width: 620px; margin: 21px 0 0; font-size: clamp(58px, 6vw, 91px); line-height: 1.04; }
+.hero h1 em, .story h2 em, .notes h2 em, .letters h2 em { color: var(--rust); font-style: italic; }
 
 .story { max-width: 1320px; margin: 0 auto; padding: clamp(88px, 10.5vw, 146px) clamp(24px, 7vw, 110px); display: grid; grid-template-columns: minmax(165px, .33fr) minmax(0, 1.48fr); gap: clamp(48px, 9vw, 158px); }
 .story .eyebrow { color: var(--rust); }
@@ -64,7 +65,7 @@
 .beliefList h3 { margin: 42px 0 13px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(24px, 2.15vw, 32px); font-weight: 400; letter-spacing: -.055em; line-height: 1.08; }
 .beliefList p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
 
-.fromChris { min-height: 620px; padding: clamp(88px, 10vw, 144px) clamp(24px, 7vw, 110px); position: relative; isolation: isolate; overflow: hidden; color: var(--paper); background: linear-gradient(119deg, #0b1d15, #173328); }
+.fromChris { min-height: 620px; padding: clamp(88px, 10vw, 144px) clamp(24px, 7vw, 110px); position: relative; isolation: isolate; overflow: hidden; color: var(--paper); background: linear-gradient(119deg, #174a50, #1e6669); }
 .fromChris::before { content: ""; width: min(74vw, 1100px); height: 1px; position: absolute; z-index: -1; right: -12%; top: 22%; background: linear-gradient(90deg, transparent, rgba(202, 164, 93, .42), transparent); transform: rotate(-12deg); }
 .fromChrisInner { width: min(100%, 1210px); margin: 0 auto; display: grid; grid-template-columns: minmax(145px, .28fr) minmax(0, 790px); justify-content: space-between; gap: clamp(52px, 8vw, 132px); }
 .fromChris .eyebrow { align-self: start; padding-top: 10px; }
@@ -82,6 +83,12 @@
 .footer a:hover { color: var(--gold); }
 
 @media (max-width: 900px) {
+  .hero { min-height: 0; grid-template-columns: 1fr; grid-template-rows: auto minmax(470px, 62svh); }
+  .hero > img, .hero > div:nth-child(2), .heroContent { grid-column: 1; }
+  .hero > img, .hero > div:nth-child(2) { grid-row: 2; }
+  .hero > img { min-height: 470px; object-position: center 36%; }
+  .heroContent { grid-row: 1; padding: 76px clamp(24px, 7vw, 64px) 70px; border-right: 0; border-bottom: 1px solid rgba(202, 164, 93, .28); }
+  .hero h1 { max-width: 720px; font-size: clamp(58px, 10vw, 86px); }
   .story, .notes { grid-template-columns: 1fr; gap: 38px; }
   .fromChrisInner { grid-template-columns: 1fr; gap: 31px; }
   .fromChris .eyebrow { padding-top: 0; }
@@ -96,9 +103,10 @@
   .header nav { display: none; }
   .headerAction { min-height: 38px; padding: 0 12px; gap: 12px; font-size: 9px; }
   .brand small { display: none; }
-  .hero { min-height: 590px; }
-  .heroContent { padding: 84px 20px 76px; }
-  .hero h1 { font-size: clamp(56px, 15.8vw, 82px); }
+  .hero { grid-template-rows: auto minmax(420px, 58svh); }
+  .hero > img { min-height: 420px; }
+  .heroContent { padding: 68px 20px 62px; }
+  .hero h1 { font-size: clamp(52px, 14.5vw, 72px); }
   .story, .notes, .fromChris { padding-left: 20px; padding-right: 20px; }
   .story { padding-top: 76px; padding-bottom: 78px; }
   .story .lead { font-size: clamp(32px, 10.2vw, 47px); }
