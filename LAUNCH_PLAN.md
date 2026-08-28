@@ -99,6 +99,7 @@ Google explicitly recommends people-first content with original experience, clea
 
 - Verify the domain in Google Search Console.
 - Submit `https://ironcompassinstitute.com/sitemap.xml`.
+- Keep the root sitemap in `robots.txt` and notify IndexNow whenever a public page is added or materially changed.
 - Add lightweight site analytics and track four events: Sunday guide view, confirmed signup, Focus checkout click, and Core checkout click.
 - Record one weekly line: visitors, guide signups, Focus checkout clicks, Focus sales, Core sales.
 
@@ -125,6 +126,8 @@ Build a one-page professional resource note for:
 The request is not `endorse my course`. It is: `I made a free fifteen-minute weekly meeting guide. Would you be willing to tell me what is useful, what is risky, and whether you would ever share it?`
 
 Five thoughtful reviews from qualified or experienced people are more valuable than a fake accreditation badge. If someone agrees to be named, quote only their exact words and describe the relationship accurately.
+
+Use the ready-to-personalize notes and tracking rhythm in `OUTREACH_KIT.md`.
 
 ### Channel 3: referral built into the free guide
 
