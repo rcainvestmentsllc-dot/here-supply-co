@@ -152,7 +152,7 @@ export default function Home() {
           <p>A printable fifteen-minute weekly meeting for you and your wife, so the calendar, money, kids, connection, and one shared priority are no longer living in two separate heads.</p>
           <dl>
             <div><dt>What it helps with</dt><dd>Connection, the calendar, money, kids, time together, and one shared win.</dd></div>
-            <div><dt>What you get</dt><dd>The printable meeting guide immediately, plus five short notes that help you use it well.</dd></div>
+            <div><dt>What you get</dt><dd>The printable meeting guide immediately. No email gate, account, or new system to manage.</dd></div>
           </dl>
           <div className={styles.buttonRow}>
             <Link className={styles.primaryButton} href="/sunday-board#get-board">Start the Sunday Board Meeting <span>→</span></Link>

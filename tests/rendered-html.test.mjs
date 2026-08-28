@@ -58,13 +58,16 @@ test("renders a grounded resource guide without implying accreditation", async (
   assert.match(html, /not therapy, medical care, crisis care, a licensed clinical service, or an accredited program/i);
 });
 
-test("makes the Sunday Board Meeting clear and renders a valid MailerLite mount", async () => {
+test("makes the Sunday Board Meeting clear and delivers the guide without an email gate", async () => {
   const html = await htmlFor("/sunday-board");
 
   assert.match(html, /A 15-MINUTE WEEKLY MEETING FOR YOU AND YOUR WIFE/i);
   assert.match(html, /Sit down together/);
   assert.match(html, /Free 15-minute meeting guide/i);
-  assert.match(html, /<div class="ml-embedded" data-form="B8mkye"><\/div>/i);
+  assert.match(html, /href="\/downloads\/sunday-board-meeting\.pdf"[^>]*download/i);
+  assert.match(html, /chrisavera\.substack\.com\/subscribe/i);
+  assert.match(html, /No account, inbox hunt, or new system to manage/i);
+  assert.doesNotMatch(html, /ml-embedded|B8mkye|assets\.mailerlite\.com/i);
   assert.doesNotMatch(html, /Get the free Board/i);
 });
 

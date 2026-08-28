@@ -31,7 +31,7 @@ export default function SundayBoard() {
         <p>The Sunday Board Meeting is a simple weekly conversation for husbands and wives who want less last-minute friction and more of life pointed in the same direction.</p>
         <div className="sunday-hero-actions">
           <a className="button primary" href="#get-board">Get the free meeting guide</a>
-          <small>Opens immediately · Five short follow-ups</small>
+          <small>Free PDF · Opens immediately · No account required</small>
           <Link href="/field-guide">Not sure where to start? Take the Compass Check <span>→</span></Link>
         </div>
       </section>
@@ -40,12 +40,12 @@ export default function SundayBoard() {
         <div className="signup-copy">
           <p className="section-label">START HERE</p>
           <h2>Get the guide.<br /><em>Use it together this Sunday.</em></h2>
-          <p>Enter your email and the printable meeting guide opens immediately. Over the next week, I will send five short notes that help you use it without turning it into another system to manage.</p>
+          <p>Download the printable meeting guide and use it right away. There is no email gate and no account to create. Just print one copy and sit down together.</p>
           <ul>
             <li>The printable Sunday Board Meeting guide</li>
             <li>A clear four-part agenda for the conversation</li>
-            <li>Five brief, practical follow-ups</li>
-            <li>Unsubscribe whenever you want</li>
+            <li>Prompts for connection, logistics, and one shared priority</li>
+            <li>Free to use, with no account required</li>
           </ul>
         </div>
         <SundayBoardSignupForm />
