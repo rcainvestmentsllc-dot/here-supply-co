@@ -84,6 +84,27 @@ const research = [
   },
 ];
 
+const fieldNotes = [
+  {
+    label: "MARRIAGE",
+    title: "A 15-minute weekly marriage meeting agenda",
+    copy: "A simple way to make the week visible without turning Sunday into a boardroom or an argument.",
+    href: "/resources/weekly-marriage-meeting",
+  },
+  {
+    label: "WORK TO HOME",
+    title: "How to leave work at work before you walk in the door",
+    copy: "A short transition for putting down the mental spillover and giving the entrance your attention.",
+    href: "/resources/leave-work-at-work",
+  },
+  {
+    label: "SAFE DRIVING",
+    title: "Put the phone away before the car moves",
+    copy: "A practical setup for navigation, important contacts, and the downward glance behind the wheel.",
+    href: "/resources/phone-away-before-driving",
+  },
+];
+
 export default function Resources() {
   return (
     <main id="main-content" className={styles.resources}>
@@ -108,6 +129,24 @@ export default function Resources() {
               <span>{path.number}</span>
               <div><strong>{path.need}</strong><small>{path.answer}</small></div>
               <b>{path.action} →</b>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.fieldNotes} aria-labelledby="field-notes-heading">
+        <div className={styles.fieldNotesIntro}>
+          <p className={styles.eyebrow}>FIELD NOTES</p>
+          <h2 id="field-notes-heading">Use one practice<br />before you read <em>ten ideas.</em></h2>
+          <p>These are complete starting points, not search-engine filler. Each one names a real moment and gives you something concrete to try.</p>
+        </div>
+        <div className={styles.fieldGrid}>
+          {fieldNotes.map((note, index) => (
+            <a key={note.href} href={note.href}>
+              <span>{String(index + 1).padStart(2, "0")} · {note.label}</span>
+              <h3>{note.title}</h3>
+              <p>{note.copy}</p>
+              <b>Read the field note →</b>
             </a>
           ))}
         </div>

@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 const movements = [
   {
     number: "01",
-    title: "Attention",
-    line: "Bring your attention back under your direction.",
-    detail: "Make space to think clearly, finish the work in front of you, and come through the door without making your family carry the day’s pressure.",
+    title: "Return",
+    line: "Bring your attention back before you try to fix anything else.",
+    detail: "Make space to think clearly, finish the work in front of you, and come through the door without asking your family to carry the whole day with you.",
     image: "/assets/compass-brass-wide.webp",
     alt: "A brass compass resting on weathered wood",
     imageWidth: 1600,
@@ -22,9 +22,9 @@ const movements = [
   },
   {
     number: "02",
-    title: "Regulation",
-    line: "Bring a steadier self into the room.",
-    detail: "Pressure is real. The work is learning to pause, return, and lead a hard moment without letting it take over the house.",
+    title: "Lead",
+    line: "Bring a steadier self into a hard moment.",
+    detail: "Pressure is real. The work is learning to pause, respond without making the moment worse, and repair it when you miss.",
     image: "/assets/sauna-cover.webp",
     alt: "A quiet wooden sauna prepared for a reset",
     imageWidth: 1600,
@@ -33,9 +33,9 @@ const movements = [
   },
   {
     number: "03",
-    title: "Identity",
-    line: "Build a life that can hold what matters.",
-    detail: "Protect time, friendship, marriage, family rhythms, and the parts of life that keep a good man from slowly disappearing into work.",
+    title: "Keep",
+    line: "Keep the parts of life work cannot replace.",
+    detail: "Protect time, friendship, marriage, family rhythms, and the ordinary parts of life that keep a good man from slowly disappearing into work.",
     image: "/assets/third-place-surf-card.jpg",
     alt: "A surfer carrying his board into the water at sunset",
     imageWidth: 1600,
