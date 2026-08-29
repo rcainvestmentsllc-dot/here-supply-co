@@ -2,7 +2,7 @@
 
 ## The honest recommendation
 
-This can become a real business, but the business is not “information for men.” Information is becoming abundant and cheap. The defensible value is a well-made system that helps a man notice a real pattern, try one clear practice, and stay accountable long enough to use it with the people in his actual life.
+This can become a real business, but the business is not more information. Information is becoming abundant and cheap. The defensible value is a well-made system that helps a person notice a real pattern, try one clear practice, and stay accountable long enough to use it with the people in their actual life.
 
 The position is:
 
@@ -10,11 +10,45 @@ The position is:
 
 That promise is specific enough to market, broad enough to support future courses, and human enough to remain valuable as AI improves.
 
-Do not build a large membership, app, or sprawling course catalog yet. Prove that men complete the work, apply a practice, and describe a meaningful result in their own words. Then scale what they actually use.
+Do not build a large membership, app, or sprawling course catalog yet. Prove that people complete the work, apply a practice, and describe a meaningful result in their own words. Then scale what they actually use.
+
+## Audience architecture: a broad brand with specific doors
+
+**Life at Hand should be open to adults of any gender and relationship status.** The underlying problems are not male-only: divided attention, social disconnection, weak friendship, work pressure, digital distraction, isolation, and the gap between knowing and doing. The WHO's 2025 social-connection estimates report similar loneliness rates for males and females.
+
+The brand can welcome everyone without making every product generic. Each entry point should name the life situation it was actually designed to help:
+
+- **For individuals:** attention, work-to-home transitions, friendship, purpose, community, and keeping promises to oneself. Develop an individual weekly practice after testing it; do not force the couples guide to do this job.
+- **For couples:** See the Same Week remains a specific shared-week conversation. It can serve married, partnered, and dating couples without becoming the front door for every visitor.
+- **For parents and families:** practices can address presence, pressure, repair, household rhythms, and how adults show up around children.
+- **For men:** Chris can still speak directly about male friendship, fatherhood, responsibility, emotional pressure, and the tendency to go it alone. This becomes a strong editorial and course pathway, not a fence around the entire brand.
+- **For women and single adults:** include them honestly only when the examples, artwork, practices, and language reflect their lives. Do not merely swap pronouns in a course built entirely around husbands and fathers.
+
+The founding Core material is currently men-first and often husband-and-father specific. Before presenting the complete course as universal, add genuinely useful alternatives for someone who is single, dating, partnered without children, co-parenting, living alone, or relying primarily on friends and community. Keep one core principle, then let the practice branch according to real life.
+
+Recommended launch position:
+
+> Practical work for your attention, relationships, and the life in front of you.
+
+The first founding cohort can still be mostly men because that is where Chris has the clearest voice and the current material is strongest. That is a testing decision, not the permanent boundary of Life at Hand.
+
+### A possible role for Rhea
+
+Rhea could make the couples and broader relationship work more credible, useful, and genuinely inclusive if she wants to participate. Do not position her as a decorative spouse, a testimonial, or proof that Chris's approach is correct. Her value is an independent lived perspective and the ability to challenge practices or language that work only from one side of a relationship.
+
+Start with a limited collaboration rather than announcing her as a co-founder:
+
+1. Rhea reviews See the Same Week and the marriage, date-night, home, and family lessons for realism, fairness, and missing perspectives.
+2. Chris and Rhea record one natural conversation about a practice they have actually tried, including what felt awkward or did not work. Do not script a perfect-couple performance.
+3. Add a short “from both sides” note only where their perspectives are materially different and helpful.
+4. Test one couples workshop or Q&A together after founding users have used the guide.
+5. After the pilot, decide together whether Rhea prefers to remain an editorial adviser, appear occasionally, co-create the couples pathway, or take a larger public and business role.
+
+Before using her name or image publicly, agree privately on time, privacy, compensation or ownership, decision authority, which parts of family life stay off-limits, and whether she wants direct contact with customers. If she does not want a public role, her private editorial input can still substantially improve the work.
 
 ## The problem worth solving
 
-The customer is not a broken man looking for a new identity. He is often competent, responsible, and outwardly functional. He is also pulled thin by work, screens, pressure, and the quiet erosion of friendship and attention. His problem is usually not lack of advice. It is the distance between what he knows and what he does at 6:15 p.m. when he walks through the door tired.
+The initial customer is not a broken person looking for a new identity. They are often competent, responsible, and outwardly functional. They are also pulled thin by work, screens, pressure, and the quiet erosion of friendship and attention. The problem is usually not lack of advice. It is the distance between what they know and what they do at 6:15 p.m. when the day has used up most of their patience.
 
 That makes Iron Compass educational and practical, not therapy and not guru coaching. It can help with attention, transitions, responsibility, friendship, marriage rhythms, and applied personal leadership. Crisis care, diagnosis, treatment, marriage counseling, and medical, legal, or financial advice stay outside the scope.
 
@@ -28,13 +62,13 @@ The need is real. The U.S. Surgeon General recommends minimizing distraction dur
 
 ### 1. See the Same Week, free
 
-A clean, one-page, 15-minute weekly conversation for a man and his wife. This is the entry point because it creates an immediate shared action, not another newsletter promise.
+A clean, one-page, 15-minute weekly conversation for a couple. This is a specific couples entry point because it creates an immediate shared action, not another newsletter promise.
 
 Success measure: they print it, use it, and reply with what changed in the coming week.
 
 ### 2. Compass Check, free
 
-A short diagnostic that helps a man identify whether attention, pressure, home, or connection is the best place to start. It should recommend one existing resource, not manufacture a personality label.
+A short diagnostic that helps a person identify whether attention, pressure, home, or connection is the best place to start. It should recommend one existing resource, not manufacture a personality label.
 
 Success measure: completion and click-through to the recommended next step.
 
@@ -58,11 +92,11 @@ Success measure: whether the agreed action happened within seven days and whethe
 
 ### 6. Weekly Application Support, $99 per month beta
 
-Recurring revenue should come from recurring human value, not from putting old lessons behind a monthly paywall. The lean first version is a tightly bounded email-accountability subscription for men who have bought Core or completed an Application Session.
+Recurring revenue should come from recurring human value, not from putting old lessons behind a monthly paywall. The lean first version is a tightly bounded email-accountability subscription for people who have bought Core or completed an Application Session and whose request fits Chris's experience and scope.
 
 Working delivery:
 
-1. The member sends one structured weekly check-in: what he meant to practice, what happened, where he got stuck, and what he will do next.
+1. The member sends one structured weekly check-in: what they meant to practice, what happened, where they got stuck, and what they will do next.
 2. Chris sends one personal written reply or short voice note within two business days. The reply helps the member make the practice smaller, clearer, or more realistic. It does not provide therapy, crisis care, marriage counseling, or unlimited access.
 3. The member may send one brief clarification. A new issue waits for the next weekly check-in.
 4. Members receive one optional monthly group application call only after the one-to-one rhythm is working reliably.
@@ -80,11 +114,11 @@ This is a working offer description, not the final product name. Do not call it 
 
 ### 7. Application Group, only after individual proof
 
-Do not launch this immediately. First complete at least ten Application Sessions and identify the two or three situations that repeat. Then test a four-week group with six to eight men.
+Do not launch this immediately. First complete at least ten Application Sessions and identify the two or three situations that repeat. Then test a four-week group with six to eight people who share a sufficiently specific application need.
 
 Suggested structure:
 
-1. Each man names one real-life application, not a broad transformation goal.
+1. Each member names one real-life application, not a broad transformation goal.
 2. Weekly 60-minute call: brief check-in, one case, one practice, one commitment.
 3. Midweek human check-in from a partner or Chris, not automated streak pressure.
 4. Final reflection on what was used, missed, repaired, and kept.
@@ -95,11 +129,11 @@ The working price range for a paid beta is $300 to $500. The price should be cho
 
 The course should never try to win by having more answers. It wins through five things a generic answer does not provide by itself:
 
-1. **A sequence.** Return, Lead, and Keep give a man a path instead of a pile of advice.
+1. **A sequence.** Return, Lead, and Keep give a person a path instead of a pile of advice.
 2. **A practice.** Every lesson ends in a behavior small enough to try this week.
 3. **A human story.** Realistic scenes, Chris's real voice, and ordinary moments help the lesson feel lived rather than generated.
 4. **Accountability.** A person notices whether the practice made it into real life.
-5. **Belonging.** The long-term value is not a feed. It is a small number of men who know one another well enough to notice absence, effort, honesty, and repair.
+5. **Belonging.** The long-term value is not a feed. It is a small number of people who know one another well enough to notice absence, effort, honesty, and repair.
 
 Research on coaching is promising but should be described carefully. A meta-analysis of randomized controlled studies found a moderate positive overall effect, while also noting that the research base had not kept pace with the field's growth. That supports testing a structured application model and measuring it honestly. It does not justify extravagant claims.
 
@@ -124,7 +158,7 @@ Tony Robbins and *The 7 Habits of Highly Effective People* can remain acknowledg
 
 The best Mike Rowe influence is not imitation, celebrity borrowing, or a forced quote in every lesson. It is curiosity about real people doing useful things well.
 
-Create a recurring series called **The Work in Front of Us**. Each piece profiles one ordinary person, one useful responsibility, and one thing he has learned about showing up. Examples could include a mechanic who teaches his son, a surf-shop owner who knows his regulars, a volunteer coach, a carpenter, a nurse, a teacher, or a man rebuilding friendship after a move.
+Create a recurring series called **The Work in Front of Us**. Each piece profiles one ordinary person, one useful responsibility, and one thing they have learned about showing up. Examples could include a mechanic who teaches his child, a surf-shop owner who knows the regulars, a volunteer coach, a carpenter, a nurse, a teacher, a single adult building community after a move, or a parent repairing a strained family rhythm.
 
 Rules:
 
@@ -166,10 +200,10 @@ Recruit ten founding users. Giving the program away is reasonable if the agreeme
 
 For each user:
 
-1. Record the problem and what he hopes will be different.
-2. Ask which lesson and practice he actually used.
+1. Record the problem and what the person hopes will be different.
+2. Ask which lesson and practice they actually used.
 3. Follow up after seven and fourteen days.
-4. Ask for permission to quote his exact words.
+4. Ask for permission to quote their exact words.
 5. Publish the context with the result so the testimonial does not sound manufactured.
 
 Also commission a paid review from an appropriately credentialed clinician or researcher for scope, claims, and safety. Their role is review, not borrowed authority. Publish what was reviewed and when.
@@ -261,7 +295,7 @@ Recommended naming architecture:
 
 This architecture removes “Institute,” “Compass,” and forced “field” language. It moves from one shared week, to regaining attention, to the complete course, to real human help applying it. **Focus Protocol is not considered final**, but it is better to keep a merely imperfect working title than force a crowded replacement. Preliminary screening found “The Return” already used by multiple men's coaching offers, “Back in the Room” used prominently by another coaching business, and “Look Up” occupied in digital-wellness work. Ask founding buyers what they thought they were purchasing and what changed for them, then name the product from their language. Do not rename products piecemeal on the live site.
 
-**See the Same Week** remains the strongest name for the free weekly guide. It describes the relational result. “Flow State Focus” would reposition it as personal productivity and lose the husband-and-wife promise.
+**See the Same Week** remains the strongest name for the free weekly guide. It describes the relational result. “Flow State Focus” would reposition it as personal productivity and lose the shared-couple promise.
 
 ### Other directions worth screening
 
@@ -298,7 +332,7 @@ The current private links are unlisted access URLs, not full account authenticat
 
 Every new feature, course, or piece of marketing should answer three questions:
 
-1. Does it help a man do something useful in real life?
+1. Does it help a person do something useful in real life?
 2. Does it create or strengthen human connection rather than more passive consumption?
 3. Can we show honestly that people used it?
 
