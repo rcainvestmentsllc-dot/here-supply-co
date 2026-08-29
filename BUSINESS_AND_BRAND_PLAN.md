@@ -237,29 +237,40 @@ There is now a direct naming conflict in the market: [Iron Compass AI](https://i
 
 That changes the recommendation. Keep the current name only as a temporary operating name while the founding edition is tested. Choose a distinct master brand before significant paid acquisition, press, partnerships, or a larger course catalog.
 
-### Best current direction: Life at Hand
+### Provisional recommendation: Life at Hand
 
 **Life at Hand** is the strongest creative direction from this round because it is human, present, tactile, and broad enough for courses, stories, workshops, and accountability. It fits the mid-century craft language and the central idea that a good life is not elsewhere. It is the life close enough to touch.
+
+Use **Life at Hand** as the brand, not “The Life at Hand.” The practical domain can still be `thelifeathand.com`. A live `.com` registry check on August 29, 2026 returned no registration record for `thelifeathand.com`, while `lifeathand.com` was registered. Domain status can change at any time, so recheck it immediately before purchase.
+
+The preliminary exact-phrase market search did not surface a current men's education or coaching brand using this name. Two old U.S. registrations for LIFE AT HAND covered personal-organizer software and printed organizer kits, and both show as cancelled in 2017. That is useful context, not legal clearance. Because printed education and software are part of this business, have a trademark attorney review the exact name and similar marks before a public rebrand.
 
 Possible lockup:
 
 > LIFE AT HAND  
-> Practical work for husbands and fathers
+> Practical work for the life in front of you
 
-Possible product architecture:
+Recommended naming architecture:
 
 - See the Same Week
-- Focus Protocol
-- Life at Hand Core: Return, Lead, Keep
+- Focus Protocol, retained as a working title while the $29 product is tested
+- Return, Lead, Keep: the complete Life at Hand course
 - Application Sessions with Chris
+- Weekly Application Support with Chris, as the descriptive beta name rather than a manufactured membership name
 - The Work in Front of Us
+
+This architecture removes “Institute,” “Compass,” and forced “field” language. It moves from one shared week, to regaining attention, to the complete course, to real human help applying it. **Focus Protocol is not considered final**, but it is better to keep a merely imperfect working title than force a crowded replacement. Preliminary screening found “The Return” already used by multiple men's coaching offers, “Back in the Room” used prominently by another coaching business, and “Look Up” occupied in digital-wellness work. Ask founding buyers what they thought they were purchasing and what changed for them, then name the product from their language. Do not rename products piecemeal on the live site.
+
+**See the Same Week** remains the strongest name for the free weekly guide. It describes the relational result. “Flow State Focus” would reposition it as personal productivity and lose the husband-and-wife promise.
 
 ### Other directions worth screening
 
 1. **Built for Here**: more masculine and direct, but adjacent “Built for This” fitness language is crowded.
-2. **The Life in Front of Us**: emotionally strong and close to the founder-story idea, but long for a primary mark.
-3. **Good Work, Real Life**: clear and memorable, though more descriptive and potentially harder to own.
+2. **Good Work, Real Life**: clear, useful, and aligned with the real-person editorial direction, but it can sound like a work-life or career consultancy rather than a homecoming brand.
+3. **The Life in Front of Us**: emotionally strong and close to the founder-story idea, but long for a primary mark.
 4. **Life Already Waiting**: emotionally accurate, but longer and more campaign-like than institutional.
+
+The `.com` registry check on August 29, 2026 also returned no registration records for `builtforhere.com` and `goodworkreallife.com`. They are viable backups, not stronger recommendations. Availability can change without notice.
 
 ### Names to stop pursuing
 
