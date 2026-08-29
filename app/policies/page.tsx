@@ -5,8 +5,8 @@ import { CONTACT_FORM } from "../data";
 import styles from "./policies.module.css";
 
 export const metadata: Metadata = {
-  title: "Policies | Iron Compass Institute",
-  description: "Refund, privacy, and educational-use policies for Iron Compass Institute.",
+  title: "Policies | Iron Compass",
+  description: "Refund, privacy, and educational-use policies for Iron Compass.",
   alternates: { canonical: "/policies" },
 };
 
@@ -37,7 +37,7 @@ export default function Policies() {
           <section id="privacy">
             <p>02 · PRIVACY</p>
             <h2>The information this site uses</h2>
-            <p>The Sunday Board Meeting guide can be downloaded without providing an email address or creating an account. If you separately choose to subscribe to Chris’s Field Notes, Substack processes that subscription and provides its own unsubscribe controls.</p>
+            <p>The free weekly guide can be downloaded without providing an email address or creating an account. If you separately choose to follow Chris on Substack, Substack processes that subscription and provides its own unsubscribe controls.</p>
             <p>Purchases are processed through MailerLite and Stripe. Iron Compass may receive the contact and transaction details needed to deliver the product, provide support, and handle refunds. Iron Compass does not receive your full payment-card number.</p>
             <p>The contact form is provided through Google. When you use it, Google and Iron Compass receive the information you choose to submit. The site may also generate ordinary technical logs through its hosting providers. Iron Compass does not sell personal information.</p>
             <p>You may ask to review or delete the personal information Iron Compass controls by using the contact form. Some transaction records may need to be retained for accounting, fraud prevention, or legal obligations.</p>
@@ -56,7 +56,7 @@ export default function Policies() {
           </section>
         </div>
       </section>
-      <section className={styles.close}><p>Ready to start small?</p><Link href="/sunday-board#get-board">Start the Sunday Board Meeting <span>→</span></Link></section>
+      <section className={styles.close}><p>Ready to start small?</p><Link href="/sunday-board#get-board">Get the free weekly guide <span>→</span></Link></section>
       <Footer />
     </main>
   );

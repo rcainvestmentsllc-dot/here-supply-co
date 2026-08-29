@@ -12,6 +12,7 @@ export type CoreLesson = {
   title: string;
   subtitle: string;
   summary: string;
+  scene: string;
   problem: string;
   principle: string;
   practice: string;
@@ -40,7 +41,7 @@ export const COURSE_LENSES = [
   {
     number: "02",
     title: "Enter",
-    body: "Picture the room and the man you want to bring into it, then make the next move specific.",
+    body: "Picture the moment and the man you want to be in it, then make the next move specific.",
   },
   {
     number: "03",
@@ -76,7 +77,7 @@ export const CORE_MOVEMENTS = [
     key: "LEAD" as const,
     number: "02",
     name: "Lead",
-    line: "Bring a steadier man into the rooms that need you most.",
+    line: "Bring a steadier man to the people and places that need you most.",
     image: "/assets/course/module-lead-poster.jpg",
     alt: "Chris Avera introducing the Lead module",
     previewImage: "/assets/course/preview-lead.png",
@@ -106,6 +107,7 @@ export const CORE_LESSONS: CoreLesson[] = [
     title: "The Sanctuary",
     subtitle: "Get the open loops out of your head.",
     summary: "A fifteen-minute weekly mind sweep that gives unfinished thoughts somewhere to land.",
+    scene: "The house is finally quiet, but your head is not. You remember the estimate while brushing your teeth, the school form when the lights go out, and the conversation you have been avoiding at 2:13 in the morning. Nothing is happening, yet your attention is still working overtime.",
     problem: "Your body can be home while your mind is still carrying the estimate, the bill, the promise, the text, and the conversation you have been avoiding. The mind is useful for noticing and deciding. It is a poor place to store every unfinished thing.",
     principle: "The goal is not an empty mind or a perfect list. It is to stop using your attention as a reminder system so you can choose what needs action, discussion, or release.",
     practice: "A fifteen-minute weekly mind sweep",
@@ -114,12 +116,12 @@ export const CORE_LESSONS: CoreLesson[] = [
       { title: "Make four spaces", body: "Label them Work, Home, Money and admin, and Me. Let an item appear in more than one place if that is how life actually feels." },
       { title: "Empty the loops", body: "Write every task, promise, worry, idea, and avoided conversation. Do not organize while you write. When the list slows down, wait one minute and ask what you are still trying not to forget." },
       { title: "Mark the next move", body: "Use D for Do, C for Choose, T for Talk, and R for Release. You do not need a full plan for every item." },
-      { title: "Circle no more than three", body: "Choose the few items that deserve attention this week. Bring only the shared items into the Sunday Board Meeting." },
+      { title: "Circle no more than three", body: "Choose the few items that deserve attention this week. Bring only the shared items into the weekly conversation." },
     ],
     adaptation: "If fifteen minutes is unrealistic, use five. Miss a week without turning it into a failure. A useful ritual is one you can return to without shame.",
     action: "Tonight, put one sheet of paper in front of you and circle the single item that would make you more present tomorrow.",
     reflection: "What am I carrying in my head that belongs on paper, on a calendar, or in a conversation?",
-    fieldNote: "I built this because I was tired of being physically home while part of my attention was still somewhere else. The page does not make me a different person. It helps me come back to the room I am already in.",
+    fieldNote: "I built this because I was tired of being physically home while part of my attention was still somewhere else. The page does not make me a different person. It helps me come back to the life already in front of me.",
   },
   {
     slug: "hunt-before-you-farm",
@@ -128,6 +130,7 @@ export const CORE_LESSONS: CoreLesson[] = [
     title: "Hunter vs. Farmer",
     subtitle: "Hunt before the maintenance work takes the day.",
     summary: "A realistic way to protect focused creation without pretending email, admin, and upkeep do not matter.",
+    scene: "You answer messages, clear two small fires, tidy the inbox, and look up at 4:47. You were busy all day. The proposal, decision, call, or piece of work that would have changed something is still untouched, and now it is riding home with you.",
     problem: "Maintenance work is necessary, visible, and endless. It can fill a whole day while the one thing that would actually move your work forward remains untouched. The unfinished target then follows you home.",
     principle: "Hunter work creates, decides, or solves. Farmer work maintains, answers, and tends. Both matter. The order is the practice: protect one meaningful target, then tend the field.",
     practice: "One protected target",
@@ -150,6 +153,7 @@ export const CORE_LESSONS: CoreLesson[] = [
     title: "The Airlock Protocol",
     subtitle: "Use the trip home as a deliberate transition.",
     summary: "A short parked-car reset that keeps the entire workday from walking through the door with you.",
+    scene: "You pull into the driveway still replaying the last call. One more notification lights the screen. Inside, somebody has been waiting to tell you something ordinary and important. The first ten seconds can belong to the workday, or they can mark your arrival home.",
     problem: "A commute can become an extension of work. Calls, messages, and mental rehearsals keep the body moving toward home while the nervous system stays at the office. The first people you see then meet the residue of the day.",
     principle: "You do not have to fake a good mood. You can notice what you are carrying, choose what belongs tomorrow, and decide how you want to enter before the door opens.",
     practice: "The parked-car transition",
@@ -157,7 +161,7 @@ export const CORE_LESSONS: CoreLesson[] = [
     steps: [
       { title: "Park and stop", body: "Engine off. Phone silent and out of your hand. Give yourself two minutes before opening the door." },
       { title: "Name what followed you", body: "Say or write the unfinished work, frustration, or worry that is still active. Decide what belongs to tomorrow." },
-      { title: "Slow the exit", body: "Take three slow breaths with a longer exhale. You are not erasing the day. You are marking a change of room and responsibility." },
+      { title: "Slow the exit", body: "Take three slow breaths with a longer exhale. You are not erasing the day. You are marking a change of role and responsibility." },
       { title: "Choose the entrance", body: "Put the phone away. Make eye contact. Offer a real greeting. Let the first ten seconds say that you have arrived." },
     ],
     adaptation: "Remote worker: close the laptop, step outside, and return through a different door. Transit or walking: use a landmark near home as the transition point.",
@@ -172,8 +176,9 @@ export const CORE_LESSONS: CoreLesson[] = [
     title: "The Emotional Thermostat",
     subtitle: "Pause before pressure chooses your response.",
     summary: "A three-part practice for pausing, returning when promised, and repairing when you miss.",
-    problem: "Pressure can make a man louder, colder, or absent. The people around him notice the change before they understand the reason. Pretending to be calm does not help, but neither does handing the whole room an unfiltered reaction.",
-    principle: "You influence the temperature of a room without controlling everyone in it. The work is not perfect calm. It is noticing earlier, taking a clean pause, and repairing honestly after a miss.",
+    scene: "The question is small, but it reaches you at the wrong moment. Your answer comes out sharper than you meant it to. Everyone hears the edge before anyone knows what kind of day you had, and the whole evening begins organizing itself around that tone.",
+    problem: "Pressure can make a man louder, colder, or absent. The people around him notice the change before they understand the reason. Pretending to be calm does not help, but neither does handing everyone else an unfiltered reaction.",
+    principle: "Your emotional state affects the people around you even when you are not trying to lead. The work is not perfect calm. It is noticing earlier, taking a clean pause, and repairing honestly after a miss.",
     practice: "Pause, return, repair",
     practiceIntro: "Use the shortest response that keeps a hard moment from becoming a larger one.",
     steps: [
@@ -194,6 +199,7 @@ export const CORE_LESSONS: CoreLesson[] = [
     title: "The Date Night Algorithm",
     subtitle: "Create a little curiosity together.",
     summary: "A shared experiment using novelty, activity, and protected attention without making connection feel like a performance.",
+    scene: "You finally get time together and spend the first twenty minutes deciding where to go. At dinner, both phones keep appearing beside the plates. Nothing is wrong, exactly. The night just feels like another familiar task instead of a chance to notice each other again.",
     problem: "A date can become another logistical task or a familiar routine where both people are still half inside work and phones. The activity is not the problem. Divided attention and unspoken expectations are.",
     principle: "Novelty plus shared activity is an experiment, not an algorithm. The point is to notice something together, make a choice together, and give the time a real boundary.",
     practice: "Choose, protect, notice",
@@ -205,7 +211,7 @@ export const CORE_LESSONS: CoreLesson[] = [
       { title: "Notice, do not grade", body: "Ask what felt easy, interesting, or worth doing again. The night does not have to prove anything about the marriage." },
     ],
     adaptation: "Use an at-home, free, low-cost, sensory-friendly, or mobility-friendly version. Twenty intentional minutes can count when a full evening cannot.",
-    action: "At the next Sunday Board Meeting, each of you brings two possible dates and chooses one real time.",
+    action: "At the next weekly check-in, each of you brings two possible dates and chooses one real time.",
     reflection: "What kind of shared activity makes conversation feel easier for us?",
     fieldNote: "The useful part is not manufacturing a perfect date. It is getting out of autopilot long enough to experience something together.",
   },
@@ -216,6 +222,7 @@ export const CORE_LESSONS: CoreLesson[] = [
     title: "The Floor General",
     subtitle: "Join your child's world without taking it over.",
     summary: "Five to fifteen phone-free minutes at their level, following their interest and cues.",
+    scene: "Your child starts explaining a game that makes no sense to you. Halfway through, your hand reaches for the phone and your adult brain starts improving the rules. The invitation was never really about the game. It was a small chance to enter their world without taking command of it.",
     problem: "Parents can spend a whole evening near their children while attention remains divided. Even well-meant play can become another adult-led agenda where the child is managed instead of met.",
     principle: "The parent creates the safe conditions. The child leads the play or conversation. The floor is a metaphor for joining their world, not a requirement to sit in one position.",
     practice: "Five to fifteen minutes, child led",
@@ -238,7 +245,8 @@ export const CORE_LESSONS: CoreLesson[] = [
     title: "The Third Place",
     subtitle: "Keep one part of life from becoming only work and home duty.",
     summary: "A recurring place or activity that restores interest, identity, friendship, or play outside work and household roles.",
-    problem: "A man can become useful in every room and still feel absent from his own life. Work and home both matter, but neither should have to carry every part of identity, play, friendship, and renewal.",
+    scene: "Someone asks what you do for fun and you begin listing things you used to do. The bike needs air, the fishing gear has not moved, and the friend you meant to call is still a name in your phone. You are useful to everyone and quietly becoming unfamiliar to yourself.",
+    problem: "A man can become useful to everyone and still feel absent from his own life. Work and home both matter, but neither should have to carry every part of identity, play, friendship, and renewal.",
     principle: "Sociologist Ray Oldenburg used third place for social spaces outside home and work. Iron Compass borrows that idea more broadly: a recurring place or activity where you can show up without performing your main roles.",
     practice: "Choose one recurring place",
     practiceIntro: "It should restore more than it distracts and fit fairly into the life you share with other people.",
@@ -260,6 +268,7 @@ export const CORE_LESSONS: CoreLesson[] = [
     title: "The Friendship Script",
     subtitle: "Invite first, and make the invitation easy to answer.",
     summary: "A low-pressure way to turn respect or shared interest into repeated time and actual friendship.",
+    scene: "You have known the guy for three years. You talk at the game, the gym, church, or school pickup and always say you should get together. Neither of you is rejecting the other. The friendship is simply waiting for someone to name a day and a time.",
     problem: "Many adult friendships remain vague. Two men may like and respect each other for years without either one naming a time, an activity, or the next invitation. Waiting for friendship to happen keeps it theoretical.",
     principle: "Friendship usually grows through specific invitations, shared activity, low stakes, and repetition. One or two dependable relationships can matter more than a large network.",
     practice: "The specific invitation",
@@ -282,6 +291,7 @@ export const CORE_LESSONS: CoreLesson[] = [
     title: "Mission Debrief",
     subtitle: "Keep the practices that actually helped.",
     summary: "A simple review of the full system that turns nine lessons into two practices for the next thirty days.",
+    scene: "The final lesson is open, the notes look good, and real life is already interrupting. This is the point where a course usually becomes another completed file. Instead of collecting nine ideas, you choose the two that deserve to live past this screen.",
     problem: "A course can become another pile of information. Finishing every page does not matter if none of the practices survive an ordinary week.",
     principle: "The point of Iron Compass is return, not completion. Choose the few practices that met a real problem, use them long enough to learn, and release the rest for now.",
     practice: "Two practices for thirty days",
@@ -301,10 +311,10 @@ export const CORE_LESSONS: CoreLesson[] = [
 
 export const LESSON_GUIDES: Record<string, LessonGuide> = {
   "the-sanctuary": {
-    whyItHelps: "An unfinished task can keep part of your attention attached to the room you just left. Writing the open loop down and naming a next move gives it somewhere more reliable to live than your working memory.",
+    whyItHelps: "An unfinished task can keep part of your attention attached to the workday you just left. Writing the open loop down and naming a next move gives it somewhere more reliable to live than your working memory.",
     wordsToUse: "I have a lot still running in my head. I am going to put it on paper for ten minutes so I can be here with you.",
     watchFor: "Do not turn the mind sweep into a giant life inventory or another system to maintain. The page is a landing place, not a command center.",
-    fieldAssignment: "Run one honest mind sweep this week. Circle no more than three items and notice whether you re-enter the room with more attention available.",
+    fieldAssignment: "Run one honest mind sweep this week. Circle no more than three items and notice whether you return to your family with more attention available.",
     evidence: [
       { label: "Attention residue", href: "https://www.sciencedirect.com/science/article/pii/S0749597809000399", note: "Leroy's experiments found that attention can remain attached to an unfinished task after switching." },
     ],
@@ -331,7 +341,7 @@ export const LESSON_GUIDES: Record<string, LessonGuide> = {
     whyItHelps: "A pause creates distance between the first surge and the next action. The usefulness comes from returning when promised and repairing your part, not from looking calm or winning the exchange.",
     wordsToUse: "I am too worked up to answer well. I need ten minutes. I will come back at ____, and I will come back.",
     watchFor: "A pause without a return time can feel like abandonment or control. This practice is never a substitute for safety planning, therapy, or crisis support.",
-    fieldAssignment: "Write your pause sentence and your repair sentence. Use the first at the earliest sign of escalation, not after the room is already on fire.",
+    fieldAssignment: "Write your pause sentence and your repair sentence. Use the first at the earliest sign of escalation, not after everyone is already upset.",
     evidence: [
       { label: "Emotion regulation overview", href: "https://pubmed.ncbi.nlm.nih.gov/31961170/", note: "Emotion regulation is flexible and context dependent. Iron Compass turns that broad principle into a small communication practice." },
     ],

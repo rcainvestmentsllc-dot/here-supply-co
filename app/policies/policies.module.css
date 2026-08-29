@@ -22,3 +22,9 @@
   .body > nav { position:static; }
   .sections section { padding-bottom:52px; margin-bottom:52px; }
 }
+
+.hero { color:#f5eddd; background:#214f50; }
+.hero h1,.sections h2,.close p { font-family:Futura,"Avenir Next Condensed","Franklin Gothic Condensed","Arial Narrow",sans-serif; font-weight:700; font-style:normal; letter-spacing:-.04em; }
+.hero h1 em { color:#e2b75f; }
+.body { background:#f0e6d2; }
+.close { background:#222b27; }

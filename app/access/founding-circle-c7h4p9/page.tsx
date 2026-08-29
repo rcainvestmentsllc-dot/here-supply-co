@@ -29,7 +29,7 @@ export default function FoundingCirclePass() {
         <div><span>02 · AFTER YOU USE IT</span><h2>Tell Chris the truth.</h2><p>What did you try? What felt useful? What was confusing or unnecessary? Would you recommend it to another husband or father, and why?</p></div>
         <a className="button primary" href={feedbackEmail}>Send private feedback <b>→</b></a>
       </section>
-      <footer className="access-footer"><span>Nothing you share will be published or used as a testimonial without your permission.</span><Link href="/">Iron Compass Institute</Link></footer>
+      <footer className="access-footer"><span>Nothing you share will be published or used as a testimonial without your permission.</span><Link href="/">Iron Compass</Link></footer>
     </main>
   );
 }

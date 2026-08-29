@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "A clear starting guide to Iron Compass tools, established family and mental health resources, and research on digital distraction and attention.",
   alternates: { canonical: "/resources" },
   openGraph: {
-    title: "Resources | Iron Compass Institute",
+    title: "Resources | Iron Compass",
     description: "Practical starting points for fathers, marriage, attention, and qualified outside support.",
     url: "/resources",
   },
@@ -27,13 +27,13 @@ const internalPaths = [
   {
     number: "01",
     need: "My wife and I need to get on the same page.",
-    answer: "Use the free 15-minute Sunday Board Meeting.",
+    answer: "Use the free 15-minute weekly guide.",
     href: "/sunday-board#get-board",
     action: "Get the meeting guide",
   },
   {
     number: "02",
-    need: "My attention keeps leaving the room.",
+    need: "My attention keeps drifting away.",
     answer: "Use the 72-hour Focus Protocol.",
     href: "/focus",
     action: "See Focus Protocol",
@@ -88,7 +88,7 @@ const fieldNotes = [
   {
     label: "PHONE HABITS",
     title: "How to stop checking your phone at home",
-    copy: "A practical setup for changing the room and the reflex before asking willpower to do all the work.",
+    copy: "A practical setup for changing the environment and the reflex before asking willpower to do all the work.",
     href: "/resources/how-to-stop-checking-your-phone-at-home",
   },
   {
@@ -154,10 +154,10 @@ export default function Resources() {
 
       <section className={styles.fieldNotes} aria-labelledby="field-notes-heading">
         <div className={styles.fieldNotesIntro}>
-          <p className={styles.eyebrow}>FIELD NOTES</p>
+          <p className={styles.eyebrow}>STORIES AND PRACTICES</p>
           <h2 id="field-notes-heading">Use one practice<br />before you read <em>ten ideas.</em></h2>
           <p>These are complete starting points, not search-engine filler. Each one names a real moment and gives you something concrete to try.</p>
-          <a className={styles.substackLink} href="https://chrisavera.substack.com" target="_blank" rel="me noreferrer">Read and follow Chris’s Field Notes on Substack <span>↗</span></a>
+          <a className={styles.substackLink} href="https://chrisavera.substack.com" target="_blank" rel="me noreferrer">Read Chris on Substack <span>↗</span></a>
         </div>
         <div className={styles.fieldGrid}>
           {fieldNotes.map((note, index) => (
@@ -165,7 +165,7 @@ export default function Resources() {
               <span>{String(index + 1).padStart(2, "0")} · {note.label}</span>
               <h3>{note.title}</h3>
               <p>{note.copy}</p>
-              <b>Read the field note →</b>
+              <b>Read the story →</b>
             </a>
           ))}
         </div>

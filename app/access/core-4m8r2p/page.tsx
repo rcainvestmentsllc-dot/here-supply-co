@@ -18,16 +18,20 @@ export default function CoreAccess() {
         <span>PRIVATE ACCESS</span>
       </header>
       <section className="access-intro">
-        <div className="access-edition"><span>FIELD MANUAL No. 01</span><b>FOUNDING EDITION</b></div>
+        <div className="access-edition"><span>PRIVATE COURSE</span><b>FOUNDING EDITION</b></div>
         <p className="section-label">YOU’RE IN · IRON COMPASS CORE</p>
         <h1>Come back to<br /><em>your own life.</em></h1>
-        <p>Your access is ready. Save this private page and start with Return. This is a field manual, not a show to binge. Use one practice in a real room before you move on.</p>
+        <p>Your access is ready. Save this private page and start with Return. This is a practice guide, not a show to binge. Use one practice in real life before you move on.</p>
         <nav className="access-quick-nav" aria-label="Core course sections"><a href="#return">01 Return</a><a href="#lead">02 Lead</a><a href="#keep">03 Keep</a><a href="#workbook">Workbook</a></nav>
         <CourseProgress lessonSlugs={CORE_LESSONS.map((lesson) => lesson.slug)} />
       </section>
       <section className="access-method">
         <div className="access-method-intro"><p className="section-label">THE IRON COMPASS PRACTICE CYCLE</p><h2>Useful ideas only count when they survive an ordinary Tuesday.</h2><p>These five lenses turn broad personal-development ideas into small moves you can actually use. They are original Iron Compass teaching, shaped by behavioral research, lived experience, and durable principles about choice, purpose, priority, relationships, and renewal.</p></div>
         <ol>{COURSE_LENSES.map((lens) => <li key={lens.number}><span>{lens.number}</span><div><b>{lens.title}</b><p>{lens.body}</p></div></li>)}</ol>
+      </section>
+      <section className="access-homecoming">
+        <figure><img src="/assets/chris-founder.jpg" alt="Chris Avera sitting by the ocean in Puerto Rico" width="600" height="800" loading="lazy" decoding="async" /><figcaption>THE HUMAN PART</figcaption></figure>
+        <div><p className="section-label">WHY THIS EXISTS</p><h2>A homecoming,<br /><em>not a performance.</em></h2><p>AI can produce another answer in seconds. The hard and worthwhile part is human: putting the phone away, listening without preparing a defense, keeping a promise, apologizing, getting outside, calling a friend, and being there for the people you love. Use these lessons only if they help you do more of that.</p></div>
       </section>
       {CORE_MOVEMENTS.map((movement) => (
         <section className={`access-movement access-movement-${movement.key.toLowerCase()}`} id={movement.key.toLowerCase()} key={movement.key}>
@@ -46,7 +50,7 @@ export default function CoreAccess() {
         <div><span>COMPANION RESOURCE</span><h2>The Core Workbook</h2><p>A clean, printable page for each lesson. Keep your notes and the two practices you choose for the next thirty days.</p></div>
         <Link className="button primary" href="/access/core-4m8r2p/workbook">Open the Core Workbook <b>→</b></Link>
       </section>
-      <footer className="access-footer"><span>Questions? Email chris@ironcompassinstitute.com. Save this page as your private access link.</span><Link href="/">Iron Compass Institute</Link></footer>
+      <footer className="access-footer"><span>Questions? Email chris@ironcompassinstitute.com. Save this page as your private access link.</span><Link href="/">Iron Compass</Link></footer>
     </main>
   );
 }

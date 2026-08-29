@@ -15,7 +15,7 @@ export default function FieldGuide() {
       <header className={styles.header}>
         <Link className={styles.brand} href="/" aria-label="Iron Compass home">
           <CompassMark />
-          <span><strong>IRON COMPASS</strong><small>Practical work for the rooms that matter</small></span>
+          <span><strong>IRON COMPASS</strong><small>Practical work for real life</small></span>
         </Link>
         <nav><Link href="/field-guide">Compass Check</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link><Link href="/resources">Resources</Link></nav>
         <Link className={styles.headerAction} href="/sunday-board#get-board">Start free <span>→</span></Link>
@@ -62,7 +62,7 @@ export default function FieldGuide() {
             </div>
             <p className={styles.note}>{practice.note}</p>
             <Link className={styles.nextLink} href={practice.nextHref}>{practice.nextLabel} <b>→</b></Link>
-            <Link className={styles.freeLink} href="/sunday-board">Or start the Sunday Board Meeting <span>→</span></Link>
+            <Link className={styles.freeLink} href="/sunday-board">Or get the free weekly guide <span>→</span></Link>
           </div>}
         </aside>
       </section>
@@ -70,7 +70,7 @@ export default function FieldGuide() {
       <section className={styles.close}>
         <p className={styles.eyebrow}>NO PERFORMANCE REQUIRED</p>
         <h2>A clearer next step is enough to begin.</h2>
-        <Link href="/sunday-board">Start the Sunday Board Meeting <span>→</span></Link>
+        <Link href="/sunday-board">Get the free weekly guide <span>→</span></Link>
       </section>
 
       <Footer />

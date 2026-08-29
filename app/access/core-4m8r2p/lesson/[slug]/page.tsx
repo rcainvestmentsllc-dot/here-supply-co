@@ -29,10 +29,12 @@ export default async function CoreLessonPage({ params }: { params: Promise<{ slu
 
     <section className="lesson-cover">
       <div className="lesson-cover-number">{lesson.number}</div>
-      <div className="lesson-cover-copy"><p>{movement?.name.toUpperCase()} · IRON COMPASS CORE</p><h1>{lesson.title}</h1><h2>{lesson.subtitle}</h2><div><span>FIELD MANUAL {lesson.number}</span><span>ONE PRACTICE · ONE WEEK</span></div></div>
+      <div className="lesson-cover-copy"><p>{movement?.name.toUpperCase()} · IRON COMPASS CORE</p><h1>{lesson.title}</h1><h2>{lesson.subtitle}</h2><div><span>LESSON {lesson.number}</span><span>ONE PRACTICE · ONE WEEK</span></div></div>
     </section>
 
-    <section className="lesson-card lesson-opening"><div><p className="section-label">THE ROOM</p><h2>{lesson.summary}</h2></div><p>{lesson.problem}</p></section>
+    <section className="lesson-scene"><span>A FAMILIAR SCENE</span><p>{lesson.scene}</p></section>
+
+    <section className="lesson-card lesson-opening"><div><p className="section-label">WHAT IS HAPPENING</p><h2>{lesson.summary}</h2></div><p>{lesson.problem}</p></section>
 
     <section className="lesson-card lesson-principle"><p className="section-label">THE PRINCIPLE</p><blockquote>{lesson.principle}</blockquote></section>
 
@@ -44,19 +46,19 @@ export default async function CoreLessonPage({ params }: { params: Promise<{ slu
     <section className="lesson-pair"><article><p className="section-label">MAKE IT FIT REAL LIFE</p><h2>A practice can bend without breaking.</h2><p>{lesson.adaptation}</p></article><article><p className="section-label">USE IT NOW</p><h2>One move before tomorrow.</h2><p>{lesson.action}</p></article></section>
 
     {guide && <section className="lesson-field-kit">
-      <header><p className="section-label">FIELD KIT</p><h2>Make the idea usable.</h2><p>This is the layer that takes the lesson out of your head and puts it into a real week.</p></header>
+      <header><p className="section-label">PRACTICE KIT</p><h2>Make the idea usable.</h2><p>This is the layer that takes the lesson out of your head and puts it into a real week.</p></header>
       <div className="lesson-field-grid">
         <article><span>01 · WHY IT MAY HELP</span><p>{guide.whyItHelps}</p></article>
         <article><span>02 · WORDS TO USE</span><blockquote>“{guide.wordsToUse}”</blockquote></article>
         <article><span>03 · WATCH FOR</span><p>{guide.watchFor}</p></article>
-        <article className="lesson-assignment"><span>04 · THIS WEEK’S FIELD ASSIGNMENT</span><h3>{guide.fieldAssignment}</h3></article>
+        <article className="lesson-assignment"><span>04 · TRY THIS WEEK</span><h3>{guide.fieldAssignment}</h3></article>
       </div>
       <aside><b>EVIDENCE NOTE</b>{guide.evidence.map((source) => <a href={source.href} target="_blank" rel="noreferrer" key={source.href}><strong>{source.label} ↗</strong><span>{source.note}</span></a>)}</aside>
     </section>}
 
-    <section className="lesson-reflection"><p className="section-label">FIELD QUESTION</p><h2>{lesson.reflection}</h2><LessonProgress slug={lesson.slug} /></section>
+    <section className="lesson-reflection"><p className="section-label">ONE QUESTION</p><h2>{lesson.reflection}</h2><LessonProgress slug={lesson.slug} /></section>
 
-    <section className="lesson-field-note"><span>CHRIS’S FIELD NOTE</span><blockquote>“{lesson.fieldNote}”</blockquote><small>Chris Avera · Husband, father, and builder of Iron Compass</small></section>
+    <section className="lesson-field-note"><span>A NOTE FROM CHRIS</span><blockquote>“{lesson.fieldNote}”</blockquote><small>Chris Avera · Husband and father</small></section>
 
     <nav className="lesson-next" aria-label="Lesson navigation">
       {previous ? <Link href={`/access/core-4m8r2p/lesson/${previous.slug}`}><small>PREVIOUS · {previous.number}</small><strong>← {previous.title}</strong></Link> : <Link href="/access/core-4m8r2p"><small>COURSE HOME</small><strong>← Core library</strong></Link>}

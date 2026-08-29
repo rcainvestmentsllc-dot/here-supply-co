@@ -117,3 +117,10 @@
   .urgent { padding-top:67px; padding-bottom:69px; }
   .urgent h2 { font-size:clamp(39px,11vw,55px); }
 }
+
+.resources { --ink:#18231f; --paper:#f0e6d2; --sage:#d8c49f; --gold:#c28b2c; --rust:#8d4a31; --copy:#555d56; font-family:"Avenir Next","Helvetica Neue",Arial,sans-serif; }
+.resources h1,.resources h2,.resources h3 { font-family:Futura,"Avenir Next Condensed","Franklin Gothic Condensed","Arial Narrow",sans-serif; font-weight:700; font-style:normal; letter-spacing:-.04em; }
+.resources h1 em,.resources h2 em,.resources h3 em { font-style:normal; }
+.hero { background:linear-gradient(118deg,#f0e6d2 0 67%,#d8c49f 67% 100%); }
+.start { background:#e1d4ba; }
+.urgent { background:#214f50; }

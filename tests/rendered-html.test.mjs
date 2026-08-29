@@ -36,15 +36,15 @@ function mainMarkup(html) {
 test("server-renders the finished Iron Compass homepage", async () => {
   const html = await htmlFor("/");
 
-  assert.match(html, /<title>Iron Compass Institute \| Be Here for Your Own Life<\/title>/i);
+  assert.match(html, /<title>Iron Compass \| Be Here for Your Own Life<\/title>/i);
   assert.match(html, /Be here for/);
-  assert.match(html, /reclaim your attention, carry pressure better, and become more present at home/);
+  assert.match(html, /reclaim your attention and return to the people and life already waiting for you/);
   assert.match(html, /Chris Avera/);
-  assert.match(html, /Start the Sunday Board Meeting/);
+  assert.match(html, /Get the free weekly guide/);
   assert.match(html, /Take the Compass Check/);
   assert.match(html, /Phones, feeds, AI tools, and work/);
   assert.match(html, /Start with the problem.*you can.*name/s);
-  assert.match(html, /iron-compass-wave-mark-reference\.png/i);
+  assert.match(html, /iron-compass-wave-mark-transparent\.png/i);
   assert.match(html, /course\/preview-return\.png/i);
   assert.match(html, /course\/preview-lead\.png/i);
   assert.match(html, /course\/preview-keep\.png/i);
@@ -65,13 +65,13 @@ test("renders a grounded resource guide without implying accreditation", async (
   assert.match(html, /not therapy, medical care, crisis care, a licensed clinical service, or an accredited program/i);
 });
 
-test("makes the Sunday Board Meeting clear and delivers the guide without an email gate", async () => {
+test("makes the free weekly guide clear and delivers it without an email gate", async () => {
   const html = await htmlFor("/sunday-board");
 
   assert.match(html, /A 15-MINUTE WEEKLY MEETING FOR YOU AND YOUR WIFE/i);
   assert.match(html, /Sit down together/);
   assert.match(html, /Free 15-minute meeting guide/i);
-  assert.match(html, /href="\/downloads\/sunday-board-meeting\.pdf"[^>]*download/i);
+  assert.match(html, /href="\/downloads\/sunday-board-meeting\.pdf"[^>]*download="see-the-same-week\.pdf"/i);
   assert.match(html, /chrisavera\.substack\.com\/subscribe/i);
   assert.match(html, /No account, inbox hunt, or new system to manage/i);
   assert.doesNotMatch(html, /ml-embedded|B8mkye|assets\.mailerlite\.com/i);
@@ -156,10 +156,10 @@ test("gives every Core lesson a usable field kit and evidence note", async () =>
 
   for (const slug of lessonRoutes) {
     const html = await htmlFor(`/access/core-4m8r2p/lesson/${slug}`);
-    assert.match(html, /FIELD KIT/i);
+    assert.match(html, /PRACTICE KIT/i);
     assert.match(html, /WORDS TO USE/i);
     assert.match(html, /WATCH FOR/i);
-    assert.match(html, /FIELD ASSIGNMENT/i);
+    assert.match(html, /TRY THIS WEEK/i);
     assert.match(html, /EVIDENCE NOTE/i);
   }
 });
@@ -198,7 +198,7 @@ test("delivers the complete native Core course and workbook without Gamma", asyn
   const workbookHtml = await htmlFor("/access/core-4m8r2p/workbook");
 
   assert.match(lessonHtml, /<meta name="robots" content="noindex, nofollow"\/>/i);
-  assert.match(lessonHtml, /THE ROOM/i);
+  assert.match(lessonHtml, /WHAT IS HAPPENING/i);
   assert.match(lessonHtml, /THE PRINCIPLE/i);
   assert.match(lessonHtml, /THE PRACTICE/i);
   assert.match(lessonHtml, /Mark lesson complete/i);

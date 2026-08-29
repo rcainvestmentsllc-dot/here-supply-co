@@ -10,18 +10,18 @@ export function SundayBoardSignupForm() {
         <p>No account, inbox hunt, or new system to manage. Open the PDF, print one copy, and put it between you this Sunday.</p>
       </div>
 
-      <a className="signup-download" href={GUIDE_URL} download>
+      <a className="signup-download" href={GUIDE_URL} download="see-the-same-week.pdf">
         Download the meeting guide <span aria-hidden="true">↓</span>
       </a>
       <p className="signup-download-note">Free PDF · Opens immediately</p>
 
       <div className="signup-notes">
         <div>
-          <strong>Want the occasional Field Note too?</strong>
+          <strong>Want an occasional note from Chris too?</strong>
           <p>Chris writes about attention, family, faith, and the work of coming back to what matters.</p>
         </div>
         <a href={FIELD_NOTES_URL} target="_blank" rel="me noreferrer">
-          Read and subscribe on Substack <span aria-hidden="true">↗</span>
+          Read Chris on Substack <span aria-hidden="true">↗</span>
         </a>
       </div>
     </div>

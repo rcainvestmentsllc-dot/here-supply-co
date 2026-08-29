@@ -33,7 +33,7 @@ export default function WhyMenNeedAThirdPlace() {
     <Header />
     <header className={styles.hero}>
       <Link className={styles.crumb} href="/resources">← Resource guide</Link>
-      <p className={styles.eyebrow}>A FIELD NOTE FROM CHRIS</p>
+      <p className={styles.eyebrow}>A STORY FROM CHRIS</p>
       <h1>Every man needs a <em>third place.</em></h1>
       <p className={styles.dek}>Not home. Not work. Somewhere else where people know your face, conversation happens without an agenda, and your phone is not the most interesting thing in the room.</p>
       <p className={styles.byline}>By Chris Avera · A real moment from the gym and sauna</p>
@@ -58,7 +58,7 @@ export default function WhyMenNeedAThirdPlace() {
           <strong>The place is not valuable because it is impressive.</strong>
           <p>It is valuable because you show up often enough to be known, and because someone would notice if you stopped coming.</p>
         </div>
-        <p>If you already have a third place, protect it. If you do not, look for one this week. That is the whole field note.</p>
+        <p>If you already have a third place, protect it. If you do not, look for one this week. That is the whole point.</p>
       </article>
     </section>
     <section className={styles.cta}>

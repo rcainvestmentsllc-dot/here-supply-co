@@ -27,9 +27,9 @@ type Moment = {
 export const MOMENTS: Record<MomentKey, Moment> = {
   attention: {
     number: "01",
-    title: "My attention keeps leaving the room.",
+    title: "My attention keeps drifting away.",
     detail: "Phone, work, and noise are getting more of me than the people I love.",
-    label: "Put your attention back in the room",
+    label: "Bring your attention back",
     protocol: "THE 15-MINUTE FLOOR RULE",
     summary: "This is a presence problem, not a phone problem.",
     steps: [
@@ -53,7 +53,7 @@ export const MOMENTS: Record<MomentKey, Moment> = {
       "Take a two-minute inventory. Name what you are carrying that belongs to tomorrow.",
       "Take three deep breaths, then decide how you want to enter before opening the door.",
     ],
-    note: "You do not need to fake a good mood. You do need to stop handing the whole day to the room.",
+    note: "You do not need to fake a good mood. You do need to stop handing your family the whole weight of the day.",
     nextLabel: "See how Iron Compass Core works · $99 founding price",
     nextHref: "/library#core",
   },
@@ -78,15 +78,15 @@ export const MOMENTS: Record<MomentKey, Moment> = {
     title: "The week keeps getting away from us.",
     detail: "The things that matter get pushed aside by logistics and surprise.",
     label: "Put the week on the table",
-    protocol: "THE SUNDAY BOARD MEETING",
+    protocol: "THE WEEKLY CHECK-IN",
     summary: "A short weekly check-in keeps the house from being run by surprise.",
     steps: [
-      "Set aside fifteen minutes on Sunday with a notebook or the Board.",
+      "Set aside fifteen minutes on Sunday with the one-page guide.",
       "Start with one honest appreciation before moving into logistics.",
       "Look at the calendar, name the pressure points, choose one shared priority, and remove one unnecessary thing.",
     ],
     note: "Nothing has to be solved at once. The point is to see the same week.",
-    nextLabel: "Start the Sunday Board Meeting",
+    nextLabel: "Get the free weekly guide",
     nextHref: "/sunday-board",
   },
   mind: {

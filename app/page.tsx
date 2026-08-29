@@ -1,7 +1,7 @@
 import { PlainLink as Link } from "./plain-link";
 import type { Metadata } from "next";
 import { CONTACT_FORM } from "./data";
-import { CompassMark } from "./components";
+import { CompassMark, WeeklyGuidePreview } from "./components";
 import styles from "./home.module.css";
 
 export const metadata: Metadata = {
@@ -50,7 +50,7 @@ export default function Home() {
       <header className={styles.header}>
         <Link className={styles.brand} href="/" aria-label="Iron Compass home">
           <CompassMark />
-          <span><strong>IRON COMPASS</strong><small>Practical work for the rooms that matter</small></span>
+          <span><strong>IRON COMPASS</strong><small>Practical work for real life</small></span>
         </Link>
         <nav className={styles.nav} aria-label="Main navigation">
           <a href="#system">The system</a>
@@ -73,9 +73,9 @@ export default function Home() {
           <div className={styles.heroContent}>
             <p className={styles.eyebrow}>PRACTICAL WORK FOR HUSBANDS AND FATHERS</p>
             <h1>Be here for<br /><em>your own life.</em></h1>
-            <p className={styles.lead}>Iron Compass gives you short, practical ways to reclaim your attention, carry pressure better, and become more present at home.</p>
+            <p className={styles.lead}>Iron Compass is a practical homecoming for men pulled thin by screens, pressure, and work. Short practices help you reclaim your attention and return to the people and life already waiting for you.</p>
             <div className={styles.heroActions}>
-              <Link className={styles.primaryButton} href="/sunday-board#get-board">Start the Sunday Board Meeting <span>→</span></Link>
+              <Link className={styles.primaryButton} href="/sunday-board#get-board">Get the free weekly guide <span>→</span></Link>
               <Link className={styles.quietLightLink} href="/field-guide">Find my starting point <span>→</span></Link>
             </div>
             <p className={styles.heroAssurance}>Free 15-minute meeting guide · Opens immediately</p>
@@ -92,12 +92,12 @@ export default function Home() {
                 <span>Bring your attention back before you try to fix anything else.</span>
               </div>
               <div className={styles.heroProductMap} aria-label="Iron Compass offers">
-                <span><b>FREE</b> Sunday Meeting</span>
+                <span><b>FREE</b> Weekly guide</span>
                 <span><b>$29</b> Focus Protocol</span>
                 <span><b>$99</b> Iron Compass Core</span>
               </div>
             </div>
-            <figcaption><strong>THE ACTUAL COURSE</strong><span>Nine lessons, real videos, specific practices, and a workbook</span></figcaption>
+            <figcaption><strong>THE ACTUAL COURSE</strong><Link href="/library#curriculum">See all three lesson previews <span>→</span></Link></figcaption>
           </figure>
         </div>
         <div className={styles.heroFooter} aria-label="What Iron Compass includes">
@@ -114,9 +114,22 @@ export default function Home() {
           <p>You do not need a new identity or another life system. Pick the situation that feels most true right now.</p>
         </div>
         <div className={styles.orientationPaths}>
-          <Link href="/sunday-board#get-board"><span>01</span><strong>My wife and I need to get on the same page.</strong><small>Start with the free Sunday Board Meeting.</small><b>Start free →</b></Link>
-          <Link href="/focus"><span>02</span><strong>My attention keeps leaving the room.</strong><small>Start with the 72-hour Focus Protocol.</small><b>See Focus →</b></Link>
+          <Link href="/sunday-board#get-board"><span>01</span><strong>My wife and I need to get on the same page.</strong><small>Start with the free one-page weekly guide.</small><b>Start free →</b></Link>
+          <Link href="/focus"><span>02</span><strong>I keep reaching for my phone without deciding to.</strong><small>Start with the 72-hour Focus Protocol.</small><b>See Focus →</b></Link>
           <Link href="/library"><span>03</span><strong>I want a steadier way to handle work, pressure, and home.</strong><small>See the complete Iron Compass Core curriculum.</small><b>See Core →</b></Link>
+        </div>
+      </section>
+
+      <section className={styles.homecoming} aria-labelledby="homecoming-title">
+        <figure>
+          <img src="/assets/chris-founder.jpg" alt="Chris Avera sitting by the ocean in Puerto Rico" width="600" height="800" loading="lazy" decoding="async" />
+          <figcaption>PUERTO RICO · A REAL DAY, NOT A BRAND SHOOT</figcaption>
+        </figure>
+        <div>
+          <p className={styles.eyebrow}>THE POINT OF THE WORK</p>
+          <h2 id="homecoming-title">Less life inside a machine.<br /><em>More life with other people.</em></h2>
+          <p>AI can give us more answers. It cannot look our wife in the eye, get down on the floor with our kids, call a friend, or decide to put the phone away. Iron Compass is about that return. A homecoming to real conversations, useful work, time outside, and the people we do not want to miss.</p>
+          <Link className={styles.quietLightLink} href="/about">Why Chris built this <span>→</span></Link>
         </div>
       </section>
 
@@ -124,7 +137,7 @@ export default function Home() {
         <p className={styles.eyebrow}>THE WORLD IS DESIGNED TO PULL YOU AWAY</p>
         <div>
           <h2>Your family should not get whatever the <em>algorithm</em> leaves behind.</h2>
-          <p>Phones, feeds, AI tools, and work keep pulling your attention away. Iron Compass gives you concrete ways to choose what gets your attention, come home without carrying the whole day through the door, and protect time with the people you love. Start with one free Sunday conversation, use Focus when distraction is the main problem, and choose Core when you want the whole system.</p>
+          <p>Phones, feeds, AI tools, and work keep pulling your attention away. Iron Compass gives you concrete ways to choose what gets your attention, come home without carrying the whole day through the door, and protect time with the people you love. Start with one free weekly conversation, use Focus when distraction is the main problem, and choose Core when you want the whole system.</p>
         </div>
       </section>
 
@@ -154,19 +167,19 @@ export default function Home() {
 
       <section className={styles.startSection} id="start">
         <div className={styles.startArtwork}>
-          <img src="/assets/sunday-board-gamma.png" alt="The Sunday Board Meeting weekly meeting guide" width="2400" height="3106" loading="lazy" decoding="async" />
+          <WeeklyGuidePreview />
           <span>FREE PRACTICE</span>
         </div>
         <div className={styles.startCopy}>
           <p className={styles.eyebrow}>START WITH A REAL CONVERSATION</p>
-          <h2>The Sunday Board <em>Meeting.</em></h2>
+          <h2>See the same <em>week.</em></h2>
           <p>A printable fifteen-minute weekly meeting for you and your wife, so the calendar, money, kids, connection, and one shared priority are no longer living in two separate heads.</p>
           <dl>
             <div><dt>What it helps with</dt><dd>Connection, the calendar, money, kids, time together, and one shared win.</dd></div>
             <div><dt>What you get</dt><dd>The printable meeting guide immediately. No email gate, account, or new system to manage.</dd></div>
           </dl>
           <div className={styles.buttonRow}>
-            <Link className={styles.primaryButton} href="/sunday-board#get-board">Start the Sunday Board Meeting <span>→</span></Link>
+            <Link className={styles.primaryButton} href="/sunday-board#get-board">Get the free weekly guide <span>→</span></Link>
             <Link className={styles.quietDarkLink} href="/field-guide">Not sure where to start? Take the Compass Check <span>→</span></Link>
           </div>
         </div>
@@ -182,9 +195,9 @@ export default function Home() {
         <div className={styles.offerGrid}>
           <article className={styles.focusOffer}>
             <div className={styles.offerTopline}><span>FOCUS PROTOCOL</span><b>$29 ONE TIME</b></div>
-            <h3>Get your attention<br />back in the <em>room.</em></h3>
+            <h3>Get your attention<br /><em>back.</em></h3>
             <p>Focus Protocol is a guided 72-hour reset for the man who knows distraction is taking more than it should. It is not a lecture. It is four practical moves presented clearly enough to use immediately.</p>
-            <div className={styles.deliveryNote}><span>DELIVERED INSIDE</span><p>A browser-based visual Field Manual with four practical moves.</p></div>
+            <div className={styles.deliveryNote}><span>DELIVERED INSIDE</span><p>A browser-based visual guide with four practical moves.</p></div>
             <details className={styles.videoReveal}>
               <summary>
                 <img src="/assets/focus-protocol-poster.jpg" alt="Chris introducing Focus Protocol" width="1280" height="720" loading="lazy" decoding="async" />
@@ -215,12 +228,12 @@ export default function Home() {
       <section className={styles.methodSection}>
         <p className={styles.eyebrow}>THE IRON COMPASS PRACTICE CYCLE</p>
         <div>
-          <h2>A field manual for <em>coming back.</em></h2>
-          <p>AI can give you ten ideas in ten seconds. Iron Compass is valuable only if it helps you use one practice in a real room with real people. The course translates durable ideas about choice, purpose, priority, relationships, and renewal into a cycle built for an ordinary week.</p>
+          <h2>A practical guide for <em>coming back.</em></h2>
+          <p>AI can give you ten ideas in ten seconds. Iron Compass is valuable only if it helps you use one practice in real life with real people. The course translates durable ideas about choice, purpose, priority, relationships, and renewal into a cycle built for an ordinary week.</p>
         </div>
         <ul>
           <li><span>01</span><b>Choose</b> what deserves your attention.</li>
-          <li><span>02</span><b>Enter</b> the room on purpose.</li>
+          <li><span>02</span><b>Enter</b> the moment on purpose.</li>
           <li><span>03</span><b>Protect</b> what matters before urgency takes over.</li>
           <li><span>04</span><b>Listen</b> before you fix, defend, or perform.</li>
           <li><span>05</span><b>Renew</b> the life underneath the work.</li>
@@ -235,13 +248,13 @@ export default function Home() {
         <div className={styles.resourceCopy}>
           <p>Iron Compass is practical educational work from one husband and father. It is not therapy, clinical treatment, or an accredited program. When you need research, a qualified professional, or immediate support, the resource guide points you toward established places to start.</p>
           <Link className={styles.quietDarkLink} href="/resources">Use the resource guide <span>→</span></Link>
-          <a className={styles.quietDarkLink} href="https://chrisavera.substack.com" target="_blank" rel="me noreferrer">Follow Chris’s Field Notes on Substack <span>↗</span></a>
+          <a className={styles.quietDarkLink} href="https://chrisavera.substack.com" target="_blank" rel="me noreferrer">Read Chris on Substack <span>↗</span></a>
         </div>
       </section>
 
       <section id="founder" className={styles.founderSection}>
         <figure className={styles.founderPhoto}>
-          <img src="/assets/chris-founder.jpg" alt="Chris Avera outdoors near the North Carolina mountains" width="600" height="800" loading="lazy" decoding="async" />
+          <img src="/assets/chris-founder.jpg" alt="Chris Avera outdoors by the ocean in Puerto Rico" width="600" height="800" loading="lazy" decoding="async" />
           <figcaption>Chris Avera · Husband, father, and small-business owner</figcaption>
         </figure>
         <div>
@@ -256,13 +269,13 @@ export default function Home() {
       <section className={styles.closing}>
         <p className={styles.eyebrow}>START WHERE LIFE IS ASKING FOR YOU</p>
         <h2>One useful way<br />to come <em>back.</em></h2>
-        <p>Start the Sunday Board Meeting with your wife this week. If you are not sure what needs attention first, take the Compass Check.</p>
-        <div><Link className={styles.primaryButton} href="/sunday-board#get-board">Start the Sunday Board Meeting <span>→</span></Link><Link href="/field-guide">Take the Compass Check <span>→</span></Link></div>
+        <p>Put the free guide on the table with your wife this week. If you are not sure what needs attention first, take the Compass Check.</p>
+        <div><Link className={styles.primaryButton} href="/sunday-board#get-board">Get the free weekly guide <span>→</span></Link><Link href="/field-guide">Take the Compass Check <span>→</span></Link></div>
       </section>
 
       <footer className={styles.footer}>
-        <span>Made in North Carolina · © 2026 Iron Compass Institute</span>
-        <nav><a href="#system">The system</a><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/field-guide">Compass Check</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link><Link href="/resources">Resources</Link><Link href="/about">About Chris</Link><Link href={CONTACT_FORM}>Work with Chris</Link><a href="https://chrisavera.substack.com" target="_blank" rel="me noreferrer">Field Notes on Substack ↗</a><Link href="/policies">Policies</Link></nav>
+        <span>Made in North Carolina · © 2026 Iron Compass</span>
+        <nav><a href="#system">The system</a><Link href="/sunday-board">Free weekly guide</Link><Link href="/field-guide">Compass Check</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link><Link href="/resources">Resources</Link><Link href="/about">About Chris</Link><Link href={CONTACT_FORM}>Work with Chris</Link><a href="https://chrisavera.substack.com" target="_blank" rel="me noreferrer">Chris on Substack ↗</a><Link href="/policies">Policies</Link></nav>
       </footer>
     </main>
   );

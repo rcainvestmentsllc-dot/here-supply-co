@@ -67,3 +67,10 @@
   .cta { padding-top:65px; padding-bottom:68px; }
   .cta h2 { font-size:clamp(41px,12vw,58px); }
 }
+
+.article { --ink:#18231f; --paper:#f0e6d2; --sage:#d8c49f; --gold:#c28b2c; --rust:#8d4a31; --copy:#555d56; font-family:"Avenir Next","Helvetica Neue",Arial,sans-serif; }
+.article h1,.article h2,.article h3 { font-family:Futura,"Avenir Next Condensed","Franklin Gothic Condensed","Arial Narrow",sans-serif; font-weight:700; font-style:normal; letter-spacing:-.04em; }
+.article h1 em,.article h2 em,.article h3 em { font-style:normal; }
+.hero { background:#214f50; }
+.layout { background:#f0e6d2; }
+.cta { background:#222b27; }

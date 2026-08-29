@@ -60,7 +60,7 @@ export default function WeeklyMarriageMeeting() {
         <p>The point is not to run your marriage like a company. The point is to see the same week while there is still time to shape it together.</p>
       </article>
     </section>
-    <section className={styles.cta}><div><span>THE SUNDAY BOARD MEETING</span><h2>Put the guide between you.</h2></div><div><p>Get the free printable version of this agenda, then use it together this Sunday.</p><Link href="/sunday-board#get-board">Get the free meeting guide <b>→</b></Link></div></section>
+    <section className={styles.cta}><div><span>THE 15-MINUTE WEEKLY GUIDE</span><h2>Put the guide between you.</h2></div><div><p>Get the free printable version of this agenda, then choose a time to use it together.</p><Link href="/sunday-board#get-board">Get the free meeting guide <b>→</b></Link></div></section>
     <Footer />
   </main>;
 }

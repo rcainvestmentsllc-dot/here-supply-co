@@ -2,6 +2,37 @@
 
 Working audit of the Focus Protocol, Iron Compass Core, companion workbook, and delivery sequence.
 
+## Implementation status - August 28, 2026
+
+The recommendations below were written against the original Gamma and Skool-era source material. The new native Iron Compass course now implements the central corrections without overwriting Chris's source archive.
+
+Completed in the native course:
+
+- Return, Lead, and Keep now organize the entire paid experience.
+- All nine lessons have been rewritten into one consistent structure: a familiar scene, the problem, one principle, one practice, real-life adaptations, one immediate action, a practice kit, one reflection, and a short note from Chris.
+- Unsupported precision, inflated neuroscience, alpha or warrior language, rigid compliance rules, and guaranteed outcome claims were removed from the native lesson text.
+- Each lesson now includes plain words the buyer can use, a caution or boundary, and a primary or open-access evidence note where research materially supports the teaching.
+- The work-to-home lesson separates driving safety from the parked-car practice and includes non-car adaptations.
+- The pressure lesson includes returning when promised and repairing after a miss.
+- The marriage lesson treats novelty as an experiment, includes the wife in the decision, and makes room for free, at-home, low-energy, and accessibility-conscious options.
+- The fatherhood lesson makes physical play optional, protects consent and safety, and adapts the practice for older children and different bodies.
+- The Third Place lesson credits Ray Oldenburg's original term, explains the broader Iron Compass use, and avoids presenting a hobby as a cure for burnout.
+- The friendship lesson removes status language and uses a normal, specific invitation.
+- The final lesson asks the buyer to keep two practices for thirty days instead of turning all nine into a compliance system.
+- Focus is now a flexible 72-hour experiment with clear work, caregiving, accessibility, authentication, medical, and driving exceptions.
+- The Core Workbook has been rebuilt as a concise native companion rather than a second course to manage.
+- Three preserved module introductions now sit inside the private course home.
+- Gamma remains a source archive and visual reference. It is no longer the buyer's classroom.
+
+Still requiring real-world verification:
+
+- exact captions or transcripts for the preserved videos;
+- one controlled successful purchase for each product. MailerLite is configured with the correct $29 and $99 prices, private access URLs, buyer groups, and confirmation email, but a completed transaction has not yet been run;
+- final MailerLite sender authentication for `ironcompassinstitute.com`. The domain has been added and the purchase email now uses the sender name `Chris Avera | Iron Compass`, but HostGator DNS authentication is still pending;
+- feedback from invited testers and paying strangers;
+- permission before any buyer words are used publicly;
+- price increases beyond the $99 founding edition.
+
 ## Editorial standard
 
 - Keep Chris's strongest position: a husband, father, and business owner sharing practices he needed himself.

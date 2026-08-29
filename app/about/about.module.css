@@ -118,3 +118,15 @@
   .letterBody > p { font-size: 16px; line-height: 1.7; }
   .footer { min-height: 112px; padding: 24px 20px; align-items: flex-start; flex-direction: column; gap: 16px; }
 }
+
+.page { --ink:#18231f; --forest:#182f29; --paper:#f0e6d2; --sage:#d8c49f; --gold:#c28b2c; --rust:#8d4a31; --ocean:#214f50; --muted:#555d56; font-family:"Avenir Next","Helvetica Neue",Arial,sans-serif; }
+.page h1,.page h2,.beliefList h3,.story .lead { font-family:Futura,"Avenir Next Condensed","Franklin Gothic Condensed","Arial Narrow",sans-serif; font-weight:700; font-style:normal; letter-spacing:-.04em; }
+.page h1 em,.page h2 em { font-style:normal; }
+.header { background:#f4ecdc; border-color:rgba(24,35,31,.18); }
+.headerAction { background:#d0a348; }
+.hero { background:linear-gradient(118deg,#f0e6d2 0 41%,#d8c49f 41% 100%); }
+.heroContent { border-color:rgba(24,35,31,.2); }
+.notes { background:#d8c49f; }
+.fromChris { background:#214f50; }
+.signature { color:#e2b75f; font-family:Charter,"Iowan Old Style",Georgia,serif; }
+.footer { background:#18231f; }

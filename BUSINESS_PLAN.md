@@ -52,6 +52,14 @@ Iron Compass does not promise perfect discipline, a saved marriage, or a complet
 
 That restraint is part of the credibility.
 
+## Brand decision for launch
+
+Do not rename the entire business before the first buyer-feedback cycle. Keep Iron Compass as the name of the body of work, make Chris Avera the visible human voice behind it, and use plain descriptive names for the free guide and working session.
+
+This prevents a long naming exercise from replacing market proof. It also solves the current trust problem without asking Chris to perform as a guru: the work is called Iron Compass, the person accountable for it is Chris, and each product says exactly what it does.
+
+The complete visual, language, photography, naming, and course-experience rules are maintained in `BRAND_SYSTEM.md`. Any new public page, lesson, product, or email should follow that system before it is released.
+
 ## Why this is different from an AI answer
 
 AI can explain habit change, write a weekly meeting agenda, or suggest ways to be present with children. Iron Compass must provide what a generic answer cannot:
@@ -59,7 +67,7 @@ AI can explain habit change, write a weekly meeting agenda, or suggest ways to b
 1. **A coherent path.** The buyer does not need to determine which of a thousand suggestions belongs first. Return, Lead, and Keep create an intentional order.
 2. **A practice, not a paragraph.** Every lesson moves from a recognizable room, to one principle, to one concrete practice, to an adaptation, to an action.
 3. **A real person.** Chris names what he noticed, what he tried, where he still misses, and what the practice is for. He does not pretend to stand above the buyer.
-4. **A shared human tool.** The Sunday meeting, child-led window, friendship invitation, and repair script happen between people. Their value exists in use, not in the originality of the information.
+4. **A shared human tool.** The weekly conversation, child-led window, friendship invitation, and repair script happen between people. Their value exists in use, not in the originality of the information.
 5. **Judgment and boundaries.** Each practice explains when it should bend, when it is not enough, and when qualified help is the better next step.
 6. **A body of work that improves.** Buyer interviews, expert pressure-testing, revisions, and transparent version notes turn the material into a practiced curriculum rather than a static content dump.
 7. **Optional human implementation.** Workshops and working sessions can eventually help a man apply the material to his specific week without pretending to be therapy or all-purpose life coaching.
@@ -68,7 +76,7 @@ AI can support the making of Iron Compass. It should not be the reason a buyer t
 
 ## The product architecture
 
-### Free: Sunday Board Meeting
+### Free: the 15-Minute Weekly Guide
 
 A printable fifteen-minute weekly check-in for a husband and wife.
 
@@ -133,7 +141,7 @@ Do not lead with life coaching. Pilot a tightly scoped service only after severa
 - $150 beta price for the first five sessions;
 - clear educational scope, with no therapy, marriage counseling, diagnosis, or crisis care.
 
-### Scalable human offer: Iron Compass Field Workshop
+### Scalable human offer: Iron Compass Workshop
 
 After the self-paced products have evidence, test a live 60- to 90-minute workshop for a church men’s group, fatherhood organization, leadership group, or small company.
 
@@ -142,23 +150,23 @@ Possible topics:
 - Arrive Home: the work-to-home transition;
 - Attention Under Pressure;
 - The Phone-Free First Twenty Minutes;
-- Personal Leadership in the Rooms That Matter.
+- Personal Leadership for Real Life.
 
 Beta pricing can begin at $250 for a local or virtual group, then rise only when the workshop has a repeatable outline, participant feedback, and a clear organizational buyer. A workshop creates human connection and borrowed trust without requiring a permanent community.
 
 ## The learning experience standard
 
-Iron Compass lessons should not feel like a slideshow pasted onto a sales site. They should feel like guided field sessions.
+Iron Compass lessons should not feel like a slideshow pasted onto a sales site. They should feel like guided practice sessions.
 
 Every lesson uses the same intentional structure:
 
-1. **The room:** the concrete moment the man recognizes.
+1. **A familiar scene:** the concrete moment the man recognizes.
 2. **The principle:** one idea, written without inflated science or certainty.
 3. **The practice:** three or four steps that can be used.
 4. **Make it fit:** adaptations for work, family, mobility, money, safety, and imperfect weeks.
 5. **Use it now:** one action before tomorrow.
-6. **Field question:** a reflection worth writing down.
-7. **Chris’s field note:** a short lived example in Chris’s natural voice.
+6. **One question:** a reflection worth writing down.
+7. **A note from Chris:** a short lived example in Chris’s natural voice.
 
 The native course adds progress, previous and next navigation, and a printable workbook. Module introduction videos should sit at the beginning of Return, Lead, and Keep once the preserved source files are located. Video supports the human relationship, but it does not replace the written practice.
 
@@ -248,9 +256,9 @@ The site must retain canonical URLs, article metadata, a public sitemap, crawlab
 
 ### Substack as the human voice
 
-Publish one Field Note every two weeks and one or two short Notes between posts. Begin with something Chris actually saw, did, missed, or tried. Preserve the odd, concrete details that an AI summary would usually remove.
+Publish one substantial post every two weeks and one or two short Notes between posts. Begin with something Chris actually saw, did, missed, or tried. Preserve the odd, concrete details that an AI summary would usually remove.
 
-Every complete post should link to one relevant Iron Compass resource. Every relevant resource should give a reader the option to follow the Field Notes.
+Every complete post should link to one relevant Iron Compass resource. Every relevant resource should give a reader the option to follow Chris on Substack.
 
 ### Borrowed trust
 
@@ -288,7 +296,7 @@ Friends can pressure-test the material, but they do not prove the market. The fi
 
 1. Recruit 10 founding testers through partner referrals, Substack, and small groups. Use a private no-cost pass and ask for candid use notes, not a promised testimonial.
 2. Publish 6 complete search resources over 12 weeks.
-3. Publish the matching 6 Substack Field Notes.
+3. Publish the matching 6 Substack posts.
 4. Make 24 careful partner-review requests, two per week.
 5. Book 3 small guest conversations or workshops.
 6. Reach 100 qualified site visitors per month before judging conversion percentages.
@@ -310,7 +318,7 @@ This should begin as one focused half-day per week.
 
 ### Publish, 90 minutes
 
-- write or revise one part of the next search resource or Field Note;
+- write or revise one part of the next search resource or Substack post;
 - keep it grounded in a real observation and one usable practice;
 - do not publish filler to satisfy a schedule.
 
@@ -403,7 +411,7 @@ Build original practices from primary research, lived observation, and Chris’s
 - submit and verify the public sitemap in Google Search Console;
 - request indexing for the homepage, product pages, and best resource pages;
 - install simple privacy-respecting measurement for page visits, guide downloads, checkout clicks, and purchases;
-- publish the first matching Substack Field Note.
+- publish the first matching Substack post.
 
 ### Week 3: reach outside the island
 

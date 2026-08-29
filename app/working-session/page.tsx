@@ -44,7 +44,7 @@ export default function WorkingSessionPage() {
     </section>
 
     <section className="working-fit">
-      <article><span>A GOOD FIT</span><h2>Practical implementation.</h2><ul><li>Attention and phone habits</li><li>Work-to-home transition</li><li>Pressure and personal responsibility</li><li>Using the Sunday meeting, Focus, or Core</li><li>Personal leadership and a specific decision</li></ul></article>
+      <article><span>A GOOD FIT</span><h2>Practical implementation.</h2><ul><li>Attention and phone habits</li><li>Work-to-home transition</li><li>Pressure and personal responsibility</li><li>Using the weekly guide, Focus, or Core</li><li>Personal leadership and a specific decision</li></ul></article>
       <article><span>OUTSIDE THE SCOPE</span><h2>Problems that need different help.</h2><ul><li>Crisis or safety concerns</li><li>Diagnosis or mental-health treatment</li><li>Marriage counseling or mediation</li><li>Medical, legal, or financial advice</li><li>A promise of broad personal transformation</li></ul></article>
     </section>
 

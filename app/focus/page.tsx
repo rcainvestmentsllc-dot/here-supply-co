@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   alternates: { canonical: "/focus" },
   openGraph: {
     title: "Focus Protocol | A 72-Hour Attention Reset",
-    description: "Four practical moves for bringing your attention back to the people and rooms that matter.",
-    images: [{ url: "/assets/focus-manual-gamma.png", alt: "Focus Protocol presentation by Iron Compass" }],
+    description: "Four practical moves for bringing your attention back to real life and the people you love.",
+    images: [{ url: "/assets/focus-protocol-poster.jpg", alt: "Chris Avera introducing Focus Protocol" }],
   },
   twitter: {
     title: "Focus Protocol | A 72-Hour Attention Reset",
-    description: "Four practical moves for bringing your attention back to the people and rooms that matter.",
-    images: ["/assets/focus-manual-gamma.png"],
+    description: "Four practical moves for bringing your attention back to real life and the people you love.",
+    images: ["/assets/focus-protocol-poster.jpg"],
   },
 };
 
@@ -27,9 +27,9 @@ const focusProduct = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "Focus Protocol",
-  description: "A private 72-hour attention reset delivered as a browser-based visual Field Manual built around four practical moves.",
-  image: "https://ironcompassinstitute.com/assets/focus-manual-gamma.png",
-  brand: { "@type": "Brand", name: "Iron Compass Institute" },
+  description: "A private 72-hour attention reset delivered as a browser-based visual guide built around four practical moves.",
+  image: "https://ironcompassinstitute.com/assets/focus-protocol-poster.jpg",
+  brand: { "@type": "Brand", name: "Iron Compass" },
   category: "Digital educational product",
   ...(focusCheckoutReady ? {
     offers: {
@@ -49,7 +49,7 @@ export default function FocusProtocol() {
       <section className={styles.hero}>
         <div className={styles.heroCopy}>
           <p className="kicker">FOCUS PROTOCOL · $29 ONE TIME</p>
-          <h1>Get your attention<br /><em>back in the room.</em></h1>
+          <h1>Get your attention<br /><em>back.</em></h1>
           <p>A practical 72-hour reset for the man who is physically home but keeps finding his attention somewhere else.</p>
           <div className="hero-buttons">
             {focusCheckoutReady
@@ -60,8 +60,12 @@ export default function FocusProtocol() {
           <small>{focusCheckoutReady ? "Immediate private access · No subscription · 14-day refund window" : "The paid checkout is not open yet. The free meeting guide is available now."}</small>
         </div>
         <div className={styles.heroVisual}>
-          <img src="/assets/focus-manual-gamma.png" alt="Focus Protocol presentation" width="2400" height="1260" fetchPriority="high" decoding="async" />
-          <span>FOUR PRACTICAL MOVES · BROWSER-BASED VISUAL FIELD MANUAL</span>
+          <div className={styles.manualCover} aria-label="Preview of the Focus Protocol visual guide">
+            <header><span>72-HOUR GUIDE</span><b>FOCUS</b></header>
+            <div><small>FOCUS PROTOCOL</small><strong>GET YOUR<br />ATTENTION<br />BACK.</strong><p>Four practical moves for returning to real life.</p></div>
+            <footer><span>NOTICE</span><span>CHOOSE</span><span>RETURN</span></footer>
+          </div>
+          <span>THE ACTUAL VISUAL SYSTEM · DELIVERED IN YOUR BROWSER</span>
         </div>
       </section>
 
@@ -69,7 +73,7 @@ export default function FocusProtocol() {
         <p className="section-label">THE PROBLEM IS NOT JUST THE PHONE</p>
         <div>
           <h2>You can be home<br />and still be <em>somewhere else.</em></h2>
-          <p>Work, notifications, feeds, and the reflex to check one more thing can follow you through the door. Focus does not ask you to reject technology or rebuild your life. It gives you four concrete moves to interrupt that reflex and practice being where your feet are.</p>
+          <p>Work, notifications, feeds, and the reflex to check one more thing can follow you home. Focus does not ask you to reject technology or rebuild your life. It gives you four concrete moves to interrupt that reflex and choose what gets your attention.</p>
           <p className={styles.drivingNote}><strong>The reflex does not know when the stakes have changed.</strong> The same downward glance that steals a moment on the couch can follow us to a red light or a moving car. This is not about scolding people. It is about taking back the decision of where your eyes and attention go.</p>
         </div>
       </section>
@@ -78,10 +82,10 @@ export default function FocusProtocol() {
         <div>
           <p className="section-label">WATCH BEFORE YOU BUY</p>
           <h2>See the reset.<br />Then decide if it <em>fits.</em></h2>
-          <p>Chris explains why attention keeps leaving the room and what the next 72 hours are designed to change. The paid product is the visual Field Manual with the four moves below.</p>
+          <p>Chris explains why the checking reflex is so hard to notice and what the next 72 hours are designed to change. The paid product is the visual guide with the four moves below.</p>
         </div>
         {/* eslint-disable-next-line jsx-a11y/media-has-caption -- Add captions only after an exact transcript is verified. */}
-        <video controls playsInline preload="metadata" poster="/assets/focus-manual-gamma.png" aria-label="Focus Protocol overview video">
+        <video controls playsInline preload="metadata" poster="/assets/focus-protocol-poster.jpg" aria-label="Focus Protocol overview video">
           <source src="/assets/focus-protocol-sales.mp4" type="video/mp4" />
           Your browser does not support this video.
         </video>
@@ -108,7 +112,7 @@ export default function FocusProtocol() {
         <ul>
           <li>You keep reaching for your phone without deciding to.</li>
           <li>You arrive home with part of your mind still at work.</li>
-          <li>The people you love are getting your body in the room but not your full attention.</li>
+          <li>The people you love can tell when only part of you is there.</li>
         </ul>
       </section>
 
@@ -116,7 +120,7 @@ export default function FocusProtocol() {
         <div>
           <p className="section-label">FOCUS PROTOCOL</p>
           <h2>One private reset.<br /><em>$29 once.</em></h2>
-          <p>You will receive immediate private access to the browser-based visual Field Manual containing all four practical moves.</p>
+          <p>You will receive immediate private access to the browser-based visual guide containing all four practical moves.</p>
           <ul><li>Immediate access</li><li>Work at your own pace</li><li>14-day refund window</li></ul>
         </div>
         <div className={styles.purchaseAction}>
@@ -135,7 +139,7 @@ export default function FocusProtocol() {
       <section className={styles.faq}>
         <p className="section-label">PLAIN ANSWERS</p>
         <div>
-          <details><summary>How is it delivered?</summary><p>After checkout, you are sent directly to an unlisted page with the browser-based visual Field Manual. Save that link. There is no course account or app to manage.</p></details>
+          <details><summary>How is it delivered?</summary><p>After checkout, you are sent directly to an unlisted page with the browser-based visual guide. Save that link. There is no course account or app to manage.</p></details>
           <details><summary>Is this a subscription?</summary><p>No. Focus Protocol is a one-time purchase with immediate private access.</p></details>
           <details><summary>What if it is not right for me?</summary><p>Request a refund within 14 calendar days of purchase through the <a href={CONTACT_FORM}>contact form</a>.</p></details>
         </div>
@@ -144,7 +148,7 @@ export default function FocusProtocol() {
       <section className={styles.quietClose}>
         <p>Not ready to buy?</p>
         <h2>Put the week on the table first.</h2>
-        <Link href="/sunday-board#get-board">Start the Sunday Board Meeting <span>→</span></Link>
+        <Link href="/sunday-board#get-board">Get the free weekly guide <span>→</span></Link>
       </section>
       <Footer />
     </main>

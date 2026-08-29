@@ -67,7 +67,7 @@ export default function PresentWithKids() {
       </article>
     </section>
 
-    <section className={styles.cta}><div><span>IRON COMPASS CORE</span><h2>Fatherhood is one room inside the complete practice.</h2></div><div><p>The Floor General is one of nine lessons for attention, pressure, marriage, fatherhood, friendship, and the parts of life work cannot replace.</p><Link href="/library#curriculum">See the complete Core curriculum <b>→</b></Link></div></section>
+    <section className={styles.cta}><div><span>IRON COMPASS CORE</span><h2>Fatherhood belongs inside the complete practice.</h2></div><div><p>The Floor General is one of nine lessons for attention, pressure, marriage, fatherhood, friendship, and the parts of life work cannot replace.</p><Link href="/library#curriculum">See the complete Core curriculum <b>→</b></Link></div></section>
     <Footer />
   </main>;
 }

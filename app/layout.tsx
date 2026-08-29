@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { JsonLd } from "./structured-data";
 
-const title = "Iron Compass Institute | Be Here for Your Own Life";
+const title = "Iron Compass | Be Here for Your Own Life";
 const description = "Practical tools for husbands and fathers who want to overcome digital distraction, be more present at home, and lead a calmer family life.";
 
 const siteData = {
@@ -11,7 +11,7 @@ const siteData = {
     {
       "@type": "Organization",
       "@id": "https://ironcompassinstitute.com/#organization",
-      name: "Iron Compass Institute",
+      name: "Iron Compass",
       url: "https://ironcompassinstitute.com/",
       email: "mailto:chris@ironcompassinstitute.com",
       founder: { "@id": "https://ironcompassinstitute.com/#chris-avera" },
@@ -28,7 +28,7 @@ const siteData = {
       "@type": "WebSite",
       "@id": "https://ironcompassinstitute.com/#website",
       url: "https://ironcompassinstitute.com/",
-      name: "Iron Compass Institute",
+      name: "Iron Compass",
       description,
       publisher: { "@id": "https://ironcompassinstitute.com/#organization" },
       inLanguage: "en-US",
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://ironcompassinstitute.com"),
   title,
   description,
-  icons: { icon: "/assets/iron-compass-wave-mark-reference.png", shortcut: "/assets/iron-compass-wave-mark-reference.png", apple: "/apple-touch-icon.png" },
-  openGraph: { title, description, url: "/", siteName: "Iron Compass Institute", type: "website", images: [{ url: "/og-iron-compass-v2.jpg", width: 1731, height: 909, alt: "Iron Compass, Be here for your own life." }] },
+  icons: { icon: "/assets/iron-compass-wave-mark-transparent.png", shortcut: "/assets/iron-compass-wave-mark-transparent.png", apple: "/apple-touch-icon.png" },
+  openGraph: { title, description, url: "/", siteName: "Iron Compass", type: "website", images: [{ url: "/og-iron-compass-v2.jpg", width: 1200, height: 630, alt: "Iron Compass, Be here for your own life." }] },
   twitter: { card: "summary_large_image", title, description, images: ["/og-iron-compass-v2.jpg"] },
 };
 

@@ -45,7 +45,7 @@ export function WorkingSessionForm() {
         <option>I am interested in a workshop or partnership</option>
       </select></label>
 
-      <label><span>Which room or pattern needs the most attention?</span><select name="entry.1712930317" required defaultValue="">
+      <label><span>Which part of life or pattern needs the most attention?</span><select name="entry.1712930317" required defaultValue="">
         <option value="" disabled>Choose one starting point</option>
         <option>Phone habits and divided attention</option>
         <option>Work following me home</option>
