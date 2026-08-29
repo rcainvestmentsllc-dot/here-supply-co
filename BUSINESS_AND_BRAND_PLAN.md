@@ -197,7 +197,9 @@ The working price range for a paid beta is $300 to $500. The price should be cho
 
 ### 8. Group distribution path
 
-The softer, more human Life at Hand identity allows the same practical material to travel into different kinds of groups without becoming a genderless self-help product. Keep the teaching and practice consistent, then adapt the examples, discussion prompts, and facilitator to the people in the room.
+The softer, more human Life at Hand identity allows the same practical material to travel into different kinds of groups without becoming a genderless self-help product. Keep the teaching and practice consistent, then adapt the examples, discussion prompts, and host to the people in the room.
+
+This is a future distribution path, not a credentialing business. Chris does not currently hold professional coaching or counseling credentials, the program is not accredited, and the material has not been validated through enough real groups to justify training or licensing other people as authorities. Do not describe the program as accredited, certified, clinically informed, therapeutic, or professionally facilitated. Do not use the word “license” in customer-facing copy while it could be mistaken for a professional credential.
 
 Potential group doors:
 
@@ -208,16 +210,31 @@ Potential group doors:
 
 All the Way Here is the best first group pilot because the attention problem crosses gender and relationship status, the time commitment is small, and the practice can be tried quickly. Do not rebuild four different courses. Build one sound core and four light discussion wrappers.
 
-A founding group kit should contain:
+A founding group host pack should contain:
 
-1. A short facilitator page with scope, timing, and discussion agreements.
+1. A short host page with scope, timing, discussion agreements, and explicit limits on the host's role.
 2. The existing attention overview video, retitled only after the new product name is approved.
 3. One physically clear, low-ink practice sheet.
 4. Four discussion prompts that lead to an action rather than disclosure for its own sake.
 5. A seven-day follow-up email asking what was actually used.
 6. A private feedback form for usefulness, fit, safety, and what felt missing.
 
-Run one men's group and one women's group with six to eight people each before setting a permanent group price or licensing model. Rhea could review or co-host the women's or couples pilot if she wants that role. Another trusted female facilitator is a valid option if she does not. Group licensing, host subscriptions, or facilitator training should come only after the format works without Chris personally rescuing every session.
+### Experience before scale
+
+Use four stages with hard gates:
+
+1. **Founder-led learning pilots:** Chris runs three free or at-cost groups of six to eight people using a fully scripted session. At least one should be co-hosted by someone with real group leadership experience. Chris introduces himself as the author testing an educational practice, not as a coach or expert. Record attendance and timing, but do not record personal discussion.
+2. **Experienced-host beta:** After revising from those pilots, three trusted community hosts use the host pack with Chris observing or debriefing. They receive temporary permission to use the material for that named beta group, not a credential or reusable license.
+3. **Paid group edition:** Only after at least six groups and forty participants have completed the practice without Chris rescuing the session should Life at Hand test a paid group pack. Sell access to the materials and a defined group event or series. Call the leader a **host**, not a facilitator, coach, guide, or certified practitioner.
+4. **Reusable host rights:** Consider repeat-use pricing only after the content is stable, the host role is teachable, professional and legal reviews are complete, participant access and privacy work properly, and the business has appropriate terms and insurance. Reusable rights would license copyrighted material. They would not certify the host's competence or grant a professional title.
+
+Rhea could review or co-host a women's, couples, or parent pilot if she wants that role. Another trusted female host is a valid option if she does not. No host should be asked to manage trauma disclosures, marital crises, child-safety concerns, mental-health symptoms, or emergencies. The host pack should let a participant pass on any prompt, forbid diagnosing or advice-giving, and direct concerns beyond the educational scope to appropriate qualified help.
+
+North Carolina defines clinical mental health counseling around holding oneself out as a counselor and evaluating or treating mental disorders or other conditions through counseling methods, diagnosis, treatment plans, and psychotherapeutic techniques. Life at Hand should remain clearly on the educational side of that boundary and obtain legal review before paid live group support expands across states. Marketing must also avoid objective health or safety outcomes that the program itself has not substantiated. Participant comments may demonstrate that a person used or liked a practice; they do not prove that the program treats a condition or will produce the same result for others.
+
+- [North Carolina definition of the practice of counseling](https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_90/GS_90-330.html)
+- [FTC advertising guidance for small businesses](https://www.ftc.gov/business-guidance/resources/advertising-faqs-guide-small-business)
+- [ICF coaching-education accreditation standards](https://coachingfederation.org/for-coach-educators/icf-accreditation/accreditation-standards/)
 
 ## Why the course can beat a chatbot
 
