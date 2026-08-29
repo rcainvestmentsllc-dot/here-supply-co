@@ -140,7 +140,7 @@ export default function Home() {
           {movements.map((movement) => (
             <article key={movement.title} className={styles.movementCard}>
               <div className={styles.movementPreview}>
-                <div className={styles.movementArtGrid}>{movement.lessons.map((lesson) => <figure key={lesson.slug}><img src={lesson.artImage} alt={lesson.artAlt} width="1672" height="942" loading="lazy" decoding="async" /><figcaption>{lesson.number} · {lesson.title}</figcaption></figure>)}</div>
+                <div className={styles.movementArtGrid}>{movement.lessons.map((lesson) => <figure key={lesson.slug}><img src={lesson.artImage} alt={lesson.artAlt} width="1672" height="942" loading="lazy" decoding="async" style={{ objectPosition: lesson.previewPosition }} /><figcaption>{lesson.number} · {lesson.title}</figcaption></figure>)}</div>
                 <span>THREE REAL LESSONS</span>
               </div>
               <div className={styles.movementBody}>

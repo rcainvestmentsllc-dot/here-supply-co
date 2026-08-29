@@ -14,6 +14,7 @@ export type CoreLesson = {
   summary: string;
   artImage: string;
   artAlt: string;
+  previewPosition: string;
   artCaption: string;
   detailImage: string;
   detailAlt: string;
@@ -120,6 +121,7 @@ export const CORE_LESSONS: CoreLesson[] = [
     subtitle: "Get the open loops out of your head.",
     summary: "A fifteen-minute weekly mind sweep that gives unfinished thoughts somewhere to land.",
     artImage: "/assets/course/art/lesson-1-1-sanctuary.jpg",
+    previewPosition: "45% center",
     artAlt: "A man writing at a kitchen table near the ocean at dawn",
     artCaption: "Give the unfinished things somewhere to land, then return to the morning in front of you.",
     detailImage: "/assets/course/art/detail-1-1-sanctuary.jpg",
@@ -149,6 +151,7 @@ export const CORE_LESSONS: CoreLesson[] = [
     subtitle: "Hunt before the maintenance work takes the day.",
     summary: "A realistic way to protect focused creation without pretending email, admin, and upkeep do not matter.",
     artImage: "/assets/course/art/lesson-1-2-hunter-farmer.jpg",
+    previewPosition: "48% center",
     artAlt: "A man doing focused work at a workshop bench with mountains beyond the door",
     artCaption: "Protect the work that changes something before the small work fills the day.",
     detailImage: "/assets/course/art/detail-1-2-hunter-farmer.jpg",
@@ -178,6 +181,7 @@ export const CORE_LESSONS: CoreLesson[] = [
     subtitle: "Use the trip home as a deliberate transition.",
     summary: "A short parked-car reset that keeps the entire workday from walking through the door with you.",
     artImage: "/assets/course/art/lesson-1-3-airlock.jpg",
+    previewPosition: "34% center",
     artAlt: "A man standing beside a parked vintage pickup before entering a warm coastal home",
     artCaption: "The workday can stop at the driveway. Choose how you enter before you open the door.",
     detailImage: "/assets/course/art/detail-1-3-airlock.jpg",
@@ -207,6 +211,7 @@ export const CORE_LESSONS: CoreLesson[] = [
     subtitle: "Pause before pressure chooses your response.",
     summary: "A three-part practice for pausing, returning when promised, and repairing when you miss.",
     artImage: "/assets/course/art/lesson-2-1-thermostat.jpg",
+    previewPosition: "32% center",
     artAlt: "A father pausing in a warm family kitchen before responding",
     artCaption: "Steadiness is not pretending to be calm. It is making room for a better next response.",
     detailImage: "/assets/course/art/detail-2-1-thermostat.jpg",
@@ -236,6 +241,7 @@ export const CORE_LESSONS: CoreLesson[] = [
     subtitle: "Create a little curiosity together.",
     summary: "A shared experiment using novelty, activity, and protected attention without making connection feel like a performance.",
     artImage: "/assets/course/art/lesson-2-2-date-night.jpg",
+    previewPosition: "36% center",
     artAlt: "A couple sharing a relaxed evening at a seaside taco stand",
     artCaption: "Connection does not need a grand gesture. It needs curiosity and protected attention.",
     detailImage: "/assets/course/art/detail-2-2-date-night.jpg",
@@ -265,6 +271,7 @@ export const CORE_LESSONS: CoreLesson[] = [
     subtitle: "Join your child's world without taking it over.",
     summary: "Five to fifteen phone-free minutes at their level, following their interest and cues.",
     artImage: "/assets/course/art/lesson-2-3-floor-general.jpg",
+    previewPosition: "57% center",
     artAlt: "A father and children building a blanket fort together in a family room",
     artCaption: "Set the safe conditions, then let your child show you where connection is possible.",
     detailImage: "/assets/course/art/detail-2-3-floor-general.jpg",
@@ -294,6 +301,7 @@ export const CORE_LESSONS: CoreLesson[] = [
     subtitle: "Keep one part of life from becoming only work and home duty.",
     summary: "A recurring place or activity that restores interest, identity, friendship, or play outside work and household roles.",
     artImage: "/assets/course/art/lesson-3-1-third-place.jpg",
+    previewPosition: "57% center",
     artAlt: "Four friends talking around a solid workshop bench with a mountain bike mounted on the wall",
     artCaption: "Keep a place where you can make, move, laugh, and return home more alive.",
     detailImage: "/assets/course/art/detail-3-1-third-place.jpg",
@@ -323,6 +331,7 @@ export const CORE_LESSONS: CoreLesson[] = [
     subtitle: "Invite first, and make the invitation easy to answer.",
     summary: "A low-pressure way to turn respect or shared interest into repeated time and actual friendship.",
     artImage: "/assets/course/art/lesson-3-2-friendship.jpg",
+    previewPosition: "50% center",
     artAlt: "Two friends fishing together from a quiet dock at sunrise",
     artCaption: "Friendship grows through specific invitations and ordinary time shared more than once.",
     detailImage: "/assets/course/art/detail-3-2-friendship.jpg",
@@ -352,6 +361,7 @@ export const CORE_LESSONS: CoreLesson[] = [
     subtitle: "Keep the practices that actually helped.",
     summary: "A simple review of the full system that turns nine lessons into two practices for the next thirty days.",
     artImage: "/assets/course/art/lesson-3-3-mission-debrief.jpg",
+    previewPosition: "58% center",
     artAlt: "A man journaling on a porch while his family gathers inside a warm home",
     artCaption: "The course ends when an idea becomes a practice you can keep in ordinary life.",
     detailImage: "/assets/course/art/detail-3-3-mission-debrief.jpg",
