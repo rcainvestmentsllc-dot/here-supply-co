@@ -32,6 +32,76 @@ Recommended launch position:
 
 The first founding cohort can still be mostly men because that is where Chris has the clearest voice and the current material is strongest. That is a testing decision, not the permanent boundary of Life at Hand.
 
+## The easiest on-ramp: the family screen problem
+
+The broad mission is human attention and connection. The clearest first problem is narrower:
+
+> How do we get our family off screens without turning every evening into a fight?
+
+This should become the primary stranger-acquisition door for parents. It is already understood, emotionally immediate, searchable, and easy to describe to a friend. It also makes the larger Life at Hand idea concrete. The promise is not a perfect screen-free family. It is a calmer, shared way to put screens in their proper place and make ordinary life easier to choose.
+
+The strongest first offer is deliberately descriptive:
+
+> **The Family Screen Guide**<br>
+> Fewer screen fights. More real life.<br>
+> A practical seven-day plan for healthier limits, calmer transitions, and better things to do when the screens go off.
+
+The final title can become more distinctive after parent interviews, but the headline should remain this plain. Do not hide the problem behind a poetic or invented product name.
+
+### Product ladder for families
+
+1. **Free Family Screen Starter:** one attractive, low-ink printable with a parent self-check, one family conversation, two screen-free zones, an off-screen activity menu, and a seven-day experiment. Email delivery creates the list, but the page must be useful before any upsell.
+2. **Family Screen Guide, $29 to $49 beta:** short videos plus age-specific paths for ages 2–5, 6–10, 11–14, and 15–18. Include the adult example, the family agreement, device-setting walkthroughs, transition scripts, replacement activities, what to do after a bad night, and a weekly review. It should complement the AAP Family Media Plan rather than pretending to replace pediatric guidance.
+3. **Parent application session or small group:** help a family adapt the plan to its actual work schedules, school demands, custody arrangements, neurodiversity, and child ages. This is educational implementation support, not pediatric or mental-health treatment.
+4. **All the Way Here:** the adult attention practice becomes the natural next step because children notice when the adults asking them to put devices down are still checking their own phones.
+
+The product should not lead with fear, shame, dopamine claims, or a single universal hour limit. Current AAP guidance emphasizes family values, child age and development, screen-free times and places, quality and context, adult modeling, communication, and regular revision. The practical gap is not another chart of recommended minutes. It is helping a tired family turn good intentions into a workable Tuesday night.
+
+### A neurodivergent-family path built with care
+
+The family's lived experience can make this path more compassionate and realistic, but their child is completely private and is never part of the product. **Do not use the child's name, diagnosis, image, words, stories, behavior, or recognizable family details publicly, in course material, in generated art, in a testimonial, or in marketing.** Do not imply that any product is based on or validated by the child. Chris and Rhea may privately apply what they have learned as parents, then generalize the lesson, remove identifying details, ground it in credible guidance, and obtain professional review before teaching it. This privacy rule is permanent unless the family explicitly revisits it together far in the future; no launch need justifies an exception.
+
+The guide needs a clearly labeled adaptation for ADHD, autism, sensory needs, communication differences, and difficult transitions. It should not imply that neurodivergent children need to be made more typical. It should help families notice what a screen is doing in that moment, including communication, regulation, focused interest, connection, learning, avoidance, or entertainment, before trying to replace it.
+
+That path should include:
+
+- predictable routines and visual transitions rather than surprise device removal
+- advance warnings and clear representations of what happens next
+- replacement activities matched to sensory, motor, social, and regulation needs
+- ways to use a child's focused interests as bridges into play, learning, or connection
+- separate plans for school-required, communication, creative, social, and entertainment use
+- a calm recovery plan for the parent and child when a transition goes badly
+- explicit permission to adapt the plan with the child's pediatrician, therapist, school team, or other qualified professional
+
+The AAP specifically notes that digital media can support communication, social learning, organization, and focused interests for autistic children while also crowding out sleep, movement, creative play, or social connection. Its guidance for neurodivergent youth favors individual strengths and vulnerabilities, clear expectations, open communication, and an adaptable family plan. Those principles should shape the guide. Any ADHD- or autism-specific teaching should be professionally reviewed before sale, and the product must be described as parent education rather than medical treatment.
+
+The visual story should show what replaces the screen: a parent who is finally watching the game, kids building something believable, a family cooking, a teenager talking in the car, friends outside, a quiet bedtime, and adults putting their own phones away. Include neurodivergent children as full participants in family life without turning a diagnosis into a visual stereotype. Avoid fake device interfaces, illegible generated numbers, idealized perfect families, or nostalgic 1960s costumes. The art can retain the printed mid-century texture while the people, clothing, rooms, vehicles, and family structures feel current.
+
+Evidence and safety anchors:
+
+- [AAP: How to Make a Family Media Plan](https://www.healthychildren.org/English/family-life/Media/Pages/How-to-Make-a-Family-Media-Use-Plan.aspx)
+- [AAP: Media use for children with autism](https://www.healthychildren.org/English/tips-tools/ask-the-pediatrician/Pages/How-should-I-handle-my-child%E2%80%99s-media-use-autism-spectrum-disorder.aspx)
+- [AAP: Supporting neurodivergent youth with technology and social media](https://www.aap.org/en/patient-care/media-and-children/center-of-excellence-on-social-media-and-youth-mental-health/qa-portal/qa-portal-library/qa-portal-library-questions/supporting-neurodivergent-youth-in-navigating-technology-and-social-media/)
+- [AAP: Helping Kids Thrive in a Digital World](https://www.healthychildren.org/English/family-life/Media/Pages/helping-kids-thrive-in-a-digital-world-AAP-policy-explained.aspx)
+- [U.S. Surgeon General: Harms of Screen Use](https://www.hhs.gov/surgeongeneral/reports-and-publications/screen-use-harms/index.html)
+
+### How faith can enter honestly
+
+Do not bolt Christianity onto the screen guide as a sales angle, and do not make Chris sound like a pastor, theologian, or family therapist. Start from the truth: faith is becoming more important in Chris's own life and is changing how he thinks about attention, rest, responsibility, gratitude, love, and what a family is making room for.
+
+Use a layered model:
+
+1. **The main Life at Hand practice stays openly usable.** It does not hide faith or mock it, but a buyer does not have to share Chris's beliefs to use a screen plan, a couples conversation, or an attention practice.
+2. **Add an optional Christian reflection layer only after it is real.** This could include a short founder note, a few Scripture-rooted reflection questions, a Sabbath or shared-meal practice, and a church-group discussion guide. It should be reviewed by Rhea and a trusted pastor or qualified Christian family practitioner before publication.
+3. **Create explicitly Christian products later only from lived material.** A possible family series could explore attention, Sabbath, hospitality, service, shared meals, and being present to God and neighbor. Do not promise spiritual outcomes or use faith to intensify parental fear.
+4. **Invite, do not bait and switch.** Label faith-based material clearly so both Christian and general audiences know what they are choosing.
+
+A truthful founder sentence to test privately is:
+
+> My faith is becoming a more important part of how I understand attention, responsibility, rest, and love. I am not speaking as a pastor. I am sharing practical things our family is learning to live.
+
+This faith path can eventually create a credible church and small-group distribution channel, but only after the family practices work in real homes and the theological language has been responsibly reviewed.
+
 ### A possible role for Rhea
 
 Rhea could make the couples and broader relationship work more credible, useful, and genuinely inclusive if she wants to participate. Do not position her as a decorative spouse, a testimonial, or proof that Chris's approach is correct. Her value is an independent lived perspective and the ability to challenge practices or language that work only from one side of a relationship.
@@ -72,9 +142,9 @@ A short diagnostic that helps a person identify whether attention, pressure, hom
 
 Success measure: completion and click-through to the recommended next step.
 
-### 3. Focus Protocol, $29 one time
+### 3. All the Way Here, $29 one time, working replacement for Focus Protocol
 
-A 72-hour attention reset with one video and four practical moves. This is the low-risk paid proof that the work can change behavior without demanding a new identity or a long program.
+A three-day attention practice with one video and four practical moves. This is the low-risk paid proof that the work can change behavior without demanding a new identity or a long program. The plain-language descriptor is: **Three days to put distraction in its place and come back to the life around you.**
 
 Success measure: practice completion within 72 hours, refund rate, and a short post-use reflection.
 
@@ -131,17 +201,17 @@ The softer, more human Life at Hand identity allows the same practical material 
 
 Potential group doors:
 
-- **Women's Focus group:** Focus Protocol used around divided attention, work, relationships, caregiving, friendship, and personal follow-through. A woman should review or facilitate the discussion rather than asking Chris to speak for women's experience.
+- **Women's attention group:** All the Way Here used around divided attention, work, relationships, caregiving, friendship, and personal follow-through. A woman should review or facilitate the discussion rather than asking Chris to speak for women's experience.
 - **Men's application group:** attention, pressure, friendship, fatherhood where relevant, responsibility, and the habit of carrying things alone.
 - **Couples group:** See the Same Week plus selected attention, repair, and shared-rhythm practices. Both partners participate; one partner is not treated as the problem to be fixed.
 - **Mixed adult group:** attention, screens, friendship, community, work-to-life transitions, and showing up for the people already present.
 
-Focus Protocol is the best first group pilot because the attention problem crosses gender and relationship status, the time commitment is small, and the practice can be tried quickly. Do not rebuild four different courses. Build one sound core and four light discussion wrappers.
+All the Way Here is the best first group pilot because the attention problem crosses gender and relationship status, the time commitment is small, and the practice can be tried quickly. Do not rebuild four different courses. Build one sound core and four light discussion wrappers.
 
 A founding group kit should contain:
 
 1. A short facilitator page with scope, timing, and discussion agreements.
-2. The existing Focus overview video.
+2. The existing attention overview video, retitled only after the new product name is approved.
 3. One physically clear, low-ink practice sheet.
 4. Four discussion prompts that lead to an action rather than disclosure for its own sake.
 5. A seven-day follow-up email asking what was actually used.
@@ -311,13 +381,36 @@ Possible lockup:
 Recommended naming architecture:
 
 - See the Same Week
-- Focus Protocol, retained as a working title while the $29 product is tested
+- All the Way Here, the recommended working replacement for Focus Protocol
+- The Family Screen Guide, kept descriptive for the parent on-ramp
 - Return, Lead, Keep: the complete Life at Hand course
 - Application Sessions with Chris
 - Weekly Application Support with Chris, as the descriptive beta name rather than a manufactured membership name
 - The Work in Front of Us
 
-This architecture removes “Institute,” “Compass,” and forced “field” language. It moves from one shared week, to regaining attention, to the complete course, to real human help applying it. **Focus Protocol is not considered final**, but it is better to keep a merely imperfect working title than force a crowded replacement. Preliminary screening found “The Return” already used by multiple men's coaching offers, “Back in the Room” used prominently by another coaching business, and “Look Up” occupied in digital-wellness work. Ask founding buyers what they thought they were purchasing and what changed for them, then name the product from their language. Do not rename products piecemeal on the live site.
+This architecture removes “Institute,” “Compass,” and forced “field” language. It moves from one shared week, to regaining attention, to the complete course, to real human help applying it. **Focus Protocol should be retired** because “protocol” sounds clinical and compliance-driven inside a warm, human brand. The recommended working replacement is **All the Way Here**:
+
+> **ALL THE WAY HERE**<br>
+> A three-day Life at Hand practice<br>
+> Put distraction in its place and come back to the life around you.
+
+The title is emotional and inclusive; the descriptor does the selling. A preliminary exact-phrase web screen found a song with the title but did not surface an adjacent education, digital-wellness, or coaching offer using it. That is not trademark clearance. Test the title with founding buyers before updating checkout, URLs, email automations, private access pages, and course art. Do not rename products piecemeal on the live site.
+
+Other screened attention names were weaker. “Notice What Matters” is already a 2025 self-improvement book, newsletter, coaching, and speaking platform. “The Return” is used by multiple men's coaching offers. “Back in the Room” is prominent language for another coaching business. “Look Up” is occupied in digital-wellness work. “All the Way Here” has the best combination so far of warmth, memorability, human connection, and room for visual storytelling.
+
+### Logo direction after the name is approved
+
+Do not carry the compass into the new identity and do not generate a generic wellness hand, literal family crest, or cartoon wave. Build a small vector identity system that works as a favicon, course stamp, print mark, checkout image, and full wordmark.
+
+Recommended concept:
+
+- a custom **Life at Hand** wordmark with a confident mid-century grotesk for the name and a warmer humanist companion face for editorial copy
+- one simple horizon gesture, drawn with the restraint of a 1950s California travel mark, that can read as a shoreline, an open hand, or the meeting of land and water without illustrating any of them literally
+- no circle badge around the mark unless it is needed for a tiny app or social icon
+- deep coastal green, sun-warmed ochre, clay, ink, and uncoated paper as the controlled palette
+- one-color versions that remain recognizable in black ink and on a white printable
+
+Create three clean vector sketches only after the master name is approved. Test each at favicon size, in the site header, on a course cover, and in one-color print before choosing. The mark should feel authored and durable, not like an AI-generated picture placed inside a rounded square.
 
 **See the Same Week** remains the strongest name for the free weekly guide. It describes the relational result. “Flow State Focus” would reposition it as personal productivity and lose the shared-couple promise.
 
