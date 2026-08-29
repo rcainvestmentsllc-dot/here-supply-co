@@ -654,6 +654,10 @@ h1,h2,h3,h4,strong,b,em { overflow-wrap:normal; word-break:normal; hyphens:none;
 .core-offer > strong { color:var(--light); }
 .core-offer > strong small { color:#b9c7b8; }
 .core-offer .offer-note { border-color:rgba(245,240,229,.18); }
+.core-offer > a { margin-top:26px; padding:15px 17px; color:#173027; border:1px solid #e2b75f; background:#e2b75f; }
+.core-offer > a:hover { color:#173027; background:#f1d18d; }
+.core-offer > a:focus-visible { outline:3px solid var(--light); outline-offset:3px; }
+.core-offer > a b { color:inherit; font-size:17px; }
 
 .core-curriculum { padding:112px clamp(22px,8.4vw,130px); display:grid; grid-template-columns:minmax(245px,.62fr) minmax(0,1fr); align-items:start; gap:clamp(52px,10vw,165px); color:var(--light); background:#1a3027; }
 .core-curriculum .section-label { color:var(--gold); }
