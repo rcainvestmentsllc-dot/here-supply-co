@@ -29,6 +29,7 @@ Still requiring real-world verification:
 - exact captions or transcripts for the preserved videos;
 - one controlled successful purchase for each product. MailerLite is configured with the correct $29 and $99 prices, private access URLs, buyer groups, and confirmation email, but a completed transaction has not yet been run;
 - final MailerLite sender authentication for `ironcompassinstitute.com`. The domain has been added and the purchase email now uses the sender name `Chris Avera | Iron Compass`, but HostGator DNS authentication is still pending;
+- replacement of the legacy Listings in Motion logo and generic body inside the MailerLite purchase-confirmation template. The buyer links and groups are configured, but this final email-branding pass still requires reliable access to MailerLite's embedded editor;
 - feedback from invited testers and paying strangers;
 - permission before any buyer words are used publicly;
 - price increases beyond the $99 founding edition.
