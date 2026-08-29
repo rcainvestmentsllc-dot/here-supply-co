@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Focus Protocol | A 72-Hour Attention Reset",
     description: "Four practical moves for bringing your attention back to real life and the people you love.",
-    images: [{ url: "/assets/focus-protocol-poster.jpg", alt: "Chris Avera introducing Focus Protocol" }],
+    images: [{ url: "/assets/products/focus-protocol-art.jpg", alt: "Focus Protocol artwork showing a phone set aside while a man walks toward the ocean" }],
   },
   twitter: {
     title: "Focus Protocol | A 72-Hour Attention Reset",
     description: "Four practical moves for bringing your attention back to real life and the people you love.",
-    images: ["/assets/focus-protocol-poster.jpg"],
+    images: ["/assets/products/focus-protocol-art.jpg"],
   },
 };
 
@@ -28,7 +28,7 @@ const focusProduct = {
   "@type": "Product",
   name: "Focus Protocol",
   description: "A private 72-hour attention reset delivered as a browser-based visual guide built around four practical moves.",
-  image: "https://ironcompassinstitute.com/assets/focus-protocol-poster.jpg",
+  image: "https://ironcompassinstitute.com/assets/products/focus-protocol-art.jpg",
   brand: { "@type": "Brand", name: "Iron Compass" },
   category: "Digital educational product",
   ...(focusCheckoutReady ? {
@@ -60,12 +60,10 @@ export default function FocusProtocol() {
           <small>{focusCheckoutReady ? "Immediate private access · No subscription · 14-day refund window" : "The paid checkout is not open yet. The free meeting guide is available now."}</small>
         </div>
         <div className={styles.heroVisual}>
-          <div className={styles.manualCover} aria-label="Preview of the Focus Protocol visual guide">
-            <header><span>72-HOUR GUIDE</span><b>FOCUS</b></header>
-            <div><small>FOCUS PROTOCOL</small><strong>GET YOUR<br />ATTENTION<br />BACK.</strong><p>Four practical moves for returning to real life.</p></div>
-            <footer><span>NOTICE</span><span>CHOOSE</span><span>RETURN</span></footer>
-          </div>
-          <span>THE ACTUAL VISUAL SYSTEM · DELIVERED IN YOUR BROWSER</span>
+          <figure>
+            <img src="/assets/products/focus-protocol-art.jpg" alt="A phone, keys, watch, and paper left on a wooden table while a man walks toward the ocean" width="1672" height="942" />
+            <figcaption><b>FOCUS PROTOCOL</b><span>NOTICE THE REFLEX · MAKE ONE CLEAR CHOICE · RETURN TO REAL LIFE</span></figcaption>
+          </figure>
         </div>
       </section>
 

@@ -1,5 +1,5 @@
 .hero { padding:120px clamp(24px,9vw,150px) 90px; color:#f3eee4; background:#10251c; }
-.hero h1 { margin:18px 0 32px; font-family:Georgia,"Times New Roman",serif; font-size:clamp(58px,8vw,112px); font-weight:400; letter-spacing:-.055em; line-height:1.03; text-wrap:balance; overflow-wrap:break-word; }
+.hero h1 { margin:18px 0 32px; font-family:Georgia,"Times New Roman",serif; font-size:clamp(58px,8vw,112px); font-weight:400; letter-spacing:-.055em; line-height:1.03; text-wrap:balance; overflow-wrap:normal; word-break:normal; hyphens:none; }
 .hero h1 em { color:#d6ad61; font-weight:400; }
 .hero > p:not(:first-child) { color:#bdc8bf; font-family:Georgia,"Times New Roman",serif; font-size:20px; }
 .hero small { display:block; margin-top:32px; color:#87998b; font-size:9px; font-weight:700; letter-spacing:.13em; text-transform:uppercase; }
@@ -11,7 +11,7 @@
 .sections section { padding:0 0 76px; margin:0 0 76px; border-bottom:1px solid rgba(24,48,39,.2); scroll-margin-top:120px; }
 .sections section:last-child { margin-bottom:0; border-bottom:0; }
 .sections section > p:first-child { color:#a64e37; font-size:9px; font-weight:700; letter-spacing:.16em; }
-.sections h2 { margin:16px 0 28px; color:#183027; font-family:Georgia,"Times New Roman",serif; font-size:clamp(36px,4.2vw,60px); font-weight:400; letter-spacing:-.04em; line-height:1.05; text-wrap:balance; overflow-wrap:break-word; }
+.sections h2 { margin:16px 0 28px; color:#183027; font-family:Georgia,"Times New Roman",serif; font-size:clamp(36px,4.2vw,60px); font-weight:400; letter-spacing:-.04em; line-height:1.05; text-wrap:balance; overflow-wrap:normal; word-break:normal; hyphens:none; }
 .sections p { color:#53645a; font-size:15px; line-height:1.85; }
 .close { padding:72px 24px; color:#f3eee4; background:#a64e37; text-align:center; }
 .close p { margin:0 0 16px; font-family:Georgia,"Times New Roman",serif; font-size:28px; }

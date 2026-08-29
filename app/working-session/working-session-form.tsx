@@ -23,7 +23,7 @@ export function WorkingSessionForm() {
     return <div className="intake-success" role="status">
       <span>REQUEST RECEIVED</span>
       <h2>Thanks. Chris will read this himself.</h2>
-      <p>If a working session is the right next step, you will receive a personal reply with the scope, fee, and a booking option. If a free resource or course fits better, Chris will point you there instead.</p>
+      <p>If an Application Session is the right next step, you will receive a personal reply with the scope, fee, and a booking option. If a free resource or course fits better, Chris will point you there instead.</p>
       <button type="button" onClick={() => setState("idle")}>Send another message</button>
     </div>;
   }
@@ -41,7 +41,7 @@ export function WorkingSessionForm() {
         <option>I have a question about Iron Compass</option>
         <option>I need help with a purchase, access, or refund</option>
         <option>I want help applying one of the practices</option>
-        <option>I am interested in a Personal Leadership Working Session</option>
+        <option>I am interested in an Application Session</option>
         <option>I am interested in a workshop or partnership</option>
       </select></label>
 

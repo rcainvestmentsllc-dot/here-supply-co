@@ -2,6 +2,7 @@ import { PlainLink as Link } from "./plain-link";
 import type { Metadata } from "next";
 import { CONTACT_FORM } from "./data";
 import { CompassMark, WeeklyGuidePreview } from "./components";
+import { CORE_LESSONS } from "./course-content";
 import styles from "./home.module.css";
 
 export const metadata: Metadata = {
@@ -14,33 +15,21 @@ const movements = [
     title: "Return",
     line: "Bring your attention back before you try to fix anything else.",
     detail: "Make space to think clearly, finish the work in front of you, and come through the door without asking your family to carry the whole day with you.",
-    image: "/assets/course/preview-return.png",
-    alt: "The Sanctuary lesson cover inside the Return module",
-    imageWidth: 1400,
-    imageHeight: 900,
-    imageLabel: "REAL COURSE PREVIEW",
+    lessons: CORE_LESSONS.filter((lesson) => lesson.movement === "RETURN"),
   },
   {
     number: "02",
     title: "Lead",
     line: "Bring a steadier self into a hard moment.",
     detail: "Pressure is real. The work is learning to pause, respond without making the moment worse, and repair it when you miss.",
-    image: "/assets/course/preview-lead.png",
-    alt: "The Emotional Thermostat lesson cover inside the Lead module",
-    imageWidth: 1400,
-    imageHeight: 900,
-    imageLabel: "REAL COURSE PREVIEW",
+    lessons: CORE_LESSONS.filter((lesson) => lesson.movement === "LEAD"),
   },
   {
     number: "03",
     title: "Keep",
     line: "Keep the parts of life work cannot replace.",
     detail: "Protect time, friendship, marriage, family rhythms, and the ordinary parts of life that keep a good man from slowly disappearing into work.",
-    image: "/assets/course/preview-keep.png",
-    alt: "The Third Place lesson cover inside the Keep module",
-    imageWidth: 1400,
-    imageHeight: 900,
-    imageLabel: "REAL COURSE PREVIEW",
+    lessons: CORE_LESSONS.filter((lesson) => lesson.movement === "KEEP"),
   },
 ];
 
@@ -86,7 +75,7 @@ export default function Home() {
                 <span>INSIDE IRON COMPASS CORE</span>
                 <b>01 · RETURN</b>
               </div>
-              <img className={styles.heroProductImage} src="/assets/course/preview-return.png" alt="The Sanctuary lesson cover inside Iron Compass Core" width="1400" height="900" fetchPriority="high" decoding="async" />
+              <div className={styles.heroArtMosaic} aria-label="Artwork from all nine Iron Compass Core lessons">{CORE_LESSONS.map((lesson) => <img key={lesson.slug} src={lesson.artImage} alt="" width="1672" height="942" fetchPriority={lesson.number === "1.1" ? "high" : undefined} decoding="async" />)}</div>
               <div className={styles.heroProductCopy}>
                 <strong>Start with Return.</strong>
                 <span>Bring your attention back before you try to fix anything else.</span>
@@ -97,7 +86,7 @@ export default function Home() {
                 <span><b>$99</b> Iron Compass Core</span>
               </div>
             </div>
-            <figcaption><strong>THE ACTUAL COURSE</strong><Link href="/library#curriculum">See all three lesson previews <span>→</span></Link></figcaption>
+            <figcaption><strong>THE ACTUAL COURSE</strong><Link href="/library#curriculum">Preview all nine lessons <span>→</span></Link></figcaption>
           </figure>
         </div>
         <div className={styles.heroFooter} aria-label="What Iron Compass includes">
@@ -151,8 +140,8 @@ export default function Home() {
           {movements.map((movement) => (
             <article key={movement.title} className={styles.movementCard}>
               <div className={styles.movementPreview}>
-                <img src={movement.image} alt={movement.alt} width={movement.imageWidth} height={movement.imageHeight} loading="lazy" decoding="async" />
-                <span>{movement.imageLabel}</span>
+                <div className={styles.movementArtGrid}>{movement.lessons.map((lesson) => <figure key={lesson.slug}><img src={lesson.artImage} alt={lesson.artAlt} width="1672" height="942" loading="lazy" decoding="async" /><figcaption>{lesson.number} · {lesson.title}</figcaption></figure>)}</div>
+                <span>THREE REAL LESSONS</span>
               </div>
               <div className={styles.movementBody}>
                 <span>{movement.number}</span>
@@ -216,8 +205,8 @@ export default function Home() {
             <p>Core brings the full work together: attention, pressure, home, marriage, family connection, friendship, and the practices that keep a good life from slipping away.</p>
             <div className={styles.deliveryNote}><span>DELIVERED INSIDE</span><p>Nine visual lessons, specific practices, and the Core Workbook as a companion resource.</p></div>
             <div className={styles.offerStill}>
-              <img src="/assets/course/preview-lead.png" alt="The Emotional Thermostat lesson cover inside Iron Compass Core" width="1400" height="900" loading="lazy" decoding="async" />
-              <span>REAL LEAD LESSON PREVIEW</span>
+              <div className={styles.offerArtGrid}>{CORE_LESSONS.map((lesson) => <img key={lesson.slug} src={lesson.artImage} alt="" width="1672" height="942" loading="lazy" decoding="async" />)}</div>
+              <span>NINE VISUAL LESSONS</span>
             </div>
             <p className={styles.offerAssurance}>$99 one time · Founding-edition price · 14-day refund window</p>
             <Link href="/library#curriculum">See inside Iron Compass Core <b>→</b></Link>

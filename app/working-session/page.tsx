@@ -4,12 +4,12 @@ import { JsonLd } from "../structured-data";
 import { WorkingSessionForm } from "./working-session-form";
 
 export const metadata: Metadata = {
-  title: "Work With Chris | Personal Leadership Working Session",
+  title: "Work With Chris | Application Session",
   description: "Request help applying an Iron Compass practice to one real problem, or contact Chris about a purchase, workshop, or partnership.",
   alternates: { canonical: "/working-session" },
   openGraph: {
     title: "Work With Chris | Iron Compass",
-    description: "One problem, one working session, and one practical written plan.",
+    description: "One real problem, one focused application session, and one practical written plan.",
     url: "/working-session",
   },
 };
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const serviceData = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Personal Leadership Working Session",
+  name: "Iron Compass Application Session",
   description: "A private educational implementation session for applying Iron Compass practices to one current problem.",
   provider: { "@type": "Person", name: "Chris Avera", url: "https://ironcompassinstitute.com/about" },
   areaServed: "United States",
@@ -29,8 +29,8 @@ export default function WorkingSessionPage() {
     <JsonLd data={serviceData} />
     <Header />
     <section className="working-hero">
-      <div><p className="section-label">WORK WITH CHRIS</p><h1>One real problem.<br /><em>One working session.</em></h1></div>
-      <div><p>Sometimes a tool is enough. Sometimes the hard part is seeing how it fits your actual work, home, marriage, or week.</p><p>A Personal Leadership Working Session is a focused conversation for applying the Iron Compass practices to one current situation. It is not a promise to fix your life and it is not therapy dressed up as coaching.</p></div>
+      <div><p className="section-label">WORK WITH CHRIS</p><h1>Learn it.<br /><em>Then make it real.</em></h1></div>
+      <div><p>Sometimes a tool is enough. Sometimes the hard part is using it when work is loud, the phone is close, or an old pattern takes over.</p><p>An Application Session is a focused conversation for putting one Iron Compass practice to work in one current situation. It is practical accountability, not a promise to fix your life and not therapy dressed up as coaching.</p></div>
     </section>
 
     <section className="working-shape">
@@ -38,13 +38,13 @@ export default function WorkingSessionPage() {
       <ol>
         <li><span>01</span><div><h3>Send the real moment</h3><p>Use the intake below to describe one recent situation, what keeps repeating, and what a useful next step would look like.</p></div></li>
         <li><span>02</span><div><h3>Chris reviews the fit</h3><p>If a free resource or course is the better answer, you will be pointed there. A session is offered only when a focused conversation is likely to help.</p></div></li>
-        <li><span>03</span><div><h3>Work the problem for 60 minutes</h3><p>Name the pattern, choose one or two practices, and make them fit the constraints of your actual life.</p></div></li>
+        <li><span>03</span><div><h3>Apply the work for 60 minutes</h3><p>Name the pattern, choose one or two practices, and make them fit the constraints of your actual life.</p></div></li>
         <li><span>04</span><div><h3>Leave with one written plan</h3><p>You receive a short summary of the decision, practice, and next action. No long package or open-ended dependency.</p></div></li>
       </ol>
     </section>
 
     <section className="working-fit">
-      <article><span>A GOOD FIT</span><h2>Practical implementation.</h2><ul><li>Attention and phone habits</li><li>Work-to-home transition</li><li>Pressure and personal responsibility</li><li>Using the weekly guide, Focus, or Core</li><li>Personal leadership and a specific decision</li></ul></article>
+      <article><span>A GOOD FIT</span><h2>Practical application.</h2><ul><li>Attention and phone habits</li><li>Work-to-home transition</li><li>Pressure and personal responsibility</li><li>Using the weekly guide, Focus, or Core</li><li>Accountability for one specific decision</li></ul></article>
       <article><span>OUTSIDE THE SCOPE</span><h2>Problems that need different help.</h2><ul><li>Crisis or safety concerns</li><li>Diagnosis or mental-health treatment</li><li>Marriage counseling or mediation</li><li>Medical, legal, or financial advice</li><li>A promise of broad personal transformation</li></ul></article>
     </section>
 

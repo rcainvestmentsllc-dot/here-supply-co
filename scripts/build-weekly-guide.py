@@ -88,7 +88,7 @@ def build():
     c.setKeywords("weekly meeting, marriage, family, planning, Iron Compass")
 
     width, height = letter
-    set_fill(c, PAPER)
+    set_fill(c, color("#ffffff"))
     c.rect(0, 0, width, height, stroke=0, fill=1)
 
     # Maker's-mark header.
@@ -119,8 +119,7 @@ def build():
     c.setFont("Avenir", 7.1)
     c.drawString(35, 605, "Start with something good. Make the week visible. Protect one thing together.")
 
-    set_fill(c, SAND)
-    c.rect(435, 605, 143, 91, stroke=0, fill=1)
+    # Small brand accents only. The worksheet stays white to conserve ink.
     set_fill(c, OCEAN)
     c.rect(455, 672, 123, 6, stroke=0, fill=1)
     set_fill(c, OLIVE)
@@ -134,8 +133,9 @@ def build():
     c.drawString(455, 616, "ONE WEEK  /  ONE SHARED PAGE")
 
     # Connection band.
-    set_fill(c, LIGHT)
-    c.rect(34, 464, 544, 116, stroke=0, fill=1)
+    set_stroke(c, RULE)
+    c.setLineWidth(0.7)
+    c.rect(34, 464, 544, 116, stroke=1, fill=0)
     section_heading(c, "01", "Connection", 49, 558)
     prompt(c, "One thing I appreciated about you this week", 49, 535, 243, 1)
     prompt(c, "How are we doing, honestly?", 316, 535, 247, 1)
@@ -149,10 +149,10 @@ def build():
     top_y = 442
     bottom_y = 93
 
-    set_fill(c, SAND)
-    c.rect(left_x, bottom_y, left_w, top_y - bottom_y, stroke=0, fill=1)
-    set_fill(c, LIGHT)
-    c.rect(right_x, bottom_y, right_w, top_y - bottom_y, stroke=0, fill=1)
+    set_stroke(c, RULE)
+    c.setLineWidth(0.7)
+    c.rect(left_x, bottom_y, left_w, top_y - bottom_y, stroke=1, fill=0)
+    c.rect(right_x, bottom_y, right_w, top_y - bottom_y, stroke=1, fill=0)
 
     section_heading(c, "02", "The Week Ahead", 49, 420)
     set_fill(c, MUTED)
@@ -200,14 +200,15 @@ def build():
     prompt(c, "Our shared win for the week", 394, 118, 169, 1)
 
     # Footer.
-    set_fill(c, OCEAN)
-    c.rect(0, 0, width, 68, stroke=0, fill=1)
-    set_fill(c, PAPER)
+    set_stroke(c, OCEAN)
+    c.setLineWidth(2)
+    c.line(34, 68, 578, 68)
+    set_fill(c, INK)
     c.setFont("CharterBold", 10.5)
     c.drawString(34, 40, "Nothing has to be solved all at once.")
     c.setFont("Avenir", 6.8)
     c.drawString(34, 25, "The point is to see the same week and choose what deserves your attention together.")
-    set_fill(c, OCHRE)
+    set_fill(c, TOBACCO)
     c.setFont("FuturaBold", 6.5)
     c.drawRightString(578, 39, "IRONCOMPASSINSTITUTE.COM")
     c.setFont("AvenirDemi", 6.2)

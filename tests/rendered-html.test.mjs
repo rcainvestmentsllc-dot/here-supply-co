@@ -45,10 +45,10 @@ test("server-renders the finished Iron Compass homepage", async () => {
   assert.match(html, /Phones, feeds, AI tools, and work/);
   assert.match(html, /Start with the problem.*you can.*name/s);
   assert.match(html, /iron-compass-wave-mark-transparent\.png/i);
-  assert.match(html, /course\/preview-return\.png/i);
-  assert.match(html, /course\/preview-lead\.png/i);
-  assert.match(html, /course\/preview-keep\.png/i);
-  assert.match(html, /REAL COURSE PREVIEW/i);
+  assert.match(html, /course\/art\/lesson-1-1-sanctuary\.jpg/i);
+  assert.match(html, /course\/art\/lesson-2-2-date-night\.jpg/i);
+  assert.match(html, /course\/art\/lesson-3-3-mission-debrief\.jpg/i);
+  assert.match(html, /Preview all nine lessons/i);
   assert.match(html, /Skip to main content/);
   assert.doesNotMatch(html, /_next\/static\/chunks\/link-/i);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
@@ -117,7 +117,7 @@ test("shows the public Focus overview and keeps the Core bridge private", async 
   assert.match(html, /focus-protocol-sales\.mp4/i);
   assert.doesNotMatch(html, /core-bridge-sales\.mp4/i);
   assert.match(html, /FOCUS OVERVIEW/i);
-  assert.match(html, /INSIDE THE LEAD MODULE/i);
+  assert.match(html, /NINE VISUAL LESSONS/i);
 });
 
 test("keeps paid access pages private and puts the Core bridge after Focus", async () => {

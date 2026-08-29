@@ -12,7 +12,7 @@
 }
 .home *, .home *::before, .home *::after { box-sizing: border-box; }
 .home h1, .home h2, .home h3, .home p { margin-top: 0; }
-.home h1, .home h2, .home h3 { font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif; font-weight:400; letter-spacing:-.055em; line-height:1; text-wrap:balance; overflow-wrap:break-word; }
+.home h1, .home h2, .home h3 { font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif; font-weight:400; letter-spacing:-.055em; line-height:1; text-wrap:balance; overflow-wrap:normal; word-break:normal; hyphens:none; }
 .home a { color: inherit; }
 .home img { max-width: 100%; }
 
@@ -336,6 +336,8 @@
 .heroProductTopline { color:#8d4a31; border-color:rgba(24,35,31,.2); }
 .heroProductTopline b { color:#214f50; }
 .heroProductImage { min-height:0; object-fit:contain; object-position:center; filter:none; background:#f0e6d2; }
+.heroArtMosaic { min-height:300px; display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:repeat(3,1fr); gap:3px; background:#18231f; }
+.heroArtMosaic img { width:100%; height:100%; min-height:0; display:block; object-fit:cover; }
 .heroProductCopy { color:#f5eddd; background:#214f50; }
 .heroProductCopy strong { font-family:var(--display); font-weight:700; letter-spacing:-.035em; }
 .heroProductCopy span { color:#dce2d6; }
@@ -368,13 +370,18 @@
 .movementCard { min-height:0; grid-template-columns:minmax(390px,.9fr) minmax(0,1.1fr); }
 .movementPreview { min-height:0; aspect-ratio:14 / 9; background:#f0e6d2; }
 .movementPreview img { object-fit:contain; filter:none; }
+.movementArtGrid { width:100%; height:100%; padding:12px; display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+.movementArtGrid figure { min-width:0; margin:0; position:relative; overflow:hidden; border:1px solid rgba(24,35,31,.22); background:#18231f; }
+.movementArtGrid img { width:100%; height:100%; min-height:250px; object-fit:cover; }
+.movementArtGrid figcaption { position:absolute; inset:auto 0 0; padding:11px 10px; color:#f5eddd; background:linear-gradient(transparent,rgba(24,35,31,.94)); font-size:8px; font-weight:700; line-height:1.3; letter-spacing:.07em; }
 .movementCard:hover .movementPreview img { transform:none; }
 .movementPreview span { color:#f5eddd; background:rgba(24,35,31,.9); }
 .movementBody > span { color:#8d4a31; font-family:var(--display); font-weight:700; opacity:1; }
 
 .startSection { background:#d8c49f; }
-.startArtwork { background:#f5eddd; box-shadow:18px 20px 0 rgba(33,79,80,.24); }
-.startArtwork :global(.weekly-guide-preview) { width:100%; min-height:500px; box-shadow:none; }
+.startArtwork { min-height:0; padding:0; background:#fff; box-shadow:18px 20px 0 rgba(33,79,80,.24); }
+.startArtwork :global(.weekly-guide-preview) { width:100%; min-height:0; box-shadow:none; }
+.startArtwork :global(.weekly-guide-preview img) { width:100%; max-height:none; }
 .workSection { background:linear-gradient(180deg,#f0e6d2 0 58%,#d8c49f 58% 100%); }
 .workSection::before { width:12px; height:210px; right:0; top:80px; border:0; border-radius:0; background:#8d4a31; box-shadow:none; }
 .offerGrid { background:rgba(24,35,31,.34); border-color:rgba(24,35,31,.34); box-shadow:16px 18px 0 rgba(141,74,49,.22); }
@@ -386,6 +393,8 @@
 .coreOffer .offerAssurance { color:#c6d0c6 !important; }
 .offerStill { background:#f0e6d2; }
 .offerStill img { aspect-ratio:14 / 9; object-fit:contain; filter:none; }
+.offerArtGrid { aspect-ratio:16 / 9; display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:repeat(3,1fr); gap:2px; background:#18231f; }
+.offerArtGrid img { width:100%; height:100%; display:block; object-fit:cover; }
 .videoReveal summary img { aspect-ratio:16 / 9; object-fit:cover; object-position:center 40%; filter:none; }
 .methodSection { color:#f5eddd; background:#222b27; }
 .methodSection::after { width:36vw; height:12px; left:-3vw; bottom:55px; border:0; border-radius:0; background:#c28b2c; box-shadow:0 28px 0 #8d4a31; transform:none; }
@@ -408,4 +417,7 @@
   .heroMaterialsFrame { inset:0 0 72px; }
   .movementCard { grid-template-columns:1fr; }
   .movementPreview { aspect-ratio:14 / 9; }
+  .movementArtGrid { padding:7px; gap:6px; }
+  .movementArtGrid img { min-height:145px; }
+  .movementArtGrid figcaption { padding:8px 7px; font-size:7px; }
 }

@@ -1,7 +1,7 @@
 .page { --ink:#10261c; --forest:#0d2118; --paper:#f7f2e8; --gold:#caa45d; --rust:#a6533b; --muted:#5f6d64; min-height:100svh; overflow:clip; color:var(--ink); background:var(--paper); font-family:Arial,Helvetica,sans-serif; }
 .page *, .page *::before, .page *::after { box-sizing:border-box; }
 .page h1, .page h2, .page p { margin-top:0; }
-.page h1, .page h2 { font-family:Georgia,"Times New Roman",serif; font-weight:400; letter-spacing:-.058em; text-wrap:balance; overflow-wrap:break-word; }
+.page h1, .page h2 { font-family:Georgia,"Times New Roman",serif; font-weight:400; letter-spacing:-.058em; text-wrap:balance; overflow-wrap:normal; word-break:normal; hyphens:none; }
 .page a { color:inherit; }
 .header { min-height:86px; padding:0 clamp(24px,5.5vw,86px); display:flex; align-items:center; justify-content:space-between; gap:30px; color:var(--ink); background:rgba(250,247,239,.98); border-bottom:1px solid rgba(20,41,32,.1); }
 .brand { min-width:0; display:flex; align-items:center; gap:10px; text-decoration:none; }

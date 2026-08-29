@@ -42,7 +42,11 @@ export default function CoreAccess() {
               {/* eslint-disable-next-line jsx-a11y/media-has-caption -- Captions will be added after an exact transcript is verified against Chris's original recording. */}
               <video controls playsInline preload="metadata" poster={movement.image} aria-label={`${movement.name} module introduction by Chris Avera`}><source src={movement.video} type="video/mp4" />Your browser does not support this video.</video>
             </div>
-            <ol>{CORE_LESSONS.filter((item) => item.movement === movement.key).map((item) => <li key={item.slug}><span>{item.number}</span><Link href={`/access/core-4m8r2p/lesson/${item.slug}`}><span><b>{item.title}</b><small>{item.subtitle}</small></span><strong>→</strong></Link></li>)}</ol>
+            <figure className="access-module-still">
+              <img src={movement.stillImage} alt={movement.stillAlt} width="1672" height="942" loading="lazy" decoding="async" />
+              <figcaption><span>{movement.number} · {movement.name.toUpperCase()}</span><p>{movement.line}</p></figcaption>
+            </figure>
+            <ol className="access-lesson-grid">{CORE_LESSONS.filter((item) => item.movement === movement.key).map((item) => <li key={item.slug}><Link href={`/access/core-4m8r2p/lesson/${item.slug}`}><img src={item.artImage} alt={item.artAlt} width="1672" height="942" loading="lazy" decoding="async" /><span><small>{item.number}</small><b>{item.title}</b><em>{item.subtitle}</em></span><strong>→</strong></Link></li>)}</ol>
           </div>
         </section>
       ))}
