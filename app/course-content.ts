@@ -210,7 +210,7 @@ export const CORE_LESSONS: CoreLesson[] = [
     title: "The Emotional Thermostat",
     subtitle: "Pause before pressure chooses your response.",
     summary: "A three-part practice for pausing, returning when promised, and repairing when you miss.",
-    artImage: "/assets/course/art/lesson-2-1-thermostat.jpg",
+    artImage: "/assets/course/art/lesson-2-1-thermostat-modern.jpg",
     previewPosition: "32% center",
     artAlt: "A father pausing in a warm family kitchen before responding",
     artCaption: "Steadiness is not pretending to be calm. It is making room for a better next response.",

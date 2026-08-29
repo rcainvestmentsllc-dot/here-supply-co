@@ -56,7 +56,29 @@ One current problem, one 60-minute conversation, and one written implementation 
 
 Success measure: whether the agreed action happened within seven days and whether the client can describe the difference.
 
-### 6. Application Group, only after individual proof
+### 6. Weekly Application Support, $99 per month beta
+
+Recurring revenue should come from recurring human value, not from putting old lessons behind a monthly paywall. The lean first version is a tightly bounded email-accountability subscription for men who have bought Core or completed an Application Session.
+
+Working delivery:
+
+1. The member sends one structured weekly check-in: what he meant to practice, what happened, where he got stuck, and what he will do next.
+2. Chris sends one personal written reply or short voice note within two business days. The reply helps the member make the practice smaller, clearer, or more realistic. It does not provide therapy, crisis care, marriage counseling, or unlimited access.
+3. The member may send one brief clarification. A new issue waits for the next weekly check-in.
+4. Members receive one optional monthly group application call only after the one-to-one rhythm is working reliably.
+
+Pilot rules:
+
+- Start with no more than twelve founding members for eight weeks.
+- Charge $99 per month, cancel anytime. Do not promise daily access.
+- Budget fifteen minutes per member each week, plus one hour for administration and the optional group call. Twelve members should require roughly four to five hours per week and produce $1,188 in monthly recurring revenue before fees and taxes.
+- Track response time, Chris's actual minutes per member, check-in consistency, cancellations, and whether the member reports using a practice in real life.
+- If average support rises above twenty minutes per member per week, either raise the price, narrow the promise, or move repeat needs into a small group. Do not quietly absorb an unlimited coaching workload.
+- At twenty members, pause enrollment and review capacity before adding anyone else. Twenty members at $99 would be $1,980 in monthly recurring revenue, but only if the service remains bounded and genuinely useful.
+
+This is a working offer description, not the final product name. Do not call it a membership community unless members are actually building relationships with one another. The honest first promise is personal follow-through.
+
+### 7. Application Group, only after individual proof
 
 Do not launch this immediately. First complete at least ten Application Sessions and identify the two or three situations that repeat. Then test a four-week group with six to eight men.
 
@@ -181,6 +203,7 @@ Do not buy broad ads until one landing page, one offer, and one audience convert
 - Collect three to five permissioned testimonials with context.
 - Test one live 60-minute workshop built around a single practice.
 - Decide whether the Application Session is useful enough to keep at $150.
+- If the first sessions reveal a recurring follow-through need, invite no more than twelve Core users into the eight-week Weekly Application Support beta at $99 per month.
 
 ### Days 61–90: prove a repeatable offer
 
@@ -200,6 +223,7 @@ Do not buy broad ads until one landing page, one offer, and one audience convert
 - percentage of buyers who try at least one practice within seven days
 - refund rate and reason
 - Application Session request, fit, booking, and seven-day follow-through
+- recurring-support enrollment, weekly check-in rate, minutes of support per member, retention, and cancellation reason
 - honest testimonial permission rate
 - referral rate
 
