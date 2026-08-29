@@ -125,6 +125,30 @@ Suggested structure:
 
 The working price range for a paid beta is $300 to $500. The price should be chosen only after the one-to-one beta shows how much support is actually required.
 
+### 8. Group distribution path
+
+The softer, more human Life at Hand identity allows the same practical material to travel into different kinds of groups without becoming a genderless self-help product. Keep the teaching and practice consistent, then adapt the examples, discussion prompts, and facilitator to the people in the room.
+
+Potential group doors:
+
+- **Women's Focus group:** Focus Protocol used around divided attention, work, relationships, caregiving, friendship, and personal follow-through. A woman should review or facilitate the discussion rather than asking Chris to speak for women's experience.
+- **Men's application group:** attention, pressure, friendship, fatherhood where relevant, responsibility, and the habit of carrying things alone.
+- **Couples group:** See the Same Week plus selected attention, repair, and shared-rhythm practices. Both partners participate; one partner is not treated as the problem to be fixed.
+- **Mixed adult group:** attention, screens, friendship, community, work-to-life transitions, and showing up for the people already present.
+
+Focus Protocol is the best first group pilot because the attention problem crosses gender and relationship status, the time commitment is small, and the practice can be tried quickly. Do not rebuild four different courses. Build one sound core and four light discussion wrappers.
+
+A founding group kit should contain:
+
+1. A short facilitator page with scope, timing, and discussion agreements.
+2. The existing Focus overview video.
+3. One physically clear, low-ink practice sheet.
+4. Four discussion prompts that lead to an action rather than disclosure for its own sake.
+5. A seven-day follow-up email asking what was actually used.
+6. A private feedback form for usefulness, fit, safety, and what felt missing.
+
+Run one men's group and one women's group with six to eight people each before setting a permanent group price or licensing model. Rhea could review or co-host the women's or couples pilot if she wants that role. Another trusted female facilitator is a valid option if she does not. Group licensing, host subscriptions, or facilitator training should come only after the format works without Chris personally rescuing every session.
+
 ## Why the course can beat a chatbot
 
 The course should never try to win by having more answers. It wins through five things a generic answer does not provide by itself:
