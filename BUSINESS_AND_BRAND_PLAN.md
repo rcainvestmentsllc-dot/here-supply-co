@@ -1,4 +1,6 @@
-# Iron Compass: business, brand, and growth plan
+# Life at Hand: business, brand, and growth exploration
+
+> **Status note, September 7, 2026:** This document preserves the broader research and ideas that led to the current direction. It is not the launch plan. The authoritative launch decision is [ONE_OFFER_GO_TO_MARKET.md](./ONE_OFFER_GO_TO_MARKET.md): Here Supply Co. is the parent brand, All the Way Here is the one paid course, and The Sunday Board Meeting is the free practice. Where this exploration conflicts with that plan, ignore the older idea. Do not rebuild or market the older ladders, family-screen offer, group edition, or subscription at launch.
 
 ## The honest recommendation
 
@@ -386,7 +388,7 @@ That changes the recommendation. Keep the current name only as a temporary opera
 
 **Life at Hand** is the strongest creative direction from this round because it is human, present, tactile, and broad enough for courses, stories, workshops, and accountability. It fits the mid-century craft language and the central idea that a good life is not elsewhere. It is the life close enough to touch.
 
-Use **Life at Hand** as the brand, not “The Life at Hand.” The practical domain can still be `thelifeathand.com`. A live `.com` registry check on August 29, 2026 returned no registration record for `thelifeathand.com`, while `lifeathand.com` was registered. Domain status can change at any time, so recheck it immediately before purchase.
+Use **Life at Hand** as the brand, not “The Life at Hand.” The practical domain can still be `thelifeathand.com`. A fresh RDAP check on August 30, 2026 returned no registration record for `thelifeathand.com`, while `lifeathand.com` was registered on September 5, 2025. That makes `thelifeathand.com` the clearest current purchase candidate, but a missing RDAP record is not a purchase guarantee. Recheck it at the registrar immediately before purchase.
 
 The preliminary exact-phrase market search did not surface a current men's education or coaching brand using this name. Two old U.S. registrations for LIFE AT HAND covered personal-organizer software and printed organizer kits, and both show as cancelled in 2017. That is useful context, not legal clearance. Because printed education and software are part of this business, have a trademark attorney review the exact name and similar marks before a public rebrand.
 

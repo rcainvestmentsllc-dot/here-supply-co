@@ -1,18 +1,10 @@
-import { PlainLink as Link } from "../plain-link";
-import { CompassMark, Footer } from "../components";
+import { Footer, Header } from "../components";
 import styles from "./about.module.css";
 
 export default function AboutChris() {
   return (
     <main id="main-content" className={styles.page}>
-      <header className={styles.header}>
-        <Link className={styles.brand} href="/" aria-label="Iron Compass home">
-          <CompassMark />
-          <span><strong>IRON COMPASS</strong><small>Practical work for real life</small></span>
-        </Link>
-        <nav><Link href="/field-guide">Compass Check</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link><Link href="/resources">Resources</Link></nav>
-        <Link className={styles.headerAction} href="/sunday-board#get-board">Start free <span>→</span></Link>
-      </header>
+      <Header />
 
       <section className={styles.hero}>
         <img src="/assets/chris-founder.jpg" alt="Chris Avera outdoors" width="600" height="800" fetchPriority="high" />
@@ -26,11 +18,24 @@ export default function AboutChris() {
       <section className={styles.story}>
         <p className={styles.eyebrow}>THE SHORT VERSION</p>
         <div>
-          <p className={styles.lead}>I’m Chris. Husband to Rhea. Father to Isabella, Austin, and Zoe. I run small businesses from a mountain town in North Carolina.</p>
-          <p>For about twelve years, I drifted. I was in the house but not really there, always half a thought somewhere else, usually behind a screen. I found my way back to my family and back to my faith, and this is the work I am sharing: coming back, staying present, and being the man my people can count on.</p>
-          <p>I have been interested in leadership for a long time, partly because I grew up watching my dad coach business owners and leaders. Iron Compass starts with a simple idea: leadership is not only what happens at work. It is also what you do with your attention, pressure, and presence at home.</p>
+          <p className={styles.lead}>I’m Chris. Husband to Rhea, father of three, and a small-business owner in Brevard, North Carolina.</p>
+          <p>Rhea and I built a life together in Charleston, then moved our family to the mountains of Western North Carolina. We are raising three kids in Brevard now, trying to make a good home while work, phones, schedules, faith, and the normal pressure of family life keep changing around us.</p>
+          <p>For about twelve years, I drifted. I was in the house but not really there, always half a thought somewhere else, usually behind a screen. I found my way back to my family and back to my faith, and this is the work I am sharing: coming back, staying present, and becoming someone the people around me can count on.</p>
+          <p>I have been interested in leadership for a long time, partly because I grew up watching my dad coach business owners and leaders. Here Supply Co. starts with a simple idea: leadership is not only what happens at work. It is also what you do with your attention, pressure, and presence in the rest of your life.</p>
           <p>I do not have a clinical title to lend this work, and I am not going to invent one. My responsibility is to show you what is inside, be honest about its limits, and make every practice useful in an ordinary week.</p>
           <p className={styles.personalNote}>When I am not working, I am usually lifting kettlebells, riding a mountain-bike trail, fishing, or taking my Trail 125 somewhere the road gets smaller.</p>
+        </div>
+      </section>
+
+      <section className={styles.sharedStory} aria-labelledby="shared-story-title">
+        <figure>
+          <img src="/assets/video/sunday-board-meeting-poster.jpg" alt="Chris and Rhea sitting together at home" width="960" height="540" loading="lazy" decoding="async" />
+          <figcaption>CHRIS + RHEA · AT HOME</figcaption>
+        </figure>
+        <div>
+          <p className={styles.eyebrow}>A PRACTICE BUILT INSIDE A REAL MARRIAGE</p>
+          <h2 id="shared-story-title">We did not need a perfect system.<br />We needed to <em>sit down together.</em></h2>
+          <p>Rhea has her own side of this story. She helped me see what divided attention feels like from the other side and what actually makes a shared week easier. The Sunday Board Meeting is one small practice that grew from that real work between us.</p>
         </div>
       </section>
 
@@ -54,7 +59,7 @@ export default function AboutChris() {
           <div className={styles.letter}>
           <h2>I made this for the part of life you cannot get <em>back.</em></h2>
             <div className={styles.letterBody}>
-              <p>I am not standing outside of this work. I am a husband and father who knows what it is like to be physically present while my attention is somewhere else. Iron Compass came out of my own effort to come back, stay present, and take better care of the people I love.</p>
+              <p>I am not standing outside of this work. I am a husband and father who knows what it is like to be physically present while my attention is somewhere else. Rhea has lived the other side of that story, and her perspective matters here. Here Supply Co. grew from our real effort to come back to each other, stay present, and take better care of the life we are building.</p>
               <p>Some of it began as writing about faith, family, and the quiet work of returning. The useful parts became named practices you can actually try. Nothing here asks you to become a project. It asks you to notice what matters and show up for it.</p>
               <p>This is practical educational work, not therapy, medical care, or a claim that I have life solved. If the work cannot be explained plainly or used honestly, it does not belong here.</p>
               <span className={styles.signature}>Chris</span>

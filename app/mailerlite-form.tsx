@@ -10,7 +10,7 @@ export function SundayBoardSignupForm() {
         <p>No account, inbox hunt, or new system to manage. Open the PDF, print one copy, and put it between you this Sunday.</p>
       </div>
 
-      <a className="signup-download" href={GUIDE_URL} download="see-the-same-week.pdf">
+      <a className="signup-download" href={GUIDE_URL} download="sunday-board-meeting.pdf">
         Download the meeting guide <span aria-hidden="true">↓</span>
       </a>
       <p className="signup-download-note">Free PDF · Opens immediately</p>

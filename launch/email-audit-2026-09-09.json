@@ -1,0 +1,213 @@
+[
+  {
+    "endpoint": "automations/196874862017382060",
+    "data": {
+      "id": "196874862017382060",
+      "name": "Iron Compass | Sunday Board Signup Workflow",
+      "enabled": false,
+      "triggers": [
+        {
+          "id": "196874862055130800",
+          "type": "form_completed",
+          "form_id": "196874718498785144",
+          "form_type": "embedded",
+          "form": {
+            "id": "196874718498785144",
+            "name": "Iron Compass | Sunday Board Signup",
+            "type": "embedded"
+          },
+          "broken": false,
+          "complete": true
+        }
+      ],
+      "steps": [
+        {
+          "id": "196875277044811674",
+          "parent_id": "196875183482472009",
+          "type": "delay",
+          "name": null,
+          "subject": null,
+          "from": null,
+          "from_name": null,
+          "unit": "days",
+          "value": "2",
+          "description": "Wait for 2 days",
+          "complete": true
+        },
+        {
+          "id": "196875129458788241",
+          "parent_id": "196874877575103728",
+          "type": "delay",
+          "name": null,
+          "subject": null,
+          "from": null,
+          "from_name": null,
+          "unit": "days",
+          "value": "1",
+          "description": "Wait for 1 day",
+          "complete": true
+        },
+        {
+          "id": "196874877575103728",
+          "parent_id": null,
+          "type": "email",
+          "name": "01 | Your Sunday Board",
+          "subject": "Your Sunday Board",
+          "from": "info@listingsinmotion.com",
+          "from_name": "Chris at Iron Compass",
+          "unit": null,
+          "value": null,
+          "description": "Send \"Your Sunday Board\" email",
+          "complete": true
+        },
+        {
+          "id": "196875183482472009",
+          "parent_id": "196875129458788241",
+          "type": "email",
+          "name": "02 | The first question",
+          "subject": "Start with this question",
+          "from": "info@listingsinmotion.com",
+          "from_name": "Chris at Iron Compass",
+          "unit": null,
+          "value": null,
+          "description": "Send \"Start with this question\" email",
+          "complete": true
+        },
+        {
+          "id": "196876317642196365",
+          "parent_id": "196876180453852905",
+          "type": "delay",
+          "name": null,
+          "subject": null,
+          "from": null,
+          "from_name": null,
+          "unit": "days",
+          "value": "2",
+          "description": "Wait for 2 days",
+          "complete": true
+        },
+        {
+          "id": "196876631588996996",
+          "parent_id": "196876567018734780",
+          "type": "email",
+          "name": "05 | A way back",
+          "subject": "A way to come back",
+          "from": "info@listingsinmotion.com",
+          "from_name": "Chris at Iron Compass",
+          "unit": null,
+          "value": null,
+          "description": "Send \"A way to come back\" email",
+          "complete": true
+        },
+        {
+          "id": "196876180453852905",
+          "parent_id": "196875277044811674",
+          "type": "email",
+          "name": "03 | The shared week",
+          "subject": "The week is not the problem",
+          "from": "info@listingsinmotion.com",
+          "from_name": "Chris at Iron Compass",
+          "unit": null,
+          "value": null,
+          "description": "Send \"The week is not the problem\" email",
+          "complete": true
+        },
+        {
+          "id": "196876368741402316",
+          "parent_id": "196876317642196365",
+          "type": "email",
+          "name": "04 | When attention leaves",
+          "subject": "When attention leaves the room",
+          "from": "info@listingsinmotion.com",
+          "from_name": "Chris at Iron Compass",
+          "unit": null,
+          "value": null,
+          "description": "Send \"When attention leaves the room\" email",
+          "complete": true
+        },
+        {
+          "id": "196876567018734780",
+          "parent_id": "196876368741402316",
+          "type": "delay",
+          "name": null,
+          "subject": null,
+          "from": null,
+          "from_name": null,
+          "unit": "days",
+          "value": "2",
+          "description": "Wait for 2 days",
+          "complete": true
+        }
+      ],
+      "stats": {
+        "completed_subscribers_count": 0,
+        "subscribers_in_queue_count": 0,
+        "bounce_rate": {
+          "float": 0,
+          "string": "0%"
+        },
+        "click_to_open_rate": {
+          "float": 0,
+          "string": "0%"
+        },
+        "sent": 0,
+        "opens_count": 0,
+        "unique_opens_count": null,
+        "open_rate": {
+          "float": 0,
+          "string": "0%"
+        },
+        "clicks_count": 0,
+        "unique_clicks_count": null,
+        "click_rate": {
+          "float": 0,
+          "string": "0%"
+        },
+        "unsubscribes_count": 0,
+        "unsubscribe_rate": {
+          "float": 0,
+          "string": "0%"
+        },
+        "spam_count": 0,
+        "spam_rate": {
+          "float": 0,
+          "string": "0%"
+        },
+        "hard_bounces_count": 0,
+        "hard_bounce_rate": {
+          "float": 0,
+          "string": "0%"
+        },
+        "soft_bounces_count": 0,
+        "soft_bounce_rate": {
+          "float": 0,
+          "string": "0%"
+        },
+        "forward_rate": {
+          "float": 0,
+          "string": "0%"
+        },
+        "social_interactions_count": null,
+        "social_interaction_rate": {
+          "float": 0,
+          "string": "0%"
+        }
+      }
+    }
+  },
+  {
+    "endpoint": "forms/embedded?limit=100",
+    "data": [
+      {
+        "id": "196874718498785144",
+        "name": "Iron Compass | Sunday Board Signup",
+        "slug": "B8mkye",
+        "active": false,
+        "is_broken": false,
+        "has_content": true,
+        "double_optin": true,
+        "used_in_automations": true
+      }
+    ]
+  }
+]

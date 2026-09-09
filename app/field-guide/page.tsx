@@ -1,78 +1,25 @@
-"use client";
-
 import { PlainLink as Link } from "../plain-link";
-import { useState } from "react";
-import { CompassMark, Footer } from "../components";
-import { MOMENTS, type MomentKey } from "../data";
+import { Footer, Header } from "../components";
 import styles from "./field-guide.module.css";
 
-export default function FieldGuide() {
-  const [selected, setSelected] = useState<MomentKey | null>(null);
-  const practice = selected ? MOMENTS[selected] : null;
-
+export default function FieldGuideBridge() {
   return (
     <main id="main-content" className={styles.page}>
-      <header className={styles.header}>
-        <Link className={styles.brand} href="/" aria-label="Iron Compass home">
-          <CompassMark />
-          <span><strong>IRON COMPASS</strong><small>Practical work for real life</small></span>
-        </Link>
-        <nav><Link href="/field-guide">Compass Check</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link><Link href="/resources">Resources</Link></nav>
-        <Link className={styles.headerAction} href="/sunday-board#get-board">Start free <span>→</span></Link>
-      </header>
-
+      <Header />
       <section className={styles.intro}>
-        <p className={styles.eyebrow}>THE COMPASS CHECK</p>
-        <h1>Name the thing pulling you <em>away.</em></h1>
-        <p>Choose the sentence closest to true. You will leave with one practical move for today and a clear place to go next.</p>
-      </section>
-
-      <section className={styles.check} aria-labelledby="check-heading">
-        <div className={styles.choices}>
-          <div className={styles.choiceHeading}>
-            <span>01</span>
-            <div><p className={styles.eyebrow}>BE HONEST, NOT HARD ON YOURSELF</p><h2 id="check-heading">What needs your attention <em>first?</em></h2></div>
-          </div>
-          <div className={styles.choiceList}>
-            {(Object.keys(MOMENTS) as MomentKey[]).map((key) => {
-              const item = MOMENTS[key];
-              const isSelected = selected === key;
-              return <button className={isSelected ? styles.selected : ""} key={key} type="button" aria-pressed={isSelected} onClick={() => setSelected(key)}>
-                <span>{item.number}</span><strong>{item.title}</strong><small>{item.detail}</small><i aria-hidden="true">→</i>
-              </button>;
-            })}
-          </div>
+        <p className={styles.eyebrow}>A SIMPLER PLACE TO BEGIN</p>
+        <h1>One free practice.<br /><em>One complete course.</em></h1>
+        <p>We retired the extra self-check so you do not have to diagnose yourself or choose among several products. Start with the Sunday Board Meeting, then continue into All the Way Here if the work helps.</p>
+        <div className="hero-buttons">
+          <Link className="button primary" href="/sunday-board#get-board">Get the free guide <span>→</span></Link>
+          <Link className="text-link" href="/library">See the complete course <span>→</span></Link>
         </div>
-
-        <aside className={styles.result} aria-live="polite">
-          {!practice ? <div className={styles.emptyResult}>
-            <span className={styles.resultNumber}>02</span>
-            <p className={styles.eyebrow}>YOUR NEXT MOVE</p>
-            <h2>Start with what is <em>actually true.</em></h2>
-            <p>The next move does not need to fix your whole life. It needs to be small enough to do before this day is over.</p>
-          </div> : <div className={styles.activeResult}>
-            <button className={styles.reset} type="button" onClick={() => setSelected(null)}>Choose another answer <span>×</span></button>
-            <span className={styles.resultNumber}>02</span>
-            <p className={styles.eyebrow}>YOUR NEXT MOVE</p>
-            <h2>{practice.label}</h2>
-            <p className={styles.practiceIntro}>{practice.summary}</p>
-            <div className={styles.action}>
-              <span>{practice.protocol}</span>
-              <ol className={styles.steps}>{practice.steps.map((step) => <li key={step}>{step}</li>)}</ol>
-            </div>
-            <p className={styles.note}>{practice.note}</p>
-            <Link className={styles.nextLink} href={practice.nextHref}>{practice.nextLabel} <b>→</b></Link>
-            <Link className={styles.freeLink} href="/sunday-board">Or get the free weekly guide <span>→</span></Link>
-          </div>}
-        </aside>
       </section>
-
       <section className={styles.close}>
-        <p className={styles.eyebrow}>NO PERFORMANCE REQUIRED</p>
-        <h2>A clearer next step is enough to begin.</h2>
-        <Link href="/sunday-board">Get the free weekly guide <span>→</span></Link>
+        <p className={styles.eyebrow}>LESS FRICTION, MORE USE</p>
+        <h2>You do not need another quiz. You need one small practice you can use this week.</h2>
+        <Link href="/sunday-board">Watch the Sunday Board Meeting <span>→</span></Link>
       </section>
-
       <Footer />
     </main>
   );

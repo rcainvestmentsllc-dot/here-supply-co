@@ -9,7 +9,7 @@ export const CHECKOUT = {
   core: process.env.NEXT_PUBLIC_CORE_CHECKOUT_URL || "https://checkout.mailerlite.com/checkout/34347",
 } as const;
 
-export const CONTACT_FORM = "/working-session#intake";
+export const CONTACT_FORM = "/working-session#contact-chris";
 
 type Moment = {
   number: string;
@@ -37,9 +37,9 @@ export const MOMENTS: Record<MomentKey, Moment> = {
       "Choose one person. Sit at their level, or turn fully toward them.",
       "For fifteen minutes, follow their conversation or play. Do not steer it, check something, or multitask.",
     ],
-    note: "The point is proximity and attention. Focus Protocol is the deeper reset if the reflex keeps winning.",
-    nextLabel: "See Focus Protocol · $29",
-    nextHref: "/focus",
+    note: "The point is proximity and attention. The Attention Reset inside All the Way Here goes deeper if the reflex keeps winning.",
+    nextLabel: "See All the Way Here · $99",
+    nextHref: "/library",
   },
   arrival: {
     number: "02",
@@ -54,7 +54,7 @@ export const MOMENTS: Record<MomentKey, Moment> = {
       "Take three deep breaths, then decide how you want to enter before opening the door.",
     ],
     note: "You do not need to fake a good mood. You do need to stop handing your family the whole weight of the day.",
-    nextLabel: "See how Iron Compass Core works · $99 founding price",
+    nextLabel: "See All the Way Here · $99 founding price",
     nextHref: "/library#core",
   },
   pressure: {
@@ -70,7 +70,7 @@ export const MOMENTS: Record<MomentKey, Moment> = {
       "Return when you said you would, then start with one calm sentence.",
     ],
     note: "A pause is not disappearing if you keep your word and return.",
-    nextLabel: "See how Iron Compass Core works · $99 founding price",
+    nextLabel: "See All the Way Here · $99 founding price",
     nextHref: "/library#core",
   },
   week: {
@@ -102,23 +102,23 @@ export const MOMENTS: Record<MomentKey, Moment> = {
       "Keep going until the list loses its grip. Do not organize it yet.",
     ],
     note: "Use a Sunday night mind sweep when you can. This is a reset, not another system to manage.",
-    nextLabel: "See how Iron Compass Core works · $99 founding price",
+    nextLabel: "See All the Way Here · $99 founding price",
     nextHref: "/library#core",
   },
   distance: {
     number: "06",
     title: "I am carrying too much by myself.",
     detail: "I need a real connection, not another thing to manage.",
-    label: "Invite one man into the week",
+    label: "Invite one person into the week",
     protocol: "THE FRIENDSHIP SCRIPT",
     summary: "Real friendship is shared time, low stakes, and repetition.",
     steps: [
-      "Pick one man you respect.",
-      "Invite him to something shoulder-to-shoulder, with a day and time.",
+      "Pick one person you respect.",
+      "Invite them to something shoulder-to-shoulder, with a day and time.",
       "Keep the invitation light. Repeat it next week if it needs to become a rhythm.",
     ],
     note: "Do not wait until isolation feels like an emergency. Invite first.",
-    nextLabel: "See how Iron Compass Core works · $99 founding price",
+    nextLabel: "See All the Way Here · $99 founding price",
     nextHref: "/library#core",
   },
 };

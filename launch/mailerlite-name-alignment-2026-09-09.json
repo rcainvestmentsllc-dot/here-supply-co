@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-09",
+  "scope": "Names only. No subscriber changes or activation.",
+  "changes": [
+    {
+      "resource": "groups/196877078947169546",
+      "before": "Iron Compass | Core Buyers",
+      "after": "Here Supply Co. | All the Way Here Buyers",
+      "id": "196877078947169546"
+    },
+    {
+      "resource": "groups/196874684387559047",
+      "before": "Iron Compass | Sunday Board",
+      "after": "Here Supply Co. | Sunday Board",
+      "id": "196874684387559047"
+    },
+    {
+      "resource": "forms/196874718498785144",
+      "before": "Iron Compass | Sunday Board Signup",
+      "after": "Here Supply Co. | Sunday Board Signup",
+      "id": "196874718498785144"
+    }
+  ],
+  "independent_readback": "passed",
+  "form_active": false,
+  "automation_enabled": false
+}

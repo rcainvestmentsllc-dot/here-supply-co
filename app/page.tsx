@@ -1,18 +1,35 @@
 import { PlainLink as Link } from "./plain-link";
 import type { Metadata } from "next";
-import { CONTACT_FORM } from "./data";
-import { CompassMark, WeeklyGuidePreview } from "./components";
+import { BrandWordmark, Footer, WeeklyGuidePreview } from "./components";
 import { CORE_LESSONS } from "./course-content";
 import styles from "./home.module.css";
 
 export const metadata: Metadata = {
+  title: "Here Supply Co. | Tools for Showing Up in Real Life",
+  description: "Courses, guides, and field tools for getting your attention back and showing up for the people and life that matter.",
   alternates: { canonical: "/" },
+  openGraph: {
+    title: "Here Supply Co. | Tools for Showing Up in Real Life",
+    description: "Courses, guides, and field tools for getting your attention back and showing up for the people and life that matter.",
+    url: "/",
+    siteName: "Here Supply Co.",
+    type: "website",
+    images: [{ url: "/assets/brand/sunday-board-hero-v1.jpg", width: 1586, height: 992, alt: "A man giving his full attention to a conversation at a coastal home" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Here Supply Co. | Tools for Showing Up in Real Life",
+    description: "Courses, guides, and field tools for getting your attention back and showing up for the people and life that matter.",
+    images: ["/assets/brand/sunday-board-hero-v1.jpg"],
+  },
 };
 
 const movements = [
   {
     number: "01",
     title: "Return",
+    image: "/assets/course/photo/movement-return-v1.jpg",
+    imageAlt: "A man setting down his phone before joining his family at home",
     line: "Bring your attention back before you try to fix anything else.",
     detail: "Make space to think clearly, finish the work in front of you, and come through the door without asking your family to carry the whole day with you.",
     lessons: CORE_LESSONS.filter((lesson) => lesson.movement === "RETURN"),
@@ -20,6 +37,8 @@ const movements = [
   {
     number: "02",
     title: "Lead",
+    image: "/assets/course/photo/movement-lead-v1.jpg",
+    imageAlt: "A husband listening closely while his wife speaks at the kitchen table",
     line: "Bring a steadier self into a hard moment.",
     detail: "Pressure is real. The work is learning to pause, respond without making the moment worse, and repair it when you miss.",
     lessons: CORE_LESSONS.filter((lesson) => lesson.movement === "LEAD"),
@@ -27,8 +46,10 @@ const movements = [
   {
     number: "03",
     title: "Keep",
+    image: "/assets/course/photo/movement-keep-v4.jpg",
+    imageAlt: "A father and daughter walking home from the ocean while talking together",
     line: "Keep the parts of life work cannot replace.",
-    detail: "Protect time, friendship, marriage, family rhythms, and the ordinary parts of life that keep a good man from slowly disappearing into work.",
+    detail: "Protect time, friendship, marriage, family rhythms, and the ordinary parts of life that keep a whole person from slowly disappearing into work.",
     lessons: CORE_LESSONS.filter((lesson) => lesson.movement === "KEEP"),
   },
 ];
@@ -37,87 +58,74 @@ export default function Home() {
   return (
     <main id="main-content" className={styles.home}>
       <header className={styles.header}>
-        <Link className={styles.brand} href="/" aria-label="Iron Compass home">
-          <CompassMark />
-          <span><strong>IRON COMPASS</strong><small>Practical work for real life</small></span>
+        <Link className={styles.brand} href="/" aria-label="Here Supply Co. home">
+          <BrandWordmark />
         </Link>
         <nav className={styles.nav} aria-label="Main navigation">
-          <a href="#system">The system</a>
           <a href="#start">Start free</a>
-          <a href="#work">Programs</a>
-          <Link href="/resources">Resources</Link>
+          <a href="#work">The full course</a>
+          <Link href="/resources">Useful tools</Link>
+          <Link href="/about">About Chris</Link>
         </nav>
         <Link className={styles.headerAction} href="/sunday-board#get-board">Start free <span>→</span></Link>
       </header>
 
       <nav className={styles.mobileNav} aria-label="Mobile navigation">
-        <a href="#system">The system</a>
         <a href="#start">Start free</a>
-        <a href="#work">Programs</a>
+        <a href="#work">The course</a>
         <Link href="/resources">Resources</Link>
+        <Link href="/about">About</Link>
       </nav>
 
       <section className={styles.hero}>
         <div className={styles.heroInner}>
           <div className={styles.heroContent}>
-            <p className={styles.eyebrow}>PRACTICAL WORK FOR HUSBANDS AND FATHERS</p>
-            <h1>Be here for<br /><em>your own life.</em></h1>
-            <p className={styles.lead}>Iron Compass is a practical homecoming for men pulled thin by screens, pressure, and work. Short practices help you reclaim your attention and return to the people and life already waiting for you.</p>
+            <p className={styles.eyebrow}>FOR MEN WHO REFUSE TO DRIFT FROM WHAT MATTERS</p>
+            <h1>Do not drift from <em>the life you built.</em></h1>
+            <p className={styles.lead}>Here Supply Co. makes practical tools for men who want to get their attention back, stay close to the people who matter, and show up for the life they actually want to live.</p>
             <div className={styles.heroActions}>
-              <Link className={styles.primaryButton} href="/sunday-board#get-board">Get the free weekly guide <span>→</span></Link>
-              <Link className={styles.quietLightLink} href="/field-guide">Find my starting point <span>→</span></Link>
+              <Link className={styles.primaryButton} href="/sunday-board#get-board">Start the free Sunday Board Meeting <span>→</span></Link>
+              <Link className={styles.quietLightLink} href="/library">See the full practice <span>→</span></Link>
             </div>
-            <p className={styles.heroAssurance}>Free 15-minute meeting guide · Opens immediately</p>
+            <p className={styles.heroAssurance}>Free 15-minute meeting guide · Built by a real family · Opens immediately</p>
           </div>
-          <figure className={styles.heroMaterials}>
-            <div className={styles.heroMaterialsFrame}>
-              <div className={styles.heroProductTopline}>
-                <span>INSIDE IRON COMPASS CORE</span>
-                <b>01 · RETURN</b>
-              </div>
-              <div className={styles.heroArtMosaic} aria-label="Artwork from all nine Iron Compass Core lessons">{CORE_LESSONS.map((lesson) => <img key={lesson.slug} src={lesson.artImage} alt="" width="1672" height="942" fetchPriority={lesson.number === "1.1" ? "high" : undefined} decoding="async" />)}</div>
-              <div className={styles.heroProductCopy}>
-                <strong>Start with Return.</strong>
-                <span>Bring your attention back before you try to fix anything else.</span>
-              </div>
-              <div className={styles.heroProductMap} aria-label="Iron Compass offers">
-                <span><b>FREE</b> Weekly guide</span>
-                <span><b>$29</b> Focus Protocol</span>
-                <span><b>$99</b> Iron Compass Core</span>
-              </div>
-            </div>
-            <figcaption><strong>THE ACTUAL COURSE</strong><Link href="/library#curriculum">Preview all nine lessons <span>→</span></Link></figcaption>
-          </figure>
+          <div className={styles.heroVisual}>
+            <figure className={styles.heroStory}>
+              <img src="/assets/brand/sunday-board-hero-v1.jpg" alt="A man giving his full attention to a conversation at a coastal home" width="1586" height="992" fetchPriority="high" decoding="async" />
+              <figcaption><span>THE RETURN</span><strong>The phone is not the point. Presence is.</strong></figcaption>
+            </figure>
+            <aside className={styles.courseCover} aria-label="All the Way Here course cover">
+              <span>THE COMPLETE COURSE</span>
+              <b>ALL THE WAY<br />HERE</b>
+              <strong>RETURN · LEAD · KEEP</strong>
+              <small>9 LESSONS + A PRINTABLE WORKBOOK</small>
+            </aside>
+          </div>
         </div>
-        <div className={styles.heroFooter} aria-label="What Iron Compass includes">
-          <span><b>15 MIN</b> free weekly meeting guide</span>
-          <span><b>72 HR</b> focused attention reset</span>
-          <span><b>9</b> visual lessons in Core</span>
+        <div className={styles.heroFooter} aria-label="The Here Supply Co. approach">
+          <span><b>NOTICE</b> the drift</span>
+          <span><b>RESET</b> your attention</span>
+          <span><b>SHOW UP</b> for real life</span>
         </div>
       </section>
 
       <section className={styles.orientation} aria-labelledby="orientation-title">
         <div className={styles.orientationIntro}>
-          <p className={styles.eyebrow}>WHY YOU MAY BE HERE</p>
-          <h2 id="orientation-title">Start with the problem<br />you can <em>name.</em></h2>
-          <p>You do not need a new identity or another life system. Pick the situation that feels most true right now.</p>
+          <p className={styles.eyebrow}>ONE BRAND. ONE PRACTICE.</p>
+          <h2 id="orientation-title">Start free.<br />Go deeper <em>when it helps.</em></h2>
+          <p>No catalog and no maze of courses. Begin with the actual Sunday meeting Chris and Rhea use. Continue into one complete course when you want the whole practice.</p>
         </div>
         <div className={styles.orientationPaths}>
-          <Link href="/sunday-board#get-board"><span>01</span><strong>My wife and I need to get on the same page.</strong><small>Start with the free one-page weekly guide.</small><b>Start free →</b></Link>
-          <Link href="/focus"><span>02</span><strong>I keep reaching for my phone without deciding to.</strong><small>Start with the 72-hour Focus Protocol.</small><b>See Focus →</b></Link>
-          <Link href="/library"><span>03</span><strong>I want a steadier way to handle work, pressure, and home.</strong><small>See the complete Iron Compass Core curriculum.</small><b>See Core →</b></Link>
+          <Link href="/sunday-board"><span>01</span><strong>Sunday Board Meeting</strong><small>A free 15-minute way to see the same week, with the original Chris and Rhea video.</small><b>Watch and start free →</b></Link>
+          <Link href="/library"><span>02</span><strong>All the Way Here</strong><small>Nine lessons for attention, pressure, work, relationships, and the life underneath all of it.</small><b>See the course →</b></Link>
         </div>
       </section>
 
       <section className={styles.homecoming} aria-labelledby="homecoming-title">
-        <figure>
-          <img src="/assets/chris-founder.jpg" alt="Chris Avera sitting by the ocean in Puerto Rico" width="600" height="800" loading="lazy" decoding="async" />
-          <figcaption>PUERTO RICO · A REAL DAY, NOT A BRAND SHOOT</figcaption>
-        </figure>
         <div>
           <p className={styles.eyebrow}>THE POINT OF THE WORK</p>
           <h2 id="homecoming-title">Less life inside a machine.<br /><em>More life with other people.</em></h2>
-          <p>AI can give us more answers. It cannot look our wife in the eye, get down on the floor with our kids, call a friend, or decide to put the phone away. Iron Compass is about that return. A homecoming to real conversations, useful work, time outside, and the people we do not want to miss.</p>
+          <p>AI can give us more answers. It cannot look another person in the eye, get down on the floor with a child, call a friend, or decide to put the phone away. Here Supply Co. is about that return: real conversations, useful work, time outside, and the people we do not want to miss.</p>
           <Link className={styles.quietLightLink} href="/about">Why Chris built this <span>→</span></Link>
         </div>
       </section>
@@ -126,13 +134,41 @@ export default function Home() {
         <p className={styles.eyebrow}>THE WORLD IS DESIGNED TO PULL YOU AWAY</p>
         <div>
           <h2>Your family should not get whatever the <em>algorithm</em> leaves behind.</h2>
-          <p>Phones, feeds, AI tools, and work keep pulling your attention away. Iron Compass gives you concrete ways to choose what gets your attention, come home without carrying the whole day through the door, and protect time with the people you love. Start with one free weekly conversation, use Focus when distraction is the main problem, and choose Core when you want the whole system.</p>
+          <p>Phones, feeds, AI tools, and work keep pulling your attention away. Here Supply Co. gives you practical ways to control the inputs before they control the day: choose what reaches you, create friction around what takes too much, and protect time with the people you love. It is environment design for ordinary life, not a meditation program or another test of willpower.</p>
         </div>
+      </section>
+
+      <section className={styles.missedMoment} aria-labelledby="missed-moment-title">
+        <figure>
+          <img src="/assets/course/photo/emotional-phone-at-game-v1.jpg" alt="A father looking at his phone while his daughter waits to share a moment at a baseball field" width="1672" height="942" loading="lazy" decoding="async" />
+          <figcaption>THE MOMENT IS STILL HERE. FOR NOW.</figcaption>
+        </figure>
+        <div>
+          <p className={styles.eyebrow}>NOT ANOTHER LECTURE ABOUT SCREENS</p>
+          <h2 id="missed-moment-title">The cost is not the phone.<br />It is the moment <em>we miss.</em></h2>
+          <p>A child often asks for connection through a look, a question, or a quick, Watch this. When they look up and find us looking down, the screen can feel like it matters more even when that is not what we mean. This is not a case for guilt. It is a reason to notice sooner and turn toward the person who is already there.</p>
+          <Link className={styles.quietLightLink} href="/library">See the Attention Reset inside the course <span>→</span></Link>
+        </div>
+      </section>
+
+      <section className={styles.lookUpSection} id="look-up" aria-labelledby="look-up-title">
+        <div className={styles.lookUpStory}>
+          <p className={styles.eyebrow}>LOOKING UP IS A PRACTICE</p>
+          <h2 id="look-up-title">The campus looked familiar.<br />The energy <em>did not.</em></h2>
+          <p>When Chris returned to Clemson, he felt the difference before he had words for it. So many students were walking with their heads down, absorbed in their phones. There was less eye contact, less awareness of the people passing by, and fewer small openings for a hello.</p>
+          <p>Phones had not ruined the campus. Looking down had simply become the default. The answer is not another lecture. It is a few physical practices that make connection easier to choose.</p>
+          <Link href="/resources/look-up-at-clemson">Read the full story <span>→</span></Link>
+        </div>
+        <ol className={styles.lookUpPractices}>
+          <li><span>01</span><div><h3>Eyes first</h3><p>When someone calls your name, enters the room, or asks to show you something, put the phone down and meet their eyes before anything else.</p></div></li>
+          <li><span>02</span><div><h3>Give the phone a home</h3><p>Choose one repeated moment and one visible landing place. Dinner, bedtime, a game, or the weekly meeting is enough to begin.</p></div></li>
+          <li><span>03</span><div><h3>Stop before you screen</h3><p>Set navigation and audio before driving. At a crosswalk, finish looking and crossing before the phone comes back out.</p></div></li>
+        </ol>
       </section>
 
       <section className={styles.movementSection} id="movements">
         <div className={styles.movementHeader}>
-          <p className={styles.eyebrow}>THE IRON COMPASS SYSTEM</p>
+          <p className={styles.eyebrow}>INSIDE ALL THE WAY HERE</p>
           <h2>Three movements.<br />One <em>way back.</em></h2>
           <p>The work moves from what has your attention, to how you carry pressure, to the life you are building around the people you love.</p>
         </div>
@@ -140,7 +176,7 @@ export default function Home() {
           {movements.map((movement) => (
             <article key={movement.title} className={styles.movementCard}>
               <div className={styles.movementPreview}>
-                <div className={styles.movementArtGrid}>{movement.lessons.map((lesson) => <figure key={lesson.slug}><img src={lesson.artImage} alt={lesson.artAlt} width="1672" height="942" loading="lazy" decoding="async" style={{ objectPosition: lesson.previewPosition }} /><figcaption>{lesson.number} · {lesson.title}</figcaption></figure>)}</div>
+                <div className={styles.movementArtGrid}><figure><img src={movement.image} alt={movement.imageAlt} width="1672" height="942" loading="lazy" decoding="async" /><figcaption>{movement.number} · {movement.title.toUpperCase()}</figcaption></figure></div>
                 <span>THREE REAL LESSONS</span>
               </div>
               <div className={styles.movementBody}>
@@ -161,64 +197,47 @@ export default function Home() {
         </div>
         <div className={styles.startCopy}>
           <p className={styles.eyebrow}>START WITH A REAL CONVERSATION</p>
-          <h2>See the same <em>week.</em></h2>
-          <p>A printable fifteen-minute weekly meeting for you and your wife, so the calendar, money, kids, connection, and one shared priority are no longer living in two separate heads.</p>
+          <h2>The Sunday Board <em>Meeting.</em></h2>
+          <p>A printable fifteen-minute weekly conversation for two people sharing a life or household, so the calendar, money, kids, connection, and one shared priority are no longer living in two separate heads.</p>
           <dl>
             <div><dt>What it helps with</dt><dd>Connection, the calendar, money, kids, time together, and one shared win.</dd></div>
             <div><dt>What you get</dt><dd>The printable meeting guide immediately. No email gate, account, or new system to manage.</dd></div>
           </dl>
           <div className={styles.buttonRow}>
-            <Link className={styles.primaryButton} href="/sunday-board#get-board">Get the free weekly guide <span>→</span></Link>
-            <Link className={styles.quietDarkLink} href="/field-guide">Not sure where to start? Take the Compass Check <span>→</span></Link>
+            <Link className={styles.primaryButton} href="/sunday-board">Watch Chris and Rhea + get the guide <span>→</span></Link>
+            <Link className={styles.quietDarkLink} href="/library">See where the complete course goes next <span>→</span></Link>
           </div>
         </div>
       </section>
 
       <section className={styles.workSection} id="work">
         <div className={styles.workHeader}>
-          <p className={styles.eyebrow}>WHEN YOU WANT TO GO DEEPER</p>
-          <h2>A small reset first.<br />The full system <em>later.</em></h2>
-          <p>Start with the problem that is real today. Focus is the practical first purchase. Core is there when you want the whole system.</p>
+          <p className={styles.eyebrow}>ONE COMPLETE COURSE</p>
+          <h2>Come back to what is<br /><em>already here.</em></h2>
+          <p>All the Way Here brings the Attention Reset and the full Return, Lead, Keep practice together in one private, self-paced experience.</p>
         </div>
 
         <div className={styles.offerGrid}>
-          <article className={styles.focusOffer}>
-            <div className={styles.offerTopline}><span>FOCUS PROTOCOL</span><b>$29 ONE TIME</b></div>
-            <h3>Get your attention<br /><em>back.</em></h3>
-            <p>Focus Protocol is a guided 72-hour reset for the man who knows distraction is taking more than it should. It is not a lecture. It is four practical moves presented clearly enough to use immediately.</p>
-            <div className={styles.deliveryNote}><span>DELIVERED INSIDE</span><p>A browser-based visual guide with four practical moves.</p></div>
-            <details className={styles.videoReveal}>
-              <summary>
-                <img src="/assets/focus-protocol-poster.jpg" alt="Chris introducing Focus Protocol" width="1280" height="720" loading="lazy" decoding="async" />
-                <span className={styles.videoMeta}><small>FOCUS OVERVIEW · 03:28</small><strong>Watch the Focus overview <i>→</i></strong></span>
-              </summary>
-              {/* eslint-disable-next-line jsx-a11y/media-has-caption -- Add captions only after an exact transcript is verified. */}
-              <video controls playsInline preload="none" poster="/assets/focus-protocol-poster.jpg" aria-label="Focus Protocol overview video"><source src="/assets/focus-protocol-sales.mp4" type="video/mp4" />Your browser does not support this video.</video>
-            </details>
-            <p className={styles.offerAssurance}>$29 one time · Immediate access · 14-day refund window</p>
-            <Link href="/focus">See Focus Protocol · $29 <b>→</b></Link>
-          </article>
-
           <article className={styles.coreOffer}>
-            <div className={styles.offerTopline}><span>IRON COMPASS CORE</span><b>$99 FOUNDING EDITION</b></div>
-            <h3>Build the whole<br /><em>system.</em></h3>
-            <p>Core brings the full work together: attention, pressure, home, marriage, family connection, friendship, and the practices that keep a good life from slipping away.</p>
-            <div className={styles.deliveryNote}><span>DELIVERED INSIDE</span><p>Nine visual lessons, specific practices, and the Core Workbook as a companion resource.</p></div>
+            <div className={styles.offerTopline}><span>HERE SUPPLY CO.</span><b>$99 FOUNDING EDITION</b></div>
+            <h3>The complete<br /><em>practice.</em></h3>
+            <p>One coherent course for attention, pressure, work-to-home transitions, relationships, family connection, friendship, and the practices that keep a good life from slipping away.</p>
+            <div className={styles.deliveryNote}><span>DELIVERED INSIDE</span><p>The attention reset, nine visual lessons, specific practices, and an editable companion workbook.</p></div>
             <div className={styles.offerStill}>
-              <div className={styles.offerArtGrid}>{CORE_LESSONS.map((lesson) => <img key={lesson.slug} src={lesson.artImage} alt="" width="1672" height="942" loading="lazy" decoding="async" />)}</div>
-              <span>NINE VISUAL LESSONS</span>
+              <div className={styles.offerStillHeading}><span>A LOOK INSIDE</span><strong>Three movements. Nine visual lessons. One practice for real life.</strong></div>
+              <div className={styles.offerArtGrid}>{movements.map((movement) => <figure key={movement.title}><img src={movement.image} alt={movement.imageAlt} width="1672" height="942" loading="lazy" decoding="async" /><figcaption><span>{movement.number}</span><strong>{movement.title}</strong></figcaption></figure>)}</div>
             </div>
             <p className={styles.offerAssurance}>$99 one time · Founding-edition price · 14-day refund window</p>
-            <Link href="/library#curriculum">See inside Iron Compass Core <b>→</b></Link>
+            <Link href="/library#curriculum">See inside the complete course <b>→</b></Link>
           </article>
         </div>
       </section>
 
       <section className={styles.methodSection}>
-        <p className={styles.eyebrow}>THE IRON COMPASS PRACTICE CYCLE</p>
+        <p className={styles.eyebrow}>THE ALL THE WAY HERE PRACTICE CYCLE</p>
         <div>
           <h2>A practical guide for <em>coming back.</em></h2>
-          <p>AI can give you ten ideas in ten seconds. Iron Compass is valuable only if it helps you use one practice in real life with real people. The course translates durable ideas about choice, purpose, priority, relationships, and renewal into a cycle built for an ordinary week.</p>
+          <p>AI can give you ten ideas in ten seconds. All the Way Here is valuable only if it helps you use one practice in real life with real people. The course translates durable ideas about choice, purpose, priority, relationships, and renewal into a cycle built for an ordinary week.</p>
         </div>
         <ul>
           <li><span>01</span><b>Choose</b> what deserves your attention.</li>
@@ -235,7 +254,7 @@ export default function Home() {
           <h2>One useful resource.<br />Not the <em>only one.</em></h2>
         </div>
         <div className={styles.resourceCopy}>
-          <p>Iron Compass is practical educational work from one husband and father. It is not therapy, clinical treatment, or an accredited program. When you need research, a qualified professional, or immediate support, the resource guide points you toward established places to start.</p>
+          <p>Here Supply Co. makes practical educational tools shaped from lived experience and careful source work. This is not therapy, clinical treatment, or an accredited program. When you need research, a qualified professional, or immediate support, the resource guide points you toward established places to start.</p>
           <Link className={styles.quietDarkLink} href="/resources">Use the resource guide <span>→</span></Link>
           <a className={styles.quietDarkLink} href="https://chrisavera.substack.com" target="_blank" rel="me noreferrer">Read Chris on Substack <span>↗</span></a>
         </div>
@@ -249,7 +268,7 @@ export default function Home() {
         <div>
           <p className={styles.eyebrow}>WHY I MADE THIS</p>
           <h2>I needed the work before I ever <em>shared it.</em></h2>
-          <p>I’m Chris. I’m a husband, father of three, and small-business owner in the North Carolina mountains. Iron Compass began when I noticed how often I was physically home while my attention was somewhere else. I built these practices for myself first, then shaped the useful parts into tools another man could actually use.</p>
+          <p>I’m Chris. I’m a husband, father of three, and small-business owner in the North Carolina mountains. Here Supply Co. grew from noticing how often I was physically home while my attention was somewhere else. I built these practices for myself first, then shaped the useful parts into tools another person could actually use.</p>
           <p className={styles.founderPersonal}>Away from work, I lift kettlebells, ride mountain-bike trails, fish, and take my Trail 125 down the roads that get quieter as they get smaller. I am still practicing this work too.</p>
           <div className={styles.founderActions}><Link className={styles.quietDarkLink} href="/about">Read Chris’s story <span>→</span></Link><Link className={styles.quietDarkLink} href="/working-session">Work with Chris <span>→</span></Link></div>
         </div>
@@ -258,14 +277,10 @@ export default function Home() {
       <section className={styles.closing}>
         <p className={styles.eyebrow}>START WHERE LIFE IS ASKING FOR YOU</p>
         <h2>One useful way<br />to come <em>back.</em></h2>
-        <p>Put the free guide on the table with your wife this week. If you are not sure what needs attention first, take the Compass Check.</p>
-        <div><Link className={styles.primaryButton} href="/sunday-board#get-board">Get the free weekly guide <span>→</span></Link><Link href="/field-guide">Take the Compass Check <span>→</span></Link></div>
+        <p>Put the free guide on the table this week. When you want the complete practice, continue into All the Way Here.</p>
+        <div><Link className={styles.primaryButton} href="/sunday-board#get-board">Get the free weekly guide <span>→</span></Link><Link href="/library">See the complete course <span>→</span></Link></div>
       </section>
-
-      <footer className={styles.footer}>
-        <span>Made in North Carolina · © 2026 Iron Compass</span>
-        <nav><a href="#system">The system</a><Link href="/sunday-board">Free weekly guide</Link><Link href="/field-guide">Compass Check</Link><Link href="/focus">Focus Protocol</Link><Link href="/library">Iron Compass Core</Link><Link href="/resources">Resources</Link><Link href="/about">About Chris</Link><Link href={CONTACT_FORM}>Work with Chris</Link><a href="https://chrisavera.substack.com" target="_blank" rel="me noreferrer">Chris on Substack ↗</a><Link href="/policies">Policies</Link></nav>
-      </footer>
+      <Footer />
     </main>
   );
 }

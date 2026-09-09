@@ -52,6 +52,15 @@
 .story div > p:not(.lead) + p { margin-top: 24px; }
 .story div > p.personalNote { color: #7b5b3f; font-size: 15px; }
 
+.sharedStory { padding:clamp(88px,10vw,145px) clamp(24px,7vw,110px); display:grid; grid-template-columns:minmax(0,1.1fr) minmax(320px,.72fr); align-items:center; gap:clamp(58px,9vw,145px); color:#f5eddd; background:#18231f; }
+.sharedStory figure { margin:0; position:relative; overflow:hidden; border:1px solid rgba(245,237,221,.28); box-shadow:18px 20px 0 rgba(141,74,49,.38); }
+.sharedStory img { width:100%; aspect-ratio:16 / 10; display:block; object-fit:cover; object-position:center 41%; }
+.sharedStory figcaption { position:absolute; left:0; bottom:0; padding:12px 15px; color:#f5eddd; background:rgba(24,35,31,.9); font-size:8px; font-weight:700; letter-spacing:.16em; }
+.sharedStory .eyebrow { color:#e2b75f; }
+.sharedStory h2 { max-width:690px; margin:18px 0 29px; font-size:clamp(46px,4.9vw,75px); line-height:1.02; }
+.sharedStory h2 em { color:#e2b75f; }
+.sharedStory > div > p:last-child { max-width:590px; margin:0; color:#d3dbd2; font-size:17px; line-height:1.68; }
+
 .notes { padding: clamp(85px, 10vw, 140px) clamp(24px, 7vw, 110px); display: grid; grid-template-columns: minmax(130px, .34fr) minmax(0, 1.2fr); gap: clamp(48px, 9vw, 158px); color: var(--ink); background: var(--sage); }
 .sectionNumber { margin: 4px 0 0; color: var(--rust); font-size: 11px; font-weight: 700; letter-spacing: .18em; }
 .notes .eyebrow { color: var(--rust); }
@@ -90,6 +99,7 @@
   .heroContent { grid-row: 1; padding: 76px clamp(24px, 7vw, 64px) 70px; border-right: 0; border-bottom: 1px solid rgba(202, 164, 93, .28); }
   .hero h1 { max-width: 720px; font-size: clamp(58px, 10vw, 86px); }
   .story, .notes { grid-template-columns: 1fr; gap: 38px; }
+  .sharedStory { grid-template-columns:1fr; }
   .fromChrisInner { grid-template-columns: 1fr; gap: 31px; }
   .fromChris .eyebrow { padding-top: 0; }
   .beliefList { grid-template-columns: 1fr; }
@@ -108,6 +118,9 @@
   .heroContent { padding: 68px 20px 62px; }
   .hero h1 { font-size: clamp(52px, 14.5vw, 72px); }
   .story, .notes, .fromChris { padding-left: 20px; padding-right: 20px; }
+  .sharedStory { padding:76px 20px 82px; }
+  .sharedStory h2 { font-size:clamp(43px,12.3vw,60px); }
+  .sharedStory img { aspect-ratio:4 / 3; object-position:center 42%; }
   .story { padding-top: 76px; padding-bottom: 78px; }
   .story .lead { font-size: clamp(32px, 10.2vw, 47px); }
   .notes { padding-top: 75px; padding-bottom: 78px; }
@@ -130,3 +143,66 @@
 .fromChris { background:#214f50; }
 .signature { color:#e2b75f; font-family:Charter,"Iowan Old Style",Georgia,serif; }
 .footer { background:#18231f; }
+
+/* Founder photography is an author portrait, not the subject of the page. */
+.hero { min-height:460px; padding:clamp(64px,7vw,104px) clamp(24px,7vw,110px); grid-template-columns:minmax(0,1fr) minmax(150px,190px); align-items:center; gap:clamp(40px,6vw,88px); }
+.hero > img { width:min(100%,180px); height:auto; min-height:0; aspect-ratio:4 / 3; grid-column:2; grid-row:1; justify-self:start; object-fit:cover; object-position:center 40%; border:1px solid rgba(24,35,31,.2); box-shadow:10px 11px 0 rgba(33,79,80,.18); }
+.hero > div:nth-child(2) { display:none; }
+.heroContent { grid-column:1; grid-row:1; padding:0; border:0; }
+
+@media (max-width:900px) {
+  .hero { min-height:0; padding:72px clamp(24px,7vw,64px); grid-template-columns:minmax(0,1fr) 160px; grid-template-rows:auto; }
+  .heroContent { grid-column:1; grid-row:1; padding:0; border:0; }
+  .hero > img { width:150px; min-height:0; grid-column:2; grid-row:1; justify-self:end; align-self:end; }
+}
+
+@media (max-width:760px) {
+  .hero { padding:62px 20px 66px; grid-template-columns:1fr; grid-template-rows:auto auto; gap:30px; }
+  .hero > img { width:132px; min-height:0; grid-column:1; grid-row:2; justify-self:start; }
+}
+
+/* Sunday Board migration. Chris remains an author-sized presence. */
+.page {
+  --ink:#092f3c;
+  --forest:#103f4c;
+  --paper:#fff8ec;
+  --sage:#d9eeef;
+  --gold:#f4c550;
+  --rust:#df5c3f;
+  --ocean:#21859d;
+  --muted:#526b72;
+  color:var(--ink);
+  background:var(--paper);
+  font-family:"Avenir Next","Helvetica Neue",Arial,sans-serif;
+}
+.page h1,.page h2,.beliefList h3,.story .lead {
+  font-family:Futura,"Avenir Next Condensed","Franklin Gothic Medium",Arial,sans-serif;
+  font-style:normal;
+  font-weight:700;
+  letter-spacing:-.045em;
+}
+.hero { background:linear-gradient(118deg,var(--paper) 0 72%,var(--sage) 72% 100%); }
+.hero > img { border-color:rgba(9,47,60,.22); box-shadow:10px 11px 0 rgba(33,133,157,.2); }
+.heroContent > p,.eyebrow,.story .eyebrow,.notes .eyebrow { color:var(--rust); }
+.hero h1 em,.notes h2 em { color:var(--ocean); }
+.story div > p:not(.lead),.beliefIntro,.beliefList p { color:var(--muted); }
+.story div > p.personalNote { color:#85513f; }
+.sharedStory { color:#fff8ec; background:var(--ink); }
+.sharedStory figure { border-color:rgba(255,248,236,.25); box-shadow:18px 20px 0 rgba(33,133,157,.42); }
+.sharedStory figcaption { color:#fff8ec; background:rgba(9,47,60,.92); }
+.sharedStory .eyebrow,.sharedStory h2 em { color:var(--sun); }
+.sharedStory > div > p:last-child { color:#d4e5e6; }
+.notes { background:var(--sage); }
+.sectionNumber,.beliefList span { color:var(--rust); }
+.fromChris { color:#fff8ec; background:var(--ocean); }
+.fromChris::before { display:none; }
+.fromChris h2 em,.signature { color:var(--sun); }
+.letterBody { border-left-color:rgba(244,197,80,.55); }
+.letterBody > p { color:#e4f1f2; }
+.footer { color:#c7dadd; background:var(--ink); }
+.footer a { color:#c7dadd; }
+.footer a:hover { color:#fff8ec; }
+
+@media (max-width:760px) {
+  .hero { background:var(--paper); }
+}

@@ -1,7 +1,6 @@
 from pathlib import Path
 
 from reportlab.lib.pagesizes import letter
-from reportlab.lib.utils import ImageReader
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
@@ -9,7 +8,6 @@ from reportlab.pdfgen import canvas
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "public" / "downloads" / "sunday-board-meeting.pdf"
-WAVE_MARK = ROOT / "public" / "assets" / "iron-compass-wave-mark-transparent.png"
 
 
 def color(hex_value: str):
@@ -17,16 +15,16 @@ def color(hex_value: str):
     return tuple(int(value[i : i + 2], 16) / 255 for i in (0, 2, 4))
 
 
-INK = color("#18231f")
-PAPER = color("#f0e6d2")
-LIGHT = color("#f7f0e3")
-SAND = color("#d8c49f")
-TOBACCO = color("#8d4a31")
-OCEAN = color("#214f50")
-OCHRE = color("#c28b2c")
-OLIVE = color("#626846")
-MUTED = color("#586159")
-RULE = color("#b8ae99")
+INK = color("#092f3c")
+PAPER = color("#fff8ec")
+LIGHT = color("#fffdf8")
+SAND = color("#d9eeef")
+TOBACCO = color("#df5c3f")
+OCEAN = color("#21859d")
+OCHRE = color("#f4c550")
+OLIVE = color("#103f4c")
+MUTED = color("#526b72")
+RULE = color("#b8d3d5")
 
 
 def register_fonts():
@@ -82,23 +80,19 @@ def build():
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 
     c = canvas.Canvas(str(OUTPUT), pagesize=letter, pageCompression=1)
-    c.setTitle("See the Same Week - A 15-Minute Weekly Guide")
-    c.setAuthor("Chris Avera, Iron Compass")
-    c.setSubject("A printable weekly conversation guide for husbands and wives")
-    c.setKeywords("weekly meeting, marriage, family, planning, Iron Compass")
+    c.setTitle("The Sunday Board Meeting - A Free 15-Minute Weekly Guide")
+    c.setAuthor("Chris Avera, Here Supply Co.")
+    c.setSubject("A printable weekly conversation guide for two people sharing a life or household")
+    c.setKeywords("weekly conversation, relationships, household, planning, Sunday Board")
 
     width, height = letter
     set_fill(c, color("#ffffff"))
     c.rect(0, 0, width, height, stroke=0, fill=1)
 
-    # Maker's-mark header.
-    c.drawImage(ImageReader(str(WAVE_MARK)), 34, 735, width=33, height=33, mask="auto")
-    set_fill(c, INK)
-    c.setFont("FuturaBold", 9.2)
-    c.drawString(76, 756, "IRON COMPASS")
+    c.drawImage(str(ROOT / "public/assets/brand/here-supply-co-logo-v2.png"), 34, 733, width=112, height=32.7, mask="auto")
     set_fill(c, MUTED)
-    c.setFont("Avenir", 6.5)
-    c.drawString(76, 744, "PRACTICAL WORK FOR REAL LIFE")
+    c.setFont("AvenirDemi", 6.5)
+    c.drawString(162, 746, "TOOLS FOR SHOWING UP IN REAL LIFE")
     set_fill(c, TOBACCO)
     c.setFont("FuturaBold", 6.5)
     c.drawRightString(578, 756, "FREE PRACTICE  /  PRINT ONE COPY")
@@ -108,25 +102,25 @@ def build():
 
     # Title and mid-century accent.
     set_fill(c, INK)
-    c.setFont("FuturaBold", 31)
-    c.drawString(34, 682, "SEE THE")
+    c.setFont("FuturaBold", 28)
+    c.drawString(34, 682, "THE SUNDAY")
     set_fill(c, TOBACCO)
-    c.setFont("FuturaBold", 38)
-    c.drawString(34, 643, "SAME WEEK.")
+    c.setFont("FuturaBold", 34)
+    c.drawString(34, 643, "BOARD MEETING.")
     set_fill(c, MUTED)
     c.setFont("AvenirDemi", 8.8)
-    c.drawString(35, 619, "A 15-minute weekly guide for you and your wife")
+    c.drawString(35, 619, "A free 15-minute way for two people sharing a life to lead the week together")
     c.setFont("Avenir", 7.1)
     c.drawString(35, 605, "Start with something good. Make the week visible. Protect one thing together.")
 
     # Small brand accents only. The worksheet stays white to conserve ink.
     set_fill(c, OCEAN)
     c.rect(455, 672, 123, 6, stroke=0, fill=1)
-    set_fill(c, OLIVE)
-    c.rect(455, 658, 123, 6, stroke=0, fill=1)
     set_fill(c, OCHRE)
-    c.rect(455, 644, 123, 6, stroke=0, fill=1)
+    c.rect(455, 658, 123, 6, stroke=0, fill=1)
     set_fill(c, TOBACCO)
+    c.rect(455, 644, 123, 6, stroke=0, fill=1)
+    set_fill(c, INK)
     c.rect(455, 630, 123, 6, stroke=0, fill=1)
     set_fill(c, INK)
     c.setFont("FuturaBold", 6.4)
@@ -184,11 +178,11 @@ def build():
     set_stroke(c, RULE)
     c.line(49, 118, 345, 118)
 
-    section_heading(c, "03", "House + Money", 394, 420)
+    section_heading(c, "03", "Home + Money", 394, 420)
     y = prompt(c, "Meals and groceries", 394, 393, 169, 1) - 5
-    y = prompt(c, "Kids and family needs", 394, y, 169, 1) - 5
-    y = prompt(c, "Home projects or handoffs", 394, y, 169, 1) - 5
-    prompt(c, "Upcoming expenses or decisions", 394, y, 169, 1)
+    y = prompt(c, "Family, care, or household needs", 394, y, 169, 1) - 5
+    y = prompt(c, "Who owns what this week?", 394, y, 169, 1) - 5
+    prompt(c, "Money: bills, spending, saving, decisions", 394, y, 169, 1)
 
     set_stroke(c, RULE)
     c.setLineWidth(0.7)
@@ -196,7 +190,7 @@ def build():
 
     section_heading(c, "04", "Protect", 394, 229)
     prompt(c, "Time for us", 394, 202, 169, 1)
-    prompt(c, "One family moment", 394, 160, 169, 1)
+    prompt(c, "One shared moment", 394, 160, 169, 1)
     prompt(c, "Our shared win for the week", 394, 118, 169, 1)
 
     # Footer.
@@ -207,10 +201,10 @@ def build():
     c.setFont("CharterBold", 10.5)
     c.drawString(34, 40, "Nothing has to be solved all at once.")
     c.setFont("Avenir", 6.8)
-    c.drawString(34, 25, "The point is to see the same week and choose what deserves your attention together.")
+    c.drawString(34, 25, "Make the week visible, decide who owns what, and choose what deserves attention together.")
     set_fill(c, TOBACCO)
     c.setFont("FuturaBold", 6.5)
-    c.drawRightString(578, 39, "IRONCOMPASSINSTITUTE.COM")
+    c.drawRightString(578, 39, "HERE SUPPLY CO.  /  FREE PRACTICE")
     c.setFont("AvenirDemi", 6.2)
     c.drawRightString(578, 25, "USE WHAT HELPS. LEAVE THE REST.")
 

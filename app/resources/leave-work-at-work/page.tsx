@@ -1,3 +1,4 @@
+import { siteUrl } from "../../site-config";
 import type { Metadata } from "next";
 import { Footer, Header } from "../../components";
 import { PlainLink as Link } from "../../plain-link";
@@ -16,9 +17,9 @@ const articleData = {
   headline: "How to Leave Work at Work Before You Walk In the Door",
   description: "A short work-to-home transition you can use today.",
   datePublished: "2026-08-28", dateModified: "2026-08-28",
-  author: { "@type": "Person", name: "Chris Avera", url: "https://ironcompassinstitute.com/about" },
-  publisher: { "@id": "https://ironcompassinstitute.com/#organization" },
-  mainEntityOfPage: "https://ironcompassinstitute.com/resources/leave-work-at-work",
+  author: { "@type": "Person", name: "Chris Avera", url: siteUrl("/about") },
+  publisher: { "@id": siteUrl("/#organization") },
+  mainEntityOfPage: siteUrl("/resources/leave-work-at-work"),
 };
 
 export default function LeaveWorkAtWork() {
@@ -30,7 +31,7 @@ export default function LeaveWorkAtWork() {
       <p className={styles.eyebrow}>THE WORK-TO-HOME TRANSITION</p>
       <h1>Leave the workday somewhere other than <em>your front room.</em></h1>
       <p className={styles.dek}>You may not be able to finish every problem before you come home. You can decide how you carry those problems through the door.</p>
-      <p className={styles.byline}>By Chris Avera · From the Iron Compass Airlock practice</p>
+      <p className={styles.byline}>By Chris Avera · From the All the Way Here Airlock practice</p>
     </header>
     <section className={styles.layout}>
       <aside className={styles.aside}><span>THREE MINUTES</span><p>Park safely. Name what is still open. Slow down. Choose how you want to enter. Then give the first ten seconds at home your full attention.</p><Link href="/library#curriculum">See all nine Core practices →</Link></aside>
@@ -50,7 +51,7 @@ export default function LeaveWorkAtWork() {
         <p>Use this for a week and notice the entrance, not a perfect outcome. Did you look up? Did you greet the people in the room? Did unfinished work stop choosing the first moment for you?</p>
       </article>
     </section>
-    <section className={styles.cta}><div><span>IRON COMPASS CORE</span><h2>One practice inside a larger path.</h2></div><div><p>The Airlock is one of nine practical lessons for returning, leading a hard moment, and keeping the parts of life work cannot replace.</p><Link href="/library#curriculum">See the complete Core curriculum <b>→</b></Link></div></section>
+    <section className={styles.cta}><div><span>ALL THE WAY HERE</span><h2>One practice inside a larger path.</h2></div><div><p>The Airlock is one of nine practical lessons for returning, leading a hard moment, and keeping the parts of life work cannot replace.</p><Link href="/library#curriculum">See the complete course <b>→</b></Link></div></section>
     <Footer />
   </main>;
 }

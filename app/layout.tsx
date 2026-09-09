@@ -1,48 +1,49 @@
+import { siteUrl, supportEmailUrl } from "./site-config";
 import type { Metadata } from "next";
 import "./globals.css";
 import { JsonLd } from "./structured-data";
 
-const title = "Iron Compass | Be Here for Your Own Life";
-const description = "Practical tools for husbands and fathers who want to overcome digital distraction, be more present at home, and lead a calmer family life.";
+const title = "Here Supply Co. | Tools for Showing Up in Real Life";
+const description = "Courses, guides, and field tools for bringing your attention back to the people, relationships, and ordinary life you do not want to miss.";
 
 const siteData = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://ironcompassinstitute.com/#organization",
-      name: "Iron Compass",
-      url: "https://ironcompassinstitute.com/",
-      email: "mailto:chris@ironcompassinstitute.com",
-      founder: { "@id": "https://ironcompassinstitute.com/#chris-avera" },
+      "@id": siteUrl("/#organization"),
+      name: "Here Supply Co.",
+      url: siteUrl("/"),
+      email: supportEmailUrl(),
+      founder: { "@id": siteUrl("/#chris-avera") },
       sameAs: ["https://chrisavera.substack.com"],
     },
     {
       "@type": "Person",
-      "@id": "https://ironcompassinstitute.com/#chris-avera",
+      "@id": siteUrl("/#chris-avera"),
       name: "Chris Avera",
-      url: "https://ironcompassinstitute.com/about",
+      url: siteUrl("/about"),
       sameAs: ["https://chrisavera.substack.com"],
     },
     {
       "@type": "WebSite",
-      "@id": "https://ironcompassinstitute.com/#website",
-      url: "https://ironcompassinstitute.com/",
-      name: "Iron Compass",
+      "@id": siteUrl("/#website"),
+      url: siteUrl("/"),
+      name: "Here Supply Co.",
       description,
-      publisher: { "@id": "https://ironcompassinstitute.com/#organization" },
+      publisher: { "@id": siteUrl("/#organization") },
       inLanguage: "en-US",
     },
   ],
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ironcompassinstitute.com"),
+  metadataBase: new URL(siteUrl("/")),
   title,
   description,
-  icons: { icon: "/assets/iron-compass-wave-mark-transparent.png", shortcut: "/assets/iron-compass-wave-mark-transparent.png", apple: "/apple-touch-icon.png" },
-  openGraph: { title, description, url: "/", siteName: "Iron Compass", type: "website", images: [{ url: "/og-iron-compass-v2.jpg", width: 1200, height: 630, alt: "Iron Compass, Be here for your own life." }] },
-  twitter: { card: "summary_large_image", title, description, images: ["/og-iron-compass-v2.jpg"] },
+  icons: { icon: [{ url: "/favicon.svg?v=here-2", type: "image/svg+xml" }, { url: "/favicon-32x32.png?v=here-2", sizes: "32x32", type: "image/png" }], shortcut: "/favicon.svg?v=here-2", apple: "/apple-touch-icon.png?v=here-2" },
+  openGraph: { title, description, url: "/", siteName: "Here Supply Co.", type: "website", images: [{ url: "/assets/course/art/problem-1-3-driveway-woman.jpg", width: 1672, height: 941, alt: "A woman pausing in the driveway before returning to the people waiting at home" }] },
+  twitter: { card: "summary_large_image", title, description, images: ["/assets/course/art/problem-1-3-driveway-woman.jpg"] },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

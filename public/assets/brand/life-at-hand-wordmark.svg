@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 112" role="img" aria-labelledby="title desc">
+  <title id="title">Life at Hand</title>
+  <desc id="desc">Life at Hand. Show up for real life.</desc>
+  <text x="3" y="20" fill="#173a37" font-family="Futura, 'Avenir Next Condensed', Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="6">LIFE AT</text>
+  <text x="0" y="79" fill="#2f7a87" font-family="Futura, 'Avenir Next Condensed', Arial, sans-serif" font-size="72" font-weight="700" letter-spacing="-1">HAND</text>
+  <path d="M3 97h118" fill="none" stroke="#c86749" stroke-width="5"/>
+  <text x="143" y="101" fill="#536964" font-family="'Avenir Next', Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="2.6">SHOW UP FOR REAL LIFE</text>
+</svg>

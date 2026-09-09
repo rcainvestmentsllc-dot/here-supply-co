@@ -1,3 +1,4 @@
+import { siteUrl } from "../../site-config";
 import type { Metadata } from "next";
 import { Footer, Header } from "../../components";
 import { PlainLink as Link } from "../../plain-link";
@@ -6,7 +7,7 @@ import styles from "../article.module.css";
 
 export const metadata: Metadata = {
   title: "Put the Phone Away Before the Car Moves",
-  description: "A practical distracted-driving setup for handling navigation, important contacts, and the downward glance before the vehicle moves.",
+  description: "A practical setup for handling navigation, important contacts, driving, and crossing the street without the downward glance.",
   alternates: { canonical: "/resources/phone-away-before-driving" },
   openGraph: { title: "Put the Phone Away Before the Car Moves", description: "The same automatic glance has different stakes behind the wheel.", url: "/resources/phone-away-before-driving" },
 };
@@ -15,10 +16,10 @@ const articleData = {
   "@context": "https://schema.org", "@type": "Article",
   headline: "Put the Phone Away Before the Car Moves",
   description: "The same automatic glance has different stakes behind the wheel.",
-  datePublished: "2026-08-28", dateModified: "2026-08-28",
-  author: { "@type": "Person", name: "Chris Avera", url: "https://ironcompassinstitute.com/about" },
-  publisher: { "@id": "https://ironcompassinstitute.com/#organization" },
-  mainEntityOfPage: "https://ironcompassinstitute.com/resources/phone-away-before-driving",
+  datePublished: "2026-08-28", dateModified: "2026-09-02",
+  author: { "@type": "Person", name: "Chris Avera", url: siteUrl("/about") },
+  publisher: { "@id": siteUrl("/#organization") },
+  mainEntityOfPage: siteUrl("/resources/phone-away-before-driving"),
 };
 
 export default function PhoneAwayBeforeDriving() {
@@ -48,11 +49,20 @@ export default function PhoneAwayBeforeDriving() {
           <section className={styles.step}><span>04</span><div><h3>Pull over for a real response</h3><p>If a message, map change, or call needs active handling, stop in a safe place. A red light is still part of the drive.</p></div></section>
         </div>
         <div className={styles.note}><strong>Driving gets full attention.</strong><p>The parked-car Airlock practice begins only after the vehicle is safely parked and the engine is off. No reflection exercise belongs in a moving car.</p></div>
+        <h2>The same rule applies at the curb</h2>
+        <p>People also look down while stepping into crosswalks and moving through busy streets. A phone can be useful for directions, but the screen should stop before the curb. Look, cross, reach the other side, and only then bring the phone back out.</p>
+        <div className={styles.steps}>
+          <section className={styles.step}><span>01</span><div><h3>Stop scrolling before the curb</h3><p>Finish the message or put the phone away before you reach the street, not while you are stepping into it.</p></div></section>
+          <section className={styles.step}><span>02</span><div><h3>Look and finish crossing</h3><p>Scan traffic, make eye contact with drivers when possible, and keep your attention on the crossing until you are safely out of the roadway.</p></div></section>
+          <section className={styles.step}><span>03</span><div><h3>Restart on the safe side</h3><p>If the phone still needs you, stop somewhere clear of traffic instead of walking back into the screen.</p></div></section>
+        </div>
+        <p>The final visual joke in Weird Al Yankovic&apos;s <em>First World Problems</em> video shows a distracted pedestrian stepping into the street while texting. The joke works because the reflex is recognizable. The real solution is less dramatic: stop before the curb and look up.</p>
         <p>The useful question is not whether you are a disciplined person. It is whether you made the important decision while the car was still standing still.</p>
         <p className={styles.source}>Source: <a href="https://www.nhtsa.gov/risky-driving/distracted-driving" target="_blank" rel="noreferrer">National Highway Traffic Safety Administration, Distracted Driving</a>. The page reports national 2024 crash data and explains visual, manual, and cognitive distraction.</p>
+        <p className={styles.source}>Walking context: a <a href="https://pubmed.ncbi.nlm.nih.gov/32015086/" target="_blank" rel="noreferrer">systematic review and meta-analysis</a> found that text messaging was associated with less looking left and right and more hits or close calls while crossing. <a href="https://www.thewrap.com/weird-al-yankovic-bitches-about-first-world-problems-in-newest-mandatory-fun-song-video/" target="_blank" rel="noreferrer">TheWrap describes the closing gag in the Weird Al video.</a></p>
       </article>
     </section>
-    <section className={styles.cta}><div><span>FOCUS PROTOCOL</span><h2>Change the setup before you test your willpower.</h2></div><div><p>Focus Protocol is a private seventy-two-hour experiment for noticing where automatic attention has taken over and changing the environment around it.</p><Link href="/focus">See Focus Protocol · $29 <b>→</b></Link></div></section>
+    <section className={styles.cta}><div><span>INSIDE ALL THE WAY HERE</span><h2>Change the setup before you test your willpower.</h2></div><div><p>The Attention Reset is a private three-day experiment for noticing where automatic attention has taken over and changing the environment around it.</p><Link href="/library">See the complete course <b>→</b></Link></div></section>
     <Footer />
   </main>;
 }

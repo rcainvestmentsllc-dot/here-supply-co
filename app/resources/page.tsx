@@ -1,15 +1,16 @@
+import { siteUrl } from "../site-config";
 import type { Metadata } from "next";
 import { Footer, Header } from "../components";
 import { JsonLd } from "../structured-data";
 import styles from "./resources.module.css";
 
 export const metadata: Metadata = {
-  title: "Resources for Fathers, Marriage, Attention, and Mental Health",
-  description: "A clear starting guide to Iron Compass tools, established family and mental health resources, and research on digital distraction and attention.",
+  title: "Resources for Attention, Relationships, Family, and Mental Health",
+  description: "A clear starting guide to Here Supply Co. practices, established family and mental health resources, and research on digital distraction and attention.",
   alternates: { canonical: "/resources" },
   openGraph: {
-    title: "Resources | Iron Compass",
-    description: "Practical starting points for fathers, marriage, attention, and qualified outside support.",
+    title: "Resources | Here Supply Co.",
+    description: "Practical starting points for attention, relationships, family, and qualified outside support.",
     url: "/resources",
   },
 };
@@ -17,33 +18,26 @@ export const metadata: Metadata = {
 const pageData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: "Iron Compass Resource Guide",
-  description: "Practical starting points for fathers, marriage, attention, and qualified outside support.",
-  url: "https://ironcompassinstitute.com/resources",
-  isPartOf: { "@id": "https://ironcompassinstitute.com/#website" },
+  name: "Here Supply Co. Resource Guide",
+  description: "Practical starting points for attention, relationships, family, and qualified outside support.",
+  url: siteUrl("/resources"),
+  isPartOf: { "@id": siteUrl("/#website") },
 };
 
 const internalPaths = [
   {
     number: "01",
-    need: "My wife and I need to get on the same page.",
+    need: "Someone I share life with and I need to see the same week.",
     answer: "Use the free 15-minute weekly guide.",
     href: "/sunday-board#get-board",
-    action: "Get the meeting guide",
+    action: "Get the free guide",
   },
   {
     number: "02",
-    need: "My attention keeps drifting away.",
-    answer: "Use the 72-hour Focus Protocol.",
-    href: "/focus",
-    action: "See Focus Protocol",
-  },
-  {
-    number: "03",
     need: "Work, pressure, and home need a steadier system.",
-    answer: "See the full Iron Compass Core curriculum.",
+    answer: "Use the complete All the Way Here course.",
     href: "/library#curriculum",
-    action: "See Iron Compass Core",
+    action: "See All the Way Here",
   },
 ];
 
@@ -85,6 +79,12 @@ const research = [
 ];
 
 const fieldNotes = [
+  {
+    label: "LOOKING UP",
+    title: "What felt different when I returned to Clemson",
+    copy: "The campus looked familiar, but the energy did not. A story about eye contact, ordinary openings, and making looking up a practice.",
+    href: "/resources/look-up-at-clemson",
+  },
   {
     label: "PHONE HABITS",
     title: "How to stop checking your phone at home",
@@ -130,9 +130,9 @@ export default function Resources() {
       <Header />
 
       <section className={styles.hero}>
-        <p className={styles.eyebrow}>IRON COMPASS RESOURCE GUIDE</p>
+        <p className={styles.eyebrow}>HERE SUPPLY CO. RESOURCE GUIDE</p>
         <h1>Use the right kind<br />of help for the <em>real problem.</em></h1>
-        <p>This page gives you a clear place to begin inside Iron Compass, then points beyond Iron Compass when a qualified professional, established organization, or crisis resource is the better next step.</p>
+        <p>This page gives you a clear place to begin with Here Supply Co., then points beyond this work when a qualified professional, established organization, or crisis resource is the better next step.</p>
       </section>
 
       <section className={styles.start} aria-labelledby="start-heading">
@@ -175,7 +175,7 @@ export default function Resources() {
         <div className={styles.outsideHeading}>
           <p className={styles.eyebrow}>WHEN YOU NEED MORE THAN A PRACTICE</p>
           <h2 id="outside-heading">Established places<br />to <em>start.</em></h2>
-          <p>These organizations are independent of Iron Compass. They are listed because they provide professional, public, or government-backed ways to find support.</p>
+          <p>These organizations are independent of Here Supply Co. They are listed because they provide professional, public, or government-backed ways to find support.</p>
         </div>
         <div className={styles.outsideGrid}>
           {outsideResources.map((resource) => (
@@ -219,7 +219,7 @@ export default function Resources() {
       </section>
 
       <section className={styles.disclosure}>
-        <p><strong>Plain disclosure:</strong> Iron Compass is an independent educational project created by Chris Avera. It is not therapy, medical care, crisis care, a licensed clinical service, or an accredited program. Listing an outside resource does not imply affiliation, endorsement, or partnership.</p>
+        <p><strong>Plain disclosure:</strong> Here Supply Co. is an independent educational project created by Chris Avera. It is not therapy, medical care, crisis care, a licensed clinical service, or an accredited program. Listing an outside resource does not imply affiliation, endorsement, or partnership.</p>
       </section>
 
       <Footer />

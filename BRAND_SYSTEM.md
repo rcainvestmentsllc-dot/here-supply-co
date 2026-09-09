@@ -1,67 +1,74 @@
-# Iron Compass Brand and Experience System
+# Here Supply Co. Brand and Experience System
 
-Updated August 28, 2026
+Updated September 9, 2026
+
+## Current working identity
+
+The local site now uses `HERE SUPPLY CO.` as the parent identity, `TOOLS FOR SHOWING UP IN REAL LIFE` as its descriptor, `All the Way Here` as the $99 course, and `The Sunday Board Meeting` as the free starting practice. Chris approved carrying this direction through the local buyer experience. It has not been published, legally cleared, or applied to MailerLite checkout. The visual culture can nod to Costa Rica and an independent surf shop without requiring the buyer to surf. `The drift` is problem language, not a separate product name.
 
 ## The idea in one sentence
 
-Iron Compass helps husbands and fathers come back to their own lives through small, human practices for attention, pressure, marriage, fatherhood, friendship, and life outside work.
+Here Supply Co. makes practical tools that help people notice the drift, return their attention to the life in front of them, and protect the relationships and ordinary moments that matter.
 
 ## The emotional center
 
 This is a homecoming, not a self-improvement performance.
 
-The work begins with a familiar modern feeling: a man can be productive, responsible, and physically present while his attention is somewhere else. Iron Compass is the deliberate return to the people, places, work, faith, movement, friendship, and ordinary moments that make life feel real.
+The work begins with a familiar modern feeling: a person can be productive, responsible, and physically present while their attention is somewhere else. Here Supply Co. builds the practices that support a deliberate return to the people, places, faith, movement, friendship, work, and ordinary moments that make life feel real.
 
-The brand should leave a man feeling:
+The brand should leave a person feeling:
 
 - understood rather than diagnosed;
 - invited rather than lectured;
 - capable rather than defective;
 - curious enough to try one practice;
 - confident that a real person made the work;
-- clear about what he will receive and what happens next.
+- clear about what they will receive and what happens next.
 
 ## Brand posture
 
-Iron Compass is serious about the problem and relaxed about itself.
+Here Supply Co. is serious about the problem and relaxed about itself.
 
-Chris is not presented as a guru, clinician, savior, or man who has mastered life. He is a husband, father, small-business owner, and outdoorsman who noticed a costly pattern in his own life, made practical tools for it, and is willing to test and improve them in public.
+Chris is not presented as a guru, clinician, savior, or person who has mastered life. He is a husband, father, small-business owner, and outdoorsman who noticed a costly pattern in his own life, made practical tools for it, and is willing to test and improve them in public. Rhea appears where the work is genuinely shared, especially in The Sunday Board Meeting. They are presented as real people using a practice, not as a perfect family.
 
 The work stays in front. Chris supplies the humanity, judgment, and accountability behind it.
 
 ## Brand architecture
 
-Use the current name while the first buyers test the value. Do not spend trust and attention on a full corporate rename before the product earns evidence.
+Keep the launch architecture simple enough to understand in one breath.
 
 - **Founder and public voice:** Chris Avera
-- **Body of work:** Iron Compass
-- **Free starting point:** the 15-Minute Weekly Guide
-- **Focused first purchase:** Focus Protocol
-- **Complete course:** Iron Compass Core
+- **Parent brand:** Here Supply Co., locally implemented and not yet legally cleared or published
+- **Descriptor:** Tools for showing up in real life
+- **Free starting point:** The Sunday Board Meeting, with “See the same week” as the promise
+- **Complete founding course:** All the Way Here, $99
 - **Course movements:** Return, Lead, Keep
-- **Human implementation:** Personal Leadership Working Session
+- **Attention work:** The Attention Reset, included inside the complete course
+- **Future human implementation:** private leadership work with Chris, only after training, testing, and real outcomes
 - **Public writing:** Chris Avera on Substack
 
-This structure lets Chris become more visible without forcing him to act like a personality brand. It also leaves room for future courses under Iron Compass without calling every idea a protocol, system, field guide, or institute.
+This structure lets Chris become more visible without forcing him to act like a personality brand. It leaves room for future work without turning launch into a catalog.
 
 ## Naming rules
 
 A useful name should sound natural in a sentence a real customer might say. It should describe the help, not advertise cleverness.
 
-Good:
+Current launch language:
 
-- the 15-Minute Weekly Guide;
-- Focus Protocol;
-- Iron Compass Core;
+- Here Supply Co.;
+- Tools for showing up in real life;
+- The Sunday Board Meeting;
+- See the same week;
+- All the Way Here;
+- The Attention Reset;
 - Return, Lead, Keep;
-- Personal Leadership Working Session;
+- private leadership work with Chris, when it is ready;
 - a note from Chris;
 - a familiar scene;
 - try this week.
 
 Avoid:
 
-- Sunday Board Meeting;
 - Field Manual or Field Notes as a forced brand system;
 - language about “the rooms that matter” as a recurring slogan;
 - military language where ordinary language is stronger;
@@ -74,13 +81,13 @@ If the company name changes later, screen the short list for domain availability
 
 ### The blend
 
-The visual world is old California surf culture, Puerto Rico sunlight, a little Hawaii, and a grown-up mid-century editorial studio. It is not nautical décor, beach-bar nostalgia, corporate wellness, or pastel therapy branding.
+The visual world is California surf architecture, Puerto Rico sunlight, a little Hawaii, and a grown-up mid-century editorial studio. It is not 1970s nostalgia, nautical décor, beach-bar styling, corporate wellness, or pastel therapy branding.
 
 Think:
 
-- warm paper and sun-faded print;
-- tobacco brown, deep ocean petrol, ochre, olive, and sand;
-- a weathered paperback, an old trail map, a surf-shop handbill, and a well-designed 1960s field journal;
+- clean Pacific daylight and sunlit paper;
+- clear ocean blue, sea glass, eucalyptus, warm sun, and a small amount of coral;
+- a calm California house near the coast, a beautifully edited outdoor journal, and a modern surf studio with restraint;
 - strong geometry with enough imperfection and real photography to stay human;
 - a little counterculture without costume or parody.
 
@@ -88,15 +95,16 @@ Think:
 
 | Role | Color | Hex |
 | --- | --- | --- |
-| Ink | deep charcoal green | `#18231f` |
-| Paper | warm uncoated cream | `#f0e6d2` |
-| Sand | dry natural tan | `#d8c49f` |
-| Tobacco | sun-worn rust brown | `#8d4a31` |
-| Ocean | deep petrol blue-green | `#214f50` |
-| Ochre | warm mustard | `#c28b2c` |
-| Olive | muted outdoor green | `#626846` |
+| Ink | deep Pacific navy | `#092f3c` |
+| Paper | sunlit warm white | `#fff8ec` |
+| Sea glass | pale blue-green | `#d9eeef` |
+| Ocean | clear coastal blue | `#21859d` |
+| Deep ocean | grounded blue-green | `#103f4c` |
+| Coral | sun-warmed accent | `#df5c3f` |
+| Sun | warm yellow accent | `#f4c550` |
+| Copy | calm blue-green gray | `#526b72` |
 
-No lavender, blush, pale mint, candy coral, glossy gold, neon teal, or unrelated legacy green. White is used sparingly. Most light surfaces should feel like paper, not a software dashboard.
+Avoid muddy cream, tobacco brown, mustard, and olive combinations that pull the work into a 1970s palette. Avoid lavender, blush, candy coral, glossy gold, neon teal, and unrelated legacy green. Light surfaces should feel bright, warm, and human rather than sterile or beige.
 
 ### Typography
 
@@ -105,6 +113,17 @@ No lavender, blush, pale mint, candy coral, glossy gold, neon teal, or unrelated
 - **Editorial accent:** Charter or Iowan Old Style. Use it for stories, quoted language, and moments that should slow the reader down.
 
 The display face provides mid-century confidence. The editorial face provides humanity. Do not turn most headlines into elegant serif magazine covers. Do not use decorative script or delicate italic copy.
+
+### Non-negotiable readability rule
+
+Readability wins over styling every time.
+
+- Text and its background must have clearly readable contrast in the actual component where it appears. Never assume an inherited color will work on both light and dark surfaces.
+- Words may not overlap, visually merge, clip, split in the middle, or leave punctuation stranded on its own line.
+- A brand lockup must remain readable as ordinary text when the mark is removed and at the smallest size where it is used.
+- Display type must shrink, reflow, or receive more space before it is allowed to collide with another element.
+- Every new or revised page must be checked at desktop and phone widths. A successful build does not prove readable layout.
+- If a visual treatment competes with comprehension, remove the treatment.
 
 ### Layout language
 
@@ -118,11 +137,13 @@ The display face provides mid-century confidence. The editorial face provides hu
 - no text over faces;
 - no cropped words, clipped lesson titles, or images used as decoration without a clear focal point.
 
-### Logo
+### Identity
 
-Use the simple wave mark without a white tile, rounded-square container, border, glow, or invented compass detail. The mark should feel like a small maker’s stamp, not an app icon.
+On September 9, Chris rejected the first custom geometric wordmark as too modern and off brand. He asked for the original colors and a mid-century surf feel, explicitly allowing wave and mountain integration when useful. He then approved the revised design with “Use this direction.” This supersedes the earlier blanket prohibition on wave and mountain imagery.
 
-Iron Compass is the name of the work, not a requirement to cover the brand in compasses, maps, ships, ropes, or nautical metaphors.
+The approved logo pairs warm, soft ocean-blue HERE lettering and navy SUPPLY CO. with one integrated wave, coastal headland, coral clouds, and yellow sun. It should feel like a human-made mid-century coastal outfitter. Do not revert to the futuristic open-R wordmark or the earlier plain typed identity. Keep the typography readable and the existing blue, coral, yellow, and paper palette. The descriptor remains “Tools for showing up in real life.” The separate Sunday Board product identity remains unchanged.
+
+Use `public/assets/brand/here-supply-co-logo-v2.svg` on light backgrounds and `here-supply-co-logo-inverse-v2.svg` on dark backgrounds. Both use actual vector paths, without font dependencies or embedded bitmap images. Matching transparent PNGs are available. The small browser and Apple-touch icons use the coastal emblem alone. Preserve the logo's proportions; use the full lockup at a readable size. The active logo is shared across the website, private course, workbook, three printable resources, and prepared checkout artwork. Public deployment, legal clearance, and changes to live MailerLite are still separate launch steps.
 
 ## Photography and video stills
 
@@ -143,11 +164,15 @@ Avoid:
 - exaggerated eyebrows, mugging, or a goofy reaction frame;
 - dark silhouetted men in doorways;
 - fake cinematic masculinity;
-- AI-generated lifestyle people;
+- visibly synthetic lifestyle scenes, malformed anatomy, or physically impossible objects;
 - generic mountains, compasses, armor, boardrooms, or luxury watches;
 - heavy grading that turns the work grim.
 
 Every important crop must be checked on desktop and phone. A photo is not approved because the source file looks good. The actual crop in the actual layout is what matters.
+
+Founder photography is supporting authorship, not hero imagery. A Chris-only portrait stays small, similar to an author photo on a book jacket or magazine contributor page. Large visual spaces belong to emotionally purposeful scenes that show the problem, cost, choice, or return.
+
+The phone-at-the-ballgame scene is the emotional quality bar. Course imagery should communicate a recognizable human moment before the copy explains it. Use a balanced mix of women, men, couples, and families, and keep contemporary clothing, hair, interiors, vehicles, and body language inside the mid-century editorial treatment.
 
 ## Language system
 
@@ -168,7 +193,7 @@ The voice is:
 ### The pattern
 
 1. Name a moment the reader recognizes.
-2. Say what may be happening without diagnosing him.
+2. Say what may be happening without diagnosing the reader.
 3. Offer one practice small enough to try.
 4. Show how it bends for real life.
 5. Give the actual words he can use.
@@ -198,7 +223,7 @@ The voice is:
 
 ## Course experience standard
 
-Each Core lesson is a browser-based visual chapter, not a pasted slideshow. It follows one repeatable structure:
+Each All the Way Here lesson is a browser-based visual chapter, not a pasted slideshow. It follows one repeatable structure:
 
 1. **Cover:** the title, plain promise, lesson number, and module.
 2. **A familiar scene:** a short original story that lets the reader recognize himself.
@@ -221,7 +246,7 @@ The buyer path should feel boring in the best way:
 2. The customer pays through the verified checkout.
 3. Successful payment opens the correct private course page.
 4. The receipt or delivery email repeats the same access link.
-5. The course home starts with Return and shows all nine lessons, three module videos, the workbook, and local progress.
+5. The course home starts with The Attention Reset and Return, then shows all nine lessons, three module videos, the workbook, and local progress.
 6. A follow-up asks what the buyer used and what was unclear.
 
 Gamma is a source archive during migration. It is not the buyer’s classroom. Skool is not required. MailerLite may provide checkout and email plumbing, but it should remain invisible to the learning experience.
@@ -232,7 +257,7 @@ The founding tester invitation uses a private no-cost pass. It asks for honest u
 
 The home page should answer five questions in order:
 
-1. Is this about my actual problem?
+1. Is this about my actual problem of being physically present while my attention is elsewhere?
 2. What makes it different from generic advice or an AI answer?
 3. What can I try for free?
 4. What exactly is inside the paid work?
@@ -254,7 +279,9 @@ Before a public release:
 
 - no legacy colors or mismatched visual systems;
 - no white logo box;
-- no old Sunday Board or Field Manual language;
+- no low-contrast text, dark-on-dark text, or light-on-light text;
+- no overlapping, visually merged, clipped, or mid-word-broken text;
+- no old Iron Compass or Life at Hand umbrella language, and no use of Sunday Board outside the free practice;
 - no text on a face;
 - no awkward video still;
 - no cropped lesson title or preview;
@@ -265,6 +292,6 @@ Before a public release:
 - every paid checkout opens the correct private destination;
 - the public live site is visually checked after deployment, not assumed correct because the build passed.
 
-## The standard in six words
+## The standard
 
-Real life. Real people. One useful practice.
+Show up for real life.

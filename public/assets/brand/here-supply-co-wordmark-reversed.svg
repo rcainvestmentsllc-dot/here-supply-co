@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 210" role="img" aria-labelledby="title description">
+  <title id="title">Here Supply Co.</title>
+  <desc id="description">Tools for showing up in real life.</desc>
+  <text x="8" y="112" fill="#fff8ec" font-family="Futura, 'Avenir Next Condensed', 'Franklin Gothic Medium', Arial, sans-serif" font-size="126" font-weight="700" letter-spacing="-9">HERE</text>
+  <text x="376" y="96" fill="#f4c550" font-family="'Avenir Next', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="8">SUPPLY CO.</text>
+  <path d="M11 145h244" stroke="#fff8ec" stroke-width="8"/>
+  <path d="M255 145h62" stroke="#df5c3f" stroke-width="8"/>
+  <path d="M317 145h35" stroke="#f4c550" stroke-width="8"/>
+  <text x="376" y="153" fill="#d9eeef" font-family="'Avenir Next', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3.4">TOOLS FOR SHOWING UP IN REAL LIFE</text>
+</svg>

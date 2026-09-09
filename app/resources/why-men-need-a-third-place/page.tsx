@@ -1,3 +1,4 @@
+import { siteUrl } from "../../site-config";
 import type { Metadata } from "next";
 import { Footer, Header } from "../../components";
 import { PlainLink as Link } from "../../plain-link";
@@ -22,9 +23,9 @@ const articleData = {
   description: "A real sauna conversation about friendship, belonging, and the places where men are known.",
   datePublished: "2026-08-28",
   dateModified: "2026-08-28",
-  author: { "@type": "Person", name: "Chris Avera", url: "https://ironcompassinstitute.com/about" },
-  publisher: { "@id": "https://ironcompassinstitute.com/#organization" },
-  mainEntityOfPage: "https://ironcompassinstitute.com/resources/why-men-need-a-third-place",
+  author: { "@type": "Person", name: "Chris Avera", url: siteUrl("/about") },
+  publisher: { "@id": siteUrl("/#organization") },
+  mainEntityOfPage: siteUrl("/resources/why-men-need-a-third-place"),
 };
 
 export default function WhyMenNeedAThirdPlace() {
@@ -42,7 +43,7 @@ export default function WhyMenNeedAThirdPlace() {
       <aside className={styles.aside}>
         <span>THE WHOLE IDEA</span>
         <p>Find one place you return to often enough for other people to know you. The place matters less than the returning.</p>
-        <Link href="/library#curriculum">Preview the full Core curriculum →</Link>
+        <Link href="/library#curriculum">Preview the complete course →</Link>
       </aside>
       <article className={styles.body}>
         <p>I was in the cold plunge with my eyes closed when something touched my hand. I ran through the possibilities, opened my eyes, and found one of the guys giving me a fist bump.</p>
@@ -62,8 +63,8 @@ export default function WhyMenNeedAThirdPlace() {
       </article>
     </section>
     <section className={styles.cta}>
-      <div><span>IRON COMPASS CORE</span><h2>Keep what work cannot replace.</h2></div>
-      <div><p>The Third Place is one of nine practical lessons inside Iron Compass Core, a larger path for attention, leadership, friendship, family, and a life that does not end at work.</p><Link href="/library#curriculum">See the complete Core curriculum <b>→</b></Link></div>
+      <div><span>ALL THE WAY HERE</span><h2>Keep what work cannot replace.</h2></div>
+      <div><p>The Third Place is one of nine practical lessons inside All the Way Here, a larger path for attention, leadership, friendship, family, and a life that does not end at work.</p><Link href="/library#curriculum">See the complete course <b>→</b></Link></div>
     </section>
     <Footer />
   </main>;

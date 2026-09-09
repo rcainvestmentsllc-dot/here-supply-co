@@ -35,7 +35,7 @@ function useProgress() {
   return parseProgress(useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot));
 }
 
-export function LessonProgress({ slug }: { slug: string }) {
+export function LessonProgress({ slug, isFinal = false }: { slug: string; isFinal?: boolean }) {
   const progress = useProgress();
   const complete = progress.includes(slug);
 
@@ -45,7 +45,10 @@ export function LessonProgress({ slug }: { slug: string }) {
     window.dispatchEvent(new Event(PROGRESS_EVENT));
   }
 
-  return <button className={`lesson-complete ${complete ? "is-complete" : ""}`} type="button" onClick={toggle}>{complete ? "✓ Lesson complete" : "Mark lesson complete"}</button>;
+  return <div className="lesson-progress-action">
+    <button className={`lesson-complete ${complete ? "is-complete" : ""}`} type="button" onClick={toggle}>{complete ? "✓ Lesson complete" : "Mark lesson complete"}</button>
+    {isFinal && complete && <div className="lesson-finish" role="status"><span>NINE LESSONS COMPLETE</span><strong>You finished the course material. Now choose two practices to keep for the next thirty days.</strong><a href="/access/core-4m8r2p/workbook#thirty-day-plan">Build your thirty-day plan →</a></div>}
+  </div>;
 }
 
 export function CourseProgress({ lessonSlugs }: { lessonSlugs: string[] }) {
@@ -53,6 +56,18 @@ export function CourseProgress({ lessonSlugs }: { lessonSlugs: string[] }) {
   const count = progress.filter((slug) => lessonSlugs.includes(slug)).length;
 
   return <div className="course-progress" aria-label={`${count} of ${lessonSlugs.length} lessons complete`}><span><b>{count}</b> / {lessonSlugs.length} complete</span><i><u style={{ width: `${(count / lessonSlugs.length) * 100}%` }} /></i></div>;
+}
+
+export function CourseResume({ lessons }: { lessons: { slug: string; number: string; title: string }[] }) {
+  const progress = useProgress();
+  const next = lessons.find((lesson) => !progress.includes(lesson.slug));
+
+  if (!next) {
+    return <div className="course-resume"><span>NINE LESSONS COMPLETE</span><strong>You finished the course material. Now choose two practices to keep for the next thirty days.</strong><a href="/access/core-4m8r2p/workbook#thirty-day-plan">Build your thirty-day plan →</a></div>;
+  }
+
+  const started = progress.length > 0;
+  return <div className="course-resume"><span>{started ? "YOUR NEXT LESSON" : "AFTER SETUP, BEGIN HERE"}</span><strong>{next.number} · {next.title}</strong><a href={`/access/core-4m8r2p/lesson/${next.slug}`}>{started ? "Continue the course" : "Begin the first lesson"} →</a></div>;
 }
 
 export function PrintWorkbookButton() {

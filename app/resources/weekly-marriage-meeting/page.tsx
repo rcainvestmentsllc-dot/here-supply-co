@@ -1,3 +1,4 @@
+import { siteUrl } from "../../site-config";
 import type { Metadata } from "next";
 import { Footer, Header } from "../../components";
 import { PlainLink as Link } from "../../plain-link";
@@ -8,19 +9,19 @@ export const metadata: Metadata = {
   title: "A 15-Minute Weekly Marriage Meeting Agenda",
   description: "A simple weekly marriage meeting agenda for getting the calendar, kids, money, connection, and one shared priority onto the same page.",
   alternates: { canonical: "/resources/weekly-marriage-meeting" },
-  openGraph: { title: "A 15-Minute Weekly Marriage Meeting Agenda", description: "A practical agenda you and your wife can finish in fifteen minutes.", url: "/resources/weekly-marriage-meeting" },
+  openGraph: { title: "A 15-Minute Weekly Marriage Meeting Agenda", description: "A practical agenda you and your partner can finish in fifteen minutes.", url: "/resources/weekly-marriage-meeting" },
 };
 
 const articleData = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "A 15-Minute Weekly Marriage Meeting Agenda",
-  description: "A practical agenda you and your wife can finish in fifteen minutes.",
+  description: "A practical agenda you and your partner can finish in fifteen minutes.",
   datePublished: "2026-08-28",
   dateModified: "2026-08-28",
-  author: { "@type": "Person", name: "Chris Avera", url: "https://ironcompassinstitute.com/about" },
-  publisher: { "@id": "https://ironcompassinstitute.com/#organization" },
-  mainEntityOfPage: "https://ironcompassinstitute.com/resources/weekly-marriage-meeting",
+  author: { "@type": "Person", name: "Chris Avera", url: siteUrl("/about") },
+  publisher: { "@id": siteUrl("/#organization") },
+  mainEntityOfPage: siteUrl("/resources/weekly-marriage-meeting"),
 };
 
 export default function WeeklyMarriageMeeting() {
