@@ -182,7 +182,7 @@ def build():
     y = prompt(c, "Meals and groceries", 394, 393, 169, 1) - 5
     y = prompt(c, "Family, care, or household needs", 394, y, 169, 1) - 5
     y = prompt(c, "Who owns what this week?", 394, y, 169, 1) - 5
-    prompt(c, "Money: bills, spending, saving, decisions", 394, y, 169, 1)
+    prompt(c, "Money: bills, spending, savings", 394, y, 169, 1)
 
     set_stroke(c, RULE)
     c.setLineWidth(0.7)
