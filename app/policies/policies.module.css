@@ -23,8 +23,17 @@
   .sections section { padding-bottom:52px; margin-bottom:52px; }
 }
 
-.hero { color:#f5eddd; background:#214f50; }
+.hero { color:#fff8ec; background:#092f3c; }
 .hero h1,.sections h2,.close p { font-family:Futura,"Avenir Next Condensed","Franklin Gothic Condensed","Arial Narrow",sans-serif; font-weight:700; font-style:normal; letter-spacing:-.04em; }
-.hero h1 em { color:#e2b75f; }
-.body { background:#f0e6d2; }
-.close { background:#222b27; }
+.hero h1 em { color:#f4c550; }
+.hero > p:not(:first-child) { color:#d4e5e6; font-family:"Avenir Next","Helvetica Neue",Arial,sans-serif; }
+.hero small { color:#b8d2d5; }
+.body { background:#fff8ec; }
+.body > nav { border-color:rgba(9,47,60,.22); }
+.body > nav a { color:#526b72; border-color:rgba(9,47,60,.22); }
+.body > nav a:hover,.sections section > p:first-child { color:#df5c3f; }
+.sections section { border-color:rgba(9,47,60,.18); }
+.sections h2 { color:#092f3c; }
+.sections p { color:#526b72; }
+.close { color:#fff8ec; background:#21859d; }
+.close a { color:#fff8ec; }

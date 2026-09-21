@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --ink:#173a37;
-  --forest:#194f4c;
-  --paper:#fbf7ef;
-  --sage:#dfeeea;
-  --gold:#e2ad45;
-  --rust:#c86749;
-  --ocean:#2f7a87;
-  --sun:#f3c968;
-  --sand:#f3eadb;
-  --copy:#536964;
-  --light:#fffdf8;
+  --ink:#092f3c;
+  --forest:#103f4c;
+  --paper:#fff8ec;
+  --sage:#d9eeef;
+  --gold:#f4c550;
+  --rust:#df5c3f;
+  --ocean:#21859d;
+  --sun:#f4c550;
+  --sand:#f0e6d2;
+  --copy:#526b72;
+  --light:#fff8ec;
 }
 
 * { box-sizing:border-box; }
@@ -31,7 +31,7 @@ section[id] { scroll-margin-top:24px; }
 /* Never split display words or orphan their punctuation. Size and layout must adapt instead. */
 h1,h2,h3,h4,strong,b,em { overflow-wrap:normal; word-break:normal; hyphens:none; }
 
-.topbar { min-height:82px; padding:0 clamp(22px,5.8vw,92px); display:flex; align-items:center; justify-content:space-between; gap:28px; color:#183027; background:#f7f2e8; border-bottom:1px solid rgba(25,45,36,.12); }
+.topbar { min-height:82px; padding:0 clamp(22px,5.8vw,92px); display:flex; align-items:center; justify-content:space-between; gap:28px; color:var(--ink); background:var(--paper); border-bottom:1px solid rgba(9,47,60,.14); }
 .brand { min-width:0; display:flex; align-items:center; gap:11px; text-decoration:none; }
 .brand-lockup { width:clamp(178px,16vw,220px); min-width:0; display:flex; align-items:center; }
 .brand-logo-svg { width:100%; height:auto; display:block; overflow:visible; }
@@ -42,10 +42,10 @@ h1,h2,h3,h4,strong,b,em { overflow-wrap:normal; word-break:normal; hyphens:none;
 .brand-logo-rule { fill:none; stroke:#c86749; stroke-width:5; }
 .brand-logo-tagline { fill:#536964; font-family:"Avenir Next","Helvetica Neue",Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:2.6px; }
 .topbar nav { display:flex; align-items:center; gap:clamp(16px,2.4vw,30px); }
-.topbar nav a { min-height:44px; padding:8px 0; display:inline-flex; align-items:center; color:#536359; text-decoration:none; font-size:10px; font-weight:700; letter-spacing:.04em; }
+.topbar nav a { min-height:44px; padding:8px 0; display:inline-flex; align-items:center; color:var(--copy); text-decoration:none; font-size:10px; font-weight:700; letter-spacing:.04em; }
 .topbar nav a:hover { color:var(--rust); }
-.topbar-action { min-height:40px; padding:0 13px; display:inline-flex; flex:none; align-items:center; gap:19px; color:#183027; border:0; border-radius:3px; background:#dfcf9a; text-decoration:none; font-size:10px; font-weight:700; white-space:nowrap; }
-.topbar-action:hover { color:#f7f2e8; background:var(--rust); }
+.topbar-action { min-height:40px; padding:0 13px; display:inline-flex; flex:none; align-items:center; gap:19px; color:var(--light); border:0; border-radius:3px; background:var(--ocean); text-decoration:none; font-size:10px; font-weight:700; white-space:nowrap; }
+.topbar-action:hover { color:var(--light); background:var(--forest); }
 .mobile-nav { display:none; }
 
 .kicker,.section-label { color:var(--gold); font-size:9px; font-weight:700; letter-spacing:.18em; line-height:1.5; }

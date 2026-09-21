@@ -123,9 +123,20 @@
   .urgent h2 { font-size:clamp(39px,11vw,55px); }
 }
 
-.resources { --ink:#18231f; --paper:#f0e6d2; --sage:#d8c49f; --gold:#c28b2c; --rust:#8d4a31; --copy:#555d56; font-family:"Avenir Next","Helvetica Neue",Arial,sans-serif; }
+.resources { --ink:#092f3c; --paper:#fff8ec; --sage:#d9eeef; --gold:#f4c550; --rust:#df5c3f; --ocean:#21859d; --copy:#526b72; font-family:"Avenir Next","Helvetica Neue",Arial,sans-serif; }
 .resources h1,.resources h2,.resources h3 { font-family:Futura,"Avenir Next Condensed","Franklin Gothic Condensed","Arial Narrow",sans-serif; font-weight:700; font-style:normal; letter-spacing:-.04em; }
 .resources h1 em,.resources h2 em,.resources h3 em { font-style:normal; }
-.hero { background:linear-gradient(118deg,#f0e6d2 0 67%,#d8c49f 67% 100%); }
-.start { background:#e1d4ba; }
-.urgent { background:#214f50; }
+.hero { background:radial-gradient(circle at 86% 16%,rgba(244,197,80,.32) 0 7%,transparent 7.4%),linear-gradient(118deg,#fff8ec 0 68%,#d9eeef 68% 100%); }
+.start { background:#edf7f5; }
+.fieldNotes { background:#fff8ec; }
+.outside { color:#fff8ec; background:#092f3c; }
+.outsideHeading .eyebrow,.outsideGrid article > span,.outsideGrid a:hover { color:var(--gold); }
+.outsideHeading > p:last-child,.outsideGrid p { color:#d4e5e6; }
+.outsideGrid small { color:#b8d2d5; }
+.outsideGrid a { color:#fff8ec; }
+.research { background:#d9eeef; }
+.urgent { color:#fff8ec; background:#21859d; }
+.urgent .eyebrow,.urgentLinks a:hover strong { color:#f4c550; }
+.urgentLinks span { color:#e4f1f2; }
+.disclosure { color:#d4e5e6; background:#092f3c; }
+.disclosure strong { color:#fff8ec; }
