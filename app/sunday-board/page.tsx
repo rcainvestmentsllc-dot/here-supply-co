@@ -45,13 +45,22 @@ export default function SundayBoard() {
           <p>This is not a performance from a perfect couple. It is the two of us talking through a practice we actually use.</p>
           <a className="quiet-link" href="#get-board">Get the one-page guide <span>↓</span></a>
         </div>
-        <div className="sunday-film-player">
-          <video controls playsInline preload="metadata" poster="/assets/video/sunday-board-meeting-poster.jpg" aria-label="Chris and Rhea introduce the Sunday Board Meeting">
-            <source src="/assets/video/sunday-board-meeting.mp4" type="video/mp4" />
-            <track kind="captions" src="/assets/video/sunday-board-meeting-captions.vtt" srcLang="en" label="English" default />
-            Your browser cannot play this video. You can still download the free guide below.
-          </video>
-          <div><span>03:12</span><strong>The Sunday Board Meeting</strong><small>Chris + Rhea · the real conversation</small></div>
+        <div className="sunday-film-players">
+          <div className="sunday-film-player">
+            <video controls playsInline preload="metadata" poster="/assets/video/sunday-board-meeting-poster.jpg" aria-label="Chris and Rhea introduce the Sunday Board Meeting, part one of two">
+              <source src="/assets/video/sunday-board-meeting-part-1.mp4" type="video/mp4" />
+              <track kind="captions" src="/assets/video/sunday-board-meeting-captions.vtt" srcLang="en" label="English" default />
+              Your browser cannot play this video. You can still download the free guide below.
+            </video>
+            <div><span>02:47</span><strong>The Sunday Board Meeting</strong><small>Part 1 of 2 · Chris + Rhea</small></div>
+          </div>
+          <div className="sunday-film-player">
+            <video controls playsInline preload="metadata" aria-label="Chris and Rhea introduce the Sunday Board Meeting, part two of two">
+              <source src="/assets/video/sunday-board-meeting-part-2.mp4" type="video/mp4" />
+              Your browser cannot play this video. You can still download the free guide below.
+            </video>
+            <div><span>02:46</span><strong>The Sunday Board Meeting</strong><small>Part 2 of 2 · the full conversation</small></div>
+          </div>
         </div>
       </section>
 

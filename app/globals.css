@@ -209,6 +209,7 @@ h1,h2,h3,h4,strong,b,em { overflow-wrap:normal; word-break:normal; hyphens:none;
 .sunday-film-copy > p:not(.section-label) { max-width:510px; margin:0 0 18px; color:#ccd4cc; font-size:16px; line-height:1.65; }
 .sunday-film-copy .quiet-link { margin-top:10px; color:#f6efe1; border-color:rgba(246,239,225,.46); }
 .sunday-film-player { min-width:0; overflow:hidden; border:1px solid rgba(239,231,214,.36); border-radius:6px; background:#0b1812; box-shadow:18px 22px 0 rgba(6,18,13,.21),0 35px 72px rgba(5,18,13,.22); }
+.sunday-film-players { display:grid; gap:28px; min-width:0; }
 .sunday-film-player video { width:100%; display:block; aspect-ratio:16 / 9; object-fit:contain; background:#07110c; }
 .sunday-film-player > div { min-height:84px; padding:18px 22px; display:grid; grid-template-columns:auto 1fr; align-items:center; column-gap:18px; row-gap:3px; border-top:1px solid rgba(239,231,214,.22); }
 .sunday-film-player span { grid-row:1 / span 2; color:#e1bc71; font-size:11px; font-weight:700; letter-spacing:.13em; }

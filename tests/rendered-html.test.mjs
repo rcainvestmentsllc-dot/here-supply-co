@@ -123,7 +123,10 @@ test("makes the free weekly guide clear and delivers it without an email gate", 
   assert.match(html, /class="sunday-board-lockup"/i);
   assert.match(html, /See the same week/i);
   assert.match(html, /Chris and Rhea/i);
-  assert.match(html, /sunday-board-meeting\.mp4/i);
+  assert.match(html, /sunday-board-meeting-part-1\.mp4/i);
+  assert.match(html, /sunday-board-meeting-part-2\.mp4/i);
+  assert.match(html, /Part 1 of 2/i);
+  assert.match(html, /Part 2 of 2/i);
   assert.match(html, /sunday-board-meeting-captions\.vtt/i);
   assert.match(html, /Free 15-minute meeting guide/i);
   assert.match(html, /href="\/downloads\/sunday-board-meeting\.pdf"[^>]*download="sunday-board-meeting\.pdf"/i);
