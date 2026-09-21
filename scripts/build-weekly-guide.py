@@ -55,20 +55,20 @@ def set_stroke(c: canvas.Canvas, value):
 
 def section_heading(c: canvas.Canvas, number: str, title: str, x: float, y: float):
     set_fill(c, TOBACCO)
-    c.setFont("FuturaBold", 7)
+    c.setFont("FuturaBold", 8)
     c.drawString(x, y + 1, number)
     set_fill(c, INK)
-    c.setFont("FuturaBold", 11.5)
+    c.setFont("FuturaBold", 12.5)
     c.drawString(x + 25, y, title.upper())
 
 
 def prompt(c: canvas.Canvas, label: str, x: float, y: float, width: float, lines: int = 1):
     set_fill(c, MUTED)
-    c.setFont("AvenirDemi", 7.6)
+    c.setFont("AvenirDemi", 8.8)
     c.drawString(x, y, label)
     set_stroke(c, RULE)
     c.setLineWidth(0.55)
-    line_y = y - 14
+    line_y = y - 15
     for _ in range(lines):
         c.line(x, line_y, x + width, line_y)
         line_y -= 21
@@ -91,10 +91,10 @@ def build():
 
     c.drawImage(str(ROOT / "public/assets/brand/here-supply-co-logo-v2.png"), 34, 733, width=112, height=32.7, mask="auto")
     set_fill(c, MUTED)
-    c.setFont("AvenirDemi", 6.5)
+    c.setFont("AvenirDemi", 7.5)
     c.drawString(162, 746, "TOOLS FOR SHOWING UP IN REAL LIFE")
     set_fill(c, TOBACCO)
-    c.setFont("FuturaBold", 6.5)
+    c.setFont("FuturaBold", 7.5)
     c.drawRightString(578, 756, "FREE PRACTICE  /  PRINT ONE COPY")
     set_stroke(c, RULE)
     c.setLineWidth(0.7)
@@ -108,9 +108,9 @@ def build():
     c.setFont("FuturaBold", 34)
     c.drawString(34, 643, "BOARD MEETING.")
     set_fill(c, MUTED)
-    c.setFont("AvenirDemi", 8.8)
+    c.setFont("AvenirDemi", 10)
     c.drawString(35, 619, "A free 15-minute way for two people sharing a life to lead the week together")
-    c.setFont("Avenir", 7.1)
+    c.setFont("Avenir", 8)
     c.drawString(35, 605, "Start with something good. Make the week visible. Protect one thing together.")
 
     # Small brand accents only. The worksheet stays white to conserve ink.
@@ -123,7 +123,7 @@ def build():
     set_fill(c, INK)
     c.rect(455, 630, 123, 6, stroke=0, fill=1)
     set_fill(c, INK)
-    c.setFont("FuturaBold", 6.4)
+    c.setFont("FuturaBold", 7.2)
     c.drawString(455, 616, "ONE WEEK  /  ONE SHARED PAGE")
 
     # Connection band.
@@ -150,7 +150,7 @@ def build():
 
     section_heading(c, "02", "The Week Ahead", 49, 420)
     set_fill(c, MUTED)
-    c.setFont("Avenir", 6.8)
+    c.setFont("Avenir", 7.7)
     c.drawString(49, 405, "Put the commitments, handoffs, and pressure points on the same page.")
 
     day_rows = [
@@ -163,17 +163,17 @@ def build():
     ]
     for day, y in day_rows:
         set_fill(c, TOBACCO)
-        c.setFont("FuturaBold", 6.5)
+        c.setFont("FuturaBold", 7.4)
         c.drawString(49, y, day)
         set_stroke(c, RULE)
         c.setLineWidth(0.55)
         c.line(98, y - 1, 345, y - 1)
 
     set_fill(c, INK)
-    c.setFont("FuturaBold", 7.2)
+    c.setFont("FuturaBold", 8.2)
     c.drawString(49, 150, "THE PRESSURE POINT")
     set_fill(c, MUTED)
-    c.setFont("Avenir", 6.8)
+    c.setFont("Avenir", 7.5)
     c.drawString(49, 137, "Where will the week feel tight, and what can we decide now?")
     set_stroke(c, RULE)
     c.line(49, 118, 345, 118)
@@ -200,12 +200,12 @@ def build():
     set_fill(c, INK)
     c.setFont("CharterBold", 10.5)
     c.drawString(34, 40, "Nothing has to be solved all at once.")
-    c.setFont("Avenir", 6.8)
+    c.setFont("Avenir", 7.5)
     c.drawString(34, 25, "Make the week visible, decide who owns what, and choose what deserves attention together.")
     set_fill(c, TOBACCO)
-    c.setFont("FuturaBold", 6.5)
+    c.setFont("FuturaBold", 7.3)
     c.drawRightString(578, 39, "HERE SUPPLY CO.  /  FREE PRACTICE")
-    c.setFont("AvenirDemi", 6.2)
+    c.setFont("AvenirDemi", 7)
     c.drawRightString(578, 25, "USE WHAT HELPS. LEAVE THE REST.")
 
     c.showPage()
