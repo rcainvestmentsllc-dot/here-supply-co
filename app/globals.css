@@ -2247,6 +2247,7 @@ body,.site,.access-shell,.lesson-shell,.workbook-shell,.working-page {
 .faq-section { background:var(--sage); }
 .core-closing { color:#fff8ec; background:var(--ocean); }
 .core-closing .section-label { color:var(--sun); }
+.core-closing p:not(.section-label) { color:#fff8ec; font-size:18px; line-height:1.62; }
 .curriculum-lesson {
   color:var(--ink);
   background:#fffdf8;

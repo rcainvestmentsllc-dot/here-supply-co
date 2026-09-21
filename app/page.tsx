@@ -78,9 +78,9 @@ export default function Home() {
       <section className={styles.hero}>
         <div className={styles.heroInner}>
           <div className={styles.heroContent}>
-            <p className={styles.eyebrow}>FOR MEN WHO REFUSE TO DRIFT FROM WHAT MATTERS</p>
-            <h1>Do not drift from <em>the life you built.</em></h1>
-            <p className={styles.lead}>Here Supply Co. makes practical tools for men who want to get their attention back, stay close to the people who matter, and show up for the life they actually want to live.</p>
+            <p className={styles.eyebrow}>WHEN YOUR PHONE IS TAKING MORE THAN IT GIVES</p>
+            <h1>Your phone is a tool.<br /><em>You are not.</em></h1>
+            <p className={styles.lead}>Here Supply Co. makes practical tools for people who are tired of being physically present while their attention is somewhere else. Start with one small practice that helps you come back before the people you love keep getting what is left.</p>
             <div className={styles.heroActions}>
               <Link className={styles.primaryButton} href="/sunday-board#get-board">Start the free Sunday Board Meeting <span>→</span></Link>
               <Link className={styles.quietLightLink} href="/library">See the full practice <span>→</span></Link>

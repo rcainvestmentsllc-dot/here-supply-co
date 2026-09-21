@@ -283,6 +283,40 @@
   .footer { min-height:112px; padding:24px 20px; align-items:flex-start; flex-direction:column; gap:16px; }
 }
 
+/* Homepage reading hierarchy: the first promise and every route need to be legible at a glance. */
+.header { min-height:104px; }
+.nav a { min-height:58px; font-size:14px; letter-spacing:.015em; }
+.headerAction { min-height:52px; padding:0 21px; font-size:13px; }
+.eyebrow { font-size:12px; letter-spacing:.12em; }
+.hero h1 { max-width:760px; font-size:clamp(54px,5.15vw,78px); line-height:.98; text-transform:none; }
+.hero h1 em { color:var(--rust); }
+.lead { max-width:650px; font-size:clamp(18px,1.5vw,22px); line-height:1.6; }
+.heroAssurance { font-size:11px; letter-spacing:.075em; }
+.orientationIntro h2 { font-size:clamp(42px,4.25vw,66px); line-height:1.02; }
+.orientationIntro > p:last-child { font-size:18px; line-height:1.62; }
+.orientationPaths a { min-height:164px; padding-top:29px; padding-bottom:29px; }
+.orientationPaths span { font-size:11px; }
+.orientationPaths strong { font-size:clamp(27px,2.5vw,38px); line-height:1.12; }
+.orientationPaths small { margin-top:11px; font-size:16px; line-height:1.5; }
+.orientationPaths b { font-size:13px; }
+.homecoming > div > p:last-child,.systemIntro div > p,.missedMoment > div > p:not(.eyebrow),.methodSection > div > p:not(.eyebrow) { font-size:18px; line-height:1.62; }
+.footer { font-size:12px; }
+.footer a { font-size:12px; }
+
+@media (max-width:760px) {
+  .header { min-height:78px; }
+  .mobileNav a { font-size:11px; }
+  .headerAction { min-height:42px; padding:0 14px; font-size:11px; }
+  .eyebrow { font-size:11px; }
+  .hero h1 { font-size:clamp(44px,12.2vw,62px); line-height:1; }
+  .lead { font-size:18px; }
+  .orientationIntro h2 { font-size:clamp(42px,11vw,57px); }
+  .orientationIntro > p:last-child,.orientationPaths small { font-size:16px; }
+  .orientationPaths strong { font-size:30px; }
+  .orientationPaths b { font-size:13px; }
+  .footer,.footer a { font-size:11px; }
+}
+
 @media (max-width:380px) {
   .header { padding-left:14px; padding-right:14px; }
   .headerAction { padding:0 10px; gap:8px; }
