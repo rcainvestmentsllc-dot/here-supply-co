@@ -28,12 +28,12 @@ export default function SundayBoard() {
 
       <section className="interior-hero sunday-hero">
         <div className="sunday-product-mark"><SundayBoardWordmark /></div>
-        <p className="kicker">FREE WEEKLY PRACTICE</p>
-        <h1>Sit down together.<br /><em>See the same week.</em></h1>
-        <p>This free one-page guide helps two people put the coming week in one place, reduce last-minute friction, and protect what matters before the calendar fills itself.</p>
+        <p className="kicker">A FREE 15-MINUTE WEEKLY RESET FOR COUPLES</p>
+        <h1>Stop carrying the week alone.<br /><em>Get on the same page.</em></h1>
+        <p>When the calendar, kids, work, and household details live in separate heads, small things turn into stress. The Sunday Board gives both of you one place to see what is coming, decide who owns what, and make room for what matters.</p>
         <div className="sunday-hero-actions">
-          <a className="button primary" href="#watch-together">Watch Chris and Rhea</a>
-          <small>Free video + PDF · No email gate · No account required</small>
+          <a className="button primary" href="#watch-together">Watch us use it</a>
+          <small>Free video + one-page guide · No email gate · No account required</small>
           <Link href="/library">Ready for the complete practice? See All the Way Here <span>→</span></Link>
         </div>
       </section>
