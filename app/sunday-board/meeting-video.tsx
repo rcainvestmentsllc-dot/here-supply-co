@@ -1,4 +1,5 @@
 export function SundayBoardMeetingVideo() {
+  // Keep the complete conversation in one media file so its timeline is seekable.
   return (
     <div className="sunday-film-player">
       <video
