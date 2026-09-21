@@ -113,18 +113,18 @@ def build():
     c.setFont("Avenir", 9.5)
     c.drawString(35, 605, "Start with something good. Make the week visible. Protect one thing together.")
 
-    # Small brand accents only. The worksheet stays white to conserve ink.
+    # Use the upper-right space for writing, not decoration.
     set_fill(c, OCEAN)
-    c.rect(455, 672, 123, 6, stroke=0, fill=1)
-    set_fill(c, OCHRE)
-    c.rect(455, 658, 123, 6, stroke=0, fill=1)
-    set_fill(c, TOBACCO)
-    c.rect(455, 644, 123, 6, stroke=0, fill=1)
-    set_fill(c, INK)
-    c.rect(455, 630, 123, 6, stroke=0, fill=1)
-    set_fill(c, INK)
-    c.setFont("FuturaBold", 8.5)
-    c.drawString(455, 616, "ONE WEEK  /  ONE SHARED PAGE")
+    c.setFont("FuturaBold", 9)
+    c.drawString(455, 671, "NOTES FOR THIS WEEK")
+    set_fill(c, MUTED)
+    c.setFont("Avenir", 8.5)
+    c.drawString(455, 655, "Decisions, reminders, or one thing")
+    c.drawString(455, 642, "you want to carry forward.")
+    set_stroke(c, RULE)
+    c.setLineWidth(0.55)
+    for line_y in (625, 607, 589):
+        c.line(455, line_y, 578, line_y)
 
     # Connection band.
     set_stroke(c, RULE)

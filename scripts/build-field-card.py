@@ -113,6 +113,13 @@ def build():
         ("3.3", "Mission Debrief", "Keep two for thirty days."),
     ])
 
+    pdf.setFillColor(CORAL)
+    pdf.setFont("AvenirDemi", 8.5)
+    pdf.drawString(38, 352, "MY NEXT USEFUL MOVE THIS WEEK")
+    pdf.setStrokeColor(HexColor("#B8D3D5"))
+    pdf.setLineWidth(0.65)
+    pdf.line(38, 334, PAGE_W - 38, 334)
+
     prompt_y = 330
     pdf.setFillColor(INK)
     pdf.rect(38, 190, PAGE_W - 76, 116, fill=1, stroke=0)
