@@ -92,12 +92,6 @@ export default function Home() {
               <img src="/assets/brand/sunday-board-hero-v1.jpg" alt="A man giving his full attention to a conversation at a coastal home" width="1586" height="992" fetchPriority="high" decoding="async" />
               <figcaption><span>THE RETURN</span><strong>The phone is not the point. Presence is.</strong></figcaption>
             </figure>
-            <aside className={styles.courseCover} aria-label="All the Way Here course cover">
-              <span>THE COMPLETE COURSE</span>
-              <b>ALL THE WAY<br />HERE</b>
-              <strong>RETURN · LEAD · KEEP</strong>
-              <small>9 LESSONS + A PRINTABLE WORKBOOK</small>
-            </aside>
           </div>
         </div>
         <div className={styles.heroFooter} aria-label="The Here Supply Co. approach">
