@@ -6,7 +6,7 @@ export function SundayBoardMeetingVideo() {
         controls
         playsInline
         preload="metadata"
-        poster="/assets/video/sunday-board-meeting-poster.jpg"
+        poster="/assets/video/chris-rhea-at-home-enhanced.png"
         aria-label="Chris and Rhea introduce the Sunday Board Meeting"
       >
         <source src="/assets/video/sunday-board-meeting.mp4" type="video/mp4" />
