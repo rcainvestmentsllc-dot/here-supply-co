@@ -36,10 +36,10 @@ export function Header() {
   return <>
     <header className="topbar">
       <Link className="brand" href="/" aria-label="Here Supply Co. home"><BrandWordmark /></Link>
-      <nav aria-label="Main navigation"><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/library">The course</Link><Link href="/resources">Resources</Link><Link href="/about">About</Link></nav>
+      <nav aria-label="Main navigation"><Link href="/sunday-board">Start here</Link><Link href="/library">The course</Link><Link href="/about">About Chris</Link></nav>
       <Link className="topbar-action" href="/sunday-board#get-board">Start free <span>→</span></Link>
     </header>
-    <nav className="mobile-nav" aria-label="Mobile navigation"><Link href="/sunday-board">Start free</Link><Link href="/library">The course</Link><Link href="/resources">Resources</Link><Link href="/about">About</Link></nav>
+    <nav className="mobile-nav" aria-label="Mobile navigation"><Link href="/sunday-board">Start here</Link><Link href="/library">The course</Link><Link href="/about">About Chris</Link></nav>
   </>;
 }
 

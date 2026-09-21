@@ -2259,6 +2259,9 @@ body,.site,.access-shell,.lesson-shell,.workbook-shell,.working-page {
 .offer-card.core-offer { color:#fff8ec; background:var(--ocean); }
 .offer-card.free-offer { background:#fffdf8; }
 .offer-card.core-offer > span,.offer-card.core-offer > a,.offer-card.core-offer > a b { color:var(--sun); }
+.offer-card.core-offer > a { color:var(--ink); background:var(--sun); border-color:var(--sun); }
+.offer-card.core-offer > a b { color:inherit; }
+.offer-card.core-offer > a:hover { color:#fff8ec; background:var(--rust); border-color:var(--rust); }
 
 .printable-feature {
   min-width:0;
