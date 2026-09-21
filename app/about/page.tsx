@@ -31,7 +31,7 @@ export default function AboutChris() {
 
       <section className={styles.sharedStory} aria-labelledby="shared-story-title">
         <figure>
-          <img src="/assets/video/sunday-board-meeting-poster.jpg" alt="Chris and Rhea sitting together at home" width="960" height="540" loading="lazy" decoding="async" />
+          <img src="/assets/video/chris-rhea-at-home-enhanced.png" alt="Chris and Rhea sitting together at home" width="1672" height="941" loading="lazy" decoding="async" />
           <figcaption>CHRIS + RHEA · AT HOME</figcaption>
         </figure>
         <div>
