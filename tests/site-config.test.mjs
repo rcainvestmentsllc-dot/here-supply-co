@@ -13,10 +13,10 @@ function readSettings(overrides = {}, expression = "({ origin: SITE_ORIGIN, cour
   ], { env: { ...env, ...overrides }, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }));
 }
 
-test("keeps the existing delivery address until migration is configured", () => {
+test("uses the verified Here Supply domain while preserving the existing support mailbox", () => {
   assert.deepEqual(readSettings(), {
-    origin: "https://ironcompassinstitute.com",
-    course: "https://ironcompassinstitute.com/access/core-4m8r2p",
+    origin: "https://heresupplyco.com",
+    course: "https://heresupplyco.com/access/core-4m8r2p",
     email: "mailto:chris@ironcompassinstitute.com?subject=Course%20access",
   });
 });

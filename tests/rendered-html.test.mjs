@@ -6,6 +6,18 @@ const workerUrl = new URL("../dist/server/index.js", import.meta.url);
 workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
 const { default: worker } = await import(workerUrl.href);
 
+test("redirects the Here Supply www host to HTTPS apex without losing the path or query", async () => {
+  for (const protocol of ["http", "https"]) {
+    const response = await worker.fetch(
+      new Request(`${protocol}://www.heresupplyco.com/library?source=bookmark`),
+      {},
+      { waitUntil() {}, passThroughOnException() {} },
+    );
+    assert.equal(response.status, 308);
+    assert.equal(response.headers.get("location"), "https://heresupplyco.com/library?source=bookmark");
+  }
+});
+
 async function render(pathname = "/") {
   return worker.fetch(
     new Request(`http://localhost${pathname}`, {
@@ -288,7 +300,7 @@ test("gives every indexed public page one clear heading and a canonical URL", as
   for (const route of routes) {
     const html = await htmlFor(route);
     assert.equal((html.match(/<h1\b/gi) ?? []).length, 1, `${route} should have exactly one h1`);
-    assert.match(html, new RegExp(`rel="canonical" href="https://ironcompassinstitute\\.com${route === "/" ? "/?" : route}"`, "i"));
+    assert.match(html, new RegExp(`rel="canonical" href="https://heresupplyco\\.com${route === "/" ? "/?" : route}"`, "i"));
   }
 });
 

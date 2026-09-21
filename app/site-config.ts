@@ -1,6 +1,5 @@
-// Keep the verified address until the replacement domain and mailbox are ready.
-// Set these public values before building the version used for the migration.
-const configuredOrigin = process.env.NEXT_PUBLIC_SITE_URL || "https://ironcompassinstitute.com";
+// Use the verified Here Supply domain for public and canonical website links.
+const configuredOrigin = process.env.NEXT_PUBLIC_SITE_URL || "https://heresupplyco.com";
 const parsedOrigin = new URL(configuredOrigin);
 
 if (
