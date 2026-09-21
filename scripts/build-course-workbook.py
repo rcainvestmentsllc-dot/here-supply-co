@@ -103,18 +103,18 @@ def draw_section_title(pdf, label, title, subtitle, page_number):
     else:
         accent = OCEAN
     draw_brand(pdf, page_number, accent)
-    set_font(pdf, "AvenirDemi", 7.5, CORAL)
+    set_font(pdf, "AvenirDemi", 9, CORAL)
     pdf.drawString(42, PAGE_H - 76, label)
-    set_font(pdf, "FuturaBold", 27, INK)
+    set_font(pdf, "FuturaBold", 30, INK)
     pdf.drawString(42, PAGE_H - 111, title)
     return draw_wrapped(pdf, subtitle, 42, PAGE_H - 132, PAGE_W - 84, size=10.5, leading=14.5)
 
 
 def draw_prompt(pdf, y, label, prompt, line_count=4):
-    set_font(pdf, "AvenirDemi", 7.5, OCEAN)
+    set_font(pdf, "AvenirDemi", 9, OCEAN)
     pdf.drawString(42, y, label)
     y -= 21
-    y = draw_wrapped(pdf, prompt, 42, y, PAGE_W - 84, font="AvenirDemi", size=12, leading=16, color=INK)
+    y = draw_wrapped(pdf, prompt, 42, y, PAGE_W - 84, font="AvenirDemi", size=13, leading=17, color=INK)
     y -= 7
     pdf.setStrokeColor(RULE)
     pdf.setLineWidth(0.65)
@@ -129,7 +129,7 @@ def draw_three_fields(pdf, y, labels):
     width = (PAGE_W - 84 - gap * 2) / 3
     for i, label in enumerate(labels):
         x = 42 + i * (width + gap)
-        set_font(pdf, "AvenirDemi", 6.8, CORAL)
+        set_font(pdf, "AvenirDemi", 8, CORAL)
         pdf.drawString(x, y, label)
         pdf.setStrokeColor(RULE)
         pdf.line(x, y - 18, x + width, y - 18)
@@ -177,11 +177,11 @@ def orientation(pdf, page_number):
     for number, title, body in steps:
         pdf.setFillColor(SEA_GLASS if int(number) % 2 else PALE)
         pdf.rect(42, y - 73, PAGE_W - 84, 66, fill=1, stroke=0)
-        set_font(pdf, "AvenirDemi", 8, CORAL)
+        set_font(pdf, "AvenirDemi", 9, CORAL)
         pdf.drawString(57, y - 30, number)
-        set_font(pdf, "FuturaBold", 13, INK)
+        set_font(pdf, "FuturaBold", 15, INK)
         pdf.drawString(92, y - 29, title)
-        draw_wrapped(pdf, body, 92, y - 47, PAGE_W - 150, size=8.5, leading=11.5)
+        draw_wrapped(pdf, body, 92, y - 47, PAGE_W - 150, size=10, leading=13)
         y -= 79
     set_font(pdf, "AvenirDemi", 7.5, OCEAN)
     pdf.drawString(42, 158, "WHAT SUCCESS LOOKS LIKE")
@@ -199,18 +199,18 @@ def attention_reset(pdf, page_number):
         ("04", "Give the phone a home", "When you arrive, try one drawer, bag, or charging station instead of carrying it room to room."),
     ]
     for number, title, body in moves:
-        set_font(pdf, "AvenirDemi", 8, CORAL)
+        set_font(pdf, "AvenirDemi", 9, CORAL)
         pdf.drawString(42, y, number)
-        set_font(pdf, "FuturaBold", 12.5, INK)
+        set_font(pdf, "FuturaBold", 14.5, INK)
         pdf.drawString(75, y, title)
-        y = draw_wrapped(pdf, body, 75, y - 17, PAGE_W - 117, size=8.5, leading=11.5)
+        y = draw_wrapped(pdf, body, 75, y - 17, PAGE_W - 117, size=10, leading=13)
         pdf.setStrokeColor(RULE)
         pdf.line(42, y - 4, PAGE_W - 42, y - 4)
         y -= 23
     y -= 2
-    set_font(pdf, "AvenirDemi", 7.5, OCEAN)
+    set_font(pdf, "AvenirDemi", 9, OCEAN)
     pdf.drawString(42, y, "OPTIONAL WATCH RELAY")
-    y = draw_wrapped(pdf, "If you already wear a smart watch, allow only priority people and turn off mirrored feeds. Let it keep you reachable while the phone stays in its home.", 42, y - 16, PAGE_W - 84, size=8.5, leading=11.5, color=COPY)
+    y = draw_wrapped(pdf, "If you already wear a smart watch, allow only priority people and turn off mirrored feeds. Let it keep you reachable while the phone stays in its home.", 42, y - 16, PAGE_W - 84, size=10, leading=13, color=COPY)
     y -= 8
     y = draw_prompt(pdf, y, "THE MOMENT I WANT BACK", "Name one repeated moment that deserves more of your attention.", 2)
     draw_three_fields(pdf, y - 4, ["START DATE", "PHONE-AWAY WINDOW", "ESSENTIAL EXCEPTION"])

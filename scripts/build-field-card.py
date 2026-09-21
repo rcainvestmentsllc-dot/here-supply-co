@@ -52,24 +52,24 @@ def movement_column(pdf, x, y, width, number, title, line, color, practices):
     pdf.setFillColor(color)
     pdf.rect(x, y - 42, width, 42, fill=1, stroke=0)
     pdf.setFillColor(WHITE)
-    pdf.setFont("AvenirDemi", 7)
+    pdf.setFont("AvenirDemi", 8.5)
     pdf.drawString(x + 14, y - 16, number)
-    pdf.setFont("FuturaBold", 17)
+    pdf.setFont("FuturaBold", 19)
     pdf.drawString(x + 14, y - 34, title.upper())
     cursor = y - 60
-    cursor = draw_wrapped(pdf, line, x + 14, cursor, width - 28, font="AvenirDemi", size=8.1, leading=10.5, color=INK)
+    cursor = draw_wrapped(pdf, line, x + 14, cursor, width - 28, font="AvenirDemi", size=9.4, leading=12.5, color=INK)
     cursor -= 9
     for practice_number, practice, action in practices:
         pdf.setFillColor(SEA_GLASS)
-        pdf.rect(x + 14, cursor - 45, width - 28, 45, fill=1, stroke=0)
+        pdf.rect(x + 14, cursor - 54, width - 28, 54, fill=1, stroke=0)
         pdf.setFillColor(CORAL)
-        pdf.setFont("AvenirDemi", 6.5)
+        pdf.setFont("AvenirDemi", 8)
         pdf.drawString(x + 23, cursor - 14, practice_number)
         pdf.setFillColor(INK)
-        pdf.setFont("FuturaBold", 9.5)
+        pdf.setFont("FuturaBold", 11.5)
         pdf.drawString(x + 45, cursor - 14, practice)
-        draw_wrapped(pdf, action, x + 23, cursor - 29, width - 46, size=7.1, leading=8.8, color=COPY)
-        cursor -= 53
+        draw_wrapped(pdf, action, x + 23, cursor - 32, width - 46, size=8.4, leading=10.5, color=COPY)
+        cursor -= 62
 
 
 def build():
@@ -92,7 +92,7 @@ def build():
     pdf.setFillColor(INK)
     pdf.setFont("FuturaBold", 28)
     pdf.drawString(38, PAGE_H - 78, "RETURN. LEAD. KEEP.")
-    draw_wrapped(pdf, "Nine practices. One reminder sheet. Use the move that meets the moment in front of you.", 38, PAGE_H - 98, PAGE_W - 76, font="AvenirDemi", size=9.2, leading=12, color=COPY)
+    draw_wrapped(pdf, "Nine practices. One reminder sheet. Use the move that meets the moment in front of you.", 38, PAGE_H - 98, PAGE_W - 76, font="AvenirDemi", size=10.5, leading=14, color=COPY)
 
     gap = 11
     column_w = (PAGE_W - 76 - gap * 2) / 3
@@ -117,10 +117,10 @@ def build():
     pdf.setFillColor(INK)
     pdf.rect(38, 190, PAGE_W - 76, 116, fill=1, stroke=0)
     pdf.setFillColor(SUN)
-    pdf.setFont("AvenirDemi", 7)
+    pdf.setFont("AvenirDemi", 8.5)
     pdf.drawString(55, prompt_y - 43, "WHEN YOU NOTICE THE DRIFT")
     pdf.setFillColor(WHITE)
-    pdf.setFont("FuturaBold", 15)
+    pdf.setFont("FuturaBold", 17)
     pdf.drawString(55, prompt_y - 69, "1. WHAT HAS MY ATTENTION?")
     pdf.drawString(55, prompt_y - 91, "2. WHO OR WHAT IS IN FRONT OF ME?")
     pdf.drawString(55, prompt_y - 113, "3. WHAT IS ONE USEFUL MOVE NOW?")
@@ -128,16 +128,16 @@ def build():
     pdf.setFillColor(SEA_GLASS)
     pdf.rect(38, 76, PAGE_W - 76, 92, fill=1, stroke=0)
     pdf.setFillColor(CORAL)
-    pdf.setFont("AvenirDemi", 7)
+    pdf.setFont("AvenirDemi", 8.5)
     pdf.drawString(55, 147, "THE THREE PHONE BOUNDARIES")
     pdf.setFillColor(INK)
-    pdf.setFont("FuturaBold", 11)
+    pdf.setFont("FuturaBold", 12.5)
     pdf.drawString(55, 124, "EYES FIRST")
     pdf.drawString(227, 124, "GIVE IT A HOME")
     pdf.drawString(417, 124, "STOP BEFORE SCREEN")
-    draw_wrapped(pdf, "Answer the person before the phone.", 55, 108, 135, size=7.4, leading=9, color=COPY)
-    draw_wrapped(pdf, "Use one drawer, bag, or charging place.", 227, 108, 150, size=7.4, leading=9, color=COPY)
-    draw_wrapped(pdf, "Set up the drive. Look up at the curb.", 417, 108, 135, size=7.4, leading=9, color=COPY)
+    draw_wrapped(pdf, "Answer the person before the phone.", 55, 108, 135, size=8.5, leading=10.5, color=COPY)
+    draw_wrapped(pdf, "Use one drawer, bag, or charging place.", 227, 108, 150, size=8.5, leading=10.5, color=COPY)
+    draw_wrapped(pdf, "Set up the drive. Look up at the curb.", 417, 108, 135, size=8.5, leading=10.5, color=COPY)
 
     pdf.setFillColor(COPY)
     pdf.setFont("AvenirDemi", 6.5)
