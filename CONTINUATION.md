@@ -1,6 +1,26 @@
 # Here Supply Co. continuation checkpoint
 
+## September 21, 2026: Here Supply domain and website are live
+
+Chris authorized the domain repair and publication of the prepared rebrand. `https://heresupplyco.com` publicly serves Here Supply Co.; `https://www.heresupplyco.com` permanently redirects to the HTTPS apex, preserving paths and queries. Both domain and SSL statuses are active. HostGator authoritative DNS was already correct, so no DNS edits were needed. Refreshing the Sites connections removed the initial public 404 responses.
+
+The rebrand was published as version 22 with source `d890a5fc41f754d177f6f6cdcb9be00e64ea4217`, independently verified on remote main. All 26 checks passed. The website origin and canonical links now use Here Supply, and the Sites display title is Here Supply Co. Public loading, HTTPS, www redirects, page titles, the approved logo, sitemap, and robots were checked; the live homepage was visually inspected. See `../HERE_LAUNCH_STATE.md` for exact IDs, certificate dates, and evidence. Previous unpublished-site/source-push/DNS blockers below are superseded. Existing checkout/email/support settings and unrelated services were preserved; the rest of the launch checklist was not reverified in this task.
+
 Updated: 2026-09-09
+
+## Latest pause checkpoint, September 9 afternoon
+
+- Next design fix, reported by Chris: `/resources` and `/policies` still use the old “70s colors.” Match the current approved Here Supply palette and visually verify both when work resumes. Chris explicitly requested a fix-list entry only, with no changes now.
+
+Chris asked to stop after wrapping up email and save the remaining launch work for next time. Read `../HERE_LINKS_AND_STATUS.md` and the top of `../HERE_LAUNCH_STATE.md` first; they supersede older purchase/browser/mailbox statuses below.
+
+- heresupplyco.com purchase with privacy completed, $28.14, order 1919068535. Do not repurchase or compare registrars.
+- hello@heresupplyco.com exists and is added to macOS Internet Accounts, displayed as Heresupplyco with Mail On and Notes Off. Secure server gator3055.hostgator.com; TLS verified on IMAP 993 and SMTP 465. Send/receive test still pending. No password in project notes.
+- Website DNS/SSL remain pending. HostGator portal apex record mismatch is with support agent Chetan; exact correction request sent, no resolution yet confirmed.
+- Old domain auto-renew is Off; old mailbox and shared hosting remain during migration.
+- Stripe is connected in MailerLite, but the $99 product still has old branding and delivery. Native checkout, access email, sender authentication, and received-email testing remain.
+- Current Here Supply build stays local at http://localhost:3000; course and workbook respond. Public Sites version remains 21 with old Iron Compass branding. Original ChatGPT URL https://iron-compass-check.chrisavera.chatgpt.site opens successfully.
+- Remaining deployment/source-push recovery and exact IDs are in the root checkpoint. Pause now; no automatic continuation was scheduled.
 
 ## September 9 launch setup and email clarification
 
