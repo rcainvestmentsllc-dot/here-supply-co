@@ -1,6 +1,7 @@
 import { PlainLink as Link } from "./plain-link";
 import type { Metadata } from "next";
 import { BrandWordmark, Footer, WeeklyGuidePreview } from "./components";
+import { CHECKOUT } from "./data";
 import { CORE_LESSONS } from "./course-content";
 import styles from "./home.module.css";
 
@@ -63,15 +64,15 @@ export default function Home() {
         </Link>
         <nav className={styles.nav} aria-label="Main navigation">
           <a href="#start">Start here</a>
-          <a href="#work">The full course</a>
+          <a href="#offer">The course</a>
           <Link href="/about">About Chris</Link>
         </nav>
-        <Link className={styles.headerAction} href="/sunday-board#get-board">Start free <span>→</span></Link>
+        <a className={styles.headerAction} href="#offer">Get the course <span>→</span></a>
       </header>
 
       <nav className={styles.mobileNav} aria-label="Mobile navigation">
         <a href="#start">Start here</a>
-        <a href="#work">The course</a>
+        <a href="#offer">The course</a>
         <Link href="/about">About</Link>
       </nav>
 
@@ -106,28 +107,18 @@ export default function Home() {
         <span><b>02 · Reset</b>Four small moves. Three days. No renegotiation.</span>
         <span><b>03 · Show up</b>Bring a steadier self through the door every night.</span>
       </div>
-
-      <section className={styles.orientation} aria-labelledby="orientation-title">
-        <div className={styles.orientationIntro}>
-          <p className={styles.eyebrow}>ONE BRAND. ONE PRACTICE.</p>
-          <h2 id="orientation-title">Start free.<br />Go deeper <em>when it helps.</em></h2>
-          <p>No catalog and no maze of courses. Begin with the actual Sunday meeting Chris and Rhea use. Continue into one complete course when you want the whole practice.</p>
-        </div>
-        <div className={styles.orientationPaths}>
-          <Link href="/sunday-board"><span>01</span><strong>Sunday Board Meeting</strong><small>A free 15-minute way to see the same week, with the original Chris and Rhea video.</small><b>Watch and start free →</b></Link>
-          <Link href="/library"><span>02</span><strong>All the Way Here</strong><small>Nine lessons for attention, pressure, work, relationships, and the life underneath all of it.</small><b>See the course →</b></Link>
-        </div>
-      </section>
-
-      <section className={styles.homecoming} aria-labelledby="homecoming-title">
+      <section className={styles.missedMoment} aria-labelledby="missed-moment-title">
+        <figure>
+          <img src="/assets/course/photo/lesson-1-3-driveway-v1.jpg" alt="A parent sitting in the car in the driveway, the lit kitchen window just ahead" width="1672" height="942" loading="lazy" decoding="async" />
+          <figcaption>TWO MINUTES BEFORE YOU WALK IN</figcaption>
+        </figure>
         <div>
-          <p className={styles.eyebrow}>THE POINT OF THE WORK</p>
-          <h2 id="homecoming-title">Less life inside a machine.<br /><em>More life with other people.</em></h2>
-          <p>AI can give us more answers. It cannot look another person in the eye, get down on the floor with a child, call a friend, or decide to put the phone away. Here Supply Co. is about that return: real conversations, useful work, time outside, and the people we do not want to miss.</p>
-          <Link className={styles.quietLightLink} href="/about">Why Chris built this <span>→</span></Link>
+          <p className={styles.eyebrow}>NOT ANOTHER LECTURE ABOUT SCREENS</p>
+          <h2 id="missed-moment-title">The cost is not the phone.<br />It is the moment <em>we miss.</em></h2>
+          <p>A child often asks for connection through a look, a question, or a quick, Watch this. When they look up and find us looking down, the screen can feel like it matters more even when that is not what we mean. This is not a case for guilt. It is a reason to notice sooner and turn toward the person who is already there.</p>
+          <Link className={styles.quietLightLink} href="#offer">See what the practice actually is <span>→</span></Link>
         </div>
       </section>
-
       <section className={styles.systemIntro} id="system">
         <p className={styles.eyebrow}>THE WORLD IS DESIGNED TO PULL YOU AWAY</p>
         <div>
@@ -135,35 +126,25 @@ export default function Home() {
           <p>Phones, feeds, AI tools, and work keep pulling your attention away. Here Supply Co. gives you practical ways to control the inputs before they control the day: choose what reaches you, create friction around what takes too much, and protect time with the people you love. It is environment design for ordinary life, not a meditation program or another test of willpower.</p>
         </div>
       </section>
-
-      <section className={styles.missedMoment} aria-labelledby="missed-moment-title">
-        <figure>
-          <img src="/assets/course/photo/emotional-phone-at-game-v1.jpg" alt="A father looking at his phone while his daughter waits to share a moment at a baseball field" width="1672" height="942" loading="lazy" decoding="async" />
-          <figcaption>THE MOMENT IS STILL HERE. FOR NOW.</figcaption>
-        </figure>
-        <div>
-          <p className={styles.eyebrow}>NOT ANOTHER LECTURE ABOUT SCREENS</p>
-          <h2 id="missed-moment-title">The cost is not the phone.<br />It is the moment <em>we miss.</em></h2>
-          <p>A child often asks for connection through a look, a question, or a quick, Watch this. When they look up and find us looking down, the screen can feel like it matters more even when that is not what we mean. This is not a case for guilt. It is a reason to notice sooner and turn toward the person who is already there.</p>
-          <Link className={styles.quietLightLink} href="/library">See the Attention Reset inside the course <span>→</span></Link>
+      <section className={styles.startSection} id="start">
+        <div className={styles.startArtwork}>
+          <WeeklyGuidePreview />
+          <span>FREE PRACTICE</span>
+        </div>
+        <div className={styles.startCopy}>
+          <p className={styles.eyebrow}>START WITH A REAL CONVERSATION</p>
+          <h2>The Sunday Board <em>Meeting.</em></h2>
+          <p>A printable fifteen-minute weekly conversation for two people sharing a life or household, so the calendar, money, kids, connection, and one shared priority are no longer living in two separate heads.</p>
+          <dl>
+            <div><dt>What it helps with</dt><dd>Connection, the calendar, money, kids, time together, and one shared win.</dd></div>
+            <div><dt>What you get</dt><dd>The printable meeting guide, sent to your inbox so you can find it again. No account and no new system to manage.</dd></div>
+          </dl>
+          <div className={styles.buttonRow}>
+            <Link className={styles.primaryButton} href="/sunday-board">Watch Chris and Rhea + get the guide <span>→</span></Link>
+            <Link className={styles.quietDarkLink} href="#offer">Or see the complete course <span>→</span></Link>
+          </div>
         </div>
       </section>
-
-      <section className={styles.lookUpSection} id="look-up" aria-labelledby="look-up-title">
-        <div className={styles.lookUpStory}>
-          <p className={styles.eyebrow}>LOOKING UP IS A PRACTICE</p>
-          <h2 id="look-up-title">The campus looked familiar.<br />The energy <em>did not.</em></h2>
-          <p>When Chris returned to Clemson, he felt the difference before he had words for it. So many students were walking with their heads down, absorbed in their phones. There was less eye contact, less awareness of the people passing by, and fewer small openings for a hello.</p>
-          <p>Phones had not ruined the campus. Looking down had simply become the default. The answer is not another lecture. It is a few physical practices that make connection easier to choose.</p>
-          <Link href="/resources/look-up-at-clemson">Read the full story <span>→</span></Link>
-        </div>
-        <ol className={styles.lookUpPractices}>
-          <li><span>01</span><div><h3>Eyes first</h3><p>When someone calls your name, enters the room, or asks to show you something, put the phone down and meet their eyes before anything else.</p></div></li>
-          <li><span>02</span><div><h3>Give the phone a home</h3><p>Choose one repeated moment and one visible landing place. Dinner, bedtime, a game, or the weekly meeting is enough to begin.</p></div></li>
-          <li><span>03</span><div><h3>Stop before you screen</h3><p>Set navigation and audio before driving. At a crosswalk, finish looking and crossing before the phone comes back out.</p></div></li>
-        </ol>
-      </section>
-
       <section className={styles.movementSection} id="movements">
         <div className={styles.movementHeader}>
           <p className={styles.eyebrow}>INSIDE ALL THE WAY HERE</p>
@@ -187,28 +168,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      <section className={styles.startSection} id="start">
-        <div className={styles.startArtwork}>
-          <WeeklyGuidePreview />
-          <span>FREE PRACTICE</span>
-        </div>
-        <div className={styles.startCopy}>
-          <p className={styles.eyebrow}>START WITH A REAL CONVERSATION</p>
-          <h2>The Sunday Board <em>Meeting.</em></h2>
-          <p>A printable fifteen-minute weekly conversation for two people sharing a life or household, so the calendar, money, kids, connection, and one shared priority are no longer living in two separate heads.</p>
-          <dl>
-            <div><dt>What it helps with</dt><dd>Connection, the calendar, money, kids, time together, and one shared win.</dd></div>
-            <div><dt>What you get</dt><dd>The printable meeting guide immediately. No email gate, account, or new system to manage.</dd></div>
-          </dl>
-          <div className={styles.buttonRow}>
-            <Link className={styles.primaryButton} href="/sunday-board">Watch Chris and Rhea + get the guide <span>→</span></Link>
-            <Link className={styles.quietDarkLink} href="/library">See where the complete course goes next <span>→</span></Link>
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.workSection} id="work">
+      <section className={styles.workSection} id="offer">
         <div className={styles.workHeader}>
           <p className={styles.eyebrow}>ONE COMPLETE COURSE</p>
           <h2>Come back to what is<br /><em>already here.</em></h2>
@@ -226,38 +186,15 @@ export default function Home() {
               <div className={styles.offerArtGrid}>{movements.map((movement) => <figure key={movement.title}><img src={movement.image} alt={movement.imageAlt} width="1672" height="942" loading="lazy" decoding="async" /><figcaption><span>{movement.number}</span><strong>{movement.title}</strong></figcaption></figure>)}</div>
             </div>
             <p className={styles.offerAssurance}>$99 one time · Founding-edition price · 14-day refund window</p>
-            <Link href="/library#curriculum">See inside the complete course <b>→</b></Link>
+            <a className={styles.buyButton} href={CHECKOUT.core}>Get All the Way Here <b>$99</b></a>
+            <p className={styles.afterPay}>
+              After you pay you land on a welcome page, enter the same email, and a one-time sign-in
+              link opens the course. No password to invent. If anything sticks, email Chris and he
+              opens it by hand.
+            </p>
           </article>
         </div>
       </section>
-
-      <section className={styles.methodSection}>
-        <p className={styles.eyebrow}>THE ALL THE WAY HERE PRACTICE CYCLE</p>
-        <div>
-          <h2>A practical guide for <em>coming back.</em></h2>
-          <p>AI can give you ten ideas in ten seconds. All the Way Here is valuable only if it helps you use one practice in real life with real people. The course translates durable ideas about choice, purpose, priority, relationships, and renewal into a cycle built for an ordinary week.</p>
-        </div>
-        <ul>
-          <li><span>01</span><b>Choose</b> what deserves your attention.</li>
-          <li><span>02</span><b>Enter</b> the moment on purpose.</li>
-          <li><span>03</span><b>Protect</b> what matters before urgency takes over.</li>
-          <li><span>04</span><b>Listen</b> before you fix, defend, or perform.</li>
-          <li><span>05</span><b>Renew</b> the life underneath the work.</li>
-        </ul>
-      </section>
-
-      <section className={styles.resourceSection}>
-        <div>
-          <p className={styles.eyebrow}>INDEPENDENT AND HONEST ABOUT ITS LIMITS</p>
-          <h2>One useful resource.<br />Not the <em>only one.</em></h2>
-        </div>
-        <div className={styles.resourceCopy}>
-          <p>Here Supply Co. makes practical educational tools shaped from lived experience and careful source work. This is not therapy, clinical treatment, or an accredited program. When you need research, a qualified professional, or immediate support, the resource guide points you toward established places to start.</p>
-          <Link className={styles.quietDarkLink} href="/resources">Use the resource guide <span>→</span></Link>
-          <a className={styles.quietDarkLink} href="https://chrisavera.substack.com" target="_blank" rel="me noreferrer">Read Chris on Substack <span>↗</span></a>
-        </div>
-      </section>
-
       <section id="founder" className={styles.founderSection}>
         <figure className={styles.founderPhoto}>
           <img src="/assets/chris-founder.jpg" alt="Chris Avera outdoors by the ocean in Puerto Rico" width="600" height="800" loading="lazy" decoding="async" />
@@ -268,15 +205,14 @@ export default function Home() {
           <h2>I needed the work before I ever <em>shared it.</em></h2>
           <p>I’m Chris. I’m a husband, father of three, and small-business owner in the North Carolina mountains. Here Supply Co. grew from noticing how often I was physically home while my attention was somewhere else. I built these practices for myself first, then shaped the useful parts into tools another person could actually use.</p>
           <p className={styles.founderPersonal}>Away from work, I lift kettlebells, ride mountain-bike trails, fish, and take my Trail 125 down the roads that get quieter as they get smaller. I am still practicing this work too.</p>
-          <div className={styles.founderActions}><Link className={styles.quietDarkLink} href="/about">Read Chris’s story <span>→</span></Link><Link className={styles.quietDarkLink} href="/working-session">Work with Chris <span>→</span></Link></div>
+          <div className={styles.founderActions}><Link className={styles.quietDarkLink} href="/about">Read Chris’s story <span>→</span></Link><Link className={styles.quietDarkLink} href="/working-session">Ask Chris a question <span>→</span></Link></div>
         </div>
       </section>
-
       <section className={styles.closing}>
         <p className={styles.eyebrow}>START WHERE LIFE IS ASKING FOR YOU</p>
         <h2>One useful way<br />to come <em>back.</em></h2>
-        <p>Put the free guide on the table this week. When you want the complete practice, continue into All the Way Here.</p>
-        <div><Link className={styles.primaryButton} href="/sunday-board#get-board">Get the free weekly guide <span>→</span></Link><Link href="/library">See the complete course <span>→</span></Link></div>
+        <p>The Attention Reset, nine lessons, the workbook, and the field card. One payment, yours to keep, with 14 days to change your mind.</p>
+        <div><a className={styles.primaryButton} href={CHECKOUT.core}>Get All the Way Here · $99 <span>→</span></a><Link href="/sunday-board#get-board">Or start with the free guide <span>→</span></Link></div>
       </section>
       <Footer />
     </main>

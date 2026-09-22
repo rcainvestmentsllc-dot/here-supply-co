@@ -158,11 +158,34 @@
 .videoReveal[open] summary { display:none; }
 .videoReveal video { width:100%; display:block; aspect-ratio:16 / 9; object-fit:contain; background:var(--hsc-black); }
 .focusOffer > a, .coreOffer > a { margin-top:auto; padding-top:29px; display:flex; align-items:center; justify-content:space-between; gap:15px; color:var(--ink); font-size:11px; font-weight:700; text-decoration:none; }
-.coreOffer > a { color:var(--ink); }
 .focusOffer > a:hover { color:var(--rust); }
-.coreOffer > a:hover { color:var(--hsc-teal); }
 .focusOffer > a b { color:var(--rust); font-size:18px; }
-.coreOffer > a b { color:var(--hsc-teal); font-size:18px; }
+
+/* The buy button. This is the single most important click on the site, so it
+   is a solid, full-width target rather than the quiet text link the other
+   offer cards use. */
+.coreOffer > a.buyButton {
+  margin-top:auto;
+  padding:20px 28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  background:var(--hsc-iron);
+  color:var(--hsc-white);
+  border-radius:var(--hsc-r-sm);
+  font-family:var(--hsc-mono);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  text-decoration:none;
+  box-shadow:0 10px 24px -14px rgba(0,0,0,.55);
+  transition:background var(--hsc-fast) var(--hsc-ease), transform var(--hsc-fast) var(--hsc-ease), box-shadow var(--hsc-fast) var(--hsc-ease);
+}
+.coreOffer > a.buyButton:hover { background:var(--hsc-iron-deep); color:var(--hsc-white); transform:translateY(-1px); box-shadow:0 16px 30px -16px rgba(0,0,0,.6); }
+.coreOffer > a.buyButton b { color:var(--hsc-white); font-size:15px; }
+.afterPay { margin:14px 0 0 !important; color:var(--hsc-copy) !important; font-size:12px !important; line-height:1.6 !important; text-align:center; }
 .offerAssurance { margin:18px 0 0 !important; color:var(--hsc-quiet) !important; font-size:9px !important; font-weight:700; letter-spacing:.08em; line-height:1.6 !important; text-transform:uppercase; }
 .coreOffer .offerAssurance { color:var(--hsc-copy) !important; }
 
