@@ -1,5 +1,6 @@
 import { siteUrl, supportEmailUrl } from "./site-config";
 import type { Metadata } from "next";
+import "./design/tokens.css";
 import "./globals.css";
 import { JsonLd } from "./structured-data";
 

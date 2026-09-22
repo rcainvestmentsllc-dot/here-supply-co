@@ -1,11 +1,11 @@
 import { clearSessionCookieHeader } from "../../../../lib/session";
-import { SITE_ORIGIN } from "../../../site-config";
 
-export async function POST() {
+export async function POST(request: Request) {
+  const origin = new URL(request.url).origin;
   return new Response(null, {
     status: 303,
     headers: {
-      Location: new URL("/", SITE_ORIGIN).href,
+      Location: new URL("/", origin).href,
       "Set-Cookie": clearSessionCookieHeader(),
     },
   });

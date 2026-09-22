@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CORE_LESSONS, LESSON_GUIDES, getCoreLesson, getMovement } from "../../../../course-content";
 import { PlainLink as Link } from "../../../../plain-link";
-import { LessonProgress } from "../../../course-progress";
 import { requireProductAccess } from "../../../../../lib/require-access";
+import { getEnv } from "../../../../../lib/cloudflare-env";
+import { getCompletedLessons } from "../../../../../lib/progress";
+import { CourseShell, COURSE_ROOT } from "../../../course-shell";
+import styles from "../../../course.module.css";
 
 export const metadata: Metadata = {
   title: "All the Way Here Lesson | Here Supply Co.",
@@ -16,9 +19,15 @@ export function generateStaticParams() {
 
 export default async function CoreLessonPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  await requireProductAccess("core", `/access/core-4m8r2p/lesson/${slug}`);
+  const lessonPath = `${COURSE_ROOT}/lesson/${slug}`;
+  const email = await requireProductAccess("core", lessonPath);
+
   const lesson = getCoreLesson(slug);
   if (!lesson) notFound();
+
+  const env = getEnv();
+  const completed = await getCompletedLessons(env, email);
+  const isDone = completed.has(lesson.slug);
 
   const index = CORE_LESSONS.findIndex((item) => item.slug === lesson.slug);
   const previous = CORE_LESSONS[index - 1];
@@ -27,60 +36,207 @@ export default async function CoreLessonPage({ params }: { params: Promise<{ slu
   const movement = getMovement(lesson.movement);
   const guide = LESSON_GUIDES[lesson.slug];
 
-  return <main id="main-content" className={`lesson-shell lesson-${lesson.movement.toLowerCase()}`}>
-    <header className="access-header lesson-header"><Link href="/access/core-4m8r2p">← ALL THE WAY HERE</Link><span>{lesson.number} · {lesson.movement}</span></header>
+  return (
+    <CourseShell completed={completed} currentSlug={lesson.slug}>
+      <header className={styles.lessonHead}>
+        <p className={styles.lessonEyebrow}>
+          {movement?.name} <em>Lesson {lesson.number}</em>
+        </p>
+        <h1 className={styles.lessonTitle}>{lesson.title}</h1>
+        <p className={styles.lessonSubtitle}>{lesson.subtitle}</p>
+      </header>
 
-    <section className="lesson-cover">
-      <div className="lesson-cover-number">{lesson.number}</div>
-      <div className="lesson-cover-copy"><p>{movement?.name.toUpperCase()} · ALL THE WAY HERE</p><h1>{lesson.title}</h1><h2>{lesson.subtitle}</h2><div><span>LESSON {lesson.number}</span><span>ONE PRACTICE · ONE WEEK</span></div></div>
-    </section>
+      <figure className={styles.lessonArt}>
+        <img
+          src={lesson.artImage}
+          alt={lesson.artAlt}
+          width={1672}
+          height={942}
+          style={{ objectPosition: lesson.previewPosition }}
+        />
+        <figcaption>
+          <b>
+            {lesson.number} · {movement?.name}
+          </b>
+          <span>{lesson.artCaption}</span>
+        </figcaption>
+      </figure>
 
-    <figure className="lesson-art">
-      <img src={lesson.artImage} alt={lesson.artAlt} width="1672" height="942" style={{ objectPosition: lesson.previewPosition }} />
-      <figcaption><span>{lesson.number} · {lesson.movement}</span><p>{lesson.artCaption}</p></figcaption>
-    </figure>
+      <section className={styles.prose}>
+        <p className={styles.label}>A familiar scene</p>
+        <p>{lesson.scene}</p>
+      </section>
 
-    <section className="lesson-scene"><span>A FAMILIAR SCENE</span><p>{lesson.scene}</p></section>
+      {lesson.problemImage && lesson.problemAlt && lesson.problemCaption && (
+        <figure className={styles.lessonArt}>
+          <img
+            src={lesson.problemImage}
+            alt={lesson.problemAlt}
+            width={1672}
+            height={942}
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>
+            <b>What divided attention feels like</b>
+            <span>{lesson.problemCaption}</span>
+          </figcaption>
+        </figure>
+      )}
 
-    {lesson.problemImage && lesson.problemAlt && lesson.problemCaption && <figure className="lesson-problem-art">
-      <img src={lesson.problemImage} alt={lesson.problemAlt} width="1672" height="942" loading="lazy" decoding="async" />
-      <figcaption><span>WHAT DIVIDED ATTENTION FEELS LIKE</span><p>{lesson.problemCaption}</p></figcaption>
-    </figure>}
+      <section className={styles.prose}>
+        <p className={styles.label}>What is happening</p>
+        <h2 className={styles.blockTitle}>{lesson.summary}</h2>
+        <p>{lesson.problem}</p>
+      </section>
 
-    <section className="lesson-card lesson-opening"><div><p className="section-label">WHAT IS HAPPENING</p><h2>{lesson.summary}</h2></div><p>{lesson.problem}</p></section>
+      <section className={styles.principle}>
+        <p className={styles.label}>The principle</p>
+        <blockquote>{lesson.principle}</blockquote>
+      </section>
 
-    <section className="lesson-card lesson-principle"><p className="section-label">THE PRINCIPLE</p><blockquote>{lesson.principle}</blockquote></section>
+      <section className={styles.prose}>
+        <p className={styles.label}>The practice</p>
+        <h2 className={styles.blockTitle}>{lesson.practice}</h2>
+        <p>{lesson.practiceIntro}</p>
+      </section>
 
-    <section className="lesson-practice">
-      <div className="lesson-practice-heading"><p className="section-label">THE PRACTICE</p><h2>{lesson.practice}</h2><p>{lesson.practiceIntro}</p></div>
-      <ol>{lesson.steps.map((step, stepIndex) => <li key={step.title}><span>0{stepIndex + 1}</span><div><h3>{step.title}</h3><p>{step.body}</p></div></li>)}</ol>
-    </section>
+      <ol className={styles.steps}>
+        {lesson.steps.map((step) => (
+          <li key={step.title}>
+            <div>
+              <h3>{step.title}</h3>
+              <p>{step.body}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
 
-    <section className="lesson-pair"><article><p className="section-label">MAKE IT FIT REAL LIFE</p><h2>A practice can bend without breaking.</h2><p>{lesson.adaptation}</p></article><article><p className="section-label">USE IT NOW</p><h2>One move before tomorrow.</h2><p>{lesson.action}</p></article></section>
-
-    {guide && <section className="lesson-field-kit">
-      <header><p className="section-label">PRACTICE KIT</p><h2>Make the idea usable.</h2><p>This is the layer that takes the lesson out of your head and puts it into a real week.</p></header>
-      <div className="lesson-field-grid">
-        <article><span>01 · WHY IT MAY HELP</span><p>{guide.whyItHelps}</p></article>
-        <article><span>02 · WORDS TO USE</span><blockquote>“{guide.wordsToUse}”</blockquote></article>
-        <article><span>03 · WATCH FOR</span><p>{guide.watchFor}</p></article>
-        <article className="lesson-assignment"><span>04 · TRY THIS WEEK</span><h3>{guide.fieldAssignment}</h3></article>
+      <div className={styles.pair}>
+        <article className={styles.pairCard}>
+          <h3>A practice can bend without breaking</h3>
+          <p>{lesson.adaptation}</p>
+        </article>
+        <article className={styles.pairCard}>
+          <h3>One move before tomorrow</h3>
+          <p>{lesson.action}</p>
+        </article>
       </div>
-      <aside><b>EVIDENCE NOTE</b>{guide.evidence.map((source) => <a href={source.href} target="_blank" rel="noreferrer" key={source.href}><strong>{source.label} ↗</strong><span>{source.note}</span></a>)}</aside>
-    </section>}
 
-    <section className="lesson-reflection"><p className="section-label">ONE QUESTION</p><h2>{lesson.reflection}</h2><LessonProgress slug={lesson.slug} isFinal={!next} /></section>
+      {guide && (
+        <section className={styles.kit}>
+          <header className={styles.kitHead}>
+            <p className={styles.label}>Practice kit</p>
+            <h2 className={styles.blockTitle}>Make the idea usable.</h2>
+            <p style={{ margin: 0, color: "var(--hsc-copy)" }}>
+              This is the layer that takes the lesson out of your head and puts it into a real week.
+            </p>
+          </header>
+          <div className={styles.kitGrid}>
+            <article>
+              <span>01 · Why it may help</span>
+              <p>{guide.whyItHelps}</p>
+            </article>
+            <article>
+              <span>02 · Words to use</span>
+              <blockquote>&ldquo;{guide.wordsToUse}&rdquo;</blockquote>
+            </article>
+            <article>
+              <span>03 · Watch for</span>
+              <p>{guide.watchFor}</p>
+            </article>
+            <article>
+              <span>04 · Try this week</span>
+              <h3>{guide.fieldAssignment}</h3>
+            </article>
+          </div>
+          <aside className={styles.kitSources}>
+            <b>Evidence note</b>
+            {guide.evidence.map((source) => (
+              <a key={source.href} href={source.href} target="_blank" rel="noreferrer">
+                <strong>{source.label} ↗</strong>
+                <span>{source.note}</span>
+              </a>
+            ))}
+          </aside>
+        </section>
+      )}
 
-    <section className="lesson-workbook-action">
-      <div><p className="section-label">MATCHING ACTION PAGE · INCLUDED</p><h2>Put this lesson on paper.</h2><p>Every lesson has one matching action page in the workbook. Try the practice first, then write what happened and name the next real move.</p></div>
-      <div><a className="button primary" href={`/downloads/all-the-way-here-workbook.pdf#page=${printablePage}`} target="_blank" rel="noreferrer">Open this printable page <b>→</b></a><Link href={`/access/core-4m8r2p/workbook#${lesson.slug}`} target="_blank" rel="noreferrer">Type in this page instead →</Link><a href="/downloads/all-the-way-here-workbook.pdf" download="all-the-way-here-workbook.pdf">Download all 16 pages ↓</a></div>
-    </section>
+      <section className={styles.reflection}>
+        <p className={styles.label}>One question</p>
+        <h2>{lesson.reflection}</h2>
+        <form className={styles.completeForm} method="post" action="/api/progress">
+          <input type="hidden" name="lesson" value={lesson.slug} />
+          <input type="hidden" name="state" value={isDone ? "incomplete" : "complete"} />
+          <input type="hidden" name="return_to" value={next ? `${COURSE_ROOT}/lesson/${next.slug}` : lessonPath} />
+          <button
+            type="submit"
+            className={`${styles.btn} ${isDone ? styles.btnGhost : styles.btnPrimary}`}
+          >
+            {isDone ? "Mark as not finished" : "Mark complete"}
+            {!isDone && <span aria-hidden="true">→</span>}
+          </button>
+        </form>
+        {isDone && (
+          <span className={styles.completeNote}>
+            <span aria-hidden="true">✓</span> You finished this lesson
+          </span>
+        )}
+      </section>
 
-    <section className="lesson-field-note"><span>A NOTE FROM CHRIS</span><blockquote>“{lesson.fieldNote}”</blockquote><small>Chris Avera · Husband and father</small></section>
+      <section className={styles.workbookPrompt}>
+        <div>
+          <h3>Put this lesson on paper.</h3>
+          <p>
+            Every lesson has one matching action page in the workbook. Try the practice first, then
+            write what happened and name the next real move.
+          </p>
+        </div>
+        <div className={styles.workbookActions}>
+          <Link href={`${COURSE_ROOT}/workbook#${lesson.slug}`} className={`${styles.btn} ${styles.btnGhost}`}>
+            Write it here <span aria-hidden="true">→</span>
+          </Link>
+          <a
+            className={`${styles.btn} ${styles.btnGhost}`}
+            href={`/downloads/all-the-way-here-workbook.pdf#page=${printablePage}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Printable page <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </section>
 
-    <nav className="lesson-next" aria-label="Lesson navigation">
-      {previous ? <Link href={`/access/core-4m8r2p/lesson/${previous.slug}`}><small>PREVIOUS · {previous.number}</small><strong>← {previous.title}</strong></Link> : <Link href="/access/core-4m8r2p"><small>COURSE HOME</small><strong>← All the Way Here</strong></Link>}
-      {next ? <Link href={`/access/core-4m8r2p/lesson/${next.slug}`}><small>NEXT · {next.number}</small><strong>{next.title} →</strong></Link> : <Link href="/access/core-4m8r2p/workbook#thirty-day-plan"><small>FINISH THE COURSE</small><strong>Build your 30-day plan →</strong></Link>}
-    </nav>
-  </main>;
+      <section className={styles.fieldNote}>
+        <p className={styles.label}>A note from Chris</p>
+        <blockquote>&ldquo;{lesson.fieldNote}&rdquo;</blockquote>
+        <small>Chris Avera · Husband and father</small>
+      </section>
+
+      <nav className={styles.lessonNav} aria-label="Lesson navigation">
+        {previous ? (
+          <Link href={`${COURSE_ROOT}/lesson/${previous.slug}`} className={styles.navLink}>
+            <small>Previous · {previous.number}</small>
+            <strong>← {previous.title}</strong>
+          </Link>
+        ) : (
+          <Link href={COURSE_ROOT} className={styles.navLink}>
+            <small>Course home</small>
+            <strong>← All the Way Here</strong>
+          </Link>
+        )}
+        {next ? (
+          <Link href={`${COURSE_ROOT}/lesson/${next.slug}`} className={`${styles.navLink} ${styles.navNext}`}>
+            <small>Next · {next.number}</small>
+            <strong>{next.title} →</strong>
+          </Link>
+        ) : (
+          <Link href={`${COURSE_ROOT}/workbook#thirty-day-plan`} className={`${styles.navLink} ${styles.navNext}`}>
+            <small>Finish the course</small>
+            <strong>Build your 30-day plan →</strong>
+          </Link>
+        )}
+      </nav>
+    </CourseShell>
+  );
 }

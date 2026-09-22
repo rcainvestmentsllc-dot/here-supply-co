@@ -1,0 +1,117 @@
+/**
+ * Here Supply Co. — design tokens.
+ *
+ * One source of truth. Namespaced `--hsc-*` deliberately: globals.css still
+ * carries four competing `:root` blocks from earlier generations of the site
+ * (three different palettes, three different font stacks), and anything named
+ * `--ink` or `--paper` there is already contested. These names can't collide,
+ * so new work is built on a stable foundation while the legacy sheet is
+ * migrated section by section.
+ *
+ * Palette is the one the live marketing site already resolves to — deep navy,
+ * warm cream, ocean, rust, gold. Nothing here invents a new brand colour.
+ */
+
+:root {
+  /* ---- Colour: surfaces ---- */
+  --hsc-paper: #fff8ec;        /* warm cream — primary page surface */
+  --hsc-paper-raised: #fffdf8; /* cards sitting on paper */
+  --hsc-paper-sunk: #f7ecd9;   /* wells, inputs, inset areas */
+  --hsc-sand: #f0e6d2;         /* quiet dividers, hover fills */
+  --hsc-sage: #d9eeef;         /* cool tint surface */
+
+  /* ---- Colour: ink ---- */
+  --hsc-ink: #092f3c;          /* headings, primary text */
+  --hsc-ink-soft: #2a4d58;     /* secondary text on light */
+  --hsc-copy: #526b72;         /* body copy */
+  --hsc-quiet: #7e919a;        /* captions, meta, disabled */
+
+  /* ---- Colour: deep surfaces ---- */
+  --hsc-forest: #103f4c;       /* sidebar, footers, dark panels */
+  --hsc-forest-deep: #072530;  /* deepest anchor */
+  --hsc-on-dark: #eaf4f2;      /* text on deep surfaces */
+  --hsc-on-dark-quiet: #93aeb4;
+
+  /* ---- Colour: accents ---- */
+  --hsc-ocean: #21859d;        /* progress, links, completion */
+  --hsc-ocean-soft: #cfe6ea;
+  --hsc-rust: #df5c3f;         /* the single "do this next" accent */
+  --hsc-rust-deep: #c44a2e;
+  --hsc-gold: #f4c550;         /* highlights, focus rings */
+
+  /* ---- Type families ---- */
+  --hsc-display: Futura, "Avenir Next Condensed", "Century Gothic",
+    "Franklin Gothic Medium", Arial, sans-serif;
+  --hsc-body: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --hsc-editorial: "Iowan Old Style", Charter, Georgia, "Times New Roman", serif;
+  --hsc-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* ---- Type scale ----
+     Deliberately restrained. The old sheet jumped from 9px labels straight to
+     124px headlines with little in between, which is a large part of why the
+     site reads as assembled rather than designed. */
+  --hsc-t-micro: 11px;   /* tracked uppercase labels */
+  --hsc-t-small: 13px;
+  --hsc-t-body: 15.5px;
+  --hsc-t-body-lg: 17.5px;
+  --hsc-t-h4: 19px;
+  --hsc-t-h3: clamp(21px, 1.6vw, 24px);
+  --hsc-t-h2: clamp(26px, 2.6vw, 36px);
+  --hsc-t-h1: clamp(34px, 4vw, 50px);
+  --hsc-t-display: clamp(44px, 6vw, 74px);
+
+  --hsc-lh-tight: 1.08;
+  --hsc-lh-snug: 1.25;
+  --hsc-lh-body: 1.62;
+  --hsc-track-label: 0.16em;
+
+  /* ---- Spacing (8pt) ---- */
+  --hsc-s1: 4px;
+  --hsc-s2: 8px;
+  --hsc-s3: 12px;
+  --hsc-s4: 16px;
+  --hsc-s5: 24px;
+  --hsc-s6: 32px;
+  --hsc-s7: 48px;
+  --hsc-s8: 64px;
+  --hsc-s9: 96px;
+  --hsc-s10: 128px;
+
+  /* ---- Radius ---- */
+  --hsc-r-sm: 4px;
+  --hsc-r-md: 8px;
+  --hsc-r-lg: 14px;
+  --hsc-r-pill: 999px;
+
+  /* ---- Elevation ----
+     Layered and soft. The old sheet used hard offset shadows
+     (`13px 16px 5px`) which read as sticker art, not depth. */
+  --hsc-e1: 0 1px 2px rgba(9, 47, 60, .06), 0 2px 6px rgba(9, 47, 60, .04);
+  --hsc-e2: 0 2px 4px rgba(9, 47, 60, .06), 0 8px 20px rgba(9, 47, 60, .07);
+  --hsc-e3: 0 4px 8px rgba(9, 47, 60, .07), 0 18px 40px rgba(9, 47, 60, .10);
+  --hsc-e-accent: 0 8px 22px rgba(223, 92, 63, .26);
+
+  /* ---- Lines ---- */
+  --hsc-line: rgba(9, 47, 60, .12);
+  --hsc-line-strong: rgba(9, 47, 60, .22);
+  --hsc-line-dark: rgba(234, 244, 242, .16);
+
+  /* ---- Motion ---- */
+  --hsc-ease: cubic-bezier(.22, 1, .36, 1);
+  --hsc-fast: .18s;
+  --hsc-mid: .3s;
+  --hsc-slow: .5s;
+
+  /* ---- Layout ---- */
+  --hsc-rail: 284px;           /* course sidebar width */
+  --hsc-measure: 68ch;         /* comfortable reading width */
+  --hsc-gutter: clamp(20px, 5vw, 64px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --hsc-fast: 0s;
+    --hsc-mid: 0s;
+    --hsc-slow: 0s;
+  }
+}
