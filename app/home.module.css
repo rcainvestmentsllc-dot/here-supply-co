@@ -253,7 +253,12 @@
   .mobileNav::-webkit-scrollbar { display:none; }
   .mobileNav a { min-height:44px; flex:none; display:inline-flex; align-items:center; color:inherit; font-size:9px; font-weight:700; letter-spacing:.035em; text-decoration:none; }
   .mobileNav a:first-child { color:var(--rust); }
-  .headerAction { min-height:38px; padding:0 12px; gap:12px; font-size:9px; }
+  /* The wordmark was being squeezed by the header button until the O. in
+     'HERE SUPPLY CO.' was sliced off. The logo never shrinks; the button
+     steps aside instead. Navigation is in the row below and the hero
+     carries a full-width CTA immediately under it. */
+  .brand { flex:0 0 auto; min-width:auto; }
+  .headerAction { display:none; }
   .brand small { display:none; }
   .hero { min-height:0; }
   .heroInner { padding:70px 20px 64px; gap:47px; }
@@ -445,12 +450,17 @@
 .movementSection { background:var(--hsc-mist); }
 .movementSection::before { display:none; }
 .movementHeader h2 em { color:var(--hsc-teal); }
-.movementCard { min-height:0; grid-template-columns:1fr; }
-.movementCard:nth-child(even) .movementPreview { order:0; }
-.movementPreview { min-height:0; aspect-ratio:auto; background:var(--hsc-sand); }
+/* This block once flattened every card to a single column at all widths,
+   which killed the alternating image-beside-copy layout the section was
+   designed around and left three enormous stacked photos with a caption
+   under each. The stacking belongs at narrow widths only. */
+.movementCard { min-height:420px; }
+.movementPreview { min-height:0; background:var(--hsc-sand); }
 .movementPreview img { object-fit:cover; filter:none; }
-.movementArtGrid { width:100%; height:100%; padding:12px; display:grid; }
-.movementArtGrid figure { min-width:0; margin:0; position:relative; aspect-ratio:16 / 9; overflow:hidden; border:1px solid rgba(24,35,31,.22); background:var(--hsc-forest-deep); }
+/* Edge to edge. The old padded frame with a fixed 16:9 figure inside a
+   taller cell left a band of dead colour under every photograph. */
+.movementArtGrid { width:100%; height:100%; display:grid; }
+.movementArtGrid figure { min-width:0; min-height:100%; margin:0; position:relative; overflow:hidden; background:var(--hsc-forest-deep); }
 .movementArtGrid img { width:100%; height:100%; min-height:0; object-fit:cover; }
 .movementArtGrid figcaption { position:absolute; inset:auto 0 0; padding:11px 10px; color:var(--hsc-paper); background:linear-gradient(transparent,rgba(24,35,31,.94)); font-size:8px; font-weight:700; line-height:1.3; letter-spacing:.07em; }
 .movementCard:hover .movementPreview img { transform:none; }

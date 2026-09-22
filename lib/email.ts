@@ -18,6 +18,11 @@
  */
 import type { CloudflareEnv } from "./cloudflare-env";
 
+/** Can this deployment actually deliver a magic link right now? */
+export function isEmailConfigured(env: CloudflareEnv): boolean {
+  return Boolean(env.MAILERSEND_API_KEY && env.MAILERSEND_FROM_EMAIL);
+}
+
 export async function sendMagicLinkEmail(env: CloudflareEnv, email: string, link: string): Promise<void> {
   const apiKey = env.MAILERSEND_API_KEY;
   const fromEmail = env.MAILERSEND_FROM_EMAIL as string | undefined;

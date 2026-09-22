@@ -47,6 +47,12 @@
 .source { margin-top:34px; padding-top:20px; border-top:1px solid rgba(16,38,28,.2); color:var(--copy); font-size:12px; line-height:1.65; }
 .source a { font-weight:700; }
 .source a:hover { color:var(--rust); }
+/* Every article used to end with a link to the course and nothing else, so
+   a reader who was interested but not ready left no trace. The guide capture
+   sits between the piece and the course pitch. */
+.capture { padding:clamp(56px,7vw,96px) clamp(24px,8vw,125px); background:var(--hsc-paper); }
+.capture > * { max-width:760px; margin-left:auto; margin-right:auto; }
+
 .cta { padding:clamp(70px,8.5vw,118px) clamp(24px,8vw,125px); display:grid; grid-template-columns:minmax(260px,.8fr) minmax(0,1fr); align-items:end; gap:clamp(45px,9vw,140px); background:var(--sage); }
 .cta span { color:var(--rust); font-size:9px; font-weight:700; letter-spacing:.17em; }
 .cta h2 { margin:17px 0 0; font-size:clamp(43px,5.3vw,78px); line-height:1.04; }

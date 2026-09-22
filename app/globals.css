@@ -653,7 +653,15 @@ h1,h2,h3,h4,strong,b,em { overflow-wrap:normal; word-break:normal; hyphens:none;
 .offer-intro h2 em,.core-curriculum h2 em { color:var(--rust); font-style:italic; }
 .offer-intro > p:last-child { max-width:360px; margin:0; color:var(--copy); font-size:16px; line-height:1.6; }
 .offer-stack { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-top:1px solid rgba(26,42,34,.18); }
-.offer-stack-simple { grid-template-columns:repeat(2,minmax(0,1fr)); }
+/* The sales page used to stack the free product beside the paid one, which
+   put a cheaper option in front of the reader at the moment of decision.
+   There is one card now, so it gets room to carry the offer on its own. */
+.offer-stack-simple { grid-template-columns:minmax(0,1fr); width:100%; max-width:620px; margin-left:auto; margin-right:auto; align-self:start; }
+.offer-after { margin:14px 0 0 !important; color:var(--hsc-quiet); font-size:13px; line-height:1.6; }
+.offer-alt { grid-column:1 / -1; max-width:620px; margin:6px auto 0; color:var(--hsc-quiet); font-size:14px; line-height:1.6; text-align:center; }
+.offer-alt a { color:var(--hsc-teal); }
+.closing-alt { margin-top:18px; color:var(--hsc-sand); font-size:14px; }
+.closing-alt a { color:var(--hsc-white); text-underline-offset:3px; }
 .offer-card { min-height:380px; padding:28px 25px 24px; display:flex; flex-direction:column; border-right:1px solid rgba(26,42,34,.18); border-bottom:1px solid rgba(26,42,34,.18); background:rgba(245,240,229,.45); }
 .offer-card:last-child { border-right:0; }
 .offer-card > span { color:var(--rust); font-size:10px; font-weight:700; letter-spacing:.15em; }
@@ -741,7 +749,10 @@ h1,h2,h3,h4,strong,b,em { overflow-wrap:normal; word-break:normal; hyphens:none;
 }
 @media (max-width:600px) {
   .topbar { min-height:70px; padding:0 20px; gap:13px; }
-  .topbar-action { min-height:34px; padding:0 10px; font-size:8px; gap:10px; }
+  /* Same rule as the home header: the wordmark is never clipped to make
+     room for a button. */
+  .topbar .brand { flex:0 0 auto; min-width:auto; }
+  .topbar-action { display:none; }
   .topbar .brand small { display:none; }
   .brand-lockup { width:178px; }
   .home-hero,.interior-hero,.home-statement,.sunday-feature,.letters-feature,.path-section,.signup-section,.worksheet-section,.board-questions,.offer-section,.core-curriculum,.faith-statement,.faith-principles { padding-left:20px; padding-right:20px; }

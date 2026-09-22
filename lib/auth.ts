@@ -49,6 +49,33 @@ export async function hasPurchase(env: CloudflareEnv, email: string, product: Pr
 }
 
 /**
+ * Was `product` bought by `email` within the last `windowMinutes`?
+ *
+ * This exists for one narrow case: the moment right after checkout, when a
+ * buyer is sitting on the welcome page and no transactional email provider
+ * is configured to send them a link. Without it they pay and are stranded,
+ * which is worse than the small risk of a fresh purchase being claimed by
+ * someone who already knows the buyer's address and is watching the clock.
+ * The window closes on its own, so it is not a standing back door.
+ */
+export async function hasFreshPurchase(
+  env: CloudflareEnv,
+  email: string,
+  product: ProductKey,
+  windowMinutes = 180
+): Promise<boolean> {
+  const row = await env.DB.prepare(
+    `select 1 from purchases
+      where email = ?1 and product = ?2
+        and created_at >= datetime('now', ?3)
+      limit 1`
+  )
+    .bind(normalizeEmail(email), product, `-${Math.round(windowMinutes)} minutes`)
+    .first();
+  return row !== null;
+}
+
+/**
  * Create a one-time login token for `email`, valid for 15 minutes.
  * Returns the raw token to embed in the emailed link — never store it,
  * only its hash.

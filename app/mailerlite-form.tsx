@@ -15,9 +15,14 @@ const GUIDE_URL = "/downloads/sunday-board-meeting.pdf";
 export function SundayBoardSignupForm({
   unlocked = false,
   error = false,
+  source = "sunday_board",
+  next = "/sunday-board",
 }: {
   unlocked?: boolean;
   error?: boolean;
+  /** Which page earned the lead, so it is possible to see what converts. */
+  source?: string;
+  next?: string;
 }) {
   if (unlocked) {
     return (
@@ -47,8 +52,8 @@ export function SundayBoardSignupForm({
       </p>
 
       <form className={styles.form} method="post" action="/api/subscribe">
-        <input type="hidden" name="source" value="sunday_board" />
-        <input type="hidden" name="next" value="/sunday-board" />
+        <input type="hidden" name="source" value={source} />
+        <input type="hidden" name="next" value={next} />
         <label className={styles.field}>
           <span>Your email</span>
           <input

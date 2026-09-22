@@ -4,6 +4,7 @@ import { Footer, Header } from "../../components";
 import { PlainLink as Link } from "../../plain-link";
 import { JsonLd } from "../../structured-data";
 import styles from "../article.module.css";
+import { SundayBoardSignupForm } from "../../mailerlite-form";
 
 export const metadata: Metadata = {
   title: "How to Leave Work at Work Before You Walk In the Door",
@@ -50,6 +51,9 @@ export default function LeaveWorkAtWork() {
         <div className={styles.note}><strong>A transition is not a promise that you will never bring pressure home.</strong><p>Some days will come through the door with you. On those days, say so honestly, ask for a few minutes if you need them, give a return time, and reconnect. Repair is part of the practice.</p></div>
         <p>Use this for a week and notice the entrance, not a perfect outcome. Did you look up? Did you greet the people in the room? Did unfinished work stop choosing the first moment for you?</p>
       </article>
+    </section>
+    <section className={styles.capture}>
+      <SundayBoardSignupForm source="article_leave_work_at_work" />
     </section>
     <section className={styles.cta}><div><span>ALL THE WAY HERE</span><h2>One practice inside a larger path.</h2></div><div><p>The Airlock is one of nine practical lessons for returning, leading a hard moment, and keeping the parts of life work cannot replace.</p><Link href="/library#curriculum">See the complete course <b>→</b></Link></div></section>
     <Footer />

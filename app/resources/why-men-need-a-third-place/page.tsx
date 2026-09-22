@@ -4,6 +4,7 @@ import { Footer, Header } from "../../components";
 import { PlainLink as Link } from "../../plain-link";
 import { JsonLd } from "../../structured-data";
 import styles from "../article.module.css";
+import { SundayBoardSignupForm } from "../../mailerlite-form";
 
 export const metadata: Metadata = {
   title: "Why Every Man Needs a Third Place",
@@ -61,6 +62,9 @@ export default function WhyMenNeedAThirdPlace() {
         </div>
         <p>If you already have a third place, protect it. If you do not, look for one this week. That is the whole point.</p>
       </article>
+    </section>
+    <section className={styles.capture}>
+      <SundayBoardSignupForm source="article_why_men_need_a_third_place" />
     </section>
     <section className={styles.cta}>
       <div><span>ALL THE WAY HERE</span><h2>Keep what work cannot replace.</h2></div>

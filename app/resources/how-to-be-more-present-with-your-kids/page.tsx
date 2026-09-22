@@ -4,6 +4,7 @@ import { Footer, Header } from "../../components";
 import { PlainLink as Link } from "../../plain-link";
 import { JsonLd } from "../../structured-data";
 import styles from "../article.module.css";
+import { SundayBoardSignupForm } from "../../mailerlite-form";
 
 export const metadata: Metadata = {
   title: "How to Be More Present With Your Kids After Work",
@@ -69,6 +70,12 @@ export default function PresentWithKids() {
         <p>Do not make guilt the main event. Name what happened, put the phone down, and return. Children do not need a parent who performs perfect presence. They need one who notices when they are gone and practices coming back.</p>
         <p className={styles.source}>Research context: a <a href="https://pubmed.ncbi.nlm.nih.gov/39377734/" target="_blank" rel="noreferrer">family mealtime study</a> linked adult phone use with less verbal interaction, and a <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8048888/" target="_blank" rel="noreferrer">scoping review</a> found a mixed but meaningful body of research on parent smartphone use and responsiveness. These findings do not mean one glance harms a relationship. They support making repeated family moments easier to protect.</p>
       </article>
+    </section>
+
+    <section className={styles.capture}>
+
+      <SundayBoardSignupForm source="article_how_to_be_more_present_with_your_kids" />
+
     </section>
 
     <section className={styles.cta}><div><span>ALL THE WAY HERE</span><h2>Parenthood belongs inside the complete practice.</h2></div><div><p>The Floor General is one of nine lessons for attention, pressure, relationships, parenthood, friendship, and the parts of life work cannot replace.</p><Link href="/library#curriculum">See the complete course <b>→</b></Link></div></section>

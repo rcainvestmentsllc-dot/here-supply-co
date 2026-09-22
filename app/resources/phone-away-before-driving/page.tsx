@@ -4,6 +4,7 @@ import { Footer, Header } from "../../components";
 import { PlainLink as Link } from "../../plain-link";
 import { JsonLd } from "../../structured-data";
 import styles from "../article.module.css";
+import { SundayBoardSignupForm } from "../../mailerlite-form";
 
 export const metadata: Metadata = {
   title: "Put the Phone Away Before the Car Moves",
@@ -61,6 +62,9 @@ export default function PhoneAwayBeforeDriving() {
         <p className={styles.source}>Source: <a href="https://www.nhtsa.gov/risky-driving/distracted-driving" target="_blank" rel="noreferrer">National Highway Traffic Safety Administration, Distracted Driving</a>. The page reports national 2024 crash data and explains visual, manual, and cognitive distraction.</p>
         <p className={styles.source}>Walking context: a <a href="https://pubmed.ncbi.nlm.nih.gov/32015086/" target="_blank" rel="noreferrer">systematic review and meta-analysis</a> found that text messaging was associated with less looking left and right and more hits or close calls while crossing. <a href="https://www.thewrap.com/weird-al-yankovic-bitches-about-first-world-problems-in-newest-mandatory-fun-song-video/" target="_blank" rel="noreferrer">TheWrap describes the closing gag in the Weird Al video.</a></p>
       </article>
+    </section>
+    <section className={styles.capture}>
+      <SundayBoardSignupForm source="article_phone_away_before_driving" />
     </section>
     <section className={styles.cta}><div><span>INSIDE ALL THE WAY HERE</span><h2>Change the setup before you test your willpower.</h2></div><div><p>The Attention Reset is a private three-day experiment for noticing where automatic attention has taken over and changing the environment around it.</p><Link href="/library">See the complete course <b>→</b></Link></div></section>
     <Footer />

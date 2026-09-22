@@ -4,6 +4,7 @@ import { Footer, Header } from "../../components";
 import { PlainLink as Link } from "../../plain-link";
 import { JsonLd } from "../../structured-data";
 import styles from "../article.module.css";
+import { SundayBoardSignupForm } from "../../mailerlite-form";
 
 export const metadata: Metadata = {
   title: "What Felt Different When I Returned to Clemson",
@@ -63,6 +64,12 @@ export default function LookUpAtClemson() {
 
         <div className={styles.note}><strong>This is not about becoming anti-technology.</strong><p>It is about making sure a tool helps you reach a person instead of quietly replacing the chance to meet one.</p></div>
       </article>
+    </section>
+
+    <section className={styles.capture}>
+
+      <SundayBoardSignupForm source="article_look_up_at_clemson" />
+
     </section>
 
     <section className={styles.cta}><div><span>THE ATTENTION RESET</span><h2>Change the default before you test your discipline.</h2></div><div><p>Grayscale, quieter feeds, a physical phone home, and three days of noticing give you a practical place to begin.</p><Link href="/library">See the complete course <b>→</b></Link></div></section>

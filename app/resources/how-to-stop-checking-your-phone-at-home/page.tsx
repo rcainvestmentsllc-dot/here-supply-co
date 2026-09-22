@@ -4,6 +4,7 @@ import { Footer, Header } from "../../components";
 import { PlainLink as Link } from "../../plain-link";
 import { JsonLd } from "../../structured-data";
 import styles from "../article.module.css";
+import { SundayBoardSignupForm } from "../../mailerlite-form";
 
 export const metadata: Metadata = {
   title: "How to Stop Checking Your Phone at Home",
@@ -68,6 +69,12 @@ export default function StopCheckingPhoneAtHome() {
 
         <p className={styles.source}>Research starting point: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9112639/" target="_blank" rel="noreferrer">a randomized controlled trial of practical strategies for reducing smartphone use</a>. The study tested multiple strategies together, so no single tactic should be treated as a magic answer.</p>
       </article>
+    </section>
+
+    <section className={styles.capture}>
+
+      <SundayBoardSignupForm source="article_how_to_stop_checking_your_phone_at_home" />
+
     </section>
 
     <section className={styles.cta}><div><span>INSIDE ALL THE WAY HERE</span><h2>Turn one good idea into a short, usable reset.</h2></div><div><p>The Attention Reset guides you through four practical changes over three days, then helps you decide which ones belong in your real life.</p><Link href="/library">See the complete course <b>→</b></Link></div></section>
