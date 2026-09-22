@@ -6,6 +6,13 @@
     "nodejs_compat"
   ],
   "main": "./worker/index.ts",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "here-supply-co-access",
+      "database_id": "558dc15e-a4c5-4708-84f5-748bc2f17faa"
+    }
+  ],
   "assets": {
     "directory": "dist/client",
     "not_found_handling": "none",
