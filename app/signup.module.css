@@ -1,0 +1,126 @@
+/* Free-guide capture card. Used on /sunday-board and anywhere the guide is offered. */
+
+.card {
+  padding: clamp(28px, 4vw, 44px);
+  background: var(--hsc-paper-raised);
+  border: 1px solid var(--hsc-line);
+  border-radius: var(--hsc-r-lg);
+  box-shadow: var(--hsc-e2);
+  display: grid;
+  gap: var(--hsc-s3);
+  scroll-margin-top: 90px;
+}
+
+.kicker {
+  font-family: var(--hsc-mono);
+  font-size: var(--hsc-t-micro);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--hsc-teal);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--hsc-display);
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -.022em;
+  color: var(--hsc-ink);
+}
+
+.blurb {
+  margin: 0;
+  max-width: 44ch;
+  font-size: var(--hsc-t-body);
+  line-height: var(--hsc-lh-body);
+  color: var(--hsc-copy);
+}
+
+.form {
+  margin-top: var(--hsc-s2);
+  display: flex;
+  gap: var(--hsc-s3);
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.field { display: grid; gap: 7px; flex: 1 1 260px; }
+.field > span {
+  font-family: var(--hsc-mono);
+  font-size: var(--hsc-t-micro);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--hsc-quiet);
+}
+.field input {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: var(--hsc-body);
+  font-size: 16px; /* 16px stops iOS zooming the page on focus */
+  color: var(--hsc-ink);
+  background: var(--hsc-white);
+  border: 1px solid var(--hsc-line-strong);
+  border-radius: var(--hsc-r-sm);
+  transition: border-color var(--hsc-fast) var(--hsc-ease),
+              box-shadow var(--hsc-fast) var(--hsc-ease);
+}
+.field input:focus {
+  outline: none;
+  border-color: var(--hsc-teal);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--hsc-teal) 22%, transparent);
+}
+.field input[aria-invalid] { border-color: var(--hsc-iron); }
+
+.submit {
+  flex: 0 0 auto;
+  padding: 15px 26px;
+  background: var(--hsc-iron);
+  color: var(--hsc-white);
+  border: 1px solid transparent;
+  border-radius: var(--hsc-r-sm);
+  font-family: var(--hsc-mono);
+  font-size: var(--hsc-t-micro);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--hsc-fast) var(--hsc-ease),
+              transform var(--hsc-fast) var(--hsc-ease);
+}
+.submit:hover { background: var(--hsc-iron-deep); transform: translateY(-1px); }
+
+.download {
+  justify-self: start;
+  margin-top: var(--hsc-s2);
+  padding: 15px 28px;
+  background: var(--hsc-iron);
+  color: var(--hsc-white);
+  border-radius: var(--hsc-r-sm);
+  font-family: var(--hsc-mono);
+  font-size: var(--hsc-t-micro);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background var(--hsc-fast) var(--hsc-ease);
+}
+.download:hover { background: var(--hsc-iron-deep); }
+
+.note {
+  margin: 0;
+  max-width: 48ch;
+  font-size: var(--hsc-t-small);
+  line-height: 1.55;
+  color: var(--hsc-quiet);
+}
+
+.error {
+  margin: 0;
+  font-size: var(--hsc-t-small);
+  color: var(--hsc-iron);
+  font-weight: 600;
+}
+
+@media (max-width: 560px) {
+  .form { flex-direction: column; align-items: stretch; }
+  .submit { width: 100%; }
+}

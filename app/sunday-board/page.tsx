@@ -21,7 +21,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function SundayBoard() {
+export default async function SundayBoard({
+  searchParams,
+}: {
+  searchParams: Promise<{ ok?: string; err?: string }>;
+}) {
+  const params = await searchParams;
   return (
     <main id="main-content" className="site">
       <Header />
@@ -61,7 +66,7 @@ export default function SundayBoard() {
             <li>Free to use, with no account required</li>
           </ul>
         </div>
-        <SundayBoardSignupForm />
+        <SundayBoardSignupForm unlocked={params.ok === "1"} error={params.err === "1"} />
       </section>
 
       <section id="worksheet" className="worksheet-section">

@@ -29,3 +29,25 @@ CREATE TABLE IF NOT EXISTS progress (
   completed_at TEXT NOT NULL DEFAULT (datetime('now')),
   PRIMARY KEY (email, lesson_slug)
 );
+
+-- Email capture. Owned here rather than only in MailerLite, so a lead is
+-- never lost to a misconfigured integration or a missing API key.
+CREATE TABLE IF NOT EXISTS subscribers (
+  email TEXT PRIMARY KEY,
+  source TEXT NOT NULL DEFAULT 'sunday_board',
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  synced_at TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_subscribers_created ON subscribers(created_at);
+
+-- Every purchase-ish signal MailerLite sends, stored raw. When a buyer says
+-- "I paid and cannot get in", this is the evidence trail.
+CREATE TABLE IF NOT EXISTS webhook_log (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  received_at TEXT NOT NULL DEFAULT (datetime('now')),
+  event TEXT,
+  email TEXT,
+  matched_product TEXT,
+  payload TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_webhook_log_received ON webhook_log(received_at);
