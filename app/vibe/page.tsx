@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./vibe.css";
+import { Wordmark } from "../brand/wordmark";
 
 export const metadata: Metadata = {
   title: "Vibe comparison | Here Supply Co.",
@@ -94,13 +95,13 @@ export default function VibePage() {
         {/* ─────────────── B ─────────────── */}
         <div className="pane pane-b">
           <p className="pane-note">
-            Same copy. Same photo. Wordmark leads, wave demoted to a mark, colder grade,
-            mono field-manual labels, serif for the human line.
+            Same copy. Same photo. Archivo wordmark leads, the wave gets room as artwork,
+            colder grade, mono field-manual labels, serif for the human line.
           </p>
           <div className="b-wrap">
             <header className="b-head">
               <a className="b-lock" href="#b">
-                <img src="/assets/brand/here-supply-co-logo-v2.svg" alt="Here Supply Co." />
+                <Wordmark size="md" />
               </a>
               <nav className="b-nav">
                 <a href="#b">Start here</a>
@@ -175,12 +176,26 @@ export default function VibePage() {
             </section>
 
 
+
+            <section className="b-artwork">
+              <div className="b-artworkCopy">
+                <p className="b-label">The artwork, given room</p>
+                <h2>The wave stops being a logo and starts being a drawing.</h2>
+                <p>
+                  Crushed into a nav bar at thirty pixels, none of the detail survives and it
+                  reads as a sticker. At size, on a cover, it is what it always was.
+                </p>
+              </div>
+              <figure className="b-card">
+                <img src="/assets/brand/here-supply-co-logo-v2.svg" alt="Here Supply Co." />
+                <figcaption>
+                  <b>Field card · All the Way Here</b>
+                  <span>Nine practices. One sheet. Keep it in the truck.</span>
+                </figcaption>
+              </figure>
+            </section>
             <footer className="b-foot">
-              <img
-                className="b-footLogo"
-                src="/assets/brand/here-supply-co-logo-inverse-v2.svg"
-                alt="Here Supply Co."
-              />
+              <Wordmark size="md" onDark />
               <small>Made in North Carolina · © 2026 Here Supply Co.</small>
             </footer>
           </div>

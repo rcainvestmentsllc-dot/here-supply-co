@@ -47,6 +47,29 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title, description, images: ["/assets/course/art/problem-1-3-driveway-woman.jpg"] },
 };
 
+/**
+ * Brand typefaces.
+ *
+ * The site previously relied on a system stack (Avenir Next → Futura →
+ * Century Gothic → Trebuchet MS), which resolves to a different typeface on
+ * almost every platform: Mac visitors saw Avenir or Futura, Windows fell
+ * through to Trebuchet, Android to something else again. Loading the real
+ * faces means everyone sees the same brand.
+ *
+ * Archivo carries the wordmark and headings (the wdth axis gives the wide
+ * nameplate cut). IBM Plex Mono carries the small tracked field-manual
+ * labels.
+ */
+const FONT_HREF =
+  "https://fonts.googleapis.com/css2" +
+  "?family=Archivo:wdth,wght@100,400;100,500;100,600;100,700;125,600;125,700" +
+  "&family=IBM+Plex+Mono:wght@400;500" +
+  "&display=swap";
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body><a className="skip-link" href="#main-content">Skip to main content</a><JsonLd data={siteData} />{children}</body></html>;
+  return <html lang="en"><head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+    <link rel="stylesheet" href={FONT_HREF} />
+  </head><body><a className="skip-link" href="#main-content">Skip to main content</a><JsonLd data={siteData} />{children}</body></html>;
 }
