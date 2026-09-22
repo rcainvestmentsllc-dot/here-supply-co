@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { PlainLink as Link } from "../../plain-link";
 import { FOCUS_MOVES } from "../../course-content";
 import { BrandWordmark } from "../../components";
+import { requireAnyProductAccess } from "../../../lib/require-access";
 
 export const metadata: Metadata = {
   title: "The Attention Reset | All the Way Here",
@@ -10,7 +11,10 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default function FocusAccess() {
+export default async function FocusAccess() {
+  // Either the standalone $37 purchase or ownership of the full $397 core
+  // course unlocks this — the Attention Reset is also step 2 of core.
+  await requireAnyProductAccess(["focus", "core"], "/access/focus-7f3k9q", "focus");
   return (
     <main id="main-content" className="access-shell">
       <header className="access-header">

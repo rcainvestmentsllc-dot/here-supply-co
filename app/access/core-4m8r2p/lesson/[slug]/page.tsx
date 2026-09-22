@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { CORE_LESSONS, LESSON_GUIDES, getCoreLesson, getMovement } from "../../../../course-content";
 import { PlainLink as Link } from "../../../../plain-link";
 import { LessonProgress } from "../../../course-progress";
+import { requireProductAccess } from "../../../../../lib/require-access";
 
 export const metadata: Metadata = {
   title: "All the Way Here Lesson | Here Supply Co.",
@@ -15,6 +16,7 @@ export function generateStaticParams() {
 
 export default async function CoreLessonPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  await requireProductAccess("core", `/access/core-4m8r2p/lesson/${slug}`);
   const lesson = getCoreLesson(slug);
   if (!lesson) notFound();
 

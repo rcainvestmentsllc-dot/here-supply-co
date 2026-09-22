@@ -4,6 +4,7 @@ import { PlainLink as Link } from "../../plain-link";
 import { CORE_LESSONS, CORE_MOVEMENTS, COURSE_LENSES } from "../../course-content";
 import { CourseProgress, CourseResume } from "../course-progress";
 import { BrandWordmark } from "../../components";
+import { requireProductAccess } from "../../../lib/require-access";
 
 export const metadata: Metadata = {
   title: "All the Way Here | Private Course Access",
@@ -11,7 +12,8 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default function CoreAccess() {
+export default async function CoreAccess() {
+  await requireProductAccess("core", "/access/core-4m8r2p");
   return (
     <main id="main-content" className="access-shell">
       <header className="access-header">

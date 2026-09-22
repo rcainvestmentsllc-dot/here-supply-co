@@ -13,6 +13,9 @@ interface Env {
       };
     };
   };
+  // Index signature so this structurally satisfies CloudflareEnv (lib/cloudflare-env.ts)
+  // without duplicating every Wrangler secret/var's type here.
+  [key: string]: unknown;
 }
 
 interface ExecutionContext {

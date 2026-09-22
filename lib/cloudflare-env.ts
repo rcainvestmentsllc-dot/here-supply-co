@@ -28,10 +28,16 @@ export interface CloudflareEnv {
   ASSETS: Fetcher;
   DB: D1Database;
   IMAGES: unknown;
+  /** Wrangler secret. Set with: npx wrangler secret put SESSION_SECRET */
+  SESSION_SECRET?: string;
+  /** Wrangler secret for the transactional email provider sending magic links. */
+  MAILERSEND_API_KEY?: string;
+  /** Verified "from" address for MailerSend. Plain wrangler var, not a secret. */
+  MAILERSEND_FROM_EMAIL?: string;
   [key: string]: unknown;
 }
 
-const _als = getOrCreateAls("here-supply-co.cloudflareEnv.als");
+const _als = getOrCreateAls<CloudflareEnv>("here-supply-co.cloudflareEnv.als");
 
 /** Wrap a request handler so `getEnv()` resolves inside it. */
 export function runWithEnv<T>(env: CloudflareEnv, fn: () => T): T {
