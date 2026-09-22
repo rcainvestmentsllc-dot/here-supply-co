@@ -29,6 +29,12 @@ export type CoreLesson = {
   practiceIntro: string;
   steps: CourseStep[];
   adaptation: string;
+  /**
+   * Only The Floor General assumes children. Eight of the nine lessons work
+   * for a couple with none, so rather than water this one down it states the
+   * assumption and gives the same practice pointed at each other.
+   */
+  withoutKids?: { note: string; body: string };
   action: string;
   reflection: string;
   fieldNote: string;
@@ -274,7 +280,7 @@ export const CORE_LESSONS: CoreLesson[] = [
     movement: "LEAD",
     number: "2.3",
     title: "The Floor General",
-    subtitle: "Join your child's world without taking it over.",
+    subtitle: "Join their world without taking it over.",
     summary: "Five to fifteen phone-free minutes at their level, following their interest and cues.",
     artImage: "/assets/course/photo/lesson-2-3-floor-general-v1.jpg",
     previewPosition: "57% center",
@@ -298,6 +304,10 @@ export const CORE_LESSONS: CoreLesson[] = [
       { title: "End cleanly", body: "Follow their cues, keep physical play safe and easy to stop, then give a brief warning when time is almost up. Say what you enjoyed and when you can return." },
     ],
     adaptation: "Use five minutes on a crowded day. For teens, drive, cook, fix, fish, walk, or work beside them without turning every silence into an interview.",
+    withoutKids: {
+      note: "This is the one lesson that assumes children in the house.",
+      body: "If there are none, the practice does not change, only who it points at. Your partner makes bids for attention the same way a child does, just quieter and easier to miss: a story about their day, something read aloud, a hand on your shoulder on the way past. Answer the bid before you do anything else. Put the phone in another room rather than face down. Let them pick the subject and resist improving it, solving it, or turning it into logistics. Fifteen minutes where they lead and you follow. The thing a child does loudly, an adult does once and then stops asking.",
+    },
     action: "The next time your child calls your name or says, Watch this, set the phone down, meet their eyes, and answer before you return to anything else.",
     reflection: "When I enter my child's world, how quickly do I start directing it?",
     fieldNote: "I called it Floor General, but the lesson is mostly about giving up command. I set the conditions. They show me where connection is possible.",
@@ -509,6 +519,64 @@ export const FOCUS_MOVES = [
     exception: "Allow priority contacts and tell people how to reach you. Shorten or move the window when work, health, accessibility, or caregiving requires it.",
   },
 ] as const;
+
+/**
+ * What the seventy two hours actually feel like.
+ *
+ * This was the strongest part of the original Focus Protocol and it got lost
+ * when that product was folded into the course. It matters because the reset
+ * fails at hour twelve, when it feels pointless, and a person who was told in
+ * advance that hour twelve would feel pointless reads the feeling as the plan
+ * working rather than as proof they cannot do it.
+ *
+ * Framed as what people commonly report, not as a measured result, because
+ * there is no study behind it.
+ */
+export const RESET_TIMELINE = [
+  {
+    window: "Hours 0 to 6",
+    title: "The phantom reach",
+    body: "Your hand goes to the pocket with no thought behind it. You will catch yourself unlocking a phone you had no reason to unlock. Nothing is wrong. You are simply meeting a habit you have never had to look at directly.",
+  },
+  {
+    window: "Hours 6 to 18",
+    title: "The boredom",
+    body: "This is the hard part and it is the part most people quit in. Small gaps in the day that used to be filled are suddenly empty, and empty feels worse than it should. The urge to check will be strong and it will feel reasonable. It passes.",
+  },
+  {
+    window: "Hours 18 to 36",
+    title: "The settle",
+    body: "The noise drops. Most people notice they are reaching less, that a task holds them longer, and that falling asleep gets easier. You are not calmer because you fixed yourself. There is just less arriving.",
+  },
+  {
+    window: "Hours 36 to 72",
+    title: "The room gets bigger",
+    body: "Conversations run longer. You hear the second half of what someone says instead of the first half. The reflex is still there and it is quieter. This is the part worth keeping.",
+  },
+] as const;
+
+/**
+ * Days four to seven, when the reset is over and the negotiating starts. The
+ * specific sentences matter: a person who recognizes the thought as predicted
+ * hears it as a script instead of a conclusion.
+ */
+export const RESET_RELAPSE = {
+  window: "Days 4 to 7",
+  title: "The window where it comes back",
+  intro: "The seventy two hours end and your mind makes its case. It is persuasive, it sounds like you, and it shows up almost word for word.",
+  lines: [
+    "I have proven I can handle it now.",
+    "Just one app. Not the bad ones.",
+    "Ten minutes is not the same thing.",
+    "It was a busy week. This is not a normal test.",
+  ],
+  counter: "None of those are decisions. They are the habit asking for its old conditions back. Hold the arrangement for fourteen days before you change anything, and if an app comes back and the reaching starts again, run the seventy two hours once more. You are not starting over. You are collecting information.",
+  together: "If you are doing this with someone, say out loud which sentence you expect to hear from yourself. Naming it in advance makes it much harder to believe later, and it gives the other person something specific to ask about instead of policing you.",
+} as const;
+
+/** The line the site's headline came from. */
+export const RESET_DECLARATION =
+  "I do not trade presence for distraction. My attention belongs to the people I share my life with. My phone is a tool. I am not.";
 
 export const getCoreLesson = (slug: string) => CORE_LESSONS.find((lesson) => lesson.slug === slug);
 

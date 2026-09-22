@@ -762,6 +762,40 @@
 }
 
 /* Two-up panels */
+/* The one lesson that assumes children says so, and gives couples without
+   them the same practice pointed at each other. Visually set apart so a reader
+   who does not need it can skip it cleanly. */
+.withoutKids {
+  margin: var(--hsc-s7) 0 0;
+  padding: clamp(26px,3vw,40px);
+  border-left: 3px solid var(--hsc-teal);
+  background: var(--hsc-teal-soft);
+  border-radius: 0 var(--hsc-r-md) var(--hsc-r-md) 0;
+}
+.withoutKids span {
+  display: block;
+  color: var(--hsc-teal);
+  font-family: var(--hsc-mono);
+  font-size: var(--hsc-t-micro);
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+.withoutKids strong {
+  display: block;
+  margin: 12px 0 10px;
+  color: var(--hsc-ink);
+  font-family: var(--hsc-display);
+  font-size: clamp(19px,1.8vw,24px);
+  line-height: 1.2;
+}
+.withoutKids p {
+  max-width: 68ch;
+  margin: 0;
+  color: var(--hsc-copy);
+  font-size: var(--hsc-t-body);
+  line-height: var(--hsc-lh-body);
+}
+
 .pair {
   margin: var(--hsc-s8) 0 0;
   display: grid;

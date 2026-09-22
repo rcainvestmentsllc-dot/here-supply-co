@@ -1,7 +1,7 @@
 import { SUPPORT_EMAIL, supportEmailUrl } from "../../site-config";
 import type { Metadata } from "next";
 import { PlainLink as Link } from "../../plain-link";
-import { FOCUS_MOVES } from "../../course-content";
+import { FOCUS_MOVES, RESET_TIMELINE, RESET_RELAPSE, RESET_DECLARATION } from "../../course-content";
 import { BrandWordmark } from "../../components";
 import { requireAnyProductAccess } from "../../../lib/require-access";
 
@@ -34,6 +34,44 @@ export default async function FocusAccess() {
         <figcaption><span>WHY THIS MATTERS</span><p>The goal is not to become anti-technology. It is to stop giving the people in front of us whatever attention is left.</p></figcaption>
       </figure>
       <section className="focus-moves">{FOCUS_MOVES.map((move) => <article key={move.number}><span>{move.number}</span><h2>{move.title}</h2><h3>{move.promise}</h3><p>{move.body}</p><aside><b>MAKE IT FIT</b>{move.exception}</aside></article>)}</section>
+      <section className="reset-timeline" aria-labelledby="reset-timeline-heading">
+        <div className="reset-timeline-head">
+          <p className="section-label">WHAT THE SEVENTY TWO HOURS FEEL LIKE</p>
+          <h2 id="reset-timeline-heading">Know the hard part<br /><em>before you reach it.</em></h2>
+          <p>Most people quit somewhere in the first day, not because the reset failed but because nobody told them that part was coming. This is what people commonly report. Your own hours will not match exactly, and that is fine. The shape is what matters.</p>
+        </div>
+        <ol className="reset-timeline-list">
+          {RESET_TIMELINE.map((phase) => (
+            <li key={phase.window}>
+              <span>{phase.window}</span>
+              <h3>{phase.title}</h3>
+              <p>{phase.body}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section className="reset-relapse" aria-labelledby="reset-relapse-heading">
+        <div>
+          <p className="section-label">{RESET_RELAPSE.window}</p>
+          <h2 id="reset-relapse-heading">{RESET_RELAPSE.title}</h2>
+          <p>{RESET_RELAPSE.intro}</p>
+          <ul className="reset-relapse-lines">
+            {RESET_RELAPSE.lines.map((line) => <li key={line}>{line}</li>)}
+          </ul>
+        </div>
+        <aside>
+          <p>{RESET_RELAPSE.counter}</p>
+          <p className="reset-relapse-together"><b>DOING THIS TOGETHER</b>{RESET_RELAPSE.together}</p>
+        </aside>
+      </section>
+
+      <section className="reset-declaration">
+        <p className="section-label">READ IT OUT LOUD ONCE</p>
+        <blockquote>{RESET_DECLARATION}</blockquote>
+        <small>Saying it aloud feels slightly ridiculous, which is part of why it sticks.</small>
+      </section>
+
       <section className="focus-relay" aria-labelledby="watch-relay-heading">
         <div><p className="section-label">OPTIONAL SETUP</p><h2 id="watch-relay-heading">Let the watch carry people.<br />Leave the feeds in the drawer.</h2><p>An Apple Watch or similar wearable can act more like a simple relay than a second smartphone. The point is not to buy another device. If you already wear one, use it to stay reachable by the few people who matter while the phone stays physically away.</p></div>
         <ol>

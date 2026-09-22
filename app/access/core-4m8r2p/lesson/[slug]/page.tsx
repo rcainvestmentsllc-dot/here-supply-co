@@ -112,6 +112,14 @@ export default async function CoreLessonPage({ params }: { params: Promise<{ slu
         ))}
       </ol>
 
+      {lesson.withoutKids && (
+        <aside className={styles.withoutKids}>
+          <span>IF YOU DO NOT HAVE KIDS</span>
+          <strong>{lesson.withoutKids.note}</strong>
+          <p>{lesson.withoutKids.body}</p>
+        </aside>
+      )}
+
       <div className={styles.pair}>
         <article className={styles.pairCard}>
           <h3>A practice can bend without breaking</h3>
