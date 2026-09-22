@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 };
 
 export default async function FocusAccess() {
-  // Either the standalone $37 purchase or ownership of the full $397 core
-  // course unlocks this — the Attention Reset is also step 2 of core.
+  // Either the standalone reset purchase or ownership of All the Way Here
+  // unlocks this. The Attention Reset also opens the full course.
   await requireAnyProductAccess(["focus", "core"], "/access/focus-7f3k9q", "focus");
   return (
     <main id="main-content" className="access-shell">
