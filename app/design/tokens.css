@@ -14,37 +14,47 @@
 
 :root {
   /* ---- Colour: surfaces ---- */
-  --hsc-paper: #fff8ec;        /* warm cream — primary page surface */
-  --hsc-paper-raised: #fffdf8; /* cards sitting on paper */
-  --hsc-paper-sunk: #f7ecd9;   /* wells, inputs, inset areas */
-  --hsc-sand: #f0e6d2;         /* quiet dividers, hover fills */
-  --hsc-sage: #d9eeef;         /* cool tint surface */
+  --hsc-paper: #f2ece1;        /* cooled cream — primary page surface */
+  --hsc-paper-raised: #f8f3ea; /* cards sitting on paper */
+  --hsc-paper-sunk: #e9e1d4;   /* wells, inputs, inset areas */
+  --hsc-sand: #e3d9c8;         /* quiet dividers, hover fills */
+  --hsc-mist: #dfe7e6;         /* cool tint surface */
+  --hsc-sage: #dfe7e6;         /* alias, retained for earlier course work */
 
   /* ---- Colour: ink ---- */
-  --hsc-ink: #092f3c;          /* headings, primary text */
-  --hsc-ink-soft: #2a4d58;     /* secondary text on light */
-  --hsc-copy: #526b72;         /* body copy */
-  --hsc-quiet: #7e919a;        /* captions, meta, disabled */
+  --hsc-ink: #0b2530;          /* headings, primary text */
+  --hsc-ink-soft: #1b3a44;     /* secondary text on light */
+  --hsc-copy: #4a5f66;         /* body copy */
+  --hsc-quiet: #8ea6ad;        /* captions, meta, disabled */
 
   /* ---- Colour: deep surfaces ---- */
-  --hsc-forest: #103f4c;       /* sidebar, footers, dark panels */
-  --hsc-forest-deep: #072530;  /* deepest anchor */
-  --hsc-on-dark: #eaf4f2;      /* text on deep surfaces */
-  --hsc-on-dark-quiet: #93aeb4;
+  --hsc-forest: #14313c;       /* sidebar, footers, dark panels */
+  --hsc-forest-deep: #081d26;  /* deepest anchor */
+  --hsc-on-dark: #f2ece1;      /* text on deep surfaces */
+  --hsc-on-dark-quiet: #8ea6ad;
 
-  /* ---- Colour: accents ---- */
-  --hsc-ocean: #21859d;        /* progress, links, completion */
-  --hsc-ocean-soft: #cfe6ea;
-  --hsc-rust: #df5c3f;         /* the single "do this next" accent */
-  --hsc-rust-deep: #c44a2e;
-  --hsc-gold: #f4c550;         /* highlights, focus rings */
+  /* ---- Colour: accents ----
+     Same hues as before, pulled colder and dirtier: the sunshine gold
+     becomes brass, the orange rust becomes oxidised iron. */
+  --hsc-teal: #2f7180;         /* progress, links, completion */
+  --hsc-ocean: #2f7180;        /* alias */
+  --hsc-teal-soft: #cfe0e2;
+  --hsc-ocean-soft: #cfe0e2;   /* alias */
+  --hsc-iron: #a8503a;         /* the single "do this next" accent */
+  --hsc-iron-deep: #8f4230;
+  --hsc-rust: #a8503a;         /* alias */
+  --hsc-rust-deep: #8f4230;    /* alias */
+  --hsc-brass: #b8974e;        /* highlights, rules, focus */
+  --hsc-gold: #b8974e;         /* alias */
+
+  --hsc-white: #ffffff;
+  --hsc-black: #000000;
 
   /* ---- Type families ---- */
-  --hsc-display: Futura, "Avenir Next Condensed", "Century Gothic",
-    "Franklin Gothic Medium", Arial, sans-serif;
-  --hsc-body: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --hsc-display: Archivo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --hsc-body: Archivo, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --hsc-editorial: "Iowan Old Style", Charter, Georgia, "Times New Roman", serif;
-  --hsc-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --hsc-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   /* ---- Type scale ----
      Deliberately restrained. The old sheet jumped from 9px labels straight to
@@ -86,15 +96,15 @@
   /* ---- Elevation ----
      Layered and soft. The old sheet used hard offset shadows
      (`13px 16px 5px`) which read as sticker art, not depth. */
-  --hsc-e1: 0 1px 2px rgba(9, 47, 60, .06), 0 2px 6px rgba(9, 47, 60, .04);
-  --hsc-e2: 0 2px 4px rgba(9, 47, 60, .06), 0 8px 20px rgba(9, 47, 60, .07);
-  --hsc-e3: 0 4px 8px rgba(9, 47, 60, .07), 0 18px 40px rgba(9, 47, 60, .10);
-  --hsc-e-accent: 0 8px 22px rgba(223, 92, 63, .26);
+  --hsc-e1: 0 1px 2px rgba(11, 37, 48, .06), 0 2px 6px rgba(11, 37, 48, .04);
+  --hsc-e2: 0 2px 4px rgba(11, 37, 48, .06), 0 8px 20px rgba(11, 37, 48, .07);
+  --hsc-e3: 0 4px 8px rgba(11, 37, 48, .07), 0 18px 40px rgba(11, 37, 48, .10);
+  --hsc-e-accent: 0 8px 22px rgba(168, 80, 58, .26);
 
   /* ---- Lines ---- */
-  --hsc-line: rgba(9, 47, 60, .12);
-  --hsc-line-strong: rgba(9, 47, 60, .22);
-  --hsc-line-dark: rgba(234, 244, 242, .16);
+  --hsc-line: rgba(11, 37, 48, .14);
+  --hsc-line-strong: rgba(11, 37, 48, .24);
+  --hsc-line-dark: rgba(242, 236, 225, .16);
 
   /* ---- Motion ---- */
   --hsc-ease: cubic-bezier(.22, 1, .36, 1);

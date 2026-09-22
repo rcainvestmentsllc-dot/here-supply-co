@@ -1,14 +1,15 @@
 import { PlainLink as Link } from "./plain-link";
 import { CONTACT_FORM } from "./data";
+import { Wordmark } from "./brand/wordmark";
 
-export function BrandWordmark() {
-  return (
-    <span className="here-supply-lockup" role="img" aria-label="Here Supply Co. Tools for showing up in real life.">
-      <img className="here-supply-logo here-supply-logo-primary" src="/assets/brand/here-supply-co-logo-v2.svg" width="1874" height="547" alt="" decoding="async" />
-      <img className="here-supply-logo here-supply-logo-inverse" src="/assets/brand/here-supply-co-logo-inverse-v2.svg" width="1874" height="547" alt="" decoding="async" />
-      <span className="here-supply-descriptor" aria-hidden="true">TOOLS FOR SHOWING UP IN REAL LIFE</span>
-    </span>
-  );
+/**
+ * The brand lockup. Typographic: the wave illustration is no longer part of
+ * it. At header scale the drawing's linework doesn't survive and it reads as
+ * a sticker; it now earns its keep as artwork at size — printables, the field
+ * card, PDF covers.
+ */
+export function BrandWordmark({ onDark = false }: { onDark?: boolean }) {
+  return <Wordmark size="md" onDark={onDark} />;
 }
 
 export function SundayBoardWordmark() {
@@ -44,5 +45,5 @@ export function Header() {
 }
 
 export function Footer() {
-  return <footer className="footer"><Link className="brand" href="/" aria-label="Here Supply Co. home"><BrandWordmark /></Link><nav aria-label="Footer navigation"><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/library">All the Way Here</Link><Link href="/resources">Resources</Link><Link href="/about">About Chris</Link><a href="https://chrisavera.substack.com" target="_blank" rel="me noreferrer">Chris on Substack ↗</a><Link href={CONTACT_FORM}>Contact</Link><Link href="/policies">Policies</Link></nav><span>MADE IN NORTH CAROLINA · © 2026 HERE SUPPLY CO.</span></footer>;
+  return <footer className="footer"><Link className="brand" href="/" aria-label="Here Supply Co. home"><BrandWordmark onDark /></Link><nav aria-label="Footer navigation"><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/library">All the Way Here</Link><Link href="/resources">Resources</Link><Link href="/about">About Chris</Link><a href="https://chrisavera.substack.com" target="_blank" rel="me noreferrer">Chris on Substack ↗</a><Link href={CONTACT_FORM}>Contact</Link><Link href="/policies">Policies</Link></nav><span>MADE IN NORTH CAROLINA · © 2026 HERE SUPPLY CO.</span></footer>;
 }

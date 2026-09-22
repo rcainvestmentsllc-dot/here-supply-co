@@ -75,31 +75,37 @@ export default function Home() {
         <Link href="/about">About</Link>
       </nav>
 
+      {/* Full-bleed hero. The photograph states the problem rather than
+          selling a reward: a father on his phone while his daughter waits
+          to be watched. */}
       <section className={styles.hero}>
+        <img
+          className={styles.heroPhoto}
+          src="/assets/course/photo/emotional-phone-at-game-v1.jpg"
+          alt="A father looking at his phone while his daughter, in uniform, waits for him to watch"
+          width="1586"
+          height="992"
+          fetchPriority="high"
+          decoding="async"
+        />
         <div className={styles.heroInner}>
           <div className={styles.heroContent}>
-            <p className={styles.eyebrow}>WHEN YOUR PHONE IS TAKING MORE THAN IT GIVES</p>
-            <h1>Your phone is a tool.<br /><em>You are not.</em></h1>
-            <p className={styles.lead}>Here Supply Co. makes practical tools for people who are tired of being physically present while their attention is somewhere else. Start with one small practice that helps you come back before the people you love keep getting what is left.</p>
+            <p className={styles.eyebrow}><i aria-hidden="true" />When your phone is taking more than it gives</p>
+            <h1>Your phone is a tool. <em>You are not.</em></h1>
+            <p className={styles.lead}>Practical tools for people who are tired of being physically present while their attention is somewhere else.</p>
             <div className={styles.heroActions}>
-              <Link className={styles.primaryButton} href="/sunday-board#get-board">Start the free Sunday Board Meeting <span>→</span></Link>
-              <Link className={styles.quietLightLink} href="/library">See the full practice <span>→</span></Link>
+              <Link className={styles.primaryButton} href="/sunday-board#get-board">Start free</Link>
+              <Link className={styles.quietLightLink} href="/library">See the full practice</Link>
             </div>
             <p className={styles.heroAssurance}>Free 15-minute meeting guide · Built by a real family · Opens immediately</p>
           </div>
-          <div className={styles.heroVisual}>
-            <figure className={styles.heroStory}>
-              <img src="/assets/brand/sunday-board-hero-v1.jpg" alt="A man giving his full attention to a conversation at a coastal home" width="1586" height="992" fetchPriority="high" decoding="async" />
-              <figcaption><span>THE RETURN</span><strong>The phone is not the point. Presence is.</strong></figcaption>
-            </figure>
-          </div>
-        </div>
-        <div className={styles.heroFooter} aria-label="The Here Supply Co. approach">
-          <span><b>NOTICE</b> the drift</span>
-          <span><b>RESET</b> your attention</span>
-          <span><b>SHOW UP</b> for real life</span>
         </div>
       </section>
+      <div className={styles.heroFooter} aria-label="The Here Supply Co. approach">
+        <span><b>01 · Notice</b>Name the drift before you try to fix anything else.</span>
+        <span><b>02 · Reset</b>Four small moves. Three days. No renegotiation.</span>
+        <span><b>03 · Show up</b>Bring a steadier self through the door every night.</span>
+      </div>
 
       <section className={styles.orientation} aria-labelledby="orientation-title">
         <div className={styles.orientationIntro}>
