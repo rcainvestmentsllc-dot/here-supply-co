@@ -100,12 +100,7 @@ export default function VibePage() {
           <div className="b-wrap">
             <header className="b-head">
               <a className="b-lock" href="#b">
-                <img src="/assets/brand/mark-ink.svg" alt="" />
-                <i className="b-lockRule" />
-                <span className="b-lockText">
-                  <strong>Here Supply Co.</strong>
-                  <small>Made in North Carolina</small>
-                </span>
+                <img src="/assets/brand/here-supply-co-logo-v2.svg" alt="Here Supply Co." />
               </a>
               <nav className="b-nav">
                 <a href="#b">Start here</a>
@@ -180,70 +175,13 @@ export default function VibePage() {
             </section>
 
 
-            <section className="b-identity">
-              <p className="b-label">The mark, working</p>
-              <h2 className="b-identityTitle">One wave. Four jobs.</h2>
-              <div className="b-identityGrid">
-                <figure className="b-idCell">
-                  <div className="b-idStage">
-                    <span className="b-lock">
-                      <img src="/assets/brand/mark-ink.svg" alt="" />
-                      <i className="b-lockRule" />
-                      <span className="b-lockText">
-                        <strong>Here Supply Co.</strong>
-                        <small>Made in North Carolina</small>
-                      </span>
-                    </span>
-                  </div>
-                  <figcaption>Primary · on paper</figcaption>
-                </figure>
-
-                <figure className="b-idCell">
-                  <div className="b-idStage b-idStageDark">
-                    <span className="b-lock">
-                      <img src="/assets/brand/mark-cream.svg" alt="" />
-                      <i className="b-lockRule" />
-                      <span className="b-lockText">
-                        <strong>Here Supply Co.</strong>
-                        <small>Made in North Carolina</small>
-                      </span>
-                    </span>
-                  </div>
-                  <figcaption>Reversed · on deep ground</figcaption>
-                </figure>
-
-                <figure className="b-idCell">
-                  <div className="b-idStage">
-                    <span className="b-badge">
-                      <img src="/assets/brand/mark-ink.svg" alt="" />
-                      <strong>Here Supply Co.</strong>
-                      <small>Est. North Carolina</small>
-                    </span>
-                  </div>
-                  <figcaption>Badge · printables and covers</figcaption>
-                </figure>
-
-                <figure className="b-idCell">
-                  <div className="b-idStage">
-                    <span className="b-markRow">
-                      <img src="/assets/brand/mark-ink.svg" alt="" />
-                      <img src="/assets/brand/mark-tide.svg" alt="" />
-                    </span>
-                  </div>
-                  <figcaption>Ink + brass, or with the water kept teal</figcaption>
-                </figure>
-              </div>
-            </section>
             <footer className="b-foot">
-              <span className="b-lock">
-                <img src="/assets/brand/mark-cream.svg" alt="" />
-                <i className="b-lockRule" />
-                <span className="b-lockText">
-                  <strong>Here Supply Co.</strong>
-                  <small>Est. North Carolina</small>
-                </span>
-              </span>
-              <small>© 2026 Here Supply Co.</small>
+              <img
+                className="b-footLogo"
+                src="/assets/brand/here-supply-co-logo-inverse-v2.svg"
+                alt="Here Supply Co."
+              />
+              <small>Made in North Carolina · © 2026 Here Supply Co.</small>
             </footer>
           </div>
         </div>

@@ -202,7 +202,7 @@
   border-bottom: 1px solid rgba(11, 37, 48, .14);
 }
 .b-lock { display: flex; align-items: center; gap: 11px; text-decoration: none; }
-.b-lock img { width: 38px; height: 34px; object-fit: contain; display: block; }
+.b-lock img { width: 168px; height: auto; display: block; }
 .b-lockText { display: grid; gap: 3px; }
 .b-lockText strong {
   font-family: var(--grot);
@@ -514,4 +514,13 @@
 
 @media (max-width: 760px) {
   .b-identityGrid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* The logo, whole and in its own colours. Discipline comes from the
+   space around it and from restraint everywhere else, not from
+   altering artwork Chris had made. */
+.b-footLogo { width: 168px; height: auto; display: block; opacity: .95; }
+
+@media (max-width: 760px) {
+  .b-lock img, .b-footLogo { width: 140px; }
 }
