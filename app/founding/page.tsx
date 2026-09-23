@@ -148,7 +148,7 @@ export default function Founding() {
         <p className={styles.label}>WHAT SHOWS UP</p>
         <div className={styles.kitGrid}>
           <figure>
-            <img src="/assets/free-weekly-guide-preview.png" alt="The Sunday Board Meeting sheet" width="1200" height="1553" loading="lazy" decoding="async" />
+            <img src="/assets/sunday-board-meeting-preview-v2.png" alt="The Sunday Board Meeting sheet" width="1200" height="1553" loading="lazy" decoding="async" />
             <figcaption>Sheet 01 · The table</figcaption>
           </figure>
           <figure>

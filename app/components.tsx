@@ -27,7 +27,7 @@ export function SundayBoardWordmark() {
 export function WeeklyGuidePreview() {
   return (
     <figure className="weekly-guide-preview">
-      <img src="/assets/free-weekly-guide-preview.png" alt="The actual printable Sunday Board Meeting one-page guide" width="1275" height="1650" loading="lazy" decoding="async" />
+      <img src="/assets/sunday-board-meeting-preview-v2.png" alt="The actual printable Sunday Board Meeting one-page guide" width="1275" height="1650" loading="lazy" decoding="async" />
       <figcaption>THE SUNDAY BOARD MEETING · ONE-PAGE GUIDE</figcaption>
     </figure>
   );
