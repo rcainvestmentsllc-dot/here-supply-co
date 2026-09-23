@@ -11,7 +11,7 @@ if (
 }
 
 export const SITE_ORIGIN = parsedOrigin.origin;
-export const SUPPORT_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "chris@ironcompassinstitute.com";
+export const SUPPORT_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "hello@heresupplyco.com";
 
 if (!/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(SUPPORT_EMAIL)) {
   throw new Error("NEXT_PUBLIC_SUPPORT_EMAIL must be a valid mailbox address.");

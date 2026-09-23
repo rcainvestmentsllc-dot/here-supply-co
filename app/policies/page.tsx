@@ -31,7 +31,7 @@ export default function Policies() {
           <section id="refund">
             <p>01 · REFUNDS</p>
             <h2>14-day refund window</h2>
-            <p>If All the Way Here, or a prior Iron Compass purchase, is not a useful fit, request a refund within 14 calendar days of the original purchase. Use the contact form and include the email address used at checkout so the purchase can be located.</p>
+            <p>If All the Way Here is not a useful fit, request a refund within 14 calendar days of the original purchase. Use the contact form and include the email address used at checkout so the purchase can be located.</p>
             <p>Approved refunds are returned to the original payment method. Access to the purchased material may end after a refund. The time it takes to appear in your account depends on the payment provider and your financial institution.</p>
           </section>
           <section id="privacy">

@@ -4,8 +4,8 @@ import "./design/tokens.css";
 import "./globals.css";
 import { JsonLd } from "./structured-data";
 
-const title = "Here Supply Co. | Tools for Showing Up in Real Life";
-const description = "Courses, guides, and field tools for bringing your attention back to the people, relationships, and ordinary life you do not want to miss.";
+const title = "Here Supply Co. | Attention Tools for Couples";
+const description = "Practical tools for couples who want to put their attention back where their life is happening: at home, in conversation, and with the people they love.";
 
 const siteData = {
   "@context": "https://schema.org",
