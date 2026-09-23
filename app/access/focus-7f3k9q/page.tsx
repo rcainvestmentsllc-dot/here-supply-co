@@ -5,8 +5,8 @@ import { FOCUS_MOVES, RESET_TIMELINE, RESET_RELAPSE, RESET_DECLARATION } from ".
 import { BrandWordmark } from "../../components";
 
 export const metadata: Metadata = {
-  title: "The Attention Reset | All the Way Here",
-  description: "Private access to the three-day All the Way Here attention reset.",
+  title: "Focus Protocol | All the Way Here",
+  description: "Private access to the three-day Focus Protocol inside All the Way Here.",
   robots: { index: false, follow: false },
 };
 
@@ -18,12 +18,12 @@ export default function FocusAccess() {
         <span>PRIVATE ACCESS</span>
       </header>
       <section className="access-intro">
-        <p className="section-label">ALL THE WAY HERE · THE ATTENTION RESET</p>
+        <p className="section-label">ALL THE WAY HERE · FOCUS PROTOCOL</p>
         <h1>Start here.<br /><em>Take back 72 hours.</em></h1>
-        <p>Your access is ready. Save this private page and work one practical move at a time. The complete reset lives here, with no course account or extra app to manage.</p>
+        <p>Your access is ready. The Focus Protocol is a three-day reset for getting the phone out of the way, then keeping the parts that make real life better. Save this page and work one practical move at a time.</p>
       </section>
       <section className="focus-native-intro">
-        <p className="section-label">THE 72-HOUR EXPERIMENT</p><h2>Control the inputs.<br /><em>Choose the attention.</em></h2><p>This is not a detox, treatment, meditation exercise, or test of discipline. It is a short experiment in environment design: reduce the inputs that pull at you, create enough friction to notice the reflex, and make a different choice in ordinary life.</p>
+        <p className="section-label">THE 72-HOUR FOCUS PROTOCOL</p><h2>Control the inputs.<br /><em>Choose the attention.</em></h2><p>This is not a detox, treatment, meditation exercise, or test of discipline. It is a short experiment in environment design: reduce the inputs that pull at you, create enough friction to notice the reflex, and make a different choice in ordinary life.</p>
       </section>
       <figure className="focus-human-story">
         <img src="/assets/course/art/emotional-phone-at-game.jpg" alt="A parent looking at a phone while a child waits on a baseball field" width="1672" height="942" loading="lazy" decoding="async" />

@@ -10,6 +10,7 @@ export function SundayBoardMeetingVideo() {
         aria-label="Chris and Rhea introduce the Sunday Board Meeting"
       >
         <source src="/assets/video/sunday-board-meeting.mp4" type="video/mp4" />
+        <track kind="captions" src="/assets/video/sunday-board-meeting-captions.vtt" srcLang="en" label="English" default />
         Your browser cannot play this video. You can still download the free guide below.
       </video>
       <div>

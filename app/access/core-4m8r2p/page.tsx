@@ -25,9 +25,9 @@ const RESOURCES = [
     href: "/downloads/all-the-way-here-field-card.pdf",
   },
   {
-    label: "Three days",
-    title: "Attention Reset",
-    note: "The four small moves. Start here if the phone is the loudest problem.",
+    label: "Start here · three days",
+    title: "Focus Protocol",
+    note: "Four small moves for getting the phone out of the way and seeing what changes.",
     href: "/access/focus-7f3k9q",
   },
   {
@@ -49,6 +49,12 @@ export default function CourseHome() {
   const nextSlug = nextLessonSlug(orderedSlugs, completed);
   const nextLesson = CORE_LESSONS.find((lesson) => lesson.slug === nextSlug)!;
   const nextMovement = CORE_MOVEMENTS.find((m) => m.key === nextLesson.movement);
+  const startingHref = isFresh ? "/access/focus-7f3k9q" : `${COURSE_ROOT}/lesson/${nextLesson.slug}`;
+  const startingLabel = isFresh ? "Focus Protocol · 72 hours" : `${nextMovement?.name} ${nextLesson.number}`;
+  const startingTitle = isFresh ? "Begin with the Focus Protocol." : nextLesson.title;
+  const startingSummary = isFresh
+    ? "Four practical moves. Three days. A clearer picture of what deserves your attention before you add another lesson."
+    : nextLesson.summary;
 
   return (
     <CourseShell completed={completed}>
@@ -71,24 +77,23 @@ export default function CourseHome() {
       </p>
 
       {/* Continue / start */}
-      <Link href={`${COURSE_ROOT}/lesson/${nextLesson.slug}`} className={styles.continueCard}>
+      <Link href={startingHref} className={styles.continueCard}>
         <div className={styles.continueBody}>
           <span className={styles.continueKicker}>
-            {isFresh ? "Start here" : isFinished ? "Revisit" : "Continue"} · {nextMovement?.name}{" "}
-            {nextLesson.number}
+            {isFresh ? "Start here" : isFinished ? "Revisit" : "Continue"} · {startingLabel}
           </span>
-          <h2 className={styles.continueTitle}>{nextLesson.title}</h2>
-          <p className={styles.continueSub}>{nextLesson.summary}</p>
+          <h2 className={styles.continueTitle}>{startingTitle}</h2>
+          <p className={styles.continueSub}>{startingSummary}</p>
           <span className={`${styles.btn} ${styles.btnPrimary}`}>
-            {isFresh ? "Begin the lesson" : isFinished ? "Open the lesson" : "Continue the lesson"}
+            {isFresh ? "Begin the Focus Protocol" : isFinished ? "Open the lesson" : "Continue the lesson"}
             <span aria-hidden="true">→</span>
           </span>
         </div>
         <div className={styles.continueMedia}>
           <img
-            src={nextLesson.artImage}
-            alt={nextLesson.artAlt}
-            style={{ objectPosition: nextLesson.previewPosition }}
+            src={isFresh ? "/assets/course/art/emotional-phone-at-game.jpg" : nextLesson.artImage}
+            alt={isFresh ? "A parent looking at a phone while a child waits on a baseball field" : nextLesson.artAlt}
+            style={{ objectPosition: isFresh ? "center" : nextLesson.previewPosition }}
             loading="eager"
           />
         </div>
@@ -107,7 +112,7 @@ export default function CourseHome() {
             </li>
             <li>
               <span>
-                <b>Reset your attention.</b> Use the four small moves for three days before asking
+                <b>Use the Focus Protocol.</b> Take the four small moves through three days before asking
                 anyone else to change anything.
               </span>
             </li>

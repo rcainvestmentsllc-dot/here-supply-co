@@ -185,7 +185,7 @@ export default function Home() {
         <div className={styles.workHeader}>
           <p className={styles.eyebrow}>ONE COMPLETE COURSE</p>
           <h2>Come back to what is<br /><em>already here.</em></h2>
-          <p>All the Way Here opens with the Attention Reset, three days of getting the phone out of the way, then moves through nine lessons across Return, Lead and Keep. One of you can start it alone. It works better with both.</p>
+          <p>All the Way Here opens with the Focus Protocol, three days of getting the phone out of the way, then moves through nine lessons across Return, Lead and Keep. One of you can start it alone. It works better with both.</p>
         </div>
 
         <div className={styles.offerGrid}>
@@ -193,7 +193,7 @@ export default function Home() {
             <div className={styles.offerTopline}><span>HERE SUPPLY CO.</span><b>$99 FOUNDING EDITION</b></div>
             <h3>The complete<br /><em>practice.</em></h3>
             <p>One course for attention, pressure, the walk from work to home, your marriage, your kids if you have them, friendship, and the parts of a good life that slip away quietly while nobody is looking.</p>
-            <div className={styles.deliveryNote}><span>DELIVERED INSIDE</span><p>The three day Attention Reset, nine visual lessons, one practice each, and an editable companion workbook. Eight of the nine work whether or not you have kids.</p></div>
+            <div className={styles.deliveryNote}><span>DELIVERED INSIDE</span><p>The 72-hour Focus Protocol, nine visual lessons, one practice each, and an editable companion workbook. Eight of the nine work whether or not you have kids.</p></div>
             <div className={styles.offerStill}>
               <div className={styles.offerStillHeading}><span>A LOOK INSIDE</span><strong>Three movements. Nine visual lessons. One practice for real life.</strong></div>
               <div className={styles.offerArtGrid}>{movements.map((movement) => <figure key={movement.title}><img src={movement.image} alt={movement.imageAlt} width="1672" height="942" loading="lazy" decoding="async" /><figcaption><span>{movement.number}</span><strong>{movement.title}</strong></figcaption></figure>)}</div>
@@ -210,7 +210,7 @@ export default function Home() {
       <section className={styles.closing}>
         <p className={styles.eyebrow}>START WHERE LIFE IS ASKING FOR YOU</p>
         <h2>One useful way<br />to come <em>back.</em></h2>
-        <p>The three day Attention Reset, nine lessons, the workbook, and the field card. One payment, yours to keep, with 14 days to change your mind.</p>
+        <p>The 72-hour Focus Protocol, nine lessons, the workbook, and the field card. One payment, yours to keep, with 14 days to change your mind.</p>
         <div><a className={styles.primaryButton} href={CHECKOUT.core}>Get All the Way Here · $99 <span>→</span></a><Link href="/sunday-board#get-board">Or start with the free guide <span>→</span></Link></div>
         <p className={styles.foundingNote}>The first Founding Circle is being invited personally. Start with the free Sunday Board Meeting today.</p>
       </section>

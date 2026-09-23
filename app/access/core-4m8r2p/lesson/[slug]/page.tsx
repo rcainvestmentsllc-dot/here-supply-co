@@ -16,8 +16,6 @@ export function generateStaticParams() {
 
 export default async function CoreLessonPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const lessonPath = `${COURSE_ROOT}/lesson/${slug}`;
-
   const lesson = getCoreLesson(slug);
   if (!lesson) notFound();
 

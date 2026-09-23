@@ -119,7 +119,7 @@ export function CourseShell({
               Workbook <span aria-hidden="true">→</span>
             </Link>
             <Link href="/access/focus-7f3k9q" className={styles.railFootLink}>
-              Attention Reset <span aria-hidden="true">→</span>
+              Focus Protocol <span aria-hidden="true">→</span>
             </Link>
           </div>
         </RailDisclosure>

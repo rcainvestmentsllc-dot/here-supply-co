@@ -4,7 +4,6 @@ import { defineConfig } from "vite";
 import hostingConfig from "./.openai/hosting.json";
 import { cdnAdapter } from "@vinext/cloudflare/cache/cdn-adapter";
 import { imagesOptimizer } from "@vinext/cloudflare/images/images-optimizer";
-import { cloudflare } from "@cloudflare/vite-plugin";
 
 const SITE_CREATOR_PLACEHOLDER_DATABASE_ID =
   "00000000-0000-4000-8000-000000000000";
