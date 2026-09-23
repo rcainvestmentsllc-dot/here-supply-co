@@ -190,3 +190,9 @@
   .coreOffer h3 { font-size: 42px; }
   .closing { padding: 76px 18px; }
 }
+
+/* The home page is a front door, not the whole course. Deeper material lives on
+   its own pages so the visitor can choose a clear next step. */
+.systemLinks { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 22px; }
+.systemLinks a { padding-bottom: 5px; border-bottom: 1px solid currentColor; color: var(--ink); font-size: 14px; font-weight: 700; text-decoration: none; }
+.systemLinks a:hover { color: var(--iron); }
