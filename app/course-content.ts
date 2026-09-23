@@ -35,6 +35,28 @@ export type CoreLesson = {
    * assumption and gives the same practice pointed at each other.
    */
   withoutKids?: { note: string; body: string };
+  /**
+   * The through-line of the whole course: every lesson is the instructions for
+   * one sheet of the Field Kit, and every sheet has a physical place it lives.
+   * A practice you have to remember competes with the phone. A practice sitting
+   * on the fridge or in the glovebox does not.
+   */
+  kit: {
+    /** Field Kit sheet number. */
+    sheet: string;
+    /** Its name on the sheet. */
+    sheetName: string;
+    /** Where it physically lives, because that is what makes it get used. */
+    livesAt: string;
+  };
+  /**
+   * What the two of you do with it. The lessons were written to one person,
+   * which quietly made the course a self-improvement product and left the
+   * other half of the couple as the audience for someone else's homework.
+   */
+  together: string;
+  /** One quiet line. Encouragement, never a slogan. */
+  encouragement: string;
   action: string;
   reflection: string;
   fieldNote: string;
@@ -151,6 +173,9 @@ export const CORE_LESSONS: CoreLesson[] = [
       { title: "Circle no more than three", body: "Choose the few items that deserve attention this week. Bring only the shared items into the weekly conversation." },
     ],
     adaptation: "If fifteen minutes is unrealistic, use five. Miss a week without turning it into a failure. A useful ritual is one you can return to without shame.",
+    kit: { sheet: "04", sheetName: "The Brain Dump", livesAt: "The desk, or wherever you actually sit down" },
+    together: "Do the sweep separately, then trade only the items that touch both of you. Everything else stays yours. The point is not to audit each other's list, it is to stop two people silently carrying the same four things and each assuming the other forgot.",
+    encouragement: "A quiet mind is not a tidy one. It is one that trusts the paper.",
     action: "Tonight, put one sheet of paper in front of you and circle the single item that would make you more present tomorrow.",
     reflection: "What am I carrying in my head that belongs on paper, on a calendar, or in a conversation?",
     fieldNote: "I built this because I was tired of being physically home while part of my attention was still somewhere else. The page does not make me a different person. It helps me come back to the life already in front of me.",
@@ -181,6 +206,9 @@ export const CORE_LESSONS: CoreLesson[] = [
       { title: "Farm on purpose", body: "When the block ends, decide what maintenance matters now. Do not let the inbox make that decision for you." },
     ],
     adaptation: "If your job is inherently reactive, protect the smallest block you can keep or choose one decision that must happen before the shift ends.",
+    kit: { sheet: "05", sheetName: "Tomorrow Matters If", livesAt: "The desk, written the night before" },
+    together: "Tell each other the one sentence. Not to be held accountable, but so that when one of you is unreachable for ninety minutes the other knows it was chosen rather than taken.",
+    encouragement: "One protected hour beats a perfect morning you never get.",
     action: "Before bed, write tomorrow's one target and the exact time you will begin it.",
     reflection: "Which maintenance tasks make me feel productive while keeping me from the work that matters?",
     fieldNote: "This is not about becoming a productivity machine. It is about finishing the right work so less of it rides home with me.",
@@ -211,6 +239,9 @@ export const CORE_LESSONS: CoreLesson[] = [
       { title: "Choose the entrance", body: "Put the phone away. Make eye contact. Offer a real greeting. Let the first ten seconds say that you have arrived." },
     ],
     adaptation: "Remote worker: close the laptop, step outside, and return through a different door. Transit or walking: use a landmark near home as the transition point.",
+    kit: { sheet: "03", sheetName: "The Driveway Card", livesAt: "The glovebox, because that is where the two minutes happen" },
+    together: "Whoever is inside gets to know this is happening, otherwise two minutes in a parked car reads as avoidance. Say it once: if I sit out there a minute, I am not hiding, I am arriving.",
+    encouragement: "You are not erasing the day. You are deciding how to carry it in.",
     action: "Before your next drive, set navigation and put the phone where you cannot reach it. Do the Airlock only after the car is fully parked.",
     reflection: "What part of my workday most often walks through the door with me?",
     fieldNote: "The Airlock is one of the first practices I built for myself. I needed a small space between being responsible for work and being available at home.",
@@ -241,6 +272,9 @@ export const CORE_LESSONS: CoreLesson[] = [
       { title: "Repair the miss", body: "If you were sharp or shut down, name it without an excuse. Apologize for your part and ask what would help reconnect." },
     ],
     adaptation: "If a conversation is unsafe, escalating, or beyond what a short pause can hold, step away and seek appropriate outside support. This practice is not a substitute for therapy or crisis help.",
+    kit: { sheet: "06", sheetName: "Pause, Return, Repair", livesAt: "The nightstand" },
+    together: "Agree on the pause before you need it, when nothing is wrong. A break called mid argument by someone who never mentioned it sounds like walking out. A break you both named last Tuesday sounds like the plan working.",
+    encouragement: "A pause is not distance. It is the shortest route back.",
     action: "Write the sentence you can use next time: I am too worked up to answer well. I will come back at ____.",
     reflection: "When pressure rises, do I get louder, quieter, more controlling, or more distant?",
     fieldNote: "I do not always catch the moment in time. Repair matters because the goal is not looking composed. The goal is taking responsibility and coming back.",
@@ -271,6 +305,9 @@ export const CORE_LESSONS: CoreLesson[] = [
       { title: "Notice, do not grade", body: "Ask what felt easy, interesting, or worth doing again. The night does not have to prove anything about the marriage." },
     ],
     adaptation: "Use an at-home, free, low-cost, sensory-friendly, or mobility-friendly version. Twenty intentional minutes can count when a full evening cannot.",
+    kit: { sheet: "07", sheetName: "The Date Night Card", livesAt: "The wallet, so the idea survives the week" },
+    together: "Two ideas each, pick one, phones in the glovebox before you sit down. Afterwards ask what was interesting, not whether it worked. A night that has to prove something about the marriage stops being a night out.",
+    encouragement: "Curiosity is the part that wore off. It comes back with use.",
     action: "At the next weekly check-in, each of you brings two possible dates, chooses one real time, and agrees where the silenced phones will stay.",
     reflection: "What kind of shared activity makes conversation feel easier for us?",
     fieldNote: "The useful part is not manufacturing a perfect date. It is getting out of autopilot long enough to experience something together.",
@@ -308,6 +345,9 @@ export const CORE_LESSONS: CoreLesson[] = [
       note: "This is the one lesson that assumes children in the house.",
       body: "If there are none, the practice does not change, only who it points at. Your partner makes bids for attention the same way a child does, just quieter and easier to miss: a story about their day, something read aloud, a hand on your shoulder on the way past. Answer the bid before you do anything else. Put the phone in another room rather than face down. Let them pick the subject and resist improving it, solving it, or turning it into logistics. Fifteen minutes where they lead and you follow. The thing a child does loudly, an adult does once and then stops asking.",
     },
+    kit: { sheet: "08", sheetName: "Floor Time", livesAt: "The kid's room, or the nightstand if there are none" },
+    together: "Cover for each other. Fifteen minutes on the floor only happens if someone else is holding the rest of the evening, and it should trade back the next night.",
+    encouragement: "Eye level is the whole technique. The rest is just staying there.",
     action: "The next time your child calls your name or says, Watch this, set the phone down, meet their eyes, and answer before you return to anything else.",
     reflection: "When I enter my child's world, how quickly do I start directing it?",
     fieldNote: "I called it Floor General, but the lesson is mostly about giving up command. I set the conditions. They show me where connection is possible.",
@@ -338,6 +378,9 @@ export const CORE_LESSONS: CoreLesson[] = [
       { title: "Notice what it produces", body: "Ask whether you return more alive and available or merely numbed and avoidant. Adjust honestly." },
     ],
     adaptation: "Some seasons require a smaller or closer version. Some problems require workload changes, sleep, medical care, therapy, or other support. A hobby is not a cure for burnout.",
+    kit: { sheet: "09", sheetName: "The Third Place", livesAt: "The bag you already carry" },
+    together: "Put both on the calendar in the same conversation or this becomes one person's hobby and the other person's resentment. Equal time, agreed out loud, childcare counted honestly.",
+    encouragement: "You are allowed to be a person outside of who needs you.",
     action: "Choose one place or activity you want to return to twice this month and coordinate the first time.",
     reflection: "Where do I feel like a whole person rather than only a worker, partner, or parent?",
     fieldNote: "Mountain biking, fishing, kettlebells, and riding are not credentials. They are places where I remember I am a person before I return to the people who need me.",
@@ -368,6 +411,9 @@ export const CORE_LESSONS: CoreLesson[] = [
       { title: "Let honesty grow later", body: "Start shoulder to shoulder. When trust exists, ask a real question and answer one honestly yourself." },
     ],
     adaptation: "If geography or health limits activity, use a recurring call, online game, project check-in, or breakfast. Repetition matters more than the setting.",
+    kit: { sheet: "10", sheetName: "The Friendship Script", livesAt: "The wallet" },
+    together: "Protect each other's friendships the way you protect your own. A marriage asked to be the only relationship either of you has will buckle under a job neither of you gave it.",
+    encouragement: "Invite first. The worst answer is a no you survive.",
     action: "Send one specific, low-pressure invitation before the day ends.",
     reflection: "Who do I keep hoping will invite me, and what stops me from inviting them first?",
     fieldNote: "I do not need a giant network. I need a few people I can actually call, and that begins with being willing to make a real invitation.",
@@ -398,6 +444,9 @@ export const CORE_LESSONS: CoreLesson[] = [
       { title: "Review without a scorecard", body: "After thirty days, ask what changed, what did not fit, and what you want to continue. Do not turn family life into a compliance dashboard." },
     ],
     adaptation: "If a practice creates conflict, shame, or more management than value, stop and redesign it. Use professional help when the problem is beyond the scope of educational material.",
+    kit: { sheet: "11", sheetName: "The Thirty Day Page", livesAt: "The table, next to the board sheet" },
+    together: "Choose two practices between you, not nine. Write them where you both see them. In thirty days the question is what actually happened, not whether either of you was good.",
+    encouragement: "Two practices you keep beat nine you admired.",
     action: "Open the workbook and circle the two practices you will use for the next thirty days.",
     reflection: "Which two practices would make the biggest difference in the life I am already living?",
     fieldNote: "This is not a graduation. It is a chance to keep the few things that helped me come back and leave the rest until I need it.",

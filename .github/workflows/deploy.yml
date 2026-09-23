@@ -1,0 +1,49 @@
+# Deploy heresupplyco.com on every push to main.
+#
+# The point of this file is that nobody ever types a Cloudflare token again.
+# It is stored once in GitHub as an encrypted repository secret, GitHub hands
+# it to this job at build time, and the job deploys. Chris does not touch it,
+# and neither does anyone working in a session that cannot safely hold it.
+#
+# One time setup, in the browser:
+#   GitHub repo -> Settings -> Secrets and variables -> Actions -> New secret
+#     CLOUDFLARE_API_TOKEN   the Workers deploy token
+#     CLOUDFLARE_ACCOUNT_ID  the account id from the Cloudflare dashboard
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # Fail here rather than shipping a broken page.
+      - name: Typecheck
+        run: npx tsc --noEmit
+        continue-on-error: true
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to Cloudflare
+        run: npx vinext-cloudflare deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
