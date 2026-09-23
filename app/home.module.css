@@ -63,6 +63,18 @@
 .systemIntro h2 { margin: 0; max-width: 15ch; }
 .systemIntro div > p { max-width: 60ch; margin: 36px 0 0; color: var(--copy); font-size: 18px; line-height: 1.7; }
 
+.resourceSystem { padding: 0 clamp(24px, 7vw, 108px) clamp(82px, 10vw, 142px); display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; background:var(--paper); }
+.resourceSystem article { min-width:0; padding:28px 24px; border:1px solid rgba(9,47,60,.2); background:var(--hsc-white); }
+.resourceSystem article:nth-child(2) { background:var(--mist); }
+.resourceSystem article:nth-child(3) { color:var(--paper); background:var(--ink); }
+.resourceSystem article:nth-child(4) { background:var(--sand); }
+.resourceSystem span { display:block; margin-bottom:22px; color:var(--iron); font-size:9px; font-weight:700; letter-spacing:.13em; }
+.resourceSystem h2 { margin:0; font-size:clamp(25px,2vw,33px); line-height:1; }
+.resourceSystem p { min-height:100px; margin:15px 0 22px; color:var(--copy); font-size:14px; line-height:1.55; }
+.resourceSystem article:nth-child(3) p { color:var(--mist); }
+.resourceSystem a { color:inherit; border-bottom:1px solid currentColor; text-decoration:none; font-size:12px; font-weight:700; }
+.resourceSystem a b { margin-left:8px; }
+
 .startSection { display: grid; grid-template-columns: minmax(260px, .64fr) minmax(0, 1fr); align-items: center; gap: clamp(52px, 10vw, 170px); background: var(--mist); }
 .startArtwork { width: min(100%, 400px); justify-self: center; margin: 0; background: var(--hsc-white); border: 1px solid rgba(9,47,60,.2); box-shadow: 14px 16px 0 var(--brass); }
 .startArtwork > span { padding: 12px 15px; display: block; color: var(--hsc-white); background: var(--ink); font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10px; letter-spacing: .12em; }
@@ -148,6 +160,7 @@
   .heroFooter { grid-template-columns: 1fr; }
   .heroFooter span { min-height: 0; border-right: 0; border-bottom: 1px solid rgba(255,253,248,.14); }
   .missedMoment, .startSection, .founderSection, .systemIntro { grid-template-columns: 1fr; }
+  .resourceSystem { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .missedMoment figure, .startArtwork { max-width: 560px; }
   .movementCard { grid-template-columns: 1fr; }
   .movementCard:nth-child(even) .movementPreview { order: 0; }
@@ -166,6 +179,8 @@
   .heroActions > a, .buttonRow > a { width: 100%; }
   .heroFooter span { padding: 19px 18px; font-size: 14px; }
   .missedMoment, .startSection, .founderSection, .movementSection, .workSection, .systemIntro { padding: 72px 18px; }
+  .resourceSystem { padding:0 18px 72px; grid-template-columns:1fr; }
+  .resourceSystem p { min-height:0; }
   .missedMoment h2, .systemIntro h2, .startCopy h2, .movementHeader h2, .workHeader h2, .founderSection h2, .closing h2 { font-size: clamp(36px, 10vw, 48px); }
   .startCopy dl > div, .deliveryNote, .offerStillHeading { grid-template-columns: 1fr; gap: 8px; }
   .movementBody { padding: 31px 22px 37px; }

@@ -31,12 +31,14 @@ test("redirects www to the HTTPS apex without losing the request", async () => {
 
 test("renders the current Here Supply home page and original wave mark", async () => {
   const html = await htmlFor("/");
-  assert.match(html, /<title>Here Supply Co\. \| Attention Tools for Couples<\/title>/i);
+  assert.match(html, /<title>Here Supply Co\. \| Resources for Couples to Stay Connected<\/title>/i);
   assert.match(html, /here-supply-co-logo-v2\.svg/i);
   assert.match(html, /Your phone is a tool/i);
   assert.match(html, /For two people who keep missing each other/i);
   assert.match(html, /Sunday Board Meeting/i);
   assert.match(html, /Focus Protocol/i);
+  assert.match(html, /Resources that help couples/i);
+  assert.match(html, /Resource Pack/i);
   assert.match(html, /https:\/\/checkout\.mailerlite\.com\/checkout\/34347/i);
   assert.match(html, /Skip to main content/i);
 });

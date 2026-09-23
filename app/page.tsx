@@ -6,12 +6,12 @@ import { CORE_LESSONS } from "./course-content";
 import styles from "./home.module.css";
 
 export const metadata: Metadata = {
-  title: "Here Supply Co. | Attention Tools for Couples",
-  description: "A free weekly meeting guide and one complete course for two people who are tired of being in the same room and somewhere else.",
+  title: "Here Supply Co. | Resources for Couples to Stay Connected",
+  description: "Practical online and printable resources for couples who want more connection, a clearer week, and less life lived in separate heads.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Here Supply Co. | Attention Tools for Couples",
-    description: "A free weekly meeting guide and one complete course for two people who are tired of being in the same room and somewhere else.",
+    title: "Here Supply Co. | Resources for Couples to Stay Connected",
+    description: "Practical online and printable resources for couples who want more connection, a clearer week, and less life lived in separate heads.",
     url: "/",
     siteName: "Here Supply Co.",
     type: "website",
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Here Supply Co. | Attention Tools for Couples",
-    description: "A free weekly meeting guide and one complete course for two people who are tired of being in the same room and somewhere else.",
+    title: "Here Supply Co. | Resources for Couples to Stay Connected",
+    description: "Practical online and printable resources for couples who want more connection, a clearer week, and less life lived in separate heads.",
     images: ["/assets/brand/sunday-board-hero-v1.jpg"],
   },
 };
@@ -64,6 +64,7 @@ export default function Home() {
         </Link>
         <nav className={styles.nav} aria-label="Main navigation">
           <a href="#start">Start here</a>
+          <a href="#resources">Resources</a>
           <a href="#offer">The course</a>
           <Link href="/about">About Chris</Link>
         </nav>
@@ -72,7 +73,8 @@ export default function Home() {
 
       <nav className={styles.mobileNav} aria-label="Mobile navigation">
         <a href="#start">Start here</a>
-        <a href="#offer">The course</a>
+          <a href="#resources">Resources</a>
+          <a href="#offer">The course</a>
         <Link href="/about">About</Link>
       </nav>
 
@@ -93,12 +95,12 @@ export default function Home() {
           <div className={styles.heroContent}>
             <p className={styles.eyebrow}><i aria-hidden="true" />For two people who keep missing each other</p>
             <h1>Your phone is a tool. <em>You are not.</em></h1>
-            <p className={styles.lead}>Practical tools for couples who are tired of being in the same room and somewhere else. Kids or no kids. One of you can start.</p>
+            <p className={styles.lead}>Practical online and printable resources for couples who want more connection, a clearer week, and less life lived in separate heads. Kids or no kids. One of you can start.</p>
             <div className={styles.heroActions}>
               <Link className={styles.primaryButton} href="/sunday-board#get-board">Start free</Link>
               <Link className={styles.quietLightLink} href="/library">See the full practice</Link>
             </div>
-            <p className={styles.heroAssurance}>Free 15-minute weekly guide · Built by a real couple · Opens immediately</p>
+            <p className={styles.heroAssurance}>Free shared weekly guide · Print-first tools · Built by a real couple</p>
           </div>
         </div>
       </section>
@@ -132,12 +134,18 @@ export default function Home() {
           <div className={styles.founderActions}><Link className={styles.quietDarkLink} href="/sunday-board#watch-together">Watch us actually do it <span>→</span></Link><Link className={styles.quietDarkLink} href="/about">Read the whole story <span>→</span></Link><Link className={styles.quietDarkLink} href="/working-session">Ask me a question <span>→</span></Link></div>
         </div>
       </section>
-      <section className={styles.systemIntro} id="system">
-        <p className={styles.eyebrow}>THE WORLD IS DESIGNED TO PULL YOU AWAY</p>
+      <section className={styles.systemIntro} id="resources">
+        <p className={styles.eyebrow}>ONE PRACTICAL RESOURCE SYSTEM</p>
         <div>
-          <h2>The people you live with should not get whatever the <em>algorithm</em> leaves behind.</h2>
-          <p>Phones, feeds, AI tools, and work keep pulling your attention away, and the person across from you is competing with all of it. Here Supply Co. gives you practical ways to control the inputs before they control the day: choose what reaches you, create friction around what takes too much, and protect time with the people you love. It is environment design for ordinary life, not a meditation program or another test of willpower.</p>
+          <h2>Resources that help couples <em>come back.</em></h2>
+          <p>Here Supply Co. is built to help two people see the same week, protect their attention, and make small changes that hold up when life gets full. Start free with the Sunday Board. The complete course adds the online lessons, a print-first book, and the Resource Pack for the places where a useful sheet can do more than another screen.</p>
         </div>
+      </section>
+      <section className={styles.resourceSystem} aria-label="The Here Supply Co. resource system">
+        <article><span>01 · START TOGETHER</span><h2>Sunday Board</h2><p>The free shared conversation and one-page board for getting the week out of two separate heads.</p><Link href="/sunday-board">Start free <b>→</b></Link></article>
+        <article><span>02 · LEARN ONLINE</span><h2>All the Way Here</h2><p>Short videos and nine focused lessons for the real places attention and connection get lost.</p><Link href="/library">See the course <b>→</b></Link></article>
+        <article><span>03 · WORK OFFLINE</span><h2>The course book</h2><p>A complete print-first book that combines the course and workbook so you can write in it and return to it.</p><Link href="/library#workbook">See what is inside <b>→</b></Link></article>
+        <article><span>04 · KEEP CLOSE</span><h2>Resource Pack</h2><p>The Field Card, The Here Week, Sunday Board, and other separate printables for the table, desk, wallet, and glovebox.</p><Link href="/library#kit">See the pack <b>→</b></Link></article>
       </section>
       <section className={styles.startSection} id="start">
         <div className={styles.startArtwork}>
