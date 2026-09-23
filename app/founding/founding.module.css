@@ -4,7 +4,7 @@
 .hero h1 { margin:0; font-family:var(--hsc-display); font-size:clamp(38px,5.2vw,74px); font-weight:700; line-height:1.02; letter-spacing:-.03em; }
 .hero h1 em { color:var(--hsc-teal); font-style:italic; }
 .lead { max-width:62ch; margin:26px 0 0; font-size:clamp(16px,1.6vw,19px); line-height:1.66; color:var(--hsc-copy); }
-.leadSmall { max-width:62ch; margin:16px 0 0; font-size:15px; line-height:1.66; color:var(--hsc-quiet); }
+.leadSmall { max-width:62ch; margin:16px 0 0; font-size:15px; line-height:1.66; color:var(--hsc-copy); }
 
 .label { margin:0 0 20px; font-family:var(--hsc-mono); font-size:10px; font-weight:700; letter-spacing:.18em; color:var(--hsc-teal); }
 
@@ -17,7 +17,10 @@
 
 .fit { padding:clamp(56px,6vw,90px) clamp(22px,8vw,130px); display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(36px,5vw,80px); }
 .fitYes, .fitNo { margin:0; max-width:46ch; font-size:16px; line-height:1.66; color:var(--hsc-copy); }
-.fitNo { color:var(--hsc-quiet); }
+/* was --hsc-quiet, which dropped this below a comfortable reading contrast
+   on the paper background. It is the honest disqualifier, so it has to be as
+   readable as the invitation opposite it. */
+.fitNo { color:color-mix(in srgb, var(--hsc-copy) 88%, transparent); }
 
 .signup { padding:0 clamp(22px,8vw,130px) clamp(56px,6vw,90px); }
 .card { max-width:680px; padding:clamp(30px,4vw,48px); background:var(--hsc-ink); color:var(--hsc-paper); border-radius:var(--hsc-r-lg); box-shadow:var(--hsc-e3); }

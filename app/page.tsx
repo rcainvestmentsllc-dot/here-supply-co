@@ -119,6 +119,19 @@ export default function Home() {
           <Link className={styles.quietLightLink} href="#offer">See what the practice actually is <span>→</span></Link>
         </div>
       </section>
+      <section id="founder" className={styles.founderSection}>
+        <figure className={styles.founderPhoto}>
+          <img src="/assets/chris-founder.jpg" alt="Chris Avera outdoors by the ocean in Puerto Rico" width="600" height="800" loading="lazy" decoding="async" />
+          <figcaption>Chris Avera · Husband, father, and small-business owner</figcaption>
+        </figure>
+        <div>
+          <p className={styles.eyebrow}>WHO IS TELLING YOU THIS</p>
+          <h2>I needed this before I ever <em>sold it.</em></h2>
+          <p>I’m Chris. Husband, father of three, small business owner in the North Carolina mountains. Here Supply Co. came out of noticing how often I was home and not actually there. I built these practices for my own family first and then shaped the parts that held up into something another couple could use.</p><p>Anyone can generate a nice looking course now. What nobody can copy is a real family actually running the thing, on camera, with their own name on it. That is the only reason to take this from me instead of from a search result, so you will find me and my wife Rhea in it rather than a stock photo of a calm couple.</p>
+          <p className={styles.founderPersonal}>Away from work, I lift kettlebells, ride mountain-bike trails, fish, and take my Trail 125 down the roads that get quieter as they get smaller. I am still practicing this work too.</p>
+          <div className={styles.founderActions}><Link className={styles.quietDarkLink} href="/sunday-board#watch-together">Watch us actually do it <span>→</span></Link><Link className={styles.quietDarkLink} href="/about">Read the whole story <span>→</span></Link><Link className={styles.quietDarkLink} href="/working-session">Ask me a question <span>→</span></Link></div>
+        </div>
+      </section>
       <section className={styles.systemIntro} id="system">
         <p className={styles.eyebrow}>THE WORLD IS DESIGNED TO PULL YOU AWAY</p>
         <div>
@@ -193,19 +206,6 @@ export default function Home() {
               opens it by hand.
             </p>
           </article>
-        </div>
-      </section>
-      <section id="founder" className={styles.founderSection}>
-        <figure className={styles.founderPhoto}>
-          <img src="/assets/chris-founder.jpg" alt="Chris Avera outdoors by the ocean in Puerto Rico" width="600" height="800" loading="lazy" decoding="async" />
-          <figcaption>Chris Avera · Husband, father, and small-business owner</figcaption>
-        </figure>
-        <div>
-          <p className={styles.eyebrow}>WHY I MADE THIS</p>
-          <h2>I needed the work before I ever <em>shared it.</em></h2>
-          <p>I’m Chris. I’m a husband, father of three, and small-business owner in the North Carolina mountains. Here Supply Co. grew from noticing how often I was physically home while my attention was somewhere else. I built these practices for myself first, then shaped the useful parts into tools another person could actually use.</p>
-          <p className={styles.founderPersonal}>Away from work, I lift kettlebells, ride mountain-bike trails, fish, and take my Trail 125 down the roads that get quieter as they get smaller. I am still practicing this work too.</p>
-          <div className={styles.founderActions}><Link className={styles.quietDarkLink} href="/about">Read Chris’s story <span>→</span></Link><Link className={styles.quietDarkLink} href="/working-session">Ask Chris a question <span>→</span></Link></div>
         </div>
       </section>
       <section className={styles.closing}>
