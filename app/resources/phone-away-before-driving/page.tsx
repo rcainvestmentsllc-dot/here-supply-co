@@ -57,10 +57,9 @@ export default function PhoneAwayBeforeDriving() {
           <section className={styles.step}><span>02</span><div><h3>Look and finish crossing</h3><p>Scan traffic, make eye contact with drivers when possible, and keep your attention on the crossing until you are safely out of the roadway.</p></div></section>
           <section className={styles.step}><span>03</span><div><h3>Restart on the safe side</h3><p>If the phone still needs you, stop somewhere clear of traffic instead of walking back into the screen.</p></div></section>
         </div>
-        <p>The final visual joke in Weird Al Yankovic&apos;s <em>First World Problems</em> video shows a distracted pedestrian stepping into the street while texting. The joke works because the reflex is recognizable. The real solution is less dramatic: stop before the curb and look up.</p>
         <p>The useful question is not whether you are a disciplined person. It is whether you made the important decision while the car was still standing still.</p>
         <p className={styles.source}>Source: <a href="https://www.nhtsa.gov/risky-driving/distracted-driving" target="_blank" rel="noreferrer">National Highway Traffic Safety Administration, Distracted Driving</a>. The page reports national 2024 crash data and explains visual, manual, and cognitive distraction.</p>
-        <p className={styles.source}>Walking context: a <a href="https://pubmed.ncbi.nlm.nih.gov/32015086/" target="_blank" rel="noreferrer">systematic review and meta-analysis</a> found that text messaging was associated with less looking left and right and more hits or close calls while crossing. <a href="https://www.thewrap.com/weird-al-yankovic-bitches-about-first-world-problems-in-newest-mandatory-fun-song-video/" target="_blank" rel="noreferrer">TheWrap describes the closing gag in the Weird Al video.</a></p>
+        <p className={styles.source}>Walking context: a <a href="https://pubmed.ncbi.nlm.nih.gov/32015086/" target="_blank" rel="noreferrer">systematic review and meta-analysis</a> found that text messaging was associated with less looking left and right and more hits or close calls while crossing.</p>
       </article>
     </section>
     <section className={styles.capture}>

@@ -31,7 +31,7 @@ export default function WelcomePage() {
         <p className={styles.eyebrow}>Payment complete</p>
         <h1 className={styles.title}>You&rsquo;re in.</h1>
         <p className={styles.lede}>
-          All the Way Here is yours — the Attention Reset, nine lessons, the workbook, and the
+          All the Way Here is yours — the Attention Reset, nine lessons, the course book, and the
           field card. One thing left: sign in so the course knows it is you.
         </p>
 

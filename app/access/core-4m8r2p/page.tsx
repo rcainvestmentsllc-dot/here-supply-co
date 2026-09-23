@@ -15,7 +15,7 @@ const RESOURCES = [
   {
     label: "Recommended · print first",
     title: "The complete course book",
-    note: "The whole course and workbook together. Print it, write in it, and use the digital course for video or a quick reminder.",
+    note: "The whole course book in one place. Print it, write in it, and use the digital course for video or a quick reminder.",
     href: "/downloads/all-the-way-here-print-edition.pdf",
   },
   {
@@ -112,7 +112,7 @@ export default function CourseHome() {
           <ol className={styles.firstRunSteps}>
             <li>
               <span>
-                <b>Print the course book.</b> It combines the full course and workbook in one
+                <b>Print the course book.</b> It combines the full course in one
                 place. Use the online course when you want the short videos or a quick reminder.
               </span>
             </li>

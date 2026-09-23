@@ -89,7 +89,7 @@ export default function Home() {
       <section className={styles.resourceSystem} aria-label="The Here Supply Co. resource system">
         <article><span>01 · START TOGETHER</span><h2>Sunday Board</h2><p>The free shared conversation and one-page board for getting the week out of two separate heads.</p><Link href="/sunday-board">Start free <b>→</b></Link></article>
         <article><span>02 · LEARN ONLINE</span><h2>All the Way Here</h2><p>Short videos and nine focused lessons for the real places attention and connection get lost.</p><Link href="/library">See the course <b>→</b></Link></article>
-        <article><span>03 · WORK OFFLINE</span><h2>The course book</h2><p>A complete print-first book that combines the course and workbook so you can write in it and return to it.</p><Link href="/library#workbook">See what is inside <b>→</b></Link></article>
+        <article><span>03 · WORK OFFLINE</span><h2>The course book</h2><p>A complete print-first book that gathers the course and writing space in one place, so you can mark it up and return to it.</p><Link href="/library#workbook">See what is inside <b>→</b></Link></article>
         <article><span>04 · KEEP CLOSE</span><h2>Resource Pack</h2><p>The Field Card, The Here Week, Sunday Board, and other separate printables for the table, desk, wallet, and glovebox.</p><Link href="/library#kit">See the pack <b>→</b></Link></article>
       </section>
       <section className={styles.startSection} id="start">
@@ -127,7 +127,7 @@ export default function Home() {
             <p className={styles.offerAssurance}>$99 one time · yours to keep · 14-day refund window</p>
             <a className={styles.buyButton} href={CHECKOUT.core}>Get All the Way Here <b>$99</b></a>
             <p className={styles.afterPay}>
-              After you pay, the confirmation page and your receipt email give you the private course
+              After you pay, the confirmation page and your receipt email give you the course
               link. Save it or bookmark it so you can return whenever you need it.
             </p>
           </article>

@@ -6,7 +6,7 @@ import { BrandWordmark } from "../../components";
 
 export const metadata: Metadata = {
   title: "Focus Protocol | All the Way Here",
-  description: "Private access to the three-day Focus Protocol inside All the Way Here.",
+  description: "The three-day Focus Protocol inside All the Way Here.",
   robots: { index: false, follow: false },
 };
 

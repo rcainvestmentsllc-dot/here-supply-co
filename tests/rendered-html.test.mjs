@@ -70,7 +70,7 @@ test("makes the Focus Protocol the first step of the paid course", async () => {
 test("makes the complete print edition the recommended course companion", async () => {
   const library = await htmlFor("/library");
   const course = await htmlFor("/access/core-4m8r2p");
-  assert.match(library, /complete 30-page print-first course book/i);
+  assert.match(library, /complete 26-page print-first course book/i);
   assert.match(course, /Recommended · print first/i);
   assert.match(course, /all-the-way-here-print-edition\.pdf/i);
   assert.match(course, /here-supply-resource-pack\.zip/i);

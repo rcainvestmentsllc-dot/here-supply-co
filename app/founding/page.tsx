@@ -63,7 +63,7 @@ export default function Founding() {
             <li>
               <b>The Field Kit</b>
               <span>
-                Eleven printed sheets, each one built for where the practice actually happens. The
+                Twelve printed sheets, each one built for where the practice actually happens. The
                 reset on the fridge, the driveway card in the glovebox, the board sheet on the table.
               </span>
             </li>
