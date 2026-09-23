@@ -2,12 +2,7 @@ import { PlainLink as Link } from "./plain-link";
 import { CONTACT_FORM } from "./data";
 import { Wordmark } from "./brand/wordmark";
 
-/**
- * The brand lockup. Typographic: the wave illustration is no longer part of
- * it. At header scale the drawing's linework doesn't survive and it reads as
- * a sticker; it now earns its keep as artwork at size — printables, the field
- * card, PDF covers.
- */
+/** The original wave mark is the brand lockup across the site. */
 export function BrandWordmark({ onDark = false, size = "md" }: { onDark?: boolean; size?: "sm" | "md" | "lg" | "xl" }) {
   return <Wordmark size={size} onDark={onDark} />;
 }

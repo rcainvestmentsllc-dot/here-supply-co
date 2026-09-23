@@ -56,13 +56,14 @@ export const metadata: Metadata = {
  * through to Trebuchet, Android to something else again. Loading the real
  * faces means everyone sees the same brand.
  *
- * Archivo carries the wordmark and headings (the wdth axis gives the wide
- * nameplate cut). IBM Plex Mono carries the small tracked field-manual
- * labels.
+ * Figtree keeps the interface friendly and grounded without becoming
+ * decorative. DM Serif Display gives long-form lines a little warmth, while
+ * IBM Plex Mono stays reserved for the small field-manual labels.
  */
 const FONT_HREF =
   "https://fonts.googleapis.com/css2" +
-  "?family=Archivo:wdth,wght@100,400;100,500;100,600;100,700;125,600;125,700" +
+  "?family=DM+Serif+Display:ital@0;1" +
+  "&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500" +
   "&family=IBM+Plex+Mono:wght@400;500" +
   "&display=swap";
 

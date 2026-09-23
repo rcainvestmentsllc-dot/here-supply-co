@@ -51,9 +51,9 @@
   --hsc-black: #000000;
 
   /* ---- Type families ---- */
-  --hsc-display: Archivo, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --hsc-body: Archivo, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --hsc-editorial: "Iowan Old Style", Charter, Georgia, "Times New Roman", serif;
+  --hsc-display: Figtree, "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --hsc-body: Figtree, "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --hsc-editorial: "DM Serif Display", "Iowan Old Style", Charter, Georgia, "Times New Roman", serif;
   --hsc-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   /* ---- Type scale ----

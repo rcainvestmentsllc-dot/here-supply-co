@@ -10,11 +10,11 @@
   --brass: var(--hsc-brass);
   --copy: var(--hsc-copy);
   width: 100%; overflow: clip; color: var(--ink); background: var(--paper);
-  font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--hsc-body);
 }
 .home *, .home *::before, .home *::after { box-sizing: border-box; }
 .home h1, .home h2, .home h3, .home p { margin-top: 0; }
-.home h1, .home h2, .home h3 { font-family: Archivo, "Helvetica Neue", Arial, sans-serif; font-weight: 650; letter-spacing: -.055em; text-wrap: balance; }
+.home h1, .home h2, .home h3 { font-family: var(--hsc-display); font-weight: 700; letter-spacing: -.048em; text-wrap: balance; }
 .home a { color: inherit; }
 .home img { max-width: 100%; }
 
@@ -38,7 +38,7 @@
 .hero .eyebrow { margin-bottom: 22px; color: var(--brass); }
 .hero h1 { margin: 0; max-width: 11ch; color: var(--hsc-white); font-size: clamp(46px, 5.1vw, 78px); line-height: .94; }
 .hero h1 em { display: block; color: var(--brass); font-style: normal; }
-.lead { margin: 28px 0 0; max-width: 38ch; color: rgba(255,253,248,.9); font-family: Georgia, serif; font-size: clamp(19px, 1.7vw, 24px); font-style: italic; line-height: 1.48; }
+.lead { margin: 28px 0 0; max-width: 38ch; color: rgba(255,253,248,.9); font-family: var(--hsc-editorial); font-size: clamp(20px, 1.75vw, 25px); font-style: normal; line-height: 1.42; }
 .heroActions, .buttonRow { display: flex; flex-wrap: wrap; align-items: center; gap: 26px; margin-top: 34px; }
 .hero .quietLightLink { color: rgba(255,253,248,.9); }
 .heroAssurance { margin: 22px 0 0; color: rgba(255,253,248,.72); font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: .1em; line-height: 1.5; text-transform: uppercase; }
@@ -111,7 +111,7 @@
 .offerStill { margin: 34px clamp(24px, 4vw, 48px) 0; padding: clamp(18px, 2.5vw, 28px); background: var(--paper); border: 1px solid rgba(9,47,60,.2); }
 .offerStillHeading { margin-bottom: 18px; display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 20px; align-items: end; }
 .offerStillHeading span { color: var(--iron); font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10px; letter-spacing: .1em; }
-.offerStillHeading strong { font-family: Georgia, serif; font-size: 19px; font-weight: 400; line-height: 1.35; }
+.offerStillHeading strong { font-family: var(--hsc-editorial); font-size: 20px; font-weight: 400; line-height: 1.35; }
 .offerArtGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .offerArtGrid figure { min-width: 0; margin: 0; overflow: hidden; background: var(--ink); }
 .offerArtGrid img { width: 100%; aspect-ratio: 16 / 10; display: block; object-fit: cover; }
