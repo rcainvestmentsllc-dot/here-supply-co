@@ -72,6 +72,13 @@ test("makes the complete print edition the recommended course companion", async 
   assert.match(course, /Recommended · print first/i);
   assert.match(course, /all-the-way-here-print-edition\.pdf/i);
   assert.match(course, /Print the course book/i);
+  assert.doesNotMatch(course, /browser workbook/i);
+});
+
+test("sends the retired fill-in workbook to the print edition", async () => {
+  const response = await render("/access/core-4m8r2p/workbook");
+  assert.equal(response.status, 307);
+  assert.equal(response.headers.get("location"), "/downloads/all-the-way-here-print-edition.pdf");
 });
 
 test("keeps the course buyer path clear and the private lessons complete", async () => {

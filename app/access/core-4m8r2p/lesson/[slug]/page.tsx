@@ -24,7 +24,6 @@ export default async function CoreLessonPage({ params }: { params: Promise<{ slu
   const index = CORE_LESSONS.findIndex((item) => item.slug === lesson.slug);
   const previous = CORE_LESSONS[index - 1];
   const next = CORE_LESSONS[index + 1];
-  const printablePage = index + 4;
   const movement = getMovement(lesson.movement);
   const guide = LESSON_GUIDES[lesson.slug];
 
@@ -197,7 +196,7 @@ export default async function CoreLessonPage({ params }: { params: Promise<{ slu
         <p className={styles.label}>One question</p>
         <h2>{lesson.reflection}</h2>
         <Link
-          href={next ? `${COURSE_ROOT}/lesson/${next.slug}` : `${COURSE_ROOT}/workbook#thirty-day-plan`}
+          href={next ? `${COURSE_ROOT}/lesson/${next.slug}` : "/downloads/all-the-way-here-print-edition.pdf"}
           className={`${styles.btn} ${styles.btnPrimary}`}
         >
           {next ? "Take the next lesson" : "Build your 30-day plan"}
@@ -209,17 +208,17 @@ export default async function CoreLessonPage({ params }: { params: Promise<{ slu
         <div>
           <h3>Put this lesson on paper.</h3>
           <p>
-            Every lesson has one matching action page in the workbook. Try the practice first, then
+            Every lesson has a matching action page in the print course book. Try the practice first, then
             write what happened and name the next real move.
           </p>
         </div>
         <div className={styles.workbookActions}>
-          <Link href={`${COURSE_ROOT}/workbook#${lesson.slug}`} className={`${styles.btn} ${styles.btnGhost}`}>
-            Write it here <span aria-hidden="true">→</span>
+          <Link href="/downloads/all-the-way-here-print-edition.pdf" className={`${styles.btn} ${styles.btnGhost}`}>
+            Open the print course book <span aria-hidden="true">→</span>
           </Link>
           <a
             className={`${styles.btn} ${styles.btnGhost}`}
-            href={`/downloads/all-the-way-here-workbook.pdf#page=${printablePage}`}
+            href="/downloads/all-the-way-here-print-edition.pdf"
             target="_blank"
             rel="noreferrer"
           >
@@ -252,7 +251,7 @@ export default async function CoreLessonPage({ params }: { params: Promise<{ slu
             <strong>{next.title} →</strong>
           </Link>
         ) : (
-          <Link href={`${COURSE_ROOT}/workbook#thirty-day-plan`} className={`${styles.navLink} ${styles.navNext}`}>
+          <Link href="/downloads/all-the-way-here-print-edition.pdf" className={`${styles.navLink} ${styles.navNext}`}>
             <small>Finish the course</small>
             <strong>Build your 30-day plan →</strong>
           </Link>

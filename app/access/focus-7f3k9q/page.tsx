@@ -89,7 +89,7 @@ export default function FocusAccess() {
       <section className="lesson-field-note"><span>AFTER 72 HOURS</span><blockquote>Choose which tools return, where they live, and when you use them. Keep the boundaries that gave you more attention. Release the ones that did not fit.</blockquote></section>
       <section className="access-resource access-manual">
         <div><span>02 · KEEP GOING</span><h2>The complete course</h2><p>The Attention Reset opens All the Way Here. Continue into nine visual lessons about attention, pressure, home, relationships, friendship, and the practices that bring them together.</p><Link className="text-link" href="/access/core-4m8r2p">Continue to the course <b>→</b></Link></div>
-        <aside className="focus-next-step"><span>NEXT</span><strong>Print the workbook, then begin with Return.</strong><small>The three short module introductions inside the course are optional context. The practices and action pages are the course.</small></aside>
+        <aside className="focus-next-step"><span>NEXT</span><strong>Print the course book, then begin with Return.</strong><small>The three short module introductions inside the course are optional context. The practices and action pages are the course.</small></aside>
       </section>
       <footer className="access-footer"><span>Questions? Email <a href={supportEmailUrl()}>{SUPPORT_EMAIL}</a>. Save this page as your private access link.</span><Link href="/">Here Supply Co.</Link></footer>
     </main>

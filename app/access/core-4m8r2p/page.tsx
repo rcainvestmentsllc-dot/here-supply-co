@@ -19,12 +19,6 @@ const RESOURCES = [
     href: "/downloads/all-the-way-here-print-edition.pdf",
   },
   {
-    label: "Optional · digital",
-    title: "The browser workbook",
-    note: "Use this if typing works better for you. It saves privately on this device.",
-    href: `${COURSE_ROOT}/workbook`,
-  },
-  {
     label: "One page",
     title: "Field card",
     note: "All nine practices on a single sheet you can keep in the truck.",
@@ -113,7 +107,7 @@ export default function CourseHome() {
             <li>
               <span>
                 <b>Print the course book.</b> It combines the full course and workbook in one
-                place. Use the browser version when you want video, a quick reminder, or prefer typing.
+                place. Use the online course when you want the short videos or a quick reminder.
               </span>
             </li>
             <li>

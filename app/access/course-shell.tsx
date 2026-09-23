@@ -115,8 +115,8 @@ export function CourseShell({
             <Link href={`${COURSE_ROOT}`} className={styles.railFootLink}>
               Course home <span aria-hidden="true">→</span>
             </Link>
-            <Link href={`${COURSE_ROOT}/workbook`} className={styles.railFootLink}>
-              Workbook <span aria-hidden="true">→</span>
+            <Link href="/downloads/all-the-way-here-print-edition.pdf" className={styles.railFootLink}>
+              Print course book <span aria-hidden="true">→</span>
             </Link>
             <Link href="/access/focus-7f3k9q" className={styles.railFootLink}>
               Focus Protocol <span aria-hidden="true">→</span>

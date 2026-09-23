@@ -25,7 +25,7 @@ export default function FoundingCirclePass() {
         <p>You have complimentary access to All the Way Here. Chris is looking for honest use and honest criticism, not automatic praise. Start with the Attention Reset or Return, try at least one practice in a real week, and tell him what helped or got in the way.</p>
       </section>
       <section className="access-resource access-manual">
-        <div><span>01 · OPEN THE COURSE</span><h2>Return. Lead. Keep.</h2><p>The Attention Reset, nine visual lessons, and the editable workbook, arranged on one private All the Way Here course page. No checkout, community, or Gamma folder to manage.</p></div>
+        <div><span>01 · OPEN THE COURSE</span><h2>Return. Lead. Keep.</h2><p>The Focus Protocol, nine visual lessons, and the complete print-first course book, arranged on one private All the Way Here course page. No checkout, community, or Gamma folder to manage.</p></div>
         <Link className="button primary" href="/access/core-4m8r2p">Enter All the Way Here <b>→</b></Link>
       </section>
       <section className="access-resource access-video">
