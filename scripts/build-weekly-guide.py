@@ -75,26 +75,25 @@ def prompt(c: canvas.Canvas, label: str, x: float, y: float, width: float, lines
     return line_y
 
 
-def weekly_board(c: canvas.Canvas, x: float, y: float, width: float, height: float):
-    """A practical surfboard-shaped writing space: the board for this week."""
-    path = c.beginPath()
-    path.moveTo(x + width / 2, y + height)
-    path.curveTo(x + width * .82, y + height, x + width, y + height * .70, x + width, y + height / 2)
-    path.curveTo(x + width, y + height * .30, x + width * .82, y, x + width / 2, y)
-    path.curveTo(x + width * .18, y, x, y + height * .30, x, y + height / 2)
-    path.curveTo(x, y + height * .70, x + width * .18, y + height, x + width / 2, y + height)
-    c.saveState()
+def weekly_intention(c: canvas.Canvas, x: float, y: float, width: float, height: float):
+    """A useful opening question, not a decorative blank shape."""
     set_fill(c, LIGHT)
     set_stroke(c, OCEAN)
-    c.setLineWidth(1.1)
-    c.drawPath(path, stroke=1, fill=1)
+    c.setLineWidth(.8)
+    c.rect(x, y, width, height, stroke=1, fill=1)
+    set_fill(c, OCEAN)
+    c.rect(x, y, 5, height, stroke=0, fill=1)
     set_fill(c, TOBACCO)
-    c.setFont("FuturaBold", 7.5)
-    c.drawCentredString(x + width / 2, y + height - 14, "THIS WEEK'S BOARD")
+    c.setFont("FuturaBold", 7.8)
+    c.drawString(x + 15, y + height - 17, "ONE QUESTION TO START")
+    set_fill(c, INK)
+    c.setFont("AvenirDemi", 9.2)
+    c.drawString(x + 15, y + height - 34, "At the end of this week, what would make us")
+    c.drawString(x + 15, y + height - 46, "say we were on the same team?")
     set_stroke(c, RULE)
-    c.setLineWidth(.5)
-    c.line(x + 19, y + 18, x + width - 19, y + 18)
-    c.restoreState()
+    c.setLineWidth(.55)
+    c.line(x + 15, y + 18, x + width - 15, y + 18)
+    c.line(x + 15, y + 32, x + width - 15, y + 32)
 
 
 def build():
@@ -130,29 +129,29 @@ def build():
     c.setFont("FuturaBold", 34)
     c.drawString(34, 643, "BOARD MEETING.")
     set_fill(c, MUTED)
-    c.setFont("AvenirDemi", 11.5)
-    c.drawString(35, 619, "A free 15-minute way for two people sharing a life to lead the week together")
-    c.setFont("Avenir", 9.5)
-    c.drawString(35, 605, "Start with something good. Make the week visible. Protect one thing together.")
+    c.setFont("AvenirDemi", 11.2)
+    c.drawString(35, 619, "A free 15-minute way for two people sharing a life")
+    c.drawString(35, 603, "to lead the week together")
+    c.setFont("Avenir", 9.3)
+    c.drawString(35, 587, "Start with something good. Make the week visible. Protect one thing together.")
 
-    # The board is a useful writing space, with a quiet surfboard shape that earns its place.
-    weekly_board(c, 448, 623, 130, 76)
+    weekly_intention(c, 382, 604, 196, 91)
 
-    # Connection band.
+    # Connection gets the largest writing space because this is the meeting's point.
     set_stroke(c, RULE)
     c.setLineWidth(0.7)
-    c.rect(34, 464, 544, 116, stroke=1, fill=0)
+    c.rect(34, 414, 544, 166, stroke=1, fill=0)
     section_heading(c, "01", "Connection", 49, 558)
-    prompt(c, "One thing I appreciated about you this week", 49, 535, 243, 1)
-    prompt(c, "How are we doing, honestly?", 316, 535, 247, 1)
-    prompt(c, "One thing I can do this week to support you", 49, 493, 514, 1)
+    prompt(c, "One thing I appreciated about you this week", 49, 535, 243, 2)
+    prompt(c, "How are we doing, honestly?", 316, 535, 247, 2)
+    prompt(c, "One thing I can do this week to support you", 49, 474, 514, 2)
 
     # Lower grid.
     left_x = 34
     left_w = 327
     right_x = 379
     right_w = 199
-    top_y = 442
+    top_y = 396
     bottom_y = 93
 
     set_stroke(c, RULE)
@@ -160,18 +159,18 @@ def build():
     c.rect(left_x, bottom_y, left_w, top_y - bottom_y, stroke=1, fill=0)
     c.rect(right_x, bottom_y, right_w, top_y - bottom_y, stroke=1, fill=0)
 
-    section_heading(c, "02", "The Week Ahead", 49, 420)
+    section_heading(c, "02", "The Week Ahead", 49, 374)
     set_fill(c, MUTED)
-    c.setFont("Avenir", 9)
-    c.drawString(49, 405, "Put the commitments, handoffs, and pressure points on the same page.")
+    c.setFont("Avenir", 8.6)
+    c.drawString(49, 359, "Commitments, handoffs, and the parts most likely to create pressure.")
 
     day_rows = [
-        ("MON", 382),
-        ("TUE", 344),
-        ("WED", 306),
-        ("THU", 268),
-        ("FRI", 230),
-        ("WEEKEND", 192),
+        ("MON", 336),
+        ("TUE", 307),
+        ("WED", 278),
+        ("THU", 249),
+        ("FRI", 220),
+        ("WEEKEND", 191),
     ]
     for day, y in day_rows:
         set_fill(c, TOBACCO)
@@ -183,27 +182,27 @@ def build():
 
     set_fill(c, INK)
     c.setFont("FuturaBold", 9.8)
-    c.drawString(49, 150, "THE PRESSURE POINT")
+    c.drawString(49, 157, "THE PRESSURE POINT")
     set_fill(c, MUTED)
-    c.setFont("Avenir", 8.8)
-    c.drawString(49, 137, "Where will the week feel tight, and what can we decide now?")
+    c.setFont("Avenir", 8.4)
+    c.drawString(49, 144, "Where will the week feel tight, and what can we decide now?")
     set_stroke(c, RULE)
-    c.line(49, 118, 345, 118)
+    c.line(49, 126, 345, 126)
 
-    section_heading(c, "03", "Home + Money", 394, 420)
-    y = prompt(c, "Meals and groceries", 394, 393, 169, 1) - 5
+    section_heading(c, "03", "Home + Money", 394, 374)
+    y = prompt(c, "Meals and groceries", 394, 347, 169, 1) - 5
     y = prompt(c, "Family, care, or household needs", 394, y, 169, 1) - 5
     y = prompt(c, "Who owns what this week?", 394, y, 169, 1) - 5
     prompt(c, "Money: bills, spending, savings", 394, y, 169, 1)
 
     set_stroke(c, RULE)
     c.setLineWidth(0.7)
-    c.line(394, 252, 563, 252)
+    c.line(394, 204, 563, 204)
 
-    section_heading(c, "04", "Protect", 394, 229)
-    prompt(c, "Time for us", 394, 202, 169, 1)
-    prompt(c, "One shared moment", 394, 160, 169, 1)
-    prompt(c, "Our shared win for the week", 394, 118, 169, 1)
+    section_heading(c, "04", "Protect", 394, 181)
+    prompt(c, "Time for us", 394, 154, 169, 1)
+    prompt(c, "One shared moment", 394, 125, 169, 1)
+    prompt(c, "Our shared win for the week", 394, 96, 169, 1)
 
     # Footer.
     set_stroke(c, OCEAN)
