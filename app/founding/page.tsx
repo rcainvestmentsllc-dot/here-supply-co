@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { PlainLink as Link } from "../plain-link";
 import { Footer, Header } from "../components";
-import { FoundingSignupForm } from "./signup-form";
 import styles from "./founding.module.css";
 
 export const metadata: Metadata = {
-  title: "The Founding Group | Here Supply Co.",
+  title: "Founding Circle | Here Supply Co.",
   description:
-    "Twenty couples get All the Way Here free, in exchange for doing it and telling the truth about what happened.",
+    "A small invited group helping test All the Way Here before the wider launch.",
   alternates: { canonical: "/founding" },
 };
 
@@ -22,13 +21,7 @@ export const metadata: Metadata = {
  * It is deliberately blunt about the trade. People who feel recruited do not
  * finish; people who understand they are being asked for something do.
  */
-export default async function Founding({
-  searchParams,
-}: {
-  searchParams: Promise<{ ok?: string; err?: string }>;
-}) {
-  const params = await searchParams;
-
+export default function Founding() {
   return (
     <main id="main-content" className={styles.page}>
       <Header />
@@ -46,15 +39,15 @@ export default async function Founding({
           <figcaption>Chris Avera · Brevard, North Carolina</figcaption>
         </figure>
         <div className={styles.heroCopy}>
-        <p className={styles.eyebrow}>TWENTY COUPLES · NO CHARGE</p>
+        <p className={styles.eyebrow}>FOUNDING CIRCLE · INVITE ONLY</p>
         <h1>
           I need to know whether<br />
           this <em>works for anyone but me.</em>
         </h1>
         <p className={styles.lead}>
           All the Way Here has never been run by anyone except my own family. Before I ask a
-          stranger to pay for it, I want twenty couples to actually do it and tell me the truth
-          about what happened, including the parts that did not work.
+          stranger to pay for it, I am inviting a small group of 12 to 15 couples to actually do it
+          and tell me the truth about what happened, including the parts that did not work.
         </p>
         <p className={styles.leadSmall}>
           You get the whole thing. The Field Kit, the three day Attention Reset, and all nine
@@ -170,7 +163,20 @@ export default async function Founding({
       </section>
 
       <section className={styles.signup} id="join">
-        <FoundingSignupForm joined={params.ok === "1"} error={params.err === "1"} />
+        <div className={styles.card}>
+          <span className={styles.cardKicker}>Invite only · 12 to 15 couples</span>
+          <h2 className={styles.cardTitle}>Built with a small circle, not a mailing list.</h2>
+          <p className={styles.cardBlurb}>
+            The first circle is being invited personally so Chris can read the feedback, answer real
+            questions, and make the course better before a wider launch. It is not open for public
+            sign-up yet.
+          </p>
+          <p className={styles.cardNote}>
+            If you did not receive an invitation, start with the free Sunday Board Meeting. It is the
+            best first look at how the practice works in a real week.
+          </p>
+          <Link className={styles.submit} href="/sunday-board">Start with the free guide <span aria-hidden="true">→</span></Link>
+        </div>
       </section>
 
       <section className={styles.after}>
@@ -179,29 +185,29 @@ export default async function Founding({
           <li>
             <span>01</span>
             <div>
-              <b>I email you back myself</b>
-              <p>Not a sequence. An actual email, and you can reply to it.</p>
+              <b>You receive a personal invitation</b>
+              <p>The first circle is small on purpose, so each couple has a clear place to start.</p>
             </div>
           </li>
           <li>
             <span>02</span>
             <div>
-              <b>You get everything at once</b>
+              <b>You get the complete practice</b>
               <p>Full access and the printable kit. Start with the reset before anything else.</p>
             </div>
           </li>
           <li>
             <span>03</span>
             <div>
-              <b>You can reach me while you do it</b>
-              <p>Reply to that email any time. Stuck, skeptical, or it is not working.</p>
+              <b>You can send honest feedback</b>
+              <p>What helps, what gets skipped, and what does not land. That is what improves the course.</p>
             </div>
           </li>
           <li>
             <span>04</span>
             <div>
-              <b>You tell me the truth at the end</b>
-              <p>That is the whole price. Then it is yours to keep either way.</p>
+              <b>You choose whether to share a result</b>
+              <p>No feedback is published or used as a testimonial without your clear permission.</p>
             </div>
           </li>
         </ol>

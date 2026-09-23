@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { PlainLink as Link } from "../../plain-link";
 import { CORE_LESSONS, CORE_MOVEMENTS } from "../../course-content";
-import { requireProductAccess } from "../../../lib/require-access";
-import { getEnv } from "../../../lib/cloudflare-env";
-import { getCompletedLessons, nextLessonSlug } from "../../../lib/progress";
+import { nextLessonSlug } from "../../../lib/progress";
 import { CourseShell, CheckIcon, COURSE_ROOT } from "../course-shell";
 import styles from "../course.module.css";
 
@@ -40,10 +38,8 @@ const RESOURCES = [
   },
 ];
 
-export default async function CourseHome() {
-  const email = await requireProductAccess("core", COURSE_ROOT);
-  const env = getEnv();
-  const completed = await getCompletedLessons(env, email);
+export default function CourseHome() {
+  const completed = new Set<string>();
 
   const orderedSlugs = CORE_LESSONS.map((lesson) => lesson.slug);
   const doneCount = orderedSlugs.filter((slug) => completed.has(slug)).length;

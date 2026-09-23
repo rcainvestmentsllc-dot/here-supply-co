@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CORE_LESSONS, LESSON_GUIDES, getCoreLesson, getMovement, getKitSheet } from "../../../../course-content";
 import { PlainLink as Link } from "../../../../plain-link";
-import { requireProductAccess } from "../../../../../lib/require-access";
-import { getEnv } from "../../../../../lib/cloudflare-env";
-import { getCompletedLessons } from "../../../../../lib/progress";
 import { CourseShell, COURSE_ROOT } from "../../../course-shell";
 import styles from "../../../course.module.css";
 
@@ -20,14 +17,11 @@ export function generateStaticParams() {
 export default async function CoreLessonPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const lessonPath = `${COURSE_ROOT}/lesson/${slug}`;
-  const email = await requireProductAccess("core", lessonPath);
 
   const lesson = getCoreLesson(slug);
   if (!lesson) notFound();
 
-  const env = getEnv();
-  const completed = await getCompletedLessons(env, email);
-  const isDone = completed.has(lesson.slug);
+  const completed = new Set<string>();
 
   const index = CORE_LESSONS.findIndex((item) => item.slug === lesson.slug);
   const previous = CORE_LESSONS[index - 1];
@@ -204,23 +198,13 @@ export default async function CoreLessonPage({ params }: { params: Promise<{ slu
       <section className={styles.reflection}>
         <p className={styles.label}>One question</p>
         <h2>{lesson.reflection}</h2>
-        <form className={styles.completeForm} method="post" action="/api/progress">
-          <input type="hidden" name="lesson" value={lesson.slug} />
-          <input type="hidden" name="state" value={isDone ? "incomplete" : "complete"} />
-          <input type="hidden" name="return_to" value={next ? `${COURSE_ROOT}/lesson/${next.slug}` : lessonPath} />
-          <button
-            type="submit"
-            className={`${styles.btn} ${isDone ? styles.btnGhost : styles.btnPrimary}`}
-          >
-            {isDone ? "Mark as not finished" : "Mark complete"}
-            {!isDone && <span aria-hidden="true">→</span>}
-          </button>
-        </form>
-        {isDone && (
-          <span className={styles.completeNote}>
-            <span aria-hidden="true">✓</span> You finished this lesson
-          </span>
-        )}
+        <Link
+          href={next ? `${COURSE_ROOT}/lesson/${next.slug}` : `${COURSE_ROOT}/workbook#thirty-day-plan`}
+          className={`${styles.btn} ${styles.btnPrimary}`}
+        >
+          {next ? "Take the next lesson" : "Build your 30-day plan"}
+          <span aria-hidden="true">→</span>
+        </Link>
       </section>
 
       <section className={styles.workbookPrompt}>

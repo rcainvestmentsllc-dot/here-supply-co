@@ -201,9 +201,8 @@ export default function Home() {
             <p className={styles.offerAssurance}>$99 one time · Founding-edition price · 14-day refund window</p>
             <a className={styles.buyButton} href={CHECKOUT.core}>Get All the Way Here <b>$99</b></a>
             <p className={styles.afterPay}>
-              After you pay you land on a welcome page, enter the same email, and a one-time sign-in
-              link opens the course. No password to invent. If anything sticks, email Chris and he
-              opens it by hand.
+              After you pay, the confirmation page and your receipt email give you the private course
+              link. Save it or bookmark it so you can return whenever you need it.
             </p>
           </article>
         </div>
@@ -213,7 +212,7 @@ export default function Home() {
         <h2>One useful way<br />to come <em>back.</em></h2>
         <p>The three day Attention Reset, nine lessons, the workbook, and the field card. One payment, yours to keep, with 14 days to change your mind.</p>
         <div><a className={styles.primaryButton} href={CHECKOUT.core}>Get All the Way Here · $99 <span>→</span></a><Link href="/sunday-board#get-board">Or start with the free guide <span>→</span></Link></div>
-        <p className={styles.foundingNote}>Twenty couples are getting the whole thing free right now, in exchange for telling me the truth about what happened. <Link href="/founding">See the founding group</Link>.</p>
+        <p className={styles.foundingNote}>The first Founding Circle is being invited personally. Start with the free Sunday Board Meeting today.</p>
       </section>
       <Footer />
     </main>

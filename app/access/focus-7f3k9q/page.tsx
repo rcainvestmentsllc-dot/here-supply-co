@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { PlainLink as Link } from "../../plain-link";
 import { FOCUS_MOVES, RESET_TIMELINE, RESET_RELAPSE, RESET_DECLARATION } from "../../course-content";
 import { BrandWordmark } from "../../components";
-import { requireAnyProductAccess } from "../../../lib/require-access";
 
 export const metadata: Metadata = {
   title: "The Attention Reset | All the Way Here",
@@ -11,10 +10,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default async function FocusAccess() {
-  // Either the standalone reset purchase or ownership of All the Way Here
-  // unlocks this. The Attention Reset also opens the full course.
-  await requireAnyProductAccess(["focus", "core"], "/access/focus-7f3k9q", "focus");
+export default function FocusAccess() {
   return (
     <main id="main-content" className="access-shell">
       <header className="access-header">
