@@ -165,7 +165,7 @@ def reset_sheet(path):
     c.setFont("Archivo-Semi", 8.4); c.setFillColor(BRASS)
     c.drawString(M + 14, y - 62, "None of those are decisions. Hold the arrangement fourteen days before you change anything.")
 
-    y -= 96
+    y -= 88
     tracked(c, M, y, "THE DAILY CHECK  ·  NOTICE, DO NOT GRADE", "Plex-Semi", 7.4, IRON, 1.5)
     c.setFont("Archivo", 8); c.setFillColor(QUIET)
     c.drawRightString(W - M, y, "One pass at the end of each day. No scoring.")
@@ -193,12 +193,16 @@ def reset_sheet(path):
         c.setStrokeColor(RULE); c.setLineWidth(0.4)
         c.line(M, y - 9, W - M, y - 9)
 
-    y -= 34
-    c.setFillColor(BRASS); c.rect(M, y - 58, W - 2 * M, 58, stroke=0, fill=1)
-    tracked(c, M + 16, y - 18, "READ IT OUT LOUD ONCE", "Plex-Semi", 6.2, IRON, 1.2)
-    c.setFont("Archivo-Semi", 13.2); c.setFillColor(INK)
-    c.drawString(M + 16, y - 38, "I do not trade presence for distraction.")
-    c.drawString(M + 16, y - 52, "My phone is a tool. I am not.")
+    # The declaration was cramped inside its band, with the second line almost
+    # touching the bottom edge. It is the line the whole brand came from, so it
+    # gets room around it.
+    y -= 30
+    BAND = 78
+    c.setFillColor(BRASS); c.rect(M, y - BAND, W - 2 * M, BAND, stroke=0, fill=1)
+    tracked(c, M + 20, y - 21, "READ IT OUT LOUD ONCE", "Plex-Semi", 6.2, IRON, 1.2)
+    c.setFont("Archivo-Semi", 13.6); c.setFillColor(INK)
+    c.drawString(M + 20, y - 43, "I do not trade presence for distraction.")
+    c.drawString(M + 20, y - 61, "My phone is a tool. I am not.")
 
     footline(c, "The part that feels pointless is the part that is working.")
     c.save()

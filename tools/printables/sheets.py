@@ -90,7 +90,7 @@ def build(out):
     card_page(
         j("third-place.pdf"),
         "The Third Place", "NOT WORK · NOT HOME",
-        ["Somewhere you are", "nobody's anything."],
+        ["A place where you", "are just a person."],
         [
             ("Name it", "Trail, water, workshop, gym, church, a table. What returns you, not what sounds healthy."),
             ("Smallest version", "Thirty minutes that repeats beats a day you keep postponing."),

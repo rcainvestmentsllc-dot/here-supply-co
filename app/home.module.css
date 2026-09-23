@@ -993,3 +993,76 @@
   text-align: center;
 }
 .foundingNote a { color: var(--hsc-ink); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------------------------------------------------------------------------
+   Typographic hierarchy and the founder.
+
+   Two measured faults, not opinions.
+
+   1. Chris rendered at 180 by 135 pixels, a thumbnail cropped landscape out of
+      a portrait, on the one section that carries the whole reason to trust the
+      brand. Anyone can generate the rest of this page with AI; he is the only
+      part that cannot be copied, so he gets the space that implies.
+   2. Card headings measured 51px against 14px body. At that ratio everything
+      shouts at the same volume and nothing reads as more important than
+      anything else, which is exactly what "generic" looks like. Section
+      headlines stay large, card headlines step down, body steps up.
+   --------------------------------------------------------------------------- */
+
+.founderSection {
+  grid-template-columns: minmax(300px, 400px) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(40px, 5.5vw, 84px);
+}
+.founderPhoto {
+  width: 100%;
+  max-width: none;
+  justify-self: stretch;
+  border-radius: var(--hsc-r-md);
+  box-shadow: 0 26px 54px -26px rgba(11,37,48,.5);
+}
+.founderPhoto img {
+  aspect-ratio: 4 / 5;
+  object-position: 50% 28%;
+  filter: saturate(.9) contrast(1.02);
+}
+.founderPhoto figcaption {
+  padding: 15px 18px;
+  font-family: var(--hsc-mono);
+  font-size: 10px;
+  letter-spacing: .07em;
+}
+.founderSection h2 { font-size: clamp(32px, 3.5vw, 50px); line-height: 1.06; }
+.founderSection div > p:not(.eyebrow) { max-width: 60ch; font-size: 17px; line-height: 1.68; }
+.founderSection div > p.founderPersonal { font-size: 15.5px; }
+
+/* Cards should not compete with the section headline above them. */
+.movementCard h3 { font-size: clamp(28px, 2.7vw, 40px); }
+.movementCard strong { max-width: 46ch; font-size: 15.5px; line-height: 1.55; }
+.movementCard p { max-width: 52ch; font-size: 16px; line-height: 1.68; }
+
+.coreOffer > p { max-width: 58ch; font-size: 16.5px; line-height: 1.68; }
+.coreOffer h3 { font-size: clamp(30px, 2.9vw, 44px); }
+
+/* The buy button stretched to 1060px, which reads as a divider rather than a
+   control. A button should look like something you press. */
+.coreOffer > a.buyButton {
+  align-self: start;
+  width: 100%;
+  max-width: 430px;
+  padding: 21px 32px;
+  font-size: 14px;
+}
+.coreOffer > a.buyButton b { font-size: 16px; }
+
+@media (max-width: 980px) {
+  .founderSection { grid-template-columns: 1fr; }
+  .founderPhoto { max-width: 340px; }
+}
+
+/* Consecutive paragraphs in the founder column had no margin between them, so
+   two separate thoughts ran together as one block of text. */
+.founderSection div > p:not(.eyebrow) + p:not(.eyebrow):not(.founderPersonal) {
+  margin-top: 1.05em;
+}
+.founderSection { padding-bottom: clamp(70px, 7vw, 104px); }

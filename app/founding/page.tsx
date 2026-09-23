@@ -34,6 +34,18 @@ export default async function Founding({
       <Header />
 
       <section className={styles.hero}>
+        <figure className={styles.heroPhoto}>
+          <img
+            src="/assets/chris-founder.jpg"
+            alt="Chris Avera outdoors by the ocean"
+            width="600"
+            height="800"
+            fetchPriority="high"
+            decoding="async"
+          />
+          <figcaption>Chris Avera · Brevard, North Carolina</figcaption>
+        </figure>
+        <div className={styles.heroCopy}>
         <p className={styles.eyebrow}>TWENTY COUPLES · NO CHARGE</p>
         <h1>
           I need to know whether<br />
@@ -45,9 +57,10 @@ export default async function Founding({
           about what happened, including the parts that did not work.
         </p>
         <p className={styles.leadSmall}>
-          You get the whole thing. The Field Kit, the three day Attention Reset, all nine lessons,
-          and a monthly call with me while the group runs. No charge, now or later, and no card.
+          You get the whole thing. The Field Kit, the three day Attention Reset, and all nine
+          lessons. No charge, now or later, and no card.
         </p>
+        </div>
       </section>
 
       <section className={styles.trade}>
@@ -76,10 +89,10 @@ export default async function Founding({
               </span>
             </li>
             <li>
-              <b>A monthly call</b>
+              <b>Me, reachable</b>
               <span>
-                Small group, both of you welcome, for as long as the founding run lasts. This is the
-                part I am testing hardest.
+                You can email me directly while you are working through it, and I will answer. That
+                is not a support desk, it is my actual inbox.
               </span>
             </li>
           </ul>
@@ -138,6 +151,24 @@ export default async function Founding({
         </div>
       </section>
 
+      <section className={styles.kitShow}>
+        <p className={styles.label}>WHAT SHOWS UP</p>
+        <div className={styles.kitGrid}>
+          <figure>
+            <img src="/assets/free-weekly-guide-preview.png" alt="The Sunday Board Meeting sheet" width="1200" height="1553" loading="lazy" decoding="async" />
+            <figcaption>Sheet 01 · The table</figcaption>
+          </figure>
+          <figure>
+            <img src="/assets/course/photo/lesson-1-3-driveway-v1.jpg" alt="A parent sitting in the car in the driveway before going inside" width="1672" height="942" loading="lazy" decoding="async" />
+            <figcaption>Sheet 03 · The glovebox</figcaption>
+          </figure>
+          <figure>
+            <img src="/assets/course/photo/lesson-2-1-thermostat-v1.jpg" alt="A family talking in the kitchen" width="1672" height="942" loading="lazy" decoding="async" />
+            <figcaption>Sheet 06 · The nightstand</figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section className={styles.signup} id="join">
         <FoundingSignupForm joined={params.ok === "1"} error={params.err === "1"} />
       </section>
@@ -162,8 +193,8 @@ export default async function Founding({
           <li>
             <span>03</span>
             <div>
-              <b>We talk once a month</b>
-              <p>Small group, on a call, for as long as the founding run goes.</p>
+              <b>You can reach me while you do it</b>
+              <p>Reply to that email any time. Stuck, skeptical, or it is not working.</p>
             </div>
           </li>
           <li>

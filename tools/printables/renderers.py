@@ -19,6 +19,13 @@ def card_page(path, title, kicker, headline, steps, aside_label, aside_body,
     cw, ch = (W - 2 * 0.4 * inch) / 2, (H - 2 * 0.4 * inch) / 2
     ox, oy = 0.4 * inch, 0.4 * inch
 
+    # Four identical copies confuse people until you say so. This sits in the
+    # page margin, outside every card, so it never prints on the card itself.
+    tracked(c, ox, H - 19, "FOUR IDENTICAL CARDS \u00b7 CUT ALONG THE DASHED LINES",
+            "Plex-Semi", 6.4, QUIET, 1.3)
+    c.setFont("Plex", 6.4); c.setFillColor(QUIET)
+    c.drawRightString(W - ox, H - 19, "CARDSTOCK IF YOU HAVE IT")
+
     for r in range(2):
         for col in range(2):
             x, y = ox + col * cw, oy + r * ch
@@ -43,10 +50,11 @@ def card_page(path, title, kicker, headline, steps, aside_label, aside_body,
                 c.drawString(px + 18, sy, t)
                 sy = para(c, px + 18, sy - 11, b, "Archivo", 7.8, QUIET, cw - 62, 9.4) - 6
 
+            ay = max(sy - 12, y + 104)
             c.setStrokeColor(RULE); c.setLineWidth(0.5)
-            c.line(px, y + 104, x + cw - 22, y + 104)
-            tracked(c, px, y + 92, aside_label, "Plex-Semi", 6.2, TEAL, 1.1)
-            para(c, px, y + 80, aside_body, "Archivo", 7.6, QUIET, cw - 44, 9.4)
+            c.line(px, ay, x + cw - 22, ay)
+            tracked(c, px, ay - 12, aside_label, "Plex-Semi", 6.2, TEAL, 1.1)
+            para(c, px, ay - 24, aside_body, "Archivo", 7.6, QUIET, cw - 44, 9.4)
 
             c.setStrokeColor(RULE); c.setLineWidth(0.5)
             c.line(px, y + 42, x + cw - 22, y + 42)
