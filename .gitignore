@@ -43,3 +43,6 @@ yarn-error.log*
 /tmp/
 /.qa/
 /output/brand/
+
+# local handoff/export artifacts
+/output/
