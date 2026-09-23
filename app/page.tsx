@@ -60,7 +60,7 @@ export default function Home() {
     <main id="main-content" className={styles.home}>
       <header className={styles.header}>
         <Link className={styles.brand} href="/" aria-label="Here Supply Co. home">
-          <BrandWordmark />
+          <BrandWordmark size="sm" />
         </Link>
         <nav className={styles.nav} aria-label="Main navigation">
           <a href="#start">Start here</a>

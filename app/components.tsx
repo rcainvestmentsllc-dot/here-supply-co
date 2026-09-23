@@ -8,8 +8,8 @@ import { Wordmark } from "./brand/wordmark";
  * a sticker; it now earns its keep as artwork at size — printables, the field
  * card, PDF covers.
  */
-export function BrandWordmark({ onDark = false }: { onDark?: boolean }) {
-  return <Wordmark size="md" onDark={onDark} />;
+export function BrandWordmark({ onDark = false, size = "md" }: { onDark?: boolean; size?: "sm" | "md" | "lg" | "xl" }) {
+  return <Wordmark size={size} onDark={onDark} />;
 }
 
 export function SundayBoardWordmark() {

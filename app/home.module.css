@@ -1066,3 +1066,32 @@
   margin-top: 1.05em;
 }
 .founderSection { padding-bottom: clamp(70px, 7vw, 104px); }
+
+
+/* Final readability pass: the home page has one compact header and every dark
+   field carries light body copy. These rules are deliberately last because
+   earlier style experiments were competing with one another. */
+.header { grid-template-columns:minmax(250px,1fr) auto auto; gap:clamp(22px,3vw,48px); }
+.header .brand { min-width:250px; }
+.closing { color:var(--hsc-white); background:var(--hsc-ink-soft); }
+.closing .eyebrow { color:var(--hsc-brass); }
+.closing h2 { color:var(--hsc-white); }
+.closing h2 em { color:var(--hsc-brass); }
+.closing > p:not(.eyebrow),.closing .foundingNote { color:var(--hsc-paper-raised); font-size:18px; line-height:1.62; }
+.closing > div > a:last-child { color:var(--hsc-paper-raised); }
+.closing > div > a:last-child:hover { color:var(--hsc-brass); }
+.heroFooter { background:var(--hsc-ink-soft); }
+.heroFooter span { padding:28px clamp(24px,4.5vw,76px); color:var(--hsc-paper-raised); font-size:16px; line-height:1.5; }
+.heroFooter b { color:var(--hsc-brass); font-size:11px; }
+@media (max-width:1120px) {
+  .header { grid-template-columns:1fr auto; }
+  .nav { display:none; }
+  .mobileNav { min-height:45px; padding:0 20px; display:flex; align-items:center; gap:20px; overflow-x:auto; color:var(--hsc-copy); background:var(--hsc-paper-raised); border-bottom:1px solid rgba(9,47,60,.14); }
+  .mobileNav a { flex:none; padding:12px 0; color:inherit; font-size:12px; font-weight:700; text-decoration:none; }
+}
+@media (max-width:760px) {
+  .header { grid-template-columns:1fr; gap:0; padding:15px 18px; }
+  .header .brand { min-width:0; }
+  .headerAction { display:none; }
+  .heroFooter span { padding:22px 18px; font-size:16px; }
+}
