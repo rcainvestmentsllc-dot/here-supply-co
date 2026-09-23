@@ -75,6 +75,28 @@ def prompt(c: canvas.Canvas, label: str, x: float, y: float, width: float, lines
     return line_y
 
 
+def weekly_board(c: canvas.Canvas, x: float, y: float, width: float, height: float):
+    """A practical surfboard-shaped writing space: the board for this week."""
+    path = c.beginPath()
+    path.moveTo(x + width / 2, y + height)
+    path.curveTo(x + width * .82, y + height, x + width, y + height * .70, x + width, y + height / 2)
+    path.curveTo(x + width, y + height * .30, x + width * .82, y, x + width / 2, y)
+    path.curveTo(x + width * .18, y, x, y + height * .30, x, y + height / 2)
+    path.curveTo(x, y + height * .70, x + width * .18, y + height, x + width / 2, y + height)
+    c.saveState()
+    set_fill(c, LIGHT)
+    set_stroke(c, OCEAN)
+    c.setLineWidth(1.1)
+    c.drawPath(path, stroke=1, fill=1)
+    set_fill(c, TOBACCO)
+    c.setFont("FuturaBold", 7.5)
+    c.drawCentredString(x + width / 2, y + height - 14, "THIS WEEK'S BOARD")
+    set_stroke(c, RULE)
+    c.setLineWidth(.5)
+    c.line(x + 19, y + 18, x + width - 19, y + 18)
+    c.restoreState()
+
+
 def build():
     register_fonts()
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
@@ -113,18 +135,8 @@ def build():
     c.setFont("Avenir", 9.5)
     c.drawString(35, 605, "Start with something good. Make the week visible. Protect one thing together.")
 
-    # Use the upper-right space for writing, not decoration.
-    set_fill(c, OCEAN)
-    c.setFont("FuturaBold", 9)
-    c.drawString(455, 671, "NOTES FOR THIS WEEK")
-    set_fill(c, MUTED)
-    c.setFont("Avenir", 8.5)
-    c.drawString(455, 655, "Decisions, reminders, or one thing")
-    c.drawString(455, 642, "you want to carry forward.")
-    set_stroke(c, RULE)
-    c.setLineWidth(0.55)
-    for line_y in (625, 607, 589):
-        c.line(455, line_y, 578, line_y)
+    # The board is a useful writing space, with a quiet surfboard shape that earns its place.
+    weekly_board(c, 448, 623, 130, 76)
 
     # Connection band.
     set_stroke(c, RULE)

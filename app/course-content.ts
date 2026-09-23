@@ -643,6 +643,7 @@ export const FIELD_KIT = [
   { sheet: "09", name: "The Third Place", file: "/downloads/third-place.pdf", livesAt: "The bag", note: "One each. Both on the calendar." },
   { sheet: "10", name: "The Friendship Script", file: "/downloads/friendship-script.pdf", livesAt: "The wallet", note: "Invite first." },
   { sheet: "11", name: "The Thirty Day Page", file: "/downloads/thirty-day-page.pdf", livesAt: "The table", note: "The last thing you do in the course." },
+  { sheet: "12", name: "The Here Week", file: "/downloads/the-here-week.pdf", livesAt: "The desk", note: "A simple weekly planning page for work, home, and what matters." },
 ] as const;
 
 export const getKitSheet = (sheet: string) => FIELD_KIT.find((s) => s.sheet === sheet);

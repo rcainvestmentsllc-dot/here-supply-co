@@ -25,6 +25,12 @@ const RESOURCES = [
     href: "/downloads/all-the-way-here-field-card.pdf",
   },
   {
+    label: "The whole kit",
+    title: "Resource Pack",
+    note: "Every separate printable in one download, including the Sunday Board Meeting, cards, and family tools.",
+    href: "/downloads/here-supply-resource-pack.zip",
+  },
+  {
     label: "Start here · three days",
     title: "Focus Protocol",
     note: "Four small moves for getting the phone out of the way and seeing what changes.",

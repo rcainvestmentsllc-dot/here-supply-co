@@ -193,7 +193,7 @@ export default function Home() {
             <div className={styles.offerTopline}><span>HERE SUPPLY CO.</span><b>$99 FOUNDING EDITION</b></div>
             <h3>The complete<br /><em>practice.</em></h3>
             <p>One course for attention, pressure, the walk from work to home, your marriage, your kids if you have them, friendship, and the parts of a good life that slip away quietly while nobody is looking.</p>
-            <div className={styles.deliveryNote}><span>DELIVERED INSIDE</span><p>The 72-hour Focus Protocol, nine visual lessons, one practice each, and an editable companion workbook. Eight of the nine work whether or not you have kids.</p></div>
+            <div className={styles.deliveryNote}><span>DELIVERED INSIDE</span><p>The 72-hour Focus Protocol, nine visual lessons and short videos, a one-page Field Card, the complete print-first course book, and the separate Resource Pack. Eight of the nine work whether or not you have kids.</p></div>
             <div className={styles.offerStill}>
               <div className={styles.offerStillHeading}><span>A LOOK INSIDE</span><strong>Three movements. Nine visual lessons. One practice for real life.</strong></div>
               <div className={styles.offerArtGrid}>{movements.map((movement) => <figure key={movement.title}><img src={movement.image} alt={movement.imageAlt} width="1672" height="942" loading="lazy" decoding="async" /><figcaption><span>{movement.number}</span><strong>{movement.title}</strong></figcaption></figure>)}</div>
@@ -210,7 +210,7 @@ export default function Home() {
       <section className={styles.closing}>
         <p className={styles.eyebrow}>START WHERE LIFE IS ASKING FOR YOU</p>
         <h2>One useful way<br />to come <em>back.</em></h2>
-        <p>The 72-hour Focus Protocol, nine lessons, the workbook, and the field card. One payment, yours to keep, with 14 days to change your mind.</p>
+        <p>The online course, one-page Field Card, complete print-first course book, and Resource Pack. One payment, yours to keep, with 14 days to change your mind.</p>
         <div><a className={styles.primaryButton} href={CHECKOUT.core}>Get All the Way Here · $99 <span>→</span></a><Link href="/sunday-board#get-board">Or start with the free guide <span>→</span></Link></div>
         <p className={styles.foundingNote}>The first Founding Circle is being invited personally. Start with the free Sunday Board Meeting today.</p>
       </section>
