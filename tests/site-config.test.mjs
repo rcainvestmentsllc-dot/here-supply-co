@@ -17,7 +17,7 @@ test("uses the verified Here Supply domain while preserving the existing support
   assert.deepEqual(readSettings(), {
     origin: "https://heresupplyco.com",
     course: "https://heresupplyco.com/access/core-4m8r2p",
-    email: "mailto:chris@ironcompassinstitute.com?subject=Course%20access",
+    email: "mailto:hello@heresupplyco.com?subject=Course%20access",
   });
 });
 
