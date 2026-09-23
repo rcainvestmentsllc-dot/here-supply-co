@@ -150,7 +150,7 @@ export default function Home() {
           <p>A printable fifteen-minute weekly conversation for two people sharing a life or household, so the calendar, money, kids, connection, and one shared priority are no longer living in two separate heads.</p>
           <dl>
             <div><dt>What it helps with</dt><dd>Connection, the calendar, money, kids, time together, and one shared win.</dd></div>
-            <div><dt>What you get</dt><dd>The printable meeting guide, sent to your inbox so you can find it again. No account and no new system to manage.</dd></div>
+            <div><dt>What you get</dt><dd>The printable meeting guide. Download it, print one copy, and use it whenever the week starts filling itself. No account and no new system to manage.</dd></div>
           </dl>
           <div className={styles.buttonRow}>
             <Link className={styles.primaryButton} href="/sunday-board">Watch Chris and Rhea + get the guide <span>→</span></Link>

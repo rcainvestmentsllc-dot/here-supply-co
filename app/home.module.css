@@ -1095,3 +1095,27 @@
   .headerAction { display:none; }
   .heroFooter span { padding:22px 18px; font-size:16px; }
 }
+
+/* Layout repair: the movement cards were trying to stay two-column at a
+   browser width where the text and photos no longer had enough room. That
+   created a horizontal crop of the page itself. Keep the paired layout only
+   where both columns can actually breathe. */
+.movementSection { width:100%; overflow:hidden; }
+.movementGrid { width:100%; max-width:1270px; }
+.movementCard { width:100%; grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+.movementPreview { min-width:0; min-height:0; aspect-ratio:16 / 10; }
+.movementArtGrid,.movementArtGrid figure { min-width:0; min-height:0; }
+.movementArtGrid img { width:100%; height:100%; object-fit:cover; object-position:center; }
+.movementCard:nth-child(1) .movementArtGrid img { object-position:58% center; }
+.movementCard:nth-child(2) .movementArtGrid img { object-position:center 42%; }
+.movementCard:nth-child(3) .movementArtGrid img { object-position:center 45%; }
+.movementBody { min-width:0; }
+
+/* A 1280px CSS breakpoint also covers zoomed desktop screens, which is where
+   the broken two-column state was occurring. */
+@media (max-width:1300px) {
+  .movementCard { grid-template-columns:1fr; }
+  .movementCard:nth-child(even) .movementPreview { order:0; }
+  .movementPreview { aspect-ratio:16 / 9; }
+  .movementBody { padding:clamp(34px,5vw,62px) clamp(24px,7vw,80px); }
+}
