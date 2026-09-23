@@ -13,9 +13,15 @@ export const metadata: Metadata = {
 
 const RESOURCES = [
   {
-    label: "Companion",
-    title: "The workbook",
-    note: "Print it, or fill it in here. Every practice has a place to land.",
+    label: "Recommended · print first",
+    title: "The complete course book",
+    note: "The whole course and workbook together. Print it, write in it, and use the digital course for video or a quick reminder.",
+    href: "/downloads/all-the-way-here-print-edition.pdf",
+  },
+  {
+    label: "Optional · digital",
+    title: "The browser workbook",
+    note: "Use this if typing works better for you. It saves privately on this device.",
     href: `${COURSE_ROOT}/workbook`,
   },
   {
@@ -70,7 +76,7 @@ export default function CourseHome() {
       </h1>
       <p className={styles.pageLede}>
         {isFresh
-          ? "You do not need to finish quickly or figure out the system on your own. Set up the workbook, then take one lesson and one real-life practice at a time."
+          ? "You do not need to finish quickly or figure out the system on your own. Print the course book, then take one lesson and one real-life practice at a time."
           : isFinished
             ? "The practices are yours now. Come back to any lesson when a season changes and you need the reminder."
             : "One lesson, one practice, one ordinary week. The course will still be here when life interrupts."}
@@ -106,8 +112,8 @@ export default function CourseHome() {
           <ol className={styles.firstRunSteps}>
             <li>
               <span>
-                <b>Set up the workbook.</b> Print the 16-page companion, or use the browser
-                version. Do this before lesson one.
+                <b>Print the course book.</b> It combines the full course and workbook in one
+                place. Use the browser version when you want video, a quick reminder, or prefer typing.
               </span>
             </li>
             <li>

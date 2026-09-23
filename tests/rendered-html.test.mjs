@@ -65,6 +65,15 @@ test("makes the Focus Protocol the first step of the paid course", async () => {
   assert.match(focus, /<meta name="robots" content="noindex, nofollow"\/>/i);
 });
 
+test("makes the complete print edition the recommended course companion", async () => {
+  const library = await htmlFor("/library");
+  const course = await htmlFor("/access/core-4m8r2p");
+  assert.match(library, /complete 30-page print-first course book/i);
+  assert.match(course, /Recommended · print first/i);
+  assert.match(course, /all-the-way-here-print-edition\.pdf/i);
+  assert.match(course, /Print the course book/i);
+});
+
 test("keeps the course buyer path clear and the private lessons complete", async () => {
   const library = await htmlFor("/library");
   const lesson = await htmlFor("/access/core-4m8r2p/lesson/the-airlock-protocol");
@@ -95,6 +104,7 @@ test("ships every course asset and printable referenced by the content", async (
     "public/assets/video/sunday-board-meeting-captions.vtt",
     "public/downloads/sunday-board-meeting.pdf",
     "public/downloads/all-the-way-here-workbook.pdf",
+    "public/downloads/all-the-way-here-print-edition.pdf",
     "public/downloads/attention-reset.pdf",
     "public/downloads/all-the-way-here-field-card.pdf",
   ];
