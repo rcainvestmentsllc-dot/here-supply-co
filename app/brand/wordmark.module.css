@@ -1,78 +1,8 @@
-/**
- * The Here Supply Co. wordmark.
- *
- * Typographic, not illustrated: Archivo at the wide (wdth 125) cut, set in
- * caps with generous tracking so it reads as a stamped nameplate rather
- * than hand lettering. The wave illustration is no longer part of the
- * lockup — it earns more as artwork at size than crushed into a nav bar.
- */
-
-.wordmark {
-  display: inline-grid;
-  gap: 7px;
-  justify-items: start;
-  text-decoration: none;
-  color: inherit;
-}
-
-.name {
-  font-family: Archivo, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-variation-settings: "wdth" 125;
-  font-weight: 600;
-  font-size: var(--wm-size, 21px);
-  letter-spacing: .3em;
-  /* Tracking adds space after the final character; pull it back so the
-     lockup is optically centred rather than sitting left of true centre. */
-  text-indent: .3em;
-  margin-right: -.3em;
-  text-transform: uppercase;
-  line-height: 1;
-  white-space: nowrap;
-  color: var(--wm-ink, var(--hsc-ink));
-}
-
-.rule {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.rule i {
-  width: 24px;
-  height: 1px;
-  background: var(--wm-accent, var(--hsc-gold));
-  opacity: .85;
-  font-style: normal;
-  flex: none;
-}
-.rule span {
-  font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace;
-  font-size: var(--wm-sub-size, 9px);
-  font-weight: 400;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  line-height: 1;
-  color: var(--wm-sub, var(--hsc-quiet));
-  white-space: nowrap;
-}
-
-/* Sizes */
-.sm { --wm-size: 15px; --wm-sub-size: 8px; }
-.md { --wm-size: 21px; --wm-sub-size: 9px; }
-.lg { --wm-size: 30px; --wm-sub-size: 10px; }
-.xl { --wm-size: clamp(30px, 4.4vw, 54px); --wm-sub-size: 11px; }
-
-/* On deep grounds */
-.onDark {
-  --wm-ink: #fff;
-  --wm-sub: var(--hsc-on-dark-quiet);
-  --wm-accent: var(--hsc-gold);
-}
-
-/* Stacked, centred — for printables, PDF covers, the field card */
-.stacked { justify-items: center; gap: 9px; }
-.stacked .name { text-indent: .3em; margin-right: 0; }
-
-@media (max-width: 560px) {
-  .md { --wm-size: 16px; }
-  .lg { --wm-size: 21px; }
-}
+.wordmark { width: var(--wm-width, 230px); display: inline-flex; align-items: center; text-decoration: none; line-height: 0; }
+.wordmark img { width: 100%; height: auto; display: block; }
+.sm { --wm-width: 185px; }
+.md { --wm-width: 240px; }
+.lg { --wm-width: 320px; }
+.xl { --wm-width: min(100%, 480px); }
+.stacked { justify-content: center; }
+@media (max-width: 680px) { .sm { --wm-width: 156px; } .md { --wm-width: 180px; } .lg { --wm-width: 245px; } }
