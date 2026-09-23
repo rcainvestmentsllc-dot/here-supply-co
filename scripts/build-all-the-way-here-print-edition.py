@@ -44,16 +44,31 @@ def styles():
         "cover_sub": ParagraphStyle("cover_sub", parent=base["Normal"], fontName="Charter", fontSize=19, leading=25, textColor=NAVY, alignment=TA_CENTER, spaceAfter=22),
         "cover_small": ParagraphStyle("cover_small", parent=base["Normal"], fontName="Avenir", fontSize=10, leading=15, textColor=MUTED, alignment=TA_CENTER),
         "kicker": ParagraphStyle("kicker", parent=base["Normal"], fontName="AvenirDemi", fontSize=9, leading=12, textColor=CORAL, spaceAfter=9, tracking=1.2),
-        "h1": ParagraphStyle("h1", parent=base["Heading1"], fontName="FuturaBold", fontSize=30, leading=32, textColor=NAVY, spaceAfter=12),
-        "h2": ParagraphStyle("h2", parent=base["Heading2"], fontName="FuturaBold", fontSize=18, leading=21, textColor=NAVY, spaceBefore=14, spaceAfter=7),
-        "h3": ParagraphStyle("h3", parent=base["Heading3"], fontName="AvenirDemi", fontSize=11, leading=14, textColor=NAVY, spaceBefore=9, spaceAfter=5),
-        "body": ParagraphStyle("body", parent=base["BodyText"], fontName="Avenir", fontSize=10.5, leading=15, textColor=MUTED, spaceAfter=8),
-        "body_dark": ParagraphStyle("body_dark", parent=base["BodyText"], fontName="Avenir", fontSize=10.5, leading=15, textColor=NAVY, spaceAfter=8),
-        "quote": ParagraphStyle("quote", parent=base["BodyText"], fontName="Charter", fontSize=16, leading=21, textColor=NAVY, leftIndent=14, rightIndent=14, borderColor=GOLD, borderWidth=1.2, borderPadding=12, spaceBefore=8, spaceAfter=14),
-        "step": ParagraphStyle("step", parent=base["BodyText"], fontName="Avenir", fontSize=10, leading=14, textColor=NAVY, spaceAfter=5),
+        "h1": ParagraphStyle("h1", parent=base["Heading1"], fontName="FuturaBold", fontSize=28, leading=30, textColor=NAVY, spaceAfter=10),
+        "h2": ParagraphStyle("h2", parent=base["Heading2"], fontName="FuturaBold", fontSize=16, leading=19, textColor=NAVY, spaceBefore=10, spaceAfter=5),
+        "h3": ParagraphStyle("h3", parent=base["Heading3"], fontName="AvenirDemi", fontSize=10, leading=12, textColor=NAVY, spaceBefore=6, spaceAfter=3),
+        "body": ParagraphStyle("body", parent=base["BodyText"], fontName="Avenir", fontSize=10, leading=13.5, textColor=MUTED, spaceAfter=6),
+        "body_dark": ParagraphStyle("body_dark", parent=base["BodyText"], fontName="Avenir", fontSize=10, leading=13.5, textColor=NAVY, spaceAfter=6),
+        "quote": ParagraphStyle("quote", parent=base["BodyText"], fontName="Charter", fontSize=14, leading=18, textColor=NAVY),
+        "step": ParagraphStyle("step", parent=base["BodyText"], fontName="Avenir", fontSize=9.4, leading=12.5, textColor=NAVY, spaceAfter=4),
         "label": ParagraphStyle("label", parent=base["Normal"], fontName="AvenirDemi", fontSize=8.5, leading=11, textColor=TEAL, spaceAfter=3, tracking=0.8),
         "footer": ParagraphStyle("footer", parent=base["Normal"], fontName="Avenir", fontSize=8, leading=10, textColor=MUTED, alignment=TA_CENTER),
     }
+
+
+def quote_box(text, s, width=7.05 * inch):
+    """A boxed principle with real separation from the heading above it."""
+    box = Table([[Paragraph(text, s["quote"])]], colWidths=[width])
+    box.setStyle(TableStyle([
+        ("BOX", (0, 0), (-1, -1), 1.2, GOLD),
+        ("LEFTPADDING", (0, 0), (-1, -1), 14),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 14),
+        ("TOPPADDING", (0, 0), (-1, -1), 10),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+    ]))
+    box.spaceBefore = 8
+    box.spaceAfter = 12
+    return box
 
 
 def line_table(width, rows=3):
@@ -100,41 +115,49 @@ def section_divider(story, s, number, title, line):
 
 
 def lesson_pages(story, s, lesson):
+    """Each lesson is a deliberate two-page spread: idea first, practice second."""
     story.append(Paragraph(f"{lesson['movement']} · LESSON {lesson['number']}", s["kicker"]))
     story.append(Paragraph(lesson['title'], s["h1"]))
-    story.append(Paragraph(lesson['subtitle'], s["quote"]))
+    story.append(quote_box(lesson['subtitle'], s))
     story.append(Paragraph("A familiar scene", s["h3"]))
     story.append(Paragraph(lesson['scene'], s["body"]))
     story.append(Paragraph("What is happening", s["h2"]))
     story.append(Paragraph(lesson['problem'], s["body"]))
     story.append(Paragraph("The principle", s["h2"]))
-    story.append(Paragraph(lesson['principle'], s["quote"]))
+    story.append(quote_box(lesson['principle'], s))
+    story.append(PageBreak())
+
+    story.append(Paragraph(f"{lesson['movement']} · PUT IT TO WORK", s["kicker"]))
+    story.append(Paragraph(lesson['title'], s["h1"]))
     story.append(Paragraph(lesson['practice'], s["h2"]))
     story.append(Paragraph(lesson['practiceIntro'], s["body"]))
     steps = []
     for ix, step in enumerate(lesson['steps'], start=1):
         steps.append([Paragraph(f"{ix:02d}", s["label"]), Paragraph(f"<b>{step['title']}</b><br/>{step['body']}", s["step"])])
-    t = Table(steps, colWidths=[.45 * inch, 6.25 * inch])
-    t.setStyle(TableStyle([("VALIGN", (0,0), (-1,-1), "TOP"), ("LINEBELOW", (0,0), (-1,-1), .45, RULE), ("TOPPADDING", (0,0), (-1,-1), 7), ("BOTTOMPADDING", (0,0), (-1,-1), 7), ("LEFTPADDING", (0,0), (-1,-1), 0), ("RIGHTPADDING", (0,0), (-1,-1), 8)]))
-    story.append(t)
-    story.append(PageBreak())
-    story.append(Paragraph(f"{lesson['movement']} · MAKE IT REAL", s["kicker"]))
-    story.append(Paragraph(lesson['title'], s["h1"]))
-    story.append(Paragraph("Use this in the life you actually have", s["h2"]))
+    practice_table = Table(steps, colWidths=[.45 * inch, 6.25 * inch], splitByRow=0)
+    practice_table.setStyle(TableStyle([
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("LINEBELOW", (0, 0), (-1, -1), .45, RULE),
+        ("TOPPADDING", (0, 0), (-1, -1), 5),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 5),
+        ("LEFTPADDING", (0, 0), (-1, -1), 0),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 8),
+    ]))
+    story.append(KeepTogether(practice_table))
+    story.append(HRFlowable(width="100%", thickness=.6, color=RULE, spaceBefore=11, spaceAfter=9))
+    story.append(Paragraph("Make it fit", s["h3"]))
     story.append(Paragraph(lesson['adaptation'], s["body"]))
-    story.append(Paragraph("Do it together", s["h2"]))
+    story.append(Paragraph("Do it together", s["h3"]))
     story.append(Paragraph(lesson['together'], s["body"]))
     story.append(Paragraph(f"FIELD KIT · SHEET {lesson['kit']['sheet']} · {lesson['kit']['sheetName']}", s["label"]))
     story.append(Paragraph(f"Where it lives: <b>{lesson['kit']['livesAt']}</b>", s["body_dark"]))
-    story.append(HRFlowable(width="100%", thickness=.6, color=RULE, spaceBefore=8, spaceAfter=10))
-    story.append(Paragraph("Try this week", s["h2"]))
+    story.append(Paragraph("Try this week", s["h3"]))
     story.append(Paragraph(lesson['action'], s["body"]))
-    story.append(Paragraph("What happened?", s["label"]))
-    story.append(line_table(7.0 * inch, 3))
-    story.append(Spacer(1, 10))
+    story.append(Paragraph("What will I try?", s["label"]))
+    story.append(line_table(7.0 * inch, 2))
     story.append(Paragraph("Question to sit with", s["label"]))
     story.append(Paragraph(lesson['reflection'], s["body_dark"]))
-    story.append(line_table(7.0 * inch, 3))
+    story.append(line_table(7.0 * inch, 2))
     story.append(PageBreak())
 
 
@@ -168,9 +191,8 @@ def build():
     t=Table(rows,colWidths=[.5*inch,6.5*inch]); t.setStyle(TableStyle([("VALIGN",(0,0),(-1,-1),"TOP"),("LINEBELOW",(0,0),(-1,-1),.55,RULE),("TOPPADDING",(0,0),(-1,-1),11),("BOTTOMPADDING",(0,0),(-1,-1),11),("LEFTPADDING",(0,0),(-1,-1),0)])); story.append(t)
     story.append(Spacer(1, .35*inch))
     story.append(Paragraph("The promise you are making", s["h2"]))
-    story.append(Paragraph(content['RESET_DECLARATION'], s["quote"]))
+    story.append(quote_box(content['RESET_DECLARATION'], s))
     story.append(PageBreak())
-    section_divider(story, s, "START HERE", "THE FOCUS PROTOCOL", "Four small moves. Seventy-two hours. A clearer picture of what deserves your attention.")
     story.append(Paragraph("THE 72-HOUR FOCUS PROTOCOL", s["kicker"]))
     story.append(Paragraph("Control the inputs. Choose the attention.", s["h1"]))
     story.append(Paragraph("This is not a detox or a test of discipline. It is a short experiment in environment design: reduce what pulls at you, create enough friction to notice the reflex, and make a different choice in ordinary life.", s["body"]))
@@ -192,15 +214,9 @@ def build():
     story.append(Paragraph(content['RESET_RELAPSE']['intro'], s["body"]))
     for line in content['RESET_RELAPSE']['lines']:
         story.append(Paragraph(f"• {line}", s["body_dark"]))
-    story.append(Paragraph(content['RESET_RELAPSE']['counter'], s["quote"]))
+    story.append(quote_box(content['RESET_RELAPSE']['counter'], s))
     story.append(PageBreak())
-    groups = {m['key']: m for m in content['CORE_MOVEMENTS']}
-    last = None
     for lesson in content['CORE_LESSONS']:
-        if lesson['movement'] != last:
-            m = groups[lesson['movement']]
-            section_divider(story, s, f"{m['number']} · {m['name'].upper()}", m['name'], m['line'])
-            last = lesson['movement']
         lesson_pages(story, s, lesson)
     story.append(Paragraph("THE FIELD KIT", s["kicker"]))
     story.append(Paragraph("Tools that live where life happens.", s["h1"]))
@@ -215,13 +231,15 @@ def build():
     story.append(Paragraph("Do not keep nine practices because you bought nine lessons. Choose two that meet a real problem and give each a situation, a response, and a smallest version for the hard week.", s["body"]))
     for prompt in ["The two practices I am keeping", "The moment each practice is for", "The smallest version I will still do on a hard week", "What I noticed about the people I share life with", "What we want to revisit in thirty days"]:
         story.append(Spacer(1, 10)); story.append(Paragraph(prompt, s["h3"])); story.append(line_table(7.0*inch, 3))
-    story.append(Spacer(1, 16)); story.append(Paragraph("There is no perfect finish. The point is to notice sooner, repair faster, and keep returning to the life in front of you.", s["quote"]))
-    story.append(Spacer(1, 20))
-    story.append(Paragraph("Before you put this book down", s["h2"]))
-    story.append(Paragraph("What is one small thing I want to do differently this week?", s["h3"]))
+    story.append(Spacer(1, 12))
+    story.append(quote_box("There is no perfect finish. The point is to notice sooner, repair faster, and keep returning to the life in front of you.", s))
+    story.append(Paragraph("Notes to take back to the table", s["h2"]))
+    story.append(Paragraph("Use this last page for what you want to remember, talk about, or carry into the next Sunday Board Meeting.", s["body"]))
+    story.append(Paragraph("What I want to try this week", s["h3"]))
     story.append(line_table(7.0 * inch, 4))
-    story.append(Spacer(1, 16))
     story.append(Paragraph("Who will know I am trying it?", s["h3"]))
+    story.append(line_table(7.0 * inch, 3))
+    story.append(Paragraph("What I want to come back to", s["h3"]))
     story.append(line_table(7.0 * inch, 3))
     doc.build(story, onFirstPage=header_footer, onLaterPages=header_footer)
 
