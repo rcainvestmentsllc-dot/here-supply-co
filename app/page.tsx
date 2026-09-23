@@ -213,6 +213,7 @@ export default function Home() {
         <h2>One useful way<br />to come <em>back.</em></h2>
         <p>The three day Attention Reset, nine lessons, the workbook, and the field card. One payment, yours to keep, with 14 days to change your mind.</p>
         <div><a className={styles.primaryButton} href={CHECKOUT.core}>Get All the Way Here · $99 <span>→</span></a><Link href="/sunday-board#get-board">Or start with the free guide <span>→</span></Link></div>
+        <p className={styles.foundingNote}>Twenty couples are getting the whole thing free right now, in exchange for telling me the truth about what happened. <Link href="/founding">See the founding group</Link>.</p>
       </section>
       <Footer />
     </main>

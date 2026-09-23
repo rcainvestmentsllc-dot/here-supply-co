@@ -980,3 +980,16 @@
         color-mix(in srgb, var(--hsc-ink) 40%, transparent) 100%);
   }
 }
+
+/* Nothing on this site has a word from anyone but Chris yet, so the founding
+   group is the honest next step for a reader who is interested but has no
+   reason to trust a stranger for $99. */
+.foundingNote {
+  max-width: 54ch;
+  margin: 24px auto 0 !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: color-mix(in srgb, var(--hsc-ink) 72%, transparent) !important;
+  text-align: center;
+}
+.foundingNote a { color: var(--hsc-ink); text-decoration: underline; text-underline-offset: 3px; }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CORE_LESSONS, LESSON_GUIDES, getCoreLesson, getMovement } from "../../../../course-content";
+import { CORE_LESSONS, LESSON_GUIDES, getCoreLesson, getMovement, getKitSheet } from "../../../../course-content";
 import { PlainLink as Link } from "../../../../plain-link";
 import { requireProductAccess } from "../../../../../lib/require-access";
 import { getEnv } from "../../../../../lib/cloudflare-env";
@@ -112,6 +112,35 @@ export default async function CoreLessonPage({ params }: { params: Promise<{ slu
         ))}
       </ol>
 
+      {/* The sheet this lesson is the instructions for. A practice you have to
+          remember competes with the phone; a practice already sitting where the
+          moment happens does not. */}
+      <section className={styles.sheet}>
+        <div className={styles.sheetCopy}>
+          <span>FIELD KIT · SHEET {lesson.kit.sheet}</span>
+          <h3>{lesson.kit.sheetName}</h3>
+          <p className={styles.sheetLives}>Lives at: {lesson.kit.livesAt}</p>
+          <p>
+            Print it once and put it where the moment actually happens. That placement is the
+            practice. Everything on this page is just how to use it.
+          </p>
+          {getKitSheet(lesson.kit.sheet) && (
+            <a
+              className={styles.sheetLink}
+              href={getKitSheet(lesson.kit.sheet)!.file}
+              download
+            >
+              Print sheet {lesson.kit.sheet} <span aria-hidden="true">&darr;</span>
+            </a>
+          )}
+        </div>
+      </section>
+
+      <aside className={styles.together}>
+        <span>DOING THIS TOGETHER</span>
+        <p>{lesson.together}</p>
+      </aside>
+
       {lesson.withoutKids && (
         <aside className={styles.withoutKids}>
           <span>IF YOU DO NOT HAVE KIDS</span>
@@ -119,6 +148,8 @@ export default async function CoreLessonPage({ params }: { params: Promise<{ slu
           <p>{lesson.withoutKids.body}</p>
         </aside>
       )}
+
+      <p className={styles.encouragement}>{lesson.encouragement}</p>
 
       <div className={styles.pair}>
         <article className={styles.pairCard}>

@@ -261,4 +261,6 @@ if __name__ == "__main__":
     sunday_board(os.path.join(OUT, "sunday-board-meeting.pdf"))
     reset_sheet(os.path.join(OUT, "attention-reset.pdf"))
     driveway_cards(os.path.join(OUT, "driveway-card.pdf"))
-    print("built 3")
+    import sheets
+    n = sheets.build(OUT)
+    print("built", 3 + n)

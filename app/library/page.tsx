@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { PlainLink as Link } from "../plain-link";
 import { Footer, Header } from "../components";
 import { CHECKOUT } from "../data";
-import { CORE_LESSONS, CORE_MOVEMENTS } from "../course-content";
+import { CORE_LESSONS, CORE_MOVEMENTS, FIELD_KIT } from "../course-content";
 import { JsonLd } from "../structured-data";
 
 export const metadata: Metadata = {
@@ -52,6 +52,27 @@ export default function Library() {
 
     <section className="offer-section"><div className="offer-intro"><p className="section-label">THE DECISION</p><h2>One course.<br />One <em>payment.</em></h2><p>No tiers to compare, no subscription to cancel, nothing held back for a later upgrade. This is the whole practice.</p></div><div className="offer-stack offer-stack-simple"><article id="core" className="offer-card core-offer"><span>$99 FOUNDING EDITION</span><h3>All the Way Here</h3><p>One private course for attention, pressure, work, home, your marriage, friendship, and the practices that hold them together.</p><strong>$99 <small>one time</small></strong><p className="offer-note">The attention reset, nine lessons, a 16-page printable workbook, and the field card. Private access at your own pace with a 14-day refund window.</p>{coreCheckoutReady ? <a href={CHECKOUT.core}>Get All the Way Here <b>→</b></a> : <Link href="/sunday-board">Start free while checkout opens <b>→</b></Link>}<p className="offer-after">After you pay you land on a welcome page, enter the same email, and the course opens. No password to invent.</p></article></div><p className="offer-alt">Want to try something first? The <Link href="/sunday-board">Sunday Board Meeting</Link> is free and takes fifteen minutes.</p></section>
 
+
+    <section className="kit-section" id="kit">
+      <div className="kit-head">
+        <p className="section-label">THE FIELD KIT · ELEVEN SHEETS</p>
+        <h2>The practice does not<br />live on a <em>screen.</em></h2>
+        <p>Every lesson is the instructions for one printed sheet, and every sheet has a place it lives. That placement is not decoration. A practice you have to remember is competing with your phone. A card already in the glovebox is not.</p>
+      </div>
+      <ul className="kit-list">
+        {FIELD_KIT.map((sheet) => (
+          <li key={sheet.sheet}>
+            <span>{sheet.sheet}</span>
+            <div>
+              <strong>{sheet.name}</strong>
+              <small>{sheet.livesAt}</small>
+            </div>
+            <p>{sheet.note}</p>
+          </li>
+        ))}
+      </ul>
+      <p className="kit-foot">Print them once. Replace the ones you write on. Sheet 01 is free to anyone, with or without the course.</p>
+    </section>
 
     <section className="course-detail-intro" aria-label="Explore the complete course in detail"><p className="section-label">LOOK INSIDE WHEN YOU WANT THE DETAIL</p><p>The rest of this page shows the workbook, family tools, and each lesson in the course. You do not need to read all of it before you decide.</p></section>
 

@@ -627,6 +627,26 @@ export const RESET_RELAPSE = {
 export const RESET_DECLARATION =
   "I do not trade presence for distraction. My attention belongs to the people I share my life with. My phone is a tool. I am not.";
 
+/**
+ * The Field Kit, in order. Each lesson points at one of these; the printed
+ * sheet is the practice and the lesson is the instructions for it.
+ */
+export const FIELD_KIT = [
+  { sheet: "01", name: "The Sunday Board Meeting", file: "/downloads/sunday-board-meeting.pdf", livesAt: "The table", note: "Free to anyone, no account needed." },
+  { sheet: "02", name: "The Attention Reset", file: "/downloads/attention-reset.pdf", livesAt: "The fridge", note: "Four moves, the hour by hour, and day five." },
+  { sheet: "03", name: "The Driveway Card", file: "/downloads/driveway-card.pdf", livesAt: "The glovebox", note: "Cut into four. One for each vehicle." },
+  { sheet: "04", name: "The Brain Dump", file: "/downloads/brain-dump.pdf", livesAt: "The desk", note: "Print one a week." },
+  { sheet: "05", name: "Tomorrow Matters If", file: "/downloads/tomorrow-matters-if.pdf", livesAt: "The desk", note: "Filled in the night before." },
+  { sheet: "06", name: "Pause, Return, Repair", file: "/downloads/pause-return-repair.pdf", livesAt: "The nightstand", note: "Agree on it before you need it." },
+  { sheet: "07", name: "The Date Night Card", file: "/downloads/date-night-card.pdf", livesAt: "The wallet", note: "So the idea survives the week." },
+  { sheet: "08", name: "Floor Time", file: "/downloads/floor-time.pdf", livesAt: "The kid's room", note: "Has a version for couples with no kids." },
+  { sheet: "09", name: "The Third Place", file: "/downloads/third-place.pdf", livesAt: "The bag", note: "One each. Both on the calendar." },
+  { sheet: "10", name: "The Friendship Script", file: "/downloads/friendship-script.pdf", livesAt: "The wallet", note: "Invite first." },
+  { sheet: "11", name: "The Thirty Day Page", file: "/downloads/thirty-day-page.pdf", livesAt: "The table", note: "The last thing you do in the course." },
+] as const;
+
+export const getKitSheet = (sheet: string) => FIELD_KIT.find((s) => s.sheet === sheet);
+
 export const getCoreLesson = (slug: string) => CORE_LESSONS.find((lesson) => lesson.slug === slug);
 
 export const getMovement = (key: MovementKey) => CORE_MOVEMENTS.find((movement) => movement.key === key);
