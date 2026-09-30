@@ -242,9 +242,9 @@ export const CORE_LESSONS: CoreLesson[] = [
     kit: { sheet: "03", sheetName: "The Driveway Card", livesAt: "The glovebox, because that is where the two minutes happen" },
     together: "Whoever is inside gets to know this is happening, otherwise two minutes in a parked car reads as avoidance. Say it once: if I sit out there a minute, I am not hiding, I am arriving.",
     encouragement: "You are not erasing the day. You are deciding how to carry it in.",
-    action: "Before your next drive, set navigation and put the phone where you cannot reach it. Do the Airlock only after the car is fully parked.",
+    action: "Before your next drive, set navigation and put the phone where you cannot reach it. Do the Driveway Pause only after the car is fully parked.",
     reflection: "What part of my workday most often walks through the door with me?",
-    fieldNote: "The Airlock is one of the first practices I built for myself. I needed a small space between being responsible for work and being available at home.",
+    fieldNote: "The Driveway Pause is one of the first practices I built for myself. I needed a small space between being responsible for work and being available at home.",
   },
   {
     slug: "the-emotional-thermostat",
@@ -475,7 +475,7 @@ export const LESSON_GUIDES: Record<string, LessonGuide> = {
   "the-airlock-protocol": {
     whyItHelps: "Psychological detachment from work is associated with less exhaustion, better well-being, and better recovery. A deliberate transition creates a repeatable cue that work has ended for now.",
     wordsToUse: "I had a hard day and I need ten minutes to land. I will come find you at ____, and I want to hear about your day.",
-    watchFor: "The Airlock happens only after the car is parked. It is not a reason to ignore a spouse, avoid a conversation, or disappear without a return time.",
+    watchFor: "The Driveway Pause happens only after the car is parked. It is not a reason to ignore a spouse, avoid a conversation, or disappear without a return time.",
     fieldAssignment: "Use the parked-car transition three times. Keep it under three minutes and judge it only by the way you enter the house.",
     evidence: [
       { label: "Detachment from work", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5233687/", note: "A meta-analysis of 86 publications linked detachment with several recovery and well-being outcomes." },
@@ -633,7 +633,7 @@ export const RESET_DECLARATION =
  */
 export const FIELD_KIT = [
   { sheet: "01", name: "The Sunday Board Meeting", file: "/downloads/sunday-board-meeting.pdf", livesAt: "The table", note: "Free to anyone, no account needed." },
-  { sheet: "02", name: "The Attention Reset", file: "/downloads/attention-reset.pdf", livesAt: "The fridge", note: "Four moves, the hour by hour, and day five." },
+  { sheet: "02", name: "The Attention Reset", file: "/downloads/attention-reset.pdf", livesAt: "The fridge", note: "The Focus Protocol on one page. Four moves, the hour by hour, and day five." },
   { sheet: "03", name: "The Driveway Card", file: "/downloads/driveway-card.pdf", livesAt: "The glovebox", note: "Cut into four. One for each vehicle." },
   { sheet: "04", name: "The Brain Dump", file: "/downloads/brain-dump.pdf", livesAt: "The desk", note: "Print one a week." },
   { sheet: "05", name: "Tomorrow Matters If", file: "/downloads/tomorrow-matters-if.pdf", livesAt: "The desk", note: "Filled in the night before." },

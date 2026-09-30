@@ -32,7 +32,7 @@ export default function LeaveWorkAtWork() {
       <p className={styles.eyebrow}>THE WORK-TO-HOME TRANSITION</p>
       <h1>Leave the workday somewhere other than <em>your front room.</em></h1>
       <p className={styles.dek}>You may not be able to finish every problem before you come home. You can decide how you carry those problems through the door.</p>
-      <p className={styles.byline}>By Chris Avera · From the All the Way Here Airlock practice</p>
+      <p className={styles.byline}>By Chris Avera · From the All the Way Here Driveway Pause practice</p>
     </header>
     <section className={styles.layout}>
       <aside className={styles.aside}><span>THREE MINUTES</span><p>Park safely. Name what is still open. Slow down. Choose how you want to enter. Then give the first ten seconds at home your full attention.</p><Link href="/library#curriculum">See all nine Core practices →</Link></aside>
@@ -55,7 +55,7 @@ export default function LeaveWorkAtWork() {
     <section className={styles.capture}>
       <SundayBoardSignupForm source="article_leave_work_at_work" />
     </section>
-    <section className={styles.cta}><div><span>ALL THE WAY HERE</span><h2>One practice inside a larger path.</h2></div><div><p>The Airlock is one of nine practical lessons for returning, leading a hard moment, and keeping the parts of life work cannot replace.</p><Link href="/library#curriculum">See the complete course <b>→</b></Link></div></section>
+    <section className={styles.cta}><div><span>ALL THE WAY HERE</span><h2>One practice inside a larger path.</h2></div><div><p>The Driveway Pause is one of nine practical lessons for returning, leading a hard moment, and keeping the parts of life work cannot replace.</p><Link href="/library#curriculum">See the complete course <b>→</b></Link></div></section>
     <Footer />
   </main>;
 }

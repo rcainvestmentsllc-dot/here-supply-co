@@ -108,7 +108,7 @@ export default async function CoreLessonPage({ params }: { params: Promise<{ slu
           moment happens does not. */}
       <section className={styles.sheet}>
         <div className={styles.sheetCopy}>
-          <span>FIELD KIT · SHEET {lesson.kit.sheet}</span>
+          <span>RESOURCE PACK · SHEET {lesson.kit.sheet}</span>
           <h3>{lesson.kit.sheetName}</h3>
           <p className={styles.sheetLives}>Lives at: {lesson.kit.livesAt}</p>
           <p>

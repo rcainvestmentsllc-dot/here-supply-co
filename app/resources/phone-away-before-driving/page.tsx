@@ -49,7 +49,7 @@ export default function PhoneAwayBeforeDriving() {
           <section className={styles.step}><span>03</span><div><h3>Put it out of hand</h3><p>Place the phone where a glance cannot become a reach. Do this before releasing the brake, not after the first notification.</p></div></section>
           <section className={styles.step}><span>04</span><div><h3>Pull over for a real response</h3><p>If a message, map change, or call needs active handling, stop in a safe place. A red light is still part of the drive.</p></div></section>
         </div>
-        <div className={styles.note}><strong>Driving gets full attention.</strong><p>The parked-car Airlock practice begins only after the vehicle is safely parked and the engine is off. No reflection exercise belongs in a moving car.</p></div>
+        <div className={styles.note}><strong>Driving gets full attention.</strong><p>The Driveway Pause begins only after the vehicle is safely parked and the engine is off. No reflection exercise belongs in a moving car.</p></div>
         <h2>The same rule applies at the curb</h2>
         <p>People also look down while stepping into crosswalks and moving through busy streets. A phone can be useful for directions, but the screen should stop before the curb. Look, cross, reach the other side, and only then bring the phone back out.</p>
         <div className={styles.steps}>

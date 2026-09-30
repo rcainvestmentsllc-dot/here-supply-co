@@ -91,7 +91,7 @@ test("keeps the course buyer path clear and the private lessons complete", async
   assert.match(library, /14-day refund window/i);
   assert.match(library, /Nine visual lessons/i);
   assert.match(lesson, /The Driveway Pause/i);
-  assert.match(lesson, /FIELD KIT/i);
+  assert.match(lesson, /RESOURCE PACK/i);
   assert.match(lesson, /WORDS TO USE/i);
   assert.match(lesson, /EVIDENCE NOTE/i);
   assert.match(lesson, /<meta name="robots" content="noindex, nofollow"\/>/i);

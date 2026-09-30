@@ -47,16 +47,17 @@ export default function Home() {
         <Link href="/about">About</Link>
       </nav>
 
-      {/* Full-bleed hero. The photograph states the problem rather than
-          selling a reward: a father on his phone while his daughter waits
-          to be watched. */}
+      {/* Full-bleed hero. Two people at the table, one phone face down: the
+          couple the site is for, in the conversation it helps them have.
+          Mirrored so both faces sit clear of the text gradient. */}
       <section className={styles.hero}>
         <img
           className={styles.heroPhoto}
-          src="/assets/course/photo/emotional-phone-at-game-v1.jpg"
-          alt="A father looking at his phone while his daughter, in uniform, waits for him to watch"
-          width="1586"
-          height="992"
+          src="/assets/course/photo/movement-lead-v1.jpg"
+          alt="A couple talking at the kitchen table over coffee, a phone face down beside them"
+          width="1672"
+          height="941"
+          style={{ transform: "scaleX(-1)" }}
           fetchPriority="high"
           decoding="async"
         />
@@ -120,7 +121,7 @@ export default function Home() {
 
         <div className={styles.offerGrid}>
           <article className={styles.coreOffer}>
-            <div className={styles.offerTopline}><span>HERE SUPPLY CO.</span><b>$99 FOUNDING EDITION</b></div>
+            <div className={styles.offerTopline}><span>HERE SUPPLY CO.</span><b>$99 FOUNDING PRICE</b></div>
             <h3>The complete<br /><em>practice.</em></h3>
             <p>Nine grounded lessons for attention, pressure, homecoming, partnership, friendship, and the parts of life that quietly slip away when no one is looking.</p>
             <div className={styles.deliveryNote}><span>WHAT YOU GET</span><p>The 72-hour Focus Protocol, nine short online lessons, the complete print-first course book, and a separate Resource Pack. Start with one pressure point. Keep what holds up.</p></div>
@@ -130,15 +131,9 @@ export default function Home() {
               After you pay, the confirmation page and your receipt email give you the course
               link. Save it or bookmark it so you can return whenever you need it.
             </p>
+            <p className={styles.afterPay}>Not ready? <Link href="/sunday-board#get-board">Start with the free Sunday Board guide</Link>.</p>
           </article>
         </div>
-      </section>
-      <section className={styles.closing}>
-        <p className={styles.eyebrow}>START WHERE LIFE IS ASKING FOR YOU</p>
-        <h2>One useful way<br />to come <em>back.</em></h2>
-        <p>The online course, one-page Field Card, complete print-first course book, and Resource Pack. One payment, yours to keep, with 14 days to change your mind.</p>
-        <div><a className={styles.primaryButton} href={CHECKOUT.core}>Get All the Way Here · $99 <span>→</span></a><Link href="/sunday-board#get-board">Or start with the free guide <span>→</span></Link></div>
-        <p className={styles.foundingNote}>The first Founding Circle is being invited personally. Start with the free Sunday Board Meeting today.</p>
       </section>
       <Footer />
     </main>

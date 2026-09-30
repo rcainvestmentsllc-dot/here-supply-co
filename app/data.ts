@@ -46,7 +46,7 @@ export const MOMENTS: Record<MomentKey, Moment> = {
     title: "I come home, but I do not really arrive.",
     detail: "The day follows me through the door and sets the tone.",
     label: "Use the door as a reset",
-    protocol: "THE AIRLOCK PROTOCOL",
+    protocol: "THE DRIVEWAY PAUSE",
     summary: "A clean stopping point can keep the whole workday from walking through the door with you.",
     steps: [
       "Park. Engine off. Phone silent.",
