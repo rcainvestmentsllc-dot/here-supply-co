@@ -33,18 +33,18 @@ export default function Home() {
           <BrandWordmark size="sm" />
         </Link>
         <nav className={styles.nav} aria-label="Main navigation">
-          <a href="#start">Start here</a>
-          <a href="#resources">Resources</a>
-          <a href="#offer">The course</a>
+          <Link href="/sunday-board">Start here</Link>
+          <Link href="/library">The course</Link>
+          <Link href="/resources">Resources</Link>
           <Link href="/about">About Chris</Link>
         </nav>
         <a className={styles.headerAction} href="#offer">Get the course <span>→</span></a>
       </header>
 
       <nav className={styles.mobileNav} aria-label="Mobile navigation">
-        <a href="#start">Start here</a>
-          <a href="#resources">Resources</a>
-          <a href="#offer">The course</a>
+        <Link href="/sunday-board">Start here</Link>
+        <Link href="/library">The course</Link>
+        <Link href="/resources">Resources</Link>
         <Link href="/about">About</Link>
       </nav>
 
