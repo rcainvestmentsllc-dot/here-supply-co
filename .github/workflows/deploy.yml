@@ -27,23 +27,29 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # The repo's lockfile is pnpm-lock.yaml. Using npm here made every
+      # deploy fail before it started, because npm found no lockfile to cache.
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
+          cache: pnpm
 
-      - run: npm install
+      - run: pnpm install --frozen-lockfile
 
       # Fail here rather than shipping a broken page.
       - name: Typecheck
-        run: npx tsc --noEmit
+        run: pnpm exec tsc --noEmit
         continue-on-error: true
 
       - name: Build
-        run: npm run build
+        run: pnpm run build
 
       - name: Deploy to Cloudflare
-        run: npx vinext-cloudflare deploy
+        run: pnpm exec vinext-cloudflare deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
