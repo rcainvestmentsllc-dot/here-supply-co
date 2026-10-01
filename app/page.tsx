@@ -54,7 +54,7 @@ export default function Home() {
         <div className={styles.heroInner}>
           <div className={styles.heroContent}>
             <p className={styles.eyebrow}><i aria-hidden="true" />For two people who keep missing each other</p>
-            <h1>Your phone is a tool. <em>You are not.</em></h1>
+            <h1>Get back to the person <em>across the table.</em></h1>
             <p className={styles.lead}>Practical online and printable resources for couples who want more connection, a clearer week, and less life lived in separate heads. Kids or no kids. One of you can start.</p>
             <div className={styles.heroActions}>
               <Link className={styles.primaryButton} href="/sunday-board#get-board">Start free</Link>

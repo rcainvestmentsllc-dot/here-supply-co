@@ -2780,6 +2780,11 @@ body,.site,.access-shell,.lesson-shell,.workbook-shell,.working-page {
   .kit-list p { grid-column: 2 / -1; }
 }
 
+/* The Focus Protocol declaration, quoted on the course page. */
+.declaration { margin: 30px 0 0; padding: 18px 0 0 22px; border-left: 3px solid var(--hsc-brass); }
+.declaration p { margin: 0; color: var(--hsc-ink); font-family: var(--hsc-editorial); font-size: clamp(24px, 2.4vw, 32px); line-height: 1.15; }
+.declaration cite { display: block; margin-top: 10px; color: var(--hsc-copy); font-size: 14px; font-style: normal; }
+
 /* The smaller extras that come with the course, kept short on purpose. */
 .extras-section {
   padding: clamp(64px,7vw,100px) clamp(22px,8vw,130px);

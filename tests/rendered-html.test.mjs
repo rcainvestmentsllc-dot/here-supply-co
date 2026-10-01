@@ -39,7 +39,7 @@ test("renders the current Here Supply home page and original wave mark", async (
   const html = await htmlFor("/");
   assert.match(html, /<title>Here Supply Co\. \| Resources for Couples to Stay Connected<\/title>/i);
   assert.match(html, /here-supply-co-logo-v2\.svg/i);
-  assert.match(html, /Your phone is a tool/i);
+  assert.match(html, /Get back to the person/i);
   assert.match(html, /For two people who keep missing each other/i);
   assert.match(html, /Sunday Board Meeting/i);
   assert.match(html, /Focus Protocol/i);
