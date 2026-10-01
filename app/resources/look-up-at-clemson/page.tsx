@@ -45,7 +45,7 @@ export default function LookUpAtClemson() {
       <aside className={styles.aside}>
         <span>TRY ONE WALK</span>
         <p>Keep the phone in your pocket for one familiar stretch. Look at the place, meet one person&apos;s eyes, and leave room for one ordinary hello.</p>
-        <Link href="/access/focus-7f3k9q">Open the Attention Reset →</Link>
+        <Link href="/library#focus-protocol">See the Focus Protocol inside the course →</Link>
       </aside>
       <article className={styles.body}>
         <p>When I went back to Clemson, I felt the difference before I had words for it. The campus looked familiar, but the energy did not. So many students were walking with their heads down, absorbed in their phones. There was less eye contact, less awareness of the people passing by, and fewer small openings for a hello.</p>

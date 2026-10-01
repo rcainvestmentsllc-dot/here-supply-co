@@ -22,7 +22,7 @@ export default function FoundingCirclePass() {
       <section className="access-intro">
         <p className="section-label">FOUNDING TESTER PASS</p>
         <h1>Chris invited you.<br /><em>You’re in.</em></h1>
-        <p>You have complimentary access to All the Way Here. Chris is looking for honest use and honest criticism, not automatic praise. Start with the Attention Reset or Return, try at least one practice in a real week, and tell him what helped or got in the way.</p>
+        <p>You have complimentary access to All the Way Here. Chris is looking for honest use and honest criticism, not automatic praise. Start with the Focus Protocol or Return, try at least one practice in a real week, and tell him what helped or got in the way.</p>
       </section>
       <section className="access-resource access-manual">
         <div><span>01 · OPEN THE COURSE</span><h2>Return. Lead. Keep.</h2><p>The Focus Protocol, nine visual lessons, and the complete print-first course book, arranged on one private All the Way Here course page. No checkout, community, or Gamma folder to manage.</p></div>

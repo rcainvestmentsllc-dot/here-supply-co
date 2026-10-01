@@ -2,6 +2,7 @@
 import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } from "vinext/server/image-optimization";
 import handler from "vinext/server/app-router-entry";
 import { runWithEnv } from "../lib/cloudflare-env";
+import { courseGate, isGatedPath } from "../lib/course-pass";
 
 interface Env {
   ASSETS: Fetcher;
@@ -51,7 +52,20 @@ const worker = {
       }, allowedWidths);
     }
 
-    return runWithEnv(env, () => handler.fetch(request, env, ctx));
+    const gated = await courseGate(request, env);
+    if (gated) return gated;
+
+    const response = url.pathname.startsWith("/downloads/")
+      ? await env.ASSETS.fetch(request)
+      : await runWithEnv(env, () => handler.fetch(request, env, ctx));
+
+    // Course pages and paid files must never be stored in a shared cache.
+    if (isGatedPath(url.pathname)) {
+      const privateResponse = new Response(response.body, response);
+      privateResponse.headers.set("Cache-Control", "private, no-store");
+      return privateResponse;
+    }
+    return response;
   },
 };
 

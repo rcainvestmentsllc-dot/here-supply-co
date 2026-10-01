@@ -6,17 +6,14 @@ import styles from "./welcome.module.css";
 
 export const metadata: Metadata = {
   title: "You're in | All the Way Here",
-  description: "Your All the Way Here purchase is complete. Sign in to open the course.",
+  description: "Your All the Way Here purchase is complete. Your confirmation email has the course link and password.",
   robots: { index: false, follow: false },
 };
 
 /**
- * Post-checkout landing. MailerLite's checkout should redirect here so the
- * buyer is never dropped on a generic receipt with no idea what happens next.
- *
- * Deliberately does two things at once: tells them what they bought, and
- * gives them the sign-in field right here rather than making them hunt for
- * /login.
+ * Post-checkout landing. If MailerLite's checkout redirects here, the buyer
+ * learns exactly where their course link and password are. The password is
+ * never shown on this page, because anyone can open it.
  */
 export default function WelcomePage() {
   return (
@@ -31,30 +28,13 @@ export default function WelcomePage() {
         <p className={styles.eyebrow}>Payment complete</p>
         <h1 className={styles.title}>You&rsquo;re in.</h1>
         <p className={styles.lede}>
-          All the Way Here is yours — the Attention Reset, nine lessons, the course book, and the
-          field card. One thing left: sign in so the course knows it is you.
+          All the Way Here is yours: the Focus Protocol, nine lessons, the course book, and the Resource Pack.
+          Your confirmation email is on its way with two things: a button that opens the course, and your course
+          password for any other phone or computer.
         </p>
-
-        <form className={styles.form} method="post" action="/api/auth/request-link">
-          <input type="hidden" name="product" value="core" />
-          <input type="hidden" name="return_to" value="/access/core-4m8r2p" />
-          <label className={styles.field}>
-            <span>The email you paid with</span>
-            <input
-              type="email"
-              name="email"
-              autoComplete="email"
-              placeholder="you@example.com"
-              required
-            />
-          </label>
-          <button type="submit" className={styles.submit}>
-            Send my sign-in link <span aria-hidden="true">→</span>
-          </button>
-        </form>
-
         <p className={styles.note}>
-          We&rsquo;ll email a one-time link. No password to invent or remember.
+          It comes from Chris Avera with the subject &ldquo;Your All the Way Here course is ready.&rdquo; If it is not
+          there in a few minutes, check spam and promotions.
         </p>
       </section>
 
@@ -62,18 +42,18 @@ export default function WelcomePage() {
         <h2 className={styles.stepsTitle}>What happens next</h2>
         <ol>
           <li>
-            <b>Sign in above.</b>
-            <span>Use the same address you paid with, so your purchase matches.</span>
+            <b>Open the email and tap the button.</b>
+            <span>The course opens and this device remembers it. Use the password on any other device.</span>
           </li>
           <li>
-            <b>Start with the Attention Reset.</b>
+            <b>Start with the Focus Protocol.</b>
             <span>Three days, four small moves, before you ask anyone else to change anything.</span>
           </li>
           <li>
             <b>Then one lesson at a time.</b>
             <span>
-              Nine lessons, one practice each, into an ordinary week. Your progress is saved to your
-              account, so it follows you between your phone and your laptop.
+              Nine lessons, one practice each, into an ordinary week. Print the course book if you can.
+              It is the best way to do the work.
             </span>
           </li>
         </ol>
@@ -81,8 +61,8 @@ export default function WelcomePage() {
 
       <p className={styles.help}>
         Paid but cannot get in? Email{" "}
-        <a href={supportEmailUrl("All the Way Here access")}>{SUPPORT_EMAIL}</a> and Chris will open
-        it by hand. You will not be left stuck.
+        <a href={supportEmailUrl("All the Way Here access")}>{SUPPORT_EMAIL}</a> and Chris will send
+        your access by hand. You will not be left stuck.
       </p>
     </main>
   );

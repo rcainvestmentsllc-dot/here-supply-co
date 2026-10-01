@@ -37,7 +37,7 @@ export const MOMENTS: Record<MomentKey, Moment> = {
       "Choose one person. Sit at their level, or turn fully toward them.",
       "For fifteen minutes, follow their conversation or play. Do not steer it, check something, or multitask.",
     ],
-    note: "The point is proximity and attention. The Attention Reset inside All the Way Here goes deeper if the reflex keeps winning.",
+    note: "The point is proximity and attention. The Focus Protocol inside All the Way Here goes deeper if the reflex keeps winning.",
     nextLabel: "See All the Way Here · $99",
     nextHref: "/library",
   },

@@ -6,8 +6,14 @@ const workerUrl = new URL("../dist/server/index.js", import.meta.url);
 workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
 const { default: worker } = await import(workerUrl.href);
 
-async function render(pathname = "/") {
-  return worker.fetch(new Request(`http://localhost${pathname}`, { headers: { accept: "text/html" } }), {
+// The course is password protected. Rendering tests act as an unlocked buyer;
+// the gate itself has its own tests below.
+const COURSE_COOKIE = "hsc_course=f162119aa93015145535fcb58cc5a2841954b544b282bc5ba56f455d091cb310";
+
+async function render(pathname = "/", { unlocked = true } = {}) {
+  const headers = { accept: "text/html" };
+  if (unlocked) headers.cookie = COURSE_COOKIE;
+  return worker.fetch(new Request(`http://localhost${pathname}`, { headers }), {
     ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) },
   }, { waitUntil() {}, passThroughOnException() {} });
 }
@@ -57,7 +63,7 @@ test("makes the Focus Protocol the first step of the paid course", async () => {
   const library = await htmlFor("/library");
   const course = await htmlFor("/access/core-4m8r2p");
   const focus = await htmlFor("/access/focus-7f3k9q");
-  assert.match(library, /START WITH THE FOCUS PROTOCOL/i);
+  assert.match(library, /It starts with the Focus Protocol/i);
   assert.match(library, /72-hour Focus Protocol/i);
   assert.match(course, /Begin with the Focus Protocol/i);
   assert.match(course, /href="\/access\/focus-7f3k9q"/i);
@@ -123,4 +129,41 @@ test("ships every course asset and printable referenced by the content", async (
   for (const path of paths) await access(new URL(`../${path}`, import.meta.url));
   const guide = await readFile(new URL("../public/downloads/sunday-board-meeting.pdf", import.meta.url));
   assert.equal(guide.subarray(0, 4).toString(), "%PDF");
+});
+
+test("keeps the course behind the password", async () => {
+  const locked = await render("/access/core-4m8r2p", { unlocked: false });
+  assert.equal(locked.status, 303);
+  assert.match(locked.headers.get("location") ?? "", /^\/unlock\?return_to=%2Faccess%2Fcore-4m8r2p$/);
+
+  const paidFile = await render("/downloads/all-the-way-here-print-edition.pdf", { unlocked: false });
+  assert.equal(paidFile.status, 303);
+
+  const forged = await worker.fetch(new Request("http://localhost/access/core-4m8r2p", { headers: { cookie: `hsc_course=${"a".repeat(64)}` } }), {}, { waitUntil() {}, passThroughOnException() {} });
+  assert.equal(forged.status, 303);
+
+  const unlocked = await render("/access/core-4m8r2p");
+  assert.equal(unlocked.status, 200);
+  assert.match(unlocked.headers.get("cache-control") ?? "", /private/);
+});
+
+test("unlocks the course with the right password and refuses a wrong one", async () => {
+  const post = (password) => worker.fetch(new Request("http://localhost/api/course/unlock", {
+    method: "POST",
+    body: new URLSearchParams({ password, return_to: "/access/core-4m8r2p/lesson/the-sanctuary" }),
+  }), {}, { waitUntil() {}, passThroughOnException() {} });
+
+  const wrong = await post("not it");
+  assert.equal(wrong.status, 303);
+  assert.match(wrong.headers.get("location") ?? "", /\/unlock\?.*error=1/);
+  assert.equal(wrong.headers.get("set-cookie"), null);
+
+  const right = await post(" Sunday Coffee27 ");
+  assert.equal(right.status, 303);
+  assert.equal(right.headers.get("location"), "http://localhost/access/core-4m8r2p/lesson/the-sanctuary");
+  assert.match(right.headers.get("set-cookie") ?? "", /^hsc_course=[0-9a-f]{64}; .*HttpOnly/);
+
+  const page = await render("/unlock?return_to=/access/core-4m8r2p", { unlocked: false });
+  assert.equal(page.status, 200);
+  assert.match(await page.text(), /Course password/);
 });

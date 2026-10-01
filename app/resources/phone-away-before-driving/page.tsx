@@ -65,7 +65,7 @@ export default function PhoneAwayBeforeDriving() {
     <section className={styles.capture}>
       <SundayBoardSignupForm source="article_phone_away_before_driving" />
     </section>
-    <section className={styles.cta}><div><span>INSIDE ALL THE WAY HERE</span><h2>Change the setup before you test your willpower.</h2></div><div><p>The Attention Reset is a private three-day experiment for noticing where automatic attention has taken over and changing the environment around it.</p><Link href="/library">See the complete course <b>→</b></Link></div></section>
+    <section className={styles.cta}><div><span>INSIDE ALL THE WAY HERE</span><h2>Change the setup before you test your willpower.</h2></div><div><p>The Focus Protocol is a private three-day experiment for noticing where automatic attention has taken over and changing the environment around it.</p><Link href="/library">See the complete course <b>→</b></Link></div></section>
     <Footer />
   </main>;
 }

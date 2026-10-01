@@ -50,7 +50,7 @@ export default function Founding() {
           and tell me the truth about what happened, including the parts that did not work.
         </p>
         <p className={styles.leadSmall}>
-          You get the whole thing. The Field Kit, the three day Attention Reset, and all nine
+          You get the whole thing. The Resource Pack, the three day Focus Protocol, and all nine
           lessons. No charge, now or later, and no card.
         </p>
         </div>
@@ -61,14 +61,14 @@ export default function Founding() {
           <p className={styles.label}>WHAT YOU GET</p>
           <ul>
             <li>
-              <b>The Field Kit</b>
+              <b>The Resource Pack</b>
               <span>
                 Twelve printed sheets, each one built for where the practice actually happens. The
                 reset on the fridge, the driveway card in the glovebox, the board sheet on the table.
               </span>
             </li>
             <li>
-              <b>The Attention Reset</b>
+              <b>The Focus Protocol</b>
               <span>
                 Three days of getting the phone out of the way, plus what the hours actually feel
                 like so the hard part does not catch you by surprise.

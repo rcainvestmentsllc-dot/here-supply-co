@@ -176,7 +176,7 @@
   font-family:var(--hsc-body);
 }
 .page h1,.page h2,.beliefList h3,.story .lead {
-  font-family:Futura,"Avenir Next Condensed","Franklin Gothic Medium",Arial,sans-serif;
+  font-family:var(--hsc-display);
   font-style:normal;
   font-weight:700;
   letter-spacing:-.045em;
