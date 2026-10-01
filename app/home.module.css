@@ -74,7 +74,8 @@
 .systemIntro div > p { max-width: 60ch; margin: 36px 0 0; color: var(--copy); font-size: 18px; line-height: 1.7; }
 
 .resourceSystem { padding: 0 clamp(24px, 7vw, 108px) clamp(82px, 10vw, 142px); display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; background:var(--paper); }
-.resourceSystem article { min-width:0; padding:28px 24px; border:1px solid rgba(9,47,60,.2); background:var(--hsc-white); }
+.resourceSystem article { min-width:0; padding:28px 24px; border:1px solid rgba(9,47,60,.2); background:var(--hsc-white); transition: transform .25s ease, box-shadow .25s ease; }
+@media (prefers-reduced-motion: no-preference) { .resourceSystem article:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(9,47,60,.14); } }
 .resourceSystem article:nth-child(2) { background:var(--mist); }
 .resourceSystem article:nth-child(3) { color:var(--paper); background:var(--ink); }
 .resourceSystem article:nth-child(4) { background:var(--sand); }

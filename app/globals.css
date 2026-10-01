@@ -2779,3 +2779,28 @@ body,.site,.access-shell,.lesson-shell,.workbook-shell,.working-page {
   .kit-list li { grid-template-columns: 30px minmax(0,1fr); }
   .kit-list p { grid-column: 2 / -1; }
 }
+
+/* ---- Calm motion ----
+   Pages cross fade into each other, and content eases up as it scrolls into
+   view. Both are native browser features: browsers without them simply show
+   the page as before, and anyone who asks their device to reduce motion gets
+   no movement at all. */
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .32s; }
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    main > section:not(:first-of-type) > *,
+    .curriculum-lesson, .kit-list li, .faq-list details {
+      animation: hsc-ease-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 38%;
+    }
+  }
+  .curriculum-lesson, .offer-card { transition: transform .25s ease, box-shadow .25s ease; }
+  .curriculum-lesson:hover { transform: translateY(-4px); box-shadow: 10px 16px 18px rgba(141,74,49,.18); }
+}
+@keyframes hsc-ease-up { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}
