@@ -61,6 +61,7 @@ export default function Home() {
               <Link className={styles.quietLightLink} href="/library">See the full practice</Link>
             </div>
             <p className={styles.heroAssurance}>Free shared weekly guide · Print-first tools · Built by a real couple</p>
+            <Link className={styles.checkLink} href="/check">Not sure where to start? <b>Take the one minute check →</b></Link>
           </div>
           <HeroClip />
         </div>

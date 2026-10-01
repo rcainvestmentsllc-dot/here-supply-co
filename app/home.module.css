@@ -36,6 +36,9 @@
 .heroClip figcaption { display: flex; align-items: center; justify-content: space-between; gap: 16px; color: rgba(255,253,248,.7); font-size: 13px; line-height: 1.4; }
 .heroClip button { flex: none; padding: 7px 14px; border: 1px solid rgba(255,253,248,.32); border-radius: 999px; color: rgba(255,253,248,.88); background: transparent; font: 700 12px/1 var(--hsc-body); letter-spacing: .03em; cursor: pointer; }
 .heroClip button:hover, .heroClip button:focus-visible { border-color: var(--brass); color: var(--hsc-white); }
+.checkLink { display: inline-flex; flex-wrap: wrap; gap: 6px; margin-top: 26px; padding: 12px 16px; border: 1px solid rgba(255,253,248,.2); border-radius: 999px; color: rgba(255,253,248,.8); font-size: 14px; text-decoration: none; transition: border-color .2s ease, background .2s ease; }
+.checkLink b { color: var(--brass); }
+.checkLink:hover, .checkLink:focus-visible { border-color: var(--brass); background: rgba(255,253,248,.06); }
 .heroContent { animation: heroIn .9s cubic-bezier(.2,.7,.2,1) both; }
 @keyframes heroIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
 @keyframes clipIn { from { opacity: 0; transform: translateY(24px) scale(.98); } to { opacity: 1; transform: none; } }

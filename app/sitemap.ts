@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: baseUrl, lastModified, changeFrequency: "monthly", priority: 1 },
     { url: `${baseUrl}/sunday-board`, lastModified, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/check`, lastModified, changeFrequency: "monthly", priority: 0.85 },
     { url: `${baseUrl}/library`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/resources`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/resources/look-up-at-clemson`, lastModified, changeFrequency: "monthly", priority: 0.85 },
