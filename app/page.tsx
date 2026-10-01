@@ -2,6 +2,7 @@ import { PlainLink as Link } from "./plain-link";
 import type { Metadata } from "next";
 import { BrandWordmark, Footer, WeeklyGuidePreview } from "./components";
 import { CHECKOUT } from "./data";
+import { HeroClip } from "./hero-clip";
 import styles from "./home.module.css";
 
 export const metadata: Metadata = {
@@ -47,20 +48,9 @@ export default function Home() {
         <Link href="/about">About</Link>
       </nav>
 
-      {/* Full-bleed hero. Two people at the table, one phone face down: the
-          couple the site is for, in the conversation it helps them have.
-          Mirrored so both faces sit clear of the text gradient. */}
+      {/* Hero. Text on the left, a quiet loop of Chris and Rhea from the real
+          Sunday Board video on the right. On a phone the clip sits above. */}
       <section className={styles.hero}>
-        <img
-          className={styles.heroPhoto}
-          src="/assets/course/photo/movement-lead-v1.jpg"
-          alt="A couple talking at the kitchen table over coffee, a phone face down beside them"
-          width="1672"
-          height="941"
-          style={{ transform: "scaleX(-1)" }}
-          fetchPriority="high"
-          decoding="async"
-        />
         <div className={styles.heroInner}>
           <div className={styles.heroContent}>
             <p className={styles.eyebrow}><i aria-hidden="true" />For two people who keep missing each other</p>
@@ -72,6 +62,7 @@ export default function Home() {
             </div>
             <p className={styles.heroAssurance}>Free shared weekly guide · Print-first tools · Built by a real couple</p>
           </div>
+          <HeroClip />
         </div>
       </section>
       <div className={styles.heroFooter} aria-label="The Here Supply Co. approach">

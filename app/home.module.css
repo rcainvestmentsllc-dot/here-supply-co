@@ -30,10 +30,17 @@
 .quietLightLink, .quietDarkLink { padding: 7px 0; display: inline-flex; align-items: center; gap: 10px; border-bottom: 1px solid currentColor; font-size: 14px; font-weight: 650; text-decoration: none; }
 .quietLightLink:hover, .quietDarkLink:hover { color: var(--iron); }
 
-.hero { min-height: min(760px, calc(100svh - 90px)); position: relative; display: grid; align-items: center; isolation: isolate; overflow: hidden; color: var(--hsc-white); background: var(--ink); }
-.heroPhoto { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: center 44%; filter: saturate(.84) contrast(1.05); }
-.hero::after { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(7,38,49,.96) 0%, rgba(7,38,49,.89) 30%, rgba(7,38,49,.54) 50%, rgba(7,38,49,.12) 72%, rgba(7,38,49,.08) 100%), linear-gradient(0deg, rgba(7,38,49,.35), transparent 42%); }
-.heroInner { width: min(100%, 1360px); margin: 0 auto; padding: clamp(74px, 9vw, 136px) clamp(24px, 7vw, 108px); }
+.hero { min-height: min(760px, calc(100svh - 90px)); position: relative; display: grid; align-items: center; isolation: isolate; overflow: hidden; color: var(--hsc-white); background: radial-gradient(ellipse at 78% 30%, rgba(47,113,128,.42), transparent 58%), radial-gradient(circle at 92% 88%, rgba(184,151,78,.16), transparent 34%), var(--ink); }
+.heroClip { margin: 0; display: grid; gap: 12px; animation: clipIn 1s cubic-bezier(.2,.7,.2,1) .25s both; }
+.heroClip video { display: block; width: 100%; aspect-ratio: 568 / 320; object-fit: cover; border-radius: 6px; background: var(--hsc-forest-deep); box-shadow: 0 30px 70px rgba(0,0,0,.38), 0 0 0 1px rgba(255,253,248,.08); }
+.heroClip figcaption { display: flex; align-items: center; justify-content: space-between; gap: 16px; color: rgba(255,253,248,.7); font-size: 13px; line-height: 1.4; }
+.heroClip button { flex: none; padding: 7px 14px; border: 1px solid rgba(255,253,248,.32); border-radius: 999px; color: rgba(255,253,248,.88); background: transparent; font: 700 12px/1 var(--hsc-body); letter-spacing: .03em; cursor: pointer; }
+.heroClip button:hover, .heroClip button:focus-visible { border-color: var(--brass); color: var(--hsc-white); }
+.heroContent { animation: heroIn .9s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes heroIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes clipIn { from { opacity: 0; transform: translateY(24px) scale(.98); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .heroContent, .heroClip { animation: none; } }
+.heroInner { width: min(100%, 1360px); margin: 0 auto; padding: clamp(64px, 8vw, 120px) clamp(24px, 6vw, 96px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); align-items: center; gap: clamp(36px, 5vw, 80px); }
 .heroContent { width: min(100%, 660px); }
 .hero .eyebrow { margin-bottom: 22px; color: var(--brass); }
 .hero h1 { margin: 0; max-width: 11ch; color: var(--hsc-white); font-size: clamp(46px, 5.1vw, 78px); line-height: .94; }
@@ -157,6 +164,9 @@
   .header { grid-template-columns: 1fr auto; }
   .nav { display: none; }
   .mobileNav { padding: 0 24px; display: flex; gap: 22px; overflow-x: auto; background: var(--hsc-white); border-bottom: 1px solid rgba(9,47,60,.14); }
+  .hero { min-height: 0; }
+  .heroInner { grid-template-columns: 1fr; padding-top: 40px; }
+  .heroClip { order: -1; max-width: 640px; }
   .heroFooter { grid-template-columns: 1fr; }
   .heroFooter span { min-height: 0; border-right: 0; border-bottom: 1px solid rgba(255,253,248,.14); }
   .missedMoment, .startSection, .founderSection, .systemIntro { grid-template-columns: 1fr; }
@@ -170,10 +180,7 @@
   .header { min-height: 76px; padding: 0 18px; }
   .headerAction { display: none; }
   .mobileNav { padding: 0 18px; }
-  .hero { min-height: 690px; align-items: end; }
-  .heroPhoto { object-position: 62% center; }
-  .hero::after { background: linear-gradient(0deg, rgba(7,38,49,.97), rgba(7,38,49,.88) 47%, rgba(7,38,49,.32) 76%, rgba(7,38,49,.1)); }
-  .heroInner { padding: 70px 18px 56px; }
+  .heroInner { padding: 28px 18px 56px; gap: 34px; }
   .hero h1 { font-size: clamp(42px, 12vw, 58px); }
   .heroActions, .buttonRow { align-items: stretch; gap: 17px; }
   .heroActions > a, .buttonRow > a { width: 100%; }
