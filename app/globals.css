@@ -2827,3 +2827,18 @@ body,.site,.access-shell,.lesson-shell,.workbook-shell,.working-page {
 @media (prefers-reduced-motion: reduce) {
   @view-transition { navigation: none; }
 }
+
+/* Accessibility: button text and in-paragraph links need enough contrast. */
+.topbar-action, .topbar-action:hover { color: var(--hsc-white) !important; }
+.kit-list li > span { color: var(--hsc-iron); }
+.sunday-film-player > div > small { color: #a9bcc1; }
+#core > span, .core-closing > .section-label { color: #f3d58c; }
+#outside-heading em { color: #f0957d; }
+.offer-alt a, .closing-alt a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Not found page. */
+.not-found { min-height: 52vh; padding: clamp(72px, 9vw, 130px) clamp(22px, 8vw, 130px); color: var(--hsc-ink); background: var(--hsc-paper); }
+.not-found h1 { margin: 0 0 16px; font-size: clamp(38px, 4.6vw, 64px); line-height: 1; }
+.not-found p { max-width: 52ch; margin: 0 0 26px; color: var(--hsc-copy); font-size: 18px; line-height: 1.55; }
+.not-found ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+.not-found a { color: var(--hsc-teal); font-size: 18px; font-weight: 700; text-underline-offset: 4px; }

@@ -124,3 +124,5 @@
   .form { flex-direction: column; align-items: stretch; }
   .submit { width: 100%; }
 }
+
+.download, .download:hover { color: var(--hsc-white) !important; }

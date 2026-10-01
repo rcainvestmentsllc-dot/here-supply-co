@@ -25,27 +25,27 @@
   --hsc-ink: #0b2530;          /* headings, primary text */
   --hsc-ink-soft: #1b3a44;     /* secondary text on light */
   --hsc-copy: #4a5f66;         /* body copy */
-  --hsc-quiet: #8ea6ad;        /* captions, meta, disabled */
+  --hsc-quiet: #546d75;        /* captions, meta, disabled */
 
   /* ---- Colour: deep surfaces ---- */
   --hsc-forest: #14313c;       /* sidebar, footers, dark panels */
   --hsc-forest-deep: #081d26;  /* deepest anchor */
   --hsc-on-dark: #f2ece1;      /* text on deep surfaces */
-  --hsc-on-dark-quiet: #8ea6ad;
+  --hsc-on-dark-quiet: #546d75;
 
   /* ---- Colour: accents ----
      Same hues as before, pulled colder and dirtier: the sunshine gold
      becomes brass, the orange rust becomes oxidised iron. */
-  --hsc-teal: #2f7180;         /* progress, links, completion */
-  --hsc-ocean: #2f7180;        /* alias */
+  --hsc-teal: #2a6573;         /* progress, links, completion */
+  --hsc-ocean: #2a6573;        /* alias */
   --hsc-teal-soft: #cfe0e2;
   --hsc-ocean-soft: #cfe0e2;   /* alias */
-  --hsc-iron: #a8503a;         /* the single "do this next" accent */
-  --hsc-iron-deep: #8f4230;
-  --hsc-rust: #a8503a;         /* alias */
-  --hsc-rust-deep: #8f4230;    /* alias */
-  --hsc-brass: #b8974e;        /* highlights, rules, focus */
-  --hsc-gold: #b8974e;         /* alias */
+  --hsc-iron: #9a4632;         /* the single "do this next" accent */
+  --hsc-iron-deep: #833b2b;
+  --hsc-rust: #9a4632;         /* alias */
+  --hsc-rust-deep: #833b2b;    /* alias */
+  --hsc-brass: #c9a85f;        /* highlights, rules, focus */
+  --hsc-gold: #c9a85f;         /* alias */
 
   --hsc-white: #ffffff;
   --hsc-black: #000000;

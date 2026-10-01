@@ -208,3 +208,6 @@
 .systemLinks { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 22px; }
 .systemLinks a { padding-bottom: 5px; border-bottom: 1px solid currentColor; color: var(--ink); font-size: 14px; font-weight: 700; text-decoration: none; }
 .systemLinks a:hover { color: var(--iron); }
+
+.header .headerAction, .header .headerAction:hover, .primaryButton, .primaryButton:hover, .buyButton, .buyButton b { color: var(--hsc-white) !important; }
+.resourceSystem article:nth-child(3) span { color: #f0957d; }

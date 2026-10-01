@@ -168,8 +168,8 @@
   --paper:#fff8ec;
   --sage:#d9eeef;
   --gold:#f4c550;
-  --rust:#df5c3f;
-  --ocean:#21859d;
+  --rust:var(--hsc-iron);
+  --ocean:#124f5d;
   --muted:#526b72;
   color:var(--ink);
   background:var(--paper);
@@ -206,3 +206,6 @@
 @media (max-width:760px) {
   .hero { background:var(--paper); }
 }
+
+/* Contrast on the deep teal letter panel. */
+.fromChrisInner .eyebrow, .letter h2 em, .signature { color: #f0c77d; }

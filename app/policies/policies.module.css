@@ -31,9 +31,9 @@
 .body { background:#fff8ec; }
 .body > nav { border-color:rgba(9,47,60,.22); }
 .body > nav a { color:#526b72; border-color:rgba(9,47,60,.22); }
-.body > nav a:hover,.sections section > p:first-child { color:#df5c3f; }
+.body > nav a:hover,.sections section > p:first-child { color:var(--hsc-iron); }
 .sections section { border-color:rgba(9,47,60,.18); }
 .sections h2 { color:#092f3c; }
 .sections p { color:#526b72; }
-.close { color:#fff8ec; background:#21859d; }
+.close { color:#fff8ec; background:#124f5d; }
 .close a { color:#fff8ec; }

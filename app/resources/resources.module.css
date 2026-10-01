@@ -123,7 +123,7 @@
   .urgent h2 { font-size:clamp(39px,11vw,55px); }
 }
 
-.resources { --ink:#092f3c; --paper:#fff8ec; --sage:#d9eeef; --gold:#f4c550; --rust:#df5c3f; --ocean:#21859d; --copy:#526b72; font-family:var(--hsc-body); }
+.resources { --ink:#092f3c; --paper:#fff8ec; --sage:#d9eeef; --gold:#f4c550; --rust:var(--hsc-iron); --ocean:#124f5d; --copy:#526b72; font-family:var(--hsc-body); }
 .resources h1,.resources h2,.resources h3 { font-family:var(--hsc-display); font-weight:700; font-style:normal; letter-spacing:-.04em; }
 .resources h1 em,.resources h2 em,.resources h3 em { font-style:normal; }
 .hero { background:radial-gradient(circle at 86% 16%,rgba(244,197,80,.32) 0 7%,transparent 7.4%),linear-gradient(118deg,#fff8ec 0 68%,#d9eeef 68% 100%); }
@@ -135,7 +135,7 @@
 .outsideGrid small { color:#b8d2d5; }
 .outsideGrid a { color:#fff8ec; }
 .research { background:#d9eeef; }
-.urgent { color:#fff8ec; background:#21859d; }
+.urgent { color:#fff8ec; background:#124f5d; }
 .urgent .eyebrow,.urgentLinks a:hover strong { color:#f4c550; }
 .urgentLinks span { color:#e4f1f2; }
 .disclosure { color:#d4e5e6; background:#092f3c; }

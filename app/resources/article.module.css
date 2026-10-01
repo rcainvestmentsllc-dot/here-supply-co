@@ -74,7 +74,7 @@
   .cta h2 { font-size:clamp(41px,12vw,58px); }
 }
 
-.article { --ink:#092f3c; --paper:#fff8ec; --sage:#d9eeef; --gold:#f4c550; --rust:#df5c3f; --ocean:#21859d; --copy:#526b72; font-family:var(--hsc-body); }
+.article { --ink:#092f3c; --paper:#fff8ec; --sage:#d9eeef; --gold:#f4c550; --rust:var(--hsc-iron); --ocean:#124f5d; --copy:#526b72; font-family:var(--hsc-body); }
 .article h1,.article h2,.article h3 { font-family:var(--hsc-display); font-weight:700; font-style:normal; letter-spacing:-.04em; }
 .article h1 em,.article h2 em,.article h3 em { font-style:normal; }
 .hero { color:#fff8ec; background:#092f3c; }
@@ -84,11 +84,11 @@
 .byline { color:#b8d2d5; }
 .layout { background:#fff8ec; }
 .body > p,.rules li { color:#526b72; }
-.note { color:#fff8ec; background:#21859d; }
+.note { color:#fff8ec; background:#124f5d; }
 .note strong { color:#fff8ec; }
 .note p { color:#e4f1f2; }
 .cta { color:#fff8ec; background:#092f3c; }
 .cta h2 { color:#fff8ec; }
 .cta div > p { color:#d4e5e6; }
-.cta a { color:#fff8ec; background:#df5c3f; }
-.cta a:hover { background:#21859d; }
+.cta a { color:#fff8ec; background:var(--hsc-iron); }
+.cta a:hover { background:#124f5d; }

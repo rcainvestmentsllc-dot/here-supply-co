@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     url: "/",
     siteName: "Here Supply Co.",
     type: "website",
-    images: [{ url: "/assets/brand/sunday-board-hero-v1.jpg", width: 1586, height: 992, alt: "A man giving his full attention to a conversation at a coastal home" }],
+    images: [{ url: "/assets/course/photo/movement-lead-v1.jpg", width: 1672, height: 941, alt: "A couple talking at the kitchen table over coffee, a phone face down beside them" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Here Supply Co. | Resources for Couples to Stay Connected",
     description: "Practical online and printable resources for couples who want more connection, a clearer week, and less life lived in separate heads.",
-    images: ["/assets/brand/sunday-board-hero-v1.jpg"],
+    images: ["/assets/course/photo/movement-lead-v1.jpg"],
   },
 };
 
