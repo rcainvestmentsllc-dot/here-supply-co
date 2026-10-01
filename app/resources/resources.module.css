@@ -9,11 +9,11 @@
   overflow:clip;
   color:var(--ink);
   background:var(--paper);
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:var(--hsc-body);
 }
 .resources *, .resources *::before, .resources *::after { box-sizing:border-box; }
 .resources h1, .resources h2, .resources h3, .resources p { margin-top:0; }
-.resources h1, .resources h2, .resources h3 { font-family:Georgia,"Times New Roman",serif; font-weight:400; letter-spacing:-.055em; text-wrap:balance; overflow-wrap:normal; word-break:normal; hyphens:none; }
+.resources h1, .resources h2, .resources h3 { font-family:var(--hsc-editorial); font-weight:400; letter-spacing:-.055em; text-wrap:balance; overflow-wrap:normal; word-break:normal; hyphens:none; }
 .resources a { color:inherit; }
 .eyebrow { margin:0; color:var(--rust); font-size:10px; font-weight:700; letter-spacing:.18em; line-height:1.4; }
 
@@ -32,7 +32,7 @@
 .pathList > a:hover { padding-left:11px; padding-right:11px; color:var(--rust); }
 .pathList > a > span { align-self:start; padding-top:6px; color:var(--rust); font-size:9px; font-weight:700; letter-spacing:.15em; }
 .pathList div { display:grid; gap:9px; }
-.pathList strong { max-width:530px; font-family:Georgia,"Times New Roman",serif; font-size:clamp(24px,2.35vw,34px); font-weight:400; letter-spacing:-.04em; line-height:1.16; }
+.pathList strong { max-width:530px; font-family:var(--hsc-editorial); font-size:clamp(24px,2.35vw,34px); font-weight:400; letter-spacing:-.04em; line-height:1.16; }
 .pathList small { color:var(--copy); font-size:12px; line-height:1.5; }
 .pathList b { font-size:10px; white-space:nowrap; }
 
@@ -74,7 +74,7 @@
 .researchList { border-top:1px solid rgba(16,38,28,.2); }
 .researchList a { padding:27px 2px; display:grid; gap:13px; border-bottom:1px solid rgba(16,38,28,.2); text-decoration:none; }
 .researchList a:hover strong, .researchList a:hover b { color:var(--rust); }
-.researchList strong { font-family:Georgia,"Times New Roman",serif; font-size:clamp(24px,2.45vw,35px); font-weight:400; letter-spacing:-.04em; line-height:1.17; }
+.researchList strong { font-family:var(--hsc-editorial); font-size:clamp(24px,2.45vw,35px); font-weight:400; letter-spacing:-.04em; line-height:1.17; }
 .researchList span { max-width:610px; color:var(--copy); font-size:13px; line-height:1.6; }
 .researchList b { margin-top:4px; font-size:10px; }
 
@@ -84,7 +84,7 @@
 .urgentLinks { border-top:1px solid rgba(247,242,232,.28); }
 .urgentLinks a { padding:24px 0; display:grid; gap:10px; border-bottom:1px solid rgba(247,242,232,.28); text-decoration:none; }
 .urgentLinks a:hover strong { color:#f0c77d; }
-.urgentLinks strong { font-family:Georgia,"Times New Roman",serif; font-size:clamp(24px,2.5vw,35px); font-weight:400; letter-spacing:-.035em; line-height:1.16; }
+.urgentLinks strong { font-family:var(--hsc-editorial); font-size:clamp(24px,2.5vw,35px); font-weight:400; letter-spacing:-.035em; line-height:1.16; }
 .urgentLinks span { color:#eadfd6; font-size:13px; line-height:1.55; }
 
 .disclosure { padding:29px clamp(24px,8vw,125px); color:#d6e1d6; background:#174a50; }
@@ -123,8 +123,8 @@
   .urgent h2 { font-size:clamp(39px,11vw,55px); }
 }
 
-.resources { --ink:#092f3c; --paper:#fff8ec; --sage:#d9eeef; --gold:#f4c550; --rust:#df5c3f; --ocean:#21859d; --copy:#526b72; font-family:"Avenir Next","Helvetica Neue",Arial,sans-serif; }
-.resources h1,.resources h2,.resources h3 { font-family:Futura,"Avenir Next Condensed","Franklin Gothic Condensed","Arial Narrow",sans-serif; font-weight:700; font-style:normal; letter-spacing:-.04em; }
+.resources { --ink:#092f3c; --paper:#fff8ec; --sage:#d9eeef; --gold:#f4c550; --rust:#df5c3f; --ocean:#21859d; --copy:#526b72; font-family:var(--hsc-body); }
+.resources h1,.resources h2,.resources h3 { font-family:var(--hsc-display); font-weight:700; font-style:normal; letter-spacing:-.04em; }
 .resources h1 em,.resources h2 em,.resources h3 em { font-style:normal; }
 .hero { background:radial-gradient(circle at 86% 16%,rgba(244,197,80,.32) 0 7%,transparent 7.4%),linear-gradient(118deg,#fff8ec 0 68%,#d9eeef 68% 100%); }
 .start { background:#edf7f5; }

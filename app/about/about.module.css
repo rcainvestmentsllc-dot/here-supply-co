@@ -11,12 +11,12 @@
   overflow: clip;
   color: var(--ink);
   background: var(--paper);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:var(--hsc-body);
 }
 
 .page *, .page *::before, .page *::after { box-sizing: border-box; }
 .page h1, .page h2, .page p { margin-top: 0; }
-.page h1, .page h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; letter-spacing: -.058em; text-wrap: balance; overflow-wrap: normal; word-break:normal; hyphens:none; }
+.page h1, .page h2 { font-family:var(--hsc-editorial); font-weight: 400; letter-spacing: -.058em; text-wrap: balance; overflow-wrap: normal; word-break:normal; hyphens:none; }
 .page a { color: inherit; }
 
 .header { min-height: 86px; padding: 0 clamp(24px, 5.5vw, 86px); display: flex; align-items: center; justify-content: space-between; gap: 30px; color: var(--ink); background: rgba(250, 247, 239, .98); border-bottom: 1px solid rgba(20, 41, 32, .1); }
@@ -47,7 +47,7 @@
 .story { max-width: 1320px; margin: 0 auto; padding: clamp(88px, 10.5vw, 146px) clamp(24px, 7vw, 110px); display: grid; grid-template-columns: minmax(165px, .33fr) minmax(0, 1.48fr); gap: clamp(48px, 9vw, 158px); }
 .story .eyebrow { color: var(--rust); }
 .story div { max-width: 760px; }
-.story .lead { margin: 0 0 32px; color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: clamp(31px, 3.55vw, 54px); letter-spacing: -.05em; line-height: 1.08; }
+.story .lead { margin: 0 0 32px; color: var(--ink); font-family:var(--hsc-editorial); font-size: clamp(31px, 3.55vw, 54px); letter-spacing: -.05em; line-height: 1.08; }
 .story div > p:not(.lead) { max-width: 650px; margin: 0; color: var(--muted); font-size: clamp(17px, 1.45vw, 20px); line-height: 1.66; }
 .story div > p:not(.lead) + p { margin-top: 24px; }
 .story div > p.personalNote { color: #7b5b3f; font-size: 15px; }
@@ -71,7 +71,7 @@
 .beliefList article { padding: 24px clamp(17px, 2vw, 28px) 0; min-height: 210px; border-left: 1px solid rgba(16, 38, 28, .18); }
 .beliefList article:first-child { padding-left: 0; border-left: 0; }
 .beliefList span { color: var(--rust); font-size: 10px; font-weight: 700; letter-spacing: .16em; }
-.beliefList h3 { margin: 42px 0 13px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(24px, 2.15vw, 32px); font-weight: 400; letter-spacing: -.055em; line-height: 1.08; }
+.beliefList h3 { margin: 42px 0 13px; font-family:var(--hsc-editorial); font-size: clamp(24px, 2.15vw, 32px); font-weight: 400; letter-spacing: -.055em; line-height: 1.08; }
 .beliefList p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
 
 .fromChris { min-height: 620px; padding: clamp(88px, 10vw, 144px) clamp(24px, 7vw, 110px); position: relative; isolation: isolate; overflow: hidden; color: var(--paper); background: linear-gradient(119deg, #174a50, #1e6669); }
@@ -84,7 +84,7 @@
 .letterBody { max-width: 630px; padding-left: clamp(21px, 2.4vw, 34px); border-left: 1px solid rgba(202, 164, 93, .48); }
 .letterBody > p { margin: 0 0 23px; color: #c9d3c8; font-size: clamp(16px, 1.2vw, 18px); line-height: 1.75; }
 .letterBody > p:last-of-type { margin-bottom: 0; }
-.signature { margin-top: 30px; display: block; color: var(--gold); font-family: Georgia, "Times New Roman", serif; font-size: 34px; font-style: italic; letter-spacing: -.06em; }
+.signature { margin-top: 30px; display: block; color: var(--gold); font-family:var(--hsc-editorial); font-size: 34px; font-style: italic; letter-spacing: -.06em; }
 
 .footer { min-height: 92px; padding: 0 clamp(24px, 7vw, 110px); display: flex; align-items: center; justify-content: space-between; gap: 28px; color: #9cab9f; background: #0d1e16; font-size: 10px; }
 .footer nav { display: flex; flex-wrap: wrap; gap: 21px; }
@@ -132,8 +132,8 @@
   .footer { min-height: 112px; padding: 24px 20px; align-items: flex-start; flex-direction: column; gap: 16px; }
 }
 
-.page { --ink:#18231f; --forest:#182f29; --paper:#f0e6d2; --sage:#d8c49f; --gold:#c28b2c; --rust:#8d4a31; --ocean:#214f50; --muted:#555d56; font-family:"Avenir Next","Helvetica Neue",Arial,sans-serif; }
-.page h1,.page h2,.beliefList h3,.story .lead { font-family:Futura,"Avenir Next Condensed","Franklin Gothic Condensed","Arial Narrow",sans-serif; font-weight:700; font-style:normal; letter-spacing:-.04em; }
+.page { --ink:#18231f; --forest:#182f29; --paper:#f0e6d2; --sage:#d8c49f; --gold:#c28b2c; --rust:#8d4a31; --ocean:#214f50; --muted:#555d56; font-family:var(--hsc-body); }
+.page h1,.page h2,.beliefList h3,.story .lead { font-family:var(--hsc-display); font-weight:700; font-style:normal; letter-spacing:-.04em; }
 .page h1 em,.page h2 em { font-style:normal; }
 .header { background:#f4ecdc; border-color:rgba(24,35,31,.18); }
 .headerAction { background:#d0a348; }
@@ -141,7 +141,7 @@
 .heroContent { border-color:rgba(24,35,31,.2); }
 .notes { background:#d8c49f; }
 .fromChris { background:#214f50; }
-.signature { color:#e2b75f; font-family:Charter,"Iowan Old Style",Georgia,serif; }
+.signature { color:#e2b75f; font-family:var(--hsc-editorial); }
 .footer { background:#18231f; }
 
 /* Founder photography is an author portrait, not the subject of the page. */
@@ -173,7 +173,7 @@
   --muted:#526b72;
   color:var(--ink);
   background:var(--paper);
-  font-family:"Avenir Next","Helvetica Neue",Arial,sans-serif;
+  font-family:var(--hsc-body);
 }
 .page h1,.page h2,.beliefList h3,.story .lead {
   font-family:Futura,"Avenir Next Condensed","Franklin Gothic Medium",Arial,sans-serif;
