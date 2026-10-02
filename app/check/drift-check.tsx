@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
+import { EmailSignup } from "../email-signup";
 import { PRESSURE_ORDER, QUESTIONS, RESULTS, type PressureKey } from "./results";
 import styles from "./check.module.css";
 
@@ -102,6 +103,13 @@ export function DriftCheck({ lessons, checkoutUrl }: { lessons: Record<string, L
           <a className={styles.buy} href={checkoutUrl}>Get All the Way Here · $99</a>
           <button type="button" className={styles.textButton} onClick={restart}>Take it again</button>
         </div>
+
+        <EmailSignup
+          source="drift_check"
+          next="/check"
+          title="Start with the free Sunday Board"
+          blurb="Fifteen minutes on Sunday to get the week out of two heads and onto one page. I'll email you the guide, then three short notes over the next week. No spam, and you can unsubscribe anytime."
+        />
       </div>
     );
   }

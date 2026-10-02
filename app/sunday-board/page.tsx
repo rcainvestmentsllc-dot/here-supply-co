@@ -53,12 +53,12 @@ export default function SundayBoard() {
         <div className="signup-copy">
           <p className="section-label">THE SUNDAY BOARD MEETING</p>
           <h2>Get the guide.<br /><em>Use it together this week.</em></h2>
-          <p>Download the printable meeting guide and use it right away. There is no email gate and no account to create. Just print one copy and sit down together.</p>
+          <p>Download the printable guide and use it this week. Print one copy and sit down together. If you want it by email, there is a spot for that too.</p>
           <ul>
             <li>A printable one-page weekly guide</li>
             <li>A clear four-part agenda for the conversation</li>
             <li>Prompts for connection, logistics, and one shared priority</li>
-            <li>Free to use, with no account required</li>
+            <li>Free, with no account required</li>
           </ul>
         </div>
         <SundayBoardSignupForm />

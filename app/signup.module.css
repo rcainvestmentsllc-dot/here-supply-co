@@ -122,7 +122,27 @@
 
 @media (max-width: 560px) {
   .form { flex-direction: column; align-items: stretch; }
+  .field { flex: 0 0 auto; }
   .submit { width: 100%; }
 }
 
 .download, .download:hover { color: var(--hsc-white) !important; }
+
+/* Optional email signup that sits under a free download. */
+.inline {
+  display: grid;
+  gap: var(--hsc-s2);
+  padding-top: var(--hsc-s4);
+  border-top: 1px solid var(--hsc-line);
+  scroll-margin-top: 90px;
+}
+.inlineTitle {
+  margin: 0;
+  font-family: var(--hsc-display);
+  font-size: clamp(18px, 1.8vw, 22px);
+  font-weight: 700;
+  color: var(--hsc-ink);
+}
+.trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.submit:disabled { opacity: .7; cursor: progress; }
+.submit, .submit:hover { color: var(--hsc-white) !important; }

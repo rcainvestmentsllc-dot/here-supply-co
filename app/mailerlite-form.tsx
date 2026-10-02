@@ -1,4 +1,5 @@
 import styles from "./signup.module.css";
+import { EmailSignup } from "./email-signup";
 
 const GUIDE_URL = "/downloads/sunday-board-meeting.pdf";
 
@@ -15,17 +16,18 @@ const GUIDE_URL = "/downloads/sunday-board-meeting.pdf";
 export function SundayBoardSignupForm() {
   return (
     <div className={styles.card} id="get-board">
-      <span className={styles.kicker}>Free · 15-minute meeting guide</span>
+      <span className={styles.kicker}>Free · 15 minute meeting guide</span>
       <h3 className={styles.title}>Print one copy. Put it between you.</h3>
       <p className={styles.blurb}>
-        The exact one-page guide shown below. No email gate, no account, and nothing to set up.
+        The one page guide shown below. Download it now, nothing to sign up for.
       </p>
       <a className={styles.download} href={GUIDE_URL} download="sunday-board-meeting.pdf">
         Download the meeting guide <span aria-hidden="true">↓</span>
       </a>
       <p className={styles.note}>
-        Set a fifteen-minute time, put phones away, and use the page to see the same week before it fills itself.
+        Set a timer for fifteen minutes, put both phones in another room, and work through the page together.
       </p>
+      <EmailSignup source="sunday_board" next="/sunday-board" />
     </div>
   );
 }
