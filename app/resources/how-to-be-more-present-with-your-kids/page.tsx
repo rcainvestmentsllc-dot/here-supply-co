@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/resources/how-to-be-more-present-with-your-kids" },
   openGraph: {
     title: "How to Be More Present With Your Kids After Work",
-    description: "Five to fifteen minutes of child-led, phone-free attention that can fit an ordinary evening.",
+    description: "Five to fifteen minutes of child led, phone free attention that can fit an ordinary evening.",
     url: "/resources/how-to-be-more-present-with-your-kids",
   },
 };
@@ -52,7 +52,7 @@ export default function PresentWithKids() {
         <p>A child often asks for connection through a look, a question, or a quick, Watch this. They look for our eyes before they look for a perfect answer. When they look up and find us looking down, the screen can feel more important even when that is not what we mean.</p>
         <p>The answer is not guilt and it is not pretending every night will become meaningful family time. Choose one small window that your child can actually feel.</p>
 
-        <h2>Eyes first, then the child-led window</h2>
+        <h2>Eyes first, then the child led window</h2>
         <div className={styles.steps}>
           <section className={styles.step}><span>01</span><div><h3>Answer with your eyes</h3><p>When they call your name or ask you to look, set the phone down and meet their eyes. If you cannot stop yet, say exactly when you can and keep that promise.</p></div></section>
           <section className={styles.step}><span>02</span><div><h3>Join their level</h3><p>Sit on the floor, beside them, across the table, in the driveway, or in the passenger seat. The point is closeness that works for both people, not a particular pose.</p></div></section>
@@ -78,7 +78,7 @@ export default function PresentWithKids() {
 
     </section>
 
-    <section className={styles.cta}><div><span>ALL THE WAY HERE</span><h2>Parenthood belongs inside the complete practice.</h2></div><div><p>The Floor General is one of nine lessons for attention, pressure, relationships, parenthood, friendship, and the parts of life work cannot replace.</p><Link href="/library#curriculum">See the complete course <b>→</b></Link></div></section>
+    <section className={styles.cta}><div><span>ALL THE WAY HERE</span><h2>Parenthood belongs inside the complete practice.</h2></div><div><p>The Floor General is one of nine short lessons in All the Way Here, a course on how you put the phone down, get home from work, handle pressure, date, parent, and keep friends.</p><Link href="/library#curriculum">See the complete course <b>→</b></Link></div></section>
     <Footer />
   </main>;
 }

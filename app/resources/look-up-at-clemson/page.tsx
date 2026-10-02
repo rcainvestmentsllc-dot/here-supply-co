@@ -58,11 +58,11 @@ export default function LookUpAtClemson() {
         <h2>Three ways to look up again</h2>
         <div className={styles.steps}>
           <section className={styles.step}><span>01</span><div><h3>Walk one stretch without the phone in hand</h3><p>Choose the path from the parking lot, one block, or the walk between two buildings. Keep directions available when needed, then put the screen away.</p></div></section>
-          <section className={styles.step}><span>02</span><div><h3>Eyes first. Make one ordinary opening.</h3><p>Meet someone&apos;s eyes. Say hello. Ask the person beside you a real, low-pressure question. Connection usually begins more plainly than we imagine.</p></div></section>
+          <section className={styles.step}><span>02</span><div><h3>Eyes first. Make one ordinary opening.</h3><p>Meet someone&apos;s eyes. Say hello. Ask the person beside you a real, low pressure question. Connection usually begins more plainly than we imagine.</p></div></section>
           <section className={styles.step}><span>03</span><div><h3>Use the phone to make the plan</h3><p>Text the invitation, choose the place, and set the time. Then let the actual conversation happen without the feed sitting between you.</p></div></section>
         </div>
 
-        <div className={styles.note}><strong>This is not about becoming anti-technology.</strong><p>It is about making sure a tool helps you reach a person instead of quietly replacing the chance to meet one.</p></div>
+        <div className={styles.note}><strong>This is not about becoming anti technology.</strong><p>It is about making sure a tool helps you reach a person instead of quietly replacing the chance to meet one.</p></div>
       </article>
     </section>
 
@@ -72,7 +72,7 @@ export default function LookUpAtClemson() {
 
     </section>
 
-    <section className={styles.cta}><div><span>THE ATTENTION RESET</span><h2>Change the default before you test your discipline.</h2></div><div><p>Grayscale, quieter feeds, a physical phone home, and three days of noticing give you a practical place to begin.</p><Link href="/library">See the complete course <b>→</b></Link></div></section>
+    <section className={styles.cta}><div><span>THE FOCUS PROTOCOL</span><h2>Change the default before you test your discipline.</h2></div><div><p>Grayscale, quieter feeds, a physical phone home, and three days of noticing give you a practical place to begin.</p><Link href="/library">See the complete course <b>→</b></Link></div></section>
     <Footer />
   </main>;
 }

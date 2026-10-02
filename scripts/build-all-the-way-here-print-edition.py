@@ -1,4 +1,8 @@
-"""Build the full print-first edition of All the Way Here from canonical course content."""
+"""Build the All the Way Here course book (the printed edition) from canonical course content.
+
+The lesson text comes from app/course-content.ts, exported to DATA as JSON.
+Fonts come from scripts/fonts so the book builds the same on any machine.
+"""
 from pathlib import Path
 import json
 from reportlab.lib import colors
@@ -15,7 +19,8 @@ from reportlab.platypus import (
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "tmp/pdfs/course-content.json"
-OUT = ROOT / "output/pdf/all-the-way-here-print-edition.pdf"
+OUT = ROOT / "public/downloads/all-the-way-here-print-edition.pdf"
+FONTS = ROOT / "scripts" / "fonts"
 
 NAVY = colors.HexColor("#092f3c")
 TEAL = colors.HexColor("#21859d")
@@ -28,12 +33,16 @@ PALE = colors.HexColor("#edf5f4")
 
 
 def fonts():
-    pdfmetrics.registerFont(TTFont("Futura", "/System/Library/Fonts/Supplemental/Futura.ttc", subfontIndex=0))
-    pdfmetrics.registerFont(TTFont("FuturaBold", "/System/Library/Fonts/Supplemental/Futura.ttc", subfontIndex=2))
-    pdfmetrics.registerFont(TTFont("Avenir", "/System/Library/Fonts/Avenir Next.ttc", subfontIndex=7))
-    pdfmetrics.registerFont(TTFont("AvenirDemi", "/System/Library/Fonts/Avenir Next.ttc", subfontIndex=2))
-    pdfmetrics.registerFont(TTFont("Charter", "/System/Library/Fonts/Supplemental/Charter.ttc", subfontIndex=0))
-    pdfmetrics.registerFont(TTFont("CharterBold", "/System/Library/Fonts/Supplemental/Charter.ttc", subfontIndex=3))
+    """Jost stands in for Futura, Figtree for Avenir Next, DM Serif Display for Charter."""
+    for name, file in [
+        ("Futura", "Jost-Medium.ttf"),
+        ("FuturaBold", "Jost-Bold.ttf"),
+        ("Avenir", "Figtree-Regular.ttf"),
+        ("AvenirDemi", "Figtree-SemiBold.ttf"),
+        ("Charter", "DMSerifDisplay-Regular.ttf"),
+        ("CharterBold", "DMSerifDisplay-Regular.ttf"),
+    ]:
+        pdfmetrics.registerFont(TTFont(name, str(FONTS / file)))
 
 
 def styles():
@@ -94,7 +103,7 @@ def header_footer(canvas, doc):
     canvas.drawImage(str(logo), doc.leftMargin, h - 31, width=96, height=28, mask="auto")
     canvas.setFillColor(MUTED)
     canvas.setFont("AvenirDemi", 7.5)
-    canvas.drawRightString(w - doc.rightMargin, h - 24, "ALL THE WAY HERE · PRINT EDITION")
+    canvas.drawRightString(w - doc.rightMargin, h - 24, "ALL THE WAY HERE · COURSE BOOK")
     canvas.setStrokeColor(RULE)
     canvas.line(doc.leftMargin, 38, w - doc.rightMargin, 38)
     canvas.setFillColor(MUTED)
@@ -149,7 +158,7 @@ def lesson_pages(story, s, lesson):
     story.append(Paragraph(lesson['adaptation'], s["body"]))
     story.append(Paragraph("Do it together", s["h3"]))
     story.append(Paragraph(lesson['together'], s["body"]))
-    story.append(Paragraph(f"FIELD KIT · SHEET {lesson['kit']['sheet']} · {lesson['kit']['sheetName']}", s["label"]))
+    story.append(Paragraph(f"RESOURCE PACK · SHEET {lesson['kit']['sheet']} · {lesson['kit']['sheetName']}", s["label"]))
     story.append(Paragraph(f"Where it lives: <b>{lesson['kit']['livesAt']}</b>", s["body_dark"]))
     story.append(Paragraph("Try this week", s["h3"]))
     story.append(Paragraph(lesson['action'], s["body"]))
@@ -166,25 +175,25 @@ def build():
     s = styles()
     content = json.loads(DATA.read_text())
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    doc = SimpleDocTemplate(str(OUT), pagesize=letter, leftMargin=.72*inch, rightMargin=.72*inch, topMargin=.72*inch, bottomMargin=.65*inch, title="All the Way Here - Print Edition", author="Chris Avera, Here Supply Co.")
+    doc = SimpleDocTemplate(str(OUT), pagesize=letter, leftMargin=.72*inch, rightMargin=.72*inch, topMargin=.72*inch, bottomMargin=.65*inch, title="All the Way Here: Course Book", author="Chris Avera, Here Supply Co.")
     story = []
     logo = ROOT / "public/assets/brand/here-supply-co-logo-v2.png"
     story += [Spacer(1, .9*inch), Table([[" "]], colWidths=[7.05*inch], rowHeights=[.02*inch], style=[("BACKGROUND",(0,0),(-1,-1),TEAL)]), Spacer(1, .4*inch)]
     story.append(Paragraph("HERE SUPPLY CO.", s["cover_kicker"]))
     story.append(Paragraph("ALL THE WAY<br/>HERE.", s["cover_title"]))
-    story.append(Paragraph("A print-first course for bringing your attention back to the people and life already in front of you.", s["cover_sub"]))
+    story.append(Paragraph("A course on paper for bringing your attention back to the people and life already in front of you.", s["cover_sub"]))
     story.append(Spacer(1, .25*inch))
     story.append(Paragraph("Focus Protocol · Return · Lead · Keep", s["cover_small"]))
     story.append(Spacer(1, 3.4*inch))
-    story.append(Paragraph("Use the digital course for the short videos and a quick reminder. Use this book for the work itself: mark it up, write in it, and come back when life gets noisy.", s["cover_small"]))
+    story.append(Paragraph("Use the online course for a quick reminder. Use this book for the work: mark it up, write in it, and come back when life gets noisy.", s["cover_small"]))
     story.append(PageBreak())
     story.append(Paragraph("HOW TO USE THIS BOOK", s["kicker"]))
     story.append(Paragraph("Less screen. More life.", s["h1"]))
-    story.append(Paragraph("You get both versions. The digital course is useful when you want the short videos, need a quick reminder, or prefer a screen. This print edition is the recommended way to work: writing, noticing, trying something in a real week, and returning when you miss. Paper slows the loop down. It gives your brain one place to think without another tab, feed, or notification asking for you.", s["body"]))
+    story.append(Paragraph("You get both versions. The online course is handy for a quick reminder or when you would rather read on a screen. This course book is the way we recommend working through it: write, notice, try something in a normal week, and come back when you miss. Paper slows the loop down. It gives your brain one place to think without another tab, feed, or notification asking for you.", s["body"]))
     steps = [
         ("01", "Start with the Focus Protocol", "Try the four moves for 72 hours. Do not make every boundary permanent on day one."),
         ("02", "Pick the pressure point", "Move to the lesson that meets the part of life that is asking for you right now."),
-        ("03", "Use the matching sheet", "Every lesson points to a tool. Print it and place it where it can actually help."),
+        ("03", "Use the matching sheet", "Every lesson points to a tool. Print it and place it where it can help."),
         ("04", "Keep only what works", "Choose two practices for thirty days. Let the others wait without guilt."),
     ]
     rows = [[Paragraph(n, s["label"]), Paragraph(f"<b>{t}</b><br/>{b}", s["step"])] for n,t,b in steps]
@@ -193,9 +202,9 @@ def build():
     story.append(Paragraph("The promise you are making", s["h2"]))
     story.append(quote_box(content['RESET_DECLARATION'], s))
     story.append(PageBreak())
-    story.append(Paragraph("THE 72-HOUR FOCUS PROTOCOL", s["kicker"]))
+    story.append(Paragraph("THE 72 HOUR FOCUS PROTOCOL", s["kicker"]))
     story.append(Paragraph("Control the inputs. Choose the attention.", s["h1"]))
-    story.append(Paragraph("This is not a detox or a test of discipline. It is a short experiment in environment design: reduce what pulls at you, create enough friction to notice the reflex, and make a different choice in ordinary life.", s["body"]))
+    story.append(Paragraph("Treat this as a short experiment in changing your surroundings. Reduce what pulls at you, add enough friction to notice the reflex, and make a different choice in everyday life. Nobody is testing your discipline.", s["body"]))
     for move in content['FOCUS_MOVES']:
         story.append(KeepTogether([Paragraph(f"{move['number']} · {move['title'].upper()}", s["h2"]), Paragraph(move['promise'], s["body_dark"]), Paragraph(move['body'], s["body"]), Paragraph(f"<b>Make it fit:</b> {move['exception']}", s["step"])]))
     story.append(PageBreak())
@@ -218,7 +227,7 @@ def build():
     story.append(PageBreak())
     for lesson in content['CORE_LESSONS']:
         lesson_pages(story, s, lesson)
-    story.append(Paragraph("THE FIELD KIT", s["kicker"]))
+    story.append(Paragraph("THE RESOURCE PACK", s["kicker"]))
     story.append(Paragraph("Tools that live where life happens.", s["h1"]))
     story.append(Paragraph("This course book is the place to learn and write. The individual sheets stay separate on purpose: print the one you need and place it where the practice needs to happen.", s["body"]))
     rows=[]
@@ -226,13 +235,13 @@ def build():
         rows.append([Paragraph(sheet['sheet'],s['label']), Paragraph(f"<b>{sheet['name']}</b><br/>{sheet['note']}",s['step']), Paragraph(sheet['livesAt'],s['step'])])
     t=Table(rows,colWidths=[.5*inch,4.3*inch,2.2*inch]); t.setStyle(TableStyle([("VALIGN",(0,0),(-1,-1),"TOP"),("LINEBELOW",(0,0),(-1,-1),.45,RULE),("TOPPADDING",(0,0),(-1,-1),7),("BOTTOMPADDING",(0,0),(-1,-1),7),("LEFTPADDING",(0,0),(-1,-1),0)]));story.append(t)
     story.append(PageBreak())
-    story.append(Paragraph("YOUR THIRTY-DAY PAGE", s["kicker"]))
+    story.append(Paragraph("YOUR THIRTY DAY PAGE", s["kicker"]))
     story.append(Paragraph("Keep the parts that held up.", s["h1"]))
-    story.append(Paragraph("Do not keep nine practices because you bought nine lessons. Choose two that meet a real problem and give each a situation, a response, and a smallest version for the hard week.", s["body"]))
+    story.append(Paragraph("Do not keep every practice just because you bought the course. Look back at the Focus Protocol and the eight practices, choose two that meet a problem you have, and give each a situation, a response, and a smallest version for the hard week.", s["body"]))
     for prompt in ["The two practices I am keeping", "The moment each practice is for", "The smallest version I will still do on a hard week", "What I noticed about the people I share life with", "What we want to revisit in thirty days"]:
         story.append(Spacer(1, 10)); story.append(Paragraph(prompt, s["h3"])); story.append(line_table(7.0*inch, 3))
     story.append(Spacer(1, 12))
-    story.append(quote_box("There is no perfect finish. The point is to notice sooner, repair faster, and keep returning to the life in front of you.", s))
+    story.append(quote_box("There is no perfect finish. Notice sooner, repair faster, and keep coming back to the life in front of you.", s))
     story.append(Paragraph("Notes to take back to the table", s["h2"]))
     story.append(Paragraph("Use this last page for what you want to remember, talk about, or carry into the next Sunday Board Meeting.", s["body"]))
     story.append(Paragraph("What I want to try this week", s["h3"]))

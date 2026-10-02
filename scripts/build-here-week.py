@@ -24,11 +24,28 @@ MUTED = color("#526b72")
 RULE = color("#b8d3d5")
 
 
+FONTS = ROOT / "scripts" / "fonts"
+
+
 def fonts():
-    pdfmetrics.registerFont(TTFont("FuturaBold", "/System/Library/Fonts/Supplemental/Futura.ttc", subfontIndex=2))
-    pdfmetrics.registerFont(TTFont("Avenir", "/System/Library/Fonts/Avenir Next.ttc", subfontIndex=7))
-    pdfmetrics.registerFont(TTFont("AvenirDemi", "/System/Library/Fonts/Avenir Next.ttc", subfontIndex=2))
-    pdfmetrics.registerFont(TTFont("Charter", "/System/Library/Fonts/Supplemental/Charter.ttc", subfontIndex=0))
+    """Open fonts kept in the repo so the page builds the same on any machine.
+
+    Jost stands in for Futura, Figtree for Avenir Next, DM Serif Display for Charter.
+    """
+    for name, file in [
+        ("FuturaBold", "Jost-Bold.ttf"),
+        ("Avenir", "Figtree-Regular.ttf"),
+        ("AvenirDemi", "Figtree-SemiBold.ttf"),
+        ("Charter", "DMSerifDisplay-Regular.ttf"),
+    ]:
+        pdfmetrics.registerFont(TTFont(name, str(FONTS / file)))
+
+
+def fit(text, font, size, max_width):
+    """Shrink a single line until it fits, so nothing runs past its box or the margin."""
+    while size > 6 and pdfmetrics.stringWidth(text, font, size) > max_width:
+        size -= 0.2
+    return size
 
 
 def fill(c, value): c.setFillColorRGB(*value)
@@ -38,8 +55,9 @@ def stroke(c, value): c.setStrokeColorRGB(*value)
 def ruled_box(c, x, y, width, height, label, prompt, lines=3):
     stroke(c, RULE); c.setLineWidth(.7); c.rect(x, y, width, height, stroke=1, fill=0)
     fill(c, CORAL); c.setFont("FuturaBold", 8); c.drawString(x + 14, y + height - 18, label)
-    fill(c, MUTED); c.setFont("Avenir", 8.3)
+    fill(c, MUTED)
     for index, line in enumerate(prompt.split("\n")):
+        c.setFont("Avenir", fit(line, "Avenir", 8.3, width - 28))
         c.drawString(x + 14, y + height - 33 - (index * 11), line)
     stroke(c, RULE); c.setLineWidth(.55)
     top = y + height - 50 - ((len(prompt.split("\n")) - 1) * 11)
@@ -50,7 +68,7 @@ def ruled_box(c, x, y, width, height, label, prompt, lines=3):
 def build():
     fonts(); OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     c = canvas.Canvas(str(OUTPUT), pagesize=letter, pageCompression=1)
-    c.setTitle("The Here Week - A Simple Weekly Planning Page")
+    c.setTitle("The Here Week: A Simple Weekly Planning Page")
     c.setAuthor("Chris Avera, Here Supply Co.")
     c.setSubject("A simple weekly planning page for work, home, and the life in between")
     width, height = letter
@@ -60,8 +78,10 @@ def build():
     fill(c, CORAL); c.setFont("FuturaBold", 8.8); c.drawRightString(578, 756, "RESOURCE PACK / PRINT ONE COPY")
     stroke(c, RULE); c.line(34, 724, 578, 724)
     fill(c, INK); c.setFont("FuturaBold", 31); c.drawString(34, 678, "THE HERE WEEK")
-    fill(c, MUTED); c.setFont("AvenirDemi", 11); c.drawString(35, 654, "One page to decide what matters before the week starts deciding for you.")
-    fill(c, INK); c.setFont("Charter", 10.5); c.drawString(35, 631, "Start with the shared Sunday Board. Then use this page for the work, home, and personal choices")
+    line = "One page to decide what matters before the week starts deciding for you."
+    fill(c, MUTED); c.setFont("AvenirDemi", fit(line, "AvenirDemi", 11, 543)); c.drawString(35, 654, line)
+    line = "Start with the shared Sunday Board. Then use this page for the work, home, and personal choices"
+    fill(c, INK); c.setFont("Charter", fit(line, "Charter", 10.5, 543)); c.drawString(35, 631, line)
     c.drawString(35, 616, "that are yours to carry.")
     fill(c, MUTED); c.setFont("AvenirDemi", 8.5); c.drawString(35, 594, "WEEK OF:")
     stroke(c, RULE); c.line(94, 592, 238, 592)
@@ -69,7 +89,8 @@ def build():
     ruled_box(c, 34, 353, 264, 102, "02 · WORK", "One meaningful target, one block to protect,\none loose end to close.", 3)
     ruled_box(c, 314, 353, 264, 102, "03 · HOME + PEOPLE", "What the house needs, who needs your attention,\nand one thing to protect.", 3)
     fill(c, INK); c.setFont("FuturaBold", 12); c.drawString(34, 326, "04 · SEE THE WEEK")
-    fill(c, MUTED); c.setFont("Avenir", 9); c.drawString(34, 311, "Write only the appointments, handoffs, and pressure points that change how you use your time.")
+    line = "Write only the appointments, handoffs, and pressure points that change how you use your time."
+    fill(c, MUTED); c.setFont("Avenir", fit(line, "Avenir", 9, 544)); c.drawString(34, 311, line)
     days = ["MON", "TUE", "WED", "THU", "FRI", "WEEKEND"]
     y = 284
     for day in days:
@@ -77,7 +98,7 @@ def build():
         stroke(c, RULE); c.setLineWidth(.55); c.line(89, y - 1, 578, y - 1)
         y -= 22
     ruled_box(c, 34, 76, 264, 72, "05 · WHEN THE WEEK GETS TIGHT", "The pressure point I can prepare for now.", 2)
-    ruled_box(c, 314, 76, 264, 72, "06 · FRIDAY CHECK-IN", "What held up? What should change next week?", 2)
+    ruled_box(c, 314, 76, 264, 72, "06 · FRIDAY CHECK IN", "What held up? What should change next week?", 2)
     stroke(c, OCEAN); c.setLineWidth(2); c.line(34, 55, 578, 55)
     fill(c, INK); c.setFont("Charter", 12); c.drawString(34, 29, "A planner only works if it gets used. Keep this one visible.")
     fill(c, CORAL); c.setFont("FuturaBold", 8.5); c.drawRightString(578, 29, "HERE SUPPLY CO. / THE HERE WEEK")

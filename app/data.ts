@@ -30,7 +30,7 @@ export const MOMENTS: Record<MomentKey, Moment> = {
     title: "My attention keeps drifting away.",
     detail: "Phone, work, and noise are getting more of me than the people I love.",
     label: "Bring your attention back",
-    protocol: "THE 15-MINUTE FLOOR RULE",
+    protocol: "THE FIFTEEN MINUTE FLOOR RULE",
     summary: "This is a presence problem, not a phone problem.",
     steps: [
       "Put your phone in another room.",
@@ -50,7 +50,7 @@ export const MOMENTS: Record<MomentKey, Moment> = {
     summary: "A clean stopping point can keep the whole workday from walking through the door with you.",
     steps: [
       "Park. Engine off. Phone silent.",
-      "Take a two-minute inventory. Name what you are carrying that belongs to tomorrow.",
+      "Take a two minute inventory. Name what you are carrying that belongs to tomorrow.",
       "Take three deep breaths, then decide how you want to enter before opening the door.",
     ],
     note: "You do not need to fake a good mood. You do need to stop handing your family the whole weight of the day.",
@@ -78,10 +78,10 @@ export const MOMENTS: Record<MomentKey, Moment> = {
     title: "The week keeps getting away from us.",
     detail: "The things that matter get pushed aside by logistics and surprise.",
     label: "Put the week on the table",
-    protocol: "THE WEEKLY CHECK-IN",
-    summary: "A short weekly check-in keeps the house from being run by surprise.",
+    protocol: "THE WEEKLY CHECK IN",
+    summary: "A short weekly check in keeps the house from being run by surprise.",
     steps: [
-      "Set aside fifteen minutes on Sunday with the one-page guide.",
+      "Set aside fifteen minutes on Sunday with the one page guide.",
       "Start with one honest appreciation before moving into logistics.",
       "Look at the calendar, name the pressure points, choose one shared priority, and remove one unnecessary thing.",
     ],
@@ -114,7 +114,7 @@ export const MOMENTS: Record<MomentKey, Moment> = {
     summary: "Real friendship is shared time, low stakes, and repetition.",
     steps: [
       "Pick one person you respect.",
-      "Invite them to something shoulder-to-shoulder, with a day and time.",
+      "Invite them to something shoulder to shoulder, with a day and time.",
       "Keep the invitation light. Repeat it next week if it needs to become a rhythm.",
     ],
     note: "Do not wait until isolation feels like an emergency. Invite first.",

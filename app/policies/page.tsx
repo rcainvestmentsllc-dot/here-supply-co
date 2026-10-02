@@ -6,7 +6,7 @@ import styles from "./policies.module.css";
 
 export const metadata: Metadata = {
   title: "Policies | Here Supply Co.",
-  description: "Refund, privacy, and educational-use policies for Here Supply Co.",
+  description: "Refund, privacy, and educational use policies for Here Supply Co.",
   alternates: { canonical: "/policies" },
 };
 
@@ -16,7 +16,7 @@ export default function Policies() {
       <Header />
       <section className={styles.hero}>
         <p className="kicker">HERE SUPPLY CO.</p>
-        <h1>Plain-language<br /><em>policies.</em></h1>
+        <h1>Plain language<br /><em>policies.</em></h1>
         <p>What happens when you buy, subscribe, or ask for help.</p>
         <small>Last updated August 26, 2026</small>
       </section>
@@ -30,7 +30,7 @@ export default function Policies() {
         <div className={styles.sections}>
           <section id="refund">
             <p>01 · REFUNDS</p>
-            <h2>14-day refund window</h2>
+            <h2>14 day refund window</h2>
             <p>If All the Way Here is not a useful fit, request a refund within 14 calendar days of the original purchase. Use the contact form and include the email address used at checkout so the purchase can be located.</p>
             <p>Approved refunds are returned to the original payment method. Access to the purchased material may end after a refund. The time it takes to appear in your account depends on the payment provider and your financial institution.</p>
           </section>
@@ -38,20 +38,20 @@ export default function Policies() {
             <p>02 · PRIVACY</p>
             <h2>The information this site uses</h2>
             <p>The free weekly guide can be downloaded without providing an email address or creating an account. If you separately choose to follow Chris on Substack, Substack processes that subscription and provides its own unsubscribe controls.</p>
-            <p>Purchases are processed through MailerLite and Stripe. Here Supply Co. may receive the contact and transaction details needed to deliver the product, provide support, and handle refunds. Here Supply Co. does not receive your full payment-card number.</p>
+            <p>Purchases are processed through MailerLite and Stripe. Here Supply Co. may receive the contact and transaction details needed to deliver the product, provide support, and handle refunds. Here Supply Co. does not receive your full payment card number.</p>
             <p>The contact form is provided through Google. When you use it, Google and Here Supply Co. receive the information you choose to submit. The site may also generate ordinary technical logs through its hosting providers. Here Supply Co. does not sell personal information.</p>
             <p>You may ask to review or delete the personal information Here Supply Co. controls by using the contact form. Some transaction records may need to be retained for accounting, fraud prevention, or legal obligations.</p>
           </section>
           <section id="use">
             <p>03 · EDUCATIONAL USE</p>
             <h2>Practical education, not professional care</h2>
-            <p>Here Supply Co. materials are educational tools for personal use. They are not medical care, mental-health treatment, couples therapy, legal advice, or financial advice. Use your judgment and seek a qualified professional when the situation calls for one.</p>
-            <p>Purchased access is for the buyer’s personal use. Please do not republish, resell, or publicly distribute the videos, lesson links, manuals, or worksheets.</p>
+            <p>Here Supply Co. materials are educational tools for personal use. They are not medical care, mental health treatment, couples therapy, legal advice, or financial advice. Use your judgment and seek a qualified professional when the situation calls for one.</p>
+            <p>Purchased access is for the buyer’s personal use. Please do not republish, resell, or publicly distribute the lessons, course book, or printable sheets.</p>
           </section>
           <section id="contact">
             <p>04 · CONTACT</p>
             <h2>Questions or refund requests</h2>
-            <p>Use the contact form and include the email address connected to your signup or purchase. Do not send payment-card information through the form.</p>
+            <p>Use the contact form and include the email address connected to your signup or purchase. Do not send payment card information through the form.</p>
             <a className="button dark" href={CONTACT_FORM}>Contact Chris <span>→</span></a>
           </section>
         </div>

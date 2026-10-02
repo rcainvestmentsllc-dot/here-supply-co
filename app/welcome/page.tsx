@@ -47,13 +47,13 @@ export default function WelcomePage() {
           </li>
           <li>
             <b>Start with the Focus Protocol.</b>
-            <span>Three days, four small moves, before you ask anyone else to change anything.</span>
+            <span>Three days, four small moves, before either of you asks the other to change anything.</span>
           </li>
           <li>
-            <b>Then one lesson at a time.</b>
+            <b>Print the course book while it runs.</b>
             <span>
-              Nine lessons, one practice each, into an ordinary week. Print the course book if you can.
-              It is the best way to do the work.
+              Then on day four, open Return and take one lesson at a time, one practice each, into a
+              normal week.
             </span>
           </li>
         </ol>

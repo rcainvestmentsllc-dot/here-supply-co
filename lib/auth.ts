@@ -12,7 +12,7 @@
 import type { CloudflareEnv } from "./cloudflare-env";
 
 export const PRODUCTS = {
-  focus: { slug: "focus", accessPath: "/access/focus-7f3k9q", label: "The Attention Reset" },
+  focus: { slug: "focus", accessPath: "/access/focus-7f3k9q", label: "The Focus Protocol" },
   core: { slug: "core", accessPath: "/access/core-4m8r2p", label: "All the Way Here" },
 } as const;
 

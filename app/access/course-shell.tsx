@@ -2,11 +2,23 @@ import type { ReactNode } from "react";
 import { PlainLink as Link } from "../plain-link";
 import { CORE_LESSONS, CORE_MOVEMENTS } from "../course-content";
 import { RailDisclosure } from "./course-rail";
+import { ProgressSync } from "./progress";
 import styles from "./course.module.css";
 
 const COURSE_ROOT = "/access/core-4m8r2p";
 
-function CheckIcon({ filled }: { filled: boolean }) {
+// Progress lives in the browser, so both marks are rendered and the data-done
+// attribute (painted by ProgressSync) chooses which one shows.
+function CheckIcon(_props: { filled?: boolean }) {
+  return (
+    <>
+      <span className={styles.markEmpty}><CheckGlyph filled={false} /></span>
+      <span className={styles.markFull}><CheckGlyph filled /></span>
+    </>
+  );
+}
+
+function CheckGlyph({ filled }: { filled: boolean }) {
   if (!filled) {
     return (
       <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -54,18 +66,19 @@ export function CourseShell({
             <div className={styles.progressMeta}>
               <span>Progress</span>
               <b>
-                {done} of {total}
+                <span data-progress-count>{done}</span> of <span data-lesson-total={total}>{total}</span>
               </b>
             </div>
             <div
               className={styles.progressTrack}
               role="progressbar"
+              data-progress-bar
               aria-valuenow={done}
               aria-valuemin={0}
               aria-valuemax={total}
               aria-label="Lessons completed"
             >
-              <div className={styles.progressFill} style={{ width: `${pct}%` }} />
+              <div className={styles.progressFill} data-progress-fill style={{ width: `${pct}%` }} />
             </div>
           </div>
         </div>
@@ -92,6 +105,7 @@ export function CourseShell({
                         key={lesson.slug}
                         href={`${COURSE_ROOT}/lesson/${lesson.slug}`}
                         className={classes.join(" ")}
+                        data-lesson={lesson.slug}
                         aria-current={isCurrent ? "page" : undefined}
                       >
                         <span className={styles.lessonNum}>{lesson.number}</span>
@@ -125,6 +139,7 @@ export function CourseShell({
         </RailDisclosure>
       </aside>
 
+      <ProgressSync />
       <main id="main-content" className={styles.main}>
         <div className={styles.inner}>{children}</div>
       </main>

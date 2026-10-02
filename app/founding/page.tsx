@@ -6,8 +6,10 @@ import styles from "./founding.module.css";
 export const metadata: Metadata = {
   title: "Founding Circle | Here Supply Co.",
   description:
-    "A small invited group helping test All the Way Here before the wider launch.",
+    "A small invited group of couples using All the Way Here and telling Chris what worked.",
   alternates: { canonical: "/founding" },
+  // Invite only. Strangers should find the $99 course, not a free offer.
+  robots: { index: false, follow: true },
 };
 
 /**
@@ -45,9 +47,9 @@ export default function Founding() {
           this <em>works for anyone but me.</em>
         </h1>
         <p className={styles.lead}>
-          All the Way Here has never been run by anyone except my own family. Before I ask a
-          stranger to pay for it, I am inviting a small group of 12 to 15 couples to actually do it
-          and tell me the truth about what happened, including the parts that did not work.
+          Until now, All the Way Here has only been run by my own family. Before more people pay
+          for it, I am inviting a small group of twelve couples to do it and tell me the truth about
+          what happened, including the parts that did not work.
         </p>
         <p className={styles.leadSmall}>
           You get the whole thing. The Resource Pack, the three day Focus Protocol, and all nine
@@ -77,15 +79,15 @@ export default function Founding() {
             <li>
               <b>Nine lessons</b>
               <span>
-                One practice each, across attention, pressure, your marriage, your kids if you have
-                them, and the parts of a life that go quiet first.
+                One practice each, on how you get home from work, handle pressure, date, parent, and
+                keep friends.
               </span>
             </li>
             <li>
               <b>Me, reachable</b>
               <span>
-                You can email me directly while you are working through it, and I will answer. That
-                is not a support desk, it is my actual inbox.
+                You can email me directly while you are working through it. It goes straight to my
+                inbox and I will answer.
               </span>
             </li>
           </ul>
@@ -95,10 +97,10 @@ export default function Founding() {
           <p className={styles.label}>WHAT I AM ASKING FOR</p>
           <ul>
             <li>
-              <b>Actually do it</b>
+              <b>Do it for real</b>
               <span>
-                Not skim it. The reset takes three days and each practice takes minutes. If you
-                sign up and never open it, I learn nothing and so do you.
+                Skimming will not tell either of us much. The reset takes three days and each
+                practice takes minutes. If you never open it, I learn nothing and so do you.
               </span>
             </li>
             <li>
@@ -118,9 +120,8 @@ export default function Founding() {
           </ul>
 
           <p className={styles.honest}>
-            I am not a therapist and I am not going to invent a title I do not have. This is
-            education, not counseling. If what the two of you are carrying needs a professional,
-            it needs a professional, and this is not a substitute for one.
+            I am not a therapist and this is not counseling. If what the two of you are carrying
+            needs a professional, please find one. This course does not replace that.
           </p>
         </div>
       </section>
@@ -130,16 +131,16 @@ export default function Founding() {
           <p className={styles.label}>WHO THIS FITS</p>
           <p className={styles.fitYes}>
             Two people sharing a life who are tired of being in the same room and somewhere else.
-            Kids or no kids, eight of the nine lessons do not care. One of you can start alone,
+            Kids or no kids, eight of the nine lessons work the same. One of you can start alone,
             though it works better with both.
           </p>
         </div>
         <div>
           <p className={styles.label}>WHO IT DOES NOT</p>
           <p className={styles.fitNo}>
-            Anyone hoping this fixes a marriage in real trouble, and anyone who wants to hand it to
-            their partner as evidence. Nothing in the kit is written to correct one person. If that
-            is what you need it for, it will not land.
+            Anyone hoping this fixes a relationship in real trouble, and anyone who wants to hand it
+            to their partner as evidence. Nothing in it is written to correct one person. If that is
+            what you need it for, it will not land.
           </p>
         </div>
       </section>
@@ -164,12 +165,11 @@ export default function Founding() {
 
       <section className={styles.signup} id="join">
         <div className={styles.card}>
-          <span className={styles.cardKicker}>Invite only · 12 to 15 couples</span>
+          <span className={styles.cardKicker}>Invite only · Twelve couples</span>
           <h2 className={styles.cardTitle}>Built with a small circle, not a mailing list.</h2>
           <p className={styles.cardBlurb}>
             The first circle is being invited personally so Chris can read the feedback, answer real
-            questions, and make the course better before a wider launch. It is not open for public
-            sign-up yet.
+            questions, and make the course better. There is no public signup.
           </p>
           <p className={styles.cardNote}>
             If you did not receive an invitation, start with the free Sunday Board Meeting. It is the

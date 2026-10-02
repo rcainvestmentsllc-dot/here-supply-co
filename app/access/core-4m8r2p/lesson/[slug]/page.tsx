@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { CORE_LESSONS, LESSON_GUIDES, getCoreLesson, getMovement, getKitSheet } from "../../../../course-content";
 import { PlainLink as Link } from "../../../../plain-link";
 import { CourseShell, COURSE_ROOT } from "../../../course-shell";
+import { MarkDone } from "../../../progress";
 import styles from "../../../course.module.css";
 
 export const metadata: Metadata = {
@@ -157,10 +158,7 @@ export default async function CoreLessonPage({ params }: { params: Promise<{ slu
         <section className={styles.kit}>
           <header className={styles.kitHead}>
             <p className={styles.label}>Practice kit</p>
-            <h2 className={styles.blockTitle}>Make the idea usable.</h2>
-            <p style={{ margin: 0, color: "var(--hsc-copy)" }}>
-              This is the layer that takes the lesson out of your head and puts it into a real week.
-            </p>
+            <h2 className={styles.blockTitle}>How to make it stick.</h2>
           </header>
           <div className={styles.kitGrid}>
             <article>
@@ -195,11 +193,13 @@ export default async function CoreLessonPage({ params }: { params: Promise<{ slu
       <section className={styles.reflection}>
         <p className={styles.label}>One question</p>
         <h2>{lesson.reflection}</h2>
+        <MarkDone slug={lesson.slug} />
         <Link
-          href={next ? `${COURSE_ROOT}/lesson/${next.slug}` : "/downloads/all-the-way-here-print-edition.pdf"}
-          className={`${styles.btn} ${styles.btnPrimary}`}
+          href={next ? `${COURSE_ROOT}/lesson/${next.slug}` : "/downloads/thirty-day-page.pdf"}
+          className={`${styles.btn} ${styles.btnGhost}`}
+          style={{ marginTop: 14 }}
         >
-          {next ? "Take the next lesson" : "Build your 30-day plan"}
+          {next ? "Take the next lesson" : "Print your thirty day page"}
           <span aria-hidden="true">→</span>
         </Link>
       </section>
@@ -208,21 +208,18 @@ export default async function CoreLessonPage({ params }: { params: Promise<{ slu
         <div>
           <h3>Put this lesson on paper.</h3>
           <p>
-            Every lesson has a matching action page in the print course book. Try the practice first, then
-            write what happened and name the next real move.
+            Every lesson has a matching page in the course book. Try the practice first, then
+            write what happened and what you will do next.
           </p>
         </div>
         <div className={styles.workbookActions}>
-          <Link href="/downloads/all-the-way-here-print-edition.pdf" className={`${styles.btn} ${styles.btnGhost}`}>
-            Open the print course book <span aria-hidden="true">→</span>
-          </Link>
           <a
             className={`${styles.btn} ${styles.btnGhost}`}
             href="/downloads/all-the-way-here-print-edition.pdf"
             target="_blank"
             rel="noreferrer"
           >
-            Printable page <span aria-hidden="true">↓</span>
+            Open the course book <span aria-hidden="true">↓</span>
           </a>
         </div>
       </section>
@@ -251,9 +248,9 @@ export default async function CoreLessonPage({ params }: { params: Promise<{ slu
             <strong>{next.title} →</strong>
           </Link>
         ) : (
-          <Link href="/downloads/all-the-way-here-print-edition.pdf" className={`${styles.navLink} ${styles.navNext}`}>
+          <Link href="/downloads/thirty-day-page.pdf" className={`${styles.navLink} ${styles.navNext}`}>
             <small>Finish the course</small>
-            <strong>Build your 30-day plan →</strong>
+            <strong>Your thirty day page →</strong>
           </Link>
         )}
       </nav>

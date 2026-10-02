@@ -98,22 +98,22 @@ def sunday_board(path):
 
 def reset_sheet(path):
     c = canvas.Canvas(path, pagesize=letter)
-    c.setTitle("The Attention Reset")
-    masthead(c, "THE ATTENTION RESET  ·  SEVENTY TWO HOURS  ·  PUT THIS ON THE FRIDGE", "SHEET 02")
+    c.setTitle("The Focus Protocol")
+    masthead(c, "THE FOCUS PROTOCOL  ·  SEVENTY TWO HOURS  ·  PUT THIS ON THE FRIDGE", "SHEET 02")
 
     y = H - M - 62
     c.setFont("Archivo-Bold", 27); c.setFillColor(INK)
     c.drawString(M, y, "Four moves. Three days.")
     y -= 20
     c.setFont("Archivo", 10.5); c.setFillColor(QUIET)
-    c.drawString(M, y, "Not a detox and not a test of willpower. You are changing what reaches you, then watching what changes.")
+    c.drawString(M, y, "You are changing what reaches you for three days, then watching what changes. Willpower has little to do with it.")
 
     y -= 30
     tracked(c, M, y, "THE FOUR MOVES", "Plex-Semi", 7.4, IRON, 1.5)
     y -= 16
     moves = [
         ("01", "Remove the color", "Switch the display to grayscale. Turn it back on when work, maps, photos or accessibility genuinely need it."),
-        ("02", "Control the feeds", "Sign out of the few apps you open without deciding. Keep the tools you actually need."),
+        ("02", "Control the feeds", "Sign out of the few apps you open without deciding. Keep the tools you need."),
         ("03", "Silence the machine", "Nonessential notifications off. Keep priority calls, medical alerts and anyone doing caregiving."),
         ("04", "Give the phone a home", "One drawer or shelf when you walk in. If all evening is unrealistic, protect dinner or bedtime."),
     ]
@@ -163,7 +163,7 @@ def reset_sheet(path):
     for ln in lines[2:]:
         c.setFont("Archivo", 10); c.setFillColor(PAPER); c.drawString(M + (W - 2 * M) / 2 + 6, ly, chr(8220) + ln + chr(8221)); ly -= 17
     c.setFont("Archivo-Semi", 8.4); c.setFillColor(BRASS)
-    c.drawString(M + 14, y - 62, "None of those are decisions. Hold the arrangement fourteen days before you change anything.")
+    c.drawString(M + 14, y - 62, "Each one is the habit talking. Hold the arrangement fourteen days before you change anything.")
 
     y -= 88
     tracked(c, M, y, "THE DAILY CHECK  ·  NOTICE, DO NOT GRADE", "Plex-Semi", 7.4, IRON, 1.5)
@@ -253,7 +253,7 @@ def driveway_cards(path):
             c.setStrokeColor(RULE); c.setLineWidth(0.5)
             c.line(px, y + 42, x + cw - 22, y + 42)
             c.setFont("Archivo", 7.8); c.setFillColor(IRON)
-            c.drawString(px, y + 31, "You are not erasing the day. You are deciding how to carry it in.")
+            c.drawString(px, y + 31, "The day still happened. You get to decide how you carry it in.")
             tracked(c, px, y + 17, "HERE SUPPLY CO.", "Archivo-Bold", 6.4, INK, 1.7)
             c.setFont("Plex", 5.8); c.setFillColor(QUIET)
             c.drawRightString(x + cw - 22, y + 17, "SHEET 03")
@@ -267,4 +267,11 @@ if __name__ == "__main__":
     driveway_cards(os.path.join(OUT, "driveway-card.pdf"))
     import sheets
     n = sheets.build(OUT)
+    from pypdf import PdfWriter
+    writer = PdfWriter()
+    for part in ["family-screen-reset.pdf", "weekly-tradition-builder.pdf", "side-by-side-teen-check-in.pdf"]:
+        writer.append(os.path.join(OUT, part))
+    writer.add_metadata({"/Title": "Family Tools: Screen Reset, Weekly Tradition, Teen Check In", "/Author": "Chris Avera, Here Supply Co."})
+    with open(os.path.join(OUT, "family-tools.pdf"), "wb") as fh:
+        writer.write(fh)
     print("built", 3 + n)

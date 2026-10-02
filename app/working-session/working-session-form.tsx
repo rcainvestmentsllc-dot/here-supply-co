@@ -43,6 +43,6 @@ export function WorkingSessionForm() {
 
       <label className="intake-scope"><input type="checkbox" required /><span>I understand that Here Supply Co. provides educational tools and implementation support, not therapy, marriage counseling, medical care, or crisis services.</span></label>
 
-      <div className="intake-submit"><button type="submit">Send to Chris<b>→</b></button><p>A confirmation page opens in a new tab. If it asks you to correct an answer, finish that step there. Do not include passwords or payment-card information.</p></div>
+      <div className="intake-submit"><button type="submit">Send to Chris<b>→</b></button><p>A confirmation page opens in a new tab. If it asks you to correct an answer, finish that step there. Do not include passwords or payment card information.</p></div>
     </form>;
 }

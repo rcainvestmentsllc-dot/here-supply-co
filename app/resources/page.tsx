@@ -28,7 +28,7 @@ const internalPaths = [
   {
     number: "01",
     need: "Someone I share life with and I need to see the same week.",
-    answer: "Use the free 15-minute weekly guide.",
+    answer: "Use the free fifteen minute weekly guide.",
     href: "/sunday-board#get-board",
     action: "Get the free guide",
   },
@@ -68,7 +68,7 @@ const outsideResources = [
 const research = [
   {
     title: "Smartphones and Cognition: A Review of Research",
-    copy: "A peer-reviewed review of the evidence around smartphone habits, attention, memory, and everyday cognitive functioning.",
+    copy: "A peer reviewed review of the evidence around smartphone habits, attention, memory, and everyday cognitive functioning.",
     href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5403814/",
   },
   {
@@ -92,20 +92,20 @@ const fieldNotes = [
     href: "/resources/how-to-stop-checking-your-phone-at-home",
   },
   {
-    label: "FATHERHOOD",
+    label: "PARENTING",
     title: "How to be more present with your kids after work",
-    copy: "A five- to fifteen-minute practice for joining your child’s world without bringing the whole workday with you.",
+    copy: "A five to fifteen minute practice for joining your child’s world without bringing the whole workday with you.",
     href: "/resources/how-to-be-more-present-with-your-kids",
   },
   {
     label: "FRIENDSHIP",
-    title: "Every man needs a third place",
-    copy: "A real sauna conversation, and why home and work are not the only places a man needs in his life.",
+    title: "Everyone needs a third place",
+    copy: "A sauna conversation, and why both of you need somewhere besides home and work.",
     href: "/resources/why-men-need-a-third-place",
   },
   {
     label: "MARRIAGE",
-    title: "A 15-minute weekly marriage meeting agenda",
+    title: "A fifteen minute weekly marriage meeting agenda",
     copy: "A simple way to make the week visible without turning Sunday into a boardroom or an argument.",
     href: "/resources/weekly-marriage-meeting",
   },
@@ -156,7 +156,7 @@ export default function Resources() {
         <div className={styles.fieldNotesIntro}>
           <p className={styles.eyebrow}>STORIES AND PRACTICES</p>
           <h2 id="field-notes-heading">Use one practice<br />before you read <em>ten ideas.</em></h2>
-          <p>These are complete starting points, not search-engine filler. Each one names a real moment and gives you something concrete to try.</p>
+          <p>These are complete starting points, not search engine filler. Each one names a real moment and gives you something concrete to try.</p>
           <a className={styles.substackLink} href="https://chrisavera.substack.com" target="_blank" rel="me noreferrer">Read Chris on Substack <span>↗</span></a>
         </div>
         <div className={styles.fieldGrid}>
@@ -175,7 +175,7 @@ export default function Resources() {
         <div className={styles.outsideHeading}>
           <p className={styles.eyebrow}>WHEN YOU NEED MORE THAN A PRACTICE</p>
           <h2 id="outside-heading">Established places<br />to <em>start.</em></h2>
-          <p>These organizations are independent of Here Supply Co. They are listed because they provide professional, public, or government-backed ways to find support.</p>
+          <p>These organizations are independent of Here Supply Co. They are listed because they provide professional, public, or government backed ways to find support.</p>
         </div>
         <div className={styles.outsideGrid}>
           {outsideResources.map((resource) => (
@@ -194,7 +194,7 @@ export default function Resources() {
         <div>
           <p className={styles.eyebrow}>READ THE RESEARCH</p>
           <h2 id="research-heading">Ground the conversation<br />in what we <em>actually know.</em></h2>
-          <p>The evidence around phones and attention is real but not simplistic. These open-access reviews are useful starting points, and they are more honest than a dramatic claim pulled from a feed.</p>
+          <p>The evidence around phones and attention is real but not simplistic. These open access reviews are useful starting points, and they are more honest than a dramatic claim pulled from a feed.</p>
         </div>
         <div className={styles.researchList}>
           {research.map((item) => (

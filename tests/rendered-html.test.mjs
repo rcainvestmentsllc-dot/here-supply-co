@@ -64,7 +64,7 @@ test("makes the Focus Protocol the first step of the paid course", async () => {
   const course = await htmlFor("/access/core-4m8r2p");
   const focus = await htmlFor("/access/focus-7f3k9q");
   assert.match(library, /It starts with the Focus Protocol/i);
-  assert.match(library, /72-hour Focus Protocol/i);
+  assert.match(library, /72 hour Focus Protocol/i);
   assert.match(course, /Begin with the Focus Protocol/i);
   assert.match(course, /href="\/access\/focus-7f3k9q"/i);
   assert.match(focus, /FOCUS PROTOCOL/i);
@@ -76,8 +76,9 @@ test("makes the Focus Protocol the first step of the paid course", async () => {
 test("makes the complete print edition the recommended course companion", async () => {
   const library = await htmlFor("/library");
   const course = await htmlFor("/access/core-4m8r2p");
-  assert.match(library, /complete 26-page print-first course book/i);
-  assert.match(course, /Recommended · print first/i);
+  assert.match(library, /26 page course book/i);
+  assert.match(course, /Recommended/i);
+  assert.match(course, /family-tools\.pdf/i);
   assert.match(course, /all-the-way-here-print-edition\.pdf/i);
   assert.match(course, /here-supply-resource-pack\.zip/i);
   assert.match(course, /Print the course book/i);
@@ -93,13 +94,17 @@ test("sends the retired fill-in workbook to the print edition", async () => {
 test("keeps the course buyer path clear and the private lessons complete", async () => {
   const library = await htmlFor("/library");
   const lesson = await htmlFor("/access/core-4m8r2p/lesson/the-airlock-protocol");
-  assert.match(library, /One-time purchase/i);
-  assert.match(library, /14-day refund window/i);
-  assert.match(library, /Nine visual lessons/i);
+  assert.match(library, /One time purchase/i);
+  assert.match(library, /14 day refund window/i);
+  assert.match(library, /nine short lessons/i);
+  assert.doesNotMatch(library, /videos|watch the introductions/i);
+  assert.match(library, /receipt email has a button that opens the course and a password/i);
   assert.match(lesson, /The Driveway Pause/i);
   assert.match(lesson, /RESOURCE PACK/i);
   assert.match(lesson, /WORDS TO USE/i);
   assert.match(lesson, /EVIDENCE NOTE/i);
+  assert.match(lesson, /I tried this practice/i);
+  assert.doesNotMatch(lesson, /Attention Reset|Hunter|Farmer|Algorithm/);
   assert.match(lesson, /<meta name="robots" content="noindex, nofollow"\/>/i);
 });
 
@@ -125,6 +130,8 @@ test("ships every course asset and printable referenced by the content", async (
     "public/downloads/the-here-week.pdf",
     "public/downloads/attention-reset.pdf",
     "public/downloads/all-the-way-here-field-card.pdf",
+    "public/downloads/family-tools.pdf",
+    "public/downloads/thirty-day-page.pdf",
   ];
   for (const path of paths) await access(new URL(`../${path}`, import.meta.url));
   const guide = await readFile(new URL("../public/downloads/sunday-board-meeting.pdf", import.meta.url));

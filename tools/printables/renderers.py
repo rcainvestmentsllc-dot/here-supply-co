@@ -16,15 +16,17 @@ def card_page(path, title, kicker, headline, steps, aside_label, aside_body,
     """Four identical cards to a letter page, cut apart on the dashed rule."""
     c = canvas.Canvas(path, pagesize=letter)
     c.setTitle(doc_title)
-    cw, ch = (W - 2 * 0.4 * inch) / 2, (H - 2 * 0.4 * inch) / 2
+    # The top margin is a little deeper than the rest so the cutting note has
+    # room inside the printable area, above the cards.
+    cw, ch = (W - 2 * 0.4 * inch) / 2, (H - 0.4 * inch - 0.6 * inch) / 2
     ox, oy = 0.4 * inch, 0.4 * inch
 
     # Four identical copies confuse people until you say so. This sits in the
     # page margin, outside every card, so it never prints on the card itself.
-    tracked(c, ox, H - 19, "FOUR IDENTICAL CARDS \u00b7 CUT ALONG THE DASHED LINES",
+    tracked(c, ox, H - 30, "FOUR IDENTICAL CARDS \u00b7 CUT ALONG THE DASHED LINES",
             "Plex-Semi", 6.4, QUIET, 1.3)
     c.setFont("Plex", 6.4); c.setFillColor(QUIET)
-    c.drawRightString(W - ox, H - 19, "CARDSTOCK IF YOU HAVE IT")
+    c.drawRightString(W - ox, H - 30, "CARDSTOCK IF YOU HAVE IT")
 
     for r in range(2):
         for col in range(2):

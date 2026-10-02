@@ -13,22 +13,28 @@ export const metadata: Metadata = {
 
 const RESOURCES = [
   {
-    label: "Recommended · print first",
+    label: "Recommended",
     title: "The complete course book",
-    note: "The whole course book in one place. Print it, write in it, and use the digital course for video or a quick reminder.",
+    note: "The whole course in one 26 page book. Print it and write in it. Use the online lessons when you want a quick reminder.",
     href: "/downloads/all-the-way-here-print-edition.pdf",
   },
   {
     label: "One page",
     title: "Field card",
-    note: "All nine practices on a single sheet you can keep in the truck.",
+    note: "Every practice on a single sheet for the fridge or the car.",
     href: "/downloads/all-the-way-here-field-card.pdf",
   },
   {
     label: "The whole kit",
     title: "Resource Pack",
-    note: "Every separate printable in one download, including the Sunday Board Meeting, cards, and family tools.",
+    note: "Every printable sheet in one download, including the Sunday Board Meeting, the cards, and the family tools.",
     href: "/downloads/here-supply-resource-pack.zip",
+  },
+  {
+    label: "Three family tools",
+    title: "Screen Reset, Weekly Tradition, Teen Check In",
+    note: "For when the practices reach the kids. One page each.",
+    href: "/downloads/family-tools.pdf",
   },
   {
     label: "Start here · three days",
@@ -37,10 +43,10 @@ const RESOURCES = [
     href: "/access/focus-7f3k9q",
   },
   {
-    label: "Free companion",
+    label: "Every Sunday",
     title: "Sunday Board Meeting",
-    note: "A fifteen-minute weekly conversation for two people sharing a life.",
-    href: "/sunday-board#get-board",
+    note: "The fifteen minute weekly conversation that holds the rest together.",
+    href: "/downloads/sunday-board-meeting.pdf",
   },
 ];
 
@@ -59,27 +65,19 @@ export default function CourseHome() {
   const startingLabel = isFresh ? "Focus Protocol · 72 hours" : `${nextMovement?.name} ${nextLesson.number}`;
   const startingTitle = isFresh ? "Begin with the Focus Protocol." : nextLesson.title;
   const startingSummary = isFresh
-    ? "Four practical moves. Three days. A clearer picture of what deserves your attention before you add another lesson."
+    ? "Four small moves for three days. You will have a clearer picture of what deserves your attention before you start the lessons."
     : nextLesson.summary;
 
   return (
     <CourseShell completed={completed}>
       <p className={styles.eyebrow}>
-        {isFresh ? "Welcome — you're in" : isFinished ? "All nine complete" : "Your course"}
+        Welcome. You're in.
       </p>
       <h1 className={styles.pageTitle}>
-        {isFresh
-          ? "Here is exactly what happens next."
-          : isFinished
-            ? "You've been through all of it."
-            : "Pick up where you left off."}
+        Here is what happens next.
       </h1>
       <p className={styles.pageLede}>
-        {isFresh
-          ? "You do not need to finish quickly or figure out the system on your own. Print the course book, then take one lesson and one real-life practice at a time."
-          : isFinished
-            ? "The practices are yours now. Come back to any lesson when a season changes and you need the reminder."
-            : "One lesson, one practice, one ordinary week. The course will still be here when life interrupts."}
+        There is no rush. Start the Focus Protocol today, print the course book while it runs, then take one lesson and one practice at a time.
       </p>
 
       {/* Continue / start */}
@@ -108,30 +106,30 @@ export default function CourseHome() {
       {/* First-run guidance, only while it is actually useful */}
       {isFresh && (
         <div className={styles.firstRun}>
-          <h2 className={styles.firstRunTitle}>Four steps. No hunting around.</h2>
+          <h2 className={styles.firstRunTitle}>Four steps, in this order.</h2>
           <ol className={styles.firstRunSteps}>
             <li>
               <span>
-                <b>Print the course book.</b> It combines the full course in one
-                place. Use the online course when you want the short videos or a quick reminder.
+                <b>Start the Focus Protocol today.</b> Four small moves for three days, before
+                either of you asks the other to change anything.
               </span>
             </li>
             <li>
               <span>
-                <b>Use the Focus Protocol.</b> Take the four small moves through three days before asking
-                anyone else to change anything.
+                <b>Print the course book while it runs.</b> The whole course is in it, with room to
+                write. Use the online lessons when you want a quick reminder.
               </span>
             </li>
             <li>
               <span>
-                <b>Take one lesson into real life.</b> Read it, try the practice during an ordinary
-                week, write what happened, mark it complete.
+                <b>On day four, open Return.</b> Read one lesson, try the practice during a normal
+                week, write what happened, and mark it as tried.
               </span>
             </li>
             <li>
               <span>
-                <b>Use the family tools when they fit.</b> They are application tools, not more
-                lessons to finish.
+                <b>Use the family tools when they fit.</b> They help you use the practices with your
+                kids. You do not have to finish them.
               </span>
             </li>
           </ol>
@@ -161,6 +159,7 @@ export default function CourseHome() {
                       key={lesson.slug}
                       href={`${COURSE_ROOT}/lesson/${lesson.slug}`}
                       className={`${styles.movementItem} ${isDone ? styles.movementItemDone : ""}`}
+                      data-lesson={lesson.slug}
                     >
                       <span className={styles.lessonNum}>{lesson.number}</span>
                       <span>{lesson.title}</span>

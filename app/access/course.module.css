@@ -1113,3 +1113,18 @@
   line-height: 1.34;
   color: var(--hsc-iron);
 }
+
+/* Progress marks. ProgressSync sets data-done on each lesson link from this
+   browser's saved progress; both marks are rendered and CSS picks one. */
+.markEmpty { display: inline-flex; }
+.markFull { display: none; }
+.lessonLink[data-done="true"] .markEmpty,
+.movementItem[data-done="true"] .markEmpty { display: none; }
+.lessonLink[data-done="true"] .markFull,
+.movementItem[data-done="true"] .markFull { display: inline-flex; color: var(--hsc-ocean); }
+.lessonLink[data-done="true"] .lessonNum { color: var(--hsc-ocean); }
+.movementItem[data-done="true"] span { color: var(--hsc-quiet); }
+.markFull svg, .markEmpty svg { display: block; width: 15px; height: 15px; }
+
+.markDone { display: grid; gap: 8px; justify-items: start; margin-top: 18px; }
+.markDone p { margin: 0; font-size: var(--hsc-t-small); color: var(--hsc-quiet); }

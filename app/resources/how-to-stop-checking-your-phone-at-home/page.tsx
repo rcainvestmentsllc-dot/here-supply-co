@@ -44,12 +44,12 @@ export default function StopCheckingPhoneAtHome() {
     <section className={styles.layout}>
       <aside className={styles.aside}>
         <span>TRY IT TONIGHT</span>
-        <p>Choose one landing place for the phone, protect the people who must be able to reach you, and use one short phone-free window at home.</p>
+        <p>Choose one landing place for the phone, protect the people who must be able to reach you, and use one short phone free window at home.</p>
         <Link href="/library#focus-protocol">See the Focus Protocol inside the course →</Link>
       </aside>
       <article className={styles.body}>
         <p>I do not think most people need another lecture about screen time. We already know when the phone is getting too much of us. The harder part is the small automatic reach that happens before a conscious decision.</p>
-        <p>The practical answer is to add a little distance and make the next right action easier. Research on smartphone-use interventions suggests that a group of small environmental changes can reduce use more reliably than one dramatic rule by itself.</p>
+        <p>The practical answer is to add a little distance and make the next right action easier. Research on smartphone use interventions suggests that a group of small environmental changes can reduce use more reliably than one dramatic rule by itself.</p>
 
         <h2>Build one phone landing place</h2>
         <div className={styles.steps}>
@@ -62,7 +62,7 @@ export default function StopCheckingPhoneAtHome() {
         <h2>Use a rule you can actually remember</h2>
         <p>Write one sentence in this form: <strong>When I enter the room for dinner, I will put my phone on the hallway charger until we are finished.</strong> The exact room and time matter. A vague promise to “use the phone less” leaves the decision open every time the urge appears.</p>
 
-        <div className={styles.note}><strong>The goal is not to become anti-technology.</strong><p>Use the phone when it is the right tool. The practice is to stop letting its location, color, alerts, and easy access make every decision for you.</p></div>
+        <div className={styles.note}><strong>The goal is not to become anti technology.</strong><p>Use the phone when it is the right tool. The practice is to stop letting its location, color, alerts, and easy access make every decision for you.</p></div>
 
         <h2>Run the experiment for 72 hours</h2>
         <p>Notice the reaches, not just the total minutes. What was happening just before you checked? Boredom, uncertainty, a difficult pause, unfinished work, or simple habit? That is useful information. Change one part of the setup and try again.</p>
