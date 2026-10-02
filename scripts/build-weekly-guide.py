@@ -4,6 +4,7 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
+from reportlab.lib.utils import simpleSplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,22 +28,30 @@ MUTED = color("#526b72")
 RULE = color("#b8d3d5")
 
 
+FONTS = ROOT / "scripts" / "fonts"
+
+
 def register_fonts():
-    pdfmetrics.registerFont(
-        TTFont("Futura", "/System/Library/Fonts/Supplemental/Futura.ttc", subfontIndex=0)
-    )
-    pdfmetrics.registerFont(
-        TTFont("FuturaBold", "/System/Library/Fonts/Supplemental/Futura.ttc", subfontIndex=2)
-    )
-    pdfmetrics.registerFont(
-        TTFont("Avenir", "/System/Library/Fonts/Avenir Next.ttc", subfontIndex=7)
-    )
-    pdfmetrics.registerFont(
-        TTFont("AvenirDemi", "/System/Library/Fonts/Avenir Next.ttc", subfontIndex=2)
-    )
-    pdfmetrics.registerFont(
-        TTFont("CharterBold", "/System/Library/Fonts/Supplemental/Charter.ttc", subfontIndex=3)
-    )
+    """Open fonts kept in the repo so the guide builds the same on any machine.
+
+    Jost stands in for Futura, Figtree (the website's typeface) for Avenir,
+    and DM Serif Display (the website's editorial face) for Charter.
+    """
+    for name, file in [
+        ("Futura", "Jost-Medium.ttf"),
+        ("FuturaBold", "Jost-Bold.ttf"),
+        ("Avenir", "Figtree-Regular.ttf"),
+        ("AvenirDemi", "Figtree-SemiBold.ttf"),
+        ("CharterBold", "DMSerifDisplay-Regular.ttf"),
+    ]:
+        pdfmetrics.registerFont(TTFont(name, str(FONTS / file)))
+
+
+def fit(text: str, font: str, size: float, max_width: float) -> float:
+    """Shrink a single line until it fits its column, so nothing crosses a border."""
+    while size > 6 and pdfmetrics.stringWidth(text, font, size) > max_width:
+        size -= 0.2
+    return size
 
 
 def set_fill(c: canvas.Canvas, value):
@@ -64,7 +73,7 @@ def section_heading(c: canvas.Canvas, number: str, title: str, x: float, y: floa
 
 def prompt(c: canvas.Canvas, label: str, x: float, y: float, width: float, lines: int = 1):
     set_fill(c, MUTED)
-    c.setFont("AvenirDemi", 10.2)
+    c.setFont("AvenirDemi", fit(label, "AvenirDemi", 10.2, width))
     c.drawString(x, y, label)
     set_stroke(c, RULE)
     c.setLineWidth(0.55)
@@ -87,13 +96,17 @@ def weekly_intention(c: canvas.Canvas, x: float, y: float, width: float, height:
     c.setFont("FuturaBold", 7.8)
     c.drawString(x + 15, y + height - 17, "ONE QUESTION TO START")
     set_fill(c, INK)
+    question = "At the end of this week, what would make us say we were on the same team?"
+    lines = simpleSplit(question, "AvenirDemi", 9.2, width - 30)
     c.setFont("AvenirDemi", 9.2)
-    c.drawString(x + 15, y + height - 34, "At the end of this week, what would make us")
-    c.drawString(x + 15, y + height - 46, "say we were on the same team?")
+    text_y = y + height - 33
+    for line in lines:
+        c.drawString(x + 15, text_y, line)
+        text_y -= 12
     set_stroke(c, RULE)
     c.setLineWidth(.55)
-    c.line(x + 15, y + 18, x + width - 15, y + 18)
-    c.line(x + 15, y + 32, x + width - 15, y + 32)
+    c.line(x + 15, y + 11, x + width - 15, y + 11)
+    c.line(x + 15, y + 24, x + width - 15, y + 24)
 
 
 def build():
@@ -101,7 +114,7 @@ def build():
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 
     c = canvas.Canvas(str(OUTPUT), pagesize=letter, pageCompression=1)
-    c.setTitle("The Sunday Board Meeting - A Free 15-Minute Weekly Guide")
+    c.setTitle("The Sunday Board Meeting: a free fifteen minute weekly guide")
     c.setAuthor("Chris Avera, Here Supply Co.")
     c.setSubject("A printable weekly conversation guide for two people sharing a life or household")
     c.setKeywords("weekly conversation, relationships, household, planning, Sunday Board")
@@ -130,7 +143,7 @@ def build():
     c.drawString(34, 643, "BOARD MEETING.")
     set_fill(c, MUTED)
     c.setFont("AvenirDemi", 11.2)
-    c.drawString(35, 619, "A free 15-minute way for two people sharing a life")
+    c.drawString(35, 619, "A free fifteen minute way for two people sharing a life")
     c.drawString(35, 603, "to lead the week together")
     c.setFont("Avenir", 9.3)
     c.drawString(35, 587, "Start with something good. Make the week visible. Protect one thing together.")
@@ -190,19 +203,20 @@ def build():
     c.line(49, 126, 345, 126)
 
     section_heading(c, "03", "Home + Money", 394, 374)
-    y = prompt(c, "Meals and groceries", 394, 347, 169, 1) - 5
-    y = prompt(c, "Family, care, or household needs", 394, y, 169, 1) - 5
-    y = prompt(c, "Who owns what this week?", 394, y, 169, 1) - 5
-    prompt(c, "Money: bills, spending, savings", 394, y, 169, 1)
+    y = 350
+    for label in [
+        "Meals and groceries",
+        "Family, care, or household needs",
+        "Who owns what this week?",
+        "Money: bills, spending, savings",
+    ]:
+        prompt(c, label, 394, y, 169, 1)
+        y -= 34
 
-    set_stroke(c, RULE)
-    c.setLineWidth(0.7)
-    c.line(394, 204, 563, 204)
-
-    section_heading(c, "04", "Protect", 394, 181)
-    prompt(c, "Time for us", 394, 154, 169, 1)
-    prompt(c, "One shared moment", 394, 125, 169, 1)
-    prompt(c, "Our shared win for the week", 394, 96, 169, 1)
+    section_heading(c, "04", "Protect", 394, 202)
+    prompt(c, "Time for us", 394, 178, 169, 1)
+    prompt(c, "One shared moment", 394, 148, 169, 1)
+    prompt(c, "Our shared win for the week", 394, 118, 169, 1)
 
     # Footer.
     set_stroke(c, OCEAN)
@@ -211,8 +225,10 @@ def build():
     set_fill(c, INK)
     c.setFont("CharterBold", 12)
     c.drawString(34, 40, "Nothing has to be solved all at once.")
-    c.setFont("Avenir", 8.8)
-    c.drawString(34, 25, "Make the week visible, decide who owns what, and choose what deserves attention together.")
+    footer = "Make the week visible, decide who owns what, and choose what deserves attention together."
+    right_edge = 578 - pdfmetrics.stringWidth("USE WHAT HELPS. LEAVE THE REST.", "AvenirDemi", 8) - 18
+    c.setFont("Avenir", fit(footer, "Avenir", 8.8, right_edge - 34))
+    c.drawString(34, 25, footer)
     set_fill(c, TOBACCO)
     c.setFont("FuturaBold", 8.5)
     c.drawRightString(578, 39, "HERE SUPPLY CO.  /  FREE PRACTICE")
