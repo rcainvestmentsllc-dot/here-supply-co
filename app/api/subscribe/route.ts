@@ -9,8 +9,11 @@ import { recordSubscriber, EMAIL_RE } from "../../../lib/subscribe";
  * Sunday Board group and starts the four email welcome automation. The form
  * endpoint needs no API key.
  *
- * Works two ways: the signup component calls it with fetch and reads JSON, and
- * a plain form post (no JavaScript) gets redirected back with ?signup=ok.
+ * MailerLite refuses requests coming from Cloudflare Workers (403), so the
+ * signup component posts to the MailerLite form straight from the visitor's
+ * browser (the endpoint allows any origin) and then calls this route with
+ * ml=done just to keep the D1 copy. A plain form post with no JavaScript still
+ * lands here and gets a server side attempt.
  */
 const ML_FORM =
   "https://assets.mailerlite.com/jsonp/2381566/forms/196874718498785144/subscribe";
@@ -63,6 +66,7 @@ export async function POST(request: Request) {
   const sourceRaw = form.get("source");
   const nextRaw = form.get("next");
   const trap = form.get("company");
+  const mlDone = form.get("ml") === "done";
 
   const email = typeof emailRaw === "string" ? emailRaw.trim().toLowerCase() : "";
   const source = typeof sourceRaw === "string" && sourceRaw ? sourceRaw.slice(0, 40) : "sunday_board";
@@ -73,7 +77,7 @@ export async function POST(request: Request) {
 
   const reply = (status: "ok" | "invalid" | "error") => {
     if (wantsJson) {
-      return Response.json(status === "error" ? { status, upstream: lastUpstream } : { status }, { status: status === "invalid" ? 400 : status === "error" ? 502 : 200 });
+      return Response.json({ status }, { status: status === "invalid" ? 400 : status === "error" ? 502 : 200 });
     }
     const back = new URL(next, origin);
     back.searchParams.set("signup", status);
@@ -91,6 +95,8 @@ export async function POST(request: Request) {
     console.error("[here-supply-co] subscriber write failed:", error);
   }
 
+  if (mlDone) return reply("ok");
   const sent = await sendToMailerLite(email);
+  if (!sent) console.warn(`[here-supply-co] server side MailerLite failed: ${lastUpstream}`);
   return reply(sent ? "ok" : "error");
 }

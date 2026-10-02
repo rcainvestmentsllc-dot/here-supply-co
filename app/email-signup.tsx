@@ -3,6 +3,9 @@
 import { useState } from "react";
 import styles from "./signup.module.css";
 
+const ML_FORM =
+  "https://assets.mailerlite.com/jsonp/2381566/forms/196874718498785144/subscribe";
+
 type State = "idle" | "sending" | "ok" | "invalid" | "error";
 
 /**
@@ -26,14 +29,28 @@ export function EmailSignup({
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     setState("sending");
+    const email = String(data.get("email") || "").trim();
+    if (String(data.get("company") || "").trim()) {
+      setState("ok");
+      return;
+    }
+    if (!/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(email)) {
+      setState("invalid");
+      return;
+    }
     try {
-      const res = await fetch("/api/subscribe", {
+      const res = await fetch(ML_FORM, {
         method: "POST",
-        headers: { Accept: "application/json" },
-        body: data,
+        body: new URLSearchParams({ "fields[email]": email, "ml-submit": "1", anticsrf: "true" }),
       });
-      const json = (await res.json().catch(() => ({}))) as { status?: State };
-      setState(json.status === "ok" || json.status === "invalid" ? json.status : "error");
+      const json = (await res.json().catch(() => ({}))) as { success?: boolean; errors?: unknown };
+      if (!json.success) {
+        setState(json.errors ? "invalid" : "error");
+        return;
+      }
+      setState("ok");
+      data.set("ml", "done");
+      fetch("/api/subscribe", { method: "POST", headers: { Accept: "application/json" }, body: data }).catch(() => {});
     } catch {
       setState("error");
     }
