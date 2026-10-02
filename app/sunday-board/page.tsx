@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Sunday Board Meeting | Here Supply Co.",
     description: "A free fifteen minute weekly conversation for two people who want to see the same week.",
-    images: [{ url: "/assets/chris-founder.jpg", alt: "Chris Avera outdoors by the ocean" }],
+    images: [{ url: "/assets/chris-founder-sunset.jpg", alt: "Chris Avera outdoors by the ocean" }],
   },
   twitter: {
     title: "The Sunday Board Meeting | Here Supply Co.",
     description: "A free fifteen minute weekly conversation for two people who want to see the same week.",
-    images: ["/assets/chris-founder.jpg"],
+    images: ["/assets/chris-founder-sunset.jpg"],
   },
 };
 

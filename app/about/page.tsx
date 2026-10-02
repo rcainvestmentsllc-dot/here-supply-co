@@ -7,7 +7,7 @@ export default function AboutChris() {
       <Header />
 
       <section className={styles.hero}>
-        <img src="/assets/chris-founder.jpg" alt="Chris Avera outdoors" width="600" height="800" fetchPriority="high" />
+        <img src="/assets/chris-founder-sunset.jpg" alt="Chris Avera at sunset by the ocean" width="627" height="627" fetchPriority="high" />
         <div />
         <div className={styles.heroContent}>
           <p>ABOUT CHRIS AVERA</p>

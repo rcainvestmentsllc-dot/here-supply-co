@@ -31,10 +31,10 @@ export default function Founding() {
       <section className={styles.hero}>
         <figure className={styles.heroPhoto}>
           <img
-            src="/assets/chris-founder.jpg"
-            alt="Chris Avera outdoors by the ocean"
-            width="600"
-            height="800"
+            src="/assets/chris-founder-sunset.jpg"
+            alt="Chris Avera at sunset by the ocean"
+            width="627"
+            height="627"
             fetchPriority="high"
             decoding="async"
           />
