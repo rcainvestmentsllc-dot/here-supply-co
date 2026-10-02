@@ -15,6 +15,8 @@ import { recordSubscriber, EMAIL_RE } from "../../../lib/subscribe";
 const ML_FORM =
   "https://assets.mailerlite.com/jsonp/2381566/forms/196874718498785144/subscribe";
 
+let lastUpstream = "";
+
 async function sendToMailerLite(email: string): Promise<boolean> {
   try {
     const body = new URLSearchParams({
@@ -24,7 +26,13 @@ async function sendToMailerLite(email: string): Promise<boolean> {
     });
     const res = await fetch(ML_FORM, {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded", Accept: "application/json" },
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Accept: "application/json",
+        Origin: "https://heresupplyco.com",
+        Referer: "https://heresupplyco.com/sunday-board",
+        "User-Agent": "Mozilla/5.0 (compatible; HereSupplyCo/1.0; +https://heresupplyco.com)",
+      },
       body,
     });
     const text = await res.text();
@@ -35,9 +43,11 @@ async function sendToMailerLite(email: string): Promise<boolean> {
     } catch {
       /* not JSON; fall back to status */
     }
+    lastUpstream = `${res.status} ${text.slice(0, 80)}`;
     if (!ok) console.warn(`[here-supply-co] MailerLite form rejected (${res.status}): ${text.slice(0, 200)}`);
     return ok;
   } catch (error) {
+    lastUpstream = `threw ${String(error).slice(0, 80)}`;
     console.warn("[here-supply-co] MailerLite form threw:", error);
     return false;
   }
@@ -63,7 +73,7 @@ export async function POST(request: Request) {
 
   const reply = (status: "ok" | "invalid" | "error") => {
     if (wantsJson) {
-      return Response.json({ status }, { status: status === "invalid" ? 400 : status === "error" ? 502 : 200 });
+      return Response.json(status === "error" ? { status, upstream: lastUpstream } : { status }, { status: status === "invalid" ? 400 : status === "error" ? 502 : 200 });
     }
     const back = new URL(next, origin);
     back.searchParams.set("signup", status);
