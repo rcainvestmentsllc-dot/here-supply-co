@@ -109,7 +109,7 @@ export default async function CoreLessonPage({ params }: { params: Promise<{ slu
           moment happens does not. */}
       <section className={styles.sheet}>
         <div className={styles.sheetCopy}>
-          <span>RESOURCE PACK · SHEET {lesson.kit.sheet}</span>
+          <span>{`YOUR SHEET · LESSON ${lesson.kit.sheet}`}</span>
           <h3>{lesson.kit.sheetName}</h3>
           <p className={styles.sheetLives}>Lives at: {lesson.kit.livesAt}</p>
           <p>
@@ -122,7 +122,7 @@ export default async function CoreLessonPage({ params }: { params: Promise<{ slu
               href={getKitSheet(lesson.kit.sheet)!.file}
               download
             >
-              Print sheet {lesson.kit.sheet} <span aria-hidden="true">&darr;</span>
+              Print this sheet <span aria-hidden="true">&darr;</span>
             </a>
           )}
         </div>

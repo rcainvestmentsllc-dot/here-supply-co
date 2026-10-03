@@ -150,15 +150,15 @@ export default function Founding() {
         <div className={styles.kitGrid}>
           <figure>
             <img src="/assets/sunday-board-meeting-preview-v2.png" alt="The Sunday Board Meeting sheet" width="1200" height="1553" loading="lazy" decoding="async" />
-            <figcaption>Sheet 01 · The table</figcaption>
+            <figcaption>Every week · The table</figcaption>
           </figure>
           <figure>
             <img src="/assets/course/photo/lesson-1-3-driveway-v1.jpg" alt="A parent sitting in the car in the driveway before going inside" width="1672" height="942" loading="lazy" decoding="async" />
-            <figcaption>Sheet 03 · The glovebox</figcaption>
+            <figcaption>Lesson 1.3 · The glovebox</figcaption>
           </figure>
           <figure>
             <img src="/assets/course/photo/lesson-2-1-thermostat-v1.jpg" alt="A family talking in the kitchen" width="1672" height="942" loading="lazy" decoding="async" />
-            <figcaption>Sheet 06 · The nightstand</figcaption>
+            <figcaption>Lesson 2.1 · The nightstand</figcaption>
           </figure>
         </div>
       </section>

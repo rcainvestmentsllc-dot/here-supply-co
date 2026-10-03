@@ -28,8 +28,19 @@ const ONE_YEAR = 60 * 60 * 24 * 365;
 /** Downloads anyone may have, with or without the course. */
 const FREE_DOWNLOADS = new Set([
   "/downloads/sunday-board-meeting.pdf",
-  "/downloads/sunday-board-field-card.pdf",
 ]);
+
+/**
+ * Files retired in the October 2026 print redesign. Old links in emails,
+ * bookmarks, or saved pages land on what replaced them instead of a 404.
+ */
+const RETIRED_DOWNLOADS: Record<string, string> = {
+  "/downloads/attention-reset.pdf": "/downloads/focus-protocol.pdf",
+  "/downloads/the-here-week.pdf": "/downloads/sunday-board-meeting.pdf",
+  "/downloads/sunday-board-field-card.pdf": "/downloads/sunday-board-meeting.pdf",
+  "/downloads/here-supply-resource-pack.zip": "/downloads/here-supply-resource-pack.pdf",
+  "/downloads/all-the-way-here-workbook.pdf": "/downloads/all-the-way-here-print-edition.pdf",
+};
 
 export function isGatedPath(pathname: string): boolean {
   if (pathname === "/access" || pathname.startsWith("/access/")) return true;
@@ -79,6 +90,11 @@ export function safeReturnPath(value: unknown): string {
  */
 export async function courseGate(request: Request, env: Record<string, unknown>): Promise<Response | null> {
   const url = new URL(request.url);
+
+  const replacement = RETIRED_DOWNLOADS[url.pathname];
+  if (replacement) {
+    return new Response(null, { status: 301, headers: { Location: replacement + url.search } });
+  }
 
   if (url.pathname === UNLOCK_ENDPOINT && request.method === "POST") {
     const form = await request.formData();

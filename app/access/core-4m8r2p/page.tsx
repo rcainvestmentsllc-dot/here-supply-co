@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PlainLink as Link } from "../../plain-link";
-import { CORE_LESSONS, CORE_MOVEMENTS } from "../../course-content";
+import { CORE_LESSONS, CORE_MOVEMENTS, RESOURCE_PACK_FILE } from "../../course-content";
 import { nextLessonSlug } from "../../../lib/progress";
 import { CourseShell, CheckIcon, COURSE_ROOT } from "../course-shell";
 import styles from "../course.module.css";
@@ -11,41 +11,27 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+/**
+ * Everything printable, in three files. The Focus Protocol has its own page in
+ * the course rail, and each lesson links its own sheet, so this list stays short.
+ */
 const RESOURCES = [
   {
-    label: "Recommended",
-    title: "The complete course book",
-    note: "The whole course in one 26 page book. Print it and write in it. Use the online lessons when you want a quick reminder.",
+    label: "Write in it",
+    title: "The course book",
+    note: "The Focus Protocol and all nine lessons on paper, with room to write. 25 pages.",
     href: "/downloads/all-the-way-here-print-edition.pdf",
   },
   {
-    label: "One page",
-    title: "Field card",
-    note: "Every practice on a single sheet for the fridge or the car.",
-    href: "/downloads/all-the-way-here-field-card.pdf",
+    label: "Print it once",
+    title: "The Resource Pack",
+    note: "Every sheet in one file, in course order: the Focus Protocol, the Sunday Board, one sheet per lesson, the field card, and three family tools at the back.",
+    href: RESOURCE_PACK_FILE,
   },
   {
-    label: "The whole kit",
-    title: "Resource Pack",
-    note: "Every printable sheet in one download, including the Sunday Board Meeting, the cards, and the family tools.",
-    href: "/downloads/here-supply-resource-pack.zip",
-  },
-  {
-    label: "Three family tools",
-    title: "Screen Reset, Weekly Tradition, Teen Check In",
-    note: "For when the practices reach the kids. One page each.",
-    href: "/downloads/family-tools.pdf",
-  },
-  {
-    label: "Start here · three days",
-    title: "Focus Protocol",
-    note: "Four small moves for getting the phone out of the way and seeing what changes.",
-    href: "/access/focus-7f3k9q",
-  },
-  {
-    label: "Every Sunday",
-    title: "Sunday Board Meeting",
-    note: "The fifteen minute weekly conversation that holds the rest together.",
+    label: "Every week",
+    title: "The Sunday Board Meeting",
+    note: "The fifteen minute weekly conversation that holds the rest together. Your own week is on the back.",
     href: "/downloads/sunday-board-meeting.pdf",
   },
 ];
@@ -116,20 +102,20 @@ export default function CourseHome() {
             </li>
             <li>
               <span>
-                <b>Print the course book while it runs.</b> The whole course is in it, with room to
-                write. Use the online lessons when you want a quick reminder.
+                <b>Print the course book and the Resource Pack while it runs.</b> The book is the
+                whole course with room to write. The pack is every sheet, in order.
               </span>
             </li>
             <li>
               <span>
-                <b>On day four, open Return.</b> Read one lesson, try the practice during a normal
-                week, write what happened, and mark it as tried.
+                <b>On day four, open Return.</b> Read one lesson, put its sheet where the moment
+                happens, try the practice during a normal week, and mark it as tried.
               </span>
             </li>
             <li>
               <span>
-                <b>Use the family tools when they fit.</b> They help you use the practices with your
-                kids. You do not have to finish them.
+                <b>Finish with the Thirty Day Page.</b> Keep the two practices that helped and let
+                the rest go without guilt.
               </span>
             </li>
           </ol>
@@ -177,8 +163,8 @@ export default function CourseHome() {
 
       {/* Resources */}
       <div className={styles.sectionHead}>
-        <h2>Tools and companions</h2>
-        <p>Use what meets a real need</p>
+        <h2>Everything to print</h2>
+        <p>Three files. That is all of it.</p>
       </div>
       <div className={styles.resources}>
         {RESOURCES.map((resource) => (

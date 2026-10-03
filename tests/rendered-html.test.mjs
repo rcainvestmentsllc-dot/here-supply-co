@@ -73,16 +73,31 @@ test("makes the Focus Protocol the first step of the paid course", async () => {
   assert.match(focus, /<meta name="robots" content="noindex, nofollow"\/>/i);
 });
 
-test("makes the complete print edition the recommended course companion", async () => {
+test("gives the course three print files, with family tools inside the Resource Pack", async () => {
   const library = await htmlFor("/library");
   const course = await htmlFor("/access/core-4m8r2p");
-  assert.match(library, /26 page course book/i);
-  assert.match(course, /Recommended/i);
-  assert.match(course, /family-tools\.pdf/i);
+  assert.match(library, /25 page course book/i);
+  assert.match(course, /Everything to print/i);
   assert.match(course, /all-the-way-here-print-edition\.pdf/i);
-  assert.match(course, /here-supply-resource-pack\.zip/i);
-  assert.match(course, /Print the course book/i);
+  assert.match(course, /here-supply-resource-pack\.pdf/i);
+  assert.match(course, /sunday-board-meeting\.pdf/i);
+  assert.doesNotMatch(course, /\.zip|family-tools\.pdf|field-card\.pdf/i);
+  assert.match(course, /Print the course book and the Resource Pack/i);
   assert.doesNotMatch(course, /browser workbook/i);
+});
+
+test("sends retired printables to what replaced them", async () => {
+  for (const [from, to] of [
+    ["/downloads/attention-reset.pdf", "/downloads/focus-protocol.pdf"],
+    ["/downloads/the-here-week.pdf", "/downloads/sunday-board-meeting.pdf"],
+    ["/downloads/sunday-board-field-card.pdf", "/downloads/sunday-board-meeting.pdf"],
+    ["/downloads/here-supply-resource-pack.zip", "/downloads/here-supply-resource-pack.pdf"],
+    ["/downloads/all-the-way-here-workbook.pdf", "/downloads/all-the-way-here-print-edition.pdf"],
+  ]) {
+    const response = await render(from, { unlocked: false });
+    assert.equal(response.status, 301, from);
+    assert.equal(response.headers.get("location"), to);
+  }
 });
 
 test("sends the retired fill-in workbook to the print edition", async () => {
@@ -100,7 +115,7 @@ test("keeps the course buyer path clear and the private lessons complete", async
   assert.doesNotMatch(library, /videos|watch the introductions/i);
   assert.match(library, /receipt email has a button that opens the course and a password/i);
   assert.match(lesson, /The Driveway Pause/i);
-  assert.match(lesson, /RESOURCE PACK/i);
+  assert.match(lesson, /YOUR SHEET · LESSON 1\.3/i);
   assert.match(lesson, /WORDS TO USE/i);
   assert.match(lesson, /EVIDENCE NOTE/i);
   assert.match(lesson, /I tried this practice/i);
@@ -123,17 +138,16 @@ test("ships every course asset and printable referenced by the content", async (
     "public/assets/brand/here-supply-co-logo-inverse-v2.svg",
     "public/assets/video/sunday-board-meeting.mp4",
     "public/assets/video/sunday-board-meeting-captions.vtt",
-    "public/downloads/sunday-board-meeting.pdf",
-    "public/downloads/all-the-way-here-workbook.pdf",
     "public/downloads/all-the-way-here-print-edition.pdf",
-    "public/downloads/here-supply-resource-pack.zip",
-    "public/downloads/the-here-week.pdf",
-    "public/downloads/attention-reset.pdf",
-    "public/downloads/all-the-way-here-field-card.pdf",
+    "public/downloads/here-supply-resource-pack.pdf",
     "public/downloads/family-tools.pdf",
-    "public/downloads/thirty-day-page.pdf",
   ];
   for (const path of paths) await access(new URL(`../${path}`, import.meta.url));
+  // Every sheet the course lists, and every lesson's sheet, must exist.
+  const content = await readFile(new URL("../app/course-content.ts", import.meta.url), "utf8");
+  const files = [...content.matchAll(/file: "(\/downloads\/[^"]+)"/g)].map((m) => m[1]);
+  assert.ok(files.length >= 12);
+  for (const file of files) await access(new URL(`../public${file}`, import.meta.url));
   const guide = await readFile(new URL("../public/downloads/sunday-board-meeting.pdf", import.meta.url));
   assert.equal(guide.subarray(0, 4).toString(), "%PDF");
 });

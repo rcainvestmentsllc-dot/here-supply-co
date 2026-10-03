@@ -42,7 +42,7 @@ export type CoreLesson = {
    * on the fridge or in the glovebox does not.
    */
   kit: {
-    /** Resource Pack sheet number. */
+    /** The label printed on the sheet: the lesson number it belongs to. */
     sheet: string;
     /** Its name on the sheet. */
     sheetName: string;
@@ -173,7 +173,7 @@ export const CORE_LESSONS: CoreLesson[] = [
       { title: "Circle no more than three", body: "Choose the few items that deserve attention this week. Bring only the shared items into the weekly conversation." },
     ],
     adaptation: "If fifteen minutes is unrealistic, use five. Miss a week without turning it into a failure. A useful ritual is one you can return to without shame.",
-    kit: { sheet: "04", sheetName: "The Brain Dump", livesAt: "The desk, or wherever you actually sit down" },
+    kit: { sheet: "1.1", sheetName: "The Brain Dump", livesAt: "The desk, or wherever you actually sit down" },
     together: "Do the sweep separately, then trade only the items that touch both of you. Everything else stays yours. You're only trying to catch the four things you're both carrying and each assuming the other forgot.",
     encouragement: "Once it's on paper, your head can let go of it.",
     action: "Tonight, put one sheet of paper in front of you and circle the single item that would make you more present tomorrow.",
@@ -206,7 +206,7 @@ export const CORE_LESSONS: CoreLesson[] = [
       { title: "Then tend the rest", body: "When the block ends, decide what maintenance matters now. Let that be your call, not the inbox's." },
     ],
     adaptation: "If your job is inherently reactive, protect the smallest block you can keep or choose one decision that must happen before the shift ends.",
-    kit: { sheet: "05", sheetName: "Tomorrow Matters If", livesAt: "The desk, written the night before" },
+    kit: { sheet: "1.2", sheetName: "Tomorrow Matters If", livesAt: "The desk, written the night before" },
     together: "Tell each other the one sentence. Then when one of you is unreachable for ninety minutes, the other knows it was chosen and nobody took it.",
     encouragement: "One protected hour beats a perfect morning you never get.",
     action: "Before bed, write tomorrow's one target and the exact time you will begin it.",
@@ -239,7 +239,7 @@ export const CORE_LESSONS: CoreLesson[] = [
       { title: "Choose the entrance", body: "Put the phone away. Make eye contact. Say hello like you mean it. Let the first ten seconds say that you have arrived." },
     ],
     adaptation: "Remote worker: close the laptop, step outside, and return through a different door. Transit or walking: use a landmark near home as the transition point.",
-    kit: { sheet: "03", sheetName: "The Driveway Card", livesAt: "The glovebox, because that is where the two minutes happen" },
+    kit: { sheet: "1.3", sheetName: "The Driveway Card", livesAt: "The glovebox, because that is where the two minutes happen" },
     together: "Whoever is inside gets to know this is happening, otherwise two minutes in a parked car reads as avoidance. Say it once: if I sit out there a minute, I am not hiding, I am arriving.",
     encouragement: "The day still happened. You get to decide how you carry it in.",
     action: "Before your next drive, set navigation and put the phone where you cannot reach it. Do the Driveway Pause only after the car is fully parked.",
@@ -272,7 +272,7 @@ export const CORE_LESSONS: CoreLesson[] = [
       { title: "Repair the miss", body: "If you were sharp or shut down, name it without an excuse. Apologize for your part and ask what would help reconnect." },
     ],
     adaptation: "If a conversation is unsafe, escalating, or beyond what a short pause can hold, step away and seek appropriate outside support. This practice is not a substitute for therapy or crisis help.",
-    kit: { sheet: "06", sheetName: "Pause, Return, Repair", livesAt: "The nightstand" },
+    kit: { sheet: "2.1", sheetName: "Pause, Return, Repair", livesAt: "The nightstand" },
     together: "Agree on the pause before you need it, when nothing is wrong. A break called mid argument by someone who never mentioned it sounds like walking out. A break you both named last Tuesday sounds like the plan working.",
     encouragement: "Take the pause, then come back when you said you would.",
     action: "Write the sentence you can use next time: I am too worked up to answer well. I will come back at ____.",
@@ -305,7 +305,7 @@ export const CORE_LESSONS: CoreLesson[] = [
       { title: "Notice, do not grade", body: "Ask what felt easy, interesting, or worth doing again. The night does not have to prove anything about your relationship." },
     ],
     adaptation: "Use an at home, free, low cost, sensory friendly, or mobility friendly version. Twenty intentional minutes can count when a full evening cannot.",
-    kit: { sheet: "07", sheetName: "The Date Night Card", livesAt: "The wallet, so the idea survives the week" },
+    kit: { sheet: "2.2", sheetName: "The Date Night Card", livesAt: "The wallet, so the idea survives the week" },
     together: "Two ideas each, pick one, phones in the glovebox before you sit down. Afterwards ask what was interesting, not whether it worked. A night that has to prove something about your relationship stops being a night out.",
     encouragement: "Curiosity is the part that wore off. It comes back with use.",
     action: "At the next weekly check in, each of you brings two possible dates, chooses one real time, and agrees where the silenced phones will stay.",
@@ -345,7 +345,7 @@ export const CORE_LESSONS: CoreLesson[] = [
       note: "This is the one lesson that assumes children in the house.",
       body: "If there are none, the practice does not change, only who it points at. Your partner makes bids for attention the same way a child does, just quieter and easier to miss: a story about their day, something read aloud, a hand on your shoulder on the way past. Answer the bid before you do anything else. Put the phone in another room rather than face down. Let them pick the subject and resist improving it, solving it, or turning it into logistics. Fifteen minutes where they lead and you follow. The thing a child does loudly, an adult does once and then stops asking.",
     },
-    kit: { sheet: "08", sheetName: "Floor Time", livesAt: "The kid's room, or the nightstand if there are none" },
+    kit: { sheet: "2.3", sheetName: "Floor Time", livesAt: "The kid's room, or the nightstand if there are none" },
     together: "Cover for each other. Fifteen minutes on the floor only happens if someone else is holding the rest of the evening, and it should trade back the next night.",
     encouragement: "Eye level is the whole technique. The rest is just staying there.",
     action: "The next time your child calls your name or says, Watch this, set the phone down, meet their eyes, and answer before you return to anything else.",
@@ -378,7 +378,7 @@ export const CORE_LESSONS: CoreLesson[] = [
       { title: "Notice what it produces", body: "Ask whether you return more alive and available or merely numbed and avoidant. Adjust honestly." },
     ],
     adaptation: "Some seasons require a smaller or closer version. Some problems require workload changes, sleep, medical care, therapy, or other support. A hobby is not a cure for burnout.",
-    kit: { sheet: "09", sheetName: "The Third Place", livesAt: "The bag you already carry" },
+    kit: { sheet: "3.1", sheetName: "The Third Place", livesAt: "The bag you already carry" },
     together: "Put both on the calendar in the same conversation or this becomes one person's hobby and the other person's resentment. Equal time, agreed out loud, childcare counted honestly.",
     encouragement: "You are allowed to be a person outside of who needs you.",
     action: "Choose one place or activity you want to return to twice this month and coordinate the first time.",
@@ -411,7 +411,7 @@ export const CORE_LESSONS: CoreLesson[] = [
       { title: "Let honesty grow later", body: "Start shoulder to shoulder. When trust exists, ask a real question and answer one honestly yourself." },
     ],
     adaptation: "If geography or health limits activity, use a recurring call, online game, project check in, or breakfast. Repetition matters more than the setting.",
-    kit: { sheet: "10", sheetName: "The Friendship Script", livesAt: "The wallet" },
+    kit: { sheet: "3.2", sheetName: "The Friendship Script", livesAt: "The wallet" },
     together: "Protect each other's friendships the way you protect your own. A relationship asked to be the only close one either of you has will buckle under a job neither of you gave it.",
     encouragement: "Invite first. The worst answer is a no you survive.",
     action: "Send one specific, low pressure invitation before the day ends.",
@@ -444,7 +444,7 @@ export const CORE_LESSONS: CoreLesson[] = [
       { title: "Review without a scorecard", body: "After thirty days, ask what changed, what did not fit, and what you want to continue. Do not turn family life into a compliance dashboard." },
     ],
     adaptation: "If a practice creates conflict, shame, or more management than value, stop and redesign it. Use professional help when the problem is beyond the scope of educational material.",
-    kit: { sheet: "11", sheetName: "The Thirty Day Page", livesAt: "The table, next to the board sheet" },
+    kit: { sheet: "3.3", sheetName: "The Thirty Day Page", livesAt: "The table, next to the board sheet" },
     together: "Choose two practices between you, not nine. Write them where you both see them. In thirty days, ask what happened. Nobody is grading either of you.",
     encouragement: "Two practices you keep beat nine you admired.",
     action: "Open the course book and circle the two practices you will use for the next thirty days.",
@@ -628,23 +628,33 @@ export const RESET_DECLARATION =
   "I do not trade presence for distraction. My attention belongs to the people I share my life with. My phone is a tool. I am not.";
 
 /**
- * The Resource Pack, in order. Each lesson points at one of these; the printed
- * sheet is the practice and the lesson is the instructions for it.
+ * The Resource Pack, in course order. Lesson sheets carry their lesson number
+ * so a sheet on the fridge always points back to the lesson it belongs to.
+ * The rest are named for when you use them, not numbered.
  */
 export const FIELD_KIT = [
-  { sheet: "01", name: "The Sunday Board Meeting", file: "/downloads/sunday-board-meeting.pdf", livesAt: "The table", note: "Free to anyone, no account needed." },
-  { sheet: "02", name: "The Focus Protocol", file: "/downloads/attention-reset.pdf", livesAt: "The fridge", note: "The four moves, what each stretch of the three days feels like, and the week after." },
-  { sheet: "03", name: "The Driveway Card", file: "/downloads/driveway-card.pdf", livesAt: "The glovebox", note: "Cut into four. One for each vehicle." },
-  { sheet: "04", name: "The Brain Dump", file: "/downloads/brain-dump.pdf", livesAt: "The desk", note: "Print one a week." },
-  { sheet: "05", name: "Tomorrow Matters If", file: "/downloads/tomorrow-matters-if.pdf", livesAt: "The desk", note: "Filled in the night before." },
-  { sheet: "06", name: "Pause, Return, Repair", file: "/downloads/pause-return-repair.pdf", livesAt: "The nightstand", note: "Agree on it before you need it." },
-  { sheet: "07", name: "The Date Night Card", file: "/downloads/date-night-card.pdf", livesAt: "The wallet", note: "So the idea survives the week." },
-  { sheet: "08", name: "Floor Time", file: "/downloads/floor-time.pdf", livesAt: "The kid's room", note: "Has a version for couples with no kids." },
-  { sheet: "09", name: "The Third Place", file: "/downloads/third-place.pdf", livesAt: "The bag", note: "One each. Both on the calendar." },
-  { sheet: "10", name: "The Friendship Script", file: "/downloads/friendship-script.pdf", livesAt: "The wallet", note: "Invite first." },
-  { sheet: "11", name: "The Thirty Day Page", file: "/downloads/thirty-day-page.pdf", livesAt: "The table", note: "The last thing you do in the course." },
-  { sheet: "12", name: "The Here Week", file: "/downloads/the-here-week.pdf", livesAt: "The desk", note: "A simple weekly planning page for work, home, and what matters." },
+  { sheet: "Start", name: "The Focus Protocol", file: "/downloads/focus-protocol.pdf", livesAt: "The fridge", note: "The four moves and what each stretch of the three days feels like." },
+  { sheet: "Weekly", name: "The Sunday Board Meeting", file: "/downloads/sunday-board-meeting.pdf", livesAt: "The table", note: "The shared week on the front, your own week on the back. Free to anyone." },
+  { sheet: "1.1", name: "The Brain Dump", file: "/downloads/brain-dump.pdf", livesAt: "The desk", note: "Print one a week." },
+  { sheet: "1.2", name: "Tomorrow Matters If", file: "/downloads/tomorrow-matters-if.pdf", livesAt: "The desk", note: "Filled in the night before." },
+  { sheet: "1.3", name: "The Driveway Card", file: "/downloads/driveway-card.pdf", livesAt: "The glovebox", note: "Four to a page. One for each car." },
+  { sheet: "2.1", name: "Pause, Return, Repair", file: "/downloads/pause-return-repair.pdf", livesAt: "The nightstand", note: "Agree on it before you need it." },
+  { sheet: "2.2", name: "The Date Night Card", file: "/downloads/date-night-card.pdf", livesAt: "The wallet", note: "So the idea survives the week." },
+  { sheet: "2.3", name: "Floor Time", file: "/downloads/floor-time.pdf", livesAt: "The kid's room", note: "Has a version for couples with no kids." },
+  { sheet: "3.1", name: "The Third Place", file: "/downloads/third-place.pdf", livesAt: "The bag", note: "One each. Both on the calendar." },
+  { sheet: "3.2", name: "The Friendship Script", file: "/downloads/friendship-script.pdf", livesAt: "The wallet", note: "Invite first." },
+  { sheet: "3.3", name: "The Thirty Day Page", file: "/downloads/thirty-day-page.pdf", livesAt: "The table", note: "The last thing you do in the course." },
+  { sheet: "Card", name: "The Field Card", file: "/downloads/all-the-way-here-field-card.pdf", livesAt: "The fridge or the car", note: "The whole course on one page." },
 ] as const;
+
+/** The three family tools: optional, for using the practices with kids. */
+export const FAMILY_TOOLS = [
+  { name: "The Family Screen Reset", note: "Get one repeating moment back together, in three days." },
+  { name: "The Weekly Tradition Builder", note: "One small thing worth coming back to." },
+  { name: "The Side by Side Teen Check In", note: "Talk side by side instead of face to face." },
+] as const;
+
+export const RESOURCE_PACK_FILE = "/downloads/here-supply-resource-pack.pdf";
 
 export const getKitSheet = (sheet: string) => FIELD_KIT.find((s) => s.sheet === sheet);
 

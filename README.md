@@ -41,3 +41,21 @@ pnpm run build
 pnpm test        # builds, then runs tests/*.test.mjs against the built Worker
 npx wrangler dev --config dist/server/wrangler.json --local   # full local Worker, including the password gate
 ```
+
+## Print files
+
+Every PDF in `public/downloads` is built from code and shares one design
+system (`tools/print/hsc.py`): same fonts as the site, same palette, a header
+that sits half an inch from the top edge so home printers do not clip it, and
+writing boxes that fill to their bottom edge.
+
+```bash
+node --experimental-strip-types scripts/export-course-content.mjs   # course text to tmp/pdfs
+python3 tools/print/build_sheets.py                                  # every sheet + the Resource Pack
+python3 scripts/build-all-the-way-here-print-edition.py              # the course book
+```
+
+The course ships three print files: the course book, the Resource Pack (every
+sheet in course order, one PDF), and the Sunday Board Meeting. Lesson sheets
+are labeled with their lesson number (1.1 to 3.3). Retired file URLs redirect
+to their replacements in `lib/course-pass.ts`.
