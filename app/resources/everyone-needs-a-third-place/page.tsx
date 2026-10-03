@@ -9,11 +9,11 @@ import { SundayBoardSignupForm } from "../../mailerlite-form";
 export const metadata: Metadata = {
   title: "Everyone Needs a Third Place (Mine Is a Sauna)",
   description: "A sauna conversation about friendship, belonging, and why both of you need somewhere besides home and work.",
-  alternates: { canonical: "/resources/why-men-need-a-third-place" },
+  alternates: { canonical: "/resources/everyone-needs-a-third-place" },
   openGraph: {
     title: "Everyone Needs a Third Place (Mine Is a Sauna)",
     description: "A sauna conversation about friendship, belonging, and the places where people know you.",
-    url: "/resources/why-men-need-a-third-place",
+    url: "/resources/everyone-needs-a-third-place",
   },
 };
 
@@ -26,7 +26,7 @@ const articleData = {
   dateModified: "2026-08-28",
   author: { "@type": "Person", name: "Chris Avera", url: siteUrl("/about") },
   publisher: { "@id": siteUrl("/#organization") },
-  mainEntityOfPage: siteUrl("/resources/why-men-need-a-third-place"),
+  mainEntityOfPage: siteUrl("/resources/everyone-needs-a-third-place"),
 };
 
 export default function WhyMenNeedAThirdPlace() {

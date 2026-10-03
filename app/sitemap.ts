@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/library`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/resources`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/resources/look-up-at-clemson`, lastModified, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${baseUrl}/resources/why-men-need-a-third-place`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/resources/everyone-needs-a-third-place`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/resources/weekly-marriage-meeting`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/resources/leave-work-at-work`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/resources/phone-away-before-driving`, lastModified, changeFrequency: "monthly", priority: 0.8 },

@@ -93,6 +93,7 @@ test("sends retired printables to what replaced them", async () => {
     ["/downloads/sunday-board-field-card.pdf", "/downloads/sunday-board-meeting.pdf"],
     ["/downloads/here-supply-resource-pack.zip", "/downloads/here-supply-resource-pack.pdf"],
     ["/downloads/all-the-way-here-workbook.pdf", "/downloads/all-the-way-here-print-edition.pdf"],
+    ["/resources/why-men-need-a-third-place", "/resources/everyone-needs-a-third-place"],
   ]) {
     const response = await render(from, { unlocked: false });
     assert.equal(response.status, 301, from);

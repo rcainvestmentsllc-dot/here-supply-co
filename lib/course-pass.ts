@@ -31,7 +31,7 @@ const FREE_DOWNLOADS = new Set([
 ]);
 
 /**
- * Files retired in the October 2026 print redesign. Old links in emails,
+ * Files and pages retired or renamed in October 2026. Old links in emails,
  * bookmarks, or saved pages land on what replaced them instead of a 404.
  */
 const RETIRED_DOWNLOADS: Record<string, string> = {
@@ -40,6 +40,8 @@ const RETIRED_DOWNLOADS: Record<string, string> = {
   "/downloads/sunday-board-field-card.pdf": "/downloads/sunday-board-meeting.pdf",
   "/downloads/here-supply-resource-pack.zip": "/downloads/here-supply-resource-pack.pdf",
   "/downloads/all-the-way-here-workbook.pdf": "/downloads/all-the-way-here-print-edition.pdf",
+  // Renamed pages: the article was always for both partners.
+  "/resources/why-men-need-a-third-place": "/resources/everyone-needs-a-third-place",
 };
 
 export function isGatedPath(pathname: string): boolean {

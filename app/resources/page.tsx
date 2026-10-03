@@ -57,11 +57,11 @@ const outsideResources = [
     source: "U.S. Substance Abuse and Mental Health Services Administration",
   },
   {
-    label: "FATHERHOOD",
-    title: "Find research and programs for fathers",
-    copy: "The National Responsible Fatherhood Clearinghouse brings together resources, research, and programs that support fathers and families.",
-    href: "https://www.fatherhood.gov/",
-    source: "U.S. Department of Health and Human Services",
+    label: "RELATIONSHIP EDUCATION",
+    title: "Find a relationship program near you",
+    copy: "A state by state directory of marriage and relationship education programs for couples, from the National Healthy Marriage Resource Center.",
+    href: "https://www.healthymarriageinfo.org/marriage-and-relationship-educators/find-a-local-marriage-and-relationship-program/",
+    source: "National Healthy Marriage Resource Center",
   },
 ];
 
@@ -101,7 +101,7 @@ const fieldNotes = [
     label: "FRIENDSHIP",
     title: "Everyone needs a third place",
     copy: "A sauna conversation, and why both of you need somewhere besides home and work.",
-    href: "/resources/why-men-need-a-third-place",
+    href: "/resources/everyone-needs-a-third-place",
   },
   {
     label: "MARRIAGE",

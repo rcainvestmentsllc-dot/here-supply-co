@@ -114,6 +114,6 @@ export const RESULTS: Record<PressureKey, ResultCopy> = {
     name: "Useful to everyone but yourself",
     read: "Work and home have taken every hour, and the person you were outside both is fading. Getting a little of that back is what keeps you steady for everyone else.",
     lessonSlug: "the-third-place",
-    free: { label: "Why you need a third place", href: "/resources/why-men-need-a-third-place" },
+    free: { label: "Why you need a third place", href: "/resources/everyone-needs-a-third-place" },
   },
 };
