@@ -81,7 +81,7 @@ export const MOMENTS: Record<MomentKey, Moment> = {
     protocol: "THE WEEKLY CHECK IN",
     summary: "A short weekly check in keeps the house from being run by surprise.",
     steps: [
-      "Set aside fifteen minutes on Sunday with the one page guide.",
+      "Set aside fifteen minutes on Sunday with the one sheet guide.",
       "Start with one honest appreciation before moving into logistics.",
       "Look at the calendar, name the pressure points, choose one shared priority, and remove one unnecessary thing.",
     ],

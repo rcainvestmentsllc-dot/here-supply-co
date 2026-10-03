@@ -52,6 +52,11 @@
 .fieldGrid h3 { margin:45px 0 20px; font-size:clamp(30px,3vw,43px); line-height:1.08; }
 .fieldGrid p { margin:0; color:var(--copy); font-size:14px; line-height:1.65; }
 .fieldGrid b { margin-top:auto; padding-top:30px; font-size:11px; }
+/* A lone card on the last row spans the row instead of leaving two empty cells. */
+.fieldGrid a:last-child:nth-child(3n + 1) { grid-column:1 / -1; min-height:0; padding-right:0; border-right:0; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:clamp(40px,6vw,96px); align-items:end; }
+.fieldGrid a:last-child:nth-child(3n + 1) span { grid-column:1 / -1; }
+.fieldGrid a:last-child:nth-child(3n + 1) h3 { margin:28px 0 0; }
+.fieldGrid a:last-child:nth-child(3n + 1) b { padding-top:16px; }
 
 .outside { padding:clamp(88px,10.5vw,150px) clamp(24px,8vw,125px); color:#f7f2e8; background:#174a50; }
 .outsideHeading { display:grid; grid-template-columns:minmax(250px,.72fr) minmax(0,1fr); column-gap:clamp(55px,9vw,145px); }
@@ -99,6 +104,7 @@
   .fieldGrid { grid-template-columns:1fr; }
   .fieldGrid a, .fieldGrid a:nth-child(3n + 1), .fieldGrid a:nth-child(3n) { min-height:0; padding:28px 0; border-right:0; border-bottom:1px solid rgba(16,38,28,.18); }
   .fieldGrid a:last-child { border-bottom:0; }
+  .fieldGrid a:last-child:nth-child(3n + 1) { display:flex; }
   .fieldGrid h3 { margin-top:28px; }
   .fieldGrid b { margin-top:25px; }
   .outsideGrid article, .outsideGrid article:first-child, .outsideGrid article:last-child { min-height:0; padding:28px 0; border-right:0; }

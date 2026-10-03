@@ -144,21 +144,22 @@
 .signature { color:#e2b75f; font-family:var(--hsc-editorial); }
 .footer { background:#18231f; }
 
-/* Founder photography is an author portrait, not the subject of the page. */
-.hero { min-height:460px; padding:clamp(64px,7vw,104px) clamp(24px,7vw,110px); grid-template-columns:minmax(0,1fr) minmax(150px,190px); align-items:center; gap:clamp(40px,6vw,88px); }
-.hero > img { width:min(100%,180px); height:auto; min-height:0; aspect-ratio:4 / 3; grid-column:2; grid-row:1; justify-self:start; object-fit:cover; object-position:center 40%; border:1px solid rgba(24,35,31,.2); box-shadow:10px 11px 0 rgba(33,79,80,.18); }
+/* Founder photography is an author portrait, not the subject of the page, but
+   it has to be big enough to read as a person and to hold the right side. */
+.hero { min-height:520px; padding:clamp(64px,7vw,104px) clamp(24px,7vw,110px); grid-template-columns:minmax(0,1fr) minmax(240px,340px); align-items:center; gap:clamp(40px,6vw,96px); }
+.hero > img { width:100%; height:auto; min-height:0; aspect-ratio:4 / 5; grid-column:2; grid-row:1; justify-self:end; object-fit:cover; object-position:center 40%; border:1px solid rgba(24,35,31,.2); box-shadow:14px 16px 0 rgba(33,79,80,.18); }
 .hero > div:nth-child(2) { display:none; }
 .heroContent { grid-column:1; grid-row:1; padding:0; border:0; }
 
 @media (max-width:900px) {
-  .hero { min-height:0; padding:72px clamp(24px,7vw,64px); grid-template-columns:minmax(0,1fr) 160px; grid-template-rows:auto; }
+  .hero { min-height:0; padding:72px clamp(24px,7vw,64px); grid-template-columns:minmax(0,1fr) 220px; grid-template-rows:auto; }
   .heroContent { grid-column:1; grid-row:1; padding:0; border:0; }
-  .hero > img { width:150px; min-height:0; grid-column:2; grid-row:1; justify-self:end; align-self:end; }
+  .hero > img { width:220px; min-height:0; grid-column:2; grid-row:1; justify-self:end; align-self:center; }
 }
 
 @media (max-width:760px) {
-  .hero { padding:62px 20px 66px; grid-template-columns:1fr; grid-template-rows:auto auto; gap:30px; }
-  .hero > img { width:132px; min-height:0; grid-column:1; grid-row:2; justify-self:start; }
+  .hero { padding:56px 20px 60px; grid-template-columns:1fr; grid-template-rows:auto auto; gap:32px; }
+  .hero > img { width:min(100%,300px); aspect-ratio:1 / 1; min-height:0; grid-column:1; grid-row:2; justify-self:start; }
 }
 
 /* Sunday Board migration. Chris remains an author-sized presence. */
@@ -181,7 +182,7 @@
   font-weight:700;
   letter-spacing:-.045em;
 }
-.hero { background:linear-gradient(118deg,var(--paper) 0 72%,var(--sage) 72% 100%); }
+.hero { background:linear-gradient(118deg,var(--paper) 0 64%,var(--sage) 64% 100%); }
 .hero > img { border-color:rgba(9,47,60,.22); box-shadow:10px 11px 0 rgba(33,133,157,.2); }
 .heroContent > p,.eyebrow,.story .eyebrow,.notes .eyebrow { color:var(--rust); }
 .hero h1 em,.notes h2 em { color:var(--ocean); }

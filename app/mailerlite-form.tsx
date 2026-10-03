@@ -19,7 +19,7 @@ export function SundayBoardSignupForm() {
       <span className={styles.kicker}>Free · 15 minute meeting guide</span>
       <h3 className={styles.title}>Print one copy. Put it between you.</h3>
       <p className={styles.blurb}>
-        The one page guide Chris and Rhea use. Free to download, nothing to sign up for.
+        The one sheet guide Chris and Rhea use. Free to download, nothing to sign up for.
       </p>
       <a className={styles.download} href={GUIDE_URL} download="sunday-board-meeting.pdf">
         Download the meeting guide <span aria-hidden="true">↓</span>

@@ -33,7 +33,7 @@ export default function SundayBoard() {
         <p>When the calendar, kids, work, and household details live in separate heads, small things turn into stress. The Sunday Board gives both of you one place to see what is coming, decide who owns what, and make room for what matters.</p>
         <div className="sunday-hero-actions">
           <a className="button primary" href="#watch-together">Watch us use it</a>
-          <small>Free video and one page guide · No signup needed</small>
+          <small>Free video and one sheet guide · No signup needed</small>
           <Link href="/library">Want more than the week? See All the Way Here <span>→</span></Link>
         </div>
       </section>
@@ -44,7 +44,7 @@ export default function SundayBoard() {
           <h2>Chris and Rhea,<br /><em>at the same table.</em></h2>
           <p>We built a life in Charleston, moved our family to Brevard, and are raising three kids while work, screens, schedules, and ordinary pressure keep asking for more. The Sunday Board Meeting came from needing one simple place to slow down and see the same week together.</p>
           <p>We are not a perfect couple and this is not a performance. It is the two of us talking through something we use most Sundays.</p>
-          <a className="quiet-link" href="#get-board">Get the one page guide <span>↓</span></a>
+          <a className="quiet-link" href="#get-board">Get the one sheet guide <span>↓</span></a>
         </div>
         <SundayBoardMeetingVideo />
       </section>
@@ -55,7 +55,7 @@ export default function SundayBoard() {
           <h2>Get the guide.<br /><em>Use it together this week.</em></h2>
           <p>Download the printable guide and use it this week. Print one copy and sit down together. If you want it by email, there is a spot for that too.</p>
           <ul>
-            <li>A printable one page weekly guide</li>
+            <li>A printable weekly guide: the shared week on the front, your own week on the back</li>
             <li>A clear four part agenda for the conversation</li>
             <li>Prompts for connection, logistics, and one shared priority</li>
             <li>Free, with no account required</li>

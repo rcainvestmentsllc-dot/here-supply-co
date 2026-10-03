@@ -80,7 +80,7 @@ export default function Home() {
         </div>
       </section>
       <section className={styles.resourceSystem} aria-label="The Here Supply Co. resource system">
-        <article><span>FREE</span><h2>Sunday Board</h2><p>A fifteen minute weekly conversation and a one page guide to have it with.</p><Link href="/sunday-board">Start free <b>→</b></Link></article>
+        <article><span>FREE</span><h2>Sunday Board</h2><p>A fifteen minute weekly conversation and a one sheet guide to have it with.</p><Link href="/sunday-board">Start free <b>→</b></Link></article>
         <article><span>$99 COURSE</span><h2>All the Way Here</h2><p>A three day reset, then nine short lessons, one practice each, for the places attention and connection slip at home.</p><Link href="/library">See the course <b>→</b></Link></article>
         <article><span>INCLUDED WITH THE COURSE</span><h2>The course book</h2><p>The whole course in one 25 page book with room to write, so you can print it and mark it up together.</p><Link href="/library#curriculum">See what is inside <b>→</b></Link></article>
         <article><span>INCLUDED WITH THE COURSE</span><h2>Resource Pack</h2><p>Twelve one page sheets plus three family tools, made to live on the table, the desk, the fridge, and in the glovebox.</p><Link href="/library#kit">See the pack <b>→</b></Link></article>
