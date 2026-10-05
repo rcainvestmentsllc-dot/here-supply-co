@@ -100,7 +100,7 @@ export function DriftCheck({ lessons, checkoutUrl }: { lessons: Record<string, L
         </div>
 
         <div className={styles.resultFoot}>
-          <a className={styles.buy} href={checkoutUrl}>Get All the Way Here · $99</a>
+          <a className={styles.buy} href={checkoutUrl}>Get All the Way Here · $49</a>
           <button type="button" className={styles.textButton} onClick={restart}>Take it again</button>
         </div>
 

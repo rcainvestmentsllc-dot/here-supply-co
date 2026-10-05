@@ -96,7 +96,7 @@ export default function SundayBoard() {
           <h2>The guide makes the week visible.<br /><em>The course helps you live it.</em></h2>
           <p>All the Way Here picks up where the guide stops: how you put the phone down, get home from work, handle pressure, date, parent, and keep friends.</p>
         </div>
-        <Link className="button primary" href="/library">See All the Way Here · $99 <span>→</span></Link>
+        <Link className="button primary" href="/library">See All the Way Here · $49 <span>→</span></Link>
       </section>
 
       <Footer />

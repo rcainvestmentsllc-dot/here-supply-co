@@ -53,3 +53,13 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      # Make sure the D1 tables exist (every statement is CREATE IF NOT EXISTS,
+      # so this is safe to run on every deploy). The purchase webhook and the
+      # founding spots counter read and write them.
+      - name: Ensure database tables
+        run: pnpm exec wrangler d1 execute here-supply-co-access --remote --file schema/access.sql --config dist/server/wrangler.json
+        continue-on-error: true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

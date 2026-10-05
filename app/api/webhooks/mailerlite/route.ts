@@ -15,6 +15,7 @@
 import { getEnv } from "../../../../lib/cloudflare-env";
 import { recordPurchase, type ProductKey } from "../../../../lib/auth";
 import type { CloudflareEnv } from "../../../../lib/cloudflare-env";
+import { webhookTokenOk } from "../../../../lib/founding";
 
 /** Group-name fragments, checked in order. First match wins. */
 const NAME_RULES: Array<{ match: RegExp; product: ProductKey }> = [
@@ -81,6 +82,12 @@ async function log(
 
 export async function POST(request: Request) {
   const env = getEnv();
+
+  // Only MailerLite knows the token in the webhook URL. Without it, anyone
+  // could post a fake purchase and burn founding spots.
+  if (!(await webhookTokenOk(new URL(request.url).searchParams.get("t")))) {
+    return new Response("Not found", { status: 404 });
+  }
 
   let payload: Payload;
   try {

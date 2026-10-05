@@ -38,7 +38,7 @@ export const MOMENTS: Record<MomentKey, Moment> = {
       "For fifteen minutes, follow their conversation or play. Do not steer it, check something, or multitask.",
     ],
     note: "The point is proximity and attention. The Focus Protocol inside All the Way Here goes deeper if the reflex keeps winning.",
-    nextLabel: "See All the Way Here · $99",
+    nextLabel: "See All the Way Here · $49",
     nextHref: "/library",
   },
   arrival: {
@@ -54,7 +54,7 @@ export const MOMENTS: Record<MomentKey, Moment> = {
       "Take three deep breaths, then decide how you want to enter before opening the door.",
     ],
     note: "You do not need to fake a good mood. You do need to stop handing your family the whole weight of the day.",
-    nextLabel: "See All the Way Here · $99 founding price",
+    nextLabel: "See All the Way Here · $49 founding price",
     nextHref: "/library#core",
   },
   pressure: {
@@ -70,7 +70,7 @@ export const MOMENTS: Record<MomentKey, Moment> = {
       "Return when you said you would, then start with one calm sentence.",
     ],
     note: "A pause is not disappearing if you keep your word and return.",
-    nextLabel: "See All the Way Here · $99 founding price",
+    nextLabel: "See All the Way Here · $49 founding price",
     nextHref: "/library#core",
   },
   week: {
@@ -102,7 +102,7 @@ export const MOMENTS: Record<MomentKey, Moment> = {
       "Keep going until the list loses its grip. Do not organize it yet.",
     ],
     note: "Use a Sunday night mind sweep when you can. This is a reset, not another system to manage.",
-    nextLabel: "See All the Way Here · $99 founding price",
+    nextLabel: "See All the Way Here · $49 founding price",
     nextHref: "/library#core",
   },
   distance: {
@@ -118,7 +118,7 @@ export const MOMENTS: Record<MomentKey, Moment> = {
       "Keep the invitation light. Repeat it next week if it needs to become a rhythm.",
     ],
     note: "Do not wait until isolation feels like an emergency. Invite first.",
-    nextLabel: "See All the Way Here · $99 founding price",
+    nextLabel: "See All the Way Here · $49 founding price",
     nextHref: "/library#core",
   },
 };
