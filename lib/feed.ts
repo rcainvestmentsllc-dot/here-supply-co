@@ -66,6 +66,6 @@ ${items}
 </rss>
 `;
   return new Response(xml, {
-    headers: { "Content-Type": "application/rss+xml; charset=utf-8", "Cache-Control": "public, max-age=1800" },
+    headers: { "Content-Type": "application/rss+xml; charset=utf-8", "Cache-Control": "public, max-age=300" },
   });
 }
