@@ -8,7 +8,7 @@
   "pins": [
     {
       "slug": "b-sunday-real-couple",
-      "publish": "2026-10-07T23:30:00Z",
+      "publish": "2026-10-06T14:00:00Z",
       "board": "weekly-couples-check-in",
       "style": "photo",
       "photo": "public/assets/real/sunday-board-20.jpg",
@@ -46,7 +46,7 @@
     },
     {
       "slug": "b-phone-evenings",
-      "publish": "2026-10-10T23:30:00Z",
+      "publish": "2026-10-06T14:00:00Z",
       "board": "phone-free-evenings",
       "style": "statement",
       "color": "cream",
