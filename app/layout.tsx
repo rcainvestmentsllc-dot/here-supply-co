@@ -40,6 +40,8 @@ const siteData = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl("/")),
+  // Pinterest website claim for the Here Supply Co. business account.
+  other: { "p:domain_verify": "5d21ab016756478f129736933d86bea9" },
   title,
   description,
   icons: { icon: [{ url: "/favicon.svg?v=here-2", type: "image/svg+xml" }, { url: "/favicon-32x32.png?v=here-2", sizes: "32x32", type: "image/png" }], shortcut: "/favicon.svg?v=here-2", apple: "/apple-touch-icon.png?v=here-2" },
