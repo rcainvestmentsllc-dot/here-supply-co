@@ -189,3 +189,26 @@ test("unlocks the course with the right password and refuses a wrong one", async
   assert.equal(page.status, 200);
   assert.match(await page.text(), /Course password/);
 });
+
+test("serves one Pinterest feed per board with only pins that are due", async () => {
+  const pins = JSON.parse(await readFile(new URL("../content/pins.json", import.meta.url), "utf8"));
+  const feeds = {
+    "/rss.xml": "marriage-and-relationship-tips",
+    "/rss/weekly-couples-check-in": "weekly-couples-check-in",
+    "/rss/phone-free-evenings": "phone-free-evenings",
+  };
+  for (const [path, board] of Object.entries(feeds)) {
+    const response = await render(path);
+    assert.equal(response.status, 200, `${path} should serve`);
+    assert.match(response.headers.get("content-type") ?? "", /rss\+xml/);
+    const xml = await response.text();
+    for (const pin of pins.pins) {
+      const due = Date.parse(pin.publish) <= Date.now();
+      const listed = xml.includes(`<guid isPermaLink="false">${pin.slug}</guid>`);
+      assert.equal(listed, due && pin.board === board, `${pin.slug} in ${path}`);
+    }
+  }
+  for (const pin of pins.pins) {
+    await access(new URL(`../public/pins/${pin.slug}.jpg`, import.meta.url));
+  }
+});
