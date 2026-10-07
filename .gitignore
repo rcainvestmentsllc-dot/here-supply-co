@@ -46,3 +46,4 @@ yarn-error.log*
 
 # local handoff/export artifacts
 /output/
+tools/print/__pycache__/

@@ -212,3 +212,35 @@ test("serves one Pinterest feed per board with only pins that are due", async ()
     await access(new URL(`../public/pins/${pin.slug}.jpg`, import.meta.url));
   }
 });
+
+test("coaching page explains Thirty Days With Chris and the price", async () => {
+  const html = (await htmlFor("/coaching")).replace(/<!-- -->/g, "");
+  assert.match(html, /Thirty Days With Chris/);
+  assert.match(html, /\$450/);
+  assert.match(html, /\$250/);
+  assert.match(html, /within 48 hours/);
+  const checkin = await htmlFor("/coaching/check-in");
+  assert.match(checkin, /check in/i);
+  assert.match(checkin, /noindex/);
+});
+
+test("coaching inbox is hidden without its token and the form rejects bad input", async () => {
+  const inbox = await render("/api/coaching/inbox");
+  assert.equal(inbox.status, 404);
+  const wrong = await render("/api/coaching/inbox?t=wrong");
+  assert.equal(wrong.status, 404);
+  const body = new FormData();
+  body.set("kind", "application");
+  body.set("name", "Test");
+  body.set("email", "not an email");
+  const res = await worker.fetch(new Request("http://localhost/api/coaching", { method: "POST", body }), {
+    ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) },
+  }, { waitUntil() {}, passThroughOnException() {} });
+  assert.equal(res.status, 400);
+});
+
+test("course page lists the weekly emails and links coaching", async () => {
+  const html = await htmlFor("/library");
+  assert.match(html, /One email a week from Chris/);
+  assert.match(html, /href="\/coaching"/);
+});

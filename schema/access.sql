@@ -51,3 +51,16 @@ CREATE TABLE IF NOT EXISTS webhook_log (
   payload TEXT NOT NULL
 );
 CREATE INDEX IF NOT EXISTS idx_webhook_log_received ON webhook_log(received_at);
+
+-- Thirty Days With Chris: applications and weekly check ins. Read by the daily
+-- coaching inbox task through /api/coaching/inbox, which marks rows handled.
+CREATE TABLE IF NOT EXISTS coaching_messages (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  kind TEXT NOT NULL,
+  name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  payload TEXT NOT NULL,
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  handled_at TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_coaching_unhandled ON coaching_messages(handled_at, created_at);

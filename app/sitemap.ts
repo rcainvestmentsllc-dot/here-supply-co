@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/sunday-board`, lastModified, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/check`, lastModified, changeFrequency: "monthly", priority: 0.85 },
     { url: `${baseUrl}/library`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/coaching`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/resources`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/resources/look-up-at-clemson`, lastModified, changeFrequency: "monthly", priority: 0.85 },
     { url: `${baseUrl}/resources/everyone-needs-a-third-place`, lastModified, changeFrequency: "monthly", priority: 0.8 },

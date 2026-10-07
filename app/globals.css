@@ -2844,3 +2844,12 @@ body,.site,.access-shell,.lesson-shell,.workbook-shell,.working-page {
 .not-found p { max-width: 52ch; margin: 0 0 26px; color: var(--hsc-copy); font-size: 18px; line-height: 1.55; }
 .not-found ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
 .not-found a { color: var(--hsc-teal); font-size: 18px; font-weight: 700; text-underline-offset: 4px; }
+/* Thirty Days With Chris */
+.working-hero .button { margin-top:28px; }
+.working-intake > div:first-child > p + p { margin-top:14px; }
+.working-intake > div:first-child a { color:var(--working-rust); }
+@media (min-width:901px) {
+  .included-list { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .included-list article { min-height:220px; border-right:1px solid rgba(24,48,39,.2); }
+  .included-list article:nth-child(2n) { border-right:0; }
+}

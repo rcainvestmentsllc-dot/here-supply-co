@@ -155,9 +155,13 @@ def sunday_board(c):
     c.setFillColor(OCEAN)
     c.rect(qx, y - qh + 8, 4, qh, stroke=0, fill=1)
     caps(c, qx + 14, y - 10, "One question to start", size=6.8, color=CORAL)
-    qy = para(c, qx + 14, y - 26, "At the end of this week, what would make us say we were on the same team?", qw - 28,
+    qy = para(c, qx + 14, y - 26, "What do we want this week to feel like, and why?", qw - 28,
               font="BodySemi", size=9.4, leading=12, color=INK)
-    _fill_lines(c, qx + 14, qy - 6, y - qh + 18, qw - 28, gap=16)
+    _fill_lines(c, qx + 14, qy - 6, y - qh + 32, qw - 28, gap=16)
+    # Once a month, a second question.
+    c.setFont("Body", 7)
+    c.setFillColor(COPY)
+    c.drawString(qx + 14, y - qh + 16, "Once a month: what have you been short on lately?")
 
     y -= 120
     h1 = 140
@@ -310,7 +314,7 @@ def pause_return(c):
         c, label=lesson_label("2.1"), kicker="Pause · Return · Repair",
         headline=["Before pressure", "picks your answer."],
         steps=[
-            ("Pause", "One slow breath. If you can answer respectfully, answer. If not, say you need a minute."),
+            ("Pause", "Stand up, move, three long exhales. Then answer respectfully, or say you need a minute."),
             ("Name the time", "A pause is only a pause if you say when you are coming back. Ten minutes counts."),
             ("Return calm", "Open with what is true and useful. Skip the defense and the list of their faults."),
             ("Repair", "If you were sharp, name it without an excuse and ask what would help."),

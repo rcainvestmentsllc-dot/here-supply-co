@@ -56,6 +56,13 @@ export default function WelcomePage() {
               normal week.
             </span>
           </li>
+          <li>
+            <b>Watch for a short email from Chris each week.</b>
+            <span>
+              For nine weeks, one note with that week&rsquo;s practice and one question for your Sunday Board.
+              Reply to any of them and it comes straight to Chris.
+            </span>
+          </li>
         </ol>
       </section>
 

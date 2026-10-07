@@ -58,6 +58,7 @@ export default function SundayBoard() {
             <li>A printable weekly guide: the shared week on the front, your own week on the back</li>
             <li>A clear four part agenda for the conversation</li>
             <li>Prompts for connection, logistics, and one shared priority</li>
+            <li>One question to start: what do we want this week to feel like, and why?</li>
             <li>Free, with no account required</li>
           </ul>
         </div>

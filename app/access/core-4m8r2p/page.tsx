@@ -175,6 +175,24 @@ export default function CourseHome() {
           </Link>
         ))}
       </div>
+
+      {/* Help along the way */}
+      <div className={styles.sectionHead}>
+        <h2>Help along the way</h2>
+        <p>You do not have to do this alone.</p>
+      </div>
+      <div className={styles.resources}>
+        <div className={styles.resourceCard}>
+          <span className={styles.resourceLabel}>Every Sunday</span>
+          <span className={styles.resourceTitle}>A short email from Chris</span>
+          <span className={styles.resourceNote}>For nine weeks, one note with that week&rsquo;s practice, the smallest version for a hard week, and one question for your Sunday Board. Reply and it comes straight to Chris.</span>
+        </div>
+        <Link href="/coaching" className={styles.resourceCard}>
+          <span className={styles.resourceLabel}>Optional</span>
+          <span className={styles.resourceTitle}>Thirty Days With Chris</span>
+          <span className={styles.resourceNote}>One month of one on one email coaching: a call to start, a weekly check in, and a real reply within 48 hours.</span>
+        </Link>
+      </div>
     </CourseShell>
   );
 }

@@ -266,7 +266,7 @@ export const CORE_LESSONS: CoreLesson[] = [
     practice: "Pause, return, repair",
     practiceIntro: "Use the shortest response that keeps a hard moment from becoming a larger one.",
     steps: [
-      { title: "Pause before the answer", body: "Take one slow breath. If you can respond respectfully, do it. If not, say that you need a short break." },
+      { title: "Pause before the answer", body: "Change your body before you try to change your mind. Stand up, step into another room or outside, and take three breaths with a longer exhale. Sixty seconds. If you can respond respectfully after that, do it. If not, say that you need a short break." },
       { title: "Name the return time", body: "Say when you will come back, then keep your word. That is what keeps a pause from feeling like you left. Choose a specific time, even if it is ten minutes away." },
       { title: "Return with one calm sentence", body: "Start with what is true and useful. Do not open with a defense, a lecture, or a list of everything the other person did wrong." },
       { title: "Repair the miss", body: "If you were sharp or shut down, name it without an excuse. Apologize for your part and ask what would help reconnect." },

@@ -82,8 +82,8 @@ export default function Home() {
       <section className={styles.resourceSystem} aria-label="The Here Supply Co. resource system">
         <article><span>FREE</span><h2>Sunday Board</h2><p>A fifteen minute weekly conversation and a one sheet guide to have it with.</p><Link href="/sunday-board">Start free <b>→</b></Link></article>
         <article><span>$49 COURSE</span><h2>All the Way Here</h2><p>A three day reset, then nine short lessons, one practice each, for the places attention and connection slip at home.</p><Link href="/library">See the course <b>→</b></Link></article>
-        <article><span>INCLUDED WITH THE COURSE</span><h2>The course book</h2><p>The whole course in one 25 page book with room to write, so you can print it and mark it up together.</p><Link href="/library#curriculum">See what is inside <b>→</b></Link></article>
-        <article><span>INCLUDED WITH THE COURSE</span><h2>Resource Pack</h2><p>Twelve one page sheets plus three family tools, made to live on the table, the desk, the fridge, and in the glovebox.</p><Link href="/library#kit">See the pack <b>→</b></Link></article>
+        <article><span>INCLUDED WITH THE COURSE</span><h2>Book, sheets, and Sunday notes</h2><p>A 25 page course book, twelve one page sheets for the fridge and the glovebox, and one email a week from Chris for nine weeks.</p><Link href="/library#kit">See what is inside <b>→</b></Link></article>
+        <article><span>OPTIONAL COACHING</span><h2>Thirty Days With Chris</h2><p>A call to start, a weekly check in, and a real reply within 48 hours. For a few couples at a time.</p><Link href="/coaching">See how it works <b>→</b></Link></article>
       </section>
       <section className={styles.startSection} id="start">
         <div className={styles.startArtwork}>
@@ -116,7 +116,7 @@ export default function Home() {
             <div className={styles.offerTopline}><span>HERE SUPPLY CO.</span><b>$49 FOUNDING PRICE</b></div>
             <h3>All the Way<br /><em>Here.</em></h3>
             <p>Nine short lessons, each built around one thing you do this week.</p>
-            <div className={styles.deliveryNote}><span>WHAT YOU GET</span><p>The 72 hour Focus Protocol, nine short online lessons, a 25 page course book to print, and the Resource Pack. Start where it hurts most and keep what helps.</p></div>
+            <div className={styles.deliveryNote}><span>WHAT YOU GET</span><p>The 72 hour Focus Protocol, nine short online lessons, a 25 page course book to print, the Resource Pack, and a short email from Chris every week for nine weeks. Start where it hurts most and keep what helps.</p></div>
             <p className={styles.offerAssurance}>$49 for the first 50 couples, then $99 · yours to keep · 14 day refund window</p>
             <a className={styles.buyButton} href={CHECKOUT.core}>Get All the Way Here <b>$49</b></a>
             <p className={styles.afterPay}>
