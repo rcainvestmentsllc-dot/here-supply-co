@@ -2846,7 +2846,7 @@ body,.site,.access-shell,.lesson-shell,.workbook-shell,.working-page {
 .not-found a { color: var(--hsc-teal); font-size: 18px; font-weight: 700; text-underline-offset: 4px; }
 /* Thirty Days With Chris */
 .working-hero .button { margin-top:28px; }
-.working-intake > div:first-child > p + p { margin-top:14px; }
+.working-intake > div:first-child > p + p:last-child { margin-top:14px; }
 .working-intake > div:first-child a { color:var(--working-rust); }
 @media (min-width:901px) {
   .included-list { grid-template-columns:repeat(2,minmax(0,1fr)); }

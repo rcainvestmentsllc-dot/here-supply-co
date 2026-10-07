@@ -26,7 +26,7 @@ export function CoachingForm({ kind }: { kind: "application" | "checkin" }) {
       <span>{kind === "application" ? "APPLICATION RECEIVED" : "CHECK IN RECEIVED"}</span>
       <h2>{kind === "application" ? "Got it. Thank you." : "Thank you. I have it."}</h2>
       <p>{kind === "application"
-        ? "I read every application myself. You will hear from me within two days, from hello@heresupplyco.com, either with a time for the first call or an honest note if this is not the right fit."
+        ? "I read every application myself. You will hear from me by email within two days, either with a time for the first call or an honest note if this is not the right fit."
         : "I will read it and write back within 48 hours. Keep doing the small version in the meantime."}</p>
     </div>;
   }
