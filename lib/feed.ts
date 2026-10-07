@@ -31,8 +31,13 @@ export const PINS = data.pins as Pin[];
 const esc = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
+// Marketing pause (Chris, Oct 7 2026): nothing scheduled after this moment
+// publishes. Set to null to resume the schedule.
+export const PAUSED_AT: string | null = "2026-10-07T16:00:00Z";
+
 export function livePins(board: string, now = Date.now()): Pin[] {
-  return PINS.filter((p) => p.board === board && Date.parse(p.publish) <= now).sort(
+  const cutoff = PAUSED_AT ? Math.min(now, Date.parse(PAUSED_AT)) : now;
+  return PINS.filter((p) => p.board === board && Date.parse(p.publish) <= cutoff).sort(
     (a, b) => Date.parse(b.publish) - Date.parse(a.publish),
   );
 }
