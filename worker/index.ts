@@ -3,6 +3,7 @@ import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } fr
 import handler from "vinext/server/app-router-entry";
 import { runWithEnv } from "../lib/cloudflare-env";
 import { courseGate, isGatedPath } from "../lib/course-pass";
+import { pausedResponse } from "../lib/site-pause";
 
 interface Env {
   ASSETS: Fetcher;
@@ -51,6 +52,9 @@ const worker = {
         },
       }, allowedWidths);
     }
+
+    const paused = pausedResponse(url.hostname, url.pathname);
+    if (paused) return paused;
 
     const gated = await courseGate(request, env);
     if (gated) return gated;
