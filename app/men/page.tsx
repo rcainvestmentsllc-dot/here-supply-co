@@ -93,8 +93,8 @@ export default function MenHome() {
       <section className={styles.section}>
         <div className={styles.story}>
           <img
-            src="/assets/course/art/lesson-1-3-airlock.jpg"
-            alt="A man standing by his truck in the driveway at dusk, looking at the lit house"
+            src="/assets/course/photo/emotional-phone-at-game-v1.jpg"
+            alt="A father looking at his phone on the bleachers while his daughter waits for him on the field"
             width={1672}
             height={941}
             loading="lazy"

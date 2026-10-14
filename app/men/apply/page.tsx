@@ -2,6 +2,7 @@ import { MEN_HEADER_ACTION } from "../program";
 import type { Metadata } from "next";
 import { Footer, Header } from "../../components";
 import { MenForm } from "../men-form";
+import { BOOKING_URL } from "../program";
 import styles from "../men.module.css";
 
 export const metadata: Metadata = {
@@ -22,11 +23,11 @@ export default function MenApply() {
             <p>No long story needed. A sentence or two about what is costing you and what you want to be different is plenty. I read every one myself.</p>
             <ol className={styles.steps}>
               <li>You send this. It takes about three minutes.</li>
-              <li>I reply within two business days with a few times for a call.</li>
+              <li>{BOOKING_URL ? "You pick a time for a free call on the next screen." : "I reply within two business days with a few times for a call."}</li>
               <li>We talk for twenty minutes. If coaching fits, I tell you how it would work. If it does not, I say so and point you to something better.</li>
             </ol>
           </div>
-          <MenForm kind="men_application" />
+          <MenForm kind="men_application" bookingUrl={BOOKING_URL} />
         </div>
       </section>
       <Footer />

@@ -2853,3 +2853,7 @@ body,.site,.access-shell,.lesson-shell,.workbook-shell,.working-page {
   .included-list article { min-height:220px; border-right:1px solid rgba(24,48,39,.2); }
   .included-list article:nth-child(2n) { border-right:0; }
 }
+
+/* Men's apply form: book the free call right after sending. */
+.intake-book { margin-top:18px; min-height:52px; padding:0 19px; display:inline-flex; align-items:center; gap:20px; color:var(--hsc-paper-raised); background:var(--hsc-iron); border-radius:3px; font-size:13px; font-weight:700; text-decoration:none; }
+.intake-book:hover { background:var(--hsc-iron-deep); }

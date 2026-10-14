@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/men/course" },
-  openGraph: { title, description, url: "/men/course", images: [{ url: "/assets/course/art/lesson-1-2-hunter-farmer.jpg", alt: "A man working alone at a workbench" }] },
+  openGraph: { title, description, url: "/men/course", images: [{ url: "/assets/men/mens-edition-kit.jpg", alt: "The Men's Edition course book and printed sheets" }] },
 };
 
 const { course } = MEN_OFFERS;
@@ -59,8 +59,8 @@ export default function MenCoursePage() {
         </div>
         <div className={styles.heroMedia}>
           <img
-            src="/assets/course/art/lesson-1-2-hunter-farmer.jpg"
-            alt="A man working alone at a workbench in a mountain workshop, one project in front of him"
+            src="/assets/course/photo/lesson-3-3-mission-debrief-v1.jpg"
+            alt="A man writing in a notebook on the porch while his family gathers inside"
             width={1672}
             height={941}
           />
@@ -99,6 +99,10 @@ export default function MenCoursePage() {
       </section>
 
       <section className={`${styles.section} ${styles.sectionSand}`}>
+        <figure className={styles.kitShot}>
+          <img src="/assets/men/mens-edition-kit.jpg" alt="The Men's Edition course book and printed sheets fanned out on a table" width={1672} height={941} loading="lazy" />
+          <figcaption>The actual course book and sheets. Print them once and put each one where the moment happens.</figcaption>
+        </figure>
         <div className={styles.split}>
           <article className={styles.card}>
             <span className={`${styles.label} ${styles.labelRust}`}>What you get</span>

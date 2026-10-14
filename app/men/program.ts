@@ -11,6 +11,13 @@
  */
 export const MEN_CHECKOUT = process.env.NEXT_PUBLIC_MEN_CHECKOUT_URL || "";
 
+/**
+ * The free call booking page (a Google Calendar appointment schedule).
+ * Empty until Chris creates it. Once set, the apply form offers "Pick a
+ * time now" right after a man sends it, and the pages say so.
+ */
+export const BOOKING_URL = process.env.NEXT_PUBLIC_MEN_BOOKING_URL || "";
+
 export const MEN_OFFERS = {
   course: {
     name: "All the Way Here, Men's Edition",

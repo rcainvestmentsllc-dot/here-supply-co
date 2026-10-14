@@ -198,3 +198,8 @@
   .primary, .secondary { transition: none; }
   .primary:hover, .secondary:hover { transform: none; }
 }
+
+/* The real course book and sheets. */
+.kitShot { margin: 0 0 clamp(36px, 5vw, 60px); }
+.kitShot img { width: 100%; height: auto; display: block; border-radius: 4px; }
+.kitShot figcaption { margin-top: 12px; color: var(--hsc-copy); font-size: 14px; }

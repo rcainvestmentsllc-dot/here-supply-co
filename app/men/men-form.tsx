@@ -24,7 +24,7 @@ const DONE: Record<Kind, { tag: string; title: string; body: string }> = {
 };
 
 /** Posts a men's coaching form to /api/coaching and confirms on the page. */
-export function MenForm({ kind }: { kind: Kind }) {
+export function MenForm({ kind, bookingUrl = "" }: { kind: Kind; bookingUrl?: string }) {
   const [state, setState] = useState<State>("idle");
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -42,11 +42,13 @@ export function MenForm({ kind }: { kind: Kind }) {
 
   if (state === "ok") {
     const done = DONE[kind];
+    const book = kind === "men_application" && bookingUrl;
     return (
       <div className="intake-success" role="status">
         <span>{done.tag}</span>
         <h2>{done.title}</h2>
-        <p>{done.body}</p>
+        <p>{book ? "I read every one myself. If you already know you want to talk, grab a time for the free twenty minute call now. If coaching is not the right fit, I will say so before we ever talk." : done.body}</p>
+        {book && <a className="intake-book" href={bookingUrl} target="_blank" rel="noreferrer">Pick a time for the call <b>→</b></a>}
       </div>
     );
   }

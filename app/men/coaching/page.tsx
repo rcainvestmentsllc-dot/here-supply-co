@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/men/coaching" },
-  openGraph: { title, description, url: "/men/coaching", images: [{ url: "/assets/course/art/lesson-3-2-friendship.jpg", alt: "Two men talking on a dock at the edge of a lake" }] },
+  openGraph: { title, description, url: "/men/coaching", images: [{ url: "/assets/course/photo/lesson-3-1-third-place-v3.jpg", alt: "Three men talking beside a pickup after a ride" }] },
 };
 
 const { intensive, ongoing, table } = MEN_OFFERS;
@@ -43,8 +43,8 @@ export default function MenCoaching() {
         </div>
         <div className={styles.heroMedia}>
           <img
-            src="/assets/course/art/lesson-3-2-friendship.jpg"
-            alt="Two men sitting on a dock with fishing rods and coffee at the edge of a mountain lake"
+            src="/assets/course/photo/lesson-3-1-third-place-v3.jpg"
+            alt="Three men talking beside a pickup after a mountain bike ride"
             width={1672}
             height={941}
           />
@@ -64,6 +64,10 @@ export default function MenCoaching() {
             full, or in three payments of {usd(intensive.installments.amount)}.
           </p>
         </div>
+        <figure className={styles.kitShot}>
+          <img src="/assets/men/mens-edition-kit.jpg" alt="The Men's Edition course book and printed sheets fanned out on a table" width={1672} height={941} loading="lazy" />
+          <figcaption>Included: the Men&rsquo;s Edition course book and every sheet. We work from these each week.</figcaption>
+        </figure>
         <ol className={styles.weeks}>
           {INTENSIVE_WEEKS.map((w) => (
             <li key={w.week} className={styles.week}>
