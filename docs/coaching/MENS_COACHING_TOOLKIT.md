@@ -42,7 +42,12 @@ see `lib/course-pass.ts`.
       and the Weekly Table ($149 a month). Stripe payment links handle
       recurring billing.
 - [ ] Have an attorney read the coaching agreement below once.
-- [ ] Pick a scheduling tool for booking calls.
+- [ ] Make a free Google Calendar booking page for the twenty minute call
+      (Google Calendar, Create, Appointment schedule; a free Gmail account
+      gets one booking page). Paste its link into `BOOKING_URL` in
+      `app/men/program.ts`, or set `NEXT_PUBLIC_MEN_BOOKING_URL`. The apply
+      page then offers "Pick a time for the call" right after a man sends
+      the form. Free accounts do not send booking reminders.
 - [ ] Build a short list of local therapists and couples counselors to refer to.
 - [ ] Liability insurance for coaches, and decide which company the coaching runs under.
 
