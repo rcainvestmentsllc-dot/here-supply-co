@@ -40,7 +40,11 @@ function paint(done: Set<string>) {
   const total = document.querySelectorAll("[data-lesson-total]").length
     ? Number((document.querySelector("[data-lesson-total]") as HTMLElement).dataset.lessonTotal)
     : 0;
-  const count = Math.min(done.size, total || done.size);
+  // Count only lessons on this page, so the couples and men's editions,
+  // which share this browser's storage under different prefixes, never
+  // inflate each other's progress.
+  const onPage = new Set([...document.querySelectorAll<HTMLElement>("[data-lesson]")].map((el) => el.dataset.lesson || ""));
+  const count = Math.min([...onPage].filter((slug) => done.has(slug)).length, total || onPage.size);
   document.querySelectorAll<HTMLElement>("[data-progress-count]").forEach((el) => {
     el.textContent = String(count);
   });

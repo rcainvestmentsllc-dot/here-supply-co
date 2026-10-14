@@ -28,17 +28,18 @@ export function WeeklyGuidePreview() {
   );
 }
 
-export function Header() {
+/** The site header. The men's pages swap the action for their own next step. */
+export function Header({ action = { href: "/sunday-board#get-board", label: "Start free" } }: { action?: { href: string; label: string } } = {}) {
   return <>
     <header className="topbar">
       <Link className="brand" href="/" aria-label="Here Supply Co. home"><BrandWordmark /></Link>
-      <nav aria-label="Main navigation"><Link href="/sunday-board">Start here</Link><Link href="/library">The course</Link><Link href="/resources">Resources</Link><Link href="/about">About Chris</Link></nav>
-      <Link className="topbar-action" href="/sunday-board#get-board">Start free <span>→</span></Link>
+      <nav aria-label="Main navigation"><Link href="/sunday-board">Start here</Link><Link href="/library">The course</Link><Link href="/men">For men</Link><Link href="/resources">Resources</Link><Link href="/about">About Chris</Link></nav>
+      <Link className="topbar-action" href={action.href}>{action.label} <span>→</span></Link>
     </header>
-    <nav className="mobile-nav" aria-label="Mobile navigation"><Link href="/sunday-board">Start here</Link><Link href="/library">The course</Link><Link href="/resources">Resources</Link><Link href="/about">About</Link></nav>
+    <nav className="mobile-nav" aria-label="Mobile navigation"><Link href="/sunday-board">Start here</Link><Link href="/library">The course</Link><Link href="/men">For men</Link><Link href="/about">About</Link></nav>
   </>;
 }
 
 export function Footer() {
-  return <footer className="footer"><Link className="brand" href="/" aria-label="Here Supply Co. home"><BrandWordmark onDark /></Link><nav aria-label="Footer navigation"><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/library">All the Way Here</Link><Link href="/coaching">Thirty Days With Chris</Link><Link href="/resources">Resources</Link><Link href="/about">About Chris</Link><a href="https://chrisavera.substack.com" target="_blank" rel="me noreferrer">Chris on Substack ↗</a><Link href={CONTACT_FORM}>Contact</Link><Link href="/policies">Policies</Link></nav><span>MADE IN NORTH CAROLINA · © 2026 HERE SUPPLY CO.</span></footer>;
+  return <footer className="footer"><Link className="brand" href="/" aria-label="Here Supply Co. home"><BrandWordmark onDark /></Link><nav aria-label="Footer navigation"><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/library">All the Way Here</Link><Link href="/coaching">Thirty Days With Chris</Link><Link href="/men">For men who lead</Link><Link href="/men/coaching">Coaching for men</Link><Link href="/resources">Resources</Link><Link href="/about">About Chris</Link><a href="https://chrisavera.substack.com" target="_blank" rel="me noreferrer">Chris on Substack ↗</a><Link href={CONTACT_FORM}>Contact</Link><Link href="/policies">Policies</Link></nav><span>MADE IN NORTH CAROLINA · © 2026 HERE SUPPLY CO.</span></footer>;
 }

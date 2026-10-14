@@ -59,3 +59,22 @@ The course ships three print files: the course book, the Resource Pack (every
 sheet in course order, one PDF), and the Sunday Board Meeting. Lesson sheets
 are labeled with their lesson number (1.1 to 3.3). Retired file URLs redirect
 to their replacements in `lib/course-pass.ts`.
+
+## The men's path
+
+Two paths share this site: the couples path (home page, Sunday Board, All the
+Way Here) and the men's path under `/men` (coaching for men who lead and All
+the Way Here, Men's Edition). The couples course is unchanged.
+
+- Men's pages: `app/men/`. Prices, offers, and the twelve Intensive weeks live
+  in `app/men/program.ts`; the men's lesson text in `app/men/men-course.ts`.
+- Men's course: `/access/men-r7k2v9`, with its own password and cookie (see
+  `lib/course-pass.ts`). Its course book is `/downloads/men/`:
+  ```bash
+  node --experimental-strip-types scripts/export-course-content.mjs
+  node --experimental-strip-types scripts/export-mens-content.mjs
+  python3 scripts/build-mens-edition-print.py
+  ```
+- Coaching forms (`/men/apply`, `/men/intake`, `/men/check-in`) write to the
+  same D1 coaching inbox as Thirty Days With Chris.
+- How to run the program: `docs/coaching/MENS_COACHING_TOOLKIT.md`.

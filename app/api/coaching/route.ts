@@ -1,12 +1,12 @@
 import { getEnv } from "../../../lib/cloudflare-env";
 import { EMAIL_RE } from "../../../lib/subscribe";
-import { FIELDS, recordCoachingMessage, type CoachingKind } from "../../../lib/coaching";
+import { FIELDS, isCoachingKind, recordCoachingMessage } from "../../../lib/coaching";
 
-/** Coaching application or weekly check in from /coaching or /coaching/check-in. */
+/** Coaching forms: Thirty Days With Chris (/coaching) and the men's program (/men/apply, /men/intake, /men/check-in). */
 export async function POST(request: Request) {
   const form = await request.formData();
   const kindRaw = String(form.get("kind") || "");
-  const kind: CoachingKind | null = kindRaw === "application" || kindRaw === "checkin" ? kindRaw : null;
+  const kind = isCoachingKind(kindRaw) ? kindRaw : null;
   const trap = form.get("company");
   const name = String(form.get("name") || "").trim().slice(0, 120);
   const email = String(form.get("email") || "").trim().toLowerCase();

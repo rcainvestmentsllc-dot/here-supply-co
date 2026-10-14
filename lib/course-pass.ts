@@ -21,6 +21,19 @@
 const DEFAULT_PASSWORD_HASH = "3847f85c93a10728da34f8e9db0f9cbe03566f9864c69d7451aa74173d3a891f";
 
 export const COURSE_COOKIE = "hsc_course";
+
+/**
+ * The men's edition has its own password and its own cookie, so the two
+ * courses can be sold separately. Everything under MEN_ROOT and every file
+ * under /downloads/men/ needs the men's cookie. The shared sheets in
+ * /downloads open for a buyer of either course.
+ * To change it: printf 'hsc-men:NEWPASSWORD' | shasum -a 256, then put the
+ * result in DEFAULT_MEN_HASH or the MEN_PASSWORD_HASH Worker variable.
+ */
+const DEFAULT_MEN_HASH = "947680a9d258ad5330910968758555bcd67fa58cadb5e3f90c2f27c2b6065754";
+export const MEN_COOKIE = "hsc_men";
+export const MEN_ROOT = "/access/men-r7k2v9";
+const MEN_DOWNLOADS = "/downloads/men/";
 export const UNLOCK_PAGE = "/unlock";
 export const UNLOCK_ENDPOINT = "/api/course/unlock";
 const ONE_YEAR = 60 * 60 * 24 * 365;
@@ -44,6 +57,16 @@ const RETIRED_DOWNLOADS: Record<string, string> = {
   "/resources/why-men-need-a-third-place": "/resources/everyone-needs-a-third-place",
 };
 
+type Edition = "couples" | "men";
+
+function isMenPath(pathname: string): boolean {
+  return pathname === MEN_ROOT || pathname.startsWith(MEN_ROOT + "/") || pathname.startsWith(MEN_DOWNLOADS);
+}
+
+function isSharedDownload(pathname: string): boolean {
+  return pathname.startsWith("/downloads/") && !pathname.startsWith(MEN_DOWNLOADS);
+}
+
 export function isGatedPath(pathname: string): boolean {
   if (pathname === "/access" || pathname.startsWith("/access/")) return true;
   if (pathname.startsWith("/downloads/")) return !FREE_DOWNLOADS.has(pathname);
@@ -60,11 +83,48 @@ function passwordHash(env: Record<string, unknown>): string {
   return typeof override === "string" && /^[0-9a-f]{64}$/.test(override) ? override : DEFAULT_PASSWORD_HASH;
 }
 
+function menHash(env: Record<string, unknown>): string {
+  const override = env.MEN_PASSWORD_HASH;
+  return typeof override === "string" && /^[0-9a-f]{64}$/.test(override) ? override : DEFAULT_MEN_HASH;
+}
+
+const clean = (attempt: string) => attempt.trim().toLowerCase().replace(/\s+/g, "");
+
 /** Normalize what people type: ignore case and stray spaces. */
 export async function passwordMatches(env: Record<string, unknown>, attempt: string): Promise<boolean> {
-  const cleaned = attempt.trim().toLowerCase().replace(/\s+/g, "");
+  const cleaned = clean(attempt);
   if (!cleaned) return false;
   return (await sha256Hex(`hsc-course:${cleaned}`)) === passwordHash(env);
+}
+
+/** Which course a password opens, if any. */
+async function editionFor(env: Record<string, unknown>, attempt: string): Promise<Edition | null> {
+  if (await passwordMatches(env, attempt)) return "couples";
+  const cleaned = clean(attempt);
+  if (cleaned && (await sha256Hex(`hsc-men:${cleaned}`)) === menHash(env)) return "men";
+  return null;
+}
+
+async function menCookieToken(env: Record<string, unknown>): Promise<string> {
+  return sha256Hex(`hsc-men-cookie:${menHash(env)}`);
+}
+
+async function hasMenCookie(env: Record<string, unknown>, request: Request): Promise<boolean> {
+  const header = request.headers.get("cookie") ?? "";
+  const match = header.match(new RegExp(`(?:^|;\\s*)${MEN_COOKIE}=([0-9a-f]{64})`));
+  return Boolean(match) && match![1] === (await menCookieToken(env));
+}
+
+async function cookieFor(env: Record<string, unknown>, edition: Edition): Promise<string> {
+  if (edition === "couples") return unlockCookieHeader(env);
+  return `${MEN_COOKIE}=${await menCookieToken(env)}; Path=/; Max-Age=${ONE_YEAR}; HttpOnly; Secure; SameSite=Lax`;
+}
+
+/** Does this request hold a cookie that opens this path? */
+async function allowed(env: Record<string, unknown>, request: Request, pathname: string): Promise<boolean> {
+  if (isMenPath(pathname)) return hasMenCookie(env, request);
+  if (isSharedDownload(pathname)) return (await hasCourseCookie(env, request)) || (await hasMenCookie(env, request));
+  return hasCourseCookie(env, request);
 }
 
 async function cookieToken(env: Record<string, unknown>): Promise<string> {
@@ -102,10 +162,13 @@ export async function courseGate(request: Request, env: Record<string, unknown>)
     const form = await request.formData();
     const returnTo = safeReturnPath(form.get("return_to"));
     const attempt = form.get("password");
-    if (typeof attempt === "string" && (await passwordMatches(env, attempt))) {
+    const edition = typeof attempt === "string" ? await editionFor(env, attempt) : null;
+    if (edition) {
+      // A men's password with no men's destination lands on the men's course home.
+      const target = edition === "men" && !isMenPath(returnTo) ? MEN_ROOT : returnTo;
       return new Response(null, {
         status: 303,
-        headers: { Location: new URL(returnTo, url.origin).href, "Set-Cookie": await unlockCookieHeader(env) },
+        headers: { Location: new URL(target, url.origin).href, "Set-Cookie": await cookieFor(env, edition) },
       });
     }
     const back = new URL(UNLOCK_PAGE, url.origin);
@@ -121,15 +184,16 @@ export async function courseGate(request: Request, env: Record<string, unknown>)
   const key = url.searchParams.get("key");
   if (key !== null) {
     url.searchParams.delete("key");
-    if (await passwordMatches(env, key)) {
+    const edition = await editionFor(env, key);
+    if (edition) {
       return new Response(null, {
         status: 303,
-        headers: { Location: url.pathname + url.search, "Set-Cookie": await unlockCookieHeader(env), "Cache-Control": "no-store" },
+        headers: { Location: url.pathname + url.search, "Set-Cookie": await cookieFor(env, edition), "Cache-Control": "no-store" },
       });
     }
   }
 
-  if (await hasCourseCookie(env, request)) return null;
+  if (await allowed(env, request, url.pathname)) return null;
 
   const unlock = new URL(UNLOCK_PAGE, url.origin);
   unlock.searchParams.set("return_to", url.pathname + url.search);

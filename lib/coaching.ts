@@ -26,12 +26,22 @@ export async function inboxTokenOk(token: string | null): Promise<boolean> {
   return hex === INBOX_TOKEN_HASH;
 }
 
-export type CoachingKind = "application" | "checkin";
+/**
+ * application and checkin belong to Thirty Days With Chris (couples).
+ * The men_ kinds belong to the men's coaching program: the free call
+ * request, the Intensive intake before the first call, and the Friday check in.
+ */
+export type CoachingKind = "application" | "checkin" | "men_application" | "men_intake" | "men_checkin";
 
 export const FIELDS: Record<CoachingKind, string[]> = {
   application: ["together", "where", "different", "tried", "times"],
   checkin: ["week", "practiced", "in_the_way", "question", "anything_else"],
+  men_application: ["phone", "lead", "costing", "different", "interest", "times", "heard"],
+  men_intake: ["work", "home", "people", "drift_home", "drift_work", "drift_self", "cost", "goal_home", "goal_work", "goal_self", "focus_start", "know"],
+  men_checkin: ["week", "practiced", "best_of_you", "bring", "anything_else"],
 };
+
+export const isCoachingKind = (value: string): value is CoachingKind => Object.hasOwn(FIELDS, value);
 
 export async function recordCoachingMessage(
   env: CloudflareEnv,

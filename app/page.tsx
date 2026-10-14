@@ -35,6 +35,7 @@ export default function Home() {
         <nav className={styles.nav} aria-label="Main navigation">
           <Link href="/sunday-board">Start here</Link>
           <Link href="/library">The course</Link>
+          <Link href="/men">For men</Link>
           <Link href="/resources">Resources</Link>
           <Link href="/about">About Chris</Link>
         </nav>
@@ -44,7 +45,7 @@ export default function Home() {
       <nav className={styles.mobileNav} aria-label="Mobile navigation">
         <Link href="/sunday-board">Start here</Link>
         <Link href="/library">The course</Link>
-        <Link href="/resources">Resources</Link>
+        <Link href="/men">For men</Link>
         <Link href="/about">About</Link>
       </nav>
 
@@ -71,6 +72,17 @@ export default function Home() {
         <span><b>02 · Reset</b>Four small moves for three days, with no renegotiating.</span>
         <span><b>03 · Show up</b>Bring a steadier self through the door every night.</span>
       </div>
+      {/* Two paths. This page is the couples path; the men's path has its own home. */}
+      <section className={styles.paths} aria-label="Two ways in">
+        <div>
+          <span>FOR COUPLES</span>
+          <p>Tools for two people sharing a life. You are in the right place: start with the free Sunday Board.</p>
+        </div>
+        <Link href="/men">
+          <span>FOR MEN WHO LEAD</span>
+          <p>Coaching and a men&rsquo;s edition of the course, for the man carrying a business, a family, and a lot in his head. <b>Go to the men&rsquo;s path →</b></p>
+        </Link>
+      </section>
       <section className={styles.systemIntro} id="resources">
         <p className={styles.eyebrow}>WHAT WE MAKE</p>
         <div>

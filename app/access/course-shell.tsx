@@ -40,17 +40,47 @@ function CheckGlyph({ filled }: { filled: boolean }) {
   );
 }
 
+/**
+ * What the rail shows. The couples course is the default; the men's edition
+ * passes its own lessons, root, links, and a progress prefix so the two never
+ * share saved progress in one browser.
+ */
+export type ShellEdition = {
+  title: string;
+  root: string;
+  lessons: readonly { slug: string; movement: string; number: string; title: string }[];
+  movements: readonly { key: string; name: string }[];
+  footLinks: readonly { href: string; label: string }[];
+  progressPrefix: string;
+};
+
+const COUPLES_EDITION: ShellEdition = {
+  title: "All the Way Here",
+  root: "/access/core-4m8r2p",
+  lessons: CORE_LESSONS,
+  movements: CORE_MOVEMENTS,
+  footLinks: [
+    { href: "/access/core-4m8r2p", label: "Course home" },
+    { href: "/downloads/all-the-way-here-print-edition.pdf", label: "Print course book" },
+    { href: "/access/focus-7f3k9q", label: "Focus Protocol" },
+  ],
+  progressPrefix: "",
+};
+
 export function CourseShell({
   completed,
   currentSlug,
   children,
+  edition = COUPLES_EDITION,
 }: {
   completed: ReadonlySet<string>;
   currentSlug?: string;
   children: ReactNode;
+  edition?: ShellEdition;
 }) {
-  const total = CORE_LESSONS.length;
-  const done = CORE_LESSONS.filter((lesson) => completed.has(lesson.slug)).length;
+  const LESSONS = edition.lessons;
+  const total = LESSONS.length;
+  const done = LESSONS.filter((lesson) => completed.has(lesson.slug)).length;
   const pct = total === 0 ? 0 : Math.round((done / total) * 100);
 
   return (
@@ -60,7 +90,7 @@ export function CourseShell({
           <Link href="/" className={styles.railBrand}>
             <span aria-hidden="true">←</span> Here Supply Co.
           </Link>
-          <p className={styles.railTitle}>All the Way Here</p>
+          <p className={styles.railTitle}>{edition.title}</p>
 
           <div className={styles.progress}>
             <div className={styles.progressMeta}>
@@ -85,8 +115,8 @@ export function CourseShell({
 
         <RailDisclosure>
           <nav className={styles.railNav} aria-label="Course lessons">
-            {CORE_MOVEMENTS.map((movement) => {
-              const lessons = CORE_LESSONS.filter(
+            {edition.movements.map((movement) => {
+              const lessons = LESSONS.filter(
                 (lesson) => lesson.movement === movement.key
               );
               return (
@@ -103,9 +133,9 @@ export function CourseShell({
                     return (
                       <Link
                         key={lesson.slug}
-                        href={`${COURSE_ROOT}/lesson/${lesson.slug}`}
+                        href={`${edition.root}/lesson/${lesson.slug}`}
                         className={classes.join(" ")}
-                        data-lesson={lesson.slug}
+                        data-lesson={edition.progressPrefix + lesson.slug}
                         aria-current={isCurrent ? "page" : undefined}
                       >
                         <span className={styles.lessonNum}>{lesson.number}</span>
@@ -126,15 +156,11 @@ export function CourseShell({
           </nav>
 
           <div className={styles.railFoot}>
-            <Link href={`${COURSE_ROOT}`} className={styles.railFootLink}>
-              Course home <span aria-hidden="true">→</span>
-            </Link>
-            <Link href="/downloads/all-the-way-here-print-edition.pdf" className={styles.railFootLink}>
-              Print course book <span aria-hidden="true">→</span>
-            </Link>
-            <Link href="/access/focus-7f3k9q" className={styles.railFootLink}>
-              Focus Protocol <span aria-hidden="true">→</span>
-            </Link>
+            {edition.footLinks.map((link) => (
+              <Link key={link.href} href={link.href} className={styles.railFootLink}>
+                {link.label} <span aria-hidden="true">→</span>
+              </Link>
+            ))}
           </div>
         </RailDisclosure>
       </aside>
