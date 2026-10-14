@@ -222,3 +222,4 @@
 .paths p { margin:0; font-size:15px; line-height:1.6; }
 .paths b { display:inline-block; margin-top:4px; color:var(--hsc-brass); }
 @media (max-width:760px) { .paths { grid-template-columns:1fr; } }
+.paths div a { color:var(--hsc-iron); font-weight:700; text-underline-offset:3px; }

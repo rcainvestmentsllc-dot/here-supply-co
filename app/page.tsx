@@ -76,7 +76,7 @@ export default function Home() {
       <section className={styles.paths} aria-label="Two ways in">
         <div>
           <span>FOR COUPLES</span>
-          <p>Tools for two people sharing a life. You are in the right place: start with the free Sunday Board.</p>
+          <p>Tools for two people sharing a life. You are in the right place: start with the free Sunday Board. Buying for him? <Link href="/gift">See the gift options →</Link></p>
         </div>
         <Link href="/men">
           <span>FOR MEN WHO LEAD</span>

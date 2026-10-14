@@ -152,3 +152,14 @@ test("the paused live site keeps the men's pages paused too, but the men's cours
   }
   assert.notEqual((await live(ROOT)).status, 503);
 });
+
+test("the gift page hands the couples side to the men's side", async () => {
+  const page = await html("/gift");
+  const main = page.match(/<main\b[\s\S]*?<\/main>/i)?.[0] ?? page;
+  assert.equal((main.match(/<h1\b/gi) ?? []).length, 1);
+  assert.match(page, /rel="canonical" href="https:\/\/heresupplyco\.com\/gift"/);
+  assert.match(page, /Men&#x27;s Edition|Men’s Edition|Men's Edition/);
+  assert.match(page, /mailto:\?subject=Thought%20of%20you/);
+  assert.match(page, /men%2Fapply/);
+  assert.match(await html("/"), /href="\/gift"/);
+});
