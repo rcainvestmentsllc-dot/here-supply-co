@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { menMeta } from "../men/meta";
 import { Footer, Header } from "../components";
 import { MEN_CHECKOUT, MEN_OFFERS, usd } from "../men/program";
 import { SUPPORT_EMAIL, siteUrl } from "../site-config";
@@ -13,12 +14,7 @@ const title = "Give It to Him | Here Supply Co.";
 const description =
   "For the man who carries a lot. Give him the Men's Edition of All the Way Here, or send him a free call with Chris.";
 
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: { canonical: "/gift" },
-  openGraph: { title, description, url: "/gift", images: [{ url: "/assets/men/mens-edition-kit.jpg", alt: "The Men's Edition course book and printed sheets" }] },
-};
+export const metadata: Metadata = menMeta({ title, description, path: "/gift", image: { url: "/assets/men/mens-edition-kit.jpg", width: 1672, height: 941, alt: "The Men's Edition course book and printed sheets" } });
 
 const { course } = MEN_OFFERS;
 
@@ -31,7 +27,7 @@ const coachingGift = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent("Coac
 export default function GiftPage() {
   return (
     <main id="main-content" className={styles.page}>
-      <Header />
+      <Header action={{ href: "#course", label: "See the gift options" }} />
 
       <section className={styles.hero}>
         <div className={styles.heroCopy}>
@@ -83,7 +79,7 @@ export default function GiftPage() {
             <h3>How the gift works</h3>
             <ol>
               <li>You check out with your own email.</li>
-              <li>Your receipt has a one tap link to the course and its password.</li>
+              <li>A welcome email right after your receipt has a one tap link to the course and its password.</li>
               <li>Forward it to him, or print the course book and hand it to him.</li>
             </ol>
             <div style={{ marginTop: 20 }}>
@@ -116,8 +112,8 @@ export default function GiftPage() {
       <section className={`${styles.section} ${styles.sectionDark}`}>
         <span className={styles.label}>How to give it</span>
         <p className={styles.quote} style={{ marginTop: 20 }}>
-          Give it as something he gets to do for himself, not a hint that something is wrong with
-          him. Something like: you carry a lot for us, and this one is just for you.
+          Give it as something he gets to do for himself. Something like: you carry a lot for us,
+          and this one is just for you.
         </p>
       </section>
 

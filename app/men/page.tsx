@@ -1,5 +1,6 @@
 import { MEN_HEADER_ACTION } from "./program";
 import type { Metadata } from "next";
+import { menMeta } from "./meta";
 import { PlainLink as Link } from "../plain-link";
 import { Footer, Header } from "../components";
 import { MEN_OFFERS, usd } from "./program";
@@ -9,24 +10,12 @@ const title = "For Men Who Lead | Here Supply Co.";
 const description =
   "Coaching and a course for men who lead something: a family, a team, a company. Attention, steadiness, and a life outside your roles, at home and at work.";
 
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: { canonical: "/men" },
-  openGraph: {
-    title,
-    description,
-    url: "/men",
-    siteName: "Here Supply Co.",
-    type: "website",
-    images: [{ url: "/assets/course/photo/movement-return-v1.jpg", width: 1672, height: 941, alt: "A man setting his phone down before walking into the house" }],
-  },
-};
+export const metadata: Metadata = menMeta({ title, description, path: "/men" });
 
 export default function MenHome() {
   return (
     <main id="main-content" className={styles.page}>
-      <Header action={MEN_HEADER_ACTION} />
+      <Header action={MEN_HEADER_ACTION} path="men" />
 
       <section className={styles.hero}>
         <div className={styles.heroCopy}>
@@ -47,7 +36,7 @@ export default function MenHome() {
               Or start with the course
             </Link>
           </div>
-          <p className={styles.heroNote}>Coached by a man who is still doing the work himself, not a guru with a finished life.</p>
+          <p className={styles.heroNote}>Coached by a business owner and father who is still doing this work himself.</p>
         </div>
         <div className={styles.heroMedia}>
           <img
@@ -148,7 +137,7 @@ export default function MenHome() {
             <p className={styles.rungFoot}><Link href="/men/coaching#table">How it works</Link></p>
           </article>
           <article className={`${styles.rung} ${styles.rungFeatured}`}>
-            <span className={`${styles.label} ${styles.labelRust}`}>Where most men start</span>
+            <span className={`${styles.label} ${styles.labelRust}`}>Founding: {usd(MEN_OFFERS.intensive.foundingPrice)} for the first ten</span>
             <h3>{MEN_OFFERS.intensive.name}</h3>
             <p className={styles.rungPrice}>{usd(MEN_OFFERS.intensive.price)} <small>or 3 payments of {usd(MEN_OFFERS.intensive.installments.amount)}</small></p>
             <ul>
@@ -173,14 +162,26 @@ export default function MenHome() {
       </section>
 
       <section className={`${styles.section} ${styles.sectionDark}`}>
-        <span className={styles.label}>A note from Chris</span>
-        <p className={styles.quote} style={{ marginTop: 20 }}>
-          I am not your guru and I do not have a finished life. I have run a business for twenty
-          years, I am a husband and a father, and I keep doing this work when it is hard. I coach
-          the way I would want to be coached: straight with you, on your side, and asking the
-          question underneath the question.
-        </p>
-        <span className={styles.quoteCite}>Chris Avera · Brevard, North Carolina</span>
+        <div className={styles.story}>
+          <img
+            src="/assets/chris-founder-sunset.jpg"
+            alt="Chris Avera"
+            width={627}
+            height={627}
+            loading="lazy"
+            style={{ aspectRatio: "1 / 1", objectFit: "cover", borderRadius: 4 }}
+          />
+          <div>
+            <span className={styles.label}>A note from Chris</span>
+            <p className={styles.quote} style={{ marginTop: 20, color: "#f2ece1", fontSize: "clamp(22px, 2.2vw, 32px)" }}>
+              I have run a business for twenty years and I am raising three kids. I spent a long
+              stretch physically home and mentally somewhere else, and I still do this work when it
+              is hard. I coach the way I would want to be coached: straight with you, on your side,
+              and asking the question underneath the question.
+            </p>
+            <span className={styles.quoteCite}>Chris Avera · Brevard, North Carolina · <Link href="/men/about" style={{ color: "#f2ece1", textDecoration: "underline" }}>More about me</Link></span>
+          </div>
+        </div>
       </section>
 
       <section className={`${styles.section} ${styles.sectionSand}`}>
@@ -213,7 +214,7 @@ export default function MenHome() {
 
       <section className={styles.close}>
         <div>
-          <h2>Twenty minutes. No pitch if it is not a fit.</h2>
+          <h2>A free twenty minute call, and no pitch if it is not a fit.</h2>
           <p>
             Tell me a little about where you are. I will reply with a few times for a free call. If
             coaching is not the right tool, I will say so and point you to something that is.

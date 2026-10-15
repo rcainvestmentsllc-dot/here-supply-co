@@ -93,7 +93,7 @@ def lesson(story, l):
         f"<font name='BodySemi' size='7.2' color='#21859d'>YOUR SHEET · {l['number']}</font><br/>"
         f"<font name='Display' size='12' color='#092f3c'>{kit['name']}</font>"
         f"<font name='Body' size='9.4' color='#526b72'>  ·  Where it lives: {l['kit']['livesAt']}. "
-        f"Print it from the Resource Pack and put it where the moment happens.</font>", S["small"]),
+        f"Print it from the lesson page and put it where the moment happens.</font>", S["small"]),
         border=None, fill=SEA, pad=12, left_bar=OCEAN))
     story.append(Paragraph("Try this week", S["h3"]))
     story.append(Paragraph(l["guide"]["fieldAssignment"], S["dark"]))
@@ -133,7 +133,7 @@ def build():
     story.append(numbered([
         ("01", "The Focus Protocol", "Three days, four small moves, before you ask anyone else to change anything."),
         ("02", "The nine lessons", "Return, Lead, Keep. One idea and one practice each, shown at home and at work."),
-        ("03", "The Resource Pack", "One sheet per lesson, numbered to match. Each one lives where the moment happens: the glovebox, the desk, the nightstand."),
+        ("03", "The lesson sheets", "One sheet per lesson, printed from each lesson page. Each one lives where the moment happens: the glovebox, the desk, the nightstand."),
         ("04", "The weekly board", "Fifteen minutes on Sunday to plan the week, with whoever shares your life or on your own."),
     ], pad=9))
     story.append(Paragraph("The order", S["h2"]))

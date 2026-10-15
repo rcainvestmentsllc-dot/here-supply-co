@@ -24,7 +24,7 @@ async function html(pathname, cookie) {
 }
 
 test("the men's public pages render, each with one heading and its own canonical", async () => {
-  for (const route of ["/men", "/men/coaching", "/men/course", "/men/apply", "/men/driveway"]) {
+  for (const route of ["/men", "/men/coaching", "/men/course", "/men/apply", "/men/driveway", "/men/about"]) {
     const page = await html(route);
     const main = page.match(/<main\b[\s\S]*?<\/main>/i)?.[0] ?? page;
     assert.equal((main.match(/<h1\b/gi) ?? []).length, 1, `${route} should have one page heading`);
@@ -67,6 +67,23 @@ test("the free Driveway Card is open to anyone and signs men up to the men's lis
   // The test ASSETS binding answers 404, so passing the gate shows up as 404, not a 303.
   assert.equal((await get("/downloads/driveway-card.pdf")).status, 404);
   assert.equal((await get("/downloads/brain-dump.pdf")).status, 303);
+});
+
+test("men's pages keep men on the men's path and preview as the men's brand", async () => {
+  for (const route of ["/men", "/men/coaching", "/men/course", "/men/apply", "/men/driveway", "/men/about"]) {
+    const page = await html(route);
+    const header = page.match(/<header[\s\S]*?<\/nav>\s*<\/?[^>]*>[\s\S]*?mobile-nav[\s\S]*?<\/nav>/)?.[0] ?? "";
+    assert.ok(header.length > 0, `${route} header`);
+    assert.doesNotMatch(header, /href="\/(sunday-board|library|about)"/, `${route} header links to the couples path`);
+    assert.doesNotMatch(page, /Attention Tools for Couples/, `${route} preview`);
+    assert.match(page, /name="twitter:title"/, route);
+  }
+  const course = await html("/men/course");
+  assert.doesNotMatch(course, /The The /);
+  // Strip the serialized page data, which carries the shared not found page.
+  const focus = (await html(`${ROOT}/focus`, MEN)).replace(/<script\b[\s\S]*?<\/script>/gi, "");
+  assert.doesNotMatch(focus, /Sunday Board/);
+  assert.doesNotMatch(await html(ROOT, MEN), /sunday-board-meeting\.pdf|here-supply-resource-pack\.pdf/);
 });
 
 test("intake and check in pages stay out of search", async () => {

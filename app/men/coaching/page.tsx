@@ -1,5 +1,6 @@
 import { MEN_HEADER_ACTION } from "../program";
 import type { Metadata } from "next";
+import { menMeta } from "../meta";
 import { PlainLink as Link } from "../../plain-link";
 import { Footer, Header } from "../../components";
 import { INTENSIVE_WEEKS, MEN_OFFERS, REFER_OUT, usd } from "../program";
@@ -9,19 +10,14 @@ const title = "Coaching for Men Who Lead | Here Supply Co.";
 const description =
   "One on one and small group coaching with Chris Avera for men who lead a family, a team, or a company. A 90 Day Intensive, ongoing coaching, and a weekly group call.";
 
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: { canonical: "/men/coaching" },
-  openGraph: { title, description, url: "/men/coaching", images: [{ url: "/assets/course/photo/lesson-3-1-third-place-v3.jpg", alt: "Three men talking beside a pickup after a ride" }] },
-};
+export const metadata: Metadata = menMeta({ title, description, path: "/men/coaching", image: { url: "/assets/course/photo/lesson-3-1-third-place-v3.jpg", width: 1672, height: 941, alt: "Three men talking beside a pickup after a ride" } });
 
 const { intensive, ongoing, table } = MEN_OFFERS;
 
 export default function MenCoaching() {
   return (
     <main id="main-content" className={styles.page}>
-      <Header action={MEN_HEADER_ACTION} />
+      <Header action={MEN_HEADER_ACTION} path="men" />
 
       <section className={styles.hero}>
         <div className={styles.heroCopy}>
@@ -30,9 +26,9 @@ export default function MenCoaching() {
             Someone in your corner who <em>asks the hard question.</em>
           </h1>
           <p className={styles.heroLede}>
-            The course gives you the practices. Coaching is for the part after that, when knowing
-            what to do is not the problem and doing it on a Tuesday night is. Short calls, a clear
-            plan, and someone who notices when you drift.
+            The course gives you the practices. Coaching is for the part after that: doing them on a
+            Tuesday night when you are tired and the phone is buzzing. Short calls, a clear plan, and
+            someone who notices when you drift.
           </p>
           <div className={styles.heroActions}>
             <Link className={styles.primary} href="/men/apply">
@@ -61,7 +57,8 @@ export default function MenCoaching() {
             The Intensive is the men&rsquo;s course walked through with me. Each week you get a
             {" "}{intensive.callMinutes} minute call, one lesson and one practice to use at home and
             at work, and a short check in every Friday that I read before our next call. Pay in
-            full, or in three payments of {usd(intensive.installments.amount)}.
+            full, or in three monthly payments of {usd(intensive.installments.amount)}
+            ({usd(intensive.installments.amount * intensive.installments.count)} total).
           </p>
         </div>
         <figure className={styles.kitShot}>
@@ -170,7 +167,7 @@ export default function MenCoaching() {
           <span className={`${styles.label} ${styles.labelRust}`}>How it starts</span>
           <h2>Three steps, <em>no pressure.</em></h2>
         </div>
-        <div className={styles.ladder} style={{ gridTemplateColumns: "repeat(3, minmax(0, 1fr))" }}>
+        <div className={`${styles.ladder} ${styles.ladderThree}`}>
           <article className={styles.rung}>
             <span className={styles.label}>01</span>
             <h3>Tell me where you are</h3>

@@ -1,5 +1,6 @@
 import { MEN_HEADER_ACTION } from "../program";
 import type { Metadata } from "next";
+import { menMeta } from "../meta";
 import { PlainLink as Link } from "../../plain-link";
 import { Footer, Header } from "../../components";
 import { MEN_LESSONS, MEN_MOVEMENTS, MEN_RESET_DECLARATION } from "../men-course";
@@ -10,12 +11,7 @@ const title = "All the Way Here, Men's Edition | Here Supply Co.";
 const description =
   "A three day phone reset and nine short lessons for men who lead. Every practice shown at home and at work. A course book and sheets to print.";
 
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: { canonical: "/men/course" },
-  openGraph: { title, description, url: "/men/course", images: [{ url: "/assets/men/mens-edition-kit.jpg", alt: "The Men's Edition course book and printed sheets" }] },
-};
+export const metadata: Metadata = menMeta({ title, description, path: "/men/course", image: { url: "/assets/men/mens-edition-kit.jpg", width: 1672, height: 941, alt: "The Men's Edition course book and printed sheets" } });
 
 const { course } = MEN_OFFERS;
 const ready = Boolean(MEN_CHECKOUT);
@@ -34,7 +30,7 @@ function BuyButton() {
 export default function MenCoursePage() {
   return (
     <main id="main-content" className={styles.page}>
-      <Header action={MEN_HEADER_ACTION} />
+      <Header action={MEN_HEADER_ACTION} path="men" />
 
       <section className={styles.hero}>
         <div className={styles.heroCopy}>
@@ -111,7 +107,7 @@ export default function MenCoursePage() {
               <li>The 72 hour Focus Protocol, with what each stretch of the three days feels like</li>
               <li>Nine short online lessons, each with a home example and a work example</li>
               <li>A course book to print and write in</li>
-              <li>The Resource Pack: one sheet per lesson for the glovebox, the desk, and the nightstand</li>
+              <li>A printable sheet for each lesson, for the glovebox, the desk, and the nightstand</li>
               <li>The question I would ask you about each lesson on a coaching call</li>
             </ul>
           </article>
@@ -131,7 +127,7 @@ export default function MenCoursePage() {
         <div>
           <h2>Want someone walking through it with you?</h2>
           <p>
-            The {MEN_OFFERS.intensive.name} is this course, one lesson a week, with a call every week
+            {MEN_OFFERS.intensive.name} is this course, one lesson a week, with a call every week
             with me. The course is included.
           </p>
         </div>

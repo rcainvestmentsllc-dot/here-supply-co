@@ -454,7 +454,11 @@ export const getMenLesson = (slug: string) => MEN_LESSONS.find((lesson) => lesso
 export const getMenMovement = (key: MovementKey) => MEN_MOVEMENTS.find((m) => m.key === key);
 
 /** The Focus Protocol moves and timeline are the same for everyone. */
-export const MEN_FOCUS_MOVES = FOCUS_MOVES;
+/** The couples text names the Sunday Board here; the men's edition protects the first hour home instead. */
+export const MEN_FOCUS_MOVES = FOCUS_MOVES.map((move) => ({
+  ...move,
+  body: move.body.replace("or the Sunday Board Meeting", "or the first hour after you walk in"),
+}));
 export const MEN_RESET_TIMELINE = RESET_TIMELINE;
 
 export const MEN_RESET_RELAPSE = {
@@ -483,15 +487,15 @@ export const MEN_PRINT_FILES = [
     href: "/downloads/men/all-the-way-here-mens-edition.pdf",
   },
   {
-    label: "Print it once",
-    title: "The Resource Pack",
-    note: "Every sheet in one file, in course order: the Focus Protocol, one sheet per lesson, and the field card.",
-    href: "/downloads/here-supply-resource-pack.pdf",
+    label: "Days one to three",
+    title: "The Focus Protocol sheet",
+    note: "The four moves and the three day timeline on one page. Tape it inside a cabinet or keep it on the desk.",
+    href: "/downloads/focus-protocol.pdf",
   },
   {
-    label: "Every week",
-    title: "The Weekly Board",
-    note: "Fifteen minutes on Sunday to plan your week, alone or with whoever shares your life.",
-    href: "/downloads/sunday-board-meeting.pdf",
+    label: "Keep it on you",
+    title: "The field card",
+    note: "All nine practices on one small card for the wallet or the visor. Each lesson page has its own sheet too.",
+    href: "/downloads/all-the-way-here-field-card.pdf",
   },
 ] as const;

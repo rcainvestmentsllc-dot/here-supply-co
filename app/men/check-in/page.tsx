@@ -1,19 +1,16 @@
 import { MEN_HEADER_ACTION } from "../program";
 import type { Metadata } from "next";
+import { menMeta } from "../meta";
 import { Footer, Header } from "../../components";
 import { MenForm } from "../men-form";
 import styles from "../men.module.css";
 
-export const metadata: Metadata = {
-  title: "Friday Check In | Coaching with Chris",
-  description: "The weekly check in for men in coaching with Chris.",
-  robots: { index: false, follow: false },
-};
+export const metadata: Metadata = menMeta({ title: "Friday Check In | Coaching with Chris", description: "The weekly check in for men in coaching with Chris.", path: "/men/check-in", index: false });
 
 export default function MenCheckIn() {
   return (
     <main id="main-content" className={styles.page}>
-      <Header action={MEN_HEADER_ACTION} />
+      <Header action={MEN_HEADER_ACTION} path="men" />
       <section className={styles.section}>
         <div className={styles.formWrap}>
           <div className={styles.formIntro}>

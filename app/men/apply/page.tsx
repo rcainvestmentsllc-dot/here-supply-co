@@ -1,20 +1,22 @@
 import { MEN_HEADER_ACTION } from "../program";
 import type { Metadata } from "next";
+import { menMeta } from "../meta";
 import { Footer, Header } from "../../components";
 import { MenForm } from "../men-form";
 import { BOOKING_URL } from "../program";
 import styles from "../men.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = menMeta({
   title: "Book a Free Call | Coaching for Men Who Lead",
   description: "Tell Chris a little about where you are and book a free twenty minute call to see whether coaching fits.",
-  alternates: { canonical: "/men/apply" },
-};
+  path: "/men/apply",
+  image: { url: "/assets/chris-founder-sunset.jpg", width: 627, height: 627, alt: "Chris Avera" },
+});
 
 export default function MenApply() {
   return (
     <main id="main-content" className={styles.page}>
-      <Header action={MEN_HEADER_ACTION} />
+      <Header action={MEN_HEADER_ACTION} path="men" />
       <section className={styles.section}>
         <div className={styles.formWrap}>
           <div className={styles.formIntro}>

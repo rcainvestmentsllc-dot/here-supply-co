@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { menMeta } from "../meta";
 import { PlainLink as Link } from "../../plain-link";
 import { Footer, Header } from "../../components";
 import { EmailSignup } from "../../email-signup";
@@ -15,19 +16,7 @@ const description =
   "A free printable card for men who bring work home with them. Two minutes in the driveway so the people inside get you, not what is left of your day.";
 const CARD = "/downloads/driveway-card.pdf";
 
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: { canonical: "/men/driveway" },
-  openGraph: {
-    title,
-    description,
-    url: "/men/driveway",
-    siteName: "Here Supply Co.",
-    type: "website",
-    images: [{ url: "/assets/men/driveway-card-shot.jpg", width: 1672, height: 941, alt: "The printed Driveway Card, a sheet of four and two cut cards" }],
-  },
-};
+export const metadata: Metadata = menMeta({ title, description, path: "/men/driveway", image: { url: "/assets/men/driveway-card-shot.jpg", width: 1672, height: 941, alt: "The printed Driveway Card, a sheet of four and two cut cards" } });
 
 const STEPS = [
   ["Stop", "Engine off. Phone silent and out of your hand."],
@@ -39,7 +28,7 @@ const STEPS = [
 export default function DrivewayPage() {
   return (
     <main id="main-content" className={styles.page}>
-      <Header action={MEN_HEADER_ACTION} />
+      <Header action={MEN_HEADER_ACTION} path="men" />
 
       <section className={styles.hero}>
         <div className={styles.heroCopy}>

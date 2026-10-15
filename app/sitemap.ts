@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/men/coaching`, lastModified: new Date("2026-10-13"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/men/course`, lastModified: new Date("2026-10-13"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/gift`, lastModified: new Date("2026-10-14"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/men/about`, lastModified: new Date("2026-10-15"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/men/driveway`, lastModified: new Date("2026-10-15"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/men/apply`, lastModified: new Date("2026-10-13"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/resources`, lastModified, changeFrequency: "monthly", priority: 0.8 },

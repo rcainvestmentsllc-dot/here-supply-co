@@ -28,15 +28,39 @@ export function WeeklyGuidePreview() {
   );
 }
 
-/** The site header. The men's pages swap the action for their own next step. */
-export function Header({ action = { href: "/sunday-board#get-board", label: "Start free" } }: { action?: { href: string; label: string } } = {}) {
+type NavLink = { href: string; label: string };
+
+const COUPLES_NAV: NavLink[] = [
+  { href: "/sunday-board", label: "Start here" },
+  { href: "/library", label: "The course" },
+  { href: "/men", label: "For men" },
+  { href: "/resources", label: "Resources" },
+  { href: "/about", label: "About Chris" },
+];
+
+/** The men's pages keep men on the men's path: no couples links up top. */
+const MEN_NAV: NavLink[] = [
+  { href: "/men/coaching", label: "Coaching" },
+  { href: "/men/course", label: "The course" },
+  { href: "/men/driveway", label: "Driveway Card" },
+  { href: "/men/about", label: "About Chris" },
+];
+
+/** The site header. The men's pages swap the action and the nav for their own. */
+export function Header({
+  action = { href: "/sunday-board#get-board", label: "Start free" },
+  path = "couples",
+}: { action?: NavLink; path?: "couples" | "men" } = {}) {
+  const links = path === "men" ? MEN_NAV : COUPLES_NAV;
+  const mobile = path === "men" ? MEN_NAV : COUPLES_NAV.filter((l) => l.href !== "/resources").map((l) => (l.href === "/about" ? { ...l, label: "About" } : l));
+  const home = path === "men" ? "/men" : "/";
   return <>
     <header className="topbar">
-      <Link className="brand" href="/" aria-label="Here Supply Co. home"><BrandWordmark /></Link>
-      <nav aria-label="Main navigation"><Link href="/sunday-board">Start here</Link><Link href="/library">The course</Link><Link href="/men">For men</Link><Link href="/resources">Resources</Link><Link href="/about">About Chris</Link></nav>
+      <Link className="brand" href={home} aria-label={path === "men" ? "Here Supply Co. for men" : "Here Supply Co. home"}><BrandWordmark /></Link>
+      <nav aria-label="Main navigation">{links.map((l) => <Link key={l.href} href={l.href}>{l.label}</Link>)}</nav>
       <Link className="topbar-action" href={action.href}>{action.label} <span>→</span></Link>
     </header>
-    <nav className="mobile-nav" aria-label="Mobile navigation"><Link href="/sunday-board">Start here</Link><Link href="/library">The course</Link><Link href="/men">For men</Link><Link href="/about">About</Link></nav>
+    <nav className="mobile-nav" aria-label="Mobile navigation">{mobile.map((l) => <Link key={l.href} href={l.href}>{l.label}</Link>)}{path === "men" && <Link href={action.href}>{action.label}</Link>}</nav>
   </>;
 }
 

@@ -70,7 +70,7 @@ export const INTENSIVE_WEEKS = [
   { week: 8, part: "Lead", title: "Leading the room at work", body: "Take the Thermostat into one hard conversation with a team member, a client, or a partner. Midpoint review." },
   { week: 9, part: "Keep", title: "The Third Place", body: "One place where you are not in charge of anything. Go once a week." },
   { week: 10, part: "Keep", title: "The Friendship Script", body: "Invite one man to do something. Shoulder to shoulder." },
-  { week: 11, part: "Keep", title: "The Weekly Board", body: "Plan the week on Sunday, with your partner if you have one or on your own if not." },
+  { week: 11, part: "Keep", title: "Your weekly plan", body: "Fifteen minutes on Sunday: the week ahead at home and at work, and the one thing you will protect." },
   { week: 12, part: "Finish", title: "Mission Debrief", body: "Review the ninety days, choose two practices to keep, and decide what comes next." },
 ] as const;
 
