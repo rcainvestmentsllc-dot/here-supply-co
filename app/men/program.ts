@@ -27,11 +27,13 @@ export const MEN_OFFERS = {
     foundingPrice: 49,
     foundingSeats: 50,
   },
+  /** Group coaching. Off for now: Chris starts one on one. Flip open to show it again. */
   table: {
+    open: false,
     name: "The Weekly Table",
     short: "Weekly group",
     price: 149,
-    maxMen: 20,
+    maxMen: 12,
     startsAt: 6,
     callMinutes: 45,
   },

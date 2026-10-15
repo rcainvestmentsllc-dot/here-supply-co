@@ -9,7 +9,7 @@ const DONE: Record<Kind, { tag: string; title: string; body: string }> = {
   men_application: {
     tag: "RECEIVED",
     title: "Got it. Thank you.",
-    body: "I read every one myself. You will hear from me within two business days with a few times for a free twenty minute call, or an honest note if coaching is not the right fit.",
+    body: "I read every one myself. You will get an email from me within two business days with a few times for a free twenty minute call, or an honest note if coaching is not the right fit.",
   },
   men_intake: {
     tag: "INTAKE RECEIVED",
@@ -73,7 +73,6 @@ export function MenForm({ kind, bookingUrl = "" }: { kind: Kind; bookingUrl?: st
           <option>Not sure yet, that is what the call is for</option>
           <option>The 90 Day Intensive</option>
           <option>Ongoing coaching</option>
-          <option>The Weekly Table group</option>
           <option>Just the course for now</option>
         </select></label>
         <label><span>Good days and times for a twenty minute call</span><input name="times" placeholder="Weekday mornings before 8, Friday afternoons" /></label>
@@ -100,7 +99,6 @@ export function MenForm({ kind, bookingUrl = "" }: { kind: Kind; bookingUrl?: st
           <option value="" disabled>Choose a week</option>
           {Array.from({ length: 12 }, (_, i) => <option key={i}>{`Intensive week ${i + 1}`}</option>)}
           <option>Ongoing coaching</option>
-          <option>Weekly Table</option>
         </select></label>
         <label><span>Did you do the practice? Where did it work and where did it fall apart?</span><textarea name="practiced" rows={4} required /></label>
         <label><span>Who got the best of you this week, and who got what was left?</span><textarea name="best_of_you" rows={3} required /></label>

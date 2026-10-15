@@ -35,7 +35,7 @@ test("the men's public pages render, each with one heading and its own canonical
 test("the men's landing page shows the ladder and the free call", async () => {
   const page = await html("/men");
   assert.match(page, /Real work\./);
-  assert.match(page, /The Weekly Table/);
+  assert.doesNotMatch(page, /The Weekly Table/);
   assert.match(page, /The 90 Day Intensive/);
   assert.match(page, /\$2,500/);
   assert.match(page, /\$500/);
@@ -84,6 +84,18 @@ test("men's pages keep men on the men's path and preview as the men's brand", as
   const focus = (await html(`${ROOT}/focus`, MEN)).replace(/<script\b[\s\S]*?<\/script>/gi, "");
   assert.doesNotMatch(focus, /Sunday Board/);
   assert.doesNotMatch(await html(ROOT, MEN), /sunday-board-meeting\.pdf|here-supply-resource-pack\.pdf/);
+});
+
+test("coaching terms are posted on the coaching page and the policies page, and group coaching is hidden", async () => {
+  const coaching = await html("/men/coaching");
+  for (const term of ["First call guarantee", "Moving a call", "Stopping early", "Confidentiality"]) {
+    assert.match(coaching, new RegExp(term));
+  }
+  assert.match(coaching, /\$2,700 total/);
+  assert.doesNotMatch(coaching, /id="table"|The Weekly Table/);
+  const policies = await html("/policies");
+  assert.match(policies, /id="coaching"/);
+  assert.match(policies, /First call guarantee/);
 });
 
 test("intake and check in pages stay out of search", async () => {

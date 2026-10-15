@@ -9,7 +9,7 @@ public pages live under `/men`. Prices and the twelve weeks are set once in
 | Page | What it is | In search |
 | --- | --- | --- |
 | `/men` | The men's front door: who it is for, the four ways to work together | Yes |
-| `/men/coaching` | The 90 Day Intensive week by week, ongoing coaching, the Weekly Table, fit and limits | Yes |
+| `/men/coaching` | The 90 Day Intensive week by week, ongoing coaching, fit and limits, and the coaching terms | Yes |
 | `/men/course` | Sales page for All the Way Here, Men's Edition | Yes |
 | `/men/apply` | Free call request | Yes |
 | `/men/driveway` | The free Driveway Card, no email needed, optional signup to the men's list | Yes |
@@ -55,18 +55,24 @@ see `lib/course-pass.ts`.
       Men's Edition Buyer Track" and "Here Supply Co. | Men's Driveway Card
       Series". Both are off on purpose until the men's pages are live.
 - [ ] Create payment links for the Intensive ($2,500, or three payments of
-      $900, and the $1,500 founding price), ongoing coaching ($500 a month),
-      and the Weekly Table ($149 a month). Stripe payment links handle
-      recurring billing.
+      $900, and the $1,500 founding price) and ongoing coaching ($500 a
+      month, or $5,400 for a year). Stripe payment links handle recurring
+      billing. Group coaching (the Weekly Table) is off the site for now;
+      flip `table.open` in `app/men/program.ts` when you want it, capped at
+      twelve men.
 - [ ] Have an attorney read the coaching agreement below once.
-- [ ] Make a free Google Calendar booking page for the twenty minute call
-      (Google Calendar, Create, Appointment schedule; a free Gmail account
-      gets one booking page). Paste its link into `BOOKING_URL` in
-      `app/men/program.ts`, or set `NEXT_PUBLIC_MEN_BOOKING_URL`. The apply
-      page then offers "Pick a time for the call" right after a man sends
-      the form. Free accounts do not send booking reminders.
+- [x] Scheduling is by email for now, no booking page. A man sends the
+      apply form, the inbox alert emails Chris his answers and a suggested
+      reply with two times, and Chris replies from hello@heresupplyco.com.
+      Send a calendar invite once he picks. If a booking page is wanted
+      later, paste its link into `BOOKING_URL` in `app/men/program.ts` and
+      the apply page offers it automatically.
 - [ ] Build a short list of local therapists and couples counselors to refer to.
 - [ ] Liability insurance for coaches, and decide which company the coaching runs under.
+
+The public version of these terms lives in `app/men/terms.ts` and shows on
+/men/coaching#terms and /policies#coaching. Keep the agreement and that file
+in step.
 
 ## The discovery call (20 minutes, free)
 
@@ -74,7 +80,7 @@ see `lib/course-pass.ts`.
 2. Where he is drifting and what it is costing him, at home, at work, in himself. (8 min)
 3. "What do you want it to look like in ninety days?" (4 min)
 4. If it fits, describe the Intensive in two sentences and the price. If it
-   does not, say so and point him to the course or the Weekly Table. (3 min)
+   does not, say so and point him to the course. (3 min)
 
 No countdown, no pressure. A man who is not ready gets the course and an open door.
 
@@ -96,7 +102,7 @@ No countdown, no pressure. A man who is not ready gets the course and an open do
 
 **Ongoing call, 30 minutes.** What is live (5), the one thing that matters most (20), his commitment until next time (5).
 
-**Weekly Table, 45 minutes.** Check in, one line each (5). Two hot seats (25). The practice of the week, home and work (10). Commitments typed in the chat (5).
+**Weekly Table, 45 minutes (not offered yet).** Check in, one line each (5). Two hot seats (25). The practice of the week, home and work (10). Commitments typed in the chat (5).
 
 Questions to keep close:
 - What are you actually going to do about it?
@@ -130,11 +136,20 @@ Coaching is not counseling. Refer out, and say so plainly, when a man shows sign
 > business day / Ongoing coaching: two 30 minute calls a month, Friday check
 > ins, weekday messages, a quarterly 60 minute planning call).
 >
-> **Fees.** ____ paid ____. Ongoing coaching starts with a six month agreement,
-> then continues month to month with thirty days written notice to stop.
+> **Fees.** ____ (90 Day Intensive: $2,500 paid in full before the intake, or
+> three monthly payments of $900, $2,700 total, with the first before the
+> intake; founding price $1,500 paid in full / Ongoing coaching: $500 a month,
+> or $5,400 for a year paid up front). If a payment is more than seven days
+> late, calls pause until it is caught up.
 >
-> **Scheduling.** Calls missed or moved with less than 24 hours notice are not
-> made up. I will give you the same notice if I need to move one.
+> **First call guarantee.** If after the intake call you decide this is not for
+> you, tell me within 48 hours and I will refund everything you paid.
+>
+> **Scheduling.** Give at least 24 hours notice to move a call and we will find
+> another time, usually the same week. A call missed or moved with less than
+> 24 hours notice counts as used. Late arrivals still end on time. If I need
+> to move a call, you get the same notice and the call is made up. The twelve
+> Intensive calls are used within sixteen weeks of the intake.
 >
 > **Confidentiality.** What you share stays between us. The exceptions: if you
 > tell me you intend to seriously harm yourself or someone else, or about the
@@ -144,8 +159,15 @@ Coaching is not counseling. Refer out, and say so plainly, when a man shows sign
 > **Your responsibility.** You make your own decisions and own the results.
 > Coaching works when you do the work between calls.
 >
-> **Ending early.** Either of us can end coaching with written notice. ____
-> (refund terms).
+> **Ending early.** Either of us can end coaching with written notice by email.
+> After the first call guarantee, payments already made are not refunded and
+> installments not yet due are canceled. Ongoing coaching starts with a six
+> month agreement, then continues month to month and stops with thirty days
+> notice. A year paid up front is refundable only within the first thirty
+> days. If I end coaching early for any reason, you get a prorated refund for
+> every week or month you paid for and did not receive.
+>
+> **Recording.** Calls are not recorded unless you ask.
 >
 > Signed ____________ Date ______ · Chris Avera ____________ Date ______
 
@@ -173,5 +195,5 @@ Coaching is not counseling. Refer out, and say so plainly, when a man shows sign
 **Week twelve** (subject: What comes next)
 > We are at the end of the twelve weeks. Bring your two practices to our last
 > call. If you want to keep going, ongoing coaching is two calls a month for
-> $500, and the Weekly Table is $149 a month. No pressure either way. Also, if
+> $500 a month. No pressure either way. Also, if
 > someone you know should be doing this, I would be glad to talk with him.

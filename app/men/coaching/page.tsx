@@ -5,10 +5,11 @@ import { PlainLink as Link } from "../../plain-link";
 import { Footer, Header } from "../../components";
 import { INTENSIVE_WEEKS, MEN_OFFERS, REFER_OUT, usd } from "../program";
 import styles from "../men.module.css";
+import { COACHING_TERMS } from "../terms";
 
 const title = "Coaching for Men Who Lead | Here Supply Co.";
 const description =
-  "One on one and small group coaching with Chris Avera for men who lead a family, a team, or a company. A 90 Day Intensive, ongoing coaching, and a weekly group call.";
+  "One on one coaching with Chris Avera for men who lead a family, a team, or a company. A 90 Day Intensive, then ongoing coaching month to month, with plain terms up front.";
 
 export const metadata: Metadata = menMeta({ title, description, path: "/men/coaching", image: { url: "/assets/course/photo/lesson-3-1-third-place-v3.jpg", width: 1672, height: 941, alt: "Three men talking beside a pickup after a ride" } });
 
@@ -85,8 +86,7 @@ export default function MenCoaching() {
               After the twelve weeks, <em>keep going.</em>
             </h2>
             <p>
-              For men who finished the Intensive or spent three months at the Weekly Table and want
-              someone holding the plan with them. Whatever is real that month: a business decision,
+              For men who finished the Intensive and want someone holding the plan with them. Whatever is real that month: a business decision,
               a hard conversation at home, a son pulling away, an old habit drifting back.
             </p>
           </div>
@@ -108,6 +108,7 @@ export default function MenCoaching() {
         </div>
       </section>
 
+      {table.open && (
       <section className={`${styles.section} ${styles.sectionDark}`} id="table">
         <div className={styles.split}>
           <div className={styles.sectionHead} style={{ marginBottom: 0 }}>
@@ -135,6 +136,7 @@ export default function MenCoaching() {
           </div>
         </div>
       </section>
+      )}
 
       <section className={styles.section}>
         <div className={styles.split}>
@@ -183,6 +185,24 @@ export default function MenCoaching() {
             <h3>Start, or do not</h3>
             <p>If it fits, I send the agreement and a secure payment link and we book your first call. If it does not, I will say so and point you to something that does.</p>
           </article>
+        </div>
+      </section>
+
+      <section className={styles.section} id="terms">
+        <div className={styles.sectionHead}>
+          <span className={`${styles.label} ${styles.labelRust}`}>The terms</span>
+          <h2>
+            Plain terms, <em>before you pay anything.</em>
+          </h2>
+          <p>The same terms are in the coaching agreement you sign before we start.</p>
+        </div>
+        <div className={styles.termsGrid}>
+          {COACHING_TERMS.map((t) => (
+            <article key={t.title}>
+              <h3>{t.title}</h3>
+              <p>{t.body}</p>
+            </article>
+          ))}
         </div>
       </section>
 

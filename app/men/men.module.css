@@ -92,7 +92,11 @@
 .rooms { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: rgba(242, 236, 225, 0.18); }
 .card p + p { margin-top: 12px; }
 .roomsFour { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.ladderThree { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.ladder.ladderThree { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.termsGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 36px; }
+.termsGrid article { border-top: 2px solid var(--hsc-brass); padding-top: 14px; }
+.termsGrid h3 { font-size: 22px; line-height: 1.15; margin: 0 0 8px; }
+.termsGrid p { color: var(--hsc-copy); font-size: 15px; line-height: 1.65; }
 .room { padding: 30px 26px 34px; display: grid; align-content: start; gap: 12px; background: var(--hsc-forest); }
 .room h3 { font-size: clamp(26px, 2.2vw, 34px); }
 .room p { color: #c9d3d2; font-size: 15px; line-height: 1.65; }
@@ -177,7 +181,7 @@
 .quoteCite { display: block; margin-top: 18px; font-family: var(--hsc-body); font-size: 13px; color: #9fb0b1; letter-spacing: 0.04em; }
 
 @media (max-width: 1060px) {
-  .ladder, .roomsFour { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ladder, .roomsFour, .termsGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .lessonGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
@@ -185,7 +189,7 @@
   .hero { grid-template-columns: 1fr; min-height: 0; }
   .heroMedia { order: -1; min-height: 0; aspect-ratio: 16 / 10; }
   .heroCopy { padding-top: 40px; }
-  .rooms, .roomsFour, .ladderThree, .split, .story, .formWrap, .close { grid-template-columns: 1fr; }
+  .rooms, .roomsFour, .ladder.ladderThree, .termsGrid, .split, .story, .formWrap, .close { grid-template-columns: 1fr; }
   .formIntro { position: static; }
   .week { grid-template-columns: 56px minmax(0, 1fr); gap: 4px 14px; }
   .week h3, .week p { grid-column: 2; }

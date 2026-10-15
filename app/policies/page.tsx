@@ -3,10 +3,11 @@ import { PlainLink as Link } from "../plain-link";
 import { Footer, Header } from "../components";
 import { CONTACT_FORM } from "../data";
 import styles from "./policies.module.css";
+import { COACHING_TERMS } from "../men/terms";
 
 export const metadata: Metadata = {
   title: "Policies | Here Supply Co.",
-  description: "Refund, privacy, and educational use policies for Here Supply Co.",
+  description: "Refund, coaching, privacy, and educational use policies for Here Supply Co.",
   alternates: { canonical: "/policies" },
 };
 
@@ -18,11 +19,12 @@ export default function Policies() {
         <p className="kicker">HERE SUPPLY CO.</p>
         <h1>Plain language<br /><em>policies.</em></h1>
         <p>What happens when you buy, subscribe, or ask for help.</p>
-        <small>Last updated August 26, 2026</small>
+        <small>Last updated October 15, 2026</small>
       </section>
       <section className={styles.body}>
         <nav aria-label="Policy sections">
           <a href="#refund">Refunds</a>
+          <a href="#coaching">Coaching for men</a>
           <a href="#privacy">Privacy</a>
           <a href="#use">Educational use</a>
           <a href="#contact">Contact</a>
@@ -34,8 +36,15 @@ export default function Policies() {
             <p>If All the Way Here is not a useful fit, request a refund within 14 calendar days of the original purchase. Use the contact form and include the email address used at checkout so the purchase can be located.</p>
             <p>Approved refunds are returned to the original payment method. Access to the purchased material may end after a refund. The time it takes to appear in your account depends on the payment provider and your financial institution.</p>
           </section>
+          <section id="coaching">
+            <p>02 · COACHING FOR MEN</p>
+            <h2>One on one coaching terms</h2>
+            {COACHING_TERMS.map((t) => (
+              <p key={t.title}><strong>{t.title}.</strong> {t.body}</p>
+            ))}
+          </section>
           <section id="privacy">
-            <p>02 · PRIVACY</p>
+            <p>03 · PRIVACY</p>
             <h2>The information this site uses</h2>
             <p>The free weekly guide can be downloaded without providing an email address or creating an account. If you separately choose to follow Chris on Substack, Substack processes that subscription and provides its own unsubscribe controls.</p>
             <p>Purchases are processed through MailerLite and Stripe. Here Supply Co. may receive the contact and transaction details needed to deliver the product, provide support, and handle refunds. Here Supply Co. does not receive your full payment card number.</p>
@@ -43,13 +52,13 @@ export default function Policies() {
             <p>You may ask to review or delete the personal information Here Supply Co. controls by using the contact form. Some transaction records may need to be retained for accounting, fraud prevention, or legal obligations.</p>
           </section>
           <section id="use">
-            <p>03 · EDUCATIONAL USE</p>
+            <p>04 · EDUCATIONAL USE</p>
             <h2>Practical education, not professional care</h2>
             <p>Here Supply Co. materials are educational tools for personal use. They are not medical care, mental health treatment, couples therapy, legal advice, or financial advice. Use your judgment and seek a qualified professional when the situation calls for one.</p>
             <p>Purchased access is for the buyer’s personal use. Please do not republish, resell, or publicly distribute the lessons, course book, or printable sheets.</p>
           </section>
           <section id="contact">
-            <p>04 · CONTACT</p>
+            <p>05 · CONTACT</p>
             <h2>Questions or refund requests</h2>
             <p>Use the contact form and include the email address connected to your signup or purchase. Do not send payment card information through the form.</p>
             <a className="button dark" href={CONTACT_FORM}>Contact Chris <span>→</span></a>

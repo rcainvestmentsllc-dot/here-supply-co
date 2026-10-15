@@ -113,7 +113,7 @@ export default function MenHome() {
           </h2>
           <p>Every option uses the same nine practices. What changes is how much of me comes with it.</p>
         </div>
-        <div className={styles.ladder}>
+        <div className={`${styles.ladder} ${styles.ladderThree}`}>
           <article className={styles.rung}>
             <span className={styles.label}>On your own</span>
             <h3>The course</h3>
@@ -124,17 +124,6 @@ export default function MenHome() {
               <li>A course book and sheets to print</li>
             </ul>
             <p className={styles.rungFoot}><Link href="/men/course">See the course</Link></p>
-          </article>
-          <article className={styles.rung}>
-            <span className={styles.label}>With other men</span>
-            <h3>{MEN_OFFERS.table.name}</h3>
-            <p className={styles.rungPrice}>{usd(MEN_OFFERS.table.price)} <small>a month</small></p>
-            <ul>
-              <li>One {MEN_OFFERS.table.callMinutes} minute group call a week</li>
-              <li>Up to {MEN_OFFERS.table.maxMen} men</li>
-              <li>Cancel any time</li>
-            </ul>
-            <p className={styles.rungFoot}><Link href="/men/coaching#table">How it works</Link></p>
           </article>
           <article className={`${styles.rung} ${styles.rungFeatured}`}>
             <span className={`${styles.label} ${styles.labelRust}`}>Founding: {usd(MEN_OFFERS.intensive.foundingPrice)} for the first ten</span>
