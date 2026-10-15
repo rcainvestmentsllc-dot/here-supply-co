@@ -17,7 +17,22 @@ public pages live under `/men`. Prices and the twelve weeks are set once in
 | `/access/men-r7k2v9` | The men's course itself, behind its own password | No |
 
 Every form lands in the coaching inbox (same link as Thirty Days With Chris),
-tagged "Men · Call request", "Men · Intake", or "Men · Check in".
+tagged "Men · Call request", "Men · Intake", or "Men · Check in". A scheduled
+task, "Here Supply Co coaching inbox alert", checks it at 7:41 and 3:41 Eastern
+on weekdays and messages Chris (phone and email) with each new form, the
+answers that matter, and a suggested reply. It stays quiet when nothing came
+in. The private inbox link is in that task and in the project copy of this
+toolkit.
+
+## What a buyer receives
+
+1. The MailerLite receipt, "Your Here Supply Co. order is ready", with a Get
+   started button that opens whatever they bought. It is shared by every
+   product, so it never names a course or a password.
+2. A minute later, the welcome from Chris for their course with its one tap
+   link and password. Couples: automation "All the Way Here Welcome
+   (password)". Men: the first email of "Men's Edition Buyer Track".
+3. One short email a week after that, one lesson at a time.
 
 ## The men's course password
 
@@ -31,12 +46,11 @@ see `lib/course-pass.ts`.
 
 ## Before the first client
 
-- [ ] Create the men's course product in MailerLite (same setup as the couples
-      product): price $99 with a $50 founding discount, delivery URL above,
-      buyers into a new group "Here Supply Co. | Men's Edition Buyers". Paste
-      the checkout URL into `MEN_CHECKOUT` in `app/men/program.ts` (or set
-      `NEXT_PUBLIC_MEN_CHECKOUT_URL`). Until then the course page says
-      "Checkout opens soon".
+- [x] Men's course product in MailerLite, checkout
+      https://checkout.mailerlite.com/checkout/36730, buyers into "Here Supply
+      Co. | Men's Edition Buyers". Wired into `MEN_CHECKOUT`.
+- [ ] At launch, turn on the automation "Here Supply Co. | Men's Edition Buyer
+      Track" in MailerLite. It is off on purpose until the men's pages are live.
 - [ ] Create payment links for the Intensive ($2,500, or three payments of
       $900, and the $1,500 founding price), ongoing coaching ($500 a month),
       and the Weekly Table ($149 a month). Stripe payment links handle

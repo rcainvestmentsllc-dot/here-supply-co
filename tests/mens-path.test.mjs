@@ -51,6 +51,14 @@ test("the coaching page lays out all twelve weeks and the limits of coaching", a
   assert.match(page, /not therapy/);
 });
 
+test("the men's course and gift pages send buyers to the men's checkout", async () => {
+  for (const route of ["/men/course", "/gift"]) {
+    const page = await html(route);
+    assert.match(page, /href="https:\/\/checkout\.mailerlite\.com\/checkout\/36730"/, route);
+    assert.doesNotMatch(page, /Checkout opens soon/, route);
+  }
+});
+
 test("intake and check in pages stay out of search", async () => {
   for (const route of ["/men/intake", "/men/check-in"]) {
     assert.match(await html(route), /noindex/);

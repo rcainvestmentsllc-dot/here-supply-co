@@ -5,11 +5,12 @@
  */
 
 /**
- * Checkout for the men's course. Empty until the MailerLite product exists;
- * the course page shows "opening soon" until then. Paste the checkout URL
- * here, or set NEXT_PUBLIC_MEN_CHECKOUT_URL, and the buy buttons go live.
+ * Checkout for the men's course: the MailerLite product "All the Way Here,
+ * Men's Edition" (Stripe, founding price applied there). Buyers land in the
+ * Men's Edition Buyers group, which starts the weekly buyer track. Set
+ * NEXT_PUBLIC_MEN_CHECKOUT_URL to override; an empty value shows "opening soon".
  */
-export const MEN_CHECKOUT = process.env.NEXT_PUBLIC_MEN_CHECKOUT_URL || "";
+export const MEN_CHECKOUT = process.env.NEXT_PUBLIC_MEN_CHECKOUT_URL || "https://checkout.mailerlite.com/checkout/36730";
 
 /**
  * The free call booking page (a Google Calendar appointment schedule).

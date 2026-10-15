@@ -1,9 +1,11 @@
 /**
  * Thirty Days With Chris: one month of email coaching for couples using the course.
  *
- * Applications and weekly check ins land in D1 (coaching_messages). A daily
- * scheduled task reads /api/coaching/inbox with a secret token, drafts replies
- * for Chris, and marks the rows handled. Only the token's hash lives here.
+ * Applications, intakes and check ins (couples and men) land in D1
+ * (coaching_messages). The scheduled task "Here Supply Co coaching inbox alert"
+ * reads /api/coaching/inbox with a secret token on weekday mornings and
+ * afternoons, sends Chris a digest with suggested replies, and marks the rows
+ * handled. Only the token's hash lives here; the token is in that task.
  */
 import type { CloudflareEnv } from "./cloudflare-env";
 
@@ -16,7 +18,7 @@ export const COACHING = {
   callMinutes: 30,
 } as const;
 
-const INBOX_TOKEN_HASH = "a44da9a1b2256489ccc7088711d8e4c0939aeea739fdf962b9f1bd28b79ba8ea";
+const INBOX_TOKEN_HASH = "839f94ee41fef5264c36020fe2e975a353075aba6a9b489d89bd52410aad9fa1";
 
 export async function inboxTokenOk(token: string | null): Promise<boolean> {
   if (!token) return false;
