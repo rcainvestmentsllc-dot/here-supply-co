@@ -12,6 +12,8 @@ public pages live under `/men`. Prices and the twelve weeks are set once in
 | `/men/coaching` | The 90 Day Intensive week by week, ongoing coaching, the Weekly Table, fit and limits | Yes |
 | `/men/course` | Sales page for All the Way Here, Men's Edition | Yes |
 | `/men/apply` | Free call request | Yes |
+| `/men/driveway` | The free Driveway Card, no email needed, optional signup to the men's list | Yes |
+| `/men/about` | Chris as a coach: background, limits, confidentiality | Yes |
 | `/men/intake` | Intake for a new Intensive client, sent after he pays | No |
 | `/men/check-in` | The Friday check in for every coaching client | No |
 | `/access/men-r7k2v9` | The men's course itself, behind its own password | No |
@@ -49,8 +51,9 @@ see `lib/course-pass.ts`.
 - [x] Men's course product in MailerLite, checkout
       https://checkout.mailerlite.com/checkout/36730, buyers into "Here Supply
       Co. | Men's Edition Buyers". Wired into `MEN_CHECKOUT`.
-- [ ] At launch, turn on the automation "Here Supply Co. | Men's Edition Buyer
-      Track" in MailerLite. It is off on purpose until the men's pages are live.
+- [ ] At launch, turn on two automations in MailerLite: "Here Supply Co. |
+      Men's Edition Buyer Track" and "Here Supply Co. | Men's Driveway Card
+      Series". Both are off on purpose until the men's pages are live.
 - [ ] Create payment links for the Intensive ($2,500, or three payments of
       $900, and the $1,500 founding price), ongoing coaching ($500 a month),
       and the Weekly Table ($149 a month). Stripe payment links handle
