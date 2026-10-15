@@ -14,7 +14,7 @@ const DONE: Record<Kind, { tag: string; title: string; body: string }> = {
   men_intake: {
     tag: "INTAKE RECEIVED",
     title: "Thank you. I have it.",
-    body: "I will read this before our first call so we can spend the hour on what matters. Start the Focus Protocol on the day you picked.",
+    body: "I will read this before our first call so we can spend the hour on what matters. Take The Solo on the day you picked.",
   },
   men_checkin: {
     tag: "CHECK IN RECEIVED",
@@ -90,7 +90,7 @@ export function MenForm({ kind, bookingUrl = "" }: { kind: Kind; bookingUrl?: st
         <label><span>One goal for ninety days at home</span><input name="goal_home" required /></label>
         <label><span>One goal for ninety days at work</span><input name="goal_work" required /></label>
         <label><span>One goal for ninety days for yourself</span><input name="goal_self" required /></label>
-        <label><span>What day will you start the Focus Protocol?</span><input name="focus_start" placeholder="This Saturday" required /></label>
+        <label><span>What day will you take The Solo?</span><input name="focus_start" placeholder="This Saturday morning" required /></label>
         <label><span>Anything else I should know?</span><small>A hard season, a health issue, something you want to make sure we talk about.</small><textarea name="know" rows={3} /></label>
       </>}
 

@@ -19,7 +19,7 @@ export default function MenIntake() {
             <p>About fifteen minutes. Be honest, especially about the parts that are not going well. Nobody sees this but me, and it lets us spend the first hour on what matters instead of catching up.</p>
             <ol className={styles.steps}>
               <li>Fill this out at least a day before our first call.</li>
-              <li>Pick the day you will start the Focus Protocol. Most men start the day after the call.</li>
+              <li>Pick the morning you will take The Solo, half a day alone with a notebook. Most men take it the weekend after the call.</li>
               <li>Print the course book if you have not yet. We will use it every week.</li>
             </ol>
           </div>

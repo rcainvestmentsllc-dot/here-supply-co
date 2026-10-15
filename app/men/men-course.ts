@@ -1,17 +1,20 @@
 /**
  * All the Way Here, Men's Edition.
  *
- * Same three movements and nine practices as the couples course, rewritten for
- * one man doing the work. Every lesson carries a home example and a work
- * example, because the men this is for lead something in both places: a
- * family, a team, a company. The couples course in ../course-content.ts is
- * untouched and stays the couples path.
+ * Its own course, written for one man doing the work: The Solo, then nine
+ * lessons in three parts (See it, Carry it, Build it). Each lesson starts from
+ * something men actually say out loud and goes as deep as the couples course:
+ * the moment, what is really going on, the principle, a four step practice, a
+ * hard week version, home and work, an honest alternative, why it helps,
+ * words to use, what to watch for, the assignment, a reflection, the coaching
+ * question, a note from Chris, a printable sheet, and the research behind it.
  *
- * The images, sheets, and evidence notes are shared with the couples edition.
- * Lesson slugs match the couples slugs so the shared sheets line up, and
- * progress is saved under a "men:" prefix so the two editions never mix.
+ * The couples course in ../course-content.ts is a different product with
+ * different material. The only things shared are the Focus Protocol moves and
+ * timeline, which this course offers as a tool inside Lesson 2. Progress is
+ * saved under a "men:" prefix so the two editions never mix in one browser.
  */
-import { LESSON_GUIDES, FOCUS_MOVES, RESET_TIMELINE, type CourseStep, type LessonGuide, type MovementKey } from "../course-content";
+import { FOCUS_MOVES, RESET_TIMELINE } from "../course-content";
 
 /** Where the men's course lives. Its own password protects everything under ROOT. */
 export const MEN_COURSE = {
@@ -20,438 +23,556 @@ export const MEN_COURSE = {
   root: "/access/men-r7k2v9",
   focus: "/access/men-r7k2v9/focus",
   progressPrefix: "men:",
+  book: "/downloads/men/all-the-way-here-mens-edition.pdf",
+  fieldCard: "/downloads/men/sheets/field-card.pdf",
 } as const;
 
 export const menLessonHref = (slug: string) => `${MEN_COURSE.root}/lesson/${slug}`;
+const sheetFile = (slug: string) => `/downloads/men/sheets/${slug}.pdf`;
+const photo = (name: string) => `/assets/men/course/${name}.jpg`;
+
+export type MenPartKey = "START" | "SEE" | "CARRY" | "BUILD";
 
 export const MEN_MOVEMENTS = [
   {
-    key: "RETURN" as const,
+    key: "START" as const,
+    number: "00",
+    name: "Before you start",
+    line: "Half a day alone, so you can hear yourself before you change anything.",
+    still: photo("part-start"),
+    stillAlt: "A man standing on a rock above a wide mountain valley",
+  },
+  {
+    key: "SEE" as const,
     number: "01",
-    name: "Return",
-    line: "Get your attention back before you try to lead anyone.",
-    stillImage: "/assets/course/photo/movement-return-v1.jpg",
-    stillAlt: "A man setting his phone down on a table by the door before walking into the house",
+    name: "See it",
+    line: "Be honest about where you are: your life, your evenings, your temper.",
+    still: photo("part-see"),
+    stillAlt: "A hand writing in a notebook in low light",
   },
   {
-    key: "LEAD" as const,
+    key: "CARRY" as const,
     number: "02",
-    name: "Lead",
-    line: "Bring a steadier man into every room: home, work, and the hard conversations.",
-    stillImage: "/assets/course/photo/movement-lead-v1.jpg",
-    stillAlt: "A man listening closely at the kitchen table",
+    name: "Carry it",
+    line: "Handle the load: what is yours, how much is enough, and the body that carries it.",
+    still: photo("part-carry"),
+    stillAlt: "Four men with packs walking across an old railroad bridge",
   },
   {
-    key: "KEEP" as const,
+    key: "BUILD" as const,
     number: "03",
-    name: "Keep",
-    line: "Protect the friendships, places, and rhythms that keep you from running on empty.",
-    stillImage: "/assets/course/photo/movement-keep-v4.jpg",
-    stillAlt: "A father and daughter walking home from the ocean, talking",
+    name: "Build it",
+    line: "Build what lasts after you: your friends, what you inherited, and what you pass on.",
+    still: photo("part-build"),
+    stillAlt: "A father and his child walking toward a lake at sunset",
   },
 ] as const;
 
+export type Evidence = { label: string; note: string; href: string };
+export type Sheet = {
+  /** The PDF's file name without .pdf, under /downloads/men/sheets/. */
+  slug: string;
+  name: string;
+  /** What is on the page, in one line. */
+  holds: string;
+  livesAt: string;
+  file: string;
+};
+export type Step = { title: string; body: string };
+export type Photo = { src: string; alt: string; position?: string; caption?: string };
+
 export type MenLesson = {
   slug: string;
-  movement: MovementKey;
+  movement: Exclude<MenPartKey, "START">;
   number: string;
+  /** What men actually say. The lesson exists to answer it. */
+  says: string;
   title: string;
   subtitle: string;
+  /** One line for cards and the course page. */
   summary: string;
-  artImage: string;
-  artAlt: string;
-  artCaption: string;
-  previewPosition: string;
-  scene: string;
-  problem: string;
+  photo: Photo;
+  detail: Photo;
+  moment: string;
+  really: string;
   principle: string;
-  practice: string;
-  practiceIntro: string;
-  steps: CourseStep[];
-  adaptation: string;
-  /** What this looks like at home, with a wife, a partner, kids, or a co parent. */
+  practice: { name: string; intro: string; steps: Step[] };
+  hardWeek: string;
   atHome: string;
-  /** The same practice at work, with a team, a client, or a business. */
   atWork: string;
-  /** One lesson assumes kids, one assumes a partner. This is the honest alternative. */
-  ifNot?: { label: string; body: string };
-  kit: { sheet: string; sheetName: string; livesAt: string };
-  encouragement: string;
-  action: string;
-  reflection: string;
-  /** The question Chris asks about this lesson on a coaching call. */
+  ifNot: string;
+  whyItHelps: string;
+  words: string[];
+  watchFor: string;
+  /** Where coaching stops and a doctor or counselor starts. */
+  straightWord?: string;
+  /** A tool from elsewhere in the course that fits this lesson. */
+  tool?: { label: string; title: string; body: string; href: string; cta: string };
+  thisWeek: string;
+  reflect: string;
   coachQuestion: string;
-  fieldNote: string;
-  guide: LessonGuide;
+  fromChris: string;
+  sheet: Sheet;
+  evidence: Evidence[];
 };
 
-const evidence = (slug: string) => LESSON_GUIDES[slug].evidence;
-const why = (slug: string) => LESSON_GUIDES[slug].whyItHelps;
+const IMPLEMENTATION: Evidence = {
+  label: "Implementation intentions",
+  note: "Research on planning a specific action for a specific time and place suggests it helps people follow through on goals.",
+  href: "https://pubmed.ncbi.nlm.nih.gov/18096108/",
+};
+
+/** Before Lesson 1. Its own page, its own sheet. */
+export const MEN_SOLO = {
+  slug: "the-solo",
+  movement: "START" as const,
+  number: "0",
+  title: "The Solo",
+  subtitle: "Half a day alone, before you change anything.",
+  summary: "Get away from everything for half a day, with a notebook and three questions.",
+  photo: { src: photo("solo"), alt: "A man sitting alone on a rock above misty mountain ridges at sunrise", position: "50% 45%", caption: "Nobody needs anything from you for a few hours. That is the point." },
+  detail: { src: photo("solo-detail"), alt: "Bare feet in the bow of a canoe on a mountain lake", position: "50% 50%" },
+  intro: [
+    "Before you change anything, get away from everything for half a day. Pick a place outside where nobody needs you: a trail, a river, a bench with a long view. Leave the phone in the truck. Bring a notebook, a pen, water, and something to eat.",
+    "Outward Bound courses have a tradition called the solo: a stretch of time alone in the backcountry, from a few hours to a few days, with no phone and nobody asking anything of you. Students rest, write and watch, and it is often where the real thinking happens. Most men have not been truly alone with their own thoughts in years.",
+  ],
+  questions: [
+    "What am I tired of pretending is fine?",
+    "Who gets the best of me right now, and who gets what is left?",
+    "If nothing changes, what does my life look like in five years?",
+  ],
+  questionsIntro: "Spend the first hour just walking or sitting. Do not try to fix anything. When your head quiets down, answer three questions on paper.",
+  questionsAfter: "Write until you have said the true thing, even if it is one sentence. Bring the notebook to Lesson 1.",
+  smallest: "Two hours, a parking lot with a view, phone in the glovebox, the same three questions.",
+  cannotGetAway: "If you cannot get away at all, that is your first answer.",
+  bring: [
+    "A notebook you will keep for the whole course",
+    "Two pens",
+    "Water and food",
+    "A layer for the weather",
+    "A watch, if you want to keep time",
+  ],
+  bringNote: "The phone stays locked in the truck. If you need to be reachable for a real emergency, tell one person where you will be and when you will be back.",
+  hours: [
+    { title: "The first hour", body: "Walk or sit and let your head run. It will be loud at first, with the jobs, the bills and the messages you are missing. That is normal and it settles." },
+    { title: "The second hour", body: "Answer the three questions. Write until you have said the true thing." },
+    { title: "The last hour", body: "Write one page to yourself about what you want the next ninety days to look like, then sit with it." },
+  ],
+  after: "Read the page once more that night. Tell one person one thing you wrote, if you are willing. Then start Lesson 1 within the week while the Solo is still fresh.",
+  words: "I am taking Saturday morning to get my head straight. I will be back by 1, and I will be better company when I get home.",
+  fromChris: "After Clemson I led twenty and thirty day canoe trips for Outward Bound, and I watched people change when they finally had quiet and something real in front of them. Most grown men never give themselves that. Give yourself one morning.",
+  sheet: { slug: "the-solo", name: "The Solo", holds: "The three questions, a ninety day page, and a packing list.", livesAt: "The front of your notebook", file: sheetFile("the-solo") },
+} as const;
 
 export const MEN_LESSONS: MenLesson[] = [
   {
-    slug: "the-sanctuary",
-    movement: "RETURN",
-    number: "1.1",
-    title: "The Sanctuary",
-    subtitle: "Get the open loops out of your head.",
-    summary: "A fifteen minute weekly mind sweep so the business, the house, and the promises stop living in your head.",
-    artImage: "/assets/course/photo/lesson-1-1-sanctuary-v1.jpg",
-    previewPosition: "45% center",
-    artAlt: "A man writing at a kitchen table near the ocean at dawn",
-    artCaption: "Give the unfinished things somewhere to land, then get back to the morning in front of you.",
-    scene: "It is 10:40 and the house is finally quiet. You are lying there running the job that slipped, the invoice nobody paid, the thing you told your son you would fix this weekend, and the call you have been putting off for three weeks. None of it is getting done tonight. All of it is getting your attention anyway.",
-    problem: "A man who leads something carries a lot of open loops: promises to clients, to a team, to his wife, to his kids, to himself. Your head is a good place to make decisions and a terrible place to store them. Every loop you keep up there takes a little attention away from whoever is standing in front of you.",
-    principle: "Stop using your attention as a filing cabinet. Get it on paper, decide the next move on the few things that matter, and let the rest wait somewhere you can find it.",
-    practice: "A fifteen minute weekly mind sweep",
-    practiceIntro: "Use paper, not your phone. Write until the page feels honest, then give the important items one next move.",
-    steps: [
-      { title: "Make four spaces", body: "Label them Work, Home, Money and admin, and Me. If something belongs in two places, write it in both." },
-      { title: "Empty the loops", body: "Write every task, promise, worry, idea, and conversation you have been avoiding. Do not organize while you write. When it slows down, wait a full minute and ask what you are still trying not to forget." },
-      { title: "Mark the next move", body: "D for Do, C for Choose, T for Talk, R for Release. You do not need a full plan for every item, just the next move." },
-      { title: "Circle three", body: "Pick no more than three items that deserve real attention this week. Everything else is out of your head and on the page, which is the point." },
-    ],
-    adaptation: "If fifteen minutes is unrealistic, do five. Miss a week without making it a referendum on your discipline. A practice you can come back to beats one you abandon.",
-    atHome: "Take the items that touch home to whoever shares the load with you, your wife, a partner, or a co parent. Saying out loud that you have the gutters and the car registration this week does more than you would think. Half the friction in a house is two people each assuming the other one has it.",
-    atWork: "Run the same sweep on the business every Friday afternoon. Most owners find the item they have been avoiding is the one that would change the most. Put that one at the top of Monday.",
-    kit: { sheet: "1.1", sheetName: "The Brain Dump", livesAt: "The desk, or wherever you actually sit down" },
-    encouragement: "Once it is on paper, your head can let go of it.",
-    action: "Tonight, put one sheet of paper in front of you and circle the one item that would make you more present tomorrow.",
-    reflection: "What am I carrying in my head that belongs on paper, on a calendar, or in a conversation?",
-    coachQuestion: "Which loop have you carried the longest, and what is the one next move on it?",
-    fieldNote: "I have run a business for twenty years and the loops never stop coming. The page does not make them stop. It keeps them from following me into every room.",
-    guide: {
-      whyItHelps: why("the-sanctuary"),
-      wordsToUse: "I have a lot still running in my head. Give me ten minutes to get it on paper, and then I am all yours.",
-      watchFor: "Do not turn the sweep into a giant life inventory or one more system to maintain. The page is a place to set things down. Keep it simple enough that you will do it again next week.",
-      fieldAssignment: "Run one honest mind sweep this week, work and home on the same page. Circle three items and notice what changes when you walk in the door.",
-      evidence: evidence("the-sanctuary"),
+    slug: "the-honest-map",
+    movement: "SEE",
+    number: "1",
+    says: "I don't know what I want anymore.",
+    title: "The Honest Map",
+    subtitle: "See how your life actually stands before you try to fix it.",
+    summary: "Score seven parts of your life honestly, circle the one you avoid, and make one move on it this week.",
+    photo: { src: photo("honest-map"), alt: "A man on the couch writing in a notebook", position: "50% 40%", caption: "You cannot steer by a feeling. Put a number on it." },
+    detail: { src: photo("honest-map-detail"), alt: "An open journal, a pencil and a pair of glasses on a table", position: "50% 50%" },
+    moment: "It is Sunday night. The kids are down, the dishwasher is running, and you are staring at the TV without watching it. Nothing is wrong exactly. The business is fine, the house is fine, the family is fine. But there is a restlessness you cannot name, and the week ahead looks exactly like the last fifty.",
+    really: "You built the life you said you wanted, then got too busy running it to ask whether it still fits. When everything feels a little off, nothing gets fixed, because there is no single thing to fix. The fog stays fog until you break it into pieces small enough to look at.",
+    principle: "You cannot steer by a feeling. Put an honest number on each part of your life, and the next move usually becomes obvious.",
+    practice: {
+      name: "A seven area honest map",
+      intro: "Use the notebook from your Solo. This takes about thirty minutes, and it only works if you score yourself the way you would if nobody would ever see the page.",
+      steps: [
+        { title: "Score seven areas", body: "Give each a number from 1 to 10: work, money, body, marriage or closest relationship, kids, faith or meaning, and friends. Do it fast. Your first number is usually the true one." },
+        { title: "Write the why", body: "Next to each score, write one sentence on why it is that number and not one higher. Specific beats fair: “I have not had a real conversation with my daughter in a month” beats “could be better.”" },
+        { title: "Circle the one you avoid", body: "There is one area you did not want to score. You already know which one it is. Circle it, even if it is not the lowest." },
+        { title: "Make one move", body: "Write one action on the circled area for the next seven days, with a day and a time. Make it small enough that you will actually do it." },
+      ],
     },
+    hardWeek: "Score the seven areas in your head on the drive home. Pick the lowest one and do one thing about it before Friday. You can do the full page next week.",
+    atHome: "Tell your wife, or the person closest to you, which area you circled and what your move is. You do not need to explain the whole map. Saying the move out loud to someone who will notice makes you more likely to do it.",
+    atWork: "Run the same scoring on your business or your role: revenue, your people, your own time, and whether you still like it. The area you avoid at work is often the one quietly pulling down the scores at home.",
+    ifNot: "If you are single or divorced, score the closest relationship you have, whether that is with your kids, a brother or a friend. If you do not have kids, score the people you are responsible for, like a team or a younger man you look out for.",
+    whyItHelps: "Vague dissatisfaction is hard to act on. Breaking it into areas turns one heavy feeling into a few concrete problems, and a small plan with a set time and place makes it more likely you will follow through.",
+    words: ["I scored my life this weekend. The one I have been avoiding is ____. This week I am going to ____."],
+    watchFor: "Treat the page as a map of where to start. A low number tells you where the work is, and nothing more. Do not try to fix all seven at once. One move on one area is the whole assignment.",
+    thisWeek: "Fill out the map, make your one move, and come back to the page next Sunday to see whether the circled number moved.",
+    reflect: "Which number did I round up, and why?",
+    coachQuestion: "Which number did you round up, and what would it take to move it by one?",
+    fromChris: "Every man I know rounds at least one number up. The one you rounded is usually the one worth your attention first.",
+    sheet: { slug: "honest-map", name: "The Honest Map", holds: "The seven areas, a line for each why, and a box for this week's move.", livesAt: "The notebook from your Solo", file: sheetFile("honest-map") },
+    evidence: [
+      { ...IMPLEMENTATION, note: "Research on planning a specific action for a specific time and place suggests it can help people follow through on goals. The seven area map itself has not been clinically tested." },
+    ],
   },
   {
-    slug: "hunt-before-you-farm",
-    movement: "RETURN",
-    number: "1.2",
-    title: "Focus Mode",
-    subtitle: "Do the work that moves things before the inbox takes the day.",
-    summary: "Protect one block for the work only you can do, then open the gates.",
-    artImage: "/assets/course/art/lesson-1-2-hunter-farmer.jpg",
-    previewPosition: "50% center",
-    artAlt: "A man working alone at a workbench in a mountain workshop, one project in front of him",
-    artCaption: "One clear target and one protected block. Then the maintenance can start.",
-    scene: "You get to the office or the truck at seven with a plan. By 7:04 you have answered three texts, opened your email, and put out a small fire somebody else started. At 4:45 you look up. You were busy all day, and the bid, the hire, the hard decision, the thing that would actually move the business, is still sitting there. Now it rides home with you.",
-    problem: "Reactive work feels like leadership because it is visible and it never ends. A man who spends every day responding lets other people set his agenda, and the work only he can do keeps sliding to tomorrow.",
-    principle: "Some work moves things forward and some keeps things running. Both matter. Do the first kind first, while you are fresh, then open the gates.",
-    practice: "One protected target",
-    practiceIntro: "Choose the target before reactive work begins, then give it a block that fits the day you actually have.",
-    steps: [
-      { title: "Choose it the night before", body: "Write one sentence: Tomorrow matters if I finish ____. Make it concrete enough that you will know when it is done." },
-      { title: "Pick a block that fits", body: "Twenty five, fifty, or ninety minutes, depending on the work and the life around it. A protected half hour beats a perfect morning you never get." },
-      { title: "Close the gates", body: "Notifications off, email and messages closed, phone out of reach unless the work truly needs it." },
-      { title: "Then tend the rest", body: "When the block ends, decide what maintenance matters now. Make that your call before the inbox makes it for you." },
-    ],
-    adaptation: "If your work is reactive by nature, protect the smallest block you can keep, or name one decision that has to happen before the day ends.",
-    atHome: "Finishing the right work at work is what keeps it from coming home. The man who got the important thing done is a lot easier to be around at dinner than the man still chewing on it.",
-    atWork: "Tell your team when your block is. A leader who disappears without warning reads as unavailable. A leader who says he is heads down until 9:30 and all theirs after that teaches everyone that focused work is how things get built.",
-    kit: { sheet: "1.2", sheetName: "Tomorrow Matters If", livesAt: "The desk, written the night before" },
-    encouragement: "Get the one thing done first and the rest of the day gets lighter.",
-    action: "Before bed, write tomorrow's one target and the exact time you will start it.",
-    reflection: "Which busy work makes me feel productive while keeping me from the work only I can do?",
-    coachQuestion: "What is the one piece of work only you can do, and when will you protect time for it this week?",
-    fieldNote: "When I protect the first block of my day, I make better decisions and bring less of the business home. When I do not, my family gets the leftovers.",
-    guide: {
-      whyItHelps: why("hunt-before-you-farm"),
-      wordsToUse: "I am heads down until ____ on one thing. After that I am all yours.",
-      watchFor: "Focused work is not permission to be unreachable or rigid. Protect a block that fits your job and your family, and tell the people who need to know.",
-      fieldAssignment: "Choose tomorrow's target tonight. Protect one block, then write down what broke into it instead of blaming yourself.",
-      evidence: evidence("hunt-before-you-farm"),
+    slug: "the-drift",
+    movement: "SEE",
+    number: "2",
+    says: "I'm on my phone or a drink every night and I don't like it.",
+    title: "The Drift",
+    subtitle: "Find out what you reach for at night, and what you are reaching away from.",
+    summary: "Seven nights of noticing what you reach for and why, then one better plan set up before 9 PM.",
+    photo: { src: photo("drift"), alt: "Over the shoulder of a man on the couch, scrolling his phone", position: "50% 50%", caption: "The drift is the same small reach every night until it becomes the shape of your evening." },
+    detail: { src: photo("drift-detail"), alt: "Hands holding a phone in a dark room", position: "50% 50%" },
+    moment: "The kids are down by 8:30. You sit down “for a minute” with the phone and a beer. At 10:45 you look up, three beers in, thumb still moving, and you could not tell anyone a single thing you read. You go to bed tired and a little disgusted with yourself, and tomorrow night looks the same.",
+    really: "By evening you are spent, and the easiest thing in reach is whatever turns the volume down. I lived a version of this for about twelve years: in the house but not really there, usually behind a screen. The drift comes from the same small reach every night until it becomes the shape of your evening, and the people in the next room learn to stop asking for you.",
+    principle: "You cannot quit a reach you do not understand. Notice what you are feeling right before you reach, then set up something better before you need it.",
+    practice: {
+      name: "The 9 PM plan",
+      intro: "One week of noticing, then one change you set up in advance.",
+      steps: [
+        { title: "Keep a reach log for seven nights", body: "Each night, write what you reached for, roughly how long, and what you felt right before, whether tired, bored, angry, lonely or wired. Change nothing yet." },
+        { title: "Find the pattern", body: "At the end of the week, circle the feeling that shows up most. That feeling is the real problem, and the phone or the drink is your fix for it." },
+        { title: "Build the replacement", body: "Pick one thing that answers that feeling better. Tired calls for an earlier bedtime. Lonely calls for a call to a friend or time with your wife. Wired calls for a walk, the garage or a book. Set it up before dinner so it is waiting for you." },
+        { title: "Move the fix out of reach", body: "The phone charges in the kitchen at 9. The beer waits until Friday. Make the drift take more effort than the plan." },
+      ],
     },
+    hardWeek: "Do only one thing: the phone sleeps outside your bedroom every night this week.",
+    atHome: "Tell your wife, or whoever you live with, what you are trying, and ask them to point it out with a look instead of a speech when they see you drift. Then spend the first twenty minutes you win back with them.",
+    atWork: "The same reach happens at 2 PM between meetings, when a hard task gets uncomfortable. Notice when you open the phone with no reason. It is the same muscle, and catching it at work makes it easier to catch at night.",
+    ifNot: "If you live alone, the drift costs you sleep, friends and the things you used to make with your hands. Point the plan at one of those.",
+    whyItHelps: "Research suggests that even having your own phone within reach can draw down your attention when you are not using it. Naming the feeling behind the reach gives you a better fix to choose, and moving the phone or the drink out of easy reach makes the old habit take effort.",
+    words: ["I have been disappearing into my phone at night. I am putting it in the kitchen at 9 this week. If you see me drift, just give me a look."],
+    watchFor: "Do not swap one numbing habit for another, like trading the phone for more TV. Do not make this a public crusade at home. Change quietly and let the people around you notice.",
+    straightWord: "If you have tried to cut back on drinking and could not, or you drink to get through the day, that is bigger than a habit and it deserves real help from a doctor or counselor. Coaching is the wrong tool for that, and I will tell you so.",
+    tool: {
+      label: "If the phone is your reach",
+      title: "Run the Focus Protocol",
+      body: "Four moves for seventy two hours: grayscale, delete the apps that pull you in, silence everything but the people who matter, and a drawer for the phone in the evening. It pairs well with week two of the reach log.",
+      href: MEN_COURSE.focus,
+      cta: "Open the Focus Protocol",
+    },
+    thisWeek: "Keep the reach log for seven nights. On night eight, set up your replacement and move the fix out of reach.",
+    reflect: "What am I trying not to feel at 9 PM?",
+    coachQuestion: "What are you trying not to feel at 9 PM, and what would actually help with it?",
+    fromChris: "I lost about twelve years to the drift, a few minutes at a time. None of those nights felt like a big deal on its own. Added up, they were.",
+    sheet: { slug: "reach-log", name: "The Reach Log", holds: "A seven night tracker with the feeling column and your 9 PM plan.", livesAt: "The kitchen counter, next to where the phone charges", file: sheetFile("reach-log") },
+    evidence: [
+      { label: "Brain Drain (Ward and colleagues, 2017)", note: "In two experiments, having one's own smartphone nearby reduced available working memory, even when it was not in use.", href: "https://www.journals.uchicago.edu/doi/10.1086/691462" },
+      { label: "Rethinking Drinking (NIAAA)", note: "The National Institutes of Health guide to drinking levels and signs of a problem, with free tools.", href: "https://www.rethinkingdrinking.niaaa.nih.gov/" },
+    ],
   },
   {
-    slug: "the-airlock-protocol",
-    movement: "RETURN",
-    number: "1.3",
-    title: "The Driveway Pause",
-    subtitle: "Use the last two minutes before the door on purpose.",
-    summary: "A short reset in the parked truck so the whole workday does not walk in with you.",
-    artImage: "/assets/course/art/lesson-1-3-airlock.jpg",
-    previewPosition: "40% center",
-    artAlt: "A man standing by his truck in the driveway at dusk, looking at the lit house",
-    artCaption: "The workday can stop at the driveway. Decide how you walk in before you open the door.",
-    scene: "You pull into the driveway still on the last call. Your jaw is tight and you are rehearsing what you should have said. Inside, your kid has been waiting all afternoon to show you something. The first ten seconds through that door are going to belong to the workday or to them.",
-    problem: "A commute turns into an extension of work. Calls, texts, and replaying the day keep your body moving toward home while your head stays on the job. The first people you see get whatever the day left in you.",
-    principle: "You do not have to fake a good mood. Notice what you are carrying, decide what belongs to tomorrow, and choose how you walk in before the door opens.",
-    practice: "The parked truck reset",
-    practiceIntro: "Safety first. Set navigation before you move, keep the phone out of your hand while driving, and do this only once you are parked with the engine off.",
-    steps: [
-      { title: "Park and stop", body: "Engine off. Phone silent and out of your hand. Give yourself two minutes before you open the door." },
-      { title: "Name what followed you", body: "Say or write the unfinished work, the frustration, or the worry that is still running. Decide what belongs to tomorrow." },
-      { title: "Slow the exit", body: "Three slow breaths with a longer breath out. Let it mark the line between work and home." },
-      { title: "Choose the entrance", body: "Put the phone away, look them in the eye, and say hello like you mean it. Let the first ten seconds say you are here." },
-    ],
-    adaptation: "Work from home: close the laptop, step outside, and come back in through a different door. Walk or ride transit: use a landmark near home as your line.",
-    atHome: "Tell whoever is inside what this is, once. Two minutes in the truck can look like avoidance. Saying that a minute out there is how you get ready to walk in clears it up.",
-    atWork: "The same reset works before a hard meeting, a sales call, or walking onto a job site after bad news. Two minutes, name what you are carrying, choose how you walk in.",
-    kit: { sheet: "1.3", sheetName: "The Driveway Card", livesAt: "The glovebox, because that is where the two minutes happen" },
-    encouragement: "The day still happened. You get to decide how you carry it in.",
-    action: "Before your next drive, set navigation and put the phone where you cannot reach it. Do the pause only after the truck is fully parked.",
-    reflection: "What part of my workday most often walks through the door with me?",
-    coachQuestion: "What followed you through the door most often this week, and what did the people inside get?",
-    fieldNote: "This is one of the first practices I built for myself. I needed a gap between being responsible for a business and being a husband and a dad. The truck turned out to be the right place for it.",
-    guide: {
-      whyItHelps: why("the-airlock-protocol"),
-      wordsToUse: "Rough day. Give me ten minutes to land and I will come find you at ____. I want to hear about yours.",
-      watchFor: "The pause happens only after the truck is parked. It is not a reason to ignore the people inside or disappear without saying when you will be back.",
-      fieldAssignment: "Use the parked truck reset three times this week. Keep it under three minutes and judge it only by how you walk in.",
-      evidence: evidence("the-airlock-protocol"),
+    slug: "short-fuse",
+    movement: "SEE",
+    number: "3",
+    says: "I snap at the people I love most.",
+    title: "Short Fuse",
+    subtitle: "Catch the anger in your body before it reaches your mouth.",
+    summary: "Learn your three warning signs, take sixty seconds, come back calm, and repair every time you miss.",
+    photo: { src: photo("short-fuse"), alt: "A man sitting in a dark room by a window, jaw set", position: "50% 35%", caption: "You get about a second between the surge and the words. Use it." },
+    detail: { src: photo("short-fuse-detail"), alt: "An empty porch with a mountain view", position: "50% 50%" },
+    moment: "You held it together all day: the client who moved the goalposts, the crew that showed up late, the bank that called twice. You were patient with every one of them. Then you walk in the door, trip over your son's cleats in the hall, and go off. He freezes. Your wife gives you the look. Ten minutes later you feel terrible, and you do not say so.",
+    really: "The anger at home usually starts somewhere else. You absorb pressure all day that you cannot show at work, and it comes out where it feels safe, which is on the people who love you most. The cleats were only the last straw. The fix starts earlier, in your body, before the words come out.",
+    principle: "You get about a second between the surge and the words. Learn to feel it coming, use that second, and when you miss, go back and repair it.",
+    practice: {
+      name: "Catch, reset, return, repair",
+      intro: "Four moves you can use in any room. The last one matters most.",
+      steps: [
+        { title: "Catch", body: "Learn your three warning signs. For most men it is some mix of a tight jaw, a hot face, a clipped voice, a clenched fist, or a quiet that everyone in the house knows. Write yours down." },
+        { title: "Reset", body: "When you feel one, take sixty seconds. Stand up, step outside or into another room, and take three slow breaths with the breath out longer than the breath in." },
+        { title: "Return", body: "Come back within the time you said and start with one calm sentence. If you need longer, say so and name when you will come back." },
+        { title: "Repair", body: "When you miss, and you will, go back within the hour. Say what you did, say you were wrong, and stop there with no excuse attached. Kids learn more from a father who repairs than from one who never slips." },
+      ],
     },
+    hardWeek: "One reset a day, at the moment you walk in the door from work.",
+    atHome: "Tell the people you live with that you are working on this and what your reset looks like. Then when you step out of the room, they know you are trying instead of leaving.",
+    atWork: "Use the same reset before you answer the email that made you angry or walk into the hard meeting. The whole room feels how you walk in, and so does your crew.",
+    ifNot: "If you live alone, the fuse usually shows up on the road, on the phone with your ex, or with the people who work for you. Same practice, different room.",
+    whyItHelps: "Emotion regulation research suggests that small, flexible strategies used early work better than trying to hold it in once you are already hot. Slow breathing with a longer breath out has been linked with signs of a calmer nervous system, though that research is still early.",
+    words: [
+      "I am too wound up to answer well. Give me ten minutes. I will come back.",
+      "I snapped at you. That was wrong. I am sorry.",
+    ],
+    watchFor: "A pause without a return time can feel like punishment to the people waiting. Always say when you will be back, and come back. A repair that ends with “but you” is no repair at all.",
+    straightWord: "If your anger has ever scared the people you live with, or turned physical, get help from a licensed counselor now. That is beyond what coaching does, and it is the strongest thing you can do for your family.",
+    tool: {
+      label: "Free, for the drive home",
+      title: "The Driveway Card",
+      body: "Two minutes in the truck before you walk in: stop, name what followed you home, breathe, choose who you want to be for the first ten seconds inside. It catches the fuse before the cleats do.",
+      href: "/downloads/driveway-card.pdf",
+      cta: "Print the Driveway Card",
+    },
+    thisWeek: "Write your three warning signs and your two sentences. Use the reset at least once a day and the repair every time you need it.",
+    reflect: "What was I carrying in the hour before I snapped?",
+    coachQuestion: "What were you carrying in the hour before you snapped, and where did you pick it up?",
+    fromChris: "The repair is the part most of us skip. I would rather my kids watch me get it wrong and come back than never see me come back at all.",
+    sheet: { slug: "short-fuse", name: "The Short Fuse Card", holds: "Your three warning signs, the sixty second reset, and your pause and repair sentences.", livesAt: "Your wallet", file: sheetFile("short-fuse") },
+    evidence: [
+      { label: "Emotion regulation overview", note: "Regulation is flexible and depends on context. Strategies used early tend to work better than suppression once emotion is running high.", href: "https://pubmed.ncbi.nlm.nih.gov/31961170/" },
+      { label: "Slow breathing review (Zaccaro and colleagues, 2018)", note: "Slow breathing was associated with markers of calm and better wellbeing in healthy adults, across fifteen small studies.", href: "https://www.frontiersin.org/articles/10.3389/fnhum.2018.00353/full" },
+    ],
   },
   {
-    slug: "the-emotional-thermostat",
-    movement: "LEAD",
-    number: "2.1",
-    title: "The Emotional Thermostat",
-    subtitle: "Pause before pressure picks your response.",
-    summary: "Pause, come back when you said you would, and repair it when you miss.",
-    artImage: "/assets/course/photo/lesson-2-1-thermostat-v1.jpg",
-    previewPosition: "30% center",
-    artAlt: "A man pausing with his hands on the kitchen counter before he answers, his wife and son nearby",
-    artCaption: "A breath buys you room for a better answer.",
-    scene: "Your daughter asks a simple question at the wrong moment and your answer comes out sharper than you meant. Or it is a guy on your team who missed the same thing twice. Either way, everyone in the room heard the edge before anyone knew what kind of day you had, and now the room is arranging itself around your mood.",
-    problem: "Pressure makes a man louder, colder, or gone. The people who depend on you feel the change before they understand it, at home and at work. Swallowing it does not help, and neither does handing them the raw version.",
-    principle: "Whoever leads the room sets its temperature, whether he means to or not. You will not stay calm every time. The work is noticing sooner, taking a clean pause, and owning it when you miss.",
-    practice: "Pause, return, repair",
-    practiceIntro: "Use the shortest move that keeps a hard moment from turning into a bigger one.",
-    steps: [
-      { title: "Pause before the answer", body: "Change your body before you try to change your mind. Stand up, step outside or into another room, and take three breaths with a longer breath out. Sixty seconds. If you can answer with respect after that, do it. If not, say you need a few minutes." },
-      { title: "Name the return time", body: "Say when you will come back, then keep your word. That is what keeps a pause from feeling like walking out." },
-      { title: "Come back with one calm sentence", body: "Start with what is true and useful. Skip the defense, the lecture, and the list of what they did wrong." },
-      { title: "Repair the miss", body: "If you were sharp or shut down, name it without an excuse. Own your part and ask what would help." },
-    ],
-    adaptation: "If a conversation is unsafe, keeps escalating, or is bigger than a short pause can hold, step away and get real outside help. This practice is not a substitute for counseling or crisis support.",
-    atHome: "Agree on the pause before you need it, when nothing is wrong. Tell your wife or your kids that if you say you need ten minutes, you are coming back, and you will tell them when. Then come back.",
-    atWork: "The same move works with a team: tell them you want to give this a better answer than the one you have right now, and you will pick it up at two. Leaders who pause before they speak get trusted with harder conversations.",
-    kit: { sheet: "2.1", sheetName: "Pause, Return, Repair", livesAt: "The nightstand, or the desk drawer at work" },
-    encouragement: "Take the pause, then come back when you said you would.",
-    action: "Write the sentence you will use next time: I am too worked up to answer well. I will come back at ____.",
-    reflection: "When pressure rises, do I get louder, quieter, more controlling, or more distant?",
-    coachQuestion: "Where did pressure choose your response this week, and what would repair look like?",
-    fieldNote: "I do not always catch it in time. That is why repair matters to me. What counts is owning it and coming back.",
-    guide: {
-      whyItHelps: why("the-emotional-thermostat"),
-      wordsToUse: "I am too worked up to answer this well. I need ten minutes. I will be back at ____, and I will be back.",
-      watchFor: "A pause with no return time feels like abandonment or control, at home and at work. This is never a substitute for safety planning, counseling, or crisis support.",
-      fieldAssignment: "Write your pause sentence and your repair sentence. Use the first at the earliest sign of heat, once at home and once at work this week.",
-      evidence: evidence("the-emotional-thermostat"),
+    slug: "choose-your-battles",
+    movement: "CARRY",
+    number: "4",
+    says: "Everything is on me.",
+    title: "Choose Your Battles",
+    subtitle: "Decide which fights are yours, which ones you hand off, and which ones you drop.",
+    summary: "Sort everything you carry into three columns, make two hand offs, and have the conversation you have been avoiding.",
+    photo: { src: photo("battles"), alt: "A man at his desk with his head in his hands", position: "50% 35%", caption: "Carrying everything feels like strength. Over time it makes you slower and angrier." },
+    detail: { src: photo("battles-detail"), alt: "A man leaning over a table, writing beside his laptop and phone", position: "50% 50%" },
+    moment: "Payroll is Friday and a big client is thirty days late. The roof needs work before winter. Your mom has a doctor's appointment you said you would drive her to. Your daughter is struggling in math and nobody has called the teacher. You are lying awake running all of it, and your wife has no idea how much of it is sitting on your chest.",
+    really: "Some of what you carry is yours. Some of it you picked up because nobody else did, and some of it you kept because carrying it felt easier than having the conversation. Every man in an epic story has to decide which battles are his, which he walks away from, and which ones he asks for help with. Carrying everything feels like strength, and over time it makes you slower and angrier than the man people need.",
+    principle: "A leader chooses his battles on purpose. Carry what is yours, hand off what belongs to someone else, and put down what was never yours.",
+    practice: {
+      name: "Three columns and one conversation",
+      intro: "About thirty minutes with a pen, then one conversation this week.",
+      steps: [
+        { title: "Unload it", body: "Write down everything you are carrying right now: work, money, house, family, health, people. Keep going until the page feels honest." },
+        { title: "Sort it", body: "Put each item in one of three columns: Mine to fight, Mine to hand off, and Not mine at all." },
+        { title: "Move it", body: "For each hand off, write who takes it and when you will ask. For each item that is not yours, decide what you will say, or simply stop picking it up." },
+        { title: "Have one hard conversation", body: "Pick the conversation you have been avoiding the longest. Decide when and where you will have it this week. Say the true thing in as few words as you can, then stop talking and listen." },
+      ],
     },
+    hardWeek: "Move one item out of the first column. That is enough.",
+    atHome: "Tell your wife, or the person closest to you, one thing you have been carrying alone. You do not need a solution, only to say it out loud. Ask what she is carrying alone too.",
+    atWork: "Hand off one thing you have been doing because “it is faster if I do it myself.” Accept that it will be done a little worse for a while. That is the price of a team that can carry weight without you.",
+    ifNot: "If you do not have a partner or a team, look at who could share the load: a brother, a friend, a hired hand, a bookkeeper. Paying for help can be the cheapest thing you buy all year.",
+    whyItHelps: "Sorting a heavy load into what you own and what you do not turns one crushing feeling into decisions you can actually make. Deciding exactly when and where you will have a hard conversation makes it more likely you will have it.",
+    words: [
+      "I have been carrying ____ on my own and I need help with it.",
+      "This is yours now. Here is what good looks like. Come to me if you get stuck.",
+    ],
+    watchFor: "Handing off is different from dumping. Give people what they need to succeed. Do not use “not mine” as a way to dodge something that really is your responsibility.",
+    thisWeek: "Fill the three columns, make two hand offs, and have the one conversation.",
+    reflect: "What am I carrying because it is mine, and what am I carrying because I am afraid of the conversation?",
+    coachQuestion: "What are you carrying because it is yours, and what are you carrying because you are afraid of the conversation?",
+    fromChris: "Picking everything up feels like leadership. Putting something down on purpose is a decision too, and it is usually the harder and better one.",
+    sheet: { slug: "three-columns", name: "Three Columns", holds: "Mine to fight, Mine to hand off, Not mine at all, and a line for this week's hard conversation.", livesAt: "Your desk", file: sheetFile("three-columns") },
+    evidence: [
+      { ...IMPLEMENTATION, note: "Research suggests that deciding exactly when and where you will act on a goal helps people follow through. The three column sort itself has not been clinically tested." },
+    ],
   },
   {
-    slug: "the-date-night-experiment",
-    movement: "LEAD",
-    number: "2.2",
-    title: "The Date Night Experiment",
-    subtitle: "Plan something new, and leave the phones in the truck.",
-    summary: "Take the lead on one new shared experience with your partner, phones out of reach, no grading.",
-    artImage: "/assets/course/photo/lesson-2-2-date-night-v6.jpg",
-    previewPosition: "50% center",
-    artAlt: "A couple walking and talking on a quiet coastal path after dinner with no phones in sight",
-    artCaption: "Connection does not need a grand gesture. It needs curiosity and your full attention.",
-    scene: "You finally get a night out and spend the first twenty minutes deciding where to go. At dinner both phones keep showing up next to the plates. Nothing is wrong. It just feels like another item on the calendar instead of a chance to actually see each other.",
-    problem: "Most men plan their work better than their marriage. Dates turn into the same restaurant and the same conversation about the kids and the schedule, with half your attention still on the phone. The real problem is divided attention and nobody taking the lead.",
-    principle: "Do something new, do it side by side, and keep the phones out of it. Take the lead on the planning without taking over the night.",
-    practice: "Choose, protect, notice",
-    practiceIntro: "Plan one experience that fits your money, your energy, the babysitter, and the life you actually have.",
-    steps: [
-      { title: "Bring two ideas", body: "Each of you brings two. Pick the one that feels doable this week. A walk somewhere new counts as much as a big night out." },
-      { title: "Handle the logistics", body: "Carry the sitter, the reservation, the time, and the gas in the truck yourself. That is the part that kills most dates before they happen." },
-      { title: "Phones out of reach", body: "Silenced and in the glovebox before you sit down. Allow priority contacts if the kids are with a sitter, and agree that either of you can check only for a real reason." },
-      { title: "Notice, do not grade", body: "Afterward ask what was interesting and what you would do again. The night does not have to prove anything about your marriage." },
+    slug: "enough",
+    movement: "CARRY",
+    number: "5",
+    says: "Work owns me.",
+    title: "Enough",
+    subtitle: "Define enough money, enough hours and enough yes, so the business stops setting the terms.",
+    summary: "Write three numbers, set one hard edge for thirty days, and tell the people it affects.",
+    photo: { src: photo("enough"), alt: "A young player alone on a soccer field, in black and white", position: "50% 40%", caption: "Enough is a number you choose. Until you choose it, work chooses for you." },
+    detail: { src: photo("enough-detail"), alt: "A man checking his phone at the table with his laptop open", position: "50% 50%" },
+    moment: "You are on the sideline at your daughter's game and your phone buzzes. A client needs “one quick thing.” You step away to handle it, and when you look up the game is over and she is walking toward you asking if you saw her goal. You did not. Sunday night already feels like Monday morning, and you cannot remember the last full day you did not check email.",
+    really: "You started the business, or took the job, to give your family a good life. Somewhere along the way it started running you. Work expands to fill whatever room you give it, and a man who never defines enough will never reach it. Most men know they should work less. Very few have written down the numbers that would let them.",
+    principle: "Enough is a number you choose. Write it down, set one hard edge, and protect it like a client.",
+    practice: {
+      name: "Three numbers and one edge",
+      intro: "Write the numbers once, then keep one edge every day for thirty days.",
+      steps: [
+        { title: "Enough money", body: "Write what your household actually needs each month, plus what you want to save, and nothing else. Compare it to what you made last year." },
+        { title: "Enough hours", body: "Write the most you will work in a normal week, counting the evenings and weekends you pretend do not count. Then track this week's real hours against it." },
+        { title: "Enough yes", body: "Write how many new commitments you will take on this month, and one thing you will turn down to protect them." },
+        { title: "One hard edge for thirty days", body: "Pick one: no work after 7 PM, no phone at dinner, or Saturday mornings belong to the family. Tell your clients or your team what the new edge is, so you are not keeping it secretly." },
+      ],
+    },
+    hardWeek: "One evening this week with the phone in another room from dinner to bedtime.",
+    atHome: "Tell your family the edge you picked and let them hold you to it. Kids are excellent enforcers, and they will remember that you kept it.",
+    atWork: "Look at last month and find the one client, project or habit that cost the most time for the least return. Decide this week whether to raise the price, change the terms or let it go.",
+    ifNot: "If you work for someone else, you may not control your hours, but you usually control the edges: when you check email, whether the phone comes to dinner, and how many extra projects you volunteer for.",
+    whyItHelps: "Research on detachment from work links being able to mentally switch off after hours with less exhaustion and better recovery. A written number gives you something to measure against, and a clear edge makes switching off a decision you make once instead of every night.",
+    words: [
+      "I am off after 7. I will get to this first thing tomorrow.",
+      "From dinner to bedtime the phone stays in the kitchen. Call me on it if I slip.",
     ],
-    adaptation: "Use an at home, free, or low cost version. Twenty intentional minutes on the back porch can count when a full evening cannot.",
-    atHome: "Taking the lead on a date means lifting a load off her. When she does not have to plan, book, and remind, she gets to just show up, which is usually the whole gift.",
-    atWork: "Novelty and shared activity work on a team too. A morning on a job site together, a volunteer day, or lunch somewhere new does more for a crew than another meeting about culture.",
-    ifNot: {
-      label: "IF YOU ARE NOT WITH SOMEONE RIGHT NOW",
-      body: "Take the same practice to one relationship that matters to you: one of your kids, your brother, your dad, an old friend. Plan something new, put the phones away, do it side by side, and ask afterward what you would do again. The skill is the same. Only the person changes.",
-    },
-    kit: { sheet: "2.2", sheetName: "The Date Night Card", livesAt: "The wallet, so the idea survives the week" },
-    encouragement: "Curiosity is the part that wore off. It comes back with use.",
-    action: "Pick a date in the next fourteen days, bring two ideas, and handle every piece of the logistics yourself.",
-    reflection: "When was the last time I planned something new for the two of us, start to finish?",
-    coachQuestion: "When did you last plan something new for her, start to finish, and what has gotten in the way since?",
-    fieldNote: "What helps is getting out of autopilot long enough to notice the person across from you.",
-    guide: {
-      whyItHelps: why("the-date-night-experiment"),
-      wordsToUse: "I want to take you somewhere new in the next two weeks. Give me two ideas, I will bring two, and I will handle the rest.",
-      watchFor: "Do not use a date as a test of the marriage, force excitement, or spring rules on her. Choose the activity and the phone boundary together.",
-      fieldAssignment: "Plan one modest shared experience in the next fourteen days. Handle the logistics. End with one question: what part should we do again?",
-      evidence: evidence("the-date-night-experiment"),
-    },
+    watchFor: "Real emergencies happen. An edge with an honest exception for true emergencies will last longer than a perfect rule you break by Wednesday. Do not let “emergency” quietly come to mean everything.",
+    thisWeek: "Write the three numbers, pick your edge, tell the people it affects, and keep it every day.",
+    reflect: "What number would I have to see before I believed I could slow down?",
+    coachQuestion: "What number would you have to see before you believed you could slow down, and is it real or is it fear?",
+    fromChris: "I have run a business for twenty years, and the work never runs out on its own. The edge has to come from me, because the clients will never draw it for me.",
+    sheet: { slug: "enough", name: "Enough", holds: "Your three numbers, your hard edge, and thirty boxes to tick each day you keep it.", livesAt: "The fridge", file: sheetFile("enough") },
+    evidence: [
+      { label: "Detachment from work (meta analysis)", note: "A meta analysis of 86 publications linked mentally switching off from work with several recovery and wellbeing outcomes.", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5233687/" },
+    ],
   },
   {
-    slug: "the-floor-general",
-    movement: "LEAD",
-    number: "2.3",
-    title: "The Floor General",
-    subtitle: "Get to their level and let them lead.",
-    summary: "Five to fifteen phone free minutes at your kid's level, following instead of directing.",
-    artImage: "/assets/course/photo/lesson-2-3-floor-general-v1.jpg",
-    previewPosition: "57% center",
-    artAlt: "A father and his kids building a blanket fort together in the family room",
-    artCaption: "Set the safe conditions, then let them show you where connection is possible.",
-    scene: "Your kid says your name, or “Dad, watch this.” They look for your eyes before they look for an answer. If the phone gets the first response, that little invitation closes before either of you notices.",
-    problem: "A man can spend a whole evening near his kids and not really be with them. A downward glance tells a kid the screen got there first, even when that is not what you mean. And even when you do play, it is easy to take it over: fix the game, teach the lesson, run the show.",
-    principle: "You set the safe conditions. They lead. The floor just means getting to their level and following for a while, which is the opposite of how most of us lead all day.",
-    practice: "Eyes first, then follow",
-    practiceIntro: "Answer the bid before anything else. Phone away, get close, and follow instead of directing.",
-    steps: [
-      { title: "Give them your eyes first", body: "Set the phone down, look at them, and answer. If you truly cannot stop, say exactly when you can and keep that promise." },
-      { title: "Get to their level", body: "The floor, beside them on the couch, across the table, or the passenger seat. Whatever puts you in their world." },
-      { title: "Let them choose", body: "Ask what they want to do or talk about. Resist improving the game, teaching a lesson, or steering toward what you would rather do." },
-      { title: "End cleanly", body: "Give a heads up when time is almost up. Tell them what you liked and when you can do it again." },
+    slug: "fuel",
+    movement: "CARRY",
+    number: "6",
+    says: "I'm running on fumes.",
+    title: "Fuel",
+    subtitle: "Sleep, move and do one hard thing on purpose, because steadiness gets built in the body first.",
+    summary: "Seven hours of sleep, real movement, time outside, and one hard thing on the calendar.",
+    photo: { src: photo("fuel"), alt: "A mountain biker riding a narrow trail through tall grass", position: "50% 62%", caption: "A man who does hard things on purpose has more room for the hard things he did not choose." },
+    detail: { src: photo("fuel-detail"), alt: "A rider carrying his bike up a rocky hill, in black and white", position: "50% 50%" },
+    moment: "The alarm goes off at 5:40 after six hours of bad sleep. Your back is stiff, your coffee is your breakfast, and by 3 PM you are fading. You tell yourself you will get back in shape when work slows down. It has not slowed down in years, and the last time you did something physically hard on purpose, your kids were in diapers.",
+    really: "When your body is empty, patience is the first thing to go, and the people at home feel it before you do. A man who sleeps, moves and does hard things on purpose has more room for pressure, because his body has practiced handling strain on his own terms. When I need to reset, I lift kettlebells, ride a mountain bike trail or go fishing.",
+    principle: "Fuel the man before you ask more of him. Sleep, movement and voluntary challenge are part of the job.",
+    practice: {
+      name: "Sleep, move, one hard thing",
+      intro: "Four parts. Start with the one you are worst at.",
+      steps: [
+        { title: "Sleep", body: "Pick a lights out time that gives you seven hours, and keep it five nights this week. Phone out of the bedroom." },
+        { title: "Move", body: "Thirty minutes that raise your heart rate, five days this week, plus two days of strength work, even if it is pushups and a kettlebell in the garage." },
+        { title: "Get outside", body: "At least one of those sessions on a trail, a river or anywhere green, without the phone." },
+        { title: "Schedule one hard thing", body: "Put one voluntary challenge on the calendar in the next month: a long ride, a summit you have never climbed, a race you have to train for. Tell someone, so backing out costs you something." },
+      ],
+    },
+    hardWeek: "Lights out on time three nights, and one walk outside without the phone.",
+    atHome: "Bring a kid along for the hard thing, or for the training. They will remember the morning you climbed something together longer than anything you buy them.",
+    atWork: "Take one phone call a day walking instead of sitting. Block your training time on the calendar the same way you would block a client.",
+    ifNot: "If injury or health limits what you can do, the principle still holds. Pick the hardest thing your doctor says is safe and do it on purpose.",
+    whyItHelps: "Sleep scientists recommend that adults get at least seven hours a night, and federal guidelines call for 150 to 300 minutes of moderate activity a week plus strength work twice a week. One study found that a ninety minute walk in nature reduced rumination, the loop of replaying what went wrong, while a city walk did not.",
+    words: [
+      "I am going to bed at 10:30 this week. Hold me to it.",
+      "I signed up for ____ in March. Want to train for it with me?",
     ],
-    adaptation: "Five minutes counts on a crowded day. With teenagers, drive, cook, fix, fish, or work beside them, and let silence be fine instead of turning it into an interview.",
-    atHome: "Cover for each other. Fifteen minutes on the floor only happens if somebody else is holding the rest of the evening. Trade it back the next night.",
-    atWork: "Leaders need this too. Fifteen minutes with a newer person on your team where they set the agenda and you listen, without fixing anything, tells them more about how you see them than any review will.",
-    ifNot: {
-      label: "IF THERE ARE NO KIDS AT HOME",
-      body: "Point it at someone you lead or mentor: a younger guy at work, a nephew, a kid on a team you coach. Same rules. Eyes first, let them lead, do not take over. Most of the men who mattered to you growing up did exactly this.",
-    },
-    kit: { sheet: "2.3", sheetName: "Floor Time", livesAt: "The kid's room" },
-    encouragement: "Eye level is the whole technique. The rest is staying there.",
-    action: "The next time one of your kids says your name, set the phone down, look at them, and answer before you go back to anything else.",
-    reflection: "When I step into my kid's world, how fast do I start running it?",
-    coachQuestion: "When your kids reached for you this week, what got your eyes first?",
-    fieldNote: "I called it Floor General, but most of it is giving up command. I set the conditions. They show me where connection is possible.",
-    guide: {
-      whyItHelps: why("the-floor-general"),
-      wordsToUse: "You have me. My phone is away. Show me.",
-      watchFor: "This does not mean being endlessly available. If you cannot stop, look at them, name a specific time, and keep it.",
-      fieldAssignment: "Use one ten minute eyes first window this week. Answer the invitation, put the phone away, and follow without teaching, fixing, or interviewing.",
-      evidence: evidence("the-floor-general"),
-    },
+    watchFor: "Do not let this turn into another thing to be perfect at. Missing a day is part of it. And do not train so hard you have nothing left for the people at home.",
+    straightWord: "If you have health problems or have not exercised in a long time, check with your doctor before starting anything hard.",
+    thisWeek: "Set the lights out time, get five movement sessions and two strength sessions in, and put one hard thing on the calendar.",
+    reflect: "When did I last do something hard that nobody made me do?",
+    coachQuestion: "When did you last do something hard that nobody made you do, and what did it give you?",
+    fromChris: "The kettlebell, the trail and the river are how I reset. When I let them slide for too long, patience is the first thing to go.",
+    sheet: { slug: "fuel", name: "The Fuel Card", holds: "Your lights out time, a weekly grid for sleep, movement and strength, and the date of your hard thing.", livesAt: "The bathroom mirror", file: sheetFile("fuel") },
+    evidence: [
+      { label: "Sleep recommendation (CDC)", note: "Citing the American Academy of Sleep Medicine and Sleep Research Society: adults 18 to 60 should sleep at least seven hours a night.", href: "https://www.cdc.gov/mmwr/volumes/65/wr/mm6508a5.htm" },
+      { label: "Physical Activity Guidelines (Harvard T.H. Chan School of Public Health)", note: "150 to 300 minutes of moderate activity a week and strength work at least two days.", href: "https://nutritionsource.hsph.harvard.edu/2018/11/13/new-physical-activity-guidelines-for-americans/" },
+      { label: "Nature walks and rumination (Bratman and colleagues, 2015)", note: "A ninety minute nature walk reduced self reported rumination compared with an urban walk.", href: "https://natureandhealth.uw.edu/publications/nature-experience-reduces-rumination-and-subgenual-prefrontal-cortex-activation" },
+    ],
   },
   {
-    slug: "the-third-place",
-    movement: "KEEP",
-    number: "3.1",
-    title: "The Third Place",
-    subtitle: "Have one place where you are not the boss, the provider, or the fixer.",
-    summary: "A recurring place or activity outside work and home where you get to be a man doing something he likes.",
-    artImage: "/assets/course/photo/lesson-3-1-third-place-v3.jpg",
-    previewPosition: "48% center",
-    artAlt: "Three friends talking after a ride beside a pickup with two mountain bikes in the back",
-    artCaption: "Keep a place where you can make, move, laugh, and come home more alive.",
-    scene: "Someone asks what you do for fun and you start listing things you used to do. The bike needs air, the fishing gear has not moved since spring, and the buddy you meant to call is still a name in your phone. You are useful to everyone and getting harder for yourself to recognize.",
-    problem: "A lot of men end up with two rooms: work and home. Both matter, and neither was built to carry your whole identity, your friendships, and your rest. When those two are all you have, burnout is just high friction with no buffer.",
-    principle: "The sociologist Ray Oldenburg called it the third place, somewhere outside home and work. Here it means a place or activity you keep returning to where nobody needs you to be in charge. You are just a man doing something he likes.",
-    practice: "Choose one place to return to",
-    practiceIntro: "It should restore more than it distracts, and it has to be fair to the people you share a life with.",
-    steps: [
-      { title: "Name what restores you", body: "A trail, the water, a workshop, the gym, church, a rec league, a breakfast table, a project with your hands. Pick what actually gives you something back, whatever you think you should like." },
-      { title: "Start with the smallest real version", body: "A standing thirty minutes is fine. A place becomes yours by returning to it, not by big blocks of time." },
-      { title: "Clear it at home", body: "Put it on the shared calendar, count childcare and money honestly, and protect her time to recharge as seriously as yours." },
-      { title: "Notice what comes home", body: "Ask whether you come back more alive and available, or just numb and avoiding things. Adjust honestly." },
-    ],
-    adaptation: "Some seasons need a smaller version closer to home. Some problems need sleep, a lighter workload, medical care, or counseling. A hobby will not cure burnout.",
-    atHome: "Do not let it become your escape and her extra shift. Agree on equal time out loud and count the childcare honestly. A third place that costs your wife her Saturday is not restoring anybody.",
-    atWork: "Business owners lose this one first, because the business is always open. A standing Tuesday ride or a Saturday morning on the water is how you keep from becoming only the job.",
-    kit: { sheet: "3.1", sheetName: "The Third Place", livesAt: "The bag you already carry" },
-    encouragement: "You are still a person when nobody needs anything from you.",
-    action: "Pick one place or activity to go back to twice this month, and clear the first time at home today.",
-    reflection: "Where do I feel like myself instead of only a boss, a husband, or a dad?",
-    coachQuestion: "Where do you feel like yourself, and when did you last go?",
-    fieldNote: "Mountain biking, fishing, kettlebells, a ride on a forest road. That is where I remember I am a person before I go back to the people who need me.",
-    guide: {
-      whyItHelps: why("the-third-place"),
-      wordsToUse: "I want to protect this because I come home better. I want to protect something for you too. Can we put both on the calendar?",
-      watchFor: "A third place will not fix burnout, and it should never be a one sided escape from the work at home. Make it fair and watch what kind of man comes home.",
-      fieldAssignment: "Go back to one place or activity twice this month. After each time, ask whether you came home more alive, more available, or just numb.",
-      evidence: evidence("the-third-place"),
+    slug: "your-council",
+    movement: "BUILD",
+    number: "7",
+    says: "I don't have one friend I could call at 2 AM.",
+    title: "Your Council",
+    subtitle: "Two or three men who know the real story and will tell you the truth.",
+    summary: "Name two or three men, invite one specifically, repeat it, and tell one true thing.",
+    photo: { src: photo("council"), alt: "Two men sitting side by side on a bench in the woods", position: "50% 50%", caption: "Men build friendship side by side, again and again." },
+    detail: { src: photo("council-detail"), alt: "A group of men sitting around a fire ring in the desert", position: "50% 50%" },
+    moment: "You run into an old buddy at the hardware store. You both say “we need to get together,” mean it, and know it will not happen. Driving home you try to name one man you could call tonight if your marriage cracked or the business went under. You think for a long time.",
+    really: "You know a lot of guys: clients, neighbors, dads from practice, men at church. Very few of them know what is actually going on with you. Men rarely lose friends on purpose. Work and kids fill the calendar, nobody makes the first call, and the friendships quietly fade. If you are married, your wife may have become your only close relationship, and that is a lot to ask of one person.",
+    principle: "Every man needs a council: a few men who know the real story and are allowed to tell him the truth. You build one by showing up, side by side, again and again.",
+    practice: {
+      name: "Name, invite, repeat, tell",
+      intro: "A few minutes this week, then a standing habit.",
+      steps: [
+        { title: "Name them", body: "Write down every man you respect. Circle two or three who would tell you the truth and who you would trust with yours." },
+        { title: "Invite one, specifically", body: "Text one of them this week with a day, a time and an easy out: “I'm riding Saturday at 7, want to come? No worries if not.” Men bond best side by side, so pick something you do together: a ride, a fishing morning, breakfast before work, a project in his garage." },
+        { title: "Repeat it", body: "Put the same thing on the calendar again for next month. Friendship gets built through repetition." },
+        { title: "Tell one true thing", body: "Somewhere around the third time, say one honest sentence about what is going on with you. Then ask him the same." },
+      ],
     },
+    hardWeek: "One text to one man, with a day and a time in it.",
+    atHome: "Protect your wife's friendships the same way you protect your own. Trade off mornings so both of you get time with your people. Friends make you a better husband, and hers make her a happier wife.",
+    atWork: "Find one peer outside your company who runs a business or carries a role like yours, and have lunch once a month to trade notes honestly. Business owners are often the loneliest men in the room.",
+    ifNot: "If you have moved and know nobody, start where men already gather around something: a men's group at church, a running or cycling club, a volunteer crew, a Rotary breakfast. Go three times before deciding.",
+    whyItHelps: "A large meta analysis found strong associations between social relationships and survival, comparable to other well known health risks. That research does not prove that one breakfast changes your health, but it is a strong reason to take friendship as seriously as your blood pressure.",
+    words: [
+      "I'm riding Saturday at 7, want to come? No worries if not.",
+      "Honestly, things have been rough at home and I have not told anyone. How are you really doing?",
+    ],
+    watchFor: "Do not wait until you need someone to start. The council has to exist before the 2 AM call. And do not judge a friendship by the first outing. Men warm up slowly.",
+    thisWeek: "Name your two or three, send one invitation, and put the second one on the calendar before the first one happens.",
+    reflect: "Who knows what is actually going on with me right now?",
+    coachQuestion: "Who knows what is actually going on with you right now, and if the answer is nobody, who should?",
+    fromChris: "I do not need a big network. I need a few men I can call, and that starts with me being willing to ask first.",
+    sheet: { slug: "council-card", name: "The Council Card", holds: "The names of your two or three men, the invitation script, and a line for the next date.", livesAt: "Your wallet", file: sheetFile("council-card") },
+    evidence: [
+      { label: "Social relationships and mortality risk (Holt Lunstad and colleagues, 2010)", note: "A meta analysis of 148 studies found strong associations between social relationships and survival. It does not prove that any single friendship causes a health gain.", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2910600/" },
+    ],
   },
   {
-    slug: "the-friendship-script",
-    movement: "KEEP",
-    number: "3.2",
-    title: "The Friendship Script",
-    subtitle: "Invite first, and make it easy to say yes.",
-    summary: "A low pressure way to turn a guy you respect into a friend you actually see.",
-    artImage: "/assets/course/art/lesson-3-2-friendship.jpg",
-    previewPosition: "50% center",
-    artAlt: "Two men sitting on a dock with fishing rods and coffee at the edge of a mountain lake",
-    artCaption: "Friendship grows from specific invitations and ordinary time, shared more than once.",
-    scene: "You have known him for three years. You see him at the gym, at church, at the kids' games. Every time, one of you says you should get together. Neither of you is saying no. It is just waiting for somebody to name a day.",
-    problem: "A lot of men's friendships fade quietly after thirty. Nobody decided that. Work and family filled the calendar and nobody made the invitation. Waiting for friendship to happen keeps it theoretical.",
-    principle: "Men tend to build friendship shoulder to shoulder: a shared activity, low stakes, and repetition. One or two men you can call matter more than a big network. Somebody has to invite first. Let it be you.",
-    practice: "The specific invitation",
-    practiceIntro: "One man, one activity, one time. Keep it simple enough that a no does not feel like a verdict.",
-    steps: [
-      { title: "Pick one man", body: "Someone you respect or already like being around. You do not have to decide whether he will be a close friend." },
-      { title: "Make it concrete", body: "I am riding Saturday at eight, want to come? Or: I am grabbing breakfast after the game, join me?" },
-      { title: "Ask again without chasing", body: "Schedules are real. Ask again another week if the first answer is no. Respect a pattern of no without taking it personally." },
-      { title: "Let it go deeper later", body: "Start side by side. When there is trust, ask a real question and answer one honestly yourself." },
-    ],
-    adaptation: "If distance or health limits what you can do, use a standing call, a project check in, or breakfast once a month. Repetition matters more than the setting.",
-    atHome: "Your marriage was never meant to be your only close relationship. A wife who is also your only friend is carrying a job she did not sign up for. Friends make you a better husband.",
-    atWork: "The same script works with a peer you respect: another owner, a mentor, someone a few years ahead of you. A specific breakfast invitation is how most of the best business relationships start.",
-    kit: { sheet: "3.2", sheetName: "The Friendship Script", livesAt: "The wallet" },
-    encouragement: "Invite first. The worst answer is a no you will survive.",
-    action: "Send one specific, low pressure invitation before the day is over.",
-    reflection: "Who have I been waiting on to invite me, and what stops me from going first?",
-    coachQuestion: "Who have you been waiting on, and what stops you from asking him first?",
-    fieldNote: "I do not need a big network. I need a few men I can call, and that starts with me being willing to ask.",
-    guide: {
-      whyItHelps: why("the-friendship-script"),
-      wordsToUse: "I am riding Saturday at eight. Want to come? No pressure if your week is packed.",
-      watchFor: "Be specific without pushing. Invite clearly, take the answer, and let trust build at its own speed.",
-      fieldAssignment: "Send one concrete invitation today. If it is a no, ask once more another week before you decide what it means.",
-      evidence: evidence("the-friendship-script"),
+    slug: "the-inheritance",
+    movement: "BUILD",
+    number: "8",
+    says: "I'm turning into my dad.",
+    title: "The Inheritance",
+    subtitle: "Choose on purpose what you keep from your father and what stops with you.",
+    summary: "Write the playbook you inherited, mark each line keep, change or stop, and practice one new version out loud.",
+    photo: { src: photo("inheritance"), alt: "An older man walking hand in hand with a small child", position: "50% 45%", caption: "What you inherited is a starting point. You get to choose what you pass on." },
+    detail: { src: photo("inheritance-detail"), alt: "Hands sorting through old black and white family photographs", position: "50% 50%" },
+    moment: "Your son spills milk across the table and before you can think, your father's voice comes out of your mouth: the same words, the same tone, the same sigh. You see your son's face do exactly what yours used to do. Later that night you sit in the truck in the driveway thinking, when did I become him?",
+    really: "Every man runs on a playbook he picked up from his father, from the man who raised him, or from the hole where one should have been. Most of it runs without your noticing: how you handle money, anger, work, love, and asking for help. Some of it is the best of you. Some of it you would rather your kids never learn. You do not need to judge your father to look at it honestly. The point is to choose.",
+    principle: "What you inherited is a starting point. Keep the good on purpose, change what needs changing, and let the rest stop with you.",
+    practice: {
+      name: "Keep, change, stop",
+      intro: "One page, written honestly, then one new version practiced out loud.",
+      steps: [
+        { title: "Write the playbook", body: "On the left side of a page, write what your father taught you about being a man, in his own words if you can remember them. Cover work, money, anger, love, asking for help, and how a man treats his wife and kids." },
+        { title: "Mark each line", body: "Next to each one write Keep, Change or Stop." },
+        { title: "Write the new version", body: "For each Change or Stop, write the version you want your kids to inherit, in one sentence." },
+        { title: "Practice one", body: "Pick the line that matters most to your kids right now and practice the new version this week, out loud, at least once." },
+      ],
     },
+    hardWeek: "One line on the page, marked Keep, Change or Stop, with the new version written out.",
+    atHome: "Tell one of your kids something good your father taught you. They should know where the good parts came from, and it gives you a way to talk about family without making it heavy.",
+    atWork: "A lot of fathers taught their sons how to run a crew or a company, for better or worse. Find one leadership habit that came straight from him and decide if it still serves the people you lead.",
+    ifNot: "If your father was absent, write what his absence taught you, and who filled in, whether a grandfather, a coach or nobody. If you do not have kids, the people you lead and mentor inherit your playbook too.",
+    whyItHelps: "A 2025 review of 24 datasets found that parenting carries over from one generation to the next only weakly. In plain words, you are far from destined to repeat your father. Writing the playbook down drags the automatic parts into the light where you can choose.",
+    words: [
+      "My dad taught me ____. I want you to have that too.",
+      "That one stops with me.",
+    ],
+    watchFor: "This lesson is about what you do from here forward, so leave settling scores and digging through every old hurt for another place. And remember he probably inherited his playbook too.",
+    straightWord: "For some men this lesson brings up hard things from childhood. If it does, a licensed counselor is the right person to walk through that with you. Coaching works on what you do from here forward.",
+    thisWeek: "Write the playbook, mark every line, and practice one new version out loud at least once.",
+    reflect: "What is one thing my father did that I am still doing, and do I want my kids to do it too?",
+    coachQuestion: "What is one thing your father did that you are still doing, and do you want your son or daughter to do it too?",
+    fromChris: "None of us picked the playbook we started with. We do get to pick what we hand on, and that choice gets made in small moments like the milk on the table.",
+    sheet: { slug: "keep-change-stop", name: "Keep, Change, Stop", holds: "The playbook column, the three marks, and the new versions.", livesAt: "The back of your Solo notebook", file: sheetFile("keep-change-stop") },
+    evidence: [
+      { label: "Intergenerational stability in parenting (Psychological Bulletin, 2025)", note: "A multilevel meta analysis of 408 effect sizes from 24 datasets found only weak transmission of parenting across two generations (r = .12).", href: "https://ifp.nyu.edu/2025/journal-article-abstracts/bul0000494/" },
+    ],
   },
   {
-    slug: "mission-debrief",
-    movement: "KEEP",
-    number: "3.3",
-    title: "Mission Debrief",
-    subtitle: "Keep the two practices that helped.",
-    summary: "A short review that turns everything you tried into two practices for the next thirty days.",
-    artImage: "/assets/course/photo/lesson-3-3-mission-debrief-v1.jpg",
-    previewPosition: "58% center",
-    artAlt: "A man writing in a notebook on a porch while his family gathers inside",
-    artCaption: "The course ends when an idea becomes something you do in an ordinary week.",
-    scene: "You are on the last lesson and real life is already back. This is where a course usually becomes one more file you finished. Instead of collecting nine ideas, you pick the two that deserve to live past this screen.",
-    problem: "A course turns into a pile of information fast. Finishing every page does not matter if none of it survives a normal week.",
-    principle: "This was always about coming back, not finishing. Pick the few practices that met a real problem, use them long enough to learn something, and let the rest wait.",
-    practice: "Two practices for thirty days",
-    practiceIntro: "Look back at the Focus Protocol and the eight practices and choose two. Make each one specific enough to use.",
-    steps: [
-      { title: "Name the real problem", body: "What is costing you the most right now: the noise in your head, reactive days, bringing work home, your temper, distance at home, or being alone?" },
-      { title: "Choose two", body: "One that helps you Return and one that helps you Lead or Keep. More is not better." },
-      { title: "Set the minimum", body: "Write when, where, and how small each practice can get on a bad week without disappearing." },
-      { title: "Review without a scorecard", body: "In thirty days, ask what changed, what did not fit, and what you want to keep. Do not turn your home into a compliance report." },
-    ],
-    adaptation: "If a practice creates conflict, shame, or more management than value, stop and redesign it. Get professional help when the problem is bigger than a course.",
-    atHome: "Tell someone at home which two you picked, so they can notice when you use them.",
-    atWork: "Make one of your two show up at work as well: two minutes in the truck before a hard meeting, a protected first block, or a clean pause in a tense conversation.",
-    kit: { sheet: "3.3", sheetName: "The Thirty Day Page", livesAt: "The desk, or the table at home" },
-    encouragement: "Two practices you keep beat nine you admired.",
-    action: "Write your two practices on the Thirty Day Page and put it somewhere you will see it every morning.",
-    reflection: "Which two practices would change the most in the life I am already living?",
-    coachQuestion: "Which two are you keeping, and who is going to ask you about them at day fifteen?",
-    fieldNote: "Keep the two things that helped. The rest will be here when you need it.",
-    guide: {
-      whyItHelps: why("mission-debrief"),
-      wordsToUse: "When ____ happens, I will ____. On a bad week, the smallest version is ____.",
-      watchFor: "Do not keep every practice because you paid for the course. Pick the two that meet a real problem and let the rest wait.",
-      fieldAssignment: "Choose two practices for thirty days. Give each one a situation, a response, and a minimum. Review what happened without grading your character.",
-      evidence: evidence("mission-debrief"),
+    slug: "what-you-pass-on",
+    movement: "BUILD",
+    number: "9",
+    says: "My kids are growing up and I'm missing it.",
+    title: "What You Pass On",
+    subtitle: "Decide what you are building, take your kids into real challenges, and put it on one page.",
+    summary: "Write your creed, plan one challenge with each kid, teach one real skill, and tell them who they are.",
+    photo: { src: photo("pass-on"), alt: "A father and his young daughter walking a forest trail", position: "50% 50%", caption: "Your kids inherit how you live far more than what you say." },
+    detail: { src: photo("pass-on-detail"), alt: "A father and his kid walking into the surf, in silhouette", position: "50% 50%" },
+    moment: "You are looking for something in the garage and find your son's first bike, the one with training wheels. He is fourteen now and taller than his mother. You try to remember the last real conversation you had with him that was not about grades or chores, and you cannot. You do the math on how many summers are left before he leaves.",
+    really: "You have been providing for your kids, and that matters. But kids also need a father who takes them into the world: who teaches them to do hard things, lets them see how he handles a problem, and tells them who they are. You will not get those years back, and the good news is that a few deliberate moments and a clear idea of what you want to pass on are enough to start.",
+    principle: "Your kids inherit how you live far more than what you say. Decide what you want to pass on, then take them into it.",
+    practice: {
+      name: "The creed and the challenge",
+      intro: "One page to write, then a month of doing something hard together.",
+      steps: [
+        { title: "Write your creed", body: "One page, in plain words: who you are, what you are building, how you treat people, and how you want your kids to remember you. Read it once a week, Sunday night." },
+        { title: "Plan one challenge with each kid", body: "Something a little hard that you do together over a month: a summit, a fishing trip they plan, a project in the shop, learning to change a tire, a race. Let them carry part of the load." },
+        { title: "Teach one real skill", body: "Pick something you know that they will need, like how to shake a hand and look a man in the eye, how to handle money, how to fix something, how to apologize. Teach it this month." },
+        { title: "Tell them who they are", body: "Once this week, tell each kid one specific thing you see in them that you are proud of. Say it plainly and do not attach advice to it." },
+      ],
     },
+    hardWeek: "One drive or one walk with one kid, phone in your pocket on silent, and one question about their life that is not about school.",
+    atHome: "Share your creed with your wife or co parent and ask what she would add. The kids get one family, and the two of you passing on the same things counts for a lot.",
+    atWork: "The younger men on your crew or team are watching you too. Pick one and teach him something real this month: how you price a job, how you handle an angry client, how you run a meeting.",
+    ifNot: "If you do not have kids, or they are grown, aim this at a nephew, a younger man at work, a kid on a team you coach, or your grown kids, who still need to hear who they are.",
+    whyItHelps: "A review of research on play between fathers and children found a varied but meaningful body of evidence connecting it with child outcomes. A study of family mealtimes linked adult phone use with less talking at the table. Small, focused moments are where kids actually get their father.",
+    words: [
+      "I want to do something hard with you this fall. You pick it.",
+      "I noticed how you handled ____. That took guts. I am proud of you.",
+    ],
+    watchFor: "Do not make the challenge your dream instead of theirs. Let them pick, let them struggle a little, and resist the urge to take over. And do not save the proud words for big achievements. They need to hear them on ordinary days.",
+    thisWeek: "Write a first draft of your creed, plan one challenge with each kid, and tell each one what you see in them.",
+    reflect: "What do I want my kids to say about me when I am gone?",
+    coachQuestion: "What do you want your kids to say about you when you are gone, and what did you do this week that they would put in that sentence?",
+    fromChris: "I have three kids. The creed keeps me honest about what I am actually handing them, especially on the weeks when work wants all of me.",
+    sheet: { slug: "my-creed", name: "My Creed", holds: "Space for your creed, your challenge with each kid, and the skill you are teaching this month.", livesAt: "Somewhere you will see it on Sunday nights", file: sheetFile("my-creed") },
+    evidence: [
+      { label: "Father and child play (systematic review)", note: "A varied but meaningful body of research connects play between fathers and children with child outcomes.", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8153002/" },
+      { label: "Phones during family routines", note: "A family mealtime study linked adult phone use with less verbal interaction. It does not prove that one glance harms a relationship.", href: "https://pubmed.ncbi.nlm.nih.gov/39377734/" },
+    ],
   },
 ];
 
+/** The Solo and the nine lessons, in course order, for the rail and progress. */
+export const MEN_STEPS = [
+  { slug: MEN_SOLO.slug, movement: MEN_SOLO.movement, number: MEN_SOLO.number, title: MEN_SOLO.title },
+  ...MEN_LESSONS.map(({ slug, movement, number, title }) => ({ slug, movement, number, title })),
+];
+
 export const getMenLesson = (slug: string) => MEN_LESSONS.find((lesson) => lesson.slug === slug);
-export const getMenMovement = (key: MovementKey) => MEN_MOVEMENTS.find((m) => m.key === key);
+export const getMenMovement = (key: MenPartKey) => MEN_MOVEMENTS.find((m) => m.key === key);
+
+/** Every printable in the course, in order. */
+export const MEN_SHEETS: Sheet[] = [MEN_SOLO.sheet, ...MEN_LESSONS.map((lesson) => lesson.sheet)];
 
 /** The Focus Protocol moves and timeline are the same for everyone. */
 /** The couples text names the Sunday Board here; the men's edition protects the first hour home instead. */
@@ -478,24 +599,30 @@ export const MEN_RESET_RELAPSE = {
 export const MEN_RESET_DECLARATION =
   "I do not trade presence for distraction. My attention belongs to the people who count on me. My phone is a tool. I am not.";
 
-/** Shared printables. The lesson sheets are the same files the couples course uses. */
+/** The printables on the course home. Each lesson page has its own sheet too. */
 export const MEN_PRINT_FILES = [
   {
     label: "Write in it",
     title: "The men's course book",
-    note: "The Focus Protocol and all nine lessons on paper, with a home and a work example in each and room to write.",
-    href: "/downloads/men/all-the-way-here-mens-edition.pdf",
+    note: "The Solo and all nine lessons on paper, every section, with room to write after each one.",
+    href: MEN_COURSE.book,
   },
   {
-    label: "Days one to three",
-    title: "The Focus Protocol sheet",
-    note: "The four moves and the three day timeline on one page. Tape it inside a cabinet or keep it on the desk.",
-    href: "/downloads/focus-protocol.pdf",
+    label: "Start here",
+    title: "The Solo sheet",
+    note: "The three questions, the ninety day page, and what to bring. It goes in the front of your notebook.",
+    href: MEN_SOLO.sheet.file,
   },
   {
     label: "Keep it in sight",
     title: "The field card",
-    note: "All nine practices on one page for the fridge or the truck. Each lesson page has its own sheet too.",
-    href: "/downloads/all-the-way-here-field-card.pdf",
+    note: "All nine practices on one page for the fridge, the desk, or the truck.",
+    href: MEN_COURSE.fieldCard,
+  },
+  {
+    label: "Lesson 2 tool",
+    title: "The Focus Protocol sheet",
+    note: "The four moves and the three day timeline on one page, if the phone is your reach.",
+    href: "/downloads/focus-protocol.pdf",
   },
 ] as const;

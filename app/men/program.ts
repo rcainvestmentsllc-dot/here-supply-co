@@ -62,18 +62,18 @@ export const usd = (n: number) => `$${n.toLocaleString("en-US")}`;
 
 /** The 90 Day Intensive, week by week. The lessons are the men's course. */
 export const INTENSIVE_WEEKS = [
-  { week: 1, part: "Start", title: "Intake and the Focus Protocol", body: "A sixty minute first call. Where you are drifting at home, at work, and in yourself. Three goals for ninety days. You start the three day reset." },
-  { week: 2, part: "Return", title: "The Sanctuary", body: "A weekly brain dump on paper. Every open loop out of your head and onto one page." },
-  { week: 3, part: "Return", title: "Focus Mode", body: "Protect the first block of your day for the work only you can do." },
-  { week: 4, part: "Return", title: "The Driveway Pause", body: "Two minutes in the truck before you walk in. Month one review on the call." },
-  { week: 5, part: "Lead", title: "The Emotional Thermostat", body: "Pause, return, repair. One trigger tracked at home and one at work." },
-  { week: 6, part: "Lead", title: "The Date Night Experiment", body: "Plan one new thing with your partner and carry the logistics. If you are single, take it to one relationship that matters." },
-  { week: 7, part: "Lead", title: "The Floor General", body: "Five to fifteen minutes a day at your kids' level, or with someone you mentor if there are no kids at home." },
-  { week: 8, part: "Lead", title: "Leading the room at work", body: "Take the Thermostat into one hard conversation with a team member, a client, or a partner. Midpoint review." },
-  { week: 9, part: "Keep", title: "The Third Place", body: "One place where you are not in charge of anything. Go back twice this month." },
-  { week: 10, part: "Keep", title: "The Friendship Script", body: "Invite one man to do something side by side." },
-  { week: 11, part: "Keep", title: "Your weekly plan", body: "Fifteen minutes on Sunday: the week ahead at home and at work, and the one thing you will protect." },
-  { week: 12, part: "Finish", title: "Mission Debrief", body: "Review the ninety days, choose two practices to keep, and decide what comes next." },
+  { week: 1, part: "Start", title: "Intake and The Solo", body: "A sixty minute first call: where things stand at home, at work, and in you. Three goals for ninety days. That week you take half a day alone with a notebook." },
+  { week: 2, part: "See it", title: "The Honest Map", body: "Score seven areas of your life, circle the one you avoid, and make one move on it with a day and a time." },
+  { week: 3, part: "See it", title: "The Drift", body: "Seven nights of logging what you reach for and what you felt right before. Then a 9 PM plan set up in advance." },
+  { week: 4, part: "See it", title: "Short Fuse", body: "Your three warning signs, a sixty second reset, and a repair every time you miss. Month one review on the call." },
+  { week: 5, part: "Carry it", title: "Choose Your Battles", body: "Everything you carry in three columns: mine to fight, mine to hand off, not mine at all. Then one hard conversation." },
+  { week: 6, part: "Carry it", title: "Enough", body: "Enough money, enough hours, enough yes, written down. One hard edge for thirty days, told to the people it affects." },
+  { week: 7, part: "Carry it", title: "Fuel", body: "Seven hours of sleep, real movement, time outside, and one hard thing on the calendar." },
+  { week: 8, part: "Carry it", title: "Leading at work", body: "Take one practice into the business: the conversation you have avoided with a team member, a client, or a partner. Midpoint review." },
+  { week: 9, part: "Build it", title: "Your Council", body: "Name two or three men, invite one specifically, and put the second time on the calendar before the first one happens." },
+  { week: 10, part: "Build it", title: "The Inheritance", body: "The playbook you got from your father, marked keep, change or stop, and one new version practiced out loud." },
+  { week: 11, part: "Build it", title: "What You Pass On", body: "Your creed on one page, a challenge with each kid, and one real skill taught this month." },
+  { week: 12, part: "Finish", title: "Keep the two", body: "Review the ninety days, choose two practices to keep, and decide what comes next." },
 ] as const;
 
 /** When coaching is the wrong tool. Shown on the coaching and apply pages. */

@@ -62,7 +62,7 @@ export default function GiftPage() {
             All the Way Here, <em>Men&rsquo;s Edition.</em>
           </h2>
           <p>
-            A three day reset to get the phone out of the way, then nine short lessons he can read
+            Half a day alone to get his head straight, then nine lessons he can read
             online and a course book he can write in. Every practice is shown at home and at
             work, so it fits the way he actually lives.
           </p>

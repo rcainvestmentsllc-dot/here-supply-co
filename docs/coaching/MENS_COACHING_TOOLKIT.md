@@ -91,7 +91,7 @@ No countdown, no pressure. A man who is not ready gets the course and an open do
 2. Where he is drifting. Ask, do not diagnose. (15)
 3. "If nothing changes in the next year, what does that cost you?" (10)
 4. Three ninety day goals: home, work, himself. (15)
-5. Walk through the Focus Protocol and set his start day. (5)
+5. Walk through The Solo and set the morning he will take it. If the phone is the problem, add the Focus Protocol from Lesson 2. (5)
 
 **Intensive weekly call, 45 minutes.** Read his Friday check in first.
 1. Win and miss from last week. (5)

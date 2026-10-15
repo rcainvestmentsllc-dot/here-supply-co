@@ -17,7 +17,7 @@ const LABELS: Record<string, string> = {
   phone: "Phone", lead: "What he leads", costing: "Costing him the most", interest: "Interested in", heard: "Heard about it from",
   work: "Work", home: "Home", people: "People who matter most", drift_home: "Drifting at home", drift_work: "Drifting at work",
   drift_self: "Drifting in himself", cost: "Cost if nothing changes", goal_home: "90 day goal, home", goal_work: "90 day goal, work",
-  goal_self: "90 day goal, himself", focus_start: "Focus Protocol start", know: "Anything to know", best_of_you: "Who got the best of him", bring: "Bring to next call",
+  goal_self: "90 day goal, himself", focus_start: "Solo day", know: "Anything to know", best_of_you: "Who got the best of him", bring: "Bring to next call",
 };
 
 const KIND_TAG: Record<string, string> = {

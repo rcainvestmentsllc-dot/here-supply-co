@@ -1,0 +1,341 @@
+/**
+ * Pieces the men's course adds to the shared course styles in
+ * ../course.module.css. Built on the same --hsc-* tokens so the two editions
+ * read as one product with different material.
+ */
+
+/* What men actually say, set above the lesson title. */
+.says {
+  margin: 0;
+  max-width: 34ch;
+  font-family: var(--hsc-editorial);
+  font-size: clamp(20px, 2.2vw, 27px);
+  font-style: italic;
+  line-height: 1.32;
+  color: var(--hsc-rust);
+}
+
+/* A section title for the long prose parts. */
+.part {
+  max-width: var(--hsc-measure);
+  margin-top: var(--hsc-s8);
+}
+.part h2 {
+  margin: 0 0 var(--hsc-s4);
+  font-family: var(--hsc-display);
+  font-size: var(--hsc-t-h3);
+  font-weight: 500;
+  line-height: var(--hsc-lh-snug);
+  color: var(--hsc-ink);
+}
+.part p {
+  margin: 0 0 var(--hsc-s4);
+  font-size: var(--hsc-t-body-lg);
+  line-height: var(--hsc-lh-body);
+  color: var(--hsc-copy);
+}
+.part p:last-child { margin-bottom: 0; }
+
+/* Photo beside a card: the hard week version, the hours of the Solo. */
+.photoRow {
+  margin: var(--hsc-s8) 0 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--hsc-s4);
+  align-items: stretch;
+}
+.photoRow figure {
+  margin: 0;
+  border-radius: var(--hsc-r-lg);
+  overflow: hidden;
+  background: var(--hsc-sage);
+  min-height: 260px;
+}
+.photoRow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hardWeek {
+  padding: var(--hsc-s6);
+  background: var(--hsc-forest);
+  color: var(--hsc-on-dark);
+  border-radius: var(--hsc-r-lg);
+  display: grid;
+  align-content: center;
+  gap: var(--hsc-s3);
+}
+.hardWeek span {
+  font-family: var(--hsc-mono);
+  font-size: var(--hsc-t-micro);
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--hsc-gold);
+}
+.hardWeek p {
+  margin: 0;
+  font-family: var(--hsc-editorial);
+  font-size: clamp(19px, 2vw, 25px);
+  line-height: 1.4;
+  color: #fff;
+}
+.hardWeek small {
+  font-size: var(--hsc-t-small);
+  color: var(--hsc-on-dark-quiet);
+  line-height: 1.5;
+}
+
+/* A tool from elsewhere in the course. */
+.tool {
+  margin: var(--hsc-s7) 0 0;
+  padding: clamp(24px, 2.8vw, 36px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--hsc-s5);
+  align-items: center;
+  border: 1px solid var(--hsc-line-strong);
+  border-radius: var(--hsc-r-md);
+  background: var(--hsc-paper-raised);
+}
+.tool span {
+  display: block;
+  font-family: var(--hsc-mono);
+  font-size: var(--hsc-t-micro);
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--hsc-rust);
+}
+.tool h3 {
+  margin: 10px 0 6px;
+  font-family: var(--hsc-display);
+  font-size: var(--hsc-t-h4);
+  font-weight: 500;
+  color: var(--hsc-ink);
+}
+.tool p {
+  margin: 0;
+  max-width: 62ch;
+  font-size: var(--hsc-t-body);
+  line-height: var(--hsc-lh-body);
+  color: var(--hsc-copy);
+}
+
+/* Where coaching stops. */
+.straight {
+  margin: var(--hsc-s7) 0 0;
+  padding: clamp(24px, 2.8vw, 36px);
+  border-left: 3px solid var(--hsc-rust);
+  background: color-mix(in srgb, var(--hsc-rust) 9%, transparent);
+  border-radius: 0 var(--hsc-r-md) var(--hsc-r-md) 0;
+}
+.straight span {
+  display: block;
+  margin-bottom: 10px;
+  font-family: var(--hsc-mono);
+  font-size: var(--hsc-t-micro);
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--hsc-rust);
+}
+.straight p {
+  max-width: 68ch;
+  margin: 0;
+  font-size: var(--hsc-t-body);
+  line-height: var(--hsc-lh-body);
+  color: var(--hsc-ink-soft);
+}
+
+.words {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--hsc-s3);
+}
+.words li {
+  font-family: var(--hsc-editorial);
+  font-size: var(--hsc-t-body-lg);
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--hsc-ink);
+}
+
+/* The note from Chris, with his photo. */
+.chris {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: var(--hsc-s5);
+  align-items: start;
+}
+.chris img {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 30%;
+  border: 2px solid var(--hsc-gold);
+}
+
+/* The Solo */
+.questions {
+  margin: var(--hsc-s6) 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--hsc-s3);
+  counter-reset: q;
+}
+.questions li {
+  counter-increment: q;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: var(--hsc-s4);
+  padding: var(--hsc-s5) var(--hsc-s6);
+  background: var(--hsc-forest);
+  color: #fff;
+  border-radius: var(--hsc-r-md);
+  font-family: var(--hsc-editorial);
+  font-size: clamp(19px, 2vw, 25px);
+  line-height: 1.36;
+}
+.questions li::before {
+  content: counter(q);
+  font-family: var(--hsc-mono);
+  font-size: var(--hsc-t-small);
+  color: var(--hsc-gold);
+  padding-top: 6px;
+}
+
+.hours {
+  margin: var(--hsc-s6) 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--hsc-s4);
+}
+.hours article {
+  padding: var(--hsc-s5);
+  background: var(--hsc-sage);
+  border-radius: var(--hsc-r-md);
+}
+.hours h3 {
+  margin: 0 0 var(--hsc-s2);
+  font-family: var(--hsc-display);
+  font-size: var(--hsc-t-h4);
+  font-weight: 500;
+  color: var(--hsc-ink);
+}
+.hours p {
+  margin: 0;
+  font-size: var(--hsc-t-body);
+  line-height: var(--hsc-lh-body);
+  color: var(--hsc-ink-soft);
+}
+
+.bring {
+  margin: 0;
+  padding-left: 1.1em;
+  display: grid;
+  gap: 6px;
+  color: var(--hsc-ink-soft);
+}
+
+/* Course home: the four parts with their photos. */
+.parts {
+  display: grid;
+  gap: var(--hsc-s4);
+}
+.partCard {
+  display: grid;
+  grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+  border: 1px solid var(--hsc-line);
+  border-radius: var(--hsc-r-lg);
+  overflow: hidden;
+  background: var(--hsc-paper-raised);
+}
+.partCard > img {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.partBody { padding: var(--hsc-s5) var(--hsc-s6); }
+.partBody header { margin-bottom: var(--hsc-s3); }
+.partBody header b {
+  font-family: var(--hsc-mono);
+  font-size: var(--hsc-t-micro);
+  font-weight: 400;
+  letter-spacing: .1em;
+  color: var(--hsc-quiet);
+}
+.partBody h3 {
+  margin: 4px 0 4px;
+  font-family: var(--hsc-display);
+  font-size: var(--hsc-t-h3);
+  font-weight: 500;
+  color: var(--hsc-ink);
+}
+.partBody header p { margin: 0; color: var(--hsc-copy); font-size: var(--hsc-t-small); line-height: 1.5; }
+.partLesson {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) auto;
+  gap: var(--hsc-s3);
+  align-items: baseline;
+  padding: 12px 0;
+  border-top: 1px solid var(--hsc-line);
+  color: var(--hsc-ink);
+  text-decoration: none;
+}
+.partLesson:hover strong { text-decoration: underline; }
+.partLesson > span:last-child { color: var(--hsc-quiet); }
+.partLesson[data-done="true"] > span:last-child > span:first-child { display: none !important; }
+.partLesson[data-done="true"] > span:last-child > span:last-child { display: inline-flex !important; color: var(--hsc-ocean); }
+.partLesson[data-done="true"] strong { color: var(--hsc-quiet); }
+.partLesson > span:first-child {
+  font-family: var(--hsc-mono);
+  font-size: var(--hsc-t-small);
+  color: var(--hsc-rust);
+}
+.partLesson strong { display: block; font-weight: 600; }
+.partLesson em { display: block; font-size: var(--hsc-t-small); color: var(--hsc-quiet); }
+
+.sheetsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--hsc-s3);
+}
+.sheetItem {
+  display: grid;
+  gap: 4px;
+  padding: var(--hsc-s4) var(--hsc-s5);
+  border: 1px solid var(--hsc-line);
+  border-radius: var(--hsc-r-md);
+  background: var(--hsc-paper-raised);
+  color: var(--hsc-ink);
+  text-decoration: none;
+}
+.sheetItem:hover { border-color: var(--hsc-line-strong); }
+.sheetItem small {
+  font-family: var(--hsc-mono);
+  font-size: var(--hsc-t-micro);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--hsc-rust);
+}
+.sheetItem strong { font-family: var(--hsc-display); font-weight: 500; font-size: var(--hsc-t-h4); }
+.sheetItem span { font-size: var(--hsc-t-small); color: var(--hsc-copy); line-height: 1.45; }
+
+@media (max-width: 860px) {
+  .photoRow, .hours, .tool { grid-template-columns: minmax(0, 1fr); }
+  .partCard { grid-template-columns: minmax(0, 1fr); }
+  .partCard > img { aspect-ratio: 16 / 9; min-height: 0; }
+}
+@media (max-width: 560px) {
+  .chris { grid-template-columns: 56px minmax(0, 1fr); }
+  .chris img { width: 56px; height: 56px; }
+  .questions li { grid-template-columns: 28px minmax(0, 1fr); padding: var(--hsc-s4); }
+}

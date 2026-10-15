@@ -112,10 +112,11 @@ export default function DrivewayPage() {
 
       <section className={styles.close}>
         <div>
-          <h2>This is one of nine practices.</h2>
+          <h2>Snapping when you walk in?</h2>
           <p>
-            The Driveway Pause is lesson three of All the Way Here, Men&rsquo;s Edition: a three day
-            phone reset, then one practice a week, each shown at home and at work.{" "}
+            Lesson three of All the Way Here, Men&rsquo;s Edition, goes after the short fuse itself:
+            your warning signs, a sixty second reset, and how to repair it when you miss. Nine
+            lessons, one a week, each shown at home and at work.{" "}
             {usd(MEN_OFFERS.course.foundingPrice)} for the founding group.
           </p>
         </div>

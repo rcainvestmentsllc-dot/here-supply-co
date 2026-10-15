@@ -44,7 +44,7 @@ test("the men's landing page shows the ladder and the free call", async () => {
 
 test("the coaching page lays out all twelve weeks and the limits of coaching", async () => {
   const page = await html("/men/coaching");
-  for (const title of ["The Sanctuary", "Focus Mode", "The Driveway Pause", "Leading the room at work", "Mission Debrief"]) {
+  for (const title of ["Intake and The Solo", "The Honest Map", "Short Fuse", "Leading at work", "What You Pass On", "Keep the two"]) {
     assert.match(page, new RegExp(title));
   }
   assert.match(page, /988/);
@@ -83,7 +83,8 @@ test("men's pages keep men on the men's path and preview as the men's brand", as
   // Strip the serialized page data, which carries the shared not found page.
   const focus = (await html(`${ROOT}/focus`, MEN)).replace(/<script\b[\s\S]*?<\/script>/gi, "");
   assert.doesNotMatch(focus, /Sunday Board/);
-  assert.doesNotMatch(await html(ROOT, MEN), /sunday-board-meeting\.pdf|here-supply-resource-pack\.pdf/);
+  const home = (await html(ROOT, MEN)).replace(/<script\b[\s\S]*?<\/script>/gi, "");
+  assert.doesNotMatch(home, /sunday-board-meeting\.pdf|here-supply-resource-pack\.pdf|src="\/assets\/course\//);
 });
 
 test("coaching terms are posted on the coaching page and the policies page, and group coaching is hidden", async () => {
@@ -134,9 +135,9 @@ test("the men's password unlocks the men's course and lands there", async () => 
     body: new URLSearchParams({ password, return_to: returnTo }),
   }), env, ctx);
 
-  const fromMen = await post(" Every Room ", `${ROOT}/lesson/the-sanctuary`);
+  const fromMen = await post(" Every Room ", `${ROOT}/lesson/the-honest-map`);
   assert.equal(fromMen.status, 303);
-  assert.equal(fromMen.headers.get("location"), `http://localhost${ROOT}/lesson/the-sanctuary`);
+  assert.equal(fromMen.headers.get("location"), `http://localhost${ROOT}/lesson/the-honest-map`);
   assert.match(fromMen.headers.get("set-cookie") ?? "", /^hsc_men=[0-9a-f]{64}; .*HttpOnly/);
 
   // Typed on the generic unlock page, it still goes to the men's course.
@@ -157,22 +158,42 @@ test("men's buyers can print the shared sheets, and the men's book needs the men
   assert.equal((await get("/downloads/men/all-the-way-here-mens-edition.pdf", MEN)).status, 404);
 });
 
-test("every men's lesson renders with a home example, a work example, and a coaching question", async () => {
+test("the Solo and all nine men's lessons render in full, with real photos and their own sheets", async () => {
   const home = await html(ROOT, MEN);
-  assert.match(home, /Begin with the Focus Protocol/);
-  assert.match(home, /data-lesson="men:the-sanctuary"/);
-  const slugs = [...home.matchAll(/href="\/access\/men-r7k2v9\/lesson\/([a-z-]+)"/g)].map((m) => m[1]);
-  assert.equal(new Set(slugs).size, 9);
-  for (const slug of new Set(slugs)) {
-    const lesson = await html(`${ROOT}/lesson/${slug}`, MEN);
-    assert.match(lesson, /At home/);
-    assert.match(lesson, /At work/);
-    assert.match(lesson, /The question I would ask you on a call/);
-    assert.match(lesson, /noindex/);
+  assert.match(home, /Begin with The Solo/);
+  assert.match(home, /data-lesson="men:the-solo"/);
+  assert.match(home, /data-lesson="men:the-honest-map"/);
+  const slugs = [...new Set([...home.matchAll(/href="\/access\/men-r7k2v9\/lesson\/([a-z-]+)"/g)].map((m) => m[1]))];
+  assert.equal(slugs.length, 10, "The Solo and nine lessons");
+  for (const slug of slugs) {
+    const page = await html(`${ROOT}/lesson/${slug}`, MEN);
+    assert.match(page, /noindex/, slug);
+    assert.match(page, /src="\/assets\/men\/course\/[a-z-]+\.jpg"/, slug);
+    assert.match(page, /href="\/downloads\/men\/sheets\/[a-z-]+\.pdf"/, slug);
+    assert.match(page, /From Chris/, slug);
+    if (slug === "the-solo") {
+      assert.match(page, /What am I tired of pretending is fine\?/);
+      continue;
+    }
+    for (const part of ["The moment", "What is really going on", "The principle", "If this week is hard", "At home", "At work", "IF THIS DOES NOT FIT YOUR LIFE", "Why it helps", "Words to use", "Watch for", "This week", "The research", "Reflect", "The question I would ask you on a call"]) {
+      assert.match(page, new RegExp(part), `${slug}: ${part}`);
+    }
   }
+  const drift = await html(`${ROOT}/lesson/the-drift`, MEN);
+  assert.match(drift, /href="\/access\/men-r7k2v9\/focus"/);
+  assert.match(drift, /A straight word/);
   const focus = await html(`${ROOT}/focus`, MEN);
   assert.match(focus, /TELL ONE PERSON/);
   assert.doesNotMatch(focus, /DOING THIS TOGETHER/);
+});
+
+test("the men's sheets and course book are only for men's buyers", async () => {
+  // The test ASSETS binding answers 404, so passing the gate shows up as 404, not a 303.
+  for (const file of ["the-solo", "honest-map", "my-creed", "field-card"]) {
+    assert.equal((await get(`/downloads/men/sheets/${file}.pdf`, MEN)).status, 404, file);
+    assert.equal((await get(`/downloads/men/sheets/${file}.pdf`, COUPLES)).status, 303, file);
+    assert.equal((await get(`/downloads/men/sheets/${file}.pdf`)).status, 303, file);
+  }
 });
 
 test("men's forms reject bad input", async () => {

@@ -119,9 +119,9 @@ export default function MenHome() {
             <h3>The course</h3>
             <p className={styles.rungPrice}>{usd(MEN_OFFERS.course.foundingPrice)} <small>founding price, then {usd(MEN_OFFERS.course.price)}</small></p>
             <ul>
-              <li>Three day Focus Protocol</li>
-              <li>Nine lessons, each at home and at work</li>
-              <li>A course book and sheets to print</li>
+              <li>The Solo, then nine lessons, one a week</li>
+              <li>Every lesson at home and at work</li>
+              <li>A course book and ten sheets to print</li>
             </ul>
             <p className={styles.rungFoot}><Link href="/men/course">See the course</Link></p>
           </article>
