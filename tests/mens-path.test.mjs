@@ -24,7 +24,7 @@ async function html(pathname, cookie) {
 }
 
 test("the men's public pages render, each with one heading and its own canonical", async () => {
-  for (const route of ["/men", "/men/coaching", "/men/course", "/men/apply"]) {
+  for (const route of ["/men", "/men/coaching", "/men/course", "/men/apply", "/men/driveway"]) {
     const page = await html(route);
     const main = page.match(/<main\b[\s\S]*?<\/main>/i)?.[0] ?? page;
     assert.equal((main.match(/<h1\b/gi) ?? []).length, 1, `${route} should have one page heading`);
@@ -57,6 +57,16 @@ test("the men's course and gift pages send buyers to the men's checkout", async 
     assert.match(page, /href="https:\/\/checkout\.mailerlite\.com\/checkout\/36730"/, route);
     assert.doesNotMatch(page, /Checkout opens soon/, route);
   }
+});
+
+test("the free Driveway Card is open to anyone and signs men up to the men's list", async () => {
+  const page = await html("/men/driveway");
+  assert.match(page, /href="\/downloads\/driveway-card\.pdf"/);
+  assert.match(page, /name="list" value="men"/);
+  assert.match(await html("/men"), /href="\/men\/driveway"/);
+  // The test ASSETS binding answers 404, so passing the gate shows up as 404, not a 303.
+  assert.equal((await get("/downloads/driveway-card.pdf")).status, 404);
+  assert.equal((await get("/downloads/brain-dump.pdf")).status, 303);
 });
 
 test("intake and check in pages stay out of search", async () => {
@@ -155,7 +165,7 @@ test("men's forms reject bad input", async () => {
 
 test("the paused live site keeps the men's pages paused too, but the men's course open", async () => {
   const live = (path) => worker.fetch(new Request(`https://heresupplyco.com${path}`), {}, ctx);
-  for (const path of ["/men", "/men/coaching", "/men/apply"]) {
+  for (const path of ["/men", "/men/coaching", "/men/apply", "/men/driveway"]) {
     assert.equal((await live(path)).status, 503, path);
   }
   assert.notEqual((await live(ROOT)).status, 503);

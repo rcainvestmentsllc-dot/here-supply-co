@@ -41,6 +41,8 @@ const ONE_YEAR = 60 * 60 * 24 * 365;
 /** Downloads anyone may have, with or without the course. */
 const FREE_DOWNLOADS = new Set([
   "/downloads/sunday-board-meeting.pdf",
+  // The men's free front door: /men/driveway.
+  "/downloads/driveway-card.pdf",
 ]);
 
 /**

@@ -2,9 +2,7 @@
 
 import { useState } from "react";
 import styles from "./signup.module.css";
-
-const ML_FORM =
-  "https://assets.mailerlite.com/jsonp/2381566/forms/196874718498785144/subscribe";
+import { LISTS, type ListKey } from "../lib/lists";
 
 type State = "idle" | "sending" | "ok" | "invalid" | "error";
 
@@ -15,11 +13,15 @@ type State = "idle" | "sending" | "ok" | "invalid" | "error";
 export function EmailSignup({
   source,
   next,
+  list = "couples",
+  done = "The guide is on its way. If it isn't in your inbox in a few minutes, check promotions or spam.",
   title = "Want it in your inbox?",
   blurb = "I'll email you the guide, then three short notes over the next week on making the meeting stick. No spam, and you can unsubscribe anytime.",
 }: {
   source: string;
   next: string;
+  list?: ListKey;
+  done?: string;
   title?: string;
   blurb?: string;
 }) {
@@ -39,7 +41,7 @@ export function EmailSignup({
       return;
     }
     try {
-      const res = await fetch(ML_FORM, {
+      const res = await fetch(LISTS[list], {
         method: "POST",
         body: new URLSearchParams({ "fields[email]": email, "ml-submit": "1", anticsrf: "true" }),
       });
@@ -60,7 +62,7 @@ export function EmailSignup({
     return (
       <div className={styles.inline} id="signup" role="status">
         <p className={styles.inlineTitle}>You're on the list.</p>
-        <p className={styles.note}>The guide is on its way. If it isn't in your inbox in a few minutes, check promotions or spam.</p>
+        <p className={styles.note}>{done}</p>
       </div>
     );
   }
@@ -72,6 +74,7 @@ export function EmailSignup({
       <form className={styles.form} action="/api/subscribe" method="post" onSubmit={onSubmit}>
         <input type="hidden" name="source" value={source} />
         <input type="hidden" name="next" value={next} />
+        <input type="hidden" name="list" value={list} />
         <div className={styles.trap} aria-hidden="true">
           <label>Company<input type="text" name="company" tabIndex={-1} autoComplete="off" /></label>
         </div>
