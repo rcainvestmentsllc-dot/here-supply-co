@@ -72,7 +72,7 @@ export function MenForm({ kind, bookingUrl = "" }: { kind: Kind; bookingUrl?: st
           <option value="" disabled>Choose the closest answer</option>
           <option>Not sure yet, that is what the call is for</option>
           <option>The 90 Day Intensive</option>
-          <option>Ongoing coaching</option>
+          <option>Ongoing Coaching</option>
           <option>Just the course for now</option>
         </select></label>
         <label><span>Good days and times for a twenty minute call</span><input name="times" placeholder="Weekday mornings before 8, Friday afternoons" /></label>
@@ -98,7 +98,7 @@ export function MenForm({ kind, bookingUrl = "" }: { kind: Kind; bookingUrl?: st
         <label><span>Which week is this?</span><select name="week" required defaultValue="">
           <option value="" disabled>Choose a week</option>
           {Array.from({ length: 12 }, (_, i) => <option key={i}>{`Intensive week ${i + 1}`}</option>)}
-          <option>Ongoing coaching</option>
+          <option>Ongoing Coaching</option>
         </select></label>
         <label><span>Did you do the practice? Where did it work and where did it fall apart?</span><textarea name="practiced" rows={4} required /></label>
         <label><span>Who got the best of you this week, and who got what was left?</span><textarea name="best_of_you" rows={3} required /></label>

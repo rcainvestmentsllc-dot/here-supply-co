@@ -478,7 +478,7 @@ export const LESSON_GUIDES: Record<string, LessonGuide> = {
     watchFor: "The Driveway Pause happens only after the car is parked. It is not a reason to ignore your partner, avoid a conversation, or disappear without a return time.",
     fieldAssignment: "Use the parked car transition three times. Keep it under three minutes and judge it only by the way you enter the house.",
     evidence: [
-      { label: "Detachment from work", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5233687/", note: "A meta-analysis of 86 publications linked detachment with several recovery and well-being outcomes." },
+      { label: "Detachment from work", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5233687/", note: "A meta analysis of 86 publications linked detachment with several recovery and wellbeing outcomes." },
     ],
   },
   "the-emotional-thermostat": {
@@ -491,7 +491,7 @@ export const LESSON_GUIDES: Record<string, LessonGuide> = {
     ],
   },
   "the-date-night-experiment": {
-    whyItHelps: "Shared novelty can interrupt autopilot and create new material for attention and conversation. Spending more does not help. Doing something together with your attention protected does.",
+    whyItHelps: "Shared novelty can interrupt autopilot and create new material for attention and conversation. The money matters less than doing something together with your attention protected.",
     wordsToUse: "Let us each bring two ideas. We will choose one that fits this season, silence the phones, and put them out of sight before we sit down.",
     watchFor: "Do not use a date as a test of the relationship, force excitement, or surprise your partner with rules. Choose the activity and the phone boundary together.",
     fieldAssignment: "Plan one modest shared experience in the next fourteen days and end with one question: what part should we do again?",
@@ -505,7 +505,7 @@ export const LESSON_GUIDES: Record<string, LessonGuide> = {
     watchFor: "This does not require perfect availability. If you cannot stop, make eye contact, name a specific return time, and keep it. Child led still includes safety, consent, time, and household boundaries.",
     fieldAssignment: "Use one ten minute Eyes First window this week. Answer the invitation, put the phone away, and follow without teaching, improving, or interviewing.",
     evidence: [
-      { label: "Father-child play review", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8153002/", note: "A systematic review found a varied but meaningful body of research connecting father-child play with child outcomes." },
+      { label: "Father and child play review", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8153002/", note: "A systematic review found a varied but meaningful body of research connecting play between fathers and children with child outcomes." },
       { label: "Phones during family routines", href: "https://pubmed.ncbi.nlm.nih.gov/39377734/", note: "A family mealtime study linked adult phone use with less verbal interaction. It does not prove that one glance harms a relationship." },
     ],
   },
@@ -515,7 +515,7 @@ export const LESSON_GUIDES: Record<string, LessonGuide> = {
     watchFor: "A third place will not cure burnout, and it should never be a one sided escape from family labor. Coordinate it fairly and notice what kind of person returns home.",
     fieldAssignment: "Choose one place or activity and return twice this month. After each time, ask whether you came home more alive, more available, or merely numb.",
     evidence: [
-      { label: "Social relationships and health", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2910600/", note: "A large meta-analysis found strong associations between social relationships and survival. It does not prove that any one hobby or place causes health gains." },
+      { label: "Social relationships and health", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2910600/", note: "A large meta analysis found strong associations between social relationships and survival. It does not prove that any one hobby or place causes health gains." },
     ],
   },
   "the-friendship-script": {
@@ -524,7 +524,7 @@ export const LESSON_GUIDES: Record<string, LessonGuide> = {
     watchFor: "Be specific without pressing. Invite clearly, accept the answer, and let trust grow at the speed of the relationship.",
     fieldAssignment: "Send one concrete, low pressure invitation today. If the answer is no, make one more invitation another week before deciding what it means.",
     evidence: [
-      { label: "Social connection meta-analysis", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2910600/", note: "The evidence supports taking social connection seriously. This script applies it to everyday life. It has not been clinically tested." },
+      { label: "Social connection meta analysis", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2910600/", note: "The evidence supports taking social connection seriously. This script applies it to everyday life. It has not been clinically tested." },
     ],
   },
   "mission-debrief": {
@@ -533,7 +533,7 @@ export const LESSON_GUIDES: Record<string, LessonGuide> = {
     watchFor: "Do not keep every practice because you paid for the course. Choose the two that meet a real problem and let the others wait.",
     fieldAssignment: "Choose two practices for thirty days. Give each a situation, a response, and a minimum version. Review what happened without grading your character.",
     evidence: [
-      { label: "Implementation intentions", href: "https://pubmed.ncbi.nlm.nih.gov/18096108/", note: "Research on if-then planning suggests that linking a cue to a response can support goal pursuit." },
+      { label: "Implementation intentions", href: "https://pubmed.ncbi.nlm.nih.gov/18096108/", note: "Research on planning a specific response to a specific cue suggests it can support goal pursuit." },
     ],
   },
 };

@@ -81,14 +81,14 @@ export default function MenFocusAccess() {
         <div><p className="section-label">LOOKING DOWN BECAME THE DEFAULT</p><h2 id="look-up-heading">Put attention back into the places where life can happen.</h2><p>When I returned to Clemson, the campus still looked familiar, but the energy felt different from what I remembered. Students crossed paths while looking down. I am not judging them, and the phone had not ruined the campus. Something just felt lost when eye contact, an unplanned hello, and noticing the person beside you got rarer.</p><p>Nobody needs to become the phone police. Choose a few places where looking up becomes the default again, and model it yourself before asking anyone else to follow.</p></div>
         <ol>
           <li><span>AT HOME</span><strong>Give the phone one home.</strong><p>Use a drawer, bag, or charging station when you arrive. Protect one repeated moment first.</p></li>
-          <li><span>IN MOTION</span><strong>Set it before you move.</strong><p>Set navigation before driving, keep the phone out of hand, and cross streets with your eyes up.</p></li>
+          <li><span>IN MOTION</span><strong>Set it before you move.</strong><p>Set navigation before driving, keep the phone out of your hand, and cross streets with your eyes up.</p></li>
           <li><span>AROUND PEOPLE</span><strong>Answer the person first.</strong><p>When someone says your name or looks for your eyes, meet the invitation before returning to a screen.</p></li>
         </ol>
       </section>
       <section className="focus-tracker"><div><p className="section-label">NOTICE, DO NOT GRADE</p><h2>Ask three questions<br />once a day.</h2></div><ol><li>When did I reach without deciding?</li><li>Where was it easier to stay present?</li><li>Which boundary is worth keeping tomorrow?</li></ol></section>
       <section className="lesson-field-note"><span>AFTER 72 HOURS</span><blockquote>Choose which tools return, where they live, and when you use them. Keep the boundaries that gave you more attention. Release the ones that did not fit.</blockquote></section>
       <section className="access-resource access-manual">
-        <div><span>02 · KEEP GOING</span><h2>The complete course</h2><p>The Focus Protocol opens the course. The nine lessons cover how you run your day, get home from work, handle pressure, lead at home, and keep friends.</p><Link className="text-link" href={MEN_COURSE.root}>Continue to the course <b>→</b></Link></div>
+        <div><span>KEEP GOING</span><h2>The complete course</h2><p>The Focus Protocol opens the course. The nine lessons cover how you run your day, get home from work, handle pressure, lead at home, and keep friends.</p><Link className="text-link" href={MEN_COURSE.root}>Continue to the course <b>→</b></Link></div>
         <aside className="focus-next-step"><span>NEXT</span><strong>Print the course book while this runs. On day four, open Return.</strong><small>Every lesson has a page in the book to write on.</small></aside>
       </section>
       <footer className="access-footer"><span>Questions? Email <a href={supportEmailUrl()}>{SUPPORT_EMAIL}</a>. Bookmark the course home so you can find it again.</span><Link href="/">Here Supply Co.</Link></footer>

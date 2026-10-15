@@ -13,7 +13,7 @@ import styles from "../men.module.css";
  */
 const title = "The Driveway Card: Two Minutes Before You Go In | Here Supply Co.";
 const description =
-  "A free printable card for men who bring work home with them. Two minutes in the driveway so the people inside get you, not what is left of your day.";
+  "A free printable card for men who bring work home with them. Two minutes in the driveway so the people inside get your attention and the workday stays in the truck.";
 const CARD = "/downloads/driveway-card.pdf";
 
 export const metadata: Metadata = menMeta({ title, description, path: "/men/driveway", image: { url: "/assets/men/driveway-card-shot.jpg", width: 1672, height: 941, alt: "The printed Driveway Card, a sheet of four and two cut cards" } });

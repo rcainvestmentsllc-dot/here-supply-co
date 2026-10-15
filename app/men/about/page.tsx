@@ -32,7 +32,7 @@ export default function MenAbout() {
             A business owner who <em>still does the work.</em>
           </h1>
           <p className={styles.heroLede}>
-            I run a small business in Brevard, North Carolina, and I am raising three kids. I coach
+            I live in Brevard, North Carolina, run a small business, and am raising three kids. I coach
             men who are carrying a lot at work and at home and want to show up better in both.
           </p>
           <div className={styles.heroActions}>
@@ -91,7 +91,7 @@ export default function MenAbout() {
           <article className={styles.room}>
             <span className={styles.roomTag}>ON A CALL</span>
             <h3>Coach what is real</h3>
-            <p>We work on the situation you bring, the practice for the week, and the one thing you commit to. I will ask the question underneath the question.</p>
+            <p>We work on the situation you bring, the practice for the week, and the one thing you commit to. I will ask about the part you did not bring up.</p>
           </article>
           <article className={styles.room}>
             <span className={styles.roomTag}>MY LIMITS</span>

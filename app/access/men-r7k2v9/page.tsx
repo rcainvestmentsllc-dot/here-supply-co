@@ -111,7 +111,7 @@ export default function MenCourseHome() {
 
       <div className={styles.sectionHead}>
         <h2>Everything to print</h2>
-        <p>Three files. That is all of it.</p>
+        <p>Three files to start. Each lesson has its own sheet on its page.</p>
       </div>
       <div className={styles.resources}>
         {MEN_PRINT_FILES.map((resource) => (
@@ -128,11 +128,6 @@ export default function MenCourseHome() {
         <p>The course gives you the practices. Coaching keeps them going.</p>
       </div>
       <div className={styles.resources}>
-        <Link href="/men/coaching#table" className={styles.resourceCard}>
-          <span className={styles.resourceLabel}>Weekly group</span>
-          <span className={styles.resourceTitle}>The Weekly Table</span>
-          <span className={styles.resourceNote}>One call a week with a small group of men working the same practices.</span>
-        </Link>
         <Link href="/men/coaching#intensive" className={styles.resourceCard}>
           <span className={styles.resourceLabel}>Twelve weeks</span>
           <span className={styles.resourceTitle}>The 90 Day Intensive</span>

@@ -95,13 +95,13 @@ export default function MenCoaching() {
             <h3>The rhythm</h3>
             <ol>
               <li><b>Call one, week one.</b> What is coming this month and the one thing that matters most. {ongoing.callMinutes} minutes.</li>
-              <li><b>Friday check ins.</b> Three questions by email, every week.</li>
+              <li><b>Friday check ins.</b> Three questions on a short form, every week.</li>
               <li><b>Call two, week three.</b> What happened, what got in the way, the next move.</li>
               <li><b>Weekday access.</b> A text or voice memo for a quick question or a win. I reply within one business day.</li>
               <li><b>Once a quarter.</b> One call becomes a sixty minute planning call that resets your goals at home, at work, and for yourself.</li>
             </ol>
             <p style={{ marginTop: 14 }}>
-              Six month first agreement, then month to month with thirty days notice. Pay for the
+              Six month first agreement, then month to month with thirty days’ notice. Pay for the
               year and it is {usd(ongoing.yearPrice)} instead of {usd(ongoing.price * 12)}.
             </p>
           </div>

@@ -63,7 +63,7 @@ export default function GiftPage() {
           </h2>
           <p>
             A three day reset to get the phone out of the way, then nine short lessons he can read
-            on his phone and a course book he can write in. Every practice is shown at home and at
+            online and a course book he can write in. Every practice is shown at home and at
             work, so it fits the way he actually lives.
           </p>
         </div>
@@ -80,7 +80,7 @@ export default function GiftPage() {
             <ol>
               <li>You check out with your own email.</li>
               <li>A welcome email right after your receipt has a one tap link to the course and its password.</li>
-              <li>Forward it to him, or print the course book and hand it to him.</li>
+              <li>Forward it to him, or print the course book and hand it to him. The weekly lesson emails come to you, so pass those along too.</li>
             </ol>
             <div style={{ marginTop: 20 }}>
               {MEN_CHECKOUT ? (

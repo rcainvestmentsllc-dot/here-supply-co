@@ -24,7 +24,7 @@ export default function MenHome() {
             Real work. <em>Real relationships.</em>
           </h1>
           <p className={styles.heroLede}>
-            Most of leadership is relationships, and every relationship starts with how you show up.
+            Most of leadership is relationships, and people feel where your attention is before you say a word.
             Coaching and a course for men carrying a business or a career, a family, and a phone
             that never stops asking for more of them.
           </p>
@@ -128,7 +128,7 @@ export default function MenHome() {
           <article className={`${styles.rung} ${styles.rungFeatured}`}>
             <span className={`${styles.label} ${styles.labelRust}`}>Founding: {usd(MEN_OFFERS.intensive.foundingPrice)} for the first ten</span>
             <h3>{MEN_OFFERS.intensive.name}</h3>
-            <p className={styles.rungPrice}>{usd(MEN_OFFERS.intensive.price)} <small>or 3 payments of {usd(MEN_OFFERS.intensive.installments.amount)}</small></p>
+            <p className={styles.rungPrice}>{usd(MEN_OFFERS.intensive.price)} <small>or three payments of {usd(MEN_OFFERS.intensive.installments.amount)}</small></p>
             <ul>
               <li>Twelve weekly calls with me</li>
               <li>The course, one lesson a week</li>
@@ -166,7 +166,7 @@ export default function MenHome() {
               I have run a business for twenty years and I am raising three kids. I spent a long
               stretch physically home and mentally somewhere else, and I still do this work when it
               is hard. I coach the way I would want to be coached: straight with you, on your side,
-              and asking the question underneath the question.
+              and asking about the part you did not mention.
             </p>
             <span className={styles.quoteCite}>Chris Avera · Brevard, North Carolina · <Link href="/men/about" style={{ color: "#f2ece1", textDecoration: "underline" }}>More about me</Link></span>
           </div>

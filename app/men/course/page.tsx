@@ -127,8 +127,8 @@ export default function MenCoursePage() {
         <div>
           <h2>Want someone walking through it with you?</h2>
           <p>
-            {MEN_OFFERS.intensive.name} is this course, one lesson a week, with a call every week
-            with me. The course is included.
+            {MEN_OFFERS.intensive.name} is this course taken one lesson a week, with a call with me
+            every week. The course is included.
           </p>
         </div>
         <Link className={styles.primary} href="/men/coaching#intensive">

@@ -25,7 +25,7 @@ export const COACHING_TERMS: { title: string; body: string }[] = [
   },
   {
     title: "Moving a call",
-    body: "Life happens. Give me at least 24 hours notice and we will find another time, usually the same week. A call missed or moved with less than 24 hours notice counts as used. If you are late, the call still ends on time. If I ever need to move a call, you get the same notice and the call is made up.",
+    body: "Give me at least 24 hours’ notice and we will find another time, usually the same week. A call missed or moved with less than 24 hours’ notice counts as used. If you are late, the call still ends on time. If I ever need to move a call, you get the same notice and the call is made up.",
   },
   {
     title: "How long you have",
@@ -33,7 +33,7 @@ export const COACHING_TERMS: { title: string; body: string }[] = [
   },
   {
     title: "Stopping early",
-    body: `Either of us can end coaching with written notice by email. After the first call guarantee, payments already made are not refunded, and any installments not yet due are canceled. ${ongoing.name} starts with a ${ongoing.minimumMonths} month first agreement, then continues month to month and stops with thirty days notice. A year paid up front is refundable only within the first thirty days. If I end coaching early for any reason, you get a prorated refund for every week or month you paid for and did not receive.`,
+    body: `Either of us can end coaching with written notice by email. After the first call guarantee, payments already made are not refunded, and any installments not yet due are canceled. ${ongoing.name} starts with a ${ongoing.minimumMonths} month first agreement, then continues month to month and stops with thirty days’ notice. A year paid up front is refundable only within the first thirty days. If I end coaching early for any reason, you get a prorated refund for every week or month you paid for and did not receive.`,
   },
   {
     title: "Between calls",

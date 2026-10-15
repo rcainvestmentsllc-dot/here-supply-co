@@ -94,8 +94,8 @@ export default async function MenLessonPage({ params }: { params: Promise<{ slug
           <h3>{lesson.kit.sheetName}</h3>
           <p className={styles.sheetLives}>Lives at: {lesson.kit.livesAt}</p>
           <p>
-            Print it once and put it where the moment actually happens. That placement is the
-            practice. Everything on this page is how to use it.
+            Print it once and put it where the moment actually happens. The rest of this
+            page is how to use it.
           </p>
           {sheet && (
             <a className={styles.sheetLink} href={sheet.file} download>
@@ -180,7 +180,7 @@ export default async function MenLessonPage({ params }: { params: Promise<{ slug
           className={`${styles.btn} ${styles.btnGhost}`}
           style={{ marginTop: 14 }}
         >
-          {next ? "Take the next lesson" : "Print your thirty day page"}
+          {next ? "Take the next lesson" : "Print your Thirty Day Page"}
           <span aria-hidden="true">→</span>
         </Link>
       </section>
@@ -223,7 +223,7 @@ export default async function MenLessonPage({ params }: { params: Promise<{ slug
         ) : (
           <Link href="/downloads/thirty-day-page.pdf" className={`${styles.navLink} ${styles.navNext}`}>
             <small>Finish the course</small>
-            <strong>Your thirty day page →</strong>
+            <strong>Your Thirty Day Page →</strong>
           </Link>
         )}
       </nav>
