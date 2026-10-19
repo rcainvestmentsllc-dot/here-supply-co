@@ -12,9 +12,9 @@ import styles from "../men/men.module.css";
  */
 const title = "Give It to Him | Here Supply Co.";
 const description =
-  "For the man who carries a lot. Give him the Men's Edition of All the Way Here, or send him a free call with Chris.";
+  "For the man who carries a lot. Give him Carry It Well, a nine week course from Chris, or send him a free call.";
 
-export const metadata: Metadata = menMeta({ title, description, path: "/gift", image: { url: "/assets/men/mens-edition-kit.jpg", width: 1672, height: 941, alt: "The Men's Edition course book and printed sheets" } });
+export const metadata: Metadata = menMeta({ title, description, path: "/gift", image: { url: "/assets/men/mens-edition-kit.jpg", width: 1672, height: 941, alt: "The Carry It Well course book and printed sheets" } });
 
 const { course } = MEN_OFFERS;
 
@@ -59,7 +59,7 @@ export default function GiftPage() {
         <div className={styles.sectionHead}>
           <span className={`${styles.label} ${styles.labelRust}`}>Give him the course</span>
           <h2>
-            All the Way Here, <em>Men&rsquo;s Edition.</em>
+            Carry It <em>Well.</em>
           </h2>
           <p>
             Half a day alone to get his head straight, then nine lessons he can read
@@ -68,13 +68,13 @@ export default function GiftPage() {
           </p>
         </div>
         <figure className={styles.kitShot}>
-          <img src="/assets/men/mens-edition-kit.jpg" alt="The Men's Edition course book and printed sheets fanned out on a table" width={1672} height={941} loading="lazy" />
+          <img src="/assets/men/mens-edition-kit.jpg" alt="The Carry It Well course book and printed sheets fanned out on a table" width={1672} height={941} loading="lazy" />
           <figcaption>The actual course book and sheets he gets.</figcaption>
         </figure>
         <div className={styles.split}>
           <article className={styles.card}>
             <span className={`${styles.label} ${styles.labelRust}`}>
-              {usd(course.foundingPrice)} founding price, then {usd(course.price)}
+              {usd(course.price)} · one time · 14 day refund window
             </span>
             <h3>How the gift works</h3>
             <ol>
@@ -85,7 +85,7 @@ export default function GiftPage() {
             <div style={{ marginTop: 20 }}>
               {MEN_CHECKOUT ? (
                 <a className={styles.primary} href={MEN_CHECKOUT}>
-                  Give the course · {usd(course.foundingPrice)} <span aria-hidden="true">→</span>
+                  Give the course · {usd(course.price)} <span aria-hidden="true">→</span>
                 </a>
               ) : (
                 <span className={styles.secondary} aria-disabled="true">Checkout opens soon</span>

@@ -23,7 +23,7 @@ const siteData = {
       "@type": "Person",
       "@id": siteUrl("/#chris-avera"),
       name: "Chris Avera",
-      url: siteUrl("/about"),
+      url: siteUrl("/men/about"),
       sameAs: ["https://chrisavera.substack.com"],
     },
     {

@@ -66,7 +66,7 @@ export default async function UnlockPage({
             will send it to you.
           </p>
           <p>
-            <b>Have not bought it yet?</b> <Link href="/library">See what is inside All the Way Here</Link>.
+            <b>Have not bought it yet?</b> <Link href="/men/course">See what is inside Carry It Well</Link>.
           </p>
         </div>
       </section>

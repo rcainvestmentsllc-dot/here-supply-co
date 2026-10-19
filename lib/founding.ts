@@ -11,7 +11,7 @@
  */
 import type { CloudflareEnv } from "./cloudflare-env";
 
-export const FOUNDING_OPEN = true;
+export const FOUNDING_OPEN = false;
 export const FOUNDING_PRICE = 49;
 export const FULL_PRICE = 99;
 export const FOUNDING_LIMIT = 50;

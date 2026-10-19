@@ -5,5 +5,5 @@ import { permanentRedirect } from "next/navigation";
  * still gets traffic from older links, so it points to its place in the course.
  */
 export default function FocusRedirect(): never {
-  permanentRedirect("/library#focus-protocol");
+  permanentRedirect("/men/course");
 }

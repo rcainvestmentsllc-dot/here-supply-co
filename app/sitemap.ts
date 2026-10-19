@@ -6,12 +6,8 @@ const lastModified = new Date("2026-09-09");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
-    { url: baseUrl, lastModified, changeFrequency: "monthly", priority: 1 },
-    { url: `${baseUrl}/sunday-board`, lastModified, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/check`, lastModified, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${baseUrl}/library`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/coaching`, lastModified, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${baseUrl}/men`, lastModified: new Date("2026-10-13"), changeFrequency: "monthly", priority: 0.9 },
+    { url: baseUrl, lastModified: new Date("2026-10-19"), changeFrequency: "monthly", priority: 1 },
+    { url: `${baseUrl}/sunday-board`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/men/coaching`, lastModified: new Date("2026-10-13"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/men/course`, lastModified: new Date("2026-10-13"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/gift`, lastModified: new Date("2026-10-14"), changeFrequency: "monthly", priority: 0.7 },
@@ -26,7 +22,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/resources/phone-away-before-driving`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/resources/how-to-stop-checking-your-phone-at-home`, lastModified, changeFrequency: "monthly", priority: 0.85 },
     { url: `${baseUrl}/resources/how-to-be-more-present-with-your-kids`, lastModified, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${baseUrl}/about`, lastModified, changeFrequency: "yearly", priority: 0.5 },
     { url: `${baseUrl}/policies`, lastModified, changeFrequency: "yearly", priority: 0.3 },
   ];
 }

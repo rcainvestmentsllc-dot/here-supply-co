@@ -24,16 +24,16 @@ async function html(pathname, cookie) {
 }
 
 test("the men's public pages render, each with one heading and its own canonical", async () => {
-  for (const route of ["/men", "/men/coaching", "/men/course", "/men/apply", "/men/driveway", "/men/about"]) {
+  for (const route of ["/", "/men/coaching", "/men/course", "/men/apply", "/men/driveway", "/men/about"]) {
     const page = await html(route);
     const main = page.match(/<main\b[\s\S]*?<\/main>/i)?.[0] ?? page;
     assert.equal((main.match(/<h1\b/gi) ?? []).length, 1, `${route} should have one page heading`);
-    assert.match(page, new RegExp(`rel="canonical" href="https://heresupplyco\\.com${route}"`));
+    assert.match(page, new RegExp(`rel="canonical" href="https://heresupplyco\\.com${route === "/" ? "/?" : route}"`));
   }
 });
 
-test("the men's landing page shows the ladder and the free call", async () => {
-  const page = await html("/men");
+test("the homepage is the men's page: the ladder and the free call", async () => {
+  const page = await html("/");
   assert.match(page, /Real work\./);
   assert.doesNotMatch(page, /The Weekly Table/);
   assert.match(page, /The 90 Day Intensive/);
@@ -63,14 +63,14 @@ test("the free Driveway Card is open to anyone and signs men up to the men's lis
   const page = await html("/men/driveway");
   assert.match(page, /href="\/downloads\/driveway-card\.pdf"/);
   assert.match(page, /name="list" value="men"/);
-  assert.match(await html("/men"), /href="\/men\/driveway"/);
+  assert.match(await html("/"), /href="\/men\/driveway"/);
   // The test ASSETS binding answers 404, so passing the gate shows up as 404, not a 303.
   assert.equal((await get("/downloads/driveway-card.pdf")).status, 404);
   assert.equal((await get("/downloads/brain-dump.pdf")).status, 303);
 });
 
 test("men's pages keep men on the men's path and preview as the men's brand", async () => {
-  for (const route of ["/men", "/men/coaching", "/men/course", "/men/apply", "/men/driveway", "/men/about"]) {
+  for (const route of ["/", "/men/coaching", "/men/course", "/men/apply", "/men/driveway", "/men/about"]) {
     const page = await html(route);
     const header = page.match(/<header[\s\S]*?<\/nav>\s*<\/?[^>]*>[\s\S]*?mobile-nav[\s\S]*?<\/nav>/)?.[0] ?? "";
     assert.ok(header.length > 0, `${route} header`);
@@ -105,11 +105,37 @@ test("intake and check in pages stay out of search", async () => {
   }
 });
 
-test("the couples home page offers both paths", async () => {
+test("one site, men first: the homepage leads with men and retired pages redirect", async () => {
   const page = await html("/");
-  assert.match(page, /FOR COUPLES/);
-  assert.match(page, /FOR MEN WHO LEAD/);
-  assert.match(page, /href="\/men"/);
+  assert.match(page, /Real work\./);
+  assert.match(page, /Carry It Well/);
+  assert.match(page, /href="\/gift"/);
+  assert.match(page, /href="\/sunday-board"/);
+  assert.doesNotMatch(page, /founding|Get back to the person/i);
+  const moved = {
+    "/men": "/",
+    "/library": "/men/course",
+    "/coaching": "/men/coaching",
+    "/founding": "/",
+    "/check": "/",
+    "/about": "/men/about",
+  };
+  for (const [from, to] of Object.entries(moved)) {
+    const res = await get(from);
+    assert.equal(res.status, 301, from);
+    assert.equal(new URL(res.headers.get("location")).pathname, to, from);
+  }
+  // The couples course stays open to anyone holding its password.
+  assert.equal((await get("/access/core-4m8r2p", COUPLES)).status, 200);
+});
+
+test("one price for the course and the Intensive, no founding offers anywhere", async () => {
+  for (const route of ["/", "/men/course", "/men/coaching", "/gift", "/men/driveway"]) {
+    const page = (await html(route)).replace(/<script\b[\s\S]*?<\/script>/gi, "");
+    assert.doesNotMatch(page, /founding|first ten men|first 50/i, route);
+  }
+  assert.match(await html("/men/course"), /\$49\. One time purchase/);
+  assert.match(await html("/men/coaching"), /Waking Up/);
 });
 
 test("the men's course has its own password", async () => {
@@ -154,8 +180,8 @@ test("men's buyers can print the shared sheets, and the men's book needs the men
   assert.equal((await get("/downloads/brain-dump.pdf", MEN)).status, 404);
   assert.equal((await get("/downloads/brain-dump.pdf", COUPLES)).status, 404);
   assert.equal((await get("/downloads/brain-dump.pdf")).status, 303);
-  assert.equal((await get("/downloads/men/all-the-way-here-mens-edition.pdf", COUPLES)).status, 303);
-  assert.equal((await get("/downloads/men/all-the-way-here-mens-edition.pdf", MEN)).status, 404);
+  assert.equal((await get("/downloads/men/carry-it-well-course-book.pdf", COUPLES)).status, 303);
+  assert.equal((await get("/downloads/men/carry-it-well-course-book.pdf", MEN)).status, 404);
 });
 
 test("the Solo and all nine men's lessons render in full, with real photos and their own sheets", async () => {
@@ -226,7 +252,8 @@ test("the gift page hands the couples side to the men's side", async () => {
   const main = page.match(/<main\b[\s\S]*?<\/main>/i)?.[0] ?? page;
   assert.equal((main.match(/<h1\b/gi) ?? []).length, 1);
   assert.match(page, /rel="canonical" href="https:\/\/heresupplyco\.com\/gift"/);
-  assert.match(page, /Men&#x27;s Edition|Men’s Edition|Men's Edition/);
+  assert.match(page, /Carry It/);
+  assert.doesNotMatch(page, /Men&#x27;s Edition|Men’s Edition|Men's Edition/);
   assert.match(page, /mailto:\?subject=Thought%20of%20you/);
   assert.match(page, /men%2Fapply/);
   assert.match(await html("/"), /href="\/gift"/);

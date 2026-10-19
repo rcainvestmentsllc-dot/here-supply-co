@@ -37,15 +37,13 @@ test("redirects www to the HTTPS apex without losing the request", async () => {
 
 test("renders the current Here Supply home page and original wave mark", async () => {
   const html = await htmlFor("/");
-  assert.match(html, /<title>Here Supply Co\. \| Resources for Couples to Stay Connected<\/title>/i);
+  assert.match(html, /<title>Here Supply Co\. \| Coaching and a Course for Men Who Carry a Lot<\/title>/i);
   assert.match(html, /here-supply-co-logo-v2\.svg/i);
-  assert.match(html, /Get back to the person/i);
-  assert.match(html, /For two people who keep missing each other/i);
-  assert.match(html, /Sunday Board Meeting/i);
-  assert.match(html, /Focus Protocol/i);
-  assert.match(html, /Resources that help couples/i);
-  assert.match(html, /Resource Pack/i);
-  assert.match(html, /https:\/\/checkout\.mailerlite\.com\/checkout\/34347/i);
+  assert.match(html, /Real work\./i);
+  assert.match(html, /Carry It Well/i);
+  assert.match(html, /The Sunday/i);
+  assert.match(html, /href="\/men\/apply"/i);
+  assert.doesNotMatch(html, /checkout\/34347/i);
   assert.match(html, /Skip to main content/i);
 });
 
@@ -60,11 +58,8 @@ test("keeps the Sunday Board free, complete, and captioned", async () => {
 });
 
 test("makes the Focus Protocol the first step of the paid course", async () => {
-  const library = await htmlFor("/library");
   const course = await htmlFor("/access/core-4m8r2p");
   const focus = await htmlFor("/access/focus-7f3k9q");
-  assert.match(library, /It starts with the Focus Protocol/i);
-  assert.match(library, /72 hour Focus Protocol/i);
   assert.match(course, /Begin with the Focus Protocol/i);
   assert.match(course, /href="\/access\/focus-7f3k9q"/i);
   assert.match(focus, /FOCUS PROTOCOL/i);
@@ -74,9 +69,7 @@ test("makes the Focus Protocol the first step of the paid course", async () => {
 });
 
 test("gives the course three print files, with family tools inside the Resource Pack", async () => {
-  const library = await htmlFor("/library");
   const course = await htmlFor("/access/core-4m8r2p");
-  assert.match(library, /25 page course book/i);
   assert.match(course, /Everything to print/i);
   assert.match(course, /all-the-way-here-print-edition\.pdf/i);
   assert.match(course, /here-supply-resource-pack\.pdf/i);
@@ -108,13 +101,7 @@ test("sends the retired fill-in workbook to the print edition", async () => {
 });
 
 test("keeps the course buyer path clear and the private lessons complete", async () => {
-  const library = await htmlFor("/library");
   const lesson = await htmlFor("/access/core-4m8r2p/lesson/the-airlock-protocol");
-  assert.match(library, /One time purchase/i);
-  assert.match(library, /14 day refund window/i);
-  assert.match(library, /nine short lessons/i);
-  assert.doesNotMatch(library, /videos|watch the introductions/i);
-  assert.match(library, /receipt email has a button that opens the course and a password/i);
   assert.match(lesson, /The Driveway Pause/i);
   assert.match(lesson, /YOUR SHEET · LESSON 1\.3/i);
   assert.match(lesson, /WORDS TO USE/i);
@@ -125,7 +112,7 @@ test("keeps the course buyer path clear and the private lessons complete", async
 });
 
 test("keeps public pages findable and no private course URL indexed", async () => {
-  const publicRoutes = ["/", "/sunday-board", "/library", "/resources", "/about", "/policies"];
+  const publicRoutes = ["/", "/sunday-board", "/men/course", "/resources", "/men/about", "/policies"];
   for (const route of publicRoutes) {
     const html = await htmlFor(route);
     assert.equal((mainMarkup(html).match(/<h1\b/gi) ?? []).length, 1, `${route} should have one page heading`);
@@ -213,12 +200,9 @@ test("serves one Pinterest feed per board with only pins that are due", async ()
   }
 });
 
-test("coaching page explains Thirty Days With Chris and the price", async () => {
-  const html = (await htmlFor("/coaching")).replace(/<!-- -->/g, "");
-  assert.match(html, /Thirty Days With Chris/);
-  assert.match(html, /\$450/);
-  assert.match(html, /\$250/);
-  assert.match(html, /within 48 hours/);
+test("the old couples coaching page sends people to men's coaching; existing check ins still work", async () => {
+  const old = await render("/coaching");
+  assert.equal(old.status, 301);
   const checkin = await htmlFor("/coaching/check-in");
   assert.match(checkin, /check in/i);
   assert.match(checkin, /noindex/);
@@ -239,8 +223,8 @@ test("coaching inbox is hidden without its token and the form rejects bad input"
   assert.equal(res.status, 400);
 });
 
-test("course page lists the weekly emails and links coaching", async () => {
-  const html = await htmlFor("/library");
-  assert.match(html, /One email a week from Chris/);
-  assert.match(html, /href="\/coaching"/);
+test("the course page sells Carry It Well and links coaching", async () => {
+  const html = await htmlFor("/men/course");
+  assert.match(html, /Carry It Well/);
+  assert.match(html, /href="\/men\/apply"/);
 });

@@ -3,7 +3,7 @@ import type { ShellEdition } from "../course-shell";
 
 /** The rail for the men's edition: The Solo, then the nine lessons. */
 export const MEN_EDITION: ShellEdition = {
-  title: "All the Way Here · Men",
+  title: "Carry It Well",
   root: MEN_COURSE.root,
   lessons: MEN_STEPS,
   movements: MEN_MOVEMENTS,

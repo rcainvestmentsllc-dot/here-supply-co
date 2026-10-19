@@ -282,9 +282,9 @@ def enough(c):
 
 def fuel(c):
     masthead(c, label(6, "The Fuel Card"), "Lives on the bathroom mirror")
-    y = title_block(c, "Sleep · move · get outside · one hard thing",
+    y = title_block(c, "Sleep · train · get quiet · one hard thing",
                     "Fuel the man before you ask more of him.",
-                    "Seven hours of sleep, thirty minutes that raise your heart rate five days a week, strength twice, and at least one session outside without the phone.")
+                    "Seven hours of sleep, thirty minutes that raise your heart rate five days a week, strength twice, one session outside without the phone, ten quiet minutes a day, and heat if you have it.")
     gap = 14
     colw = (CONTENT_W - gap) / 2
     h1 = 92
@@ -293,9 +293,9 @@ def fuel(c):
           [("On a bad week, I will", None)])
     y2 = y - h1 - gap
     weeks = 2
-    rows = ["Seven hours", "Moved 30 min", "Strength", "Outside, no phone"]
+    rows = ["Seven hours", "Moved 30 min", "Strength", "Outside, no phone", "Ten quiet minutes", "Sauna or heat"]
     days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-    hg = 128
+    hg = 142
     for wk in range(weeks):
         top = y2 - wk * (hg + gap)
         box(c, SIDE, top, CONTENT_W, hg, f"Week {wk + 1}", "%02d" % (3 + wk))
@@ -433,7 +433,7 @@ PRACTICES = [
 
 def field_card(c):
     masthead(c, "The field card", "The whole men's course on one page")
-    y = title_block(c, "All the Way Here · Men's Edition · lives on the fridge, the desk, or in the truck",
+    y = title_block(c, "Carry It Well · lives on the fridge, the desk, or in the truck",
                     "See it. Carry it. Build it.",
                     "The Solo and nine practices on one page. Use the move that meets the week in front of you.")
     gap = 10
@@ -481,12 +481,12 @@ def build():
     w = PdfWriter()
     pages = 0
     for file, title, fn in SHEETS:
-        c = new(DEST / file, f"{title} | All the Way Here, Men's Edition")
+        c = new(DEST / file, f"{title} | Carry It Well")
         fn(c)
         c.save()
         w.append(str(DEST / file))
         pages += len(PdfReader(str(DEST / file)).pages)
-    w.add_metadata({"/Title": "All the Way Here, Men's Edition: Every Sheet", "/Author": "Chris Avera, Here Supply Co."})
+    w.add_metadata({"/Title": "Carry It Well: Every Sheet", "/Author": "Chris Avera, Here Supply Co."})
     with open(DEST / "all-sheets.pdf", "wb") as fh:
         w.write(fh)
     print("built", len(SHEETS), "sheets,", pages, "pages")

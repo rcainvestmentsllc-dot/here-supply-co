@@ -18,7 +18,7 @@ const articleData = {
   headline: "Put the Phone Away Before the Car Moves",
   description: "The same automatic glance has different stakes behind the wheel.",
   datePublished: "2026-08-28", dateModified: "2026-09-02",
-  author: { "@type": "Person", name: "Chris Avera", url: siteUrl("/about") },
+  author: { "@type": "Person", name: "Chris Avera", url: siteUrl("/men/about") },
   publisher: { "@id": siteUrl("/#organization") },
   mainEntityOfPage: siteUrl("/resources/phone-away-before-driving"),
 };
@@ -65,7 +65,7 @@ export default function PhoneAwayBeforeDriving() {
     <section className={styles.capture}>
       <SundayBoardSignupForm source="article_phone_away_before_driving" />
     </section>
-    <section className={styles.cta}><div><span>INSIDE ALL THE WAY HERE</span><h2>Change the setup before you test your willpower.</h2></div><div><p>The Focus Protocol is a private three day experiment for noticing where automatic attention has taken over and changing the environment around it.</p><Link href="/library">See the complete course <b>→</b></Link></div></section>
+    <section className={styles.cta}><div><span>INSIDE CARRY IT WELL</span><h2>Change the setup before you test your willpower.</h2></div><div><p>The Focus Protocol is a private three day experiment for noticing where automatic attention has taken over and changing the environment around it. It lives inside Lesson 2 of Carry It Well.</p><Link href="/men/course">See Carry It Well · $49 <b>→</b></Link></div></section>
     <Footer />
   </main>;
 }

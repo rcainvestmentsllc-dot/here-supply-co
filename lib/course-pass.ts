@@ -55,6 +55,8 @@ const RETIRED_DOWNLOADS: Record<string, string> = {
   "/downloads/sunday-board-field-card.pdf": "/downloads/sunday-board-meeting.pdf",
   "/downloads/here-supply-resource-pack.zip": "/downloads/here-supply-resource-pack.pdf",
   "/downloads/all-the-way-here-workbook.pdf": "/downloads/all-the-way-here-print-edition.pdf",
+  // The men's course book, renamed with the course (Carry It Well).
+  "/downloads/men/all-the-way-here-mens-edition.pdf": "/downloads/men/carry-it-well-course-book.pdf",
   // Renamed pages: the article was always for both partners.
   "/resources/why-men-need-a-third-place": "/resources/everyone-needs-a-third-place",
 };

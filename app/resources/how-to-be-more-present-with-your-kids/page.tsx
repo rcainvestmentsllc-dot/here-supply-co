@@ -24,7 +24,7 @@ const articleData = {
   description: "A small, realistic practice for parents who want to bring more attention home.",
   datePublished: "2026-08-28",
   dateModified: "2026-09-02",
-  author: { "@type": "Person", name: "Chris Avera", url: siteUrl("/about") },
+  author: { "@type": "Person", name: "Chris Avera", url: siteUrl("/men/about") },
   publisher: { "@id": siteUrl("/#organization") },
   mainEntityOfPage: siteUrl("/resources/how-to-be-more-present-with-your-kids"),
 };
@@ -38,14 +38,14 @@ export default function PresentWithKids() {
       <p className={styles.eyebrow}>PARENTHOOD AFTER WORK</p>
       <h1>You do not need a perfect evening. Give them <em>one undivided window.</em></h1>
       <p className={styles.dek}>Being home is not always the same as arriving. Start with five to fifteen minutes in your child’s world, without a phone and without turning the moment into another assignment.</p>
-      <p className={styles.byline}>By Chris Avera · From the All the Way Here Floor General practice</p>
+      <p className={styles.byline}>By Chris Avera · Husband, father, and small business owner</p>
     </header>
 
     <section className={styles.layout}>
       <aside className={styles.aside}>
         <span>FIVE TO FIFTEEN MINUTES</span>
         <p>Put the phone away, join your child at their level, let them lead, and end with a clean promise about when you can return.</p>
-        <Link href="/library#curriculum">See the full parenthood and family path →</Link>
+        <Link href="/men/course">See the course for fathers →</Link>
       </aside>
       <article className={styles.body}>
         <p>I know what it is like to be physically present while my attention is somewhere else. Sometimes the distance is a phone. Sometimes it is work, pressure, or the mental list that never seems to close.</p>
@@ -78,7 +78,7 @@ export default function PresentWithKids() {
 
     </section>
 
-    <section className={styles.cta}><div><span>ALL THE WAY HERE</span><h2>Parenthood belongs inside the complete practice.</h2></div><div><p>The Floor General is one of nine short lessons in All the Way Here, a course on how you put the phone down, get home from work, handle pressure, date, parent, and keep friends.</p><Link href="/library#curriculum">See the complete course <b>→</b></Link></div></section>
+    <section className={styles.cta}><div><span>CARRY IT WELL</span><h2>Fatherhood belongs inside the whole practice.</h2></div><div><p>The last two lessons of Carry It Well, The Inheritance and What You Pass On, are about what your kids get from you and what you choose to hand down. Carry It Well is nine weeks for men who carry a lot: a business or a career, a family, and a phone that never stops asking for more of them. One practice a week, at home and at work, with a sheet to print for each.</p><Link href="/men/course">See Carry It Well · $49 <b>→</b></Link></div></section>
     <Footer />
   </main>;
 }

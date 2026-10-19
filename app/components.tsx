@@ -30,40 +30,35 @@ export function WeeklyGuidePreview() {
 
 type NavLink = { href: string; label: string };
 
-const COUPLES_NAV: NavLink[] = [
-  { href: "/sunday-board", label: "Start here" },
-  { href: "/library", label: "The course" },
-  { href: "/men", label: "For men" },
-  { href: "/resources", label: "Resources" },
-  { href: "/about", label: "About Chris" },
-];
-
-/** The men's pages keep men on the men's path: no couples links up top. */
-const MEN_NAV: NavLink[] = [
+/**
+ * One site, men first (October 2026). Every page uses the same nav. The couples
+ * course is off sale; the free Sunday Board and the gift page stay, linked from
+ * the footer.
+ */
+const NAV: NavLink[] = [
+  { href: "/men/course", label: "Carry It Well" },
   { href: "/men/coaching", label: "Coaching" },
-  { href: "/men/course", label: "The course" },
   { href: "/men/driveway", label: "Driveway Card" },
+  { href: "/resources", label: "Articles" },
   { href: "/men/about", label: "About Chris" },
 ];
 
-/** The site header. The men's pages swap the action and the nav for their own. */
+const DEFAULT_ACTION: NavLink = { href: "/men/apply", label: "Book a free call" };
+
+/** The site header. `path` is kept so older pages still type check; every page gets the same nav. */
 export function Header({
-  action = { href: "/sunday-board#get-board", label: "Start free" },
-  path = "couples",
+  action = DEFAULT_ACTION,
 }: { action?: NavLink; path?: "couples" | "men" } = {}) {
-  const links = path === "men" ? MEN_NAV : COUPLES_NAV;
-  const mobile = path === "men" ? MEN_NAV : COUPLES_NAV.filter((l) => l.href !== "/resources").map((l) => (l.href === "/about" ? { ...l, label: "About" } : l));
-  const home = path === "men" ? "/men" : "/";
   return <>
     <header className="topbar">
-      <Link className="brand" href={home} aria-label={path === "men" ? "Here Supply Co. for men" : "Here Supply Co. home"}><BrandWordmark /></Link>
-      <nav aria-label="Main navigation">{links.map((l) => <Link key={l.href} href={l.href}>{l.label}</Link>)}</nav>
+      <Link className="brand" href="/" aria-label="Here Supply Co. home"><BrandWordmark /></Link>
+      <nav aria-label="Main navigation">{NAV.map((l) => <Link key={l.href} href={l.href}>{l.label}</Link>)}</nav>
       <Link className="topbar-action" href={action.href}>{action.label} <span>→</span></Link>
     </header>
-    <nav className="mobile-nav" aria-label="Mobile navigation">{mobile.map((l) => <Link key={l.href} href={l.href}>{l.label}</Link>)}{path === "men" && <Link href={action.href}>{action.label}</Link>}</nav>
+    <nav className="mobile-nav" aria-label="Mobile navigation">{NAV.filter((l) => l.href !== "/resources").map((l) => <Link key={l.href} href={l.href}>{l.label === "About Chris" ? "About" : l.label}</Link>)}<Link href={action.href}>{action.label}</Link></nav>
   </>;
 }
 
 export function Footer() {
-  return <footer className="footer"><Link className="brand" href="/" aria-label="Here Supply Co. home"><BrandWordmark onDark /></Link><nav aria-label="Footer navigation"><Link href="/sunday-board">Sunday Board Meeting</Link><Link href="/library">All the Way Here</Link><Link href="/coaching">Coaching for couples</Link><Link href="/men">For men who lead</Link><Link href="/gift">Give it to him</Link><Link href="/men/coaching">Coaching for men</Link><Link href="/resources">Resources</Link><Link href="/about">About Chris</Link><a href="https://chrisavera.substack.com" target="_blank" rel="me noreferrer">Chris on Substack ↗</a><Link href={CONTACT_FORM}>Contact</Link><Link href="/policies">Policies</Link></nav><span>MADE IN NORTH CAROLINA · © 2026 HERE SUPPLY CO.</span></footer>;
+  return <footer className="footer"><Link className="brand" href="/" aria-label="Here Supply Co. home"><BrandWordmark onDark /></Link><nav aria-label="Footer navigation"><Link href="/men/course">Carry It Well</Link><Link href="/men/coaching">Coaching</Link><Link href="/men/apply">Book a free call</Link><Link href="/men/driveway">The Driveway Card</Link><Link href="/gift">Give it to him</Link><Link href="/sunday-board">Sunday Board, for couples</Link><Link href="/resources">Articles</Link><Link href="/men/about">About Chris</Link><a href="https://chrisavera.substack.com" target="_blank" rel="me noreferrer">Chris on Substack ↗</a><Link href={CONTACT_FORM}>Contact</Link><Link href="/policies">Policies</Link></nav><span>MADE IN NORTH CAROLINA · © 2026 HERE SUPPLY CO.</span></footer>;
 }

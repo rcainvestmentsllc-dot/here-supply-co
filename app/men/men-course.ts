@@ -1,5 +1,6 @@
 /**
- * All the Way Here, Men's Edition.
+ * Carry It Well, the men's course. (Built as the men's edition of All the Way
+ * Here; it has been its own course with its own name since October 2026.)
  *
  * Its own course, written for one man doing the work: The Solo, then nine
  * lessons in three parts (See it, Carry it, Build it). Each lesson starts from
@@ -18,12 +19,12 @@ import { FOCUS_MOVES, RESET_TIMELINE } from "../course-content";
 
 /** Where the men's course lives. Its own password protects everything under ROOT. */
 export const MEN_COURSE = {
-  name: "All the Way Here",
-  edition: "Men's Edition",
+  name: "Carry It Well",
+  line: "Nine weeks for men who carry a lot",
   root: "/access/men-r7k2v9",
   focus: "/access/men-r7k2v9/focus",
   progressPrefix: "men:",
-  book: "/downloads/men/all-the-way-here-mens-edition.pdf",
+  book: "/downloads/men/carry-it-well-course-book.pdf",
   fieldCard: "/downloads/men/sheets/field-card.pdf",
 } as const;
 
@@ -393,43 +394,55 @@ export const MEN_LESSONS: MenLesson[] = [
     number: "6",
     says: "I'm running on fumes.",
     title: "Fuel",
-    subtitle: "Sleep, move and do one hard thing on purpose, because steadiness gets built in the body first.",
-    summary: "Seven hours of sleep, real movement, time outside, and one hard thing on the calendar.",
+    subtitle: "Sleep, train, get quiet and do one hard thing on purpose, because steadiness gets built in the body first.",
+    summary: "Seven hours of sleep, real training, ten quiet minutes a day, heat if you have it, and one hard thing on the calendar.",
     photo: { src: photo("fuel"), alt: "A mountain biker riding a narrow trail through tall grass", position: "50% 62%", caption: "A man who does hard things on purpose has more room for the hard things he did not choose." },
     detail: { src: photo("fuel-detail"), alt: "A rider carrying his bike up a rocky hill, in black and white", position: "50% 50%" },
     moment: "The alarm goes off at 5:40 after six hours of bad sleep. Your back is stiff, your coffee is your breakfast, and by 3 PM you are fading. You tell yourself you will get back in shape when work slows down. It has not slowed down in years, and the last time you did something physically hard on purpose, your kids were in diapers.",
     really: "When your body is empty, patience is the first thing to go, and the people at home feel it before you do. A man who sleeps, moves and does hard things on purpose has more room for pressure, because his body has practiced handling strain on his own terms. When I need to reset, I lift kettlebells, ride a mountain bike trail or go fishing.",
     principle: "Fuel the man before you ask more of him. Sleep, movement and voluntary challenge are part of the job.",
     practice: {
-      name: "Sleep, move, one hard thing",
-      intro: "Four parts. Start with the one you are worst at.",
+      name: "Sleep, train, get quiet, one hard thing",
+      intro: "Six parts. Start with the one you are worst at. Sleep, training and the quiet minutes matter most; heat is a bonus if you have it.",
       steps: [
         { title: "Sleep", body: "Pick a lights out time that gives you seven hours, and keep it five nights this week. Phone out of the bedroom." },
-        { title: "Move", body: "Thirty minutes that raise your heart rate, five days this week, plus two days of strength work, even if it is pushups and a kettlebell in the garage." },
+        { title: "Train", body: "Thirty minutes that raise your heart rate, five days this week, plus two days of strength work. Pushups, a kettlebell in the garage and a pullup bar are enough. A simple week: strength on Monday and Thursday, a hard walk, ride or run on three other days." },
         { title: "Get outside", body: "At least one of those sessions on a trail, a river or anywhere green, without the phone." },
+        { title: "Ten quiet minutes", body: "Sit for ten minutes a day with nothing in your hands, before anyone else is up or in the truck before you walk in. Notice your breath, notice when your mind runs off, and come back. If you want a guide, the Introductory Course in the Waking Up app gives you a short lesson every day for a month." },
+        { title: "Heat, if you have it", body: "If your gym or a friend has a sauna, use it two or three times a week after training. Start with ten to fifteen minutes, drink water before and after, and leave the phone outside the door. No sauna, no problem; skip this one." },
         { title: "Schedule one hard thing", body: "Put one voluntary challenge on the calendar in the next month: a long ride, a summit you have never climbed, a race you have to train for. Tell someone, so backing out costs you something." },
       ],
     },
-    hardWeek: "Lights out on time three nights, and one walk outside without the phone.",
+    hardWeek: "Lights out on time three nights, one walk outside without the phone, and five quiet minutes on two mornings.",
     atHome: "Bring a kid along for the hard thing, or for the training. They will remember the morning you climbed something together longer than anything you buy them.",
     atWork: "Take one phone call a day walking instead of sitting. Block your training time on the calendar the same way you would block a client.",
     ifNot: "If injury or health limits what you can do, the principle still holds. Pick the hardest thing your doctor says is safe and do it on purpose.",
-    whyItHelps: "Sleep scientists recommend that adults get at least seven hours a night, and federal guidelines call for 150 to 300 minutes of moderate activity a week plus strength work twice a week. One study found that a ninety minute walk in nature reduced rumination, the loop of replaying what went wrong, while a city walk did not.",
+    whyItHelps: "Sleep scientists recommend that adults get at least seven hours a night, and federal guidelines call for 150 to 300 minutes of moderate activity a week plus strength work twice a week. One study found that a ninety minute walk in nature reduced rumination, the loop of replaying what went wrong, while a city walk did not. A review of 47 trials found moderate evidence that mindfulness meditation programs ease anxiety, depression and pain. And in a study that followed 2,315 Finnish men for about twenty years, the men who used a sauna four to seven times a week had about half the risk of dying from cardiovascular disease of men who went once a week. That is an association, not proof, but it is a good reason to sit in the heat.",
     words: [
       "I am going to bed at 10:30 this week. Hold me to it.",
       "I signed up for ____ in March. Want to train for it with me?",
+      "I am taking ten minutes before anyone else is up. Give me that, and you get a better version of me at breakfast.",
     ],
-    watchFor: "Do not let this turn into another thing to be perfect at. Missing a day is part of it. And do not train so hard you have nothing left for the people at home.",
-    straightWord: "If you have health problems or have not exercised in a long time, check with your doctor before starting anything hard.",
-    thisWeek: "Set the lights out time, get five movement sessions and two strength sessions in, and put one hard thing on the calendar.",
+    watchFor: "Do not let this turn into another thing to be perfect at. Missing a day is part of it. And do not train so hard you have nothing left for the people at home. Heat and hard training stack: drink water, skip the sauna after a drink, and get out the moment you feel lightheaded.",
+    straightWord: "If you have health problems, heart trouble in particular, or have not exercised in a long time, check with your doctor before starting anything hard or using a sauna.",
+    thisWeek: "Set the lights out time, get five movement sessions and two strength sessions in, sit for ten quiet minutes a day, and put one hard thing on the calendar.",
+    tool: {
+      label: "For the ten quiet minutes",
+      title: "The Waking Up Introductory Course",
+      body: "Sam Harris's Waking Up app opens with a short meditation lesson every day for a month, a good place to start if you have never meditated. Men in the 90 Day Intensive get three months of the app as a gift.",
+      href: "https://www.wakingup.com/",
+      cta: "See Waking Up",
+    },
     reflect: "When did I last do something hard that nobody made me do?",
     coachQuestion: "When did you last do something hard that nobody made you do, and what did it give you?",
     fromChris: "The kettlebell, the trail and the river are how I reset. When I let them slide for too long, patience is the first thing to go.",
-    sheet: { slug: "fuel", name: "The Fuel Card", holds: "Your lights out time, a weekly grid for sleep, movement and strength, and the date of your hard thing.", livesAt: "The bathroom mirror", file: sheetFile("fuel") },
+    sheet: { slug: "fuel", name: "The Fuel Card", holds: "Your lights out time, a weekly grid for sleep, training, quiet minutes and heat, and the date of your hard thing.", livesAt: "The bathroom mirror", file: sheetFile("fuel") },
     evidence: [
       { label: "Sleep recommendation (CDC)", note: "Citing the American Academy of Sleep Medicine and Sleep Research Society: adults 18 to 60 should sleep at least seven hours a night.", href: "https://www.cdc.gov/mmwr/volumes/65/wr/mm6508a5.htm" },
       { label: "Physical Activity Guidelines (Harvard T.H. Chan School of Public Health)", note: "150 to 300 minutes of moderate activity a week and strength work at least two days.", href: "https://nutritionsource.hsph.harvard.edu/2018/11/13/new-physical-activity-guidelines-for-americans/" },
       { label: "Nature walks and rumination (Bratman and colleagues, 2015)", note: "A ninety minute nature walk reduced self reported rumination compared with an urban walk.", href: "https://natureandhealth.uw.edu/publications/nature-experience-reduces-rumination-and-subgenual-prefrontal-cortex-activation" },
+      { label: "Meditation programs (Goyal and colleagues, JAMA Internal Medicine, 2014)", note: "47 trials, 3,515 participants: moderate evidence that mindfulness meditation programs improve anxiety, depression and pain.", href: "https://pubmed.ncbi.nlm.nih.gov/24395196/" },
+      { label: "Sauna use in Finnish men (Laukkanen and colleagues, JAMA Internal Medicine, 2015)", note: "2,315 men followed for a median of about 21 years. Four to seven sessions a week went with 50% lower fatal cardiovascular disease than one a week. An association, not proof.", href: "https://www.sciencedaily.com/releases/2015/02/150223122602.htm" },
     ],
   },
   {

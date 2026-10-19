@@ -5,9 +5,9 @@
  */
 
 /**
- * Checkout for the men's course: the MailerLite product "All the Way Here,
- * Men's Edition" (Stripe, founding price applied there). Buyers land in the
- * Men's Edition Buyers group, which starts the weekly buyer track. Set
+ * Checkout for the men's course, Carry It Well: a MailerLite product on Stripe
+ * at one flat price. Buyers land in the Men's Edition Buyers group (the group
+ * keeps its original name), which starts the weekly buyer track. Set
  * NEXT_PUBLIC_MEN_CHECKOUT_URL to override; an empty value shows "opening soon".
  */
 export const MEN_CHECKOUT = process.env.NEXT_PUBLIC_MEN_CHECKOUT_URL || "https://checkout.mailerlite.com/checkout/36730";
@@ -21,11 +21,10 @@ export const BOOKING_URL = process.env.NEXT_PUBLIC_MEN_BOOKING_URL || "";
 
 export const MEN_OFFERS = {
   course: {
-    name: "All the Way Here, Men's Edition",
+    name: "Carry It Well",
     short: "The course",
-    price: 99,
-    foundingPrice: 49,
-    foundingSeats: 50,
+    line: "Nine weeks for men who carry a lot",
+    price: 49,
   },
   /** Group coaching. Off for now: Chris starts one on one. Flip open to show it again. */
   table: {
@@ -42,8 +41,6 @@ export const MEN_OFFERS = {
     short: "Twelve weeks one on one",
     price: 2500,
     installments: { count: 3, amount: 900 },
-    foundingPrice: 1500,
-    foundingSeats: 10,
     callMinutes: 45,
     intakeMinutes: 60,
   },
@@ -68,7 +65,7 @@ export const INTENSIVE_WEEKS = [
   { week: 4, part: "See it", title: "Short Fuse", body: "Your three warning signs, a sixty second reset, and a repair every time you miss. Month one review on the call." },
   { week: 5, part: "Carry it", title: "Choose Your Battles", body: "Everything you carry in three columns: mine to fight, mine to hand off, not mine at all. Then one hard conversation." },
   { week: 6, part: "Carry it", title: "Enough", body: "Enough money, enough hours, enough yes, written down. One hard edge for thirty days, told to the people it affects." },
-  { week: 7, part: "Carry it", title: "Fuel", body: "Seven hours of sleep, real movement, time outside, and one hard thing on the calendar." },
+  { week: 7, part: "Carry it", title: "Fuel", body: "Sleep, a simple training week, ten quiet minutes a day with the Waking Up course, heat if you have a sauna, and one hard thing on the calendar." },
   { week: 8, part: "Carry it", title: "Leading at work", body: "Take one practice into the business: the conversation you have avoided with a team member, a client, or a partner. Midpoint review." },
   { week: 9, part: "Build it", title: "Your Council", body: "Name two or three men, invite one specifically, and put the second time on the calendar before the first one happens." },
   { week: 10, part: "Build it", title: "The Inheritance", body: "The playbook you got from your father, marked keep, change or stop, and one new version practiced out loud." },

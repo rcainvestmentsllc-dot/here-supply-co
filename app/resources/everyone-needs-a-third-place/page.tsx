@@ -24,7 +24,7 @@ const articleData = {
   description: "A sauna conversation about friendship, belonging, and the places where people know you.",
   datePublished: "2026-08-28",
   dateModified: "2026-08-28",
-  author: { "@type": "Person", name: "Chris Avera", url: siteUrl("/about") },
+  author: { "@type": "Person", name: "Chris Avera", url: siteUrl("/men/about") },
   publisher: { "@id": siteUrl("/#organization") },
   mainEntityOfPage: siteUrl("/resources/everyone-needs-a-third-place"),
 };
@@ -44,7 +44,7 @@ export default function WhyMenNeedAThirdPlace() {
       <aside className={styles.aside}>
         <span>THE WHOLE IDEA</span>
         <p>Find one place you return to often enough for other people to know you. The place matters less than the returning.</p>
-        <Link href="/library#curriculum">Preview the course →</Link>
+        <Link href="/men/course">Preview the course →</Link>
       </aside>
       <article className={styles.body}>
         <p>I was in the cold plunge with my eyes closed when something touched my hand. I ran through the possibilities, opened my eyes, and found one of the guys giving me a fist bump.</p>
@@ -68,7 +68,7 @@ export default function WhyMenNeedAThirdPlace() {
     </section>
     <section className={styles.cta}>
       <div><span>ALL THE WAY HERE</span><h2>Keep what work cannot replace.</h2></div>
-      <div><p>The Third Place is one of nine short lessons in All the Way Here, a course on how you put the phone down, get home from work, handle pressure, date, parent, and keep friends.</p><Link href="/library#curriculum">See the complete course <b>→</b></Link></div>
+      <div><p>Lesson 7 of Carry It Well, Your Council, is about this: naming two or three men, inviting one, and getting the second time on the calendar before the first one happens. Carry It Well is nine weeks for men who carry a lot: a business or a career, a family, and a phone that never stops asking for more of them. One practice a week, at home and at work, with a sheet to print for each.</p><Link href="/men/course">See Carry It Well · $49 <b>→</b></Link></div>
     </section>
     <Footer />
   </main>;

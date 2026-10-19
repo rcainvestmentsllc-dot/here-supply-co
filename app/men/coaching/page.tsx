@@ -55,16 +55,22 @@ export default function MenCoaching() {
             Twelve weeks, one practice at a time, <em>with a call every week.</em>
           </h2>
           <p>
-            The Intensive is the men&rsquo;s course walked through with me. Each week you get a
+            The Intensive is Carry It Well walked through with me. Each week you get a
             {" "}{intensive.callMinutes} minute call, one lesson and one practice to use at home and
             at work, and a short check in every Friday that I read before our next call. Pay in
             full, or in three monthly payments of {usd(intensive.installments.amount)}
             ({usd(intensive.installments.amount * intensive.installments.count)} total).
           </p>
+          <p>
+            It includes the course and the printed course book, and three months of the Waking Up
+            meditation app as a gift from me for the quiet minutes in week seven. If your wife
+            wants in, she joins one or two of the calls, and the two of you get the couples course
+            too.
+          </p>
         </div>
         <figure className={styles.kitShot}>
-          <img src="/assets/men/mens-edition-kit.jpg" alt="The Men's Edition course book and printed sheets fanned out on a table" width={1672} height={941} loading="lazy" />
-          <figcaption>Included: the Men&rsquo;s Edition course book and every sheet. We work from these each week.</figcaption>
+          <img src="/assets/men/mens-edition-kit.jpg" alt="The Carry It Well course book and printed sheets fanned out on a table" width={1672} height={941} loading="lazy" />
+          <figcaption>Included: the Carry It Well course book and every sheet. We work from these each week.</figcaption>
         </figure>
         <ol className={styles.weeks}>
           {INTENSIVE_WEEKS.map((w) => (
@@ -208,10 +214,10 @@ export default function MenCoaching() {
 
       <section className={styles.close}>
         <div>
-          <h2>The first ten men get the Intensive at {usd(intensive.foundingPrice)}.</h2>
+          <h2>Start with twenty minutes.</h2>
           <p>
-            In exchange for honest feedback I can use to make it better, and a testimonial only if
-            you are glad you did it.
+            Tell me what you are carrying. If coaching is the right tool, I will tell you how the
+            twelve weeks would go. If it is not, I will say so and point you somewhere better.
           </p>
         </div>
         <Link className={styles.primary} href="/men/apply">

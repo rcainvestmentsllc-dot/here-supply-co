@@ -24,7 +24,7 @@ const articleData = {
   description: "A personal story about eye contact, ordinary openings, and making looking up a practice.",
   datePublished: "2026-09-02",
   dateModified: "2026-09-02",
-  author: { "@type": "Person", name: "Chris Avera", url: siteUrl("/about") },
+  author: { "@type": "Person", name: "Chris Avera", url: siteUrl("/men/about") },
   publisher: { "@id": siteUrl("/#organization") },
   mainEntityOfPage: siteUrl("/resources/look-up-at-clemson"),
 };
@@ -45,7 +45,7 @@ export default function LookUpAtClemson() {
       <aside className={styles.aside}>
         <span>TRY ONE WALK</span>
         <p>Keep the phone in your pocket for one familiar stretch. Look at the place, meet one person&apos;s eyes, and leave room for one ordinary hello.</p>
-        <Link href="/library#focus-protocol">See the Focus Protocol inside the course →</Link>
+        <Link href="/men/course">See the Focus Protocol inside the course →</Link>
       </aside>
       <article className={styles.body}>
         <p>When I went back to Clemson, I felt the difference before I had words for it. The campus looked familiar, but the energy did not. So many students were walking with their heads down, absorbed in their phones. There was less eye contact, less awareness of the people passing by, and fewer small openings for a hello.</p>
@@ -72,7 +72,7 @@ export default function LookUpAtClemson() {
 
     </section>
 
-    <section className={styles.cta}><div><span>THE FOCUS PROTOCOL</span><h2>Change the default before you test your discipline.</h2></div><div><p>Grayscale, quieter feeds, a physical phone home, and three days of noticing give you a practical place to begin.</p><Link href="/library">See the complete course <b>→</b></Link></div></section>
+    <section className={styles.cta}><div><span>THE FOCUS PROTOCOL</span><h2>Change the default before you test your discipline.</h2></div><div><p>Grayscale, quieter feeds, a physical phone home, and three days of noticing give you a practical place to begin. It lives inside Lesson 2 of Carry It Well.</p><Link href="/men/course">See Carry It Well · $49 <b>→</b></Link></div></section>
     <Footer />
   </main>;
 }

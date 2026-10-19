@@ -18,7 +18,7 @@ const articleData = {
   headline: "How to Leave Work at Work Before You Walk In the Door",
   description: "A short work to home transition you can use today.",
   datePublished: "2026-08-28", dateModified: "2026-08-28",
-  author: { "@type": "Person", name: "Chris Avera", url: siteUrl("/about") },
+  author: { "@type": "Person", name: "Chris Avera", url: siteUrl("/men/about") },
   publisher: { "@id": siteUrl("/#organization") },
   mainEntityOfPage: siteUrl("/resources/leave-work-at-work"),
 };
@@ -32,10 +32,10 @@ export default function LeaveWorkAtWork() {
       <p className={styles.eyebrow}>THE WORK TO HOME TRANSITION</p>
       <h1>Leave the workday somewhere other than <em>your front room.</em></h1>
       <p className={styles.dek}>You may not be able to finish every problem before you come home. You can decide how you carry those problems through the door.</p>
-      <p className={styles.byline}>By Chris Avera · From the All the Way Here Driveway Pause practice</p>
+      <p className={styles.byline}>By Chris Avera · From the Driveway Card</p>
     </header>
     <section className={styles.layout}>
-      <aside className={styles.aside}><span>THREE MINUTES</span><p>Park safely. Name what is still open. Slow down. Choose how you want to enter. Then give the first ten seconds at home your full attention.</p><Link href="/library#curriculum">See all nine Core practices →</Link></aside>
+      <aside className={styles.aside}><span>THREE MINUTES</span><p>Park safely. Name what is still open. Slow down. Choose how you want to enter. Then give the first ten seconds at home your full attention.</p><Link href="/men/driveway">Print the free Driveway Card →</Link></aside>
       <article className={styles.body}>
         <p>I built this practice because I knew the feeling of being physically home while part of me was still replaying a job, an email, or the problem I had not solved.</p>
         <p>The goal is not to pretend work does not matter. The goal is to create a line between the part of the day that has ended and the room you are about to enter.</p>
@@ -55,7 +55,7 @@ export default function LeaveWorkAtWork() {
     <section className={styles.capture}>
       <SundayBoardSignupForm source="article_leave_work_at_work" />
     </section>
-    <section className={styles.cta}><div><span>ALL THE WAY HERE</span><h2>One practice inside a larger path.</h2></div><div><p>The Driveway Pause is one of nine short lessons in All the Way Here, a course on how you put the phone down, get home from work, handle pressure, date, parent, and keep friends.</p><Link href="/library#curriculum">See the complete course <b>→</b></Link></div></section>
+    <section className={styles.cta}><div><span>THE DRIVEWAY CARD</span><h2>Keep the pause in the truck.</h2></div><div><p>The Driveway Card puts this practice on one printed card for the visor or the console. It is free, and it comes with a few short emails from Chris on making it stick. When you want the whole thing, Carry It Well takes it further.</p><Link href="/men/driveway">Get the free Driveway Card <b>→</b></Link></div></section>
     <Footer />
   </main>;
 }

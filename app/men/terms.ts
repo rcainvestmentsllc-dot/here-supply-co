@@ -17,7 +17,7 @@ export const COACHING_TERMS: { title: string; body: string }[] = [
   },
   {
     title: "Paying",
-    body: `${intensive.name} is ${usd(intensive.price)} paid in full before the intake call, or ${intensive.installments.count} monthly payments of ${usd(intensive.installments.amount)} (${usd(installmentTotal)} total) with the first one before the intake. The founding price of ${usd(intensive.foundingPrice)} is paid in full. ${ongoing.name} is billed monthly at ${usd(ongoing.price)}, or ${usd(ongoing.yearPrice)} for a year paid up front. If a payment is more than seven days late, calls pause until it is caught up.`,
+    body: `${intensive.name} is ${usd(intensive.price)} paid in full before the intake call, or ${intensive.installments.count} monthly payments of ${usd(intensive.installments.amount)} (${usd(installmentTotal)} total) with the first one before the intake. ${ongoing.name} is billed monthly at ${usd(ongoing.price)}, or ${usd(ongoing.yearPrice)} for a year paid up front. If a payment is more than seven days late, calls pause until it is caught up.`,
   },
   {
     title: "First call guarantee",

@@ -15,9 +15,9 @@ export default function NotFound() {
         <h1>That page is not here.</h1>
         <p>The link may be old, or the address may have a typo. These are the places most people are looking for.</p>
         <ul>
-          <li><Link href="/sunday-board">The free Sunday Board Meeting guide</Link></li>
-          <li><Link href="/library">All the Way Here, the course</Link></li>
-          <li><Link href="/check">The one minute drifting check</Link></li>
+          <li><Link href="/men/course">Carry It Well, the course</Link></li>
+          <li><Link href="/men/apply">Book a free call with Chris</Link></li>
+          <li><Link href="/men/driveway">The free Driveway Card</Link></li>
           <li><Link href="/unlock">Open the course if you already bought it</Link></li>
         </ul>
       </section>

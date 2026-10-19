@@ -20,7 +20,7 @@ const articleData = {
   description: "A practical agenda you and your partner can finish in fifteen minutes.",
   datePublished: "2026-08-28",
   dateModified: "2026-08-28",
-  author: { "@type": "Person", name: "Chris Avera", url: siteUrl("/about") },
+  author: { "@type": "Person", name: "Chris Avera", url: siteUrl("/men/about") },
   publisher: { "@id": siteUrl("/#organization") },
   mainEntityOfPage: siteUrl("/resources/weekly-marriage-meeting"),
 };

@@ -7,11 +7,11 @@ import { MEN_LESSONS, MEN_MOVEMENTS, MEN_SOLO } from "../men-course";
 import { MEN_CHECKOUT, MEN_OFFERS, usd } from "../program";
 import styles from "../men.module.css";
 
-const title = "All the Way Here, Men's Edition | Here Supply Co.";
+const title = "Carry It Well | A Course for Men Who Carry a Lot | Here Supply Co.";
 const description =
   "Nine lessons for men who lead, each built on something men actually say out loud. Every practice shown at home and at work, with a course book and ten sheets to print.";
 
-export const metadata: Metadata = menMeta({ title, description, path: "/men/course", image: { url: "/assets/men/mens-edition-kit.jpg", width: 1672, height: 941, alt: "The Men's Edition course book and printed sheets" } });
+export const metadata: Metadata = menMeta({ title, description, path: "/men/course", image: { url: "/assets/men/mens-edition-kit.jpg", width: 1672, height: 941, alt: "The Carry It Well course book and printed sheets" } });
 
 const { course } = MEN_OFFERS;
 const ready = Boolean(MEN_CHECKOUT);
@@ -22,7 +22,7 @@ function BuyButton() {
   }
   return (
     <a className={styles.primary} href={MEN_CHECKOUT}>
-      Get the course · {usd(course.foundingPrice)} <span aria-hidden="true">→</span>
+      Get Carry It Well · {usd(course.price)} <span aria-hidden="true">→</span>
     </a>
   );
 }
@@ -34,7 +34,7 @@ export default function MenCoursePage() {
 
       <section className={styles.hero}>
         <div className={styles.heroCopy}>
-          <span className={styles.label}>All the Way Here · Men&rsquo;s Edition</span>
+          <span className={styles.label}>Carry It Well · {course.line}</span>
           <h1>
             Nine things men say. <em>What to do about each one.</em>
           </h1>
@@ -49,7 +49,7 @@ export default function MenCoursePage() {
           </div>
           <p className={styles.heroNote}>
             {ready
-              ? `${usd(course.foundingPrice)} for the first ${course.foundingSeats} men, then ${usd(course.price)}. One time purchase. 14 day refund window.`
+              ? `${usd(course.price)}. One time purchase. 14 day refund window.`
               : "The checkout is not open yet. Coaching calls are."}
           </p>
         </div>
@@ -105,7 +105,7 @@ export default function MenCoursePage() {
 
       <section className={`${styles.section} ${styles.sectionSand}`}>
         <figure className={styles.kitShot}>
-          <img src="/assets/men/mens-edition-kit.jpg" alt="The Men's Edition course book and printed sheets fanned out on a table" width={1672} height={941} loading="lazy" />
+          <img src="/assets/men/mens-edition-kit.jpg" alt="The Carry It Well course book and printed sheets fanned out on a table" width={1672} height={941} loading="lazy" />
           <figcaption>The actual course book and sheets. Print them once and put each one where the moment happens.</figcaption>
         </figure>
         <div className={styles.split}>

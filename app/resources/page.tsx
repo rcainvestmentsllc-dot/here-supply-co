@@ -35,9 +35,9 @@ const internalPaths = [
   {
     number: "02",
     need: "Work, pressure, and home need a steadier system.",
-    answer: "Use the complete All the Way Here course.",
-    href: "/library#curriculum",
-    action: "See All the Way Here",
+    answer: "Take Carry It Well, nine weeks for men who carry a lot.",
+    href: "/men/course",
+    action: "See Carry It Well",
   },
 ];
 

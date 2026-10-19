@@ -24,7 +24,7 @@ const articleData = {
   description: "A practical setup for reducing automatic phone checking at home.",
   datePublished: "2026-08-28",
   dateModified: "2026-08-28",
-  author: { "@type": "Person", name: "Chris Avera", url: siteUrl("/about") },
+  author: { "@type": "Person", name: "Chris Avera", url: siteUrl("/men/about") },
   publisher: { "@id": siteUrl("/#organization") },
   mainEntityOfPage: siteUrl("/resources/how-to-stop-checking-your-phone-at-home"),
 };
@@ -38,14 +38,14 @@ export default function StopCheckingPhoneAtHome() {
       <p className={styles.eyebrow}>PHONE HABITS AT HOME</p>
       <h1>Stop asking willpower to beat a phone that is <em>within reach.</em></h1>
       <p className={styles.dek}>If your hand keeps finding the phone before you have decided to use it, change the room and the reflex first. You do not need a dramatic detox to begin.</p>
-      <p className={styles.byline}>By Chris Avera · From the All the Way Here Focus Protocol</p>
+      <p className={styles.byline}>By Chris Avera · From the Focus Protocol in Carry It Well</p>
     </header>
 
     <section className={styles.layout}>
       <aside className={styles.aside}>
         <span>TRY IT TONIGHT</span>
         <p>Choose one landing place for the phone, protect the people who must be able to reach you, and use one short phone free window at home.</p>
-        <Link href="/library#focus-protocol">See the Focus Protocol inside the course →</Link>
+        <Link href="/men/course">See the Focus Protocol inside the course →</Link>
       </aside>
       <article className={styles.body}>
         <p>I do not think most people need another lecture about screen time. We already know when the phone is getting too much of us. The harder part is the small automatic reach that happens before a conscious decision.</p>
@@ -77,7 +77,7 @@ export default function StopCheckingPhoneAtHome() {
 
     </section>
 
-    <section className={styles.cta}><div><span>INSIDE ALL THE WAY HERE</span><h2>Turn one good idea into a short, usable reset.</h2></div><div><p>The Focus Protocol guides you through four practical changes over three days, then helps you decide which ones belong in your real life.</p><Link href="/library">See the complete course <b>→</b></Link></div></section>
+    <section className={styles.cta}><div><span>INSIDE CARRY IT WELL</span><h2>Turn one good idea into a short, usable reset.</h2></div><div><p>The Focus Protocol sits inside Lesson 2, The Drift: four practical changes over three days, then a plan for the hour you usually lose. Carry It Well is nine weeks for men who carry a lot: a business or a career, a family, and a phone that never stops asking for more of them. One practice a week, at home and at work, with a sheet to print for each.</p><Link href="/men/course">See Carry It Well · $49 <b>→</b></Link></div></section>
     <Footer />
   </main>;
 }

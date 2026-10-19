@@ -5,8 +5,8 @@ import { MEN_COURSE, MEN_FOCUS_MOVES as FOCUS_MOVES, MEN_RESET_TIMELINE as RESET
 import { BrandWordmark } from "../../../components";
 
 export const metadata: Metadata = {
-  title: "Focus Protocol | All the Way Here, Men's Edition",
-  description: "The three day Focus Protocol inside All the Way Here, Men's Edition.",
+  title: "Focus Protocol | Carry It Well",
+  description: "The three day Focus Protocol inside Carry It Well.",
   robots: { index: false, follow: false },
 };
 
@@ -18,7 +18,7 @@ export default function MenFocusAccess() {
         <span>PRIVATE ACCESS</span>
       </header>
       <section className="access-intro">
-        <p className="section-label">ALL THE WAY HERE · MEN'S EDITION · FOCUS PROTOCOL</p>
+        <p className="section-label">CARRY IT WELL · FOCUS PROTOCOL</p>
         <h1>Start here.<br /><em>Take back 72 hours.</em></h1>
         <p>You are in. The Focus Protocol is a three day reset for getting the phone out of the way, at home and at work. Afterward you keep the parts that gave you your attention back and drop the rest. Start today, one move at a time.</p>
       </section>

@@ -4,6 +4,7 @@ import handler from "vinext/server/app-router-entry";
 import { runWithEnv } from "../lib/cloudflare-env";
 import { courseGate, isGatedPath } from "../lib/course-pass";
 import { pausedResponse } from "../lib/site-pause";
+import { retiredRedirect } from "../lib/retired";
 
 interface Env {
   ASSETS: Fetcher;
@@ -55,6 +56,9 @@ const worker = {
 
     const paused = pausedResponse(url.hostname, url.pathname);
     if (paused) return paused;
+
+    const retired = retiredRedirect(url);
+    if (retired) return retired;
 
     const gated = await courseGate(request, env);
     if (gated) return gated;

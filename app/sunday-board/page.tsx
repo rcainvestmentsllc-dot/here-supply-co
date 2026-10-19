@@ -34,7 +34,7 @@ export default function SundayBoard() {
         <div className="sunday-hero-actions">
           <a className="button primary" href="#watch-together">Watch us use it</a>
           <small>Free video and one sheet guide · No signup needed</small>
-          <Link href="/library">Want more than the week? See All the Way Here <span>→</span></Link>
+          <Link href="/gift">Want more for him? See Carry It Well <span>→</span></Link>
         </div>
       </section>
 
@@ -94,10 +94,10 @@ export default function SundayBoard() {
       <section className="sunday-next">
         <div>
           <p className="section-label">WHEN THE WEEK IS NOT THE WHOLE PROBLEM</p>
-          <h2>The guide makes the week visible.<br /><em>The course helps you live it.</em></h2>
-          <p>All the Way Here picks up where the guide stops: how you put the phone down, get home from work, handle pressure, date, parent, and keep friends.</p>
+          <h2>The guide makes the week visible.<br /><em>Coaching helps him carry it.</em></h2>
+          <p>When one of you is carrying too much, the guide only goes so far. Carry It Well is a nine week course for men who carry a lot, and Chris coaches men one on one. When a wife wants in, she joins a call or two.</p>
         </div>
-        <Link className="button primary" href="/library">See All the Way Here · $49 <span>→</span></Link>
+        <Link className="button primary" href="/gift">See Carry It Well · $49 <span>→</span></Link>
       </section>
 
       <Footer />

@@ -32,7 +32,7 @@ S, K, Box, Lines, FillLines, principle, numbered = cb.S, cb.K, cb.Box, cb.Lines,
 
 M = json.loads((ROOT / "tmp/pdfs/mens-content.json").read_text())
 MOVES = {m["key"]: m["name"] for m in M["MEN_MOVEMENTS"]}
-OUTFILE = ROOT / "public/downloads/men/all-the-way-here-mens-edition.pdf"
+OUTFILE = ROOT / "public/downloads/men/carry-it-well-course-book.pdf"
 
 
 def photo(src, height=2.3 * inch):
@@ -62,11 +62,11 @@ def photo(src, height=2.3 * inch):
 
 def page(canvas, doc):
     canvas.saveState()
-    masthead(canvas, "All the Way Here · Men's Edition")
+    masthead(canvas, "Carry It Well · Here Supply Co.")
     footer(canvas, None, right=str(doc.page))
     canvas.setFont("Body", 7.6)
     canvas.setFillColor(COPY)
-    canvas.drawString(SIDE, FOOT_TEXT, "HERE SUPPLY CO.  ·  ALL THE WAY HERE, MEN'S EDITION")
+    canvas.drawString(SIDE, FOOT_TEXT, "HERE SUPPLY CO.  ·  CARRY IT WELL")
     canvas.restoreState()
 
 
@@ -196,16 +196,16 @@ def solo(story, so):
 
 def build():
     OUTFILE.parent.mkdir(parents=True, exist_ok=True)
-    doc = BaseDocTemplate(str(OUTFILE), pagesize=letter, title="All the Way Here, Men's Edition: Course Book",
+    doc = BaseDocTemplate(str(OUTFILE), pagesize=letter, title="Carry It Well: Course Book",
                           author="Chris Avera, Here Supply Co.", leftMargin=SIDE, rightMargin=SIDE)
     body = Frame(SIDE, BODY_BOTTOM, CONTENT_W, HEAD_RULE - 20 - BODY_BOTTOM, id="body", leftPadding=0, rightPadding=0, topPadding=0, bottomPadding=0)
     cover_frame = Frame(SIDE, 2.4 * inch, CONTENT_W, H - 2.2 * inch - 2.4 * inch, id="cover", leftPadding=0, rightPadding=0)
     doc.addPageTemplates([PageTemplate("cover", [cover_frame], onPage=cover), PageTemplate("page", [body], onPage=page)])
 
     story = [Spacer(1, 0.9 * inch)]
-    story.append(Paragraph("MEN'S EDITION · A COURSE ON PAPER", S["cover_kicker"]))
+    story.append(Paragraph("A COURSE FOR MEN WHO CARRY A LOT", S["cover_kicker"]))
     story.append(Spacer(1, 16))
-    story.append(Paragraph("All the Way<br/>Here.", S["cover_title"]))
+    story.append(Paragraph("Carry It<br/>Well.", S["cover_title"]))
     story.append(Spacer(1, 18))
     story.append(Paragraph("Nine problems men actually say out loud, and what to do about each one.", S["cover_sub"]))
     story.append(Spacer(1, 22))

@@ -15,8 +15,8 @@ import styles from "../course.module.css";
 import men from "./men.module.css";
 
 export const metadata: Metadata = {
-  title: "All the Way Here, Men's Edition | Your Course",
-  description: "Your private access to All the Way Here, Men's Edition.",
+  title: "Carry It Well | Your Course",
+  description: "Your private access to Carry It Well.",
   robots: { index: false, follow: false },
 };
 

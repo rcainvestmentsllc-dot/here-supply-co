@@ -114,10 +114,10 @@ export default function DrivewayPage() {
         <div>
           <h2>Snapping when you walk in?</h2>
           <p>
-            Lesson three of All the Way Here, Men&rsquo;s Edition, goes after the short fuse itself:
+            Lesson three of Carry It Well goes after the short fuse itself:
             your warning signs, a sixty second reset, and how to repair it when you miss. Nine
             lessons, one a week, each shown at home and at work.{" "}
-            {usd(MEN_OFFERS.course.foundingPrice)} for the founding group.
+            {usd(MEN_OFFERS.course.price)}, one time.
           </p>
         </div>
         <Link className={styles.primary} href="/men/course">

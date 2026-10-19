@@ -18,7 +18,7 @@ import styles from "../../../course.module.css";
 import men from "../../men.module.css";
 
 export const metadata: Metadata = {
-  title: "All the Way Here, Men's Edition | Lesson",
+  title: "Carry It Well | Lesson",
   robots: { index: false, follow: false },
 };
 
@@ -40,7 +40,7 @@ function Neighbors({ slug }: { slug: string }) {
       ) : (
         <Link href={MEN_COURSE.root} className={styles.navLink}>
           <small>Course home</small>
-          <strong>← All the Way Here</strong>
+          <strong>← Carry It Well</strong>
         </Link>
       )}
       {next ? (
@@ -370,11 +370,15 @@ export default async function MenLessonPage({ params }: { params: Promise<{ slug
         <div>
           <h3>The question I would ask you on a call.</h3>
           <p>
-            &ldquo;{lesson.coachQuestion}&rdquo; Write your answer in the course book. If you want
-            someone asking it every week, that is what coaching is for.
+            &ldquo;{lesson.coachQuestion}&rdquo; Write your answer in the course book. If you would
+            rather say it out loud, book a free twenty minute call and bring this answer with you.
+            If you want someone asking it every week, that is what coaching is for.
           </p>
         </div>
         <div className={styles.workbookActions}>
+          <Link className={`${styles.btn} ${styles.btnPrimary}`} href="/men/apply">
+            Book a free call <span aria-hidden="true">→</span>
+          </Link>
           <Link className={`${styles.btn} ${styles.btnGhost}`} href="/men/coaching">
             See coaching <span aria-hidden="true">→</span>
           </Link>
