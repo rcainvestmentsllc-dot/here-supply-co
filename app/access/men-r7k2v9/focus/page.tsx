@@ -26,7 +26,7 @@ export default function MenFocusAccess() {
         <p className="section-label">THE 72 HOUR FOCUS PROTOCOL</p><h2>Control the inputs.<br /><em>Choose the attention.</em></h2><p>Think of it as a three day experiment with your surroundings. Cut down what pulls at you, add enough friction to notice the reflex, and make a different choice when it shows up. Willpower has very little to do with it.</p>
       </section>
       <figure className="focus-human-story">
-        <img src="/assets/course/art/emotional-phone-at-game.jpg" alt="A parent looking at a phone while a child waits on a baseball field" width="1672" height="942" loading="lazy" decoding="async" />
+        <img src="/assets/men/course/drift.jpg" alt="Over the shoulder of a man on the couch, scrolling his phone" width="960" height="640" loading="lazy" decoding="async" />
         <figcaption><span>WHY THIS MATTERS</span><p>Keep the technology. Just stop giving the people who count on you whatever attention is left over.</p></figcaption>
       </figure>
       <section className="focus-moves">{FOCUS_MOVES.map((move) => <article key={move.number}><span>{move.number}</span><h2>{move.title}</h2><h3>{move.promise}</h3><p>{move.body}</p><aside><b>MAKE IT FIT</b>{move.exception}</aside></article>)}</section>

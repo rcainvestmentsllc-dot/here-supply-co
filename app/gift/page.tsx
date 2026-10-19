@@ -47,10 +47,10 @@ export default function GiftPage() {
         </div>
         <div className={styles.heroMedia}>
           <img
-            src="/assets/course/photo/lesson-1-1-sanctuary-v1.jpg"
-            alt="A man writing at the kitchen table early in the morning, coffee and phone set aside"
-            width={1672}
-            height={941}
+            src="/assets/men/course/honest-map.jpg"
+            alt="A man on the couch writing in a notebook"
+            width={960}
+            height={640}
           />
         </div>
       </section>

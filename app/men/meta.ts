@@ -5,7 +5,7 @@ import type { Metadata } from "next";
  * so every men's page sets its own Open Graph and Twitter card; otherwise a
  * link texted to a man previews as "Attention Tools for Couples".
  */
-const DEFAULT_IMAGE = { url: "/assets/course/photo/movement-return-v1.jpg", width: 1672, height: 941, alt: "A man setting his phone down before walking into the house" };
+const DEFAULT_IMAGE = { url: "/assets/men/course/part-start.jpg", width: 960, height: 640, alt: "A man standing on a rock above a wide mountain valley" };
 
 export function menMeta({
   title,

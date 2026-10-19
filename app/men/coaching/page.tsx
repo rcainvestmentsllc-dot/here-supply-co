@@ -11,7 +11,7 @@ const title = "Coaching for Men Who Lead | Here Supply Co.";
 const description =
   "One on one coaching with Chris Avera for men who lead a family, a team, or a company. A 90 Day Intensive, then ongoing coaching month to month, with plain terms up front.";
 
-export const metadata: Metadata = menMeta({ title, description, path: "/men/coaching", image: { url: "/assets/course/photo/lesson-3-1-third-place-v3.jpg", width: 1672, height: 941, alt: "Three men talking beside a pickup after a ride" } });
+export const metadata: Metadata = menMeta({ title, description, path: "/men/coaching", image: { url: "/assets/men/course/council.jpg", width: 960, height: 640, alt: "Three men talking beside a pickup after a ride" } });
 
 const { intensive, ongoing, table } = MEN_OFFERS;
 
@@ -40,10 +40,10 @@ export default function MenCoaching() {
         </div>
         <div className={styles.heroMedia}>
           <img
-            src="/assets/course/photo/lesson-3-1-third-place-v3.jpg"
-            alt="Three men talking beside a pickup after a mountain bike ride"
-            width={1672}
-            height={941}
+            src="/assets/men/course/council.jpg"
+            alt="Two men sitting side by side on a bench in the woods"
+            width={960}
+            height={640}
           />
         </div>
       </section>

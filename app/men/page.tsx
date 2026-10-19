@@ -40,10 +40,10 @@ export default function MenHome() {
         </div>
         <div className={styles.heroMedia}>
           <img
-            src="/assets/course/photo/movement-return-v1.jpg"
-            alt="A man setting his phone down on a table by the door before walking into the house"
-            width={1672}
-            height={941}
+            src="/assets/men/course/part-start.jpg"
+            alt="A man standing on a rock above a wide mountain valley"
+            width={960}
+            height={640}
           />
         </div>
       </section>
@@ -82,10 +82,10 @@ export default function MenHome() {
       <section className={styles.section}>
         <div className={styles.story}>
           <img
-            src="/assets/course/photo/emotional-phone-at-game-v1.jpg"
-            alt="A father looking at his phone on the bleachers while his daughter waits for him on the field"
-            width={1672}
-            height={941}
+            src="/assets/men/course/battles.jpg"
+            alt="A man at his desk with his head in his hands"
+            width={960}
+            height={640}
             loading="lazy"
           />
           <div>
