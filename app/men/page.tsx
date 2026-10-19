@@ -82,8 +82,8 @@ export default function MenHome() {
       <section className={styles.section}>
         <div className={styles.story}>
           <img
-            src="/assets/men/course/battles.jpg"
-            alt="A man at his desk with his head in his hands"
+            src="/assets/men/course/who.jpg"
+            alt="A man in a wide brimmed hat crouched in a frosty forest"
             width={960}
             height={640}
             loading="lazy"
